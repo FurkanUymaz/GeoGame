@@ -4,77 +4,118 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeoGame - Global Football Tic-Tac-Toe</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="top-bar">
     <div class="brand">GEO<span>GAME</span> XOX</div>
-    <div id="turn-indicator" class="turn-banner">Select 2 Countries on the World Map</div>
+    <div id="turn-indicator" class="turn-banner">Enter Player Names</div>
     <div class="controls">
-      <button id="btn-reset-map" class="btn secondary">Change Countries</button>
-      <button id="btn-new-grid" class="btn primary" disabled>New Grid</button>
+      <button id="btn-back-names" class="btn secondary hidden">Players</button>
+      <button id="btn-back-map" class="btn secondary hidden">World Map</button>
+      <button id="btn-new-grid" class="btn primary hidden">New Grid</button>
     </div>
   </header>
 
-  <main class="workspace">
-    <section id="map-panel" class="panel map-panel">
-      <div class="panel-header">
-        <h2>1. Select Horizontal & Vertical League Countries</h2>
-        <div class="selection-pills">
-          <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
-          <span id="pill-vertical" class="pill empty">Vertical: None</span>
+  <main class="stage-container">
+    <section id="stage-players" class="stage active">
+      <div class="setup-card">
+        <h1>Player Registration</h1>
+        <p class="setup-sub">Enter usernames for both competitors before opening the world map.</p>
+        <div class="input-group">
+          <label for="input-player-x">Player 1 (Mark X)</label>
+          <input type="text" id="input-player-x" placeholder="e.g. Furkan" maxlength="20" autocomplete="off" />
         </div>
-      </div>
-      <div id="world-map"></div>
-      <div class="legend">
-        <span class="dot available"></span> Available League
-        <span class="dot horizontal"></span> Horizontal Axis
-        <span class="dot vertical"></span> Vertical Axis
+        <div class="input-group">
+          <label for="input-player-o">Player 2 (Mark O)</label>
+          <input type="text" id="input-player-o" placeholder="e.g. Ibrahim" maxlength="20" autocomplete="off" />
+        </div>
+        <button id="btn-start-map" class="btn primary full-btn">Continue to World Map</button>
       </div>
     </section>
 
-    <section id="game-panel" class="panel game-panel">
-      <div class="scoreboard">
-        <div id="card-x" class="player-card active-x">
-          <span class="mark">X</span>
-          <span class="label">Player 1</span>
-          <span id="score-x" class="score">0</span>
+    <section id="stage-map" class="stage">
+      <div class="map-stage-card">
+        <div class="map-stage-header">
+          <div>
+            <h2>Select Horizontal & Vertical League Countries</h2>
+            <p id="map-instruction" class="map-sub">Click the first country for the Horizontal axis.</p>
+          </div>
+          <div class="selection-pills">
+            <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
+            <span id="pill-vertical" class="pill empty">Vertical: None</span>
+            <button id="btn-clear-countries" class="btn secondary">Reset Selection</button>
+          </div>
         </div>
-        <div class="vs-badge">VS</div>
-        <div id="card-o" class="player-card">
-          <span class="mark">O</span>
-          <span class="label">Player 2</span>
-          <span id="score-o" class="score">0</span>
+
+        <div class="canvas-wrapper">
+          <canvas id="world-canvas" width="1100" height="540"></canvas>
+          <div id="map-tooltip" class="map-tooltip hidden"></div>
+        </div>
+
+        <div class="map-footer">
+          <div class="legend">
+            <span><i class="dot available"></i>Available League</span>
+            <span><i class="dot horizontal"></i>Horizontal Country</span>
+            <span><i class="dot vertical"></i>Vertical Country</span>
+          </div>
+          <button id="btn-enter-game" class="btn primary" disabled>Start Match</button>
         </div>
       </div>
+    </section>
 
-      <div id="grid-wrapper" class="grid-wrapper disabled">
-        <div class="corner-cell">
-          <button id="btn-skip" class="btn-small" title="Pass turn if stuck">Pass Turn</button>
+    <section id="stage-game" class="stage">
+      <div class="game-layout">
+        <div class="game-top-meta">
+          <span id="meta-horizontal" class="meta-badge h-badge">Horizontal: -</span>
+          <span id="meta-vertical" class="meta-badge v-badge">Vertical: -</span>
         </div>
-        <div id="col-0" class="header-cell col-header">-</div>
-        <div id="col-1" class="header-cell col-header">-</div>
-        <div id="col-2" class="header-cell col-header">-</div>
 
-        <div id="row-0" class="header-cell row-header">-</div>
-        <div id="cell-0-0" class="grid-cell" data-r="0" data-c="0"></div>
-        <div id="cell-0-1" class="grid-cell" data-r="0" data-c="1"></div>
-        <div id="cell-0-2" class="grid-cell" data-r="0" data-c="2"></div>
+        <div class="scoreboard">
+          <div id="card-x" class="player-card active-x">
+            <div class="player-info">
+              <span class="mark">X</span>
+              <span id="label-player-x" class="label">Player 1</span>
+            </div>
+            <span id="score-x" class="score">0</span>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div id="card-o" class="player-card">
+            <div class="player-info">
+              <span class="mark">O</span>
+              <span id="label-player-o" class="label">Player 2</span>
+            </div>
+            <span id="score-o" class="score">0</span>
+          </div>
+        </div>
 
-        <div id="row-1" class="header-cell row-header">-</div>
-        <div id="cell-1-0" class="grid-cell" data-r="1" data-c="0"></div>
-        <div id="cell-1-1" class="grid-cell" data-r="1" data-c="1"></div>
-        <div id="cell-1-2" class="grid-cell" data-r="1" data-c="2"></div>
+        <div id="grid-wrapper" class="grid-wrapper">
+          <div class="corner-cell">
+            <button id="btn-skip" class="btn-small">Pass Turn</button>
+          </div>
+          <div id="col-0" class="header-cell col-header">-</div>
+          <div id="col-1" class="header-cell col-header">-</div>
+          <div id="col-2" class="header-cell col-header">-</div>
 
-        <div id="row-2" class="header-cell row-header">-</div>
-        <div id="cell-2-0" class="grid-cell" data-r="2" data-c="0"></div>
-        <div id="cell-2-1" class="grid-cell" data-r="2" data-c="1"></div>
-        <div id="cell-2-2" class="grid-cell" data-r="2" data-c="2"></div>
-      </div>
+          <div id="row-0" class="header-cell row-header">-</div>
+          <div id="cell-0-0" class="grid-cell" data-r="0" data-c="0"></div>
+          <div id="cell-0-1" class="grid-cell" data-r="0" data-c="1"></div>
+          <div id="cell-0-2" class="grid-cell" data-r="0" data-c="2"></div>
 
-      <div id="status-message" class="status-message">
-        Click two highlighted countries on the map to generate a guaranteed solvable 3x3 board.
+          <div id="row-1" class="header-cell row-header">-</div>
+          <div id="cell-1-0" class="grid-cell" data-r="1" data-c="0"></div>
+          <div id="cell-1-1" class="grid-cell" data-r="1" data-c="1"></div>
+          <div id="cell-1-2" class="grid-cell" data-r="1" data-c="2"></div>
+
+          <div id="row-2" class="header-cell row-header">-</div>
+          <div id="cell-2-0" class="grid-cell" data-r="2" data-c="0"></div>
+          <div id="cell-2-1" class="grid-cell" data-r="2" data-c="1"></div>
+          <div id="cell-2-2" class="grid-cell" data-r="2" data-c="2"></div>
+        </div>
+
+        <div id="status-message" class="status-message">
+          Select any intersection cell to guess a player who represented both clubs.
+        </div>
       </div>
     </section>
   </main>
@@ -85,19 +126,18 @@
         <h3 id="modal-matchup">Club A × Club B</h3>
         <button id="btn-close-modal" class="close-btn">&times;</button>
       </div>
-      <p class="modal-sub">Name any player who played for both clubs in their career:</p>
+      <p class="modal-sub">Type a player who played for both clubs:</p>
       <div class="search-box">
-        <input type="text" id="player-input" placeholder="Type player name..." autocomplete="off" />
+        <input type="text" id="player-input" placeholder="Search player..." autocomplete="off" />
         <ul id="autocomplete-list" class="autocomplete-list"></ul>
       </div>
       <div id="modal-feedback" class="modal-feedback"></div>
       <div class="modal-actions">
-        <button id="btn-submit-guess" class="btn primary">Confirm Guess</button>
+        <button id="btn-submit-guess" class="btn primary">Submit Guess</button>
       </div>
     </div>
   </div>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>

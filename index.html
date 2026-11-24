@@ -21,16 +21,16 @@
     <section id="stage-players" class="stage active">
       <div class="setup-card">
         <h1>Player Registration</h1>
-        <p class="setup-sub">Enter usernames for both competitors before opening the world map.</p>
+        <p class="setup-sub">Enter player names to open the world map.</p>
         <div class="input-group">
-          <label for="input-player-x">Player 1 (Mark X)</label>
-          <input type="text" id="input-player-x" placeholder="e.g. Furkan" maxlength="20" autocomplete="off" />
+          <label for="input-player-x">Player 1 (X)</label>
+          <input type="text" id="input-player-x" placeholder="Player 1 name" maxlength="24" autocomplete="off" />
         </div>
         <div class="input-group">
-          <label for="input-player-o">Player 2 (Mark O)</label>
-          <input type="text" id="input-player-o" placeholder="e.g. Ibrahim" maxlength="20" autocomplete="off" />
+          <label for="input-player-o">Player 2 (O)</label>
+          <input type="text" id="input-player-o" placeholder="Player 2 name" maxlength="24" autocomplete="off" />
         </div>
-        <button id="btn-start-map" class="btn primary full-btn">Continue to World Map</button>
+        <button id="btn-start-map" class="btn primary full-btn">Open World Map</button>
       </div>
     </section>
 
@@ -38,28 +38,28 @@
       <div class="map-stage-card">
         <div class="map-stage-header">
           <div>
-            <h2>Select Horizontal & Vertical League Countries</h2>
-            <p id="map-instruction" class="map-sub">Click the first country for the Horizontal axis.</p>
+            <h2>World Map League Selector</h2>
+            <p id="map-instruction" class="map-sub">Select one country for Horizontal axis and one country for Vertical axis.</p>
           </div>
           <div class="selection-pills">
             <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
             <span id="pill-vertical" class="pill empty">Vertical: None</span>
-            <button id="btn-clear-countries" class="btn secondary">Reset Selection</button>
+            <button id="btn-clear-countries" class="btn secondary">Reset</button>
           </div>
         </div>
 
         <div class="canvas-wrapper">
-          <canvas id="world-canvas" width="1100" height="540"></canvas>
+          <canvas id="world-canvas" width="1140" height="540"></canvas>
           <div id="map-tooltip" class="map-tooltip hidden"></div>
         </div>
 
         <div class="map-footer">
           <div class="legend">
-            <span><i class="dot available"></i>Available League</span>
+            <span><i class="dot available"></i>League Country</span>
             <span><i class="dot horizontal"></i>Horizontal Country</span>
             <span><i class="dot vertical"></i>Vertical Country</span>
           </div>
-          <button id="btn-enter-game" class="btn primary" disabled>Start Match</button>
+          <button id="btn-enter-game" class="btn primary" disabled>Start Game</button>
         </div>
       </div>
     </section>
@@ -114,7 +114,7 @@
         </div>
 
         <div id="status-message" class="status-message">
-          Select any intersection cell to guess a player who represented both clubs.
+          Click any cell to enter a player who played for both clubs.
         </div>
       </div>
     </section>
@@ -126,14 +126,14 @@
         <h3 id="modal-matchup">Club A × Club B</h3>
         <button id="btn-close-modal" class="close-btn">&times;</button>
       </div>
-      <p class="modal-sub">Type a player who played for both clubs:</p>
+      <p class="modal-sub">Enter a player who played for both clubs:</p>
       <div class="search-box">
-        <input type="text" id="player-input" placeholder="Search player..." autocomplete="off" />
+        <input type="text" id="player-input" placeholder="Type player name..." autocomplete="off" />
         <ul id="autocomplete-list" class="autocomplete-list"></ul>
       </div>
       <div id="modal-feedback" class="modal-feedback"></div>
       <div class="modal-actions">
-        <button id="btn-submit-guess" class="btn primary">Submit Guess</button>
+        <button id="btn-submit-guess" class="btn primary">Confirm</button>
       </div>
     </div>
   </div>

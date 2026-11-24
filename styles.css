@@ -126,7 +126,7 @@
   .stage {
     display: none;
     width: 100%;
-    max-width: 1160px;
+    max-width: 1180px;
   }
   
   .stage.active {

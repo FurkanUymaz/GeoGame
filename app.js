@@ -54,7 +54,7 @@ const state = {
     const horizClubs = FOOTBALL_DB.countries[horizCode].clubs;
     const vertClubs = FOOTBALL_DB.countries[vertCode].clubs;
   
-    for (let attempt = 0; attempt < 900; attempt++) {
+    for (let attempt = 0; attempt < 1500; attempt++) {
       const pickedCols = shuffle(horizClubs).slice(0, 3);
       const pickedRows = shuffle(vertClubs).slice(0, 3);
   
@@ -120,12 +120,12 @@ const state = {
     ctx.clearRect(0, 0, w, h);
   
     const bgGrad = ctx.createLinearGradient(0, 0, 0, h);
-    bgGrad.addColorStop(0, "#071021");
-    bgGrad.addColorStop(1, "#0b1930");
+    bgGrad.addColorStop(0, "#060e1f");
+    bgGrad.addColorStop(1, "#0a162c");
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, w, h);
   
-    ctx.strokeStyle = "rgba(148, 163, 184, 0.12)";
+    ctx.strokeStyle = "rgba(148, 163, 184, 0.11)";
     ctx.lineWidth = 1;
     for (let lon = -150; lon <= 180; lon += 30) {
       const p1 = latLngToCanvas(90, lon, w, h);
@@ -144,20 +144,22 @@ const state = {
       ctx.stroke();
     }
   
-    FOOTBALL_DB.continents.forEach((poly) => {
-      ctx.beginPath();
-      poly.forEach(([lng, lat], idx) => {
-        const pt = latLngToCanvas(lat, lng, w, h);
-        if (idx === 0) ctx.moveTo(pt.x, pt.y);
-        else ctx.lineTo(pt.x, pt.y);
+    if (Array.isArray(FOOTBALL_DB.continents)) {
+      FOOTBALL_DB.continents.forEach((poly) => {
+        ctx.beginPath();
+        poly.forEach(([lng, lat], idx) => {
+          const pt = latLngToCanvas(lat, lng, w, h);
+          if (idx === 0) ctx.moveTo(pt.x, pt.y);
+          else ctx.lineTo(pt.x, pt.y);
+        });
+        ctx.closePath();
+        ctx.fillStyle = "#1e293b";
+        ctx.fill();
+        ctx.strokeStyle = "#3b4d6b";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
       });
-      ctx.closePath();
-      ctx.fillStyle = "#1e293b";
-      ctx.fill();
-      ctx.strokeStyle = "#3b4d6b";
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-    });
+    }
   
     Object.entries(FOOTBALL_DB.countries).forEach(([code, info]) => {
       const pt = latLngToCanvas(info.lat, info.lng, w, h);
@@ -207,7 +209,7 @@ const state = {
     for (const [code, pt] of Object.entries(state.countryScreenCoords)) {
       const dx = x - pt.x;
       const dy = y - pt.y;
-      if (Math.hypot(dx, dy) <= 16) {
+      if (Math.hypot(dx, dy) <= 18) {
         return code;
       }
     }
@@ -239,13 +241,13 @@ const state = {
     }
   
     if (!state.horizontalCountry) {
-      inst.textContent = "Click a highlighted country for the Horizontal axis.";
+      inst.textContent = "Select one country for Horizontal axis.";
       btnEnter.disabled = true;
     } else if (!state.verticalCountry) {
-      inst.textContent = "Now click a second country for the Vertical axis.";
+      inst.textContent = "Select a second country for Vertical axis.";
       btnEnter.disabled = true;
     } else {
-      inst.textContent = "Both countries selected. Click 'Start Match' to open the board.";
+      inst.textContent = "Ready. Click Start Game.";
       btnEnter.disabled = false;
     }
   
@@ -277,7 +279,7 @@ const state = {
   
     const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry);
     if (!grid) {
-      setStatus("No full 3x3 solvable intersection found for this pair. Try 'New Grid' or another country pair.");
+      setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair or New Grid.");
       return;
     }
   
@@ -305,7 +307,7 @@ const state = {
     });
   
     updateTurnBanner();
-    setStatus(`${state.players.X} (X) starts. Pick an intersection cell.`);
+    setStatus(`${state.players.X} (X) starts. Pick a cell.`);
   }
   
   function updateTurnBanner() {
@@ -324,7 +326,7 @@ const state = {
     }
   
     if (activeStage.id === "stage-map") {
-      banner.textContent = "World Map Selection";
+      banner.textContent = "World Map";
       banner.className = "turn-banner";
       return;
     }
@@ -408,7 +410,7 @@ const state = {
     const matchedPlayer = playerIndex.find((p) => p.normalized === normalizedGuess);
   
     if (!matchedPlayer) {
-      feedback.textContent = "Player not in database. Turn passes!";
+      feedback.textContent = "Player not found. Turn passes!";
       feedback.className = "modal-feedback error";
       setTimeout(() => {
         closeGuessModal();
@@ -418,7 +420,7 @@ const state = {
     }
   
     if (state.usedPlayers.has(matchedPlayer.name)) {
-      feedback.textContent = `${matchedPlayer.name} is already placed on the board.`;
+      feedback.textContent = `${matchedPlayer.name} already used.`;
       feedback.className = "modal-feedback error";
       return;
     }
@@ -444,13 +446,13 @@ const state = {
         handleWin(state.turn, winLine);
       } else if (isBoardFull()) {
         state.gameOver = true;
-        document.getElementById("turn-indicator").textContent = "Draw Game";
-        setStatus("All cells filled. Match drawn!");
+        document.getElementById("turn-indicator").textContent = "Draw";
+        setStatus("Board full. Match drawn!");
       } else {
         switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
       }
     } else {
-      feedback.textContent = `Invalid match for ${matchedPlayer.name}. Turn lost!`;
+      feedback.textContent = `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
       feedback.className = "modal-feedback error";
       setTimeout(() => {
         closeGuessModal();
@@ -463,7 +465,7 @@ const state = {
     state.turn = state.turn === "X" ? "O" : "X";
     updateTurnBanner();
     const nextName = state.turn === "X" ? state.players.X : state.players.O;
-    setStatus(`${prefixMsg} ${nextName} (${state.turn}) to play.`);
+    setStatus(`${prefixMsg} ${nextName} (${state.turn}) turn.`);
   }
   
   function checkWinner(mark) {
@@ -504,7 +506,7 @@ const state = {
     const banner = document.getElementById("turn-indicator");
     banner.textContent = `${winnerName} (${mark}) Wins!`;
     banner.className = "turn-banner";
-    setStatus(`${winnerName} completed three in a row! Click 'New Grid' to play again.`);
+    setStatus(`${winnerName} won the round!`);
   }
   
   document.addEventListener("DOMContentLoaded", () => {

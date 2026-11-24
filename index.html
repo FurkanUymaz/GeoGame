@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoGame - Global Football Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">GEO<span>GAME</span> XOX</div>
+    <div id="turn-indicator" class="turn-banner">Select 2 Countries on the World Map</div>
+    <div class="controls">
+      <button id="btn-reset-map" class="btn secondary">Change Countries</button>
+      <button id="btn-new-grid" class="btn primary" disabled>New Grid</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section id="map-panel" class="panel map-panel">
+      <div class="panel-header">
+        <h2>1. Select Horizontal & Vertical League Countries</h2>
+        <div class="selection-pills">
+          <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
+          <span id="pill-vertical" class="pill empty">Vertical: None</span>
+        </div>
+      </div>
+      <div id="world-map"></div>
+      <div class="legend">
+        <span class="dot available"></span> Available League
+        <span class="dot horizontal"></span> Horizontal Axis
+        <span class="dot vertical"></span> Vertical Axis
+      </div>
+    </section>
+
+    <section id="game-panel" class="panel game-panel">
+      <div class="scoreboard">
+        <div id="card-x" class="player-card active-x">
+          <span class="mark">X</span>
+          <span class="label">Player 1</span>
+          <span id="score-x" class="score">0</span>
+        </div>
+        <div class="vs-badge">VS</div>
+        <div id="card-o" class="player-card">
+          <span class="mark">O</span>
+          <span class="label">Player 2</span>
+          <span id="score-o" class="score">0</span>
+        </div>
+      </div>
+
+      <div id="grid-wrapper" class="grid-wrapper disabled">
+        <div class="corner-cell">
+          <button id="btn-skip" class="btn-small" title="Pass turn if stuck">Pass Turn</button>
+        </div>
+        <div id="col-0" class="header-cell col-header">-</div>
+        <div id="col-1" class="header-cell col-header">-</div>
+        <div id="col-2" class="header-cell col-header">-</div>
+
+        <div id="row-0" class="header-cell row-header">-</div>
+        <div id="cell-0-0" class="grid-cell" data-r="0" data-c="0"></div>
+        <div id="cell-0-1" class="grid-cell" data-r="0" data-c="1"></div>
+        <div id="cell-0-2" class="grid-cell" data-r="0" data-c="2"></div>
+
+        <div id="row-1" class="header-cell row-header">-</div>
+        <div id="cell-1-0" class="grid-cell" data-r="1" data-c="0"></div>
+        <div id="cell-1-1" class="grid-cell" data-r="1" data-c="1"></div>
+        <div id="cell-1-2" class="grid-cell" data-r="1" data-c="2"></div>
+
+        <div id="row-2" class="header-cell row-header">-</div>
+        <div id="cell-2-0" class="grid-cell" data-r="2" data-c="0"></div>
+        <div id="cell-2-1" class="grid-cell" data-r="2" data-c="1"></div>
+        <div id="cell-2-2" class="grid-cell" data-r="2" data-c="2"></div>
+      </div>
+
+      <div id="status-message" class="status-message">
+        Click two highlighted countries on the map to generate a guaranteed solvable 3x3 board.
+      </div>
+    </section>
+  </main>
+
+  <div id="guess-modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-matchup">Club A × Club B</h3>
+        <button id="btn-close-modal" class="close-btn">&times;</button>
+      </div>
+      <p class="modal-sub">Name any player who played for both clubs in their career:</p>
+      <div class="search-box">
+        <input type="text" id="player-input" placeholder="Type player name..." autocomplete="off" />
+        <ul id="autocomplete-list" class="autocomplete-list"></ul>
+      </div>
+      <div id="modal-feedback" class="modal-feedback"></div>
+      <div class="modal-actions">
+        <button id="btn-submit-guess" class="btn primary">Confirm Guess</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

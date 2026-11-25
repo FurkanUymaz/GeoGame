@@ -283,8 +283,534 @@ function injectMapLayoutFixes() {
       color: #fbbf24;
       box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.45);
     }
+    .btn-end-match {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(244, 63, 94, 0.45);
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(159, 18, 57, 0.34));
+      color: #fda4af;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.16);
+    }
+    .btn-end-match:hover {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.36), rgba(159, 18, 57, 0.48));
+      border-color: #fb7185;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(225, 29, 72, 0.28);
+    }
+    .btn-end-match.hidden {
+      display: none !important;
+    }
+    #stage-players.premium-lobby-stage {
+      display: none;
+      width: 100%;
+      min-height: calc(100vh - 96px);
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px;
+    }
+    #stage-players.premium-lobby-stage.active {
+      display: flex;
+    }
+    .premium-lobby-shell {
+      position: relative;
+      width: 100%;
+      max-width: 780px;
+      background: radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.11), transparent 46%),
+                  radial-gradient(circle at 82% 100%, rgba(245, 158, 11, 0.11), transparent 46%),
+                  linear-gradient(180deg, rgba(13, 22, 39, 0.96), rgba(8, 14, 27, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 22px;
+      padding: 36px 34px 32px;
+      box-shadow: 0 28px 70px rgba(2, 6, 23, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+    .premium-lobby-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .premium-lobby-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.28);
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .premium-lobby-eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+    }
+    .premium-lobby-title {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #f8fafc;
+    }
+    .premium-lobby-subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .premium-duel-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 680px) {
+      .premium-duel-grid {
+        grid-template-columns: 1fr;
+      }
+      .premium-vs-column {
+        flex-direction: row !important;
+        justify-content: center;
+      }
+      .premium-lobby-shell {
+        padding: 26px 20px 24px;
+      }
+    }
+    .premium-player-card {
+      position: relative;
+      border-radius: 16px;
+      padding: 20px 18px 18px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .premium-player-card.side-x {
+      border-top: 2px solid rgba(56, 189, 248, 0.55);
+    }
+    .premium-player-card.side-x:focus-within {
+      border-color: rgba(56, 189, 248, 0.75);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.14);
+      transform: translateY(-2px);
+    }
+    .premium-player-card.side-o {
+      border-top: 2px solid rgba(245, 158, 11, 0.55);
+    }
+    .premium-player-card.side-o:focus-within {
+      border-color: rgba(245, 158, 11, 0.75);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.14);
+      transform: translateY(-2px);
+    }
+    .premium-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .premium-crest {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 900;
+    }
+    .side-x .premium-crest {
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #38bdf8;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.2);
+    }
+    .side-o .premium-crest {
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      color: #fbbf24;
+      box-shadow: 0 0 18px rgba(245, 158, 11, 0.2);
+    }
+    .premium-side-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 6px;
+    }
+    .side-x .premium-side-tag {
+      background: rgba(56, 189, 248, 0.1);
+      color: #7dd3fc;
+    }
+    .side-o .premium-side-tag {
+      background: rgba(245, 158, 11, 0.1);
+      color: #fcd34d;
+    }
+    .premium-field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 7px;
+    }
+    .premium-player-card input {
+      width: 100% !important;
+      height: 44px !important;
+      padding: 0 14px !important;
+      border-radius: 10px !important;
+      border: 1px solid rgba(148, 163, 184, 0.24) !important;
+      background: rgba(6, 11, 22, 0.85) !important;
+      color: #f8fafc !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      outline: none !important;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+    }
+    .side-x input:focus {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18) !important;
+    }
+    .side-o input:focus {
+      border-color: #f59e0b !important;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18) !important;
+    }
+    .premium-vs-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .premium-vs-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      color: #cbd5e1;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    }
+    .premium-swap-btn {
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: rgba(30, 41, 59, 0.7);
+      color: #94a3b8;
+      border-radius: 8px;
+      padding: 4px 9px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .premium-swap-btn:hover {
+      color: #f8fafc;
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(56, 189, 248, 0.14);
+    }
+    .premium-lobby-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .premium-start-btn {
+      width: 100% !important;
+      max-width: 360px !important;
+      height: 48px !important;
+      border: none !important;
+      border-radius: 12px !important;
+      background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%) !important;
+      color: #04101d !important;
+      font-size: 15px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.02em !important;
+      cursor: pointer !important;
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.26) !important;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease !important;
+    }
+    .premium-start-btn:hover {
+      transform: translateY(-2px) !important;
+      filter: brightness(1.06) !important;
+      box-shadow: 0 16px 34px rgba(14, 165, 233, 0.34) !important;
+    }
+    .premium-lobby-hint {
+      font-size: 12px;
+      color: #64748b;
+    }
+    .end-match-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(3, 7, 18, 0.78);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .end-match-overlay.hidden {
+      display: none !important;
+    }
+    .end-match-dialog {
+      width: 100%;
+      max-width: 400px;
+      background: linear-gradient(180deg, #0f172a, #090f1d);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      border-radius: 16px;
+      padding: 24px 22px 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.72);
+      text-align: center;
+    }
+    .end-match-dialog h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .end-match-dialog p {
+      margin: 0 0 20px;
+      font-size: 13.5px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .end-match-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .end-match-actions button {
+      flex: 1;
+      height: 40px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-cancel-end {
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #e2e8f0;
+    }
+    .btn-cancel-end:hover {
+      background: rgba(51, 65, 85, 0.9);
+    }
+    .btn-confirm-end {
+      background: linear-gradient(135deg, #e11d48, #be123c);
+      border: 1px solid rgba(251, 113, 133, 0.5);
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+    }
+    .btn-confirm-end:hover {
+      filter: brightness(1.08);
+    }
   `;
   document.head.appendChild(style);
+}
+
+function enhancePlayerLobbyUI() {
+  const stagePlayers = document.getElementById("stage-players");
+  const inputX = document.getElementById("input-player-x");
+  const inputO = document.getElementById("input-player-o");
+  const btnStartMap = document.getElementById("btn-start-map");
+
+  if (!stagePlayers || !inputX || !inputO || !btnStartMap) return;
+  if (stagePlayers.dataset.premiumEnhanced === "true") return;
+
+  stagePlayers.dataset.premiumEnhanced = "true";
+  stagePlayers.classList.add("premium-lobby-stage");
+
+  inputX.placeholder = "Enter Player X name";
+  inputO.placeholder = "Enter Player O name";
+  inputX.setAttribute("autocomplete", "off");
+  inputO.setAttribute("autocomplete", "off");
+
+  btnStartMap.classList.add("premium-start-btn");
+  btnStartMap.textContent = "Continue to World Map";
+
+  const shell = document.createElement("div");
+  shell.className = "premium-lobby-shell";
+
+  const header = document.createElement("div");
+  header.className = "premium-lobby-header";
+  header.innerHTML = `
+    <div class="premium-lobby-eyebrow">Matchday Setup</div>
+    <h2 class="premium-lobby-title">Player Lineup</h2>
+    <p class="premium-lobby-subtitle">Enter both player names before selecting leagues on the world map.</p>
+  `;
+
+  const duelGrid = document.createElement("div");
+  duelGrid.className = "premium-duel-grid";
+
+  const cardX = document.createElement("div");
+  cardX.className = "premium-player-card side-x";
+  cardX.innerHTML = `
+    <div class="premium-card-top">
+      <span class="premium-crest">X</span>
+      <span class="premium-side-tag">First Turn · Home</span>
+    </div>
+    <label class="premium-field-label" for="input-player-x">Player X Name</label>
+  `;
+  cardX.appendChild(inputX);
+
+  const vsCol = document.createElement("div");
+  vsCol.className = "premium-vs-column";
+  const vsBadge = document.createElement("div");
+  vsBadge.className = "premium-vs-badge";
+  vsBadge.textContent = "VS";
+
+  const swapBtn = document.createElement("button");
+  swapBtn.type = "button";
+  swapBtn.className = "premium-swap-btn";
+  swapBtn.title = "Swap Player Names";
+  swapBtn.textContent = "Swap";
+  swapBtn.addEventListener("click", () => {
+    const temp = inputX.value;
+    inputX.value = inputO.value;
+    inputO.value = temp;
+  });
+
+  vsCol.appendChild(vsBadge);
+  vsCol.appendChild(swapBtn);
+
+  const cardO = document.createElement("div");
+  cardO.className = "premium-player-card side-o";
+  cardO.innerHTML = `
+    <div class="premium-card-top">
+      <span class="premium-crest">O</span>
+      <span class="premium-side-tag">Second Turn · Away</span>
+    </div>
+    <label class="premium-field-label" for="input-player-o">Player O Name</label>
+  `;
+  cardO.appendChild(inputO);
+
+  duelGrid.appendChild(cardX);
+  duelGrid.appendChild(vsCol);
+  duelGrid.appendChild(cardO);
+
+  const footer = document.createElement("div");
+  footer.className = "premium-lobby-footer";
+  footer.appendChild(btnStartMap);
+
+  const hint = document.createElement("div");
+  hint.className = "premium-lobby-hint";
+  hint.textContent = "Press Enter to advance";
+  footer.appendChild(hint);
+
+  shell.appendChild(header);
+  shell.appendChild(duelGrid);
+  shell.appendChild(footer);
+
+  stagePlayers.innerHTML = "";
+  stagePlayers.appendChild(shell);
+
+  inputX.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      inputO.focus();
+      inputO.select();
+    }
+  });
+
+  inputO.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      btnStartMap.click();
+    }
+  });
+}
+
+function setupEndMatchControls() {
+  const btnBackMap = document.getElementById("btn-back-map");
+  const navContainer = btnBackMap ? btnBackMap.parentElement : null;
+
+  if (navContainer && !document.getElementById("btn-end-match")) {
+    const endBtn = document.createElement("button");
+    endBtn.id = "btn-end-match";
+    endBtn.type = "button";
+    endBtn.className = "btn-end-match hidden";
+    endBtn.textContent = "End Match";
+    endBtn.addEventListener("click", handleEndMatchRequest);
+    navContainer.appendChild(endBtn);
+  }
+
+  if (!document.getElementById("end-match-modal")) {
+    const overlay = document.createElement("div");
+    overlay.id = "end-match-modal";
+    overlay.className = "end-match-overlay hidden";
+    overlay.innerHTML = `
+      <div class="end-match-dialog">
+        <h3>End Current Match?</h3>
+        <p>The active board and current series score will be closed and you will return to the World Map.</p>
+        <div class="end-match-actions">
+          <button type="button" id="btn-cancel-end-match" class="btn-cancel-end">Continue Match</button>
+          <button type="button" id="btn-confirm-end-match" class="btn-confirm-end">End Match</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+
+    document.getElementById("btn-cancel-end-match").addEventListener("click", () => {
+      overlay.classList.add("hidden");
+    });
+
+    document.getElementById("btn-confirm-end-match").addEventListener("click", () => {
+      overlay.classList.add("hidden");
+      executeEndMatch();
+    });
+  }
+
+  window.addEventListener("popstate", () => {
+    const activeStage = document.querySelector(".stage.active");
+    if (activeStage && activeStage.id === "stage-game") {
+      window.history.pushState({ inGame: true }, "");
+    }
+  });
+}
+
+function handleEndMatchRequest() {
+  if (state.gameOver) {
+    executeEndMatch();
+    return;
+  }
+  const modal = document.getElementById("end-match-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+  }
+}
+
+function executeEndMatch() {
+  closeGuessModal();
+  state.scores = { X: 0, O: 0 };
+  state.gameOver = false;
+  state.board = Array(3).fill(null).map(() => Array(3).fill(null));
+  state.usedPlayers.clear();
+
+  const scoreXEl = document.getElementById("score-x");
+  const scoreOEl = document.getElementById("score-o");
+  if (scoreXEl) scoreXEl.textContent = "0";
+  if (scoreOEl) scoreOEl.textContent = "0";
+
+  showStage("map");
+  updateCountrySelectionUI();
 }
 
 const normalizeText = (str) => {
@@ -661,7 +1187,7 @@ function setDifficulty(newDiff) {
   const activeStage = document.querySelector(".stage.active");
   if (activeStage && activeStage.id === "stage-game") {
     const diffMeta = DIFFICULTY_META[newDiff];
-    setStatus(`Difficulty set to ${diffMeta.label}. It will apply when you start a New Grid.`);
+    setStatus(`Difficulty set to ${diffMeta.label}. Applies on next round.`);
   }
 }
 
@@ -707,21 +1233,35 @@ function showStage(stageName) {
   const btnBackNames = document.getElementById("btn-back-names");
   const btnBackMap = document.getElementById("btn-back-map");
   const btnNewGrid = document.getElementById("btn-new-grid");
+  const btnEndMatch = document.getElementById("btn-end-match");
 
   btnBackNames.classList.add("hidden");
+  btnBackNames.style.display = "none";
   btnBackMap.classList.add("hidden");
+  btnBackMap.style.display = "none";
   btnNewGrid.classList.add("hidden");
+  btnNewGrid.style.display = "none";
+
+  if (btnEndMatch) {
+    btnEndMatch.classList.add("hidden");
+  }
 
   if (stageName === "map") {
     btnBackNames.classList.remove("hidden");
+    btnBackNames.style.display = "";
     renderCountrySidebar();
     syncCanvasResolution();
     state.mapView.needsRender = true;
     drawWorldMap();
   } else if (stageName === "game") {
-    btnBackNames.classList.remove("hidden");
-    btnBackMap.classList.remove("hidden");
-    btnNewGrid.classList.remove("hidden");
+    window.history.pushState({ inGame: true }, "");
+    if (btnEndMatch) {
+      btnEndMatch.classList.remove("hidden");
+    }
+    if (state.gameOver) {
+      btnNewGrid.classList.remove("hidden");
+      btnNewGrid.style.display = "";
+    }
   }
 
   updateTurnBanner();
@@ -1455,6 +1995,12 @@ function startNewRound() {
   state.turn = "X";
   state.gameOver = false;
 
+  const btnNewGrid = document.getElementById("btn-new-grid");
+  if (btnNewGrid) {
+    btnNewGrid.classList.add("hidden");
+    btnNewGrid.style.display = "none";
+  }
+
   for (let i = 0; i < 3; i++) {
     document.getElementById(`col-${i}`).innerHTML = `${state.colClubs[i]}<span class="club-badge">${hCountry.league}</span>`;
     document.getElementById(`row-${i}`).innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
@@ -1479,7 +2025,7 @@ function updateTurnBanner() {
 
   const activeStage = document.querySelector(".stage.active");
   if (!activeStage || activeStage.id === "stage-players") {
-    banner.textContent = "Enter Player Names";
+    banner.textContent = "Player Setup";
     banner.className = "turn-banner";
     return;
   }
@@ -1648,6 +2194,11 @@ function submitGuess() {
     } else if (isBoardFull()) {
       state.gameOver = true;
       document.getElementById("turn-indicator").textContent = "Draw";
+      const btnNewGrid = document.getElementById("btn-new-grid");
+      if (btnNewGrid) {
+        btnNewGrid.classList.remove("hidden");
+        btnNewGrid.style.display = "";
+      }
       setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
     } else {
       switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
@@ -1703,6 +2254,12 @@ function handleWin(mark, winLine) {
     document.getElementById(`cell-${r}-${c}`).classList.add("winner-cell");
   });
 
+  const btnNewGrid = document.getElementById("btn-new-grid");
+  if (btnNewGrid) {
+    btnNewGrid.classList.remove("hidden");
+    btnNewGrid.style.display = "";
+  }
+
   const winnerName = mark === "X" ? state.players.X : state.players.O;
   const banner = document.getElementById("turn-indicator");
   banner.textContent = `${winnerName} (${mark}) Wins!`;
@@ -1712,6 +2269,8 @@ function handleWin(mark, winLine) {
 
 document.addEventListener("DOMContentLoaded", () => {
   injectMapLayoutFixes();
+  enhancePlayerLobbyUI();
+  setupEndMatchControls();
   mountDifficultyControls();
   loadWorldGeoJson();
   renderCountrySidebar();
@@ -1743,6 +2302,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-back-map").addEventListener("click", () => {
+    const activeStage = document.querySelector(".stage.active");
+    if (activeStage && activeStage.id === "stage-game") return;
     showStage("map");
     updateCountrySelectionUI();
   });

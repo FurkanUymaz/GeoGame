@@ -1047,4 +1047,550 @@ function startNewRound() {
   document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
   document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league})`;
 
-  const grid = generateSolvableGrid(state.horizontal
+  const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry);
+  if (!grid) {
+    setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
+    return;
+  }
+
+  state.colClubs = grid.cols;
+  state.rowClubs = grid.rows;
+  state.board = Array(3).fill(null).map(() => Array(3).fill(null));
+  state.usedPlayers.clear();
+  state.turn = "X";
+  state.gameOver = false;
+
+  for (let i = 0; i < 3; i++) {
+    document.getElementById(`col-${i}`).innerHTML = `${state.colClubs[i]}<span class="club-badge">${hCountry.league}</span>`;
+    document.getElementById(`row-${i}`).innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
+  }
+
+  document.querySelectorAll(".grid-cell").forEach((cell) => {
+    cell.className = "grid-cell";
+    cell.innerHTML = "";
+  });
+
+  updateTurnBanner();
+  setStatus(`${state.players.X} (X) starts. Pick a cell.`);
+}
+
+function updateTurnBanner() {
+  const banner = document.getElementById("turn-indicator");
+  const cardX = document.getElementById("card-x");
+  const cardO = document.getElementById("card-o");
+
+  cardX.classList.remove("active-x");
+  cardO.classList.remove("active-o");
+
+  const activeStage = document.querySelector(".stage.active");
+  if (!activeStage || activeStage.id === "stage-players") {
+    banner.textContent = "Enter Player Names";
+    banner.className = "turn-banner";
+    return;
+  }
+
+  if (activeStage.id === "stage-map") {
+    banner.textContent = "World Map";
+    banner.className = "turn-banner";
+    return;
+  }
+
+  if (state.gameOver) {
+    banner.className = "turn-banner";
+    return;
+  }
+
+  if (state.turn === "X") {
+    banner.textContent = `${state.players.X} (X) Turn`;
+    banner.className = "turn-banner turn-x";
+    cardX.classList.add("active-x");
+  } else {
+    banner.textContent = `${state.players.O} (O) Turn`;
+    banner.className = "turn-banner turn-o";
+    cardO.classList.add("active-o");
+  }
+}
+
+function setStatus(msg) {
+  document.getElementById("status-message").textContent = msg;
+}
+
+function inspectCellSolutions(r, c) {
+  const rowClub = state.rowClubs[r];
+  const colClub = state.colClubs[c];
+  if (!rowClub || !colClub) return;
+
+  const valid = getCommonPlayers(rowClub, colClub);
+  const sample = valid.slice(0, 6).map((p) => p.name).join(", ");
+  const extra = valid.length > 6 ? ` (+${valid.length - 6} more)` : "";
+  setStatus(`${rowClub} × ${colClub}: ${sample}${extra}`);
+}
+
+function openGuessModal(r, c) {
+  if (state.gameOver) {
+    inspectCellSolutions(r, c);
+    return;
+  }
+  if (state.board[r][c] !== null) return;
+  state.activeCell = { r, c };
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
+
+  const rowClub = state.rowClubs[r];
+  const colClub = state.colClubs[c];
+
+  document.getElementById("modal-matchup").textContent = `${rowClub} × ${colClub}`;
+  const input = document.getElementById("player-input");
+  input.value = "";
+  document.getElementById("autocomplete-list").innerHTML = "";
+  document.getElementById("modal-feedback").textContent = "";
+  document.getElementById("modal-feedback").className = "modal-feedback";
+
+  document.getElementById("guess-modal").classList.remove("hidden");
+  input.focus();
+}
+
+function closeGuessModal() {
+  document.getElementById("guess-modal").classList.add("hidden");
+  state.activeCell = null;
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
+}
+
+function renderAutocompleteItems() {
+  const input = document.getElementById("player-input");
+  const list = document.getElementById("autocomplete-list");
+  list.innerHTML = "";
+
+  state.autocompleteMatches.forEach((p, idx) => {
+    const li = document.createElement("li");
+    li.textContent = p.name;
+    if (idx === state.highlightedIndex) {
+      li.style.background = "rgba(56, 189, 248, 0.22)";
+      li.style.color = "#f8fafc";
+    }
+    li.addEventListener("click", () => {
+      input.value = p.name;
+      state.autocompleteMatches = [];
+      state.highlightedIndex = -1;
+      list.innerHTML = "";
+      submitGuess();
+    });
+    list.appendChild(li);
+  });
+}
+
+function handleAutocomplete() {
+  const input = document.getElementById("player-input");
+  const list = document.getElementById("autocomplete-list");
+  const query = normalizeText(input.value);
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
+  list.innerHTML = "";
+
+  if (query.length < 2) return;
+
+  state.autocompleteMatches = playerIndex
+    .filter((p) => p.normalized.includes(query))
+    .slice(0, 8);
+
+  if (state.autocompleteMatches.length === 1) {
+    state.highlightedIndex = 0;
+  }
+
+  renderAutocompleteItems();
+}
+
+function submitGuess() {
+  if (!state.activeCell) return;
+  const { r, c } = state.activeCell;
+  const input = document.getElementById("player-input");
+  const feedback = document.getElementById("modal-feedback");
+
+  if (state.highlightedIndex >= 0 && state.autocompleteMatches[state.highlightedIndex]) {
+    input.value = state.autocompleteMatches[state.highlightedIndex].name;
+    state.autocompleteMatches = [];
+    state.highlightedIndex = -1;
+    document.getElementById("autocomplete-list").innerHTML = "";
+  }
+
+  const normalizedGuess = normalizeText(input.value);
+  if (!normalizedGuess) return;
+
+  const matchedPlayer = playerIndex.find((p) => p.normalized === normalizedGuess);
+
+  if (!matchedPlayer) {
+    feedback.textContent = "Player not found in database. Pick a name from suggestions.";
+    feedback.className = "modal-feedback error";
+    return;
+  }
+
+  if (state.usedPlayers.has(matchedPlayer.name)) {
+    feedback.textContent = `${matchedPlayer.name} already used in this round.`;
+    feedback.className = "modal-feedback error";
+    return;
+  }
+
+  const rowClub = state.rowClubs[r];
+  const colClub = state.colClubs[c];
+
+  if (matchedPlayer.clubs.has(rowClub) && matchedPlayer.clubs.has(colClub)) {
+    state.board[r][c] = { mark: state.turn, player: matchedPlayer.name };
+    state.usedPlayers.add(matchedPlayer.name);
+
+    const cellEl = document.getElementById(`cell-${r}-${c}`);
+    cellEl.classList.add("claimed", state.turn === "X" ? "claimed-x" : "claimed-o");
+    cellEl.innerHTML = `
+      <span class="cell-mark">${state.turn}</span>
+      <span class="cell-player">${matchedPlayer.name}</span>
+    `;
+
+    closeGuessModal();
+
+    const winLine = checkWinner(state.turn);
+    if (winLine) {
+      handleWin(state.turn, winLine);
+    } else if (isBoardFull()) {
+      state.gameOver = true;
+      document.getElementById("turn-indicator").textContent = "Draw";
+      setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
+    } else {
+      switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
+    }
+  } else {
+    feedback.textContent = `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
+    feedback.className = "modal-feedback error";
+    setTimeout(() => {
+      closeGuessModal();
+      switchTurn(`Invalid guess (${matchedPlayer.name}). Turn passed.`);
+    }, 950);
+  }
+}
+
+function switchTurn(prefixMsg) {
+  state.turn = state.turn === "X" ? "O" : "X";
+  updateTurnBanner();
+  const nextName = state.turn === "X" ? state.players.X : state.players.O;
+  setStatus(`${prefixMsg} ${nextName} (${state.turn}) turn.`);
+}
+
+function checkWinner(mark) {
+  const b = state.board;
+  const lines = [
+    [[0, 0], [0, 1], [0, 2]],
+    [[1, 0], [1, 1], [1, 2]],
+    [[2, 0], [2, 1], [2, 2]],
+    [[0, 0], [1, 0], [2, 0]],
+    [[0, 1], [1, 1], [2, 1]],
+    [[0, 2], [1, 2], [2, 2]],
+    [[0, 0], [1, 1], [2, 2]],
+    [[0, 2], [1, 1], [2, 0]]
+  ];
+
+  for (const line of lines) {
+    if (line.every(([r, c]) => b[r][c] && b[r][c].mark === mark)) {
+      return line;
+    }
+  }
+  return null;
+}
+
+function isBoardFull() {
+  return state.board.every((row) => row.every((cell) => cell !== null));
+}
+
+function handleWin(mark, winLine) {
+  state.gameOver = true;
+  state.scores[mark]++;
+  document.getElementById(`score-${mark.toLowerCase()}`).textContent = state.scores[mark];
+
+  winLine.forEach(([r, c]) => {
+    document.getElementById(`cell-${r}-${c}`).classList.add("winner-cell");
+  });
+
+  const winnerName = mark === "X" ? state.players.X : state.players.O;
+  const banner = document.getElementById("turn-indicator");
+  banner.textContent = `${winnerName} (${mark}) Wins!`;
+  banner.className = "turn-banner";
+  setStatus(`${winnerName} won the round! Click any cell to inspect valid players.`);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  injectMapLayoutFixes();
+  loadWorldGeoJson();
+  renderCountrySidebar();
+  syncCanvasResolution();
+  drawWorldMap();
+  requestAnimationFrame(animateMapLoop);
+
+  window.addEventListener("resize", () => {
+    syncCanvasResolution();
+    const activeStage = document.querySelector(".stage.active");
+    if (activeStage && activeStage.id === "stage-map") {
+      drawWorldMap();
+    }
+  });
+
+  document.getElementById("btn-start-map").addEventListener("click", () => {
+    const px = document.getElementById("input-player-x").value.trim() || "Player 1";
+    const po = document.getElementById("input-player-o").value.trim() || "Player 2";
+    state.players.X = px;
+    state.players.O = po;
+    document.getElementById("label-player-x").textContent = px;
+    document.getElementById("label-player-o").textContent = po;
+    showStage("map");
+    updateCountrySelectionUI();
+  });
+
+  document.getElementById("btn-back-names").addEventListener("click", () => {
+    showStage("players");
+  });
+
+  document.getElementById("btn-back-map").addEventListener("click", () => {
+    showStage("map");
+    updateCountrySelectionUI();
+  });
+
+  document.getElementById("btn-clear-countries").addEventListener("click", () => {
+    state.horizontalCountry = null;
+    state.verticalCountry = null;
+    state.mapView.needsRender = true;
+    updateCountrySelectionUI();
+  });
+
+  document.getElementById("btn-enter-game").addEventListener("click", () => {
+    if (!state.horizontalCountry || !state.verticalCountry) return;
+    startNewRound();
+    showStage("game");
+  });
+
+  document.getElementById("btn-new-grid").addEventListener("click", startNewRound);
+
+  const canvas = document.getElementById("world-canvas");
+  const tooltip = document.getElementById("map-tooltip");
+  const mv = state.mapView;
+
+  document.getElementById("btn-zoom-in").addEventListener("click", () => {
+    const { w, h } = getLogicalCanvasSize(canvas);
+    setMapZoomAt(mv.targetZoom * 1.4, w * 0.5, h * 0.5, true);
+  });
+
+  document.getElementById("btn-zoom-out").addEventListener("click", () => {
+    const { w, h } = getLogicalCanvasSize(canvas);
+    setMapZoomAt(mv.targetZoom / 1.4, w * 0.5, h * 0.5, true);
+  });
+
+  document.getElementById("btn-zoom-reset").addEventListener("click", () => {
+    const preset = REGION_PRESETS.world;
+    focusOnCoords(preset.lat, preset.lng, preset.zoom);
+    updateRegionButtons("world");
+  });
+
+  document.querySelectorAll(".region-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const regionKey = btn.dataset.region;
+      const preset = REGION_PRESETS[regionKey];
+      if (!preset) return;
+      focusOnCoords(preset.lat, preset.lng, preset.zoom);
+      updateRegionButtons(regionKey);
+    });
+  });
+
+  document.getElementById("country-search-input").addEventListener("input", renderCountrySidebar);
+
+  canvas.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const rect = canvas.getBoundingClientRect();
+    const pivotX = e.clientX - rect.left;
+    const pivotY = e.clientY - rect.top;
+    const factor = e.deltaY < 0 ? 1.25 : 0.8;
+    setMapZoomAt(mv.targetZoom * factor, pivotX, pivotY, true);
+  }, { passive: false });
+
+  canvas.addEventListener("dblclick", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const pivotX = e.clientX - rect.left;
+    const pivotY = e.clientY - rect.top;
+    setMapZoomAt(mv.targetZoom * 1.65, pivotX, pivotY, true);
+  });
+
+  canvas.addEventListener("mousedown", (e) => {
+    if (e.button !== 0) return;
+    mv.isDragging = true;
+    mv.hasMoved = false;
+    mv.dragStartX = e.clientX;
+    mv.dragStartY = e.clientY;
+    mv.startOffsetX = mv.targetOffsetX;
+    mv.startOffsetY = mv.targetOffsetY;
+    canvas.classList.add("dragging");
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!mv.isDragging) return;
+    const dxScreen = e.clientX - mv.dragStartX;
+    const dyScreen = e.clientY - mv.dragStartY;
+    if (Math.hypot(dxScreen, dyScreen) > 4) {
+      mv.hasMoved = true;
+    }
+
+    const { w, h } = getLogicalCanvasSize(canvas);
+    const rawOx = mv.startOffsetX + dxScreen;
+    const rawOy = mv.startOffsetY + dyScreen;
+    const clamped = clampMapOffsets(rawOx, rawOy, mv.targetZoom, w, h);
+
+    mv.targetOffsetX = clamped.x;
+    mv.targetOffsetY = clamped.y;
+    mv.offsetX = clamped.x;
+    mv.offsetY = clamped.y;
+    mv.needsRender = true;
+    updateRegionButtons("");
+  });
+
+  window.addEventListener("mouseup", () => {
+    if (!mv.isDragging) return;
+    mv.isDragging = false;
+    canvas.classList.remove("dragging");
+  });
+
+  canvas.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+      const t = e.touches[0];
+      mv.isDragging = true;
+      mv.hasMoved = false;
+      mv.dragStartX = t.clientX;
+      mv.dragStartY = t.clientY;
+      mv.startOffsetX = mv.targetOffsetX;
+      mv.startOffsetY = mv.targetOffsetY;
+    } else if (e.touches.length === 2) {
+      mv.isDragging = false;
+      const [t1, t2] = e.touches;
+      mv.pinchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      mv.pinchStartZoom = mv.targetZoom;
+    }
+  }, { passive: true });
+
+  canvas.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 1 && mv.isDragging) {
+      const t = e.touches[0];
+      const dxScreen = t.clientX - mv.dragStartX;
+      const dyScreen = t.clientY - mv.dragStartY;
+      if (Math.hypot(dxScreen, dyScreen) > 4) {
+        mv.hasMoved = true;
+      }
+      const { w, h } = getLogicalCanvasSize(canvas);
+      const clamped = clampMapOffsets(mv.startOffsetX + dxScreen, mv.startOffsetY + dyScreen, mv.targetZoom, w, h);
+      mv.targetOffsetX = clamped.x;
+      mv.targetOffsetY = clamped.y;
+      mv.offsetX = clamped.x;
+      mv.offsetY = clamped.y;
+      mv.needsRender = true;
+    } else if (e.touches.length === 2 && mv.pinchStartDist > 0) {
+      e.preventDefault();
+      const [t1, t2] = e.touches;
+      const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      const rect = canvas.getBoundingClientRect();
+      const midX = (t1.clientX + t2.clientX) * 0.5 - rect.left;
+      const midY = (t1.clientY + t2.clientY) * 0.5 - rect.top;
+      setMapZoomAt(mv.pinchStartZoom * (dist / mv.pinchStartDist), midX, midY, false);
+    }
+  }, { passive: false });
+
+  canvas.addEventListener("touchend", () => {
+    mv.isDragging = false;
+    mv.pinchStartDist = 0;
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    if (mv.isDragging) {
+      tooltip.classList.add("hidden");
+      return;
+    }
+
+    const code = getHoveredCountryCode(e.clientX, e.clientY);
+    if (state.hoveredCountry !== code) {
+      state.hoveredCountry = code;
+      mv.needsRender = true;
+    }
+    canvas.classList.toggle("hovering-pin", Boolean(code));
+
+    const ttWidth = 210;
+    const posX = e.clientX + ttWidth > window.innerWidth ? e.clientX - ttWidth : e.clientX + 14;
+    const posY = e.clientY + 68 > window.innerHeight ? e.clientY - 56 : e.clientY + 14;
+
+    if (code) {
+      const info = FOOTBALL_DB.countries[code];
+      let roleLabel = "Click to assign axis";
+      if (code === state.horizontalCountry) roleLabel = "Assigned: Horizontal Axis";
+      if (code === state.verticalCountry) roleLabel = "Assigned: Vertical Axis";
+
+      tooltip.innerHTML = `
+        <div class="tt-title">${info.name}</div>
+        <div class="tt-league">${info.league}</div>
+        <div class="tt-clubs">${info.clubs.length} clubs &bull; ${roleLabel}</div>
+      `;
+      tooltip.style.left = `${posX}px`;
+      tooltip.style.top = `${posY}px`;
+      tooltip.classList.remove("hidden");
+    } else {
+      const rect = canvas.getBoundingClientRect();
+      const { w, h } = getLogicalCanvasSize(canvas);
+      const coords = screenToLatLng(e.clientX - rect.left, e.clientY - rect.top, w, h);
+      tooltip.innerHTML = `
+        <div class="tt-clubs">${formatGeographicCoords(coords.lat, coords.lng)}</div>
+      `;
+      tooltip.style.left = `${posX}px`;
+      tooltip.style.top = `${posY}px`;
+      tooltip.classList.remove("hidden");
+    }
+  });
+
+  canvas.addEventListener("mouseleave", () => {
+    state.hoveredCountry = null;
+    mv.needsRender = true;
+    canvas.classList.remove("hovering-pin");
+    tooltip.classList.add("hidden");
+  });
+
+  canvas.addEventListener("click", (e) => {
+    if (mv.hasMoved) return;
+    const code = getHoveredCountryCode(e.clientX, e.clientY);
+    if (code) {
+      toggleCountrySelection(code);
+    }
+  });
+
+  document.querySelectorAll(".grid-cell").forEach((cell) => {
+    cell.addEventListener("click", () => {
+      const r = parseInt(cell.dataset.r, 10);
+      const c = parseInt(cell.dataset.c, 10);
+      openGuessModal(r, c);
+    });
+  });
+
+  document.getElementById("btn-skip").addEventListener("click", () => {
+    if (!state.gameOver) {
+      switchTurn("Turn passed.");
+    }
+  });
+
+  document.getElementById("btn-close-modal").addEventListener("click", closeGuessModal);
+  document.getElementById("player-input").addEventListener("input", handleAutocomplete);
+  document.getElementById("player-input").addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" && state.autocompleteMatches.length > 0) {
+      e.preventDefault();
+      state.highlightedIndex = (state.highlightedIndex + 1) % state.autocompleteMatches.length;
+      renderAutocompleteItems();
+    } else if (e.key === "ArrowUp" && state.autocompleteMatches.length > 0) {
+      e.preventDefault();
+      state.highlightedIndex =
+        (state.highlightedIndex - 1 + state.autocompleteMatches.length) % state.autocompleteMatches.length;
+      renderAutocompleteItems();
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      submitGuess();
+    } else if (e.key === "Escape") {
+      closeGuessModal();
+    }
+  });
+  document.getElementById("btn-submit-guess").addEventListener("click", submitGuess);
+});

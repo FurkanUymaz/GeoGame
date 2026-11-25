@@ -51,28 +51,39 @@ const REGION_PRESETS = {
 };
 
 const DIFFICULTY_META = {
-  easy: { label: "Easy", desc: "Top Clubs & Many Shared Players", minCommon: 3 },
-  medium: { label: "Medium", desc: "Balanced Mix", minCommon: 2 },
-  hard: { label: "Hard", desc: "Lesser-Known Clubs", minCommon: 1 }
+  easy: { label: "Easy", desc: "Top Clubs & Many Shared Players" },
+  medium: { label: "Medium", desc: "Balanced Mix" },
+  hard: { label: "Hard", desc: "Lesser-Known Clubs" }
 };
 
-const ICONIC_CLUB_KEYWORDS = [
-  "galatasaray", "fenerbahce", "besiktas", "trabzonspor", "basaksehir",
-  "bayern", "dortmund", "leverkusen", "leipzig", "frankfurt", "schalke", "stuttgart", "werder bremen", "wolfsburg", "monchengladbach",
-  "real madrid", "barcelona", "atletico madrid", "sevilla", "valencia", "villarreal", "real sociedad", "athletic", "betis",
-  "manchester united", "manchester city", "liverpool", "arsenal", "chelsea", "tottenham", "newcastle", "aston villa", "west ham", "everton", "leicester",
+const TIER1_CLUB_KEYWORDS = [
+  "galatasaray", "fenerbahce", "besiktas", "trabzonspor",
+  "bayern", "dortmund", "leverkusen", "leipzig", "frankfurt", "schalke",
+  "real madrid", "barcelona", "atletico", "sevilla", "valencia", "villarreal", "real sociedad", "athletic",
+  "manchester united", "manchester city", "liverpool", "arsenal", "chelsea", "tottenham", "newcastle", "aston villa", "west ham",
   "juventus", "inter", "milan", "napoli", "roma", "lazio", "atalanta", "fiorentina",
-  "paris saint-germain", "psg", "marseille", "lyon", "monaco", "lille", "nice", "rennes",
-  "ajax", "psv", "feyenoord", "az alkmaar",
-  "benfica", "porto", "sporting", "braga",
-  "celtic", "rangers", "club brugge", "anderlecht", "genk",
+  "paris saint-germain", "psg", "marseille", "lyon", "monaco", "lille",
+  "ajax", "psv", "feyenoord",
+  "benfica", "porto", "sporting",
+  "celtic", "rangers", "club brugge", "anderlecht",
   "shakhtar", "dynamo kyiv", "zenit", "cska", "spartak",
   "olympiacos", "panathinaikos", "paok", "aek",
-  "salzburg", "rapid", "sturm", "basel", "young boys",
-  "copenhagen", "midtjylland", "brondby",
+  "salzburg", "basel", "young boys", "copenhagen",
   "boca juniors", "river plate", "flamengo", "palmeiras", "sao paulo", "corinthians", "santos",
   "al-hilal", "al-nassr", "al-ittihad", "al-ahli",
-  "la galaxy", "inter miami", "new york"
+  "inter miami", "la galaxy"
+];
+
+const TIER2_CLUB_KEYWORDS = [
+  "basaksehir", "adana demirspor", "antalyaspor", "konyaspor",
+  "stuttgart", "werder bremen", "wolfsburg", "monchengladbach", "freiburg", "hoffenheim",
+  "betis", "celta", "osasuna", "girona", "mallorca",
+  "everton", "leicester", "brighton", "crystal palace", "fulham", "wolverhampton",
+  "torino", "bologna", "udinese", "genoa", "sassuolo",
+  "nice", "rennes", "lens", "nantes",
+  "az alkmaar", "twente", "utrecht",
+  "braga", "guimaraes", "genk", "standard", "gent",
+  "rapid", "sturm", "midtjylland", "brondby"
 ];
 
 const ISO3_TO_GAME_CODES = {
@@ -347,6 +358,30 @@ function isPolygonNearCountry(polyRings, gameCodes) {
   });
 }
 
+function isPointInRing(lng, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0];
+    const yi = ring[i][1];
+    const xj = ring[j][0];
+    const yj = ring[j][1];
+    const intersect =
+      (yi > lat) !== (yj > lat) &&
+      lng < ((xj - xi) * (lat - yi)) / (yj - yi || 1e-12) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+function isPointInPolygonRings(lng, lat, rings) {
+  if (!Array.isArray(rings) || rings.length === 0) return false;
+  if (!isPointInRing(lng, lat, rings[0])) return false;
+  for (let i = 1; i < rings.length; i++) {
+    if (isPointInRing(lng, lat, rings[i])) return false;
+  }
+  return true;
+}
+
 async function loadWorldGeoJson() {
   if (state.geoLoadAttempted) return;
   state.geoLoadAttempted = true;
@@ -411,15 +446,18 @@ for (const p of playerIndex) {
 
 function getClubPrestigeScore(clubName) {
   const norm = normalizeText(clubName);
-  const isIconic = ICONIC_CLUB_KEYWORDS.some((kw) => norm.includes(kw));
-  const iconicBonus = isIconic ? 1000 : 0;
+  let tierBonus = 0;
+  if (TIER1_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
+    tierBonus = 2000;
+  } else if (TIER2_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
+    tierBonus = 900;
+  }
   const reach = clubCrossReach.get(clubName) || 0;
   const roster = Math.max(1, clubRosterCount.get(clubName) || 1);
   const normalizedReach = reach / Math.sqrt(roster);
-  return iconicBonus + normalizedReach;
+  return tierBonus + normalizedReach;
 }
 
-const clubPrestigeMap = new Map();
 const countryRankedClubs = new Map();
 const countryClubRankIndex = new Map();
 
@@ -427,8 +465,6 @@ for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
   const ranked = [...info.clubs].sort((a, b) => {
     const scoreA = getClubPrestigeScore(a);
     const scoreB = getClubPrestigeScore(b);
-    clubPrestigeMap.set(a, scoreA);
-    clubPrestigeMap.set(b, scoreB);
     return scoreB !== scoreA ? scoreB - scoreA : a.localeCompare(b);
   });
   countryRankedClubs.set(code, ranked);
@@ -464,8 +500,8 @@ function getTierClubPools(code, difficulty) {
   const n = ranked.length;
 
   if (difficulty === "easy") {
-    const topCount = Math.min(n, Math.max(5, Math.ceil(n * 0.28)));
-    const midCount = Math.min(n, Math.max(topCount, Math.ceil(n * 0.55)));
+    const topCount = Math.min(n, Math.max(6, Math.ceil(n * 0.35)));
+    const midCount = Math.min(n, Math.max(topCount, Math.ceil(n * 0.65)));
     return {
       primary: ranked.slice(0, topCount),
       secondary: ranked.slice(0, midCount),
@@ -483,8 +519,8 @@ function getTierClubPools(code, difficulty) {
     };
   }
 
-  const start = Math.floor(n * 0.15);
-  const end = Math.min(n, Math.max(start + 7, Math.ceil(n * 0.78)));
+  const start = Math.min(2, Math.floor(n * 0.12));
+  const end = Math.min(n, Math.max(start + 8, Math.ceil(n * 0.80)));
   return {
     primary: ranked.slice(start, end),
     secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.90))),
@@ -500,7 +536,7 @@ function scoreCandidateGrid(cols, rows, difficulty) {
     for (const c of cols) {
       const cnt = getCommonPlayers(r, c).length;
       if (cnt < minCellCommon) minCellCommon = cnt;
-      totalCommon += Math.min(cnt, 12);
+      totalCommon += Math.min(cnt, 14);
     }
   }
 
@@ -510,12 +546,12 @@ function scoreCandidateGrid(cols, rows, difficulty) {
   );
 
   if (difficulty === "easy") {
-    return minCellCommon * 45 + totalCommon * 4 - totalRank * 18;
+    return minCellCommon * 20 + totalCommon * 8 - totalRank * 45;
   }
   if (difficulty === "hard") {
-    return totalRank * 16 - minCellCommon * 20 - totalCommon * 2;
+    return totalRank * 22 - minCellCommon * 18 - totalCommon * 3;
   }
-  return minCellCommon * 15 + totalCommon * 2 - Math.abs(totalRank - 30) * 4;
+  return minCellCommon * 14 + totalCommon * 3 - Math.abs(totalRank - 34) * 5;
 }
 
 function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficulty) {
@@ -538,7 +574,7 @@ function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficult
   const pickedCols = [];
   const rowCounts = new Map();
   const candidates = [];
-  const maxCandidates = 30;
+  const maxCandidates = 150;
 
   function backtrack(startIdx) {
     if (candidates.length >= maxCandidates) return;
@@ -579,24 +615,19 @@ function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficult
 
   if (candidates.length === 0) return null;
   candidates.sort((a, b) => b.score - a.score);
-  const topSlice = candidates.slice(0, Math.min(4, candidates.length));
+  const topSlice = candidates.slice(0, Math.min(3, candidates.length));
   return topSlice[Math.floor(Math.random() * topSlice.length)];
 }
 
 function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty) {
   const hPools = getTierClubPools(horizCode, difficulty);
   const vPools = getTierClubPools(vertCode, difficulty);
-  const baseMinCommon = (DIFFICULTY_META[difficulty] || DIFFICULTY_META.medium).minCommon;
 
   const attempts =
     difficulty === "easy"
       ? [
-          [hPools.primary, vPools.primary, 3],
-          [hPools.primary, vPools.primary, 2],
-          [hPools.secondary, vPools.secondary, 3],
-          [hPools.secondary, vPools.secondary, 2],
+          [hPools.primary, vPools.primary, 1],
           [hPools.secondary, vPools.secondary, 1],
-          [hPools.all, vPools.all, 2],
           [hPools.all, vPools.all, 1]
         ]
       : difficulty === "hard"
@@ -606,9 +637,8 @@ function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty
             [hPools.all, vPools.all, 1]
           ]
         : [
-            [hPools.primary, vPools.primary, baseMinCommon],
+            [hPools.primary, vPools.primary, 2],
             [hPools.primary, vPools.primary, 1],
-            [hPools.secondary, vPools.secondary, 2],
             [hPools.secondary, vPools.secondary, 1],
             [hPools.all, vPools.all, 1]
           ];
@@ -629,8 +659,9 @@ function setDifficulty(newDiff) {
   });
 
   const activeStage = document.querySelector(".stage.active");
-  if (activeStage && activeStage.id === "stage-game" && state.horizontalCountry && state.verticalCountry) {
-    startNewRound();
+  if (activeStage && activeStage.id === "stage-game") {
+    const diffMeta = DIFFICULTY_META[newDiff];
+    setStatus(`Difficulty set to ${diffMeta.label}. It will apply when you start a New Grid.`);
   }
 }
 
@@ -876,9 +907,9 @@ function paintCountryPolygon(ctx, rings, gameCodes, w, h) {
     ctx.strokeStyle = "#f59e0b";
     ctx.lineWidth = 1.6;
   } else if (isHover) {
-    ctx.fillStyle = "rgba(16, 185, 129, 0.32)";
+    ctx.fillStyle = "rgba(16, 185, 129, 0.34)";
     ctx.strokeStyle = "#34d399";
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 1.6;
   } else if (hasLeague) {
     ctx.fillStyle = "#16243d";
     ctx.strokeStyle = "#2d466e";
@@ -1204,22 +1235,73 @@ function animateMapLoop(timestamp) {
 
 function getHoveredCountryCode(clientX, clientY) {
   const canvas = document.getElementById("world-canvas");
+  if (!canvas) return null;
   const rect = canvas.getBoundingClientRect();
   const x = clientX - rect.left;
   const y = clientY - rect.top;
 
-  let closestCode = null;
-  let closestDist = 18;
+  let closestPinCode = null;
+  let closestPinDist = 11;
 
   for (const [code, pt] of Object.entries(state.countryScreenCoords)) {
     if (!hasActiveLeague(code)) continue;
     const dist = Math.hypot(x - pt.x, y - pt.y);
-    if (dist <= closestDist) {
-      closestDist = dist;
-      closestCode = code;
+    if (dist <= closestPinDist) {
+      closestPinDist = dist;
+      closestPinCode = code;
     }
   }
-  return closestCode;
+  if (closestPinCode) return closestPinCode;
+
+  if (Array.isArray(state.worldGeoFeatures) && state.worldGeoFeatures.length > 0) {
+    const { w, h } = getLogicalCanvasSize(canvas);
+    const { lat, lng } = screenToLatLng(x, y, w, h);
+
+    for (const feat of state.worldGeoFeatures) {
+      if (!feat.gameCodes || feat.gameCodes.length === 0 || !feat.geometry) continue;
+      const geom = feat.geometry;
+      let hit = false;
+
+      if (geom.type === "Polygon") {
+        if (
+          isPolygonNearCountry(geom.coordinates, feat.gameCodes) &&
+          isPointInPolygonRings(lng, lat, geom.coordinates)
+        ) {
+          hit = true;
+        }
+      } else if (geom.type === "MultiPolygon") {
+        for (const poly of geom.coordinates) {
+          if (
+            isPolygonNearCountry(poly, feat.gameCodes) &&
+            isPointInPolygonRings(lng, lat, poly)
+          ) {
+            hit = true;
+            break;
+          }
+        }
+      }
+
+      if (hit) {
+        if (feat.gameCodes.length === 1) {
+          return feat.gameCodes[0];
+        }
+        let bestCode = feat.gameCodes[0];
+        let bestDist = Infinity;
+        for (const code of feat.gameCodes) {
+          const pt = state.countryScreenCoords[code];
+          if (!pt) continue;
+          const d = Math.hypot(x - pt.x, y - pt.y);
+          if (d < bestDist) {
+            bestDist = d;
+            bestCode = code;
+          }
+        }
+        return bestCode;
+      }
+    }
+  }
+
+  return null;
 }
 
 function toggleCountrySelection(code) {

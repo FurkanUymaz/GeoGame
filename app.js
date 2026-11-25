@@ -3,6 +3,7 @@ const state = {
     X: "Player 1",
     O: "Player 2"
   },
+  difficulty: "medium",
   horizontalCountry: null,
   verticalCountry: null,
   colClubs: [],
@@ -47,6 +48,12 @@ const REGION_PRESETS = {
   europe: { lat: 48.5, lng: 12.5, zoom: 3.5 },
   americas: { lat: -5.0, lng: -68.0, zoom: 1.85 },
   asia: { lat: 12.0, lng: 112.0, zoom: 2.15 }
+};
+
+const DIFFICULTY_META = {
+  easy: { label: "Easy", desc: "Famous Clubs" },
+  medium: { label: "Medium", desc: "Balanced Mix" },
+  hard: { label: "Hard", desc: "Lesser-Known Clubs" }
 };
 
 const ISO3_TO_GAME_CODES = {
@@ -207,6 +214,45 @@ function injectMapLayoutFixes() {
       color: #cbd5e1;
       font-variant-numeric: tabular-nums;
     }
+    .difficulty-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 3px;
+    }
+    .difficulty-btn {
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .difficulty-btn:hover {
+      color: #f8fafc;
+      background: rgba(148, 163, 184, 0.12);
+    }
+    .difficulty-btn.active[data-diff="easy"] {
+      background: rgba(16, 185, 129, 0.22);
+      color: #34d399;
+      box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.45);
+    }
+    .difficulty-btn.active[data-diff="medium"] {
+      background: rgba(56, 189, 248, 0.22);
+      color: #38bdf8;
+      box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.45);
+    }
+    .difficulty-btn.active[data-diff="hard"] {
+      background: rgba(245, 158, 11, 0.22);
+      color: #fbbf24;
+      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.45);
+    }
   `;
   document.head.appendChild(style);
 }
@@ -227,6 +273,11 @@ const normalizeText = (str) => {
     .trim();
 };
 
+function hasActiveLeague(code) {
+  const info = FOOTBALL_DB.countries[code];
+  return Boolean(info && Array.isArray(info.clubs) && info.clubs.length >= 3);
+}
+
 function resolveFeatureGameCodes(feature) {
   const props = feature.properties || {};
   const candidates = [
@@ -240,7 +291,8 @@ function resolveFeatureGameCodes(feature) {
     if (!rawIso) continue;
     const iso = String(rawIso).toUpperCase().trim();
     if (ISO3_TO_GAME_CODES[iso]) {
-      return ISO3_TO_GAME_CODES[iso];
+      const active = ISO3_TO_GAME_CODES[iso].filter((code) => hasActiveLeague(code));
+      if (active.length > 0) return active;
     }
   }
   const nameCandidates = [props.ADMIN, props.NAME, props.NAME_LONG, props.name];
@@ -248,10 +300,32 @@ function resolveFeatureGameCodes(feature) {
     if (!rawName) continue;
     const norm = normalizeText(rawName);
     if (NAME_TO_GAME_CODES[norm]) {
-      return NAME_TO_GAME_CODES[norm];
+      const active = NAME_TO_GAME_CODES[norm].filter((code) => hasActiveLeague(code));
+      if (active.length > 0) return active;
     }
   }
   return [];
+}
+
+function getPolygonRingCentroid(ring) {
+  if (!Array.isArray(ring) || ring.length === 0) return { lng: 0, lat: 0 };
+  let sumLng = 0;
+  let sumLat = 0;
+  for (const [lng, lat] of ring) {
+    sumLng += lng;
+    sumLat += lat;
+  }
+  return { lng: sumLng / ring.length, lat: sumLat / ring.length };
+}
+
+function isPolygonNearCountry(polyRings, gameCodes) {
+  if (!gameCodes || gameCodes.length === 0) return false;
+  const centroid = getPolygonRingCentroid(polyRings[0]);
+  return gameCodes.some((code) => {
+    const info = FOOTBALL_DB.countries[code];
+    if (!info) return false;
+    return Math.hypot(centroid.lng - info.lng, centroid.lat - info.lat) < 42;
+  });
 }
 
 async function loadWorldGeoJson() {
@@ -293,6 +367,34 @@ const playerIndex = FOOTBALL_DB.players.map((p) => ({
   clubs: new Set(p.clubs)
 }));
 
+const clubToCountryCode = new Map();
+for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
+  for (const club of info.clubs) {
+    clubToCountryCode.set(club, code);
+  }
+}
+
+const clubRenownScores = new Map();
+for (const p of playerIndex) {
+  const playerClubs = Array.from(p.clubs);
+  const countriesPlayed = new Set(
+    playerClubs.map((c) => clubToCountryCode.get(c)).filter(Boolean)
+  );
+  const crossCountryBonus = countriesPlayed.size > 1 ? countriesPlayed.size * 2 : 0;
+  for (const club of playerClubs) {
+    clubRenownScores.set(club, (clubRenownScores.get(club) || 0) + 1 + crossCountryBonus);
+  }
+}
+
+const countryRankedClubs = new Map();
+for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
+  const ranked = [...info.clubs].sort((a, b) => {
+    const scoreDiff = (clubRenownScores.get(b) || 0) - (clubRenownScores.get(a) || 0);
+    return scoreDiff !== 0 ? scoreDiff : a.localeCompare(b);
+  });
+  countryRankedClubs.set(code, ranked);
+}
+
 const pairCache = new Map();
 
 function getCommonPlayers(clubA, clubB) {
@@ -315,9 +417,42 @@ function shuffle(arr) {
   return copy;
 }
 
-function generateSolvableGrid(horizCode, vertCode) {
-  const horizClubs = shuffle(FOOTBALL_DB.countries[horizCode].clubs);
-  const vertClubs = shuffle(FOOTBALL_DB.countries[vertCode].clubs);
+function getTierClubPools(code, difficulty) {
+  const ranked = countryRankedClubs.get(code) || FOOTBALL_DB.countries[code].clubs;
+  const n = ranked.length;
+
+  if (difficulty === "easy") {
+    const primaryCount = Math.min(n, Math.max(6, Math.ceil(n * 0.42)));
+    const secondaryCount = Math.min(n, Math.max(primaryCount, Math.ceil(n * 0.72)));
+    return {
+      primary: ranked.slice(0, primaryCount),
+      secondary: ranked.slice(0, secondaryCount),
+      all: ranked
+    };
+  }
+
+  if (difficulty === "hard") {
+    const primaryCount = Math.min(n, Math.max(6, Math.ceil(n * 0.62)));
+    const secondaryCount = Math.min(n, Math.max(primaryCount, Math.ceil(n * 0.85)));
+    return {
+      primary: ranked.slice(n - primaryCount),
+      secondary: ranked.slice(n - secondaryCount),
+      all: [...ranked].reverse()
+    };
+  }
+
+  const midStart = Math.floor(n * 0.12);
+  const midEnd = Math.min(n, Math.max(midStart + 8, Math.ceil(n * 0.82)));
+  return {
+    primary: ranked.slice(midStart, midEnd),
+    secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.9))),
+    all: ranked
+  };
+}
+
+function searchGridInPools(horizPool, vertPool) {
+  const horizClubs = shuffle(horizPool);
+  const vertClubs = shuffle(vertPool);
 
   const validRowsForCol = new Map();
   for (const hClub of horizClubs) {
@@ -365,6 +500,65 @@ function generateSolvableGrid(horizCode, vertCode) {
   }
 
   return backtrack(0);
+}
+
+function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty) {
+  const hPools = getTierClubPools(horizCode, difficulty);
+  const vPools = getTierClubPools(vertCode, difficulty);
+
+  return (
+    searchGridInPools(hPools.primary, vPools.primary) ||
+    searchGridInPools(hPools.secondary, vPools.secondary) ||
+    searchGridInPools(hPools.all, vPools.all)
+  );
+}
+
+function setDifficulty(newDiff) {
+  if (!DIFFICULTY_META[newDiff]) return;
+  state.difficulty = newDiff;
+  document.querySelectorAll(".difficulty-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.diff === newDiff);
+  });
+
+  const activeStage = document.querySelector(".stage.active");
+  if (activeStage && activeStage.id === "stage-game" && state.horizontalCountry && state.verticalCountry) {
+    startNewRound();
+  }
+}
+
+function createDifficultySelectorElement() {
+  const wrapper = document.createElement("div");
+  wrapper.className = "difficulty-group";
+  wrapper.setAttribute("role", "group");
+  wrapper.setAttribute("aria-label", "Club Difficulty");
+
+  Object.entries(DIFFICULTY_META).forEach(([key, meta]) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "difficulty-btn";
+    btn.dataset.diff = key;
+    btn.textContent = meta.label;
+    btn.title = meta.desc;
+    if (key === state.difficulty) {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", () => setDifficulty(key));
+    wrapper.appendChild(btn);
+  });
+
+  return wrapper;
+}
+
+function mountDifficultyControls() {
+  const btnEnterGame = document.getElementById("btn-enter-game");
+  if (btnEnterGame && btnEnterGame.parentElement && !btnEnterGame.parentElement.querySelector(".difficulty-group")) {
+    btnEnterGame.parentElement.insertBefore(createDifficultySelectorElement(), btnEnterGame);
+  }
+
+  const btnNewGrid = document.getElementById("btn-new-grid");
+  if (btnNewGrid && btnNewGrid.parentElement && !btnNewGrid.parentElement.querySelector(".difficulty-group")) {
+    btnNewGrid.parentElement.insertBefore(createDifficultySelectorElement(), btnNewGrid);
+  }
 }
 
 function showStage(stageName) {
@@ -553,6 +747,44 @@ function traceGeoPolygon(ctx, rings, w, h) {
   });
 }
 
+function paintCountryPolygon(ctx, rings, gameCodes, w, h) {
+  const nearLeague = isPolygonNearCountry(rings, gameCodes);
+  const activeCodes = nearLeague ? gameCodes : [];
+
+  const isH = Boolean(state.horizontalCountry && activeCodes.includes(state.horizontalCountry));
+  const isV = Boolean(state.verticalCountry && activeCodes.includes(state.verticalCountry));
+  const isHover = Boolean(state.hoveredCountry && activeCodes.includes(state.hoveredCountry));
+  const hasLeague = activeCodes.length > 0;
+
+  ctx.beginPath();
+  traceGeoPolygon(ctx, rings, w, h);
+
+  if (isH) {
+    ctx.fillStyle = "rgba(56, 189, 248, 0.36)";
+    ctx.strokeStyle = "#38bdf8";
+    ctx.lineWidth = 1.6;
+  } else if (isV) {
+    ctx.fillStyle = "rgba(245, 158, 11, 0.36)";
+    ctx.strokeStyle = "#f59e0b";
+    ctx.lineWidth = 1.6;
+  } else if (isHover) {
+    ctx.fillStyle = "rgba(16, 185, 129, 0.32)";
+    ctx.strokeStyle = "#34d399";
+    ctx.lineWidth = 1.5;
+  } else if (hasLeague) {
+    ctx.fillStyle = "#16243d";
+    ctx.strokeStyle = "#2d466e";
+    ctx.lineWidth = 1.05;
+  } else {
+    ctx.fillStyle = "#0c1424";
+    ctx.strokeStyle = "#18243b";
+    ctx.lineWidth = 0.85;
+  }
+
+  ctx.fill("evenodd");
+  ctx.stroke();
+}
+
 function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor, fontSize = 10.5) {
   ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`;
   const metrics = ctx.measureText(text);
@@ -634,42 +866,13 @@ function drawWorldMap() {
       const geom = feat.geometry;
       if (!geom) return;
 
-      const isH = Boolean(state.horizontalCountry && feat.gameCodes.includes(state.horizontalCountry));
-      const isV = Boolean(state.verticalCountry && feat.gameCodes.includes(state.verticalCountry));
-      const isHover = Boolean(state.hoveredCountry && feat.gameCodes.includes(state.hoveredCountry));
-      const hasLeague = feat.gameCodes.length > 0;
-
-      ctx.beginPath();
       if (geom.type === "Polygon") {
-        traceGeoPolygon(ctx, geom.coordinates, w, h);
+        paintCountryPolygon(ctx, geom.coordinates, feat.gameCodes, w, h);
       } else if (geom.type === "MultiPolygon") {
-        geom.coordinates.forEach((poly) => traceGeoPolygon(ctx, poly, w, h));
+        geom.coordinates.forEach((poly) => {
+          paintCountryPolygon(ctx, poly, feat.gameCodes, w, h);
+        });
       }
-
-      if (isH) {
-        ctx.fillStyle = "rgba(56, 189, 248, 0.34)";
-        ctx.strokeStyle = "#38bdf8";
-        ctx.lineWidth = 1.6;
-      } else if (isV) {
-        ctx.fillStyle = "rgba(245, 158, 11, 0.34)";
-        ctx.strokeStyle = "#f59e0b";
-        ctx.lineWidth = 1.6;
-      } else if (isHover) {
-        ctx.fillStyle = "rgba(16, 185, 129, 0.32)";
-        ctx.strokeStyle = "#34d399";
-        ctx.lineWidth = 1.5;
-      } else if (hasLeague) {
-        ctx.fillStyle = "#192842";
-        ctx.strokeStyle = "#334b73";
-        ctx.lineWidth = 1.05;
-      } else {
-        ctx.fillStyle = "#111b2e";
-        ctx.strokeStyle = "#22324d";
-        ctx.lineWidth = 0.85;
-      }
-
-      ctx.fill("evenodd");
-      ctx.stroke();
     });
   } else if (Array.isArray(FOOTBALL_DB.continents)) {
     FOOTBALL_DB.continents.forEach((poly) => {
@@ -680,9 +883,9 @@ function drawWorldMap() {
         else ctx.lineTo(pt.x, pt.y);
       });
       ctx.closePath();
-      ctx.fillStyle = "#172338";
+      ctx.fillStyle = "#111b2e";
       ctx.fill();
-      ctx.strokeStyle = "#33486b";
+      ctx.strokeStyle = "#22324d";
       ctx.lineWidth = 1.2;
       ctx.stroke();
     });
@@ -714,7 +917,7 @@ function drawWorldMap() {
     ctx.restore();
   }
 
-  const entries = Object.entries(FOOTBALL_DB.countries);
+  const entries = Object.entries(FOOTBALL_DB.countries).filter(([code]) => hasActiveLeague(code));
   entries.sort(([codeA], [codeB]) => {
     const score = (c) => {
       if (c === state.hoveredCountry) return 4;
@@ -901,6 +1104,7 @@ function getHoveredCountryCode(clientX, clientY) {
   let closestDist = 18;
 
   for (const [code, pt] of Object.entries(state.countryScreenCoords)) {
+    if (!hasActiveLeague(code)) continue;
     const dist = Math.hypot(x - pt.x, y - pt.y);
     if (dist <= closestDist) {
       closestDist = dist;
@@ -911,7 +1115,7 @@ function getHoveredCountryCode(clientX, clientY) {
 }
 
 function toggleCountrySelection(code) {
-  if (!code || !FOOTBALL_DB.countries[code]) return;
+  if (!code || !hasActiveLeague(code)) return;
 
   if (!state.horizontalCountry) {
     state.horizontalCountry = code;
@@ -937,9 +1141,9 @@ function renderCountrySidebar() {
   if (!listEl) return;
 
   const query = normalizeText(searchInput ? searchInput.value : "");
-  const sortedEntries = Object.entries(FOOTBALL_DB.countries).sort((a, b) =>
-    a[1].name.localeCompare(b[1].name)
-  );
+  const sortedEntries = Object.entries(FOOTBALL_DB.countries)
+    .filter(([code]) => hasActiveLeague(code))
+    .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
   const filtered = sortedEntries.filter(([code, info]) => {
     if (!query) return true;
@@ -1043,11 +1247,12 @@ function startNewRound() {
 
   const hCountry = FOOTBALL_DB.countries[state.horizontalCountry];
   const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
+  const diffMeta = DIFFICULTY_META[state.difficulty] || DIFFICULTY_META.medium;
 
   document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
-  document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league})`;
+  document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}`;
 
-  const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry);
+  const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry, state.difficulty);
   if (!grid) {
     setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
     return;
@@ -1071,7 +1276,7 @@ function startNewRound() {
   });
 
   updateTurnBanner();
-  setStatus(`${state.players.X} (X) starts. Pick a cell.`);
+  setStatus(`[${diffMeta.label}] ${state.players.X} (X) starts. Pick a cell.`);
 }
 
 function updateTurnBanner() {
@@ -1317,6 +1522,7 @@ function handleWin(mark, winLine) {
 
 document.addEventListener("DOMContentLoaded", () => {
   injectMapLayoutFixes();
+  mountDifficultyControls();
   loadWorldGeoJson();
   renderCountrySidebar();
   syncCanvasResolution();

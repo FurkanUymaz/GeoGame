@@ -1,5 +1,6 @@
 import csv
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -56,16 +57,100 @@ COUNTRY_COORDS = {
     "DZ1": ("ALG", "Algeria", "Ligue 1", 28.0, 1.6)
 }
 
+CLUB_NAME_OVERRIDES = {
+    'Футбольный клуб "Локомотив" Москва': "Lokomotiv Moscow",
+    "AO FK Zenit Sankt-Peterburg": "Zenit St. Petersburg",
+    "Panthessalonikios Athlitikos Omilos Konstantinoupoliton": "PAOK",
+    "Olympiakos Syndesmos Filathlon Peiraios": "Olympiacos",
+    "Athlitiki Enosi Konstantinoupoleos": "AEK Athens",
+    "Panathinaikos Athlitikos Omilos": "Panathinaikos",
+    "APS Atromitos Athinon": "Atromitos",
+    "APO Levadiakos Football Club": "Levadiakos",
+    "Athlitiki Enosi Larisas": "AE Larisa",
+    "Omilos Filathlon Irakliou FC": "OFI Crete",
+    "A.G.S Asteras Tripolis": "Asteras Tripolis",
+    "Volou Neos Podosferikos Syllogos": "Volos NPS",
+    "Athlitiki Enosi Kifisias": "AE Kifisia",
+    "Beşiktaş Jimnastik Kulübü": "Beşiktaş",
+    "Gençlerbirliği Spor Kulübü": "Gençlerbirliği",
+    "Associazione Sportiva Roma": "AS Roma",
+    "Società Sportiva Lazio S.p.A.": "SS Lazio",
+    "Bologna Football Club 1909": "Bologna FC",
+    "1. Fußballclub Heidenheim 1846": "1. FC Heidenheim",
+    "Sportklub Puntigamer Sturm Graz": "Sturm Graz",
+    "Fußballclub Red Bull Salzburg": "Red Bull Salzburg",
+    "Sportclub Rheindorf Altach": "SCR Altach",
+    "Football Club Lausanne-Sport": "Lausanne-Sport",
+    "Foundation Coorperation Hana Financial Group Inc. Football Club": "Daejeon Hana Citizen",
+    "Jeju SK Football Club": "Jeju United",
+    "Ulsan Hyundai Football Club": "Ulsan HD",
+    "Morski Związkowy Klub Sportowy Arka Gdynia Spółka Akcyjna": "Arka Gdynia",
+    "Termalica Bruk-Bet Nieciecza Klub Sportowy": "Bruk-Bet Termalica",
+    "Motor Lublin Spółka Akcyjna": "Motor Lublin",
+    "GKS GieKSa Katowice Spółka Akcyjna": "GKS Katowice",
+    "Asociación de Fomento Deportivo Riestra Barrio Colón": "Deportivo Riestra",
+    "Racing Club Asociación Civil de Avellaneda": "Racing Club",
+    "Club Atlético Independiente de Avellaneda": "Independiente",
+    "Club Atlético San Lorenzo de Almagro": "San Lorenzo",
+    "Idrottsföreningen Kamraterna Göteborg": "IFK Göteborg",
+    "Idrottsföreningen Brommapojkarna": "IF Brommapojkarna",
+    "Idrottsföreningen Elfsborg": "IF Elfsborg",
+    "Mjällby Almänna Idrottsförening": "Mjällby AIF",
+    "Allmänna Idrottsklubben": "AIK",
+    "Göteborgs Atlet- och Idrottssällskap": "GAIS",
+    "Club Internacional de Fútbol Miami": "Inter Miami CF",
+    "Al-Hilal Saudi Football Club": "Al-Hilal",
+    "Al-Ahli Saudi Football Club": "Al-Ahli",
+    "Al-Nassr Football Club": "Al-Nassr",
+    "Al-Ittihad Football Club": "Al-Ittihad",
+    "Al-Ettifaq Football Club": "Al-Ettifaq",
+    "Al-Taawoun Football Club": "Al-Taawoun",
+    "Al-Qadsiah Saudi Football Club": "Al-Qadsiah",
+    "Al-Riyadh Saudi Club": "Al-Riyadh",
+    "Al-Khaleej Club (Saihat)": "Al-Khaleej"
+}
+
 FALLBACK_CONTINENTS = [
     [[-168, 66], [-140, 70], [-125, 70], [-95, 72], [-80, 65], [-65, 53], [-55, 47], [-70, 41], [-81, 25], [-97, 26], [-88, 18], [-84, 10], [-78, 8], [-92, 15], [-105, 20], [-117, 32], [-124, 48], [-136, 58], [-152, 60], [-168, 66]],
+    [[-52, 60], [-44, 60], [-20, 70], [-22, 82], [-58, 82], [-68, 76], [-52, 60]],
     [[-80, 10], [-62, 10], [-50, 0], [-35, -6], [-38, -15], [-48, -28], [-58, -38], [-66, -54], [-74, -52], [-72, -36], [-71, -18], [-81, -5], [-80, 10]],
+    [[-10, 51], [-6, 58], [0, 58], [2, 51], [-5, 50], [-10, 51]],
     [[-10, 36], [-9, 43], [-4, 48], [2, 51], [8, 54], [10, 58], [5, 61], [15, 69], [28, 71], [40, 67], [55, 70], [60, 55], [50, 45], [40, 43], [28, 41], [24, 37], [16, 38], [12, 44], [5, 43], [0, 39], [-10, 36]],
     [[-17, 15], [-13, 28], [-6, 35], [10, 37], [25, 32], [33, 31], [43, 12], [51, 12], [41, -2], [39, -15], [33, -26], [20, -35], [15, -28], [12, -6], [9, 4], [2, 6], [-8, 5], [-17, 15]],
+    [[44, -25], [49, -13], [50, -24], [44, -25]],
     [[28, 41], [40, 43], [52, 38], [60, 55], [80, 72], [115, 73], [145, 70], [175, 66], [160, 55], [142, 52], [135, 35], [122, 31], [118, 22], [108, 16], [103, 2], [98, 16], [88, 22], [78, 8], [72, 20], [62, 25], [56, 26], [48, 30], [36, 36], [28, 41]],
-    [[114, -22], [122, -17], [131, -12], [142, -11], [150, -22], [153, -28], [148, -38], [138, -35], [130, -32], [115, -34], [114, -22]]
+    [[130, 31], [141, 35], [145, 44], [140, 43], [136, 36], [130, 31]],
+    [[96, 5], [106, -6], [118, -8], [128, -4], [118, 4], [108, 2], [96, 5]],
+    [[114, -22], [122, -17], [131, -12], [142, -11], [150, -22], [153, -28], [148, -38], [138, -35], [130, -32], [115, -34], [114, -22]],
+    [[167, -46], [174, -41], [178, -37], [173, -35], [170, -43], [167, -46]]
 ]
 
+CONTROL_CHARS_RE = re.compile(r"[\u200b-\u200f\ufeff]")
+DEFUNCT_TAG_RE = re.compile(r"\s*\(\s*-?\s*\d{4}(?:\s*-\s*\d{4})?\s*\)")
+
+def sanitize_text(value):
+    cleaned = CONTROL_CHARS_RE.sub("", value or "")
+    return " ".join(cleaned.split()).strip()
+
+def clean_club_name(raw_name):
+    normalized = sanitize_text(raw_name)
+    if normalized in CLUB_NAME_OVERRIDES:
+        return CLUB_NAME_OVERRIDES[normalized]
+    stripped = DEFUNCT_TAG_RE.sub("", normalized).strip()
+    if stripped in CLUB_NAME_OVERRIDES:
+        return CLUB_NAME_OVERRIDES[stripped]
+    return stripped
+
 def build_full_database(clubs_csv, appearances_csv, players_csv, competitions_csv, output_js):
+    comp_confederations = {}
+    if competitions_csv.exists():
+        with open(competitions_csv, mode="r", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                comp_id = sanitize_text(row.get("competition_id", ""))
+                confed = sanitize_text(row.get("confederation", ""))
+                if comp_id and confed:
+                    comp_confederations[comp_id] = confed.upper()
+
     countries_dict = {}
     club_id_to_info = {}
 
@@ -74,20 +159,21 @@ def build_full_database(clubs_csv, appearances_csv, players_csv, competitions_cs
             countries_dict[code] = {
                 "name": name,
                 "league": league,
+                "confederation": comp_confederations.get(comp_id, ""),
                 "lat": lat,
                 "lng": lng,
                 "clubs": []
             }
+        elif not countries_dict[code]["confederation"] and comp_id in comp_confederations:
+            countries_dict[code]["confederation"] = comp_confederations[comp_id]
 
     with open(clubs_csv, mode="r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            comp_id = row.get("domestic_competition_id", "").strip()
-            club_id = row.get("club_id", "").strip()
-            club_name = row.get("name", "").strip()
-            if not club_id or not club_name:
-                continue
-
-            if comp_id not in COUNTRY_COORDS:
+            comp_id = sanitize_text(row.get("domestic_competition_id", ""))
+            club_id = sanitize_text(row.get("club_id", ""))
+            raw_club_name = row.get("pretty_name") or row.get("name") or ""
+            club_name = clean_club_name(raw_club_name)
+            if not club_id or not club_name or comp_id not in COUNTRY_COORDS:
                 continue
 
             code = COUNTRY_COORDS[comp_id][0]
@@ -96,29 +182,30 @@ def build_full_database(clubs_csv, appearances_csv, players_csv, competitions_cs
                 countries_dict[code]["clubs"].append(club_name)
 
     countries_dict = {
-        code: info for code, info in countries_dict.items()
+        code: {**info, "clubs": sorted(info["clubs"])}
+        for code, info in countries_dict.items()
         if len(info["clubs"]) >= 3
     }
 
     player_id_to_name = {}
     with open(players_csv, mode="r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            pid = row.get("player_id", "").strip()
-            pname = row.get("name", "").strip()
+            pid = sanitize_text(row.get("player_id", ""))
+            pname = sanitize_text(row.get("name", ""))
             if pid and pname:
                 player_id_to_name[pid] = pname
 
     player_clubs = defaultdict(set)
     with open(appearances_csv, mode="r", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            pid = row.get("player_id", "").strip()
-            cid = row.get("player_club_id", "").strip()
+            pid = sanitize_text(row.get("player_id", ""))
+            cid = sanitize_text(row.get("player_club_id", ""))
             if cid in club_id_to_info and pid in player_id_to_name:
                 player_clubs[player_id_to_name[pid]].add(club_id_to_info[cid][1])
 
     players_list = [
         {"name": pname, "clubs": sorted(list(clubs))}
-        for pname, clubs in player_clubs.items()
+        for pname, clubs in sorted(player_clubs.items())
         if len(clubs) >= 2
     ]
 
@@ -130,7 +217,7 @@ def build_full_database(clubs_csv, appearances_csv, players_csv, competitions_cs
             if marker in raw_txt:
                 try:
                     existing = json.loads(raw_txt.split(marker, 1)[1].strip().rstrip(";"))
-                    if existing.get("continents"):
+                    if existing.get("continents") and len(existing["continents"]) > len(FALLBACK_CONTINENTS):
                         continents = existing["continents"]
                         break
                 except Exception:

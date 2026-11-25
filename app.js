@@ -15,6 +15,8 @@ const state = {
   activeCell: null,
   hoveredCountry: null,
   countryScreenCoords: {},
+  autocompleteMatches: [],
+  highlightedIndex: -1,
   mapView: {
     zoom: 1,
     targetZoom: 1,
@@ -30,8 +32,11 @@ const state = {
     dragStartY: 0,
     startOffsetX: 0,
     startOffsetY: 0,
+    pinchStartDist: 0,
+    pinchStartZoom: 1,
     activeRegion: "world",
-    pulsePhase: 0
+    pulsePhase: 0,
+    needsRender: true
   }
 };
 
@@ -43,7 +48,8 @@ const REGION_PRESETS = {
 };
 
 const normalizeText = (str) => {
-  return str
+  return String(str || "")
+    .replace(/[\u200b-\u200f\ufeff]/g, "")
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
@@ -53,6 +59,7 @@ const normalizeText = (str) => {
     .replace(/ş/g, "s")
     .replace(/ö/g, "o")
     .replace(/ç/g, "c")
+    .replace(/\s+/g, " ")
     .trim();
 };
 
@@ -62,8 +69,17 @@ const playerIndex = FOOTBALL_DB.players.map((p) => ({
   clubs: new Set(p.clubs)
 }));
 
+const pairCache = new Map();
+
 function getCommonPlayers(clubA, clubB) {
-  return playerIndex.filter((p) => p.clubs.has(clubA) && p.clubs.has(clubB));
+  if (clubA === clubB) return [];
+  const key = clubA < clubB ? `${clubA}|||${clubB}` : `${clubB}|||${clubA}`;
+  if (pairCache.has(key)) {
+    return pairCache.get(key);
+  }
+  const matches = playerIndex.filter((p) => p.clubs.has(clubA) && p.clubs.has(clubB));
+  pairCache.set(key, matches);
+  return matches;
 }
 
 function shuffle(arr) {
@@ -76,33 +92,55 @@ function shuffle(arr) {
 }
 
 function generateSolvableGrid(horizCode, vertCode) {
-  const horizClubs = FOOTBALL_DB.countries[horizCode].clubs;
-  const vertClubs = FOOTBALL_DB.countries[vertCode].clubs;
+  const horizClubs = shuffle(FOOTBALL_DB.countries[horizCode].clubs);
+  const vertClubs = shuffle(FOOTBALL_DB.countries[vertCode].clubs);
 
-  for (let attempt = 0; attempt < 1500; attempt++) {
-    const pickedCols = shuffle(horizClubs).slice(0, 3);
-    const pickedRows = shuffle(vertClubs).slice(0, 3);
-
-    let allCellsValid = true;
-    for (let r = 0; r < 3; r++) {
-      for (let c = 0; c < 3; c++) {
-        if (pickedRows[r] === pickedCols[c]) {
-          allCellsValid = false;
-          break;
-        }
-        if (getCommonPlayers(pickedRows[r], pickedCols[c]).length === 0) {
-          allCellsValid = false;
-          break;
-        }
-      }
-      if (!allCellsValid) break;
-    }
-
-    if (allCellsValid) {
-      return { cols: pickedCols, rows: pickedRows };
+  const validRowsForCol = new Map();
+  for (const hClub of horizClubs) {
+    const validRows = vertClubs.filter((vClub) => getCommonPlayers(hClub, vClub).length > 0);
+    if (validRows.length >= 3) {
+      validRowsForCol.set(hClub, validRows);
     }
   }
-  return null;
+
+  const candidateCols = horizClubs.filter((c) => validRowsForCol.has(c));
+  if (candidateCols.length < 3) return null;
+
+  const pickedCols = [];
+  const rowCounts = new Map();
+
+  function backtrack(startIdx) {
+    if (pickedCols.length === 3) {
+      const viableRows = vertClubs.filter((r) => (rowCounts.get(r) || 0) === 3);
+      if (viableRows.length >= 3) {
+        return {
+          cols: [...pickedCols],
+          rows: shuffle(viableRows).slice(0, 3)
+        };
+      }
+      return null;
+    }
+
+    for (let i = startIdx; i <= candidateCols.length - (3 - pickedCols.length); i++) {
+      const colClub = candidateCols[i];
+      const rows = validRowsForCol.get(colClub);
+      pickedCols.push(colClub);
+      for (const r of rows) {
+        rowCounts.set(r, (rowCounts.get(r) || 0) + 1);
+      }
+
+      const result = backtrack(i + 1);
+      if (result) return result;
+
+      pickedCols.pop();
+      for (const r of rows) {
+        rowCounts.set(r, rowCounts.get(r) - 1);
+      }
+    }
+    return null;
+  }
+
+  return backtrack(0);
 }
 
 function showStage(stageName) {
@@ -120,6 +158,8 @@ function showStage(stageName) {
   if (stageName === "map") {
     btnBackNames.classList.remove("hidden");
     renderCountrySidebar();
+    syncCanvasResolution();
+    state.mapView.needsRender = true;
     drawWorldMap();
   } else if (stageName === "game") {
     btnBackNames.classList.remove("hidden");
@@ -130,10 +170,50 @@ function showStage(stageName) {
   updateTurnBanner();
 }
 
+function getLogicalCanvasSize(canvas) {
+  const dpr = canvas._dpr || 1;
+  return {
+    w: canvas.width / dpr,
+    h: canvas.height / dpr
+  };
+}
+
+function syncCanvasResolution() {
+  const canvas = document.getElementById("world-canvas");
+  if (!canvas) return;
+  const rect = canvas.getBoundingClientRect();
+  if (rect.width === 0 || rect.height === 0) return;
+
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const targetW = Math.round(rect.width * dpr);
+  const targetH = Math.round(rect.height * dpr);
+
+  if (canvas.width !== targetW || canvas.height !== targetH || canvas._dpr !== dpr) {
+    canvas.width = targetW;
+    canvas.height = targetH;
+    canvas._dpr = dpr;
+    state.mapView.needsRender = true;
+  }
+}
+
 function latLngToBase(lat, lng, width, height) {
   const x = ((lng + 180) / 360) * width;
   const y = ((90 - lat) / 180) * height;
   return { x, y };
+}
+
+function screenToLatLng(screenX, screenY, width, height) {
+  const cx = width * 0.5;
+  const cy = height * 0.5;
+  const z = state.mapView.zoom;
+  const baseX = (screenX - cx - state.mapView.offsetX) / z + cx;
+  const baseY = (screenY - cy - state.mapView.offsetY) / z + cy;
+  const lng = (baseX / width) * 360 - 180;
+  const lat = 90 - (baseY / height) * 180;
+  return {
+    lat: Math.max(-90, Math.min(90, lat)),
+    lng: Math.max(-180, Math.min(180, lng))
+  };
 }
 
 function clampMapOffsets(offsetX, offsetY, zoom, width, height) {
@@ -162,8 +242,7 @@ function projectPoint(lat, lng, width, height) {
 function setMapZoomAt(newZoom, pivotX, pivotY, smooth = true) {
   const canvas = document.getElementById("world-canvas");
   if (!canvas) return;
-  const w = canvas.width;
-  const h = canvas.height;
+  const { w, h } = getLogicalCanvasSize(canvas);
   const mv = state.mapView;
 
   const clampedZoom = Math.max(mv.minZoom, Math.min(mv.maxZoom, newZoom));
@@ -191,6 +270,7 @@ function setMapZoomAt(newZoom, pivotX, pivotY, smooth = true) {
     mv.offsetY = clamped.y;
   }
 
+  mv.needsRender = true;
   updateZoomBadge();
   updateRegionButtons("");
 }
@@ -198,8 +278,7 @@ function setMapZoomAt(newZoom, pivotX, pivotY, smooth = true) {
 function focusOnCoords(lat, lng, targetZoom) {
   const canvas = document.getElementById("world-canvas");
   if (!canvas) return;
-  const w = canvas.width;
-  const h = canvas.height;
+  const { w, h } = getLogicalCanvasSize(canvas);
   const mv = state.mapView;
 
   const z = Math.max(mv.minZoom, Math.min(mv.maxZoom, targetZoom));
@@ -214,6 +293,7 @@ function focusOnCoords(lat, lng, targetZoom) {
   mv.targetZoom = z;
   mv.targetOffsetX = clamped.x;
   mv.targetOffsetY = clamped.y;
+  mv.needsRender = true;
   updateZoomBadge();
 }
 
@@ -268,11 +348,15 @@ function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor) {
 function drawWorldMap() {
   const canvas = document.getElementById("world-canvas");
   if (!canvas) return;
+  syncCanvasResolution();
+
   const ctx = canvas.getContext("2d");
-  const w = canvas.width;
-  const h = canvas.height;
+  const dpr = canvas._dpr || 1;
+  const { w, h } = getLogicalCanvasSize(canvas);
   const z = state.mapView.zoom;
 
+  ctx.save();
+  ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, w, h);
 
   const oceanGrad = ctx.createRadialGradient(w * 0.5, h * 0.45, 40, w * 0.5, h * 0.5, w * 0.72);
@@ -287,7 +371,7 @@ function drawWorldMap() {
   for (let lon = -180; lon <= 180; lon += gridStep) {
     const p1 = projectPoint(90, lon, w, h);
     const p2 = projectPoint(-90, lon, w, h);
-    ctx.strokeStyle = lon === 0 ? "rgba(56, 189, 248, 0.14)" : "rgba(148, 163, 184, 0.08)";
+    ctx.strokeStyle = lon === 0 ? "rgba(56, 189, 248, 0.16)" : "rgba(148, 163, 184, 0.08)";
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
@@ -296,7 +380,7 @@ function drawWorldMap() {
   for (let lat = -60; lat <= 75; lat += gridStep) {
     const p1 = projectPoint(lat, -180, w, h);
     const p2 = projectPoint(lat, 180, w, h);
-    ctx.strokeStyle = lat === 0 ? "rgba(16, 185, 129, 0.16)" : "rgba(148, 163, 184, 0.08)";
+    ctx.strokeStyle = lat === 0 ? "rgba(16, 185, 129, 0.18)" : "rgba(148, 163, 184, 0.08)";
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
@@ -444,6 +528,9 @@ function drawWorldMap() {
       drawRoundedLabel(ctx, labelText, pt.x, labelY, bg, border, txtCol);
     }
   });
+
+  ctx.restore();
+  state.mapView.needsRender = false;
 }
 
 function animateMapLoop(timestamp) {
@@ -457,17 +544,24 @@ function animateMapLoop(timestamp) {
     const dx = mv.targetOffsetX - mv.offsetX;
     const dy = mv.targetOffsetY - mv.offsetY;
 
-    if (Math.abs(dz) > 0.0005 || Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05) {
+    const isInterpolating = Math.abs(dz) > 0.0005 || Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05;
+    const hasPulse = Boolean(state.horizontalCountry || state.verticalCountry || state.hoveredCountry);
+
+    if (isInterpolating) {
       mv.zoom += dz * lerp;
       mv.offsetX += dx * lerp;
       mv.offsetY += dy * lerp;
-    } else {
+      mv.needsRender = true;
+    } else if (mv.zoom !== mv.targetZoom || mv.offsetX !== mv.targetOffsetX || mv.offsetY !== mv.targetOffsetY) {
       mv.zoom = mv.targetZoom;
       mv.offsetX = mv.targetOffsetX;
       mv.offsetY = mv.targetOffsetY;
+      mv.needsRender = true;
     }
 
-    drawWorldMap();
+    if (mv.needsRender || hasPulse) {
+      drawWorldMap();
+    }
   }
 
   requestAnimationFrame(animateMapLoop);
@@ -476,10 +570,8 @@ function animateMapLoop(timestamp) {
 function getHoveredCountryCode(clientX, clientY) {
   const canvas = document.getElementById("world-canvas");
   const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-  const x = (clientX - rect.left) * scaleX;
-  const y = (clientY - rect.top) * scaleY;
+  const x = clientX - rect.left;
+  const y = clientY - rect.top;
 
   let closestCode = null;
   let closestDist = 20;
@@ -510,6 +602,7 @@ function toggleCountrySelection(code) {
     state.verticalCountry = null;
   }
 
+  state.mapView.needsRender = true;
   updateCountrySelectionUI();
 }
 
@@ -529,6 +622,7 @@ function renderCountrySidebar() {
     return (
       normalizeText(info.name).includes(query) ||
       normalizeText(info.league).includes(query) ||
+      normalizeText(info.confederation || "").includes(query) ||
       code.toLowerCase().includes(query)
     );
   });
@@ -561,11 +655,13 @@ function renderCountrySidebar() {
 
     li.addEventListener("mouseenter", () => {
       state.hoveredCountry = code;
+      state.mapView.needsRender = true;
     });
 
     li.addEventListener("mouseleave", () => {
       if (state.hoveredCountry === code) {
         state.hoveredCountry = null;
+        state.mapView.needsRender = true;
       }
     });
 
@@ -623,7 +719,7 @@ function startNewRound() {
 
   const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry);
   if (!grid) {
-    setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair or New Grid.");
+    setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
     return;
   }
 
@@ -695,9 +791,26 @@ function setStatus(msg) {
   document.getElementById("status-message").textContent = msg;
 }
 
+function inspectCellSolutions(r, c) {
+  const rowClub = state.rowClubs[r];
+  const colClub = state.colClubs[c];
+  if (!rowClub || !colClub) return;
+
+  const valid = getCommonPlayers(rowClub, colClub);
+  const sample = valid.slice(0, 6).map((p) => p.name).join(", ");
+  const extra = valid.length > 6 ? ` (+${valid.length - 6} more)` : "";
+  setStatus(`${rowClub} × ${colClub}: ${sample}${extra}`);
+}
+
 function openGuessModal(r, c) {
-  if (state.gameOver || state.board[r][c] !== null) return;
+  if (state.gameOver) {
+    inspectCellSolutions(r, c);
+    return;
+  }
+  if (state.board[r][c] !== null) return;
   state.activeCell = { r, c };
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
 
   const rowClub = state.rowClubs[r];
   const colClub = state.colClubs[c];
@@ -716,25 +829,26 @@ function openGuessModal(r, c) {
 function closeGuessModal() {
   document.getElementById("guess-modal").classList.add("hidden");
   state.activeCell = null;
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
 }
 
-function handleAutocomplete() {
+function renderAutocompleteItems() {
   const input = document.getElementById("player-input");
   const list = document.getElementById("autocomplete-list");
-  const query = normalizeText(input.value);
   list.innerHTML = "";
 
-  if (query.length < 2) return;
-
-  const matches = playerIndex
-    .filter((p) => p.normalized.includes(query))
-    .slice(0, 8);
-
-  matches.forEach((p) => {
+  state.autocompleteMatches.forEach((p, idx) => {
     const li = document.createElement("li");
     li.textContent = p.name;
+    if (idx === state.highlightedIndex) {
+      li.style.background = "rgba(56, 189, 248, 0.22)";
+      li.style.color = "#f8fafc";
+    }
     li.addEventListener("click", () => {
       input.value = p.name;
+      state.autocompleteMatches = [];
+      state.highlightedIndex = -1;
       list.innerHTML = "";
       submitGuess();
     });
@@ -742,29 +856,53 @@ function handleAutocomplete() {
   });
 }
 
+function handleAutocomplete() {
+  const input = document.getElementById("player-input");
+  const list = document.getElementById("autocomplete-list");
+  const query = normalizeText(input.value);
+  state.autocompleteMatches = [];
+  state.highlightedIndex = -1;
+  list.innerHTML = "";
+
+  if (query.length < 2) return;
+
+  state.autocompleteMatches = playerIndex
+    .filter((p) => p.normalized.includes(query))
+    .slice(0, 8);
+
+  if (state.autocompleteMatches.length === 1) {
+    state.highlightedIndex = 0;
+  }
+
+  renderAutocompleteItems();
+}
+
 function submitGuess() {
   if (!state.activeCell) return;
   const { r, c } = state.activeCell;
-  const rawInput = document.getElementById("player-input").value;
-  const normalizedGuess = normalizeText(rawInput);
+  const input = document.getElementById("player-input");
   const feedback = document.getElementById("modal-feedback");
 
+  if (state.highlightedIndex >= 0 && state.autocompleteMatches[state.highlightedIndex]) {
+    input.value = state.autocompleteMatches[state.highlightedIndex].name;
+    state.autocompleteMatches = [];
+    state.highlightedIndex = -1;
+    document.getElementById("autocomplete-list").innerHTML = "";
+  }
+
+  const normalizedGuess = normalizeText(input.value);
   if (!normalizedGuess) return;
 
   const matchedPlayer = playerIndex.find((p) => p.normalized === normalizedGuess);
 
   if (!matchedPlayer) {
-    feedback.textContent = "Player not found. Turn passes!";
+    feedback.textContent = "Player not found in database. Pick a name from suggestions.";
     feedback.className = "modal-feedback error";
-    setTimeout(() => {
-      closeGuessModal();
-      switchTurn("Player not found. Turn passed.");
-    }, 850);
     return;
   }
 
   if (state.usedPlayers.has(matchedPlayer.name)) {
-    feedback.textContent = `${matchedPlayer.name} already used.`;
+    feedback.textContent = `${matchedPlayer.name} already used in this round.`;
     feedback.className = "modal-feedback error";
     return;
   }
@@ -791,7 +929,7 @@ function submitGuess() {
     } else if (isBoardFull()) {
       state.gameOver = true;
       document.getElementById("turn-indicator").textContent = "Draw";
-      setStatus("Board full. Match drawn!");
+      setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
     } else {
       switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
     }
@@ -850,13 +988,22 @@ function handleWin(mark, winLine) {
   const banner = document.getElementById("turn-indicator");
   banner.textContent = `${winnerName} (${mark}) Wins!`;
   banner.className = "turn-banner";
-  setStatus(`${winnerName} won the round!`);
+  setStatus(`${winnerName} won the round! Click any cell to inspect valid players.`);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCountrySidebar();
+  syncCanvasResolution();
   drawWorldMap();
   requestAnimationFrame(animateMapLoop);
+
+  window.addEventListener("resize", () => {
+    syncCanvasResolution();
+    const activeStage = document.querySelector(".stage.active");
+    if (activeStage && activeStage.id === "stage-map") {
+      drawWorldMap();
+    }
+  });
 
   document.getElementById("btn-start-map").addEventListener("click", () => {
     const px = document.getElementById("input-player-x").value.trim() || "Player 1";
@@ -881,6 +1028,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-clear-countries").addEventListener("click", () => {
     state.horizontalCountry = null;
     state.verticalCountry = null;
+    state.mapView.needsRender = true;
     updateCountrySelectionUI();
   });
 
@@ -897,11 +1045,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const mv = state.mapView;
 
   document.getElementById("btn-zoom-in").addEventListener("click", () => {
-    setMapZoomAt(mv.targetZoom * 1.4, canvas.width * 0.5, canvas.height * 0.5, true);
+    const { w, h } = getLogicalCanvasSize(canvas);
+    setMapZoomAt(mv.targetZoom * 1.4, w * 0.5, h * 0.5, true);
   });
 
   document.getElementById("btn-zoom-out").addEventListener("click", () => {
-    setMapZoomAt(mv.targetZoom / 1.4, canvas.width * 0.5, canvas.height * 0.5, true);
+    const { w, h } = getLogicalCanvasSize(canvas);
+    setMapZoomAt(mv.targetZoom / 1.4, w * 0.5, h * 0.5, true);
   });
 
   document.getElementById("btn-zoom-reset").addEventListener("click", () => {
@@ -925,13 +1075,18 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.addEventListener("wheel", (e) => {
     e.preventDefault();
     const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    const pivotX = (e.clientX - rect.left) * scaleX;
-    const pivotY = (e.clientY - rect.top) * scaleY;
+    const pivotX = e.clientX - rect.left;
+    const pivotY = e.clientY - rect.top;
     const factor = e.deltaY < 0 ? 1.25 : 0.8;
     setMapZoomAt(mv.targetZoom * factor, pivotX, pivotY, true);
   }, { passive: false });
+
+  canvas.addEventListener("dblclick", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const pivotX = e.clientX - rect.left;
+    const pivotY = e.clientY - rect.top;
+    setMapZoomAt(mv.targetZoom * 1.65, pivotX, pivotY, true);
+  });
 
   canvas.addEventListener("mousedown", (e) => {
     if (e.button !== 0) return;
@@ -952,17 +1107,16 @@ document.addEventListener("DOMContentLoaded", () => {
       mv.hasMoved = true;
     }
 
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    const rawOx = mv.startOffsetX + dxScreen * scaleX;
-    const rawOy = mv.startOffsetY + dyScreen * scaleY;
-    const clamped = clampMapOffsets(rawOx, rawOy, mv.targetZoom, canvas.width, canvas.height);
+    const { w, h } = getLogicalCanvasSize(canvas);
+    const rawOx = mv.startOffsetX + dxScreen;
+    const rawOy = mv.startOffsetY + dyScreen;
+    const clamped = clampMapOffsets(rawOx, rawOy, mv.targetZoom, w, h);
 
     mv.targetOffsetX = clamped.x;
     mv.targetOffsetY = clamped.y;
     mv.offsetX = clamped.x;
     mv.offsetY = clamped.y;
+    mv.needsRender = true;
     updateRegionButtons("");
   });
 
@@ -972,6 +1126,54 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.classList.remove("dragging");
   });
 
+  canvas.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+      const t = e.touches[0];
+      mv.isDragging = true;
+      mv.hasMoved = false;
+      mv.dragStartX = t.clientX;
+      mv.dragStartY = t.clientY;
+      mv.startOffsetX = mv.targetOffsetX;
+      mv.startOffsetY = mv.targetOffsetY;
+    } else if (e.touches.length === 2) {
+      mv.isDragging = false;
+      const [t1, t2] = e.touches;
+      mv.pinchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      mv.pinchStartZoom = mv.targetZoom;
+    }
+  }, { passive: true });
+
+  canvas.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 1 && mv.isDragging) {
+      const t = e.touches[0];
+      const dxScreen = t.clientX - mv.dragStartX;
+      const dyScreen = t.clientY - mv.dragStartY;
+      if (Math.hypot(dxScreen, dyScreen) > 4) {
+        mv.hasMoved = true;
+      }
+      const { w, h } = getLogicalCanvasSize(canvas);
+      const clamped = clampMapOffsets(mv.startOffsetX + dxScreen, mv.startOffsetY + dyScreen, mv.targetZoom, w, h);
+      mv.targetOffsetX = clamped.x;
+      mv.targetOffsetY = clamped.y;
+      mv.offsetX = clamped.x;
+      mv.offsetY = clamped.y;
+      mv.needsRender = true;
+    } else if (e.touches.length === 2 && mv.pinchStartDist > 0) {
+      e.preventDefault();
+      const [t1, t2] = e.touches;
+      const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      const rect = canvas.getBoundingClientRect();
+      const midX = (t1.clientX + t2.clientX) * 0.5 - rect.left;
+      const midY = (t1.clientY + t2.clientY) * 0.5 - rect.top;
+      setMapZoomAt(mv.pinchStartZoom * (dist / mv.pinchStartDist), midX, midY, false);
+    }
+  }, { passive: false });
+
+  canvas.addEventListener("touchend", () => {
+    mv.isDragging = false;
+    mv.pinchStartDist = 0;
+  });
+
   canvas.addEventListener("mousemove", (e) => {
     if (mv.isDragging) {
       tooltip.classList.add("hidden");
@@ -979,7 +1181,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const code = getHoveredCountryCode(e.clientX, e.clientY);
-    state.hoveredCountry = code;
+    if (state.hoveredCountry !== code) {
+      state.hoveredCountry = code;
+      mv.needsRender = true;
+    }
     canvas.classList.toggle("hovering-pin", Boolean(code));
 
     if (code) {
@@ -997,12 +1202,21 @@ document.addEventListener("DOMContentLoaded", () => {
       tooltip.style.top = `${e.clientY + 14}px`;
       tooltip.classList.remove("hidden");
     } else {
-      tooltip.classList.add("hidden");
+      const rect = canvas.getBoundingClientRect();
+      const { w, h } = getLogicalCanvasSize(canvas);
+      const coords = screenToLatLng(e.clientX - rect.left, e.clientY - rect.top, w, h);
+      tooltip.innerHTML = `
+        <div class="tt-clubs">${coords.lat.toFixed(2)}°, ${coords.lng.toFixed(2)}°</div>
+      `;
+      tooltip.style.left = `${e.clientX + 14}px`;
+      tooltip.style.top = `${e.clientY + 14}px`;
+      tooltip.classList.remove("hidden");
     }
   });
 
   canvas.addEventListener("mouseleave", () => {
     state.hoveredCountry = null;
+    mv.needsRender = true;
     canvas.classList.remove("hovering-pin");
     tooltip.classList.add("hidden");
   });
@@ -1032,8 +1246,21 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn-close-modal").addEventListener("click", closeGuessModal);
   document.getElementById("player-input").addEventListener("input", handleAutocomplete);
   document.getElementById("player-input").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") submitGuess();
-    if (e.key === "Escape") closeGuessModal();
+    if (e.key === "ArrowDown" && state.autocompleteMatches.length > 0) {
+      e.preventDefault();
+      state.highlightedIndex = (state.highlightedIndex + 1) % state.autocompleteMatches.length;
+      renderAutocompleteItems();
+    } else if (e.key === "ArrowUp" && state.autocompleteMatches.length > 0) {
+      e.preventDefault();
+      state.highlightedIndex =
+        (state.highlightedIndex - 1 + state.autocompleteMatches.length) % state.autocompleteMatches.length;
+      renderAutocompleteItems();
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      submitGuess();
+    } else if (e.key === "Escape") {
+      closeGuessModal();
+    }
   });
   document.getElementById("btn-submit-guess").addEventListener("click", submitGuess);
 });

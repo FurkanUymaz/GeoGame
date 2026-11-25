@@ -51,10 +51,29 @@ const REGION_PRESETS = {
 };
 
 const DIFFICULTY_META = {
-  easy: { label: "Easy", desc: "Famous Clubs" },
-  medium: { label: "Medium", desc: "Balanced Mix" },
-  hard: { label: "Hard", desc: "Lesser-Known Clubs" }
+  easy: { label: "Easy", desc: "Top Clubs & Many Shared Players", minCommon: 3 },
+  medium: { label: "Medium", desc: "Balanced Mix", minCommon: 2 },
+  hard: { label: "Hard", desc: "Lesser-Known Clubs", minCommon: 1 }
 };
+
+const ICONIC_CLUB_KEYWORDS = [
+  "galatasaray", "fenerbahce", "besiktas", "trabzonspor", "basaksehir",
+  "bayern", "dortmund", "leverkusen", "leipzig", "frankfurt", "schalke", "stuttgart", "werder bremen", "wolfsburg", "monchengladbach",
+  "real madrid", "barcelona", "atletico madrid", "sevilla", "valencia", "villarreal", "real sociedad", "athletic", "betis",
+  "manchester united", "manchester city", "liverpool", "arsenal", "chelsea", "tottenham", "newcastle", "aston villa", "west ham", "everton", "leicester",
+  "juventus", "inter", "milan", "napoli", "roma", "lazio", "atalanta", "fiorentina",
+  "paris saint-germain", "psg", "marseille", "lyon", "monaco", "lille", "nice", "rennes",
+  "ajax", "psv", "feyenoord", "az alkmaar",
+  "benfica", "porto", "sporting", "braga",
+  "celtic", "rangers", "club brugge", "anderlecht", "genk",
+  "shakhtar", "dynamo kyiv", "zenit", "cska", "spartak",
+  "olympiacos", "panathinaikos", "paok", "aek",
+  "salzburg", "rapid", "sturm", "basel", "young boys",
+  "copenhagen", "midtjylland", "brondby",
+  "boca juniors", "river plate", "flamengo", "palmeiras", "sao paulo", "corinthians", "santos",
+  "al-hilal", "al-nassr", "al-ittihad", "al-ahli",
+  "la galaxy", "inter miami", "new york"
+];
 
 const ISO3_TO_GAME_CODES = {
   TUR: ["TUR"],
@@ -374,25 +393,48 @@ for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
   }
 }
 
-const clubRenownScores = new Map();
+const clubCrossReach = new Map();
+const clubRosterCount = new Map();
 for (const p of playerIndex) {
   const playerClubs = Array.from(p.clubs);
-  const countriesPlayed = new Set(
+  const distinctCountries = new Set(
     playerClubs.map((c) => clubToCountryCode.get(c)).filter(Boolean)
-  );
-  const crossCountryBonus = countriesPlayed.size > 1 ? countriesPlayed.size * 2 : 0;
+  ).size;
+  const careerSpan = playerClubs.length;
   for (const club of playerClubs) {
-    clubRenownScores.set(club, (clubRenownScores.get(club) || 0) + 1 + crossCountryBonus);
+    clubRosterCount.set(club, (clubRosterCount.get(club) || 0) + 1);
+    if (distinctCountries > 1) {
+      clubCrossReach.set(club, (clubCrossReach.get(club) || 0) + distinctCountries * 3 + careerSpan);
+    }
   }
 }
 
+function getClubPrestigeScore(clubName) {
+  const norm = normalizeText(clubName);
+  const isIconic = ICONIC_CLUB_KEYWORDS.some((kw) => norm.includes(kw));
+  const iconicBonus = isIconic ? 1000 : 0;
+  const reach = clubCrossReach.get(clubName) || 0;
+  const roster = Math.max(1, clubRosterCount.get(clubName) || 1);
+  const normalizedReach = reach / Math.sqrt(roster);
+  return iconicBonus + normalizedReach;
+}
+
+const clubPrestigeMap = new Map();
 const countryRankedClubs = new Map();
+const countryClubRankIndex = new Map();
+
 for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
   const ranked = [...info.clubs].sort((a, b) => {
-    const scoreDiff = (clubRenownScores.get(b) || 0) - (clubRenownScores.get(a) || 0);
-    return scoreDiff !== 0 ? scoreDiff : a.localeCompare(b);
+    const scoreA = getClubPrestigeScore(a);
+    const scoreB = getClubPrestigeScore(b);
+    clubPrestigeMap.set(a, scoreA);
+    clubPrestigeMap.set(b, scoreB);
+    return scoreB !== scoreA ? scoreB - scoreA : a.localeCompare(b);
   });
   countryRankedClubs.set(code, ranked);
+  ranked.forEach((club, idx) => {
+    countryClubRankIndex.set(club, idx);
+  });
 }
 
 const pairCache = new Map();
@@ -422,41 +464,69 @@ function getTierClubPools(code, difficulty) {
   const n = ranked.length;
 
   if (difficulty === "easy") {
-    const primaryCount = Math.min(n, Math.max(6, Math.ceil(n * 0.42)));
-    const secondaryCount = Math.min(n, Math.max(primaryCount, Math.ceil(n * 0.72)));
+    const topCount = Math.min(n, Math.max(5, Math.ceil(n * 0.28)));
+    const midCount = Math.min(n, Math.max(topCount, Math.ceil(n * 0.55)));
     return {
-      primary: ranked.slice(0, primaryCount),
-      secondary: ranked.slice(0, secondaryCount),
+      primary: ranked.slice(0, topCount),
+      secondary: ranked.slice(0, midCount),
       all: ranked
     };
   }
 
   if (difficulty === "hard") {
-    const primaryCount = Math.min(n, Math.max(6, Math.ceil(n * 0.62)));
-    const secondaryCount = Math.min(n, Math.max(primaryCount, Math.ceil(n * 0.85)));
+    const bottomCount = Math.min(n, Math.max(6, Math.ceil(n * 0.55)));
+    const widerCount = Math.min(n, Math.max(bottomCount, Math.ceil(n * 0.80)));
     return {
-      primary: ranked.slice(n - primaryCount),
-      secondary: ranked.slice(n - secondaryCount),
+      primary: ranked.slice(n - bottomCount),
+      secondary: ranked.slice(n - widerCount),
       all: [...ranked].reverse()
     };
   }
 
-  const midStart = Math.floor(n * 0.12);
-  const midEnd = Math.min(n, Math.max(midStart + 8, Math.ceil(n * 0.82)));
+  const start = Math.floor(n * 0.15);
+  const end = Math.min(n, Math.max(start + 7, Math.ceil(n * 0.78)));
   return {
-    primary: ranked.slice(midStart, midEnd),
-    secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.9))),
+    primary: ranked.slice(start, end),
+    secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.90))),
     all: ranked
   };
 }
 
-function searchGridInPools(horizPool, vertPool) {
+function scoreCandidateGrid(cols, rows, difficulty) {
+  let minCellCommon = Infinity;
+  let totalCommon = 0;
+
+  for (const r of rows) {
+    for (const c of cols) {
+      const cnt = getCommonPlayers(r, c).length;
+      if (cnt < minCellCommon) minCellCommon = cnt;
+      totalCommon += Math.min(cnt, 12);
+    }
+  }
+
+  const totalRank = [...cols, ...rows].reduce(
+    (acc, club) => acc + (countryClubRankIndex.get(club) ?? 10),
+    0
+  );
+
+  if (difficulty === "easy") {
+    return minCellCommon * 45 + totalCommon * 4 - totalRank * 18;
+  }
+  if (difficulty === "hard") {
+    return totalRank * 16 - minCellCommon * 20 - totalCommon * 2;
+  }
+  return minCellCommon * 15 + totalCommon * 2 - Math.abs(totalRank - 30) * 4;
+}
+
+function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficulty) {
   const horizClubs = shuffle(horizPool);
   const vertClubs = shuffle(vertPool);
 
   const validRowsForCol = new Map();
   for (const hClub of horizClubs) {
-    const validRows = vertClubs.filter((vClub) => getCommonPlayers(hClub, vClub).length > 0);
+    const validRows = vertClubs.filter(
+      (vClub) => getCommonPlayers(hClub, vClub).length >= minCommonRequired
+    );
     if (validRows.length >= 3) {
       validRowsForCol.set(hClub, validRows);
     }
@@ -467,20 +537,28 @@ function searchGridInPools(horizPool, vertPool) {
 
   const pickedCols = [];
   const rowCounts = new Map();
+  const candidates = [];
+  const maxCandidates = 30;
 
   function backtrack(startIdx) {
+    if (candidates.length >= maxCandidates) return;
+
     if (pickedCols.length === 3) {
       const viableRows = vertClubs.filter((r) => (rowCounts.get(r) || 0) === 3);
       if (viableRows.length >= 3) {
-        return {
-          cols: [...pickedCols],
-          rows: shuffle(viableRows).slice(0, 3)
-        };
+        const chosenRows = shuffle(viableRows).slice(0, 3);
+        const chosenCols = [...pickedCols];
+        candidates.push({
+          cols: chosenCols,
+          rows: chosenRows,
+          score: scoreCandidateGrid(chosenCols, chosenRows, difficulty)
+        });
       }
-      return null;
+      return;
     }
 
     for (let i = startIdx; i <= candidateCols.length - (3 - pickedCols.length); i++) {
+      if (candidates.length >= maxCandidates) return;
       const colClub = candidateCols[i];
       const rows = validRowsForCol.get(colClub);
       pickedCols.push(colClub);
@@ -488,29 +566,59 @@ function searchGridInPools(horizPool, vertPool) {
         rowCounts.set(r, (rowCounts.get(r) || 0) + 1);
       }
 
-      const result = backtrack(i + 1);
-      if (result) return result;
+      backtrack(i + 1);
 
       pickedCols.pop();
       for (const r of rows) {
         rowCounts.set(r, rowCounts.get(r) - 1);
       }
     }
-    return null;
   }
 
-  return backtrack(0);
+  backtrack(0);
+
+  if (candidates.length === 0) return null;
+  candidates.sort((a, b) => b.score - a.score);
+  const topSlice = candidates.slice(0, Math.min(4, candidates.length));
+  return topSlice[Math.floor(Math.random() * topSlice.length)];
 }
 
 function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty) {
   const hPools = getTierClubPools(horizCode, difficulty);
   const vPools = getTierClubPools(vertCode, difficulty);
+  const baseMinCommon = (DIFFICULTY_META[difficulty] || DIFFICULTY_META.medium).minCommon;
 
-  return (
-    searchGridInPools(hPools.primary, vPools.primary) ||
-    searchGridInPools(hPools.secondary, vPools.secondary) ||
-    searchGridInPools(hPools.all, vPools.all)
-  );
+  const attempts =
+    difficulty === "easy"
+      ? [
+          [hPools.primary, vPools.primary, 3],
+          [hPools.primary, vPools.primary, 2],
+          [hPools.secondary, vPools.secondary, 3],
+          [hPools.secondary, vPools.secondary, 2],
+          [hPools.secondary, vPools.secondary, 1],
+          [hPools.all, vPools.all, 2],
+          [hPools.all, vPools.all, 1]
+        ]
+      : difficulty === "hard"
+        ? [
+            [hPools.primary, vPools.primary, 1],
+            [hPools.secondary, vPools.secondary, 1],
+            [hPools.all, vPools.all, 1]
+          ]
+        : [
+            [hPools.primary, vPools.primary, baseMinCommon],
+            [hPools.primary, vPools.primary, 1],
+            [hPools.secondary, vPools.secondary, 2],
+            [hPools.secondary, vPools.secondary, 1],
+            [hPools.all, vPools.all, 1]
+          ];
+
+  for (const [hPool, vPool, minCommon] of attempts) {
+    const found = searchBestGridInPools(hPool, vPool, minCommon, difficulty);
+    if (found) return found;
+  }
+
+  return null;
 }
 
 function setDifficulty(newDiff) {
@@ -1328,7 +1436,7 @@ function inspectCellSolutions(r, c) {
   const valid = getCommonPlayers(rowClub, colClub);
   const sample = valid.slice(0, 6).map((p) => p.name).join(", ");
   const extra = valid.length > 6 ? ` (+${valid.length - 6} more)` : "";
-  setStatus(`${rowClub} × ${colClub}: ${sample}${extra}`);
+  setStatus(`${rowClub} × ${colClub} (${valid.length}): ${sample}${extra}`);
 }
 
 function openGuessModal(r, c) {

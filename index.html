@@ -48,16 +48,50 @@
           </div>
         </div>
 
-        <div class="canvas-wrapper">
-          <canvas id="world-canvas" width="1140" height="540"></canvas>
-          <div id="map-tooltip" class="map-tooltip hidden"></div>
+        <div class="map-workspace">
+          <div class="canvas-wrapper">
+            <canvas id="world-canvas" width="1140" height="560"></canvas>
+
+            <div class="map-top-overlays">
+              <div class="region-presets">
+                <button class="region-btn active" data-region="world">World</button>
+                <button class="region-btn" data-region="europe">Europe</button>
+                <button class="region-btn" data-region="americas">Americas</button>
+                <button class="region-btn" data-region="asia">Asia &amp; Oceania</button>
+              </div>
+              <div class="zoom-badge" id="zoom-level-badge">1.0x</div>
+            </div>
+
+            <div class="map-zoom-controls">
+              <button id="btn-zoom-in" class="map-ctrl-btn" title="Zoom In">+</button>
+              <button id="btn-zoom-out" class="map-ctrl-btn" title="Zoom Out">&minus;</button>
+              <button id="btn-zoom-reset" class="map-ctrl-btn reset-view" title="Reset View">&#8634;</button>
+            </div>
+
+            <div class="map-hint-bar">
+              Scroll to zoom &bull; Drag to pan &bull; Click pin or sidebar country to assign axis
+            </div>
+
+            <div id="map-tooltip" class="map-tooltip hidden"></div>
+          </div>
+
+          <aside class="country-drawer">
+            <div class="drawer-header">
+              <span class="drawer-title">Active Leagues</span>
+              <span id="drawer-count" class="drawer-count">0</span>
+            </div>
+            <div class="drawer-search">
+              <input type="text" id="country-search-input" placeholder="Filter country or league..." autocomplete="off" />
+            </div>
+            <ul id="country-list" class="country-list"></ul>
+          </aside>
         </div>
 
         <div class="map-footer">
           <div class="legend">
             <span><i class="dot available"></i>League Country</span>
-            <span><i class="dot horizontal"></i>Horizontal Country</span>
-            <span><i class="dot vertical"></i>Vertical Country</span>
+            <span><i class="dot horizontal"></i>Horizontal Axis</span>
+            <span><i class="dot vertical"></i>Vertical Axis</span>
           </div>
           <button id="btn-enter-game" class="btn primary" disabled>Start Game</button>
         </div>
@@ -123,7 +157,7 @@
   <div id="guess-modal" class="modal hidden">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 id="modal-matchup">Club A × Club B</h3>
+        <h3 id="modal-matchup">Club A &times; Club B</h3>
         <button id="btn-close-modal" class="close-btn">&times;</button>
       </div>
       <p class="modal-sub">Enter a player who played for both clubs:</p>

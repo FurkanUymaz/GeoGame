@@ -15,6 +15,8 @@ const state = {
   activeCell: null,
   hoveredCountry: null,
   countryScreenCoords: {},
+  worldGeoFeatures: null,
+  geoLoadAttempted: false,
   autocompleteMatches: [],
   highlightedIndex: -1,
   mapView: {
@@ -25,7 +27,7 @@ const state = {
     targetOffsetX: 0,
     targetOffsetY: 0,
     minZoom: 1,
-    maxZoom: 7.5,
+    maxZoom: 8,
     isDragging: false,
     hasMoved: false,
     dragStartX: 0,
@@ -41,11 +43,173 @@ const state = {
 };
 
 const REGION_PRESETS = {
-  world: { lat: 20, lng: 10, zoom: 1.0 },
-  europe: { lat: 48.5, lng: 13.0, zoom: 3.4 },
+  world: { lat: 18, lng: 12, zoom: 1.0 },
+  europe: { lat: 48.5, lng: 12.5, zoom: 3.5 },
   americas: { lat: -5.0, lng: -68.0, zoom: 1.85 },
   asia: { lat: 12.0, lng: 112.0, zoom: 2.15 }
 };
+
+const ISO3_TO_GAME_CODES = {
+  TUR: ["TUR"],
+  GBR: ["ENG", "SCO"],
+  ESP: ["ESP"],
+  ITA: ["ITA"],
+  DEU: ["GER"],
+  FRA: ["FRA"],
+  NLD: ["NED"],
+  PRT: ["POR"],
+  BEL: ["BEL"],
+  RUS: ["RUS"],
+  UKR: ["UKR"],
+  GRC: ["GRE"],
+  AUT: ["AUT"],
+  CHE: ["SUI"],
+  DNK: ["DEN"],
+  NOR: ["NOR"],
+  SWE: ["SWE"],
+  POL: ["POL"],
+  CZE: ["CZE"],
+  ROU: ["ROU"],
+  HRV: ["CRO"],
+  SRB: ["SRB"],
+  CYP: ["CYP"],
+  USA: ["USA"],
+  BRA: ["BRA"],
+  ARG: ["ARG"],
+  MEX: ["MEX"],
+  COL: ["COL"],
+  CHL: ["CHI"],
+  PER: ["PER"],
+  ECU: ["ECU"],
+  URY: ["URU"],
+  SAU: ["KSA"],
+  ARE: ["UAE"],
+  QAT: ["QAT"],
+  JPN: ["JPN"],
+  KOR: ["KOR"],
+  CHN: ["CHN"],
+  AUS: ["AUS"],
+  ZAF: ["RSA"],
+  EGY: ["EGY"],
+  MAR: ["MAR"],
+  TUN: ["TUN"],
+  DZA: ["ALG"]
+};
+
+const NAME_TO_GAME_CODES = {
+  "turkey": ["TUR"],
+  "turkiye": ["TUR"],
+  "united kingdom": ["ENG", "SCO"],
+  "spain": ["ESP"],
+  "italy": ["ITA"],
+  "germany": ["GER"],
+  "france": ["FRA"],
+  "netherlands": ["NED"],
+  "portugal": ["POR"],
+  "belgium": ["BEL"],
+  "russia": ["RUS"],
+  "ukraine": ["UKR"],
+  "greece": ["GRE"],
+  "austria": ["AUT"],
+  "switzerland": ["SUI"],
+  "denmark": ["DEN"],
+  "norway": ["NOR"],
+  "sweden": ["SWE"],
+  "poland": ["POL"],
+  "czech republic": ["CZE"],
+  "czechia": ["CZE"],
+  "romania": ["ROU"],
+  "croatia": ["CRO"],
+  "serbia": ["SRB"],
+  "cyprus": ["CYP"],
+  "united states of america": ["USA"],
+  "united states": ["USA"],
+  "brazil": ["BRA"],
+  "argentina": ["ARG"],
+  "mexico": ["MEX"],
+  "colombia": ["COL"],
+  "chile": ["CHI"],
+  "peru": ["PER"],
+  "ecuador": ["ECU"],
+  "uruguay": ["URU"],
+  "saudi arabia": ["KSA"],
+  "united arab emirates": ["UAE"],
+  "qatar": ["QAT"],
+  "japan": ["JPN"],
+  "south korea": ["KOR"],
+  "korea, republic of": ["KOR"],
+  "china": ["CHN"],
+  "australia": ["AUS"],
+  "south africa": ["RSA"],
+  "egypt": ["EGY"],
+  "morocco": ["MAR"],
+  "tunisia": ["TUN"],
+  "algeria": ["ALG"]
+};
+
+function injectMapLayoutFixes() {
+  if (document.getElementById("geogame-layout-fix")) return;
+  const style = document.createElement("style");
+  style.id = "geogame-layout-fix";
+  style.textContent = `
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    #stage-map { width: 100%; max-width: 100%; overflow-x: hidden; }
+    #stage-map > div:first-child,
+    .map-header,
+    .map-top-bar,
+    .selection-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      max-width: 100%;
+    }
+    .map-pills,
+    .selection-pills,
+    .map-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      max-width: 100%;
+    }
+    .pill {
+      white-space: nowrap;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #world-canvas {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+    #map-tooltip {
+      position: fixed;
+      z-index: 9999;
+      pointer-events: none;
+      background: rgba(9, 15, 29, 0.94);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 8px;
+      padding: 7px 11px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+      color: #f1f5f9;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    #map-tooltip .tt-clubs {
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+      color: #cbd5e1;
+      font-variant-numeric: tabular-nums;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 const normalizeText = (str) => {
   return String(str || "")
@@ -62,6 +226,66 @@ const normalizeText = (str) => {
     .replace(/\s+/g, " ")
     .trim();
 };
+
+function resolveFeatureGameCodes(feature) {
+  const props = feature.properties || {};
+  const candidates = [
+    props.ISO_A3,
+    props.ADM0_A3,
+    props.iso_a3,
+    props.adm0_a3,
+    feature.id
+  ];
+  for (const rawIso of candidates) {
+    if (!rawIso) continue;
+    const iso = String(rawIso).toUpperCase().trim();
+    if (ISO3_TO_GAME_CODES[iso]) {
+      return ISO3_TO_GAME_CODES[iso];
+    }
+  }
+  const nameCandidates = [props.ADMIN, props.NAME, props.NAME_LONG, props.name];
+  for (const rawName of nameCandidates) {
+    if (!rawName) continue;
+    const norm = normalizeText(rawName);
+    if (NAME_TO_GAME_CODES[norm]) {
+      return NAME_TO_GAME_CODES[norm];
+    }
+  }
+  return [];
+}
+
+async function loadWorldGeoJson() {
+  if (state.geoLoadAttempted) return;
+  state.geoLoadAttempted = true;
+
+  const sources = [
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+    "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
+  ];
+
+  for (const url of sources) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) continue;
+      const geojson = await response.json();
+      if (geojson && Array.isArray(geojson.features) && geojson.features.length > 0) {
+        state.worldGeoFeatures = geojson.features
+          .filter((f) => {
+            const name = normalizeText((f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || "");
+            return name !== "antarctica";
+          })
+          .map((f) => ({
+            geometry: f.geometry,
+            gameCodes: resolveFeatureGameCodes(f)
+          }));
+        state.mapView.needsRender = true;
+        drawWorldMap();
+        return;
+      }
+    } catch (err) {
+    }
+  }
+}
 
 const playerIndex = FOOTBALL_DB.players.map((p) => ({
   name: p.name,
@@ -197,8 +421,9 @@ function syncCanvasResolution() {
 }
 
 function latLngToBase(lat, lng, width, height) {
+  const clampedLat = Math.max(-62, Math.min(84, lat));
   const x = ((lng + 180) / 360) * width;
-  const y = ((90 - lat) / 180) * height;
+  const y = ((84 - clampedLat) / 146) * height;
   return { x, y };
 }
 
@@ -209,11 +434,17 @@ function screenToLatLng(screenX, screenY, width, height) {
   const baseX = (screenX - cx - state.mapView.offsetX) / z + cx;
   const baseY = (screenY - cy - state.mapView.offsetY) / z + cy;
   const lng = (baseX / width) * 360 - 180;
-  const lat = 90 - (baseY / height) * 180;
+  const lat = 84 - (baseY / height) * 146;
   return {
     lat: Math.max(-90, Math.min(90, lat)),
     lng: Math.max(-180, Math.min(180, lng))
   };
+}
+
+function formatGeographicCoords(lat, lng) {
+  const latDir = lat >= 0 ? "N" : "S";
+  const lngDir = lng >= 0 ? "E" : "W";
+  return `Lat ${Math.abs(lat).toFixed(2)}° ${latDir}, Lng ${Math.abs(lng).toFixed(2)}° ${lngDir}`;
 }
 
 function clampMapOffsets(offsetX, offsetY, zoom, width, height) {
@@ -311,15 +542,26 @@ function updateRegionButtons(activeRegion) {
   });
 }
 
-function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor) {
-  ctx.font = "700 11px -apple-system, BlinkMacSystemFont, sans-serif";
+function traceGeoPolygon(ctx, rings, w, h) {
+  rings.forEach((ring) => {
+    ring.forEach(([lng, lat], idx) => {
+      const pt = projectPoint(lat, lng, w, h);
+      if (idx === 0) ctx.moveTo(pt.x, pt.y);
+      else ctx.lineTo(pt.x, pt.y);
+    });
+    ctx.closePath();
+  });
+}
+
+function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor, fontSize = 10.5) {
+  ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`;
   const metrics = ctx.measureText(text);
-  const padX = 7;
+  const padX = 6;
   const boxW = metrics.width + padX * 2;
-  const boxH = 19;
+  const boxH = fontSize + 7;
   const rx = x - boxW * 0.5;
   const ry = y - boxH * 0.5;
-  const radius = 5;
+  const radius = 4;
 
   ctx.beginPath();
   ctx.moveTo(rx + radius, ry);
@@ -369,25 +611,67 @@ function drawWorldMap() {
   const gridStep = z >= 2.5 ? 10 : z >= 1.6 ? 15 : 30;
   ctx.lineWidth = 1;
   for (let lon = -180; lon <= 180; lon += gridStep) {
-    const p1 = projectPoint(90, lon, w, h);
-    const p2 = projectPoint(-90, lon, w, h);
-    ctx.strokeStyle = lon === 0 ? "rgba(56, 189, 248, 0.16)" : "rgba(148, 163, 184, 0.08)";
+    const p1 = projectPoint(84, lon, w, h);
+    const p2 = projectPoint(-62, lon, w, h);
+    ctx.strokeStyle = lon === 0 ? "rgba(56, 189, 248, 0.16)" : "rgba(148, 163, 184, 0.07)";
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
     ctx.stroke();
   }
-  for (let lat = -60; lat <= 75; lat += gridStep) {
+  for (let lat = -60; lat <= 80; lat += gridStep) {
     const p1 = projectPoint(lat, -180, w, h);
     const p2 = projectPoint(lat, 180, w, h);
-    ctx.strokeStyle = lat === 0 ? "rgba(16, 185, 129, 0.18)" : "rgba(148, 163, 184, 0.08)";
+    ctx.strokeStyle = lat === 0 ? "rgba(16, 185, 129, 0.18)" : "rgba(148, 163, 184, 0.07)";
     ctx.beginPath();
     ctx.moveTo(p1.x, p1.y);
     ctx.lineTo(p2.x, p2.y);
     ctx.stroke();
   }
 
-  if (Array.isArray(FOOTBALL_DB.continents)) {
+  if (Array.isArray(state.worldGeoFeatures) && state.worldGeoFeatures.length > 0) {
+    state.worldGeoFeatures.forEach((feat) => {
+      const geom = feat.geometry;
+      if (!geom) return;
+
+      const isH = Boolean(state.horizontalCountry && feat.gameCodes.includes(state.horizontalCountry));
+      const isV = Boolean(state.verticalCountry && feat.gameCodes.includes(state.verticalCountry));
+      const isHover = Boolean(state.hoveredCountry && feat.gameCodes.includes(state.hoveredCountry));
+      const hasLeague = feat.gameCodes.length > 0;
+
+      ctx.beginPath();
+      if (geom.type === "Polygon") {
+        traceGeoPolygon(ctx, geom.coordinates, w, h);
+      } else if (geom.type === "MultiPolygon") {
+        geom.coordinates.forEach((poly) => traceGeoPolygon(ctx, poly, w, h));
+      }
+
+      if (isH) {
+        ctx.fillStyle = "rgba(56, 189, 248, 0.34)";
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 1.6;
+      } else if (isV) {
+        ctx.fillStyle = "rgba(245, 158, 11, 0.34)";
+        ctx.strokeStyle = "#f59e0b";
+        ctx.lineWidth = 1.6;
+      } else if (isHover) {
+        ctx.fillStyle = "rgba(16, 185, 129, 0.32)";
+        ctx.strokeStyle = "#34d399";
+        ctx.lineWidth = 1.5;
+      } else if (hasLeague) {
+        ctx.fillStyle = "#192842";
+        ctx.strokeStyle = "#334b73";
+        ctx.lineWidth = 1.05;
+      } else {
+        ctx.fillStyle = "#111b2e";
+        ctx.strokeStyle = "#22324d";
+        ctx.lineWidth = 0.85;
+      }
+
+      ctx.fill("evenodd");
+      ctx.stroke();
+    });
+  } else if (Array.isArray(FOOTBALL_DB.continents)) {
     FOOTBALL_DB.continents.forEach((poly) => {
       ctx.beginPath();
       poly.forEach(([lng, lat], idx) => {
@@ -396,17 +680,10 @@ function drawWorldMap() {
         else ctx.lineTo(pt.x, pt.y);
       });
       ctx.closePath();
-
-      ctx.save();
-      ctx.shadowColor = "rgba(0, 0, 0, 0.65)";
-      ctx.shadowBlur = 14;
-      ctx.shadowOffsetY = 5;
       ctx.fillStyle = "#172338";
       ctx.fill();
-      ctx.restore();
-
       ctx.strokeStyle = "#33486b";
-      ctx.lineWidth = 1.4;
+      ctx.lineWidth = 1.2;
       ctx.stroke();
     });
   }
@@ -418,7 +695,7 @@ function drawWorldMap() {
     const pV = projectPoint(vInfo.lat, vInfo.lng, w, h);
 
     const midX = (pH.x + pV.x) * 0.5;
-    const midY = (pH.y + pV.y) * 0.5 - Math.min(90, Math.hypot(pV.x - pH.x, pV.y - pH.y) * 0.25);
+    const midY = (pH.y + pV.y) * 0.5 - Math.min(85, Math.hypot(pV.x - pH.x, pV.y - pH.y) * 0.24);
 
     const arcGrad = ctx.createLinearGradient(pH.x, pH.y, pV.x, pV.y);
     arcGrad.addColorStop(0, "#38bdf8");
@@ -438,8 +715,6 @@ function drawWorldMap() {
   }
 
   const entries = Object.entries(FOOTBALL_DB.countries);
-  const placedLabels = [];
-
   entries.sort(([codeA], [codeB]) => {
     const score = (c) => {
       if (c === state.hoveredCountry) return 4;
@@ -448,6 +723,8 @@ function drawWorldMap() {
     };
     return score(codeA) - score(codeB);
   });
+
+  const pinNodes = [];
 
   entries.forEach(([code, info]) => {
     const pt = projectPoint(info.lat, info.lng, w, h);
@@ -458,37 +735,37 @@ function drawWorldMap() {
     const isHover = code === state.hoveredCountry;
 
     let fillColor = "#10b981";
-    let baseRadius = Math.min(9.5, 6.2 + (z - 1) * 0.8);
+    let baseRadius = Math.min(7.5, 4.1 + (z - 1) * 0.65);
 
     if (isH) {
       fillColor = "#38bdf8";
-      baseRadius += 3;
+      baseRadius += 2.6;
     } else if (isV) {
       fillColor = "#f59e0b";
-      baseRadius += 3;
+      baseRadius += 2.6;
     } else if (isHover) {
       fillColor = "#34d399";
-      baseRadius += 2.2;
+      baseRadius += 2.0;
     }
 
-    const pulse = (isH || isV || isHover) ? Math.sin(state.mapView.pulsePhase * 4) * 3.5 : 0;
+    const pulse = (isH || isV || isHover) ? Math.sin(state.mapView.pulsePhase * 4) * 2.8 : 0;
 
     ctx.beginPath();
-    ctx.arc(pt.x, pt.y, baseRadius + 6 + pulse, 0, Math.PI * 2);
+    ctx.arc(pt.x, pt.y, baseRadius + 4 + pulse, 0, Math.PI * 2);
     ctx.fillStyle = isH
-      ? "rgba(56, 189, 248, 0.22)"
+      ? "rgba(56, 189, 248, 0.25)"
       : isV
-        ? "rgba(245, 158, 11, 0.22)"
+        ? "rgba(245, 158, 11, 0.25)"
         : isHover
-          ? "rgba(52, 211, 153, 0.28)"
+          ? "rgba(52, 211, 153, 0.30)"
           : "rgba(16, 185, 129, 0.16)";
     ctx.fill();
 
     if (isH || isV) {
       ctx.beginPath();
-      ctx.arc(pt.x, pt.y, baseRadius + 10 + pulse, 0, Math.PI * 2);
-      ctx.strokeStyle = isH ? "rgba(56, 189, 248, 0.55)" : "rgba(245, 158, 11, 0.55)";
-      ctx.lineWidth = 1.5;
+      ctx.arc(pt.x, pt.y, baseRadius + 8 + pulse, 0, Math.PI * 2);
+      ctx.strokeStyle = isH ? "rgba(56, 189, 248, 0.65)" : "rgba(245, 158, 11, 0.65)";
+      ctx.lineWidth = 1.4;
       ctx.stroke();
     }
 
@@ -496,7 +773,7 @@ function drawWorldMap() {
     ctx.arc(pt.x, pt.y, baseRadius, 0, Math.PI * 2);
     ctx.fillStyle = fillColor;
     ctx.fill();
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1.6;
     ctx.strokeStyle = "#f8fafc";
     ctx.stroke();
 
@@ -505,27 +782,74 @@ function drawWorldMap() {
     ctx.fillStyle = "#06101f";
     ctx.fill();
 
-    const labelY = pt.y - baseRadius - 14;
+    pinNodes.push({
+      code,
+      info,
+      pt,
+      baseRadius,
+      isH,
+      isV,
+      isHover,
+      priority: isHover ? 4 : (isH || isV) ? 3 : 1
+    });
+  });
+
+  const placedLabels = [];
+  const labelOrder = [...pinNodes].sort((a, b) => b.priority - a.priority);
+
+  labelOrder.forEach((node) => {
+    const { info, pt, baseRadius, isH, isV, isHover } = node;
+    const isPriority = isH || isV || isHover;
     const labelText = isH ? `H · ${info.name}` : isV ? `V · ${info.name}` : info.name;
-    const estWidth = labelText.length * 6.5 + 14;
-    const estHeight = 20;
+    const fontSize = isPriority ? 11 : 10;
+    const estWidth = labelText.length * 6.1 + 12;
+    const estHeight = fontSize + 7;
 
-    const overlaps = placedLabels.some(
-      (box) => Math.abs(box.x - pt.x) < (box.w + estWidth) * 0.52 && Math.abs(box.y - labelY) < estHeight
-    );
+    const candidates = [
+      { x: pt.x, y: pt.y - baseRadius - 12 },
+      { x: pt.x, y: pt.y + baseRadius + 12 },
+      { x: pt.x + baseRadius + estWidth * 0.5 + 6, y: pt.y },
+      { x: pt.x - baseRadius - estWidth * 0.5 - 6, y: pt.y }
+    ];
 
-    if (isH || isV || isHover || z >= 2.2 || !overlaps) {
-      placedLabels.push({ x: pt.x, y: labelY, w: estWidth });
+    let chosenPos = null;
+    for (const cand of candidates) {
+      if (cand.x - estWidth * 0.5 < 6 || cand.x + estWidth * 0.5 > w - 6) continue;
+      if (cand.y - estHeight * 0.5 < 6 || cand.y + estHeight * 0.5 > h - 6) continue;
+
+      const hitsLabel = placedLabels.some(
+        (box) => Math.abs(box.x - cand.x) < (box.w + estWidth) * 0.52 && Math.abs(box.y - cand.y) < (box.h + estHeight) * 0.56
+      );
+      const hitsPin = pinNodes.some(
+        (other) => Math.abs(other.pt.x - cand.x) < estWidth * 0.5 + other.baseRadius + 2 &&
+                   Math.abs(other.pt.y - cand.y) < estHeight * 0.5 + other.baseRadius + 2
+      );
+
+      if (!hitsLabel && !hitsPin) {
+        chosenPos = cand;
+        break;
+      }
+    }
+
+    if (!chosenPos && isPriority) {
+      chosenPos = {
+        x: Math.max(estWidth * 0.5 + 8, Math.min(w - estWidth * 0.5 - 8, pt.x)),
+        y: Math.max(estHeight * 0.5 + 8, pt.y - baseRadius - 13)
+      };
+    }
+
+    if (chosenPos) {
+      placedLabels.push({ x: chosenPos.x, y: chosenPos.y, w: estWidth, h: estHeight });
       const bg = isH
-        ? "rgba(8, 47, 73, 0.92)"
+        ? "rgba(8, 47, 73, 0.94)"
         : isV
-          ? "rgba(69, 26, 3, 0.92)"
+          ? "rgba(69, 26, 3, 0.94)"
           : isHover
-            ? "rgba(6, 78, 59, 0.95)"
-            : "rgba(9, 14, 26, 0.84)";
-      const border = isH ? "#38bdf8" : isV ? "#f59e0b" : isHover ? "#34d399" : "rgba(148, 163, 184, 0.3)";
+            ? "rgba(6, 78, 59, 0.96)"
+            : "rgba(9, 14, 26, 0.86)";
+      const border = isH ? "#38bdf8" : isV ? "#f59e0b" : isHover ? "#34d399" : "rgba(148, 163, 184, 0.28)";
       const txtCol = isH ? "#bae6fd" : isV ? "#fde68a" : "#f1f5f9";
-      drawRoundedLabel(ctx, labelText, pt.x, labelY, bg, border, txtCol);
+      drawRoundedLabel(ctx, labelText, chosenPos.x, chosenPos.y, bg, border, txtCol, fontSize);
     }
   });
 
@@ -574,7 +898,7 @@ function getHoveredCountryCode(clientX, clientY) {
   const y = clientY - rect.top;
 
   let closestCode = null;
-  let closestDist = 20;
+  let closestDist = 18;
 
   for (const [code, pt] of Object.entries(state.countryScreenCoords)) {
     const dist = Math.hypot(x - pt.x, y - pt.y);
@@ -667,7 +991,7 @@ function renderCountrySidebar() {
 
     li.addEventListener("click", () => {
       toggleCountrySelection(code);
-      focusOnCoords(info.lat, info.lng, Math.max(state.mapView.targetZoom, 2.4));
+      focusOnCoords(info.lat, info.lng, Math.max(state.mapView.targetZoom, 2.5));
       updateRegionButtons("");
     });
 
@@ -683,7 +1007,7 @@ function updateCountrySelectionUI() {
 
   if (state.horizontalCountry) {
     const h = FOOTBALL_DB.countries[state.horizontalCountry];
-    pillH.textContent = `Horizontal: ${h.name} (${h.league})`;
+    pillH.textContent = `Horizontal: ${h.name}`;
     pillH.className = "pill horizontal";
   } else {
     pillH.textContent = "Horizontal: None";
@@ -692,7 +1016,7 @@ function updateCountrySelectionUI() {
 
   if (state.verticalCountry) {
     const v = FOOTBALL_DB.countries[state.verticalCountry];
-    pillV.textContent = `Vertical: ${v.name} (${v.league})`;
+    pillV.textContent = `Vertical: ${v.name}`;
     pillV.className = "pill vertical";
   } else {
     pillV.textContent = "Vertical: None";
@@ -717,550 +1041,10 @@ function updateCountrySelectionUI() {
 function startNewRound() {
   if (!state.horizontalCountry || !state.verticalCountry) return;
 
-  const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry);
-  if (!grid) {
-    setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
-    return;
-  }
-
-  state.colClubs = grid.cols;
-  state.rowClubs = grid.rows;
-  state.board = Array(3).fill(null).map(() => Array(3).fill(null));
-  state.usedPlayers.clear();
-  state.turn = "X";
-  state.gameOver = false;
-
   const hCountry = FOOTBALL_DB.countries[state.horizontalCountry];
   const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
 
   document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
   document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league})`;
 
-  for (let i = 0; i < 3; i++) {
-    document.getElementById(`col-${i}`).innerHTML = `${state.colClubs[i]}<span class="club-badge">${hCountry.league}</span>`;
-    document.getElementById(`row-${i}`).innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
-  }
-
-  document.querySelectorAll(".grid-cell").forEach((cell) => {
-    cell.className = "grid-cell";
-    cell.innerHTML = "";
-  });
-
-  updateTurnBanner();
-  setStatus(`${state.players.X} (X) starts. Pick a cell.`);
-}
-
-function updateTurnBanner() {
-  const banner = document.getElementById("turn-indicator");
-  const cardX = document.getElementById("card-x");
-  const cardO = document.getElementById("card-o");
-
-  cardX.classList.remove("active-x");
-  cardO.classList.remove("active-o");
-
-  const activeStage = document.querySelector(".stage.active");
-  if (!activeStage || activeStage.id === "stage-players") {
-    banner.textContent = "Enter Player Names";
-    banner.className = "turn-banner";
-    return;
-  }
-
-  if (activeStage.id === "stage-map") {
-    banner.textContent = "World Map";
-    banner.className = "turn-banner";
-    return;
-  }
-
-  if (state.gameOver) {
-    banner.className = "turn-banner";
-    return;
-  }
-
-  if (state.turn === "X") {
-    banner.textContent = `${state.players.X} (X) Turn`;
-    banner.className = "turn-banner turn-x";
-    cardX.classList.add("active-x");
-  } else {
-    banner.textContent = `${state.players.O} (O) Turn`;
-    banner.className = "turn-banner turn-o";
-    cardO.classList.add("active-o");
-  }
-}
-
-function setStatus(msg) {
-  document.getElementById("status-message").textContent = msg;
-}
-
-function inspectCellSolutions(r, c) {
-  const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-  if (!rowClub || !colClub) return;
-
-  const valid = getCommonPlayers(rowClub, colClub);
-  const sample = valid.slice(0, 6).map((p) => p.name).join(", ");
-  const extra = valid.length > 6 ? ` (+${valid.length - 6} more)` : "";
-  setStatus(`${rowClub} × ${colClub}: ${sample}${extra}`);
-}
-
-function openGuessModal(r, c) {
-  if (state.gameOver) {
-    inspectCellSolutions(r, c);
-    return;
-  }
-  if (state.board[r][c] !== null) return;
-  state.activeCell = { r, c };
-  state.autocompleteMatches = [];
-  state.highlightedIndex = -1;
-
-  const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-
-  document.getElementById("modal-matchup").textContent = `${rowClub} × ${colClub}`;
-  const input = document.getElementById("player-input");
-  input.value = "";
-  document.getElementById("autocomplete-list").innerHTML = "";
-  document.getElementById("modal-feedback").textContent = "";
-  document.getElementById("modal-feedback").className = "modal-feedback";
-
-  document.getElementById("guess-modal").classList.remove("hidden");
-  input.focus();
-}
-
-function closeGuessModal() {
-  document.getElementById("guess-modal").classList.add("hidden");
-  state.activeCell = null;
-  state.autocompleteMatches = [];
-  state.highlightedIndex = -1;
-}
-
-function renderAutocompleteItems() {
-  const input = document.getElementById("player-input");
-  const list = document.getElementById("autocomplete-list");
-  list.innerHTML = "";
-
-  state.autocompleteMatches.forEach((p, idx) => {
-    const li = document.createElement("li");
-    li.textContent = p.name;
-    if (idx === state.highlightedIndex) {
-      li.style.background = "rgba(56, 189, 248, 0.22)";
-      li.style.color = "#f8fafc";
-    }
-    li.addEventListener("click", () => {
-      input.value = p.name;
-      state.autocompleteMatches = [];
-      state.highlightedIndex = -1;
-      list.innerHTML = "";
-      submitGuess();
-    });
-    list.appendChild(li);
-  });
-}
-
-function handleAutocomplete() {
-  const input = document.getElementById("player-input");
-  const list = document.getElementById("autocomplete-list");
-  const query = normalizeText(input.value);
-  state.autocompleteMatches = [];
-  state.highlightedIndex = -1;
-  list.innerHTML = "";
-
-  if (query.length < 2) return;
-
-  state.autocompleteMatches = playerIndex
-    .filter((p) => p.normalized.includes(query))
-    .slice(0, 8);
-
-  if (state.autocompleteMatches.length === 1) {
-    state.highlightedIndex = 0;
-  }
-
-  renderAutocompleteItems();
-}
-
-function submitGuess() {
-  if (!state.activeCell) return;
-  const { r, c } = state.activeCell;
-  const input = document.getElementById("player-input");
-  const feedback = document.getElementById("modal-feedback");
-
-  if (state.highlightedIndex >= 0 && state.autocompleteMatches[state.highlightedIndex]) {
-    input.value = state.autocompleteMatches[state.highlightedIndex].name;
-    state.autocompleteMatches = [];
-    state.highlightedIndex = -1;
-    document.getElementById("autocomplete-list").innerHTML = "";
-  }
-
-  const normalizedGuess = normalizeText(input.value);
-  if (!normalizedGuess) return;
-
-  const matchedPlayer = playerIndex.find((p) => p.normalized === normalizedGuess);
-
-  if (!matchedPlayer) {
-    feedback.textContent = "Player not found in database. Pick a name from suggestions.";
-    feedback.className = "modal-feedback error";
-    return;
-  }
-
-  if (state.usedPlayers.has(matchedPlayer.name)) {
-    feedback.textContent = `${matchedPlayer.name} already used in this round.`;
-    feedback.className = "modal-feedback error";
-    return;
-  }
-
-  const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-
-  if (matchedPlayer.clubs.has(rowClub) && matchedPlayer.clubs.has(colClub)) {
-    state.board[r][c] = { mark: state.turn, player: matchedPlayer.name };
-    state.usedPlayers.add(matchedPlayer.name);
-
-    const cellEl = document.getElementById(`cell-${r}-${c}`);
-    cellEl.classList.add("claimed", state.turn === "X" ? "claimed-x" : "claimed-o");
-    cellEl.innerHTML = `
-      <span class="cell-mark">${state.turn}</span>
-      <span class="cell-player">${matchedPlayer.name}</span>
-    `;
-
-    closeGuessModal();
-
-    const winLine = checkWinner(state.turn);
-    if (winLine) {
-      handleWin(state.turn, winLine);
-    } else if (isBoardFull()) {
-      state.gameOver = true;
-      document.getElementById("turn-indicator").textContent = "Draw";
-      setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
-    } else {
-      switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
-    }
-  } else {
-    feedback.textContent = `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
-    feedback.className = "modal-feedback error";
-    setTimeout(() => {
-      closeGuessModal();
-      switchTurn(`Invalid guess (${matchedPlayer.name}). Turn passed.`);
-    }, 950);
-  }
-}
-
-function switchTurn(prefixMsg) {
-  state.turn = state.turn === "X" ? "O" : "X";
-  updateTurnBanner();
-  const nextName = state.turn === "X" ? state.players.X : state.players.O;
-  setStatus(`${prefixMsg} ${nextName} (${state.turn}) turn.`);
-}
-
-function checkWinner(mark) {
-  const b = state.board;
-  const lines = [
-    [[0, 0], [0, 1], [0, 2]],
-    [[1, 0], [1, 1], [1, 2]],
-    [[2, 0], [2, 1], [2, 2]],
-    [[0, 0], [1, 0], [2, 0]],
-    [[0, 1], [1, 1], [2, 1]],
-    [[0, 2], [1, 2], [2, 2]],
-    [[0, 0], [1, 1], [2, 2]],
-    [[0, 2], [1, 1], [2, 0]]
-  ];
-
-  for (const line of lines) {
-    if (line.every(([r, c]) => b[r][c] && b[r][c].mark === mark)) {
-      return line;
-    }
-  }
-  return null;
-}
-
-function isBoardFull() {
-  return state.board.every((row) => row.every((cell) => cell !== null));
-}
-
-function handleWin(mark, winLine) {
-  state.gameOver = true;
-  state.scores[mark]++;
-  document.getElementById(`score-${mark.toLowerCase()}`).textContent = state.scores[mark];
-
-  winLine.forEach(([r, c]) => {
-    document.getElementById(`cell-${r}-${c}`).classList.add("winner-cell");
-  });
-
-  const winnerName = mark === "X" ? state.players.X : state.players.O;
-  const banner = document.getElementById("turn-indicator");
-  banner.textContent = `${winnerName} (${mark}) Wins!`;
-  banner.className = "turn-banner";
-  setStatus(`${winnerName} won the round! Click any cell to inspect valid players.`);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderCountrySidebar();
-  syncCanvasResolution();
-  drawWorldMap();
-  requestAnimationFrame(animateMapLoop);
-
-  window.addEventListener("resize", () => {
-    syncCanvasResolution();
-    const activeStage = document.querySelector(".stage.active");
-    if (activeStage && activeStage.id === "stage-map") {
-      drawWorldMap();
-    }
-  });
-
-  document.getElementById("btn-start-map").addEventListener("click", () => {
-    const px = document.getElementById("input-player-x").value.trim() || "Player 1";
-    const po = document.getElementById("input-player-o").value.trim() || "Player 2";
-    state.players.X = px;
-    state.players.O = po;
-    document.getElementById("label-player-x").textContent = px;
-    document.getElementById("label-player-o").textContent = po;
-    showStage("map");
-    updateCountrySelectionUI();
-  });
-
-  document.getElementById("btn-back-names").addEventListener("click", () => {
-    showStage("players");
-  });
-
-  document.getElementById("btn-back-map").addEventListener("click", () => {
-    showStage("map");
-    updateCountrySelectionUI();
-  });
-
-  document.getElementById("btn-clear-countries").addEventListener("click", () => {
-    state.horizontalCountry = null;
-    state.verticalCountry = null;
-    state.mapView.needsRender = true;
-    updateCountrySelectionUI();
-  });
-
-  document.getElementById("btn-enter-game").addEventListener("click", () => {
-    if (!state.horizontalCountry || !state.verticalCountry) return;
-    startNewRound();
-    showStage("game");
-  });
-
-  document.getElementById("btn-new-grid").addEventListener("click", startNewRound);
-
-  const canvas = document.getElementById("world-canvas");
-  const tooltip = document.getElementById("map-tooltip");
-  const mv = state.mapView;
-
-  document.getElementById("btn-zoom-in").addEventListener("click", () => {
-    const { w, h } = getLogicalCanvasSize(canvas);
-    setMapZoomAt(mv.targetZoom * 1.4, w * 0.5, h * 0.5, true);
-  });
-
-  document.getElementById("btn-zoom-out").addEventListener("click", () => {
-    const { w, h } = getLogicalCanvasSize(canvas);
-    setMapZoomAt(mv.targetZoom / 1.4, w * 0.5, h * 0.5, true);
-  });
-
-  document.getElementById("btn-zoom-reset").addEventListener("click", () => {
-    const preset = REGION_PRESETS.world;
-    focusOnCoords(preset.lat, preset.lng, preset.zoom);
-    updateRegionButtons("world");
-  });
-
-  document.querySelectorAll(".region-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const regionKey = btn.dataset.region;
-      const preset = REGION_PRESETS[regionKey];
-      if (!preset) return;
-      focusOnCoords(preset.lat, preset.lng, preset.zoom);
-      updateRegionButtons(regionKey);
-    });
-  });
-
-  document.getElementById("country-search-input").addEventListener("input", renderCountrySidebar);
-
-  canvas.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    const rect = canvas.getBoundingClientRect();
-    const pivotX = e.clientX - rect.left;
-    const pivotY = e.clientY - rect.top;
-    const factor = e.deltaY < 0 ? 1.25 : 0.8;
-    setMapZoomAt(mv.targetZoom * factor, pivotX, pivotY, true);
-  }, { passive: false });
-
-  canvas.addEventListener("dblclick", (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const pivotX = e.clientX - rect.left;
-    const pivotY = e.clientY - rect.top;
-    setMapZoomAt(mv.targetZoom * 1.65, pivotX, pivotY, true);
-  });
-
-  canvas.addEventListener("mousedown", (e) => {
-    if (e.button !== 0) return;
-    mv.isDragging = true;
-    mv.hasMoved = false;
-    mv.dragStartX = e.clientX;
-    mv.dragStartY = e.clientY;
-    mv.startOffsetX = mv.targetOffsetX;
-    mv.startOffsetY = mv.targetOffsetY;
-    canvas.classList.add("dragging");
-  });
-
-  window.addEventListener("mousemove", (e) => {
-    if (!mv.isDragging) return;
-    const dxScreen = e.clientX - mv.dragStartX;
-    const dyScreen = e.clientY - mv.dragStartY;
-    if (Math.hypot(dxScreen, dyScreen) > 4) {
-      mv.hasMoved = true;
-    }
-
-    const { w, h } = getLogicalCanvasSize(canvas);
-    const rawOx = mv.startOffsetX + dxScreen;
-    const rawOy = mv.startOffsetY + dyScreen;
-    const clamped = clampMapOffsets(rawOx, rawOy, mv.targetZoom, w, h);
-
-    mv.targetOffsetX = clamped.x;
-    mv.targetOffsetY = clamped.y;
-    mv.offsetX = clamped.x;
-    mv.offsetY = clamped.y;
-    mv.needsRender = true;
-    updateRegionButtons("");
-  });
-
-  window.addEventListener("mouseup", () => {
-    if (!mv.isDragging) return;
-    mv.isDragging = false;
-    canvas.classList.remove("dragging");
-  });
-
-  canvas.addEventListener("touchstart", (e) => {
-    if (e.touches.length === 1) {
-      const t = e.touches[0];
-      mv.isDragging = true;
-      mv.hasMoved = false;
-      mv.dragStartX = t.clientX;
-      mv.dragStartY = t.clientY;
-      mv.startOffsetX = mv.targetOffsetX;
-      mv.startOffsetY = mv.targetOffsetY;
-    } else if (e.touches.length === 2) {
-      mv.isDragging = false;
-      const [t1, t2] = e.touches;
-      mv.pinchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
-      mv.pinchStartZoom = mv.targetZoom;
-    }
-  }, { passive: true });
-
-  canvas.addEventListener("touchmove", (e) => {
-    if (e.touches.length === 1 && mv.isDragging) {
-      const t = e.touches[0];
-      const dxScreen = t.clientX - mv.dragStartX;
-      const dyScreen = t.clientY - mv.dragStartY;
-      if (Math.hypot(dxScreen, dyScreen) > 4) {
-        mv.hasMoved = true;
-      }
-      const { w, h } = getLogicalCanvasSize(canvas);
-      const clamped = clampMapOffsets(mv.startOffsetX + dxScreen, mv.startOffsetY + dyScreen, mv.targetZoom, w, h);
-      mv.targetOffsetX = clamped.x;
-      mv.targetOffsetY = clamped.y;
-      mv.offsetX = clamped.x;
-      mv.offsetY = clamped.y;
-      mv.needsRender = true;
-    } else if (e.touches.length === 2 && mv.pinchStartDist > 0) {
-      e.preventDefault();
-      const [t1, t2] = e.touches;
-      const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
-      const rect = canvas.getBoundingClientRect();
-      const midX = (t1.clientX + t2.clientX) * 0.5 - rect.left;
-      const midY = (t1.clientY + t2.clientY) * 0.5 - rect.top;
-      setMapZoomAt(mv.pinchStartZoom * (dist / mv.pinchStartDist), midX, midY, false);
-    }
-  }, { passive: false });
-
-  canvas.addEventListener("touchend", () => {
-    mv.isDragging = false;
-    mv.pinchStartDist = 0;
-  });
-
-  canvas.addEventListener("mousemove", (e) => {
-    if (mv.isDragging) {
-      tooltip.classList.add("hidden");
-      return;
-    }
-
-    const code = getHoveredCountryCode(e.clientX, e.clientY);
-    if (state.hoveredCountry !== code) {
-      state.hoveredCountry = code;
-      mv.needsRender = true;
-    }
-    canvas.classList.toggle("hovering-pin", Boolean(code));
-
-    if (code) {
-      const info = FOOTBALL_DB.countries[code];
-      let roleLabel = "Click to assign axis";
-      if (code === state.horizontalCountry) roleLabel = "Assigned: Horizontal Axis";
-      if (code === state.verticalCountry) roleLabel = "Assigned: Vertical Axis";
-
-      tooltip.innerHTML = `
-        <div class="tt-title">${info.name}</div>
-        <div class="tt-league">${info.league}</div>
-        <div class="tt-clubs">${info.clubs.length} clubs &bull; ${roleLabel}</div>
-      `;
-      tooltip.style.left = `${e.clientX + 14}px`;
-      tooltip.style.top = `${e.clientY + 14}px`;
-      tooltip.classList.remove("hidden");
-    } else {
-      const rect = canvas.getBoundingClientRect();
-      const { w, h } = getLogicalCanvasSize(canvas);
-      const coords = screenToLatLng(e.clientX - rect.left, e.clientY - rect.top, w, h);
-      tooltip.innerHTML = `
-        <div class="tt-clubs">${coords.lat.toFixed(2)}°, ${coords.lng.toFixed(2)}°</div>
-      `;
-      tooltip.style.left = `${e.clientX + 14}px`;
-      tooltip.style.top = `${e.clientY + 14}px`;
-      tooltip.classList.remove("hidden");
-    }
-  });
-
-  canvas.addEventListener("mouseleave", () => {
-    state.hoveredCountry = null;
-    mv.needsRender = true;
-    canvas.classList.remove("hovering-pin");
-    tooltip.classList.add("hidden");
-  });
-
-  canvas.addEventListener("click", (e) => {
-    if (mv.hasMoved) return;
-    const code = getHoveredCountryCode(e.clientX, e.clientY);
-    if (code) {
-      toggleCountrySelection(code);
-    }
-  });
-
-  document.querySelectorAll(".grid-cell").forEach((cell) => {
-    cell.addEventListener("click", () => {
-      const r = parseInt(cell.dataset.r, 10);
-      const c = parseInt(cell.dataset.c, 10);
-      openGuessModal(r, c);
-    });
-  });
-
-  document.getElementById("btn-skip").addEventListener("click", () => {
-    if (!state.gameOver) {
-      switchTurn("Turn passed.");
-    }
-  });
-
-  document.getElementById("btn-close-modal").addEventListener("click", closeGuessModal);
-  document.getElementById("player-input").addEventListener("input", handleAutocomplete);
-  document.getElementById("player-input").addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown" && state.autocompleteMatches.length > 0) {
-      e.preventDefault();
-      state.highlightedIndex = (state.highlightedIndex + 1) % state.autocompleteMatches.length;
-      renderAutocompleteItems();
-    } else if (e.key === "ArrowUp" && state.autocompleteMatches.length > 0) {
-      e.preventDefault();
-      state.highlightedIndex =
-        (state.highlightedIndex - 1 + state.autocompleteMatches.length) % state.autocompleteMatches.length;
-      renderAutocompleteItems();
-    } else if (e.key === "Enter") {
-      e.preventDefault();
-      submitGuess();
-    } else if (e.key === "Escape") {
-      closeGuessModal();
-    }
-  });
-  document.getElementById("btn-submit-guess").addEventListener("click", submitGuess);
-});
+  const grid = generateSolvableGrid(state.horizontal

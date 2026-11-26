@@ -1840,7 +1840,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Crystal Palace",
         "Manchester United",
-        "West Ham United"
+        "West Ham United",
+        "Aston Villa"
       ]
     },
     {
@@ -1905,7 +1906,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Club Brugge KV",
         "FC Nantes",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "Gaziantep FK"
       ]
     },
     {
@@ -2110,7 +2112,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Lorient",
         "Hull City",
-        "BK Häcken"
+        "BK Häcken",
+        "Bayer 04 Leverkusen",
+        "Celta de Vigo"
       ]
     },
     {
@@ -2196,7 +2200,8 @@ const FOOTBALL_DB = {
       "name": "Abdul Fatawu",
       "clubs": [
         "Leicester City",
-        "Sporting CP"
+        "Sporting CP",
+        "Ipswich Town"
       ]
     },
     {
@@ -2212,7 +2217,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Nordsjaelland",
         "Rayo Vallecano",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "Girona FC"
       ]
     },
     {
@@ -2283,7 +2289,8 @@ const FOOTBALL_DB = {
         "Hatayspor",
         "Kayserispor",
         "Sivasspor",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Ümraniyespor"
       ]
     },
     {
@@ -2606,7 +2613,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bayern Munich",
         "Everton FC",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "Málaga CF"
       ]
     },
     {
@@ -2631,7 +2639,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Aarhus GF",
         "Red Bull Salzburg",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "TSG 1899 Hoffenheim"
       ]
     },
     {
@@ -2882,7 +2891,8 @@ const FOOTBALL_DB = {
         "Vitória Guimarães SC",
         "West Ham United",
         "Wolverhampton Wanderers",
-        "FC Basel 1893"
+        "FC Basel 1893",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -3006,7 +3016,8 @@ const FOOTBALL_DB = {
         "AS Saint-Étienne",
         "Aberdeen FC",
         "FC Lorient",
-        "Paris Saint-Germain"
+        "Paris Saint-Germain",
+        "FC Schalke 04"
       ]
     },
     {
@@ -3049,7 +3060,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "CF Os Belenenses",
         "CS Marítimo",
-        "RFK Akhmat Grozny"
+        "RFK Akhmat Grozny",
+        "Córdoba CF"
       ]
     },
     {
@@ -3122,7 +3134,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Fatih Karagümrük",
         "Fortuna Sittardia Combinatie",
-        "Club Brugge KV"
+        "Club Brugge KV",
+        "Pendikspor"
       ]
     },
     {
@@ -3323,7 +3336,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Angers SCO",
         "Stade Rennais FC",
-        "Minnesota United FC"
+        "Minnesota United FC",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -3378,7 +3392,8 @@ const FOOTBALL_DB = {
         "FC Nantes",
         "RC Lens",
         "RC Strasbourg Alsace",
-        "Thonon Évian Grand Genève FC"
+        "Thonon Évian Grand Genève FC",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -3410,7 +3425,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Elche CF",
         "RCD Espanyol Barcelona",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -3523,7 +3539,8 @@ const FOOTBALL_DB = {
       "name": "Adrián Ortolá",
       "clubs": [
         "Deportivo Alavés",
-        "Deportivo de La Coruña"
+        "Deportivo de La Coruña",
+        "EA Guingamp"
       ]
     },
     {
@@ -3570,7 +3587,8 @@ const FOOTBALL_DB = {
       "name": "Adu Ares",
       "clubs": [
         "Athletic Bilbao",
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "SD Eibar"
       ]
     },
     {
@@ -3603,7 +3621,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Gil Vicente FC",
         "Olympique Lyon",
-        "Sporting CP"
+        "Sporting CP",
+        "Bayer 04 Leverkusen"
       ]
     },
     {
@@ -3768,7 +3787,8 @@ const FOOTBALL_DB = {
         "Galatasaray",
         "Heracles Almelo",
         "Hertha BSC",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Caykur Rizespor"
       ]
     },
     {
@@ -3788,7 +3808,8 @@ const FOOTBALL_DB = {
         "KV Mechelen",
         "Panathinaikos",
         "RKC Waalwijk",
-        "US Lecce"
+        "US Lecce",
+        "Le Havre AC"
       ]
     },
     {
@@ -3935,7 +3956,8 @@ const FOOTBALL_DB = {
         "Arsenal FC",
         "Olympique Lyon",
         "Southampton FC",
-        "West Bromwich Albion"
+        "West Bromwich Albion",
+        "Everton FC"
       ]
     },
     {
@@ -4016,7 +4038,8 @@ const FOOTBALL_DB = {
       "name": "Akor Adams",
       "clubs": [
         "Montpellier HSC",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Venezia FC"
       ]
     },
     {
@@ -4561,7 +4584,8 @@ const FOOTBALL_DB = {
         "Elche CF",
         "RCD Mallorca",
         "Real Madrid",
-        "UD Almería"
+        "UD Almería",
+        "Celta de Vigo"
       ]
     },
     {
@@ -4624,14 +4648,16 @@ const FOOTBALL_DB = {
       "name": "Alejandro Garnacho",
       "clubs": [
         "Chelsea FC",
-        "Manchester United"
+        "Manchester United",
+        "Aston Villa"
       ]
     },
     {
       "name": "Alejandro Grimaldo",
       "clubs": [
         "Bayer 04 Leverkusen",
-        "SL Benfica"
+        "SL Benfica",
+        "Atlético de Madrid"
       ]
     },
     {
@@ -4665,7 +4691,8 @@ const FOOTBALL_DB = {
       "name": "Alejo Sarco",
       "clubs": [
         "Bayer 04 Leverkusen",
-        "Borussia Mönchengladbach"
+        "Borussia Mönchengladbach",
+        "Sporting Gijón"
       ]
     },
     {
@@ -4682,7 +4709,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "ACF Fiorentina",
         "Red Bull Salzburg",
-        "Red Star Belgrade"
+        "Red Star Belgrade",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -5578,7 +5606,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Brescia Calcio",
         "Venezia FC",
-        "FC Viktoria Plzen"
+        "FC Viktoria Plzen",
+        "Spezia Calcio"
       ]
     },
     {
@@ -5667,7 +5696,8 @@ const FOOTBALL_DB = {
       "name": "Alessandro Di Pardo",
       "clubs": [
         "Cagliari Calcio",
-        "Juventus FC"
+        "Juventus FC",
+        "UC Sampdoria"
       ]
     },
     {
@@ -5775,7 +5805,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Genoa CFC",
         "PAOK",
-        "Parma Calcio 1913"
+        "Parma Calcio 1913",
+        "US Cremonese"
       ]
     },
     {
@@ -5852,7 +5883,8 @@ const FOOTBALL_DB = {
         "AC Monza",
         "SSC Napoli",
         "US Cremonese",
-        "Venezia FC"
+        "Venezia FC",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -5977,7 +6009,9 @@ const FOOTBALL_DB = {
       "name": "Alex Matos",
       "clubs": [
         "Chelsea FC",
-        "Huddersfield Town"
+        "Huddersfield Town",
+        "Göztepe",
+        "Sheffield United"
       ]
     },
     {
@@ -5986,7 +6020,8 @@ const FOOTBALL_DB = {
         "Crystal Palace",
         "Queens Park Rangers",
         "Reading FC",
-        "Southampton FC"
+        "Southampton FC",
+        "Leicester City"
       ]
     },
     {
@@ -6312,7 +6347,8 @@ const FOOTBALL_DB = {
         "FC Schalke 04",
         "Heart of Midlothian FC",
         "Hertha BSC",
-        "SC Freiburg"
+        "SC Freiburg",
+        "1.FSV Mainz 05"
       ]
     },
     {
@@ -6854,7 +6890,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Deportivo Alavés",
         "Real Betis Balompié",
-        "Villarreal CF"
+        "Villarreal CF",
+        "SS Lazio"
       ]
     },
     {
@@ -6962,7 +6999,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FCV Dender EH",
         "NEC Nijmegen",
-        "Bursaspor"
+        "Bursaspor",
+        "Istanbulspor"
       ]
     },
     {
@@ -7071,7 +7109,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Istanbulspor",
         "Konyaspor",
-        "Standard Liège"
+        "Standard Liège",
+        "Ümraniyespor"
       ]
     },
     {
@@ -7085,7 +7124,8 @@ const FOOTBALL_DB = {
       "name": "Alidu Seidu",
       "clubs": [
         "Clermont Foot 63",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "OGC Nice"
       ]
     },
     {
@@ -7094,7 +7134,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "KRC Genk",
         "US Sassuolo",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -7234,7 +7275,8 @@ const FOOTBALL_DB = {
         "Sint-Truidense VV",
         "Sociedade Esportiva Palmeiras",
         "Udinese Calcio",
-        "São Paulo Futebol Clube"
+        "São Paulo Futebol Clube",
+        "Manchester City"
       ]
     },
     {
@@ -7409,7 +7451,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Akhisarspor",
         "MKE Ankaragücü",
-        "Denizlispor"
+        "Denizlispor",
+        "Bursaspor"
       ]
     },
     {
@@ -7443,7 +7486,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Fenerbahce",
         "MKE Ankaragücü",
-        "Manchester United"
+        "Manchester United",
+        "Celta de Vigo"
       ]
     },
     {
@@ -7509,7 +7553,8 @@ const FOOTBALL_DB = {
         "AS Roma",
         "Bologna FC",
         "RSC Anderlecht",
-        "SSC Napoli"
+        "SSC Napoli",
+        "CD Leganés"
       ]
     },
     {
@@ -7561,7 +7606,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Olympique Marseille",
         "Red Bull Salzburg",
-        "SL Benfica"
+        "SL Benfica",
+        "Newcastle United"
       ]
     },
     {
@@ -7570,7 +7616,8 @@ const FOOTBALL_DB = {
         "AIK",
         "Dundee United FC",
         "ESTAC Troyes",
-        "Willem II Tilburg"
+        "Willem II Tilburg",
+        "US Lecce"
       ]
     },
     {
@@ -7665,7 +7712,8 @@ const FOOTBALL_DB = {
         "Antalyaspor",
         "CF União Madeira",
         "Desportivo Aves",
-        "Konyaspor"
+        "Konyaspor",
+        "Sivasspor"
       ]
     },
     {
@@ -7804,7 +7852,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "ACF Fiorentina",
         "FC Copenhagen",
-        "Stade Reims"
+        "Stade Reims",
+        "Le Havre AC"
       ]
     },
     {
@@ -8492,7 +8541,8 @@ const FOOTBALL_DB = {
         "Cagliari Calcio",
         "SPAL",
         "SSC Napoli",
-        "UC Sampdoria"
+        "UC Sampdoria",
+        "Pisa Sporting Club"
       ]
     },
     {
@@ -8502,7 +8552,8 @@ const FOOTBALL_DB = {
         "Frosinone Calcio",
         "Genoa CFC",
         "Inter Milan",
-        "US Sassuolo"
+        "US Sassuolo",
+        "SS Lazio"
       ]
     },
     {
@@ -8776,7 +8827,8 @@ const FOOTBALL_DB = {
         "Club Brugge KV",
         "FC Nordsjaelland",
         "Rangers FC",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Basaksehir FK"
       ]
     },
     {
@@ -9031,7 +9083,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Chelsea FC",
         "Nottingham Forest",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "Manchester United"
       ]
     },
     {
@@ -9826,14 +9879,16 @@ const FOOTBALL_DB = {
         "CA Osasuna",
         "Granada CF",
         "SD Huesca",
-        "Villarreal CF"
+        "Villarreal CF",
+        "UD Almería"
       ]
     },
     {
       "name": "Andrés García",
       "clubs": [
         "Aston Villa",
-        "Levante UD"
+        "Levante UD",
+        "Getafe CF"
       ]
     },
     {
@@ -9985,7 +10040,8 @@ const FOOTBALL_DB = {
         "Feyenoord Rotterdam",
         "Hobro IK",
         "Malmö Fotbollförening",
-        "Sheffield United"
+        "Sheffield United",
+        "Burnley FC"
       ]
     },
     {
@@ -10065,7 +10121,8 @@ const FOOTBALL_DB = {
         "NAC Breda",
         "PSV Eindhoven",
         "RB Leipzig",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -10381,7 +10438,8 @@ const FOOTBALL_DB = {
       "name": "Anthony Gordon",
       "clubs": [
         "Everton FC",
-        "Newcastle United"
+        "Newcastle United",
+        "FC Barcelona"
       ]
     },
     {
@@ -10492,7 +10550,8 @@ const FOOTBALL_DB = {
         "Fenerbahce",
         "NEC Nijmegen",
         "SC Heerenveen",
-        "Samsunspor"
+        "Samsunspor",
+        "Norwich City"
       ]
     },
     {
@@ -10608,14 +10667,16 @@ const FOOTBALL_DB = {
       "name": "Antoine Joujou",
       "clubs": [
         "FC Famalicão",
-        "Le Havre AC"
+        "Le Havre AC",
+        "FC Nantes"
       ]
     },
     {
       "name": "Antoine Makoumbou",
       "clubs": [
         "Cagliari Calcio",
-        "Samsunspor"
+        "Samsunspor",
+        "UC Sampdoria"
       ]
     },
     {
@@ -10922,7 +10983,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Empoli",
         "Palermo FC",
-        "UC Sampdoria"
+        "UC Sampdoria",
+        "US Salernitana 1919"
       ]
     },
     {
@@ -11138,14 +11200,16 @@ const FOOTBALL_DB = {
       "name": "Antonio Palumbo",
       "clubs": [
         "UC Sampdoria",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Palermo FC"
       ]
     },
     {
       "name": "Antonio Raimondo",
       "clubs": [
         "Bologna FC",
-        "Venezia FC"
+        "Venezia FC",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -11634,7 +11698,8 @@ const FOOTBALL_DB = {
         "1. FC Heidenheim",
         "Bayern Munich",
         "Frosinone Calcio",
-        "SS Lazio"
+        "SS Lazio",
+        "FC Augsburg"
       ]
     },
     {
@@ -11779,7 +11844,8 @@ const FOOTBALL_DB = {
         "Hellas Verona",
         "PSV Eindhoven",
         "Southampton FC",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Venezia FC"
       ]
     },
     {
@@ -11833,14 +11899,16 @@ const FOOTBALL_DB = {
       "name": "Arnau Tenas",
       "clubs": [
         "Paris Saint-Germain",
-        "Villarreal CF"
+        "Villarreal CF",
+        "RCD Mallorca"
       ]
     },
     {
       "name": "Arnaud Bodart",
       "clubs": [
         "LOSC Lille",
-        "Standard Liège"
+        "Standard Liège",
+        "Le Havre AC"
       ]
     },
     {
@@ -11906,7 +11974,8 @@ const FOOTBALL_DB = {
       "name": "Arne Engels",
       "clubs": [
         "Celtic FC",
-        "FC Augsburg"
+        "FC Augsburg",
+        "West Ham United"
       ]
     },
     {
@@ -12116,7 +12185,8 @@ const FOOTBALL_DB = {
         "FC Midtjylland",
         "Girona FC",
         "SC Dnipro-1",
-        "Sönderjyske Fodbold"
+        "Sönderjyske Fodbold",
+        "Bologna FC"
       ]
     },
     {
@@ -12411,14 +12481,16 @@ const FOOTBALL_DB = {
         "Bayer 04 Leverkusen",
         "CD Nacional",
         "Fluminense Football Club",
-        "Cruzeiro Esporte Clube"
+        "Cruzeiro Esporte Clube",
+        "SV Werder Bremen"
       ]
     },
     {
       "name": "Arthur Atta",
       "clubs": [
         "FC Metz",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -13057,7 +13129,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Beşiktaş",
         "Göztepe",
-        "RB Leipzig"
+        "RB Leipzig",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -13221,7 +13294,8 @@ const FOOTBALL_DB = {
         "Aston Villa",
         "Chelsea FC",
         "Stade Reims",
-        "West Ham United"
+        "West Ham United",
+        "Crystal Palace"
       ]
     },
     {
@@ -13243,7 +13317,8 @@ const FOOTBALL_DB = {
       "name": "Axel Tape",
       "clubs": [
         "Bayer 04 Leverkusen",
-        "Paris Saint-Germain"
+        "Paris Saint-Germain",
+        "Levante UD"
       ]
     },
     {
@@ -13273,7 +13348,8 @@ const FOOTBALL_DB = {
         "Borussia Dortmund",
         "Girona FC",
         "SL Benfica",
-        "Zenit St. Petersburg"
+        "Zenit St. Petersburg",
+        "OGC Nice"
       ]
     },
     {
@@ -13287,7 +13363,8 @@ const FOOTBALL_DB = {
       "name": "Ayase Ueda",
       "clubs": [
         "Cercle Brugge",
-        "Feyenoord Rotterdam"
+        "Feyenoord Rotterdam",
+        "LOSC Lille"
       ]
     },
     {
@@ -13476,7 +13553,8 @@ const FOOTBALL_DB = {
         "Göztepe",
         "Kasimpasa",
         "Trabzonspor",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Istanbulspor"
       ]
     },
     {
@@ -13560,7 +13638,8 @@ const FOOTBALL_DB = {
         "De Graafschap Doetinchem",
         "FC Groningen",
         "Stade Reims",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Ipswich Town"
       ]
     },
     {
@@ -13603,7 +13682,8 @@ const FOOTBALL_DB = {
         "LOSC Lille",
         "Real Betis Balompié",
         "Stade Reims",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Levante UD"
       ]
     },
     {
@@ -13857,7 +13937,8 @@ const FOOTBALL_DB = {
         "Ionikos Nikeas",
         "Olympiacos",
         "Paris Saint-Germain",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "FC Lorient"
       ]
     },
     {
@@ -14080,7 +14161,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Shakhtar Donetsk",
         "SV Darmstadt 98",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Venezia FC"
       ]
     },
     {
@@ -14346,7 +14428,8 @@ const FOOTBALL_DB = {
       "name": "Ben Chrisene",
       "clubs": [
         "Aston Villa",
-        "Kilmarnock FC"
+        "Kilmarnock FC",
+        "Norwich City"
       ]
     },
     {
@@ -14376,7 +14459,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Burnley FC",
         "Middlesbrough FC",
-        "Norwich City"
+        "Norwich City",
+        "Stoke City"
       ]
     },
     {
@@ -14408,7 +14492,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Ipswich Town",
         "Manchester City",
-        "West Ham United"
+        "West Ham United",
+        "Stoke City"
       ]
     },
     {
@@ -14471,7 +14556,8 @@ const FOOTBALL_DB = {
       "name": "Ben Wilmot",
       "clubs": [
         "Udinese Calcio",
-        "Watford FC"
+        "Watford FC",
+        "Stoke City"
       ]
     },
     {
@@ -14722,7 +14808,8 @@ const FOOTBALL_DB = {
       "name": "Benjamin Leroy",
       "clubs": [
         "AC Ajaccio",
-        "Dijon FCO"
+        "Dijon FCO",
+        "FC Lorient"
       ]
     },
     {
@@ -14906,7 +14993,8 @@ const FOOTBALL_DB = {
       "name": "Benoît Badiashile",
       "clubs": [
         "AS Monaco",
-        "Chelsea FC"
+        "Chelsea FC",
+        "SSC Napoli"
       ]
     },
     {
@@ -15001,7 +15089,8 @@ const FOOTBALL_DB = {
         "Alanyaspor",
         "Galatasaray",
         "Genoa CFC",
-        "Konyaspor"
+        "Konyaspor",
+        "Kocaelispor"
       ]
     },
     {
@@ -15159,7 +15248,8 @@ const FOOTBALL_DB = {
         "Olympique Lyon",
         "Sunderland AFC",
         "Villarreal CF",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -15221,7 +15311,8 @@ const FOOTBALL_DB = {
         "SC Farense",
         "Sevilla FC",
         "Sporting CP",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -15281,7 +15372,8 @@ const FOOTBALL_DB = {
         "Clermont Foot 63",
         "Hatayspor",
         "Montpellier HSC",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "Eyüpspor"
       ]
     },
     {
@@ -15457,7 +15549,8 @@ const FOOTBALL_DB = {
       "name": "Bjorn Meijer",
       "clubs": [
         "Club Brugge KV",
-        "FC Groningen"
+        "FC Groningen",
+        "UC Sampdoria"
       ]
     },
     {
@@ -16073,7 +16166,8 @@ const FOOTBALL_DB = {
         "Ajax Amsterdam",
         "Crystal Palace",
         "Torino FC",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "1.FC Köln"
       ]
     },
     {
@@ -16125,7 +16219,8 @@ const FOOTBALL_DB = {
       "name": "Boubacar Fofana",
       "clubs": [
         "CD Nacional",
-        "Moreirense FC"
+        "Moreirense FC",
+        "FC Sochaux-Montbéliard"
       ]
     },
     {
@@ -16172,7 +16267,8 @@ const FOOTBALL_DB = {
         "SS Lazio",
         "Stade Reims",
         "US Salernitana 1919",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -16188,7 +16284,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "ADO Den Haag",
         "NAC Breda",
-        "Ajax Amsterdam"
+        "Ajax Amsterdam",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -16264,7 +16361,8 @@ const FOOTBALL_DB = {
       "name": "Bradley Barcola",
       "clubs": [
         "Olympique Lyon",
-        "Paris Saint-Germain"
+        "Paris Saint-Germain",
+        "Liverpool FC"
       ]
     },
     {
@@ -16386,7 +16484,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Clermont Foot 63",
         "Club Brugge KV",
-        "KAS Eupen"
+        "KAS Eupen",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -16474,14 +16573,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "Borussia Mönchengladbach",
         "Eintracht Frankfurt",
-        "SpVgg Greuther Fürth"
+        "SpVgg Greuther Fürth",
+        "FC St. Pauli"
       ]
     },
     {
       "name": "Branimir Mlacic",
       "clubs": [
         "HNK Hajduk Split",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Watford FC"
       ]
     },
     {
@@ -16526,7 +16627,8 @@ const FOOTBALL_DB = {
       "name": "Brayann Pereira",
       "clubs": [
         "AJ Auxerre",
-        "NEC Nijmegen"
+        "NEC Nijmegen",
+        "West Bromwich Albion"
       ]
     },
     {
@@ -16597,7 +16699,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Crystal Palace",
         "Nottingham Forest",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Everton FC"
       ]
     },
     {
@@ -16848,7 +16951,8 @@ const FOOTBALL_DB = {
         "Parma Calcio 1913",
         "Rangers FC",
         "Vitória Guimarães SC",
-        "Zenit St. Petersburg"
+        "Zenit St. Petersburg",
+        "Norwich City"
       ]
     },
     {
@@ -17001,7 +17105,8 @@ const FOOTBALL_DB = {
       "name": "Bruno Guimarães",
       "clubs": [
         "Newcastle United",
-        "Olympique Lyon"
+        "Olympique Lyon",
+        "Arsenal FC"
       ]
     },
     {
@@ -17316,7 +17421,8 @@ const FOOTBALL_DB = {
         "AS Roma",
         "KV Kortrijk",
         "KVC Westerlo",
-        "FC Dallas"
+        "FC Dallas",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -17443,7 +17549,8 @@ const FOOTBALL_DB = {
         "Fortuna Sittardia Combinatie",
         "Galatasaray",
         "LOSC Lille",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Hatayspor"
       ]
     },
     {
@@ -17626,7 +17733,8 @@ const FOOTBALL_DB = {
       "name": "Caleb Ekuban",
       "clubs": [
         "Genoa CFC",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Hellas Verona"
       ]
     },
     {
@@ -17721,7 +17829,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Aston Villa",
         "Sheffield United",
-        "West Bromwich Albion"
+        "West Bromwich Albion",
+        "Cardiff City"
       ]
     },
     {
@@ -17729,7 +17838,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AFC Bournemouth",
         "Newcastle United",
-        "West Ham United"
+        "West Ham United",
+        "Brentford FC"
       ]
     },
     {
@@ -17761,7 +17871,8 @@ const FOOTBALL_DB = {
         "Aston Villa",
         "Fulham FC",
         "Middlesbrough FC",
-        "Southampton FC"
+        "Southampton FC",
+        "Cardiff City"
       ]
     },
     {
@@ -17877,7 +17988,9 @@ const FOOTBALL_DB = {
       "name": "Cameron Humphreys",
       "clubs": [
         "Manchester City",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Ipswich Town",
+        "Huddersfield Town"
       ]
     },
     {
@@ -17961,7 +18074,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Beşiktaş",
         "FC Schalke 04",
-        "FC Utrecht"
+        "FC Utrecht",
+        "Caykur Rizespor"
       ]
     },
     {
@@ -18131,7 +18245,8 @@ const FOOTBALL_DB = {
         "Aris Thessalonikis",
         "Celta de Vigo",
         "FC Barcelona",
-        "Getafe CF"
+        "Getafe CF",
+        "Girona FC"
       ]
     },
     {
@@ -18248,7 +18363,8 @@ const FOOTBALL_DB = {
       "name": "Carlos Baleba",
       "clubs": [
         "Brighton & Hove Albion",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Manchester United"
       ]
     },
     {
@@ -18278,7 +18394,8 @@ const FOOTBALL_DB = {
         "CA Osasuna",
         "Elche CF",
         "Levante UD",
-        "RCD Espanyol Barcelona"
+        "RCD Espanyol Barcelona",
+        "Real Valladolid CF"
       ]
     },
     {
@@ -18311,7 +18428,8 @@ const FOOTBALL_DB = {
         "Deportivo de La Coruña",
         "Granada CF",
         "Real Sociedad",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Real Oviedo"
       ]
     },
     {
@@ -18615,7 +18733,8 @@ const FOOTBALL_DB = {
         "AC Horsens",
         "Feyenoord Rotterdam",
         "Hellas Verona",
-        "SL Benfica"
+        "SL Benfica",
+        "FC Toulouse"
       ]
     },
     {
@@ -18819,7 +18938,8 @@ const FOOTBALL_DB = {
         "1.FC Köln",
         "Oud-Heverlee Leuven",
         "Real Valladolid CF",
-        "Valencia CF"
+        "Valencia CF",
+        "Trabzonspor"
       ]
     },
     {
@@ -18985,7 +19105,8 @@ const FOOTBALL_DB = {
         "Angers SCO",
         "Dijon FCO",
         "OGC Nice",
-        "EA Guingamp"
+        "EA Guingamp",
+        "Valenciennes FC"
       ]
     },
     {
@@ -19083,7 +19204,8 @@ const FOOTBALL_DB = {
       "name": "Charlie Cresswell",
       "clubs": [
         "FC Toulouse",
-        "Leeds United"
+        "Leeds United",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -19124,7 +19246,8 @@ const FOOTBALL_DB = {
         "FC Ingolstadt 04",
         "Fortuna Sittardia Combinatie",
         "Hannover 96",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -19249,7 +19372,8 @@ const FOOTBALL_DB = {
         "BSC Young Boys",
         "Hellas Verona",
         "LOSC Lille",
-        "Panathinaikos"
+        "Panathinaikos",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -19272,7 +19396,8 @@ const FOOTBALL_DB = {
       "name": "Chema Andrés",
       "clubs": [
         "Real Madrid",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -19358,7 +19483,8 @@ const FOOTBALL_DB = {
       "name": "Chico Lamba",
       "clubs": [
         "FC Arouca",
-        "Sporting CP"
+        "Sporting CP",
+        "AS Saint-Étienne"
       ]
     },
     {
@@ -19380,7 +19506,8 @@ const FOOTBALL_DB = {
         "CD Leganés",
         "Caykur Rizespor",
         "FC Nantes",
-        "FC Porto"
+        "FC Porto",
+        "Konyaspor"
       ]
     },
     {
@@ -19571,7 +19698,8 @@ const FOOTBALL_DB = {
       "name": "Chris Ramos",
       "clubs": [
         "Cádiz CF",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "Real Oviedo"
       ]
     },
     {
@@ -19874,7 +20002,8 @@ const FOOTBALL_DB = {
         "ACF Fiorentina",
         "Arsenal FC",
         "Brentford FC",
-        "Bröndby IF"
+        "Bröndby IF",
+        "Everton FC"
       ]
     },
     {
@@ -19927,7 +20056,8 @@ const FOOTBALL_DB = {
       "name": "Christian Rasmussen",
       "clubs": [
         "Ajax Amsterdam",
-        "FC Nordsjaelland"
+        "FC Nordsjaelland",
+        "VfL Bochum"
       ]
     },
     {
@@ -20135,7 +20265,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Eintracht Frankfurt",
         "Olympique Marseille",
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "Valenciennes FC"
       ]
     },
     {
@@ -20327,7 +20458,8 @@ const FOOTBALL_DB = {
         "Club Brugge KV",
         "FC Twente Enschede",
         "Norwich City",
-        "PAOK"
+        "PAOK",
+        "Arsenal FC"
       ]
     },
     {
@@ -20353,7 +20485,8 @@ const FOOTBALL_DB = {
         "LOSC Lille",
         "Middlesbrough FC",
         "PAOK",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "Ipswich Town"
       ]
     },
     {
@@ -20428,7 +20561,8 @@ const FOOTBALL_DB = {
       "name": "Cihat Çelik",
       "clubs": [
         "Kocaelispor",
-        "NEC Nijmegen"
+        "NEC Nijmegen",
+        "Sivasspor"
       ]
     },
     {
@@ -20574,7 +20708,8 @@ const FOOTBALL_DB = {
       "name": "Claudio Gomes",
       "clubs": [
         "Chelsea FC",
-        "Manchester City"
+        "Manchester City",
+        "Palermo FC"
       ]
     },
     {
@@ -20902,7 +21037,8 @@ const FOOTBALL_DB = {
       "name": "Connor Barron",
       "clubs": [
         "Aberdeen FC",
-        "Rangers FC"
+        "Rangers FC",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -21037,7 +21173,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Nordsjaelland",
         "RB Leipzig",
-        "Sporting CP"
+        "Sporting CP",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -21117,7 +21254,8 @@ const FOOTBALL_DB = {
         "GD Chaves",
         "Olympiacos",
         "Rio Ave FC",
-        "Vitória Setúbal FC"
+        "Vitória Setúbal FC",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -21135,7 +21273,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Excelsior Rotterdam",
         "PSV Eindhoven",
-        "SC Heerenveen"
+        "SC Heerenveen",
+        "Celta de Vigo"
       ]
     },
     {
@@ -21327,7 +21466,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Avs Futebol",
         "Boavista FC",
-        "Rio Ave FC"
+        "Rio Ave FC",
+        "FC Metz"
       ]
     },
     {
@@ -21351,7 +21491,8 @@ const FOOTBALL_DB = {
       "name": "Cristian Herrera",
       "clubs": [
         "Elche CF",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "SD Huesca"
       ]
     },
     {
@@ -21428,7 +21569,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atalanta BC",
         "Genoa CFC",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Atlético de Madrid"
       ]
     },
     {
@@ -21617,7 +21759,8 @@ const FOOTBALL_DB = {
       "name": "Curtis Jones",
       "clubs": [
         "Liverpool FC",
-        "Wolverhampton Wanderers"
+        "Wolverhampton Wanderers",
+        "Inter Milan"
       ]
     },
     {
@@ -21687,7 +21830,8 @@ const FOOTBALL_DB = {
         "RKC Waalwijk",
         "SSC Napoli",
         "Torino FC",
-        "Club Brugge KV"
+        "Club Brugge KV",
+        "AC Monza"
       ]
     },
     {
@@ -21789,7 +21933,8 @@ const FOOTBALL_DB = {
         "Royal Charleroi Sporting Club",
         "Stade Reims",
         "West Bromwich Albion",
-        "Wigan Athletic"
+        "Wigan Athletic",
+        "Ipswich Town"
       ]
     },
     {
@@ -21970,7 +22115,8 @@ const FOOTBALL_DB = {
         "KAA Gent",
         "Luton Town",
         "SK Slavia Prague",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "Borussia Mönchengladbach"
       ]
     },
     {
@@ -21995,7 +22141,8 @@ const FOOTBALL_DB = {
       "name": "Daizen Maeda",
       "clubs": [
         "CS Marítimo",
-        "Celtic FC"
+        "Celtic FC",
+        "Ipswich Town"
       ]
     },
     {
@@ -22341,7 +22488,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC St. Pauli",
         "Huddersfield Town",
-        "SK Beveren"
+        "SK Beveren",
+        "UC Sampdoria"
       ]
     },
     {
@@ -22411,7 +22559,8 @@ const FOOTBALL_DB = {
         "FC Khimki",
         "KRC Genk",
         "OFI Crete",
-        "PFK Krylya Sovetov Samara"
+        "PFK Krylya Sovetov Samara",
+        "Girona FC"
       ]
     },
     {
@@ -22510,7 +22659,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Barcelona",
         "RCD Mallorca",
-        "GNK Dinamo Zagreb"
+        "GNK Dinamo Zagreb",
+        "CD Leganés"
       ]
     },
     {
@@ -22828,7 +22978,8 @@ const FOOTBALL_DB = {
         "Atalanta BC",
         "FC Empoli",
         "SS Lazio",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -22849,7 +23000,8 @@ const FOOTBALL_DB = {
       "name": "Daniel Muñoz",
       "clubs": [
         "Crystal Palace",
-        "KRC Genk"
+        "KRC Genk",
+        "Nottingham Forest"
       ]
     },
     {
@@ -23362,7 +23514,8 @@ const FOOTBALL_DB = {
         "1.FC Union Berlin",
         "Excelsior Rotterdam",
         "Vitesse Arnhem",
-        "Ajax Amsterdam"
+        "Ajax Amsterdam",
+        "SS Lazio"
       ]
     },
     {
@@ -23723,7 +23876,8 @@ const FOOTBALL_DB = {
         "Arsenal FC",
         "Brighton & Hove Albion",
         "Manchester United",
-        "Watford FC"
+        "Watford FC",
+        "Chelsea FC"
       ]
     },
     {
@@ -23942,7 +24096,8 @@ const FOOTBALL_DB = {
       "name": "Dara Costelloe",
       "clubs": [
         "Dundee FC",
-        "St. Johnstone FC"
+        "St. Johnstone FC",
+        "Wigan Athletic"
       ]
     },
     {
@@ -24124,7 +24279,8 @@ const FOOTBALL_DB = {
       "name": "Darnell Furlong",
       "clubs": [
         "Queens Park Rangers",
-        "West Bromwich Albion"
+        "West Bromwich Albion",
+        "Ipswich Town"
       ]
     },
     {
@@ -24333,7 +24489,8 @@ const FOOTBALL_DB = {
       "name": "David Alaba",
       "clubs": [
         "Bayern Munich",
-        "Real Madrid"
+        "Real Madrid",
+        "Udinese Calcio"
       ]
     },
     {
@@ -24391,7 +24548,8 @@ const FOOTBALL_DB = {
       "name": "David Button",
       "clubs": [
         "Brighton & Hove Albion",
-        "West Bromwich Albion"
+        "West Bromwich Albion",
+        "Ipswich Town"
       ]
     },
     {
@@ -24623,7 +24781,8 @@ const FOOTBALL_DB = {
       "name": "David Min",
       "clubs": [
         "FC Utrecht",
-        "RKC Waalwijk"
+        "RKC Waalwijk",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -24639,7 +24798,8 @@ const FOOTBALL_DB = {
       "name": "David Møller Wolfe",
       "clubs": [
         "AZ Alkmaar",
-        "Wolverhampton Wanderers"
+        "Wolverhampton Wanderers",
+        "Hamburger SV"
       ]
     },
     {
@@ -24685,7 +24845,8 @@ const FOOTBALL_DB = {
       "name": "David Odogu",
       "clubs": [
         "AC Milan",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "FC Toulouse"
       ]
     },
     {
@@ -24695,7 +24856,8 @@ const FOOTBALL_DB = {
         "Gaziantep FK",
         "Torino FC",
         "US Cremonese",
-        "Venezia FC"
+        "Venezia FC",
+        "Benevento Calcio"
       ]
     },
     {
@@ -24889,7 +25051,8 @@ const FOOTBALL_DB = {
         "Motherwell FC",
         "Rangers FC",
         "St. Johnstone FC",
-        "St. Mirren FC"
+        "St. Mirren FC",
+        "Cardiff City"
       ]
     },
     {
@@ -25023,7 +25186,8 @@ const FOOTBALL_DB = {
       "name": "Davide Frattesi",
       "clubs": [
         "Inter Milan",
-        "US Sassuolo"
+        "US Sassuolo",
+        "SS Lazio"
       ]
     },
     {
@@ -25396,7 +25560,8 @@ const FOOTBALL_DB = {
         "1.FSV Mainz 05",
         "De Graafschap Doetinchem",
         "Heracles Almelo",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -25911,14 +26076,16 @@ const FOOTBALL_DB = {
         "PEC Zwolle",
         "SC Heerenveen",
         "US Cremonese",
-        "Venezia FC"
+        "Venezia FC",
+        "Palermo FC"
       ]
     },
     {
       "name": "Dennis Kaygin",
       "clubs": [
         "Rapid Vienna",
-        "Willem II Tilburg"
+        "Willem II Tilburg",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -25951,7 +26118,8 @@ const FOOTBALL_DB = {
       "name": "Dennis Srbeny",
       "clubs": [
         "Norwich City",
-        "SC Paderborn 07"
+        "SC Paderborn 07",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -26258,7 +26426,8 @@ const FOOTBALL_DB = {
       "name": "Derensili Sanches Fernandes",
       "clubs": [
         "Excelsior Rotterdam",
-        "FC Utrecht"
+        "FC Utrecht",
+        "Huddersfield Town"
       ]
     },
     {
@@ -26297,7 +26466,8 @@ const FOOTBALL_DB = {
       "name": "Dermane Karim",
       "clubs": [
         "FC Lorient",
-        "KV Kortrijk"
+        "KV Kortrijk",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -26391,7 +26561,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Beşiktaş",
         "FC Empoli",
-        "AC Milan"
+        "AC Milan",
+        "AS Roma"
       ]
     },
     {
@@ -26468,7 +26639,8 @@ const FOOTBALL_DB = {
         "1. FC Heidenheim",
         "Ajax Amsterdam",
         "Eintracht Frankfurt",
-        "FC Copenhagen"
+        "FC Copenhagen",
+        "Borussia Dortmund"
       ]
     },
     {
@@ -26594,21 +26766,24 @@ const FOOTBALL_DB = {
         "Fenerbahce",
         "GD Estoril Praia",
         "Sevilla FC",
-        "Clube de Regatas do Flamengo"
+        "Clube de Regatas do Flamengo",
+        "Parma Calcio 1913"
       ]
     },
     {
       "name": "Diego Collado",
       "clubs": [
         "Gil Vicente FC",
-        "Villarreal CF"
+        "Villarreal CF",
+        "SD Huesca"
       ]
     },
     {
       "name": "Diego Conde",
       "clubs": [
         "Getafe CF",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Real Betis Balompié"
       ]
     },
     {
@@ -26693,7 +26868,8 @@ const FOOTBALL_DB = {
         "Elche CF",
         "Málaga CF",
         "Sevilla FC",
-        "Santos Laguna"
+        "Santos Laguna",
+        "Real Zaragoza"
       ]
     },
     {
@@ -26701,7 +26877,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Angers SCO",
         "Brighton & Hove Albion",
-        "Fortaleza CEIF"
+        "Fortaleza CEIF",
+        "Deportivo de La Coruña",
+        "SD Huesca"
       ]
     },
     {
@@ -26855,7 +27033,8 @@ const FOOTBALL_DB = {
         "AFC Bournemouth",
         "CD Leganés",
         "Getafe CF",
-        "Real Sociedad"
+        "Real Sociedad",
+        "CA Osasuna"
       ]
     },
     {
@@ -26965,7 +27144,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Girondins Bordeaux",
         "Nottingham Forest",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "LOSC Lille"
       ]
     },
     {
@@ -26980,7 +27160,8 @@ const FOOTBALL_DB = {
       "name": "Dimitar Mitov",
       "clubs": [
         "Aberdeen FC",
-        "St. Johnstone FC"
+        "St. Johnstone FC",
+        "FC St. Pauli"
       ]
     },
     {
@@ -27222,7 +27403,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Empoli",
         "Olympiacos",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Palermo FC"
       ]
     },
     {
@@ -27433,7 +27615,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Union Berlin",
         "FC Porto",
-        "SC Braga"
+        "SC Braga",
+        "SS Lazio"
       ]
     },
     {
@@ -27481,7 +27664,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Antalyaspor",
         "Bodrum FK",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -27587,14 +27771,16 @@ const FOOTBALL_DB = {
       "name": "Divin Mubama",
       "clubs": [
         "Manchester City",
-        "West Ham United"
+        "West Ham United",
+        "Southampton FC"
       ]
     },
     {
       "name": "Divine Mukasa",
       "clubs": [
         "Leicester City",
-        "Manchester City"
+        "Manchester City",
+        "West Ham United"
       ]
     },
     {
@@ -27700,7 +27886,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Genoa CFC",
         "Stade Rennais FC",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Inter Milan"
       ]
     },
     {
@@ -27748,7 +27935,8 @@ const FOOTBALL_DB = {
       "name": "Djibril Soumaré",
       "clubs": [
         "CD Nacional",
-        "SC Braga"
+        "SC Braga",
+        "Stoke City"
       ]
     },
     {
@@ -27756,7 +27944,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Borussia Mönchengladbach",
         "Eintracht Frankfurt",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Genoa CFC"
       ]
     },
     {
@@ -28593,7 +28782,8 @@ const FOOTBALL_DB = {
       "name": "Dominik Livakovic",
       "clubs": [
         "Fenerbahce",
-        "GNK Dinamo Zagreb"
+        "GNK Dinamo Zagreb",
+        "FC Barcelona"
       ]
     },
     {
@@ -28639,7 +28829,8 @@ const FOOTBALL_DB = {
         "1.FC Köln",
         "1.FC Union Berlin",
         "SC Freiburg",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -28788,7 +28979,8 @@ const FOOTBALL_DB = {
         "Eskisehirspor",
         "Eyüpspor",
         "Kayserispor",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -28877,7 +29069,8 @@ const FOOTBALL_DB = {
       "name": "Doğan Alemdar",
       "clubs": [
         "Kayserispor",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Beşiktaş"
       ]
     },
     {
@@ -29008,7 +29201,8 @@ const FOOTBALL_DB = {
         "Olympique Lyon",
         "Olympique Marseille",
         "Real Sociedad",
-        "Southampton FC"
+        "Southampton FC",
+        "US Sassuolo"
       ]
     },
     {
@@ -29129,7 +29323,8 @@ const FOOTBALL_DB = {
       "name": "Dwight McNeil",
       "clubs": [
         "Burnley FC",
-        "Everton FC"
+        "Everton FC",
+        "Crystal Palace"
       ]
     },
     {
@@ -29309,7 +29504,8 @@ const FOOTBALL_DB = {
         "Chelsea FC",
         "GD Chaves",
         "Sporting CP",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -29357,7 +29553,8 @@ const FOOTBALL_DB = {
       "name": "Ebenezer Akinsanmiro",
       "clubs": [
         "Inter Milan",
-        "Pisa Sporting Club"
+        "Pisa Sporting Club",
+        "AC Monza"
       ]
     },
     {
@@ -29390,7 +29587,8 @@ const FOOTBALL_DB = {
         "BSC Young Boys",
         "Fatih Karagümrük",
         "Hellas Verona",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Konyaspor"
       ]
     },
     {
@@ -29664,7 +29862,8 @@ const FOOTBALL_DB = {
       "name": "Edoardo Bove",
       "clubs": [
         "ACF Fiorentina",
-        "AS Roma"
+        "AS Roma",
+        "Watford FC"
       ]
     },
     {
@@ -30096,7 +30295,8 @@ const FOOTBALL_DB = {
         "Beşiktaş",
         "Stade Reims",
         "UD Almería",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -30121,7 +30321,8 @@ const FOOTBALL_DB = {
       "name": "El Hadji Malick Diouf",
       "clubs": [
         "SK Slavia Prague",
-        "West Ham United"
+        "West Ham United",
+        "Brentford FC"
       ]
     },
     {
@@ -30248,7 +30449,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Copenhagen",
         "Galatasaray",
-        "Southampton FC"
+        "Southampton FC",
+        "Le Havre AC"
       ]
     },
     {
@@ -30284,7 +30486,8 @@ const FOOTBALL_DB = {
       "name": "Eliezer Mayenda",
       "clubs": [
         "Hibernian FC",
-        "Sunderland AFC"
+        "Sunderland AFC",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -30298,7 +30501,8 @@ const FOOTBALL_DB = {
       "name": "Elijah Just",
       "clubs": [
         "AC Horsens",
-        "Motherwell FC"
+        "Motherwell FC",
+        "Swansea City"
       ]
     },
     {
@@ -30333,7 +30537,8 @@ const FOOTBALL_DB = {
       "name": "Eliot Matazo",
       "clubs": [
         "AS Monaco",
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "Hull City"
       ]
     },
     {
@@ -30348,7 +30553,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AJ Auxerre",
         "KAA Gent",
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -30375,7 +30581,8 @@ const FOOTBALL_DB = {
         "Fenerbahce",
         "RB Leipzig",
         "SSC Napoli",
-        "Torino FC"
+        "Torino FC",
+        "Atalanta BC"
       ]
     },
     {
@@ -30390,7 +30597,8 @@ const FOOTBALL_DB = {
       "name": "Elliot Anderson",
       "clubs": [
         "Newcastle United",
-        "Nottingham Forest"
+        "Nottingham Forest",
+        "Manchester City"
       ]
     },
     {
@@ -30404,7 +30612,8 @@ const FOOTBALL_DB = {
       "name": "Elliot Watt",
       "clubs": [
         "Motherwell FC",
-        "St. Johnstone FC"
+        "St. Johnstone FC",
+        "Samsunspor"
       ]
     },
     {
@@ -30601,7 +30810,8 @@ const FOOTBALL_DB = {
         "Bologna FC",
         "Chievo Verona",
         "FC Empoli",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Pisa Sporting Club"
       ]
     },
     {
@@ -30685,7 +30895,8 @@ const FOOTBALL_DB = {
       "name": "Emersonn",
       "clubs": [
         "FC Toulouse",
-        "Göztepe"
+        "Göztepe",
+        "Ipswich Town"
       ]
     },
     {
@@ -30695,7 +30906,8 @@ const FOOTBALL_DB = {
         "Inter Milan",
         "Juventus FC",
         "UC Sampdoria",
-        "US Cremonese"
+        "US Cremonese",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -30723,7 +30935,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Genoa CFC",
         "PFK CSKA Moskva",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Cesena FC",
+        "Venezia FC"
       ]
     },
     {
@@ -30820,7 +31034,8 @@ const FOOTBALL_DB = {
       "name": "Emil Riis",
       "clubs": [
         "Randers FC",
-        "VVV-Venlo"
+        "VVV-Venlo",
+        "Leicester City"
       ]
     },
     {
@@ -30875,7 +31090,8 @@ const FOOTBALL_DB = {
         "Aston Villa",
         "FC Midtjylland",
         "Getafe CF",
-        "Sociedade Esportiva Palmeiras"
+        "Sociedade Esportiva Palmeiras",
+        "Chelsea FC"
       ]
     },
     {
@@ -30959,7 +31175,8 @@ const FOOTBALL_DB = {
       "name": "Emin Bayram",
       "clubs": [
         "Galatasaray",
-        "KVC Westerlo"
+        "KVC Westerlo",
+        "Basaksehir FK"
       ]
     },
     {
@@ -30998,7 +31215,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Caykur Rizespor",
         "Eyüpspor",
-        "KVC Westerlo"
+        "KVC Westerlo",
+        "Kocaelispor"
       ]
     },
     {
@@ -31123,7 +31341,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "RC Strasbourg Alsace",
         "Royal Antwerp FC",
-        "Sparta Rotterdam"
+        "Sparta Rotterdam",
+        "Chelsea FC"
       ]
     },
     {
@@ -31232,7 +31451,8 @@ const FOOTBALL_DB = {
         "Galatasaray",
         "Kayserispor",
         "Sivasspor",
-        "Vitória Setúbal FC"
+        "Vitória Setúbal FC",
+        "Pendikspor"
       ]
     },
     {
@@ -31249,7 +31469,8 @@ const FOOTBALL_DB = {
         "Alanyaspor",
         "Antalyaspor",
         "Eyüpspor",
-        "Galatasaray"
+        "Galatasaray",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -31264,7 +31485,8 @@ const FOOTBALL_DB = {
       "name": "Emre Bilgin",
       "clubs": [
         "Beşiktaş",
-        "Fatih Karagümrük"
+        "Fatih Karagümrük",
+        "Eyüpspor"
       ]
     },
     {
@@ -31300,7 +31522,8 @@ const FOOTBALL_DB = {
       "name": "Emre Kaplan",
       "clubs": [
         "Basaksehir FK",
-        "Hatayspor"
+        "Hatayspor",
+        "Bodrum FK"
       ]
     },
     {
@@ -31376,7 +31599,8 @@ const FOOTBALL_DB = {
       "name": "Emrecan Uzunhan",
       "clubs": [
         "Antalyaspor",
-        "Beşiktaş"
+        "Beşiktaş",
+        "Istanbulspor"
       ]
     },
     {
@@ -31502,14 +31726,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "Levadiakos",
         "Panathinaikos",
-        "NK Lokomotiva Zagreb"
+        "NK Lokomotiva Zagreb",
+        "VfL Bochum"
       ]
     },
     {
       "name": "Enis Destan",
       "clubs": [
         "KVC Westerlo",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Konyaspor"
       ]
     },
     {
@@ -31629,7 +31855,8 @@ const FOOTBALL_DB = {
       "name": "Enzo Fernández",
       "clubs": [
         "Chelsea FC",
-        "SL Benfica"
+        "SL Benfica",
+        "Manchester City"
       ]
     },
     {
@@ -31669,7 +31896,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Club Atlético River Plate",
         "SL Benfica",
-        "Valencia CF"
+        "Valencia CF",
+        "Real Oviedo"
       ]
     },
     {
@@ -31729,7 +31957,8 @@ const FOOTBALL_DB = {
         "FC Basel 1893",
         "FC Nantes",
         "Real Valladolid CF",
-        "Valencia CF"
+        "Valencia CF",
+        "Torino FC"
       ]
     },
     {
@@ -31774,7 +32003,8 @@ const FOOTBALL_DB = {
       "name": "Erdem Secgin",
       "clubs": [
         "Beşiktaş",
-        "Sarpsborg 08 Fotballforening"
+        "Sarpsborg 08 Fotballforening",
+        "Istanbulspor"
       ]
     },
     {
@@ -31864,7 +32094,8 @@ const FOOTBALL_DB = {
       "name": "Eren Tozlu",
       "clubs": [
         "Mersin Talimyurdu SK",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -31924,7 +32155,8 @@ const FOOTBALL_DB = {
       "name": "Erhan Kartal",
       "clubs": [
         "Alanyaspor",
-        "Kasimpasa"
+        "Kasimpasa",
+        "Elazigspor"
       ]
     },
     {
@@ -32026,7 +32258,8 @@ const FOOTBALL_DB = {
       "name": "Eric Martel",
       "clubs": [
         "1.FC Köln",
-        "RB Leipzig"
+        "RB Leipzig",
+        "1.FSV Mainz 05"
       ]
     },
     {
@@ -32393,7 +32626,8 @@ const FOOTBALL_DB = {
       "name": "Ernest Poku",
       "clubs": [
         "AZ Alkmaar",
-        "Bayer 04 Leverkusen"
+        "Bayer 04 Leverkusen",
+        "Beşiktaş"
       ]
     },
     {
@@ -32461,7 +32695,8 @@ const FOOTBALL_DB = {
         "Kasimpasa",
         "Kayserispor",
         "Konyaspor",
-        "Sivasspor"
+        "Sivasspor",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -32508,14 +32743,16 @@ const FOOTBALL_DB = {
       "name": "Esquerdinha",
       "clubs": [
         "AO Platanias",
-        "CS Marítimo"
+        "CS Marítimo",
+        "Queens Park Rangers"
       ]
     },
     {
       "name": "Estanis Pedrola",
       "clubs": [
         "Bologna FC",
-        "UC Sampdoria"
+        "UC Sampdoria",
+        "Real Oviedo"
       ]
     },
     {
@@ -32600,7 +32837,8 @@ const FOOTBALL_DB = {
       "name": "Ethan Galbraith",
       "clubs": [
         "Manchester United",
-        "Swansea City"
+        "Swansea City",
+        "Stoke City"
       ]
     },
     {
@@ -33152,7 +33390,8 @@ const FOOTBALL_DB = {
         "FC Schalke 04",
         "SpVgg Greuther Fürth",
         "Hertha BSC",
-        "Holstein Kiel"
+        "Holstein Kiel",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -33258,7 +33497,8 @@ const FOOTBALL_DB = {
         "Liverpool FC",
         "Olimpik Donetsk",
         "Real Madrid",
-        "Clube Atlético Paranaense"
+        "Clube Atlético Paranaense",
+        "Trabzonspor"
       ]
     },
     {
@@ -33444,7 +33684,8 @@ const FOOTBALL_DB = {
       "name": "Fabrizio Caligara",
       "clubs": [
         "Cagliari Calcio",
-        "Juventus FC"
+        "Juventus FC",
+        "Catania FC"
       ]
     },
     {
@@ -33485,7 +33726,8 @@ const FOOTBALL_DB = {
         "Brighton & Hove Albion",
         "Chelsea FC",
         "Leeds United",
-        "Leicester City"
+        "Leicester City",
+        "Elche CF"
       ]
     },
     {
@@ -33515,14 +33757,16 @@ const FOOTBALL_DB = {
       "name": "Facundo Lescano",
       "clubs": [
         "SC Telstar",
-        "Torino FC"
+        "Torino FC",
+        "US Salernitana 1919"
       ]
     },
     {
       "name": "Facundo Medina",
       "clubs": [
         "Olympique Marseille",
-        "RC Lens"
+        "RC Lens",
+        "Bayer 04 Leverkusen"
       ]
     },
     {
@@ -33661,7 +33905,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Köln",
         "Eintracht Frankfurt",
-        "Hellas Verona"
+        "Hellas Verona",
+        "Holstein Kiel"
       ]
     },
     {
@@ -33876,7 +34121,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "FC Empoli",
         "Real Valladolid CF",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Palermo FC"
       ]
     },
     {
@@ -34399,7 +34645,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Beşiktaş",
         "FC Augsburg",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -34414,7 +34661,8 @@ const FOOTBALL_DB = {
       "name": "Fellipe Jack",
       "clubs": [
         "Como 1907",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "US Cremonese"
       ]
     },
     {
@@ -34443,7 +34691,8 @@ const FOOTBALL_DB = {
       "name": "Fer Niño",
       "clubs": [
         "RCD Mallorca",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Elche CF"
       ]
     },
     {
@@ -34572,7 +34821,8 @@ const FOOTBALL_DB = {
         "Casa Pia AC",
         "Caykur Rizespor",
         "FC Porto",
-        "Sivasspor"
+        "Sivasspor",
+        "Bodrum FK"
       ]
     },
     {
@@ -34593,7 +34843,8 @@ const FOOTBALL_DB = {
       "name": "Fernando Calero",
       "clubs": [
         "RCD Espanyol Barcelona",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "Málaga CF"
       ]
     },
     {
@@ -34744,14 +34995,16 @@ const FOOTBALL_DB = {
       "name": "Festy Ebosele",
       "clubs": [
         "Basaksehir FK",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Erzurumspor FK"
       ]
     },
     {
       "name": "Feyzi Yildirim",
       "clubs": [
         "Eskisehirspor",
-        "Kasimpasa"
+        "Kasimpasa",
+        "Sivasspor"
       ]
     },
     {
@@ -35128,7 +35381,8 @@ const FOOTBALL_DB = {
       "name": "Filippo Ranocchia",
       "clubs": [
         "AC Monza",
-        "FC Empoli"
+        "FC Empoli",
+        "Palermo FC"
       ]
     },
     {
@@ -35178,7 +35432,8 @@ const FOOTBALL_DB = {
       "name": "Finn Porath",
       "clubs": [
         "Hamburger SV",
-        "Holstein Kiel"
+        "Holstein Kiel",
+        "FC Schalke 04"
       ]
     },
     {
@@ -35342,7 +35597,8 @@ const FOOTBALL_DB = {
       "name": "Florian Ayé",
       "clubs": [
         "AJ Auxerre",
-        "Brescia Calcio"
+        "Brescia Calcio",
+        "Kocaelispor"
       ]
     },
     {
@@ -35363,7 +35619,8 @@ const FOOTBALL_DB = {
       "name": "Florian Flick",
       "clubs": [
         "1.FC Nuremberg",
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -35373,7 +35630,8 @@ const FOOTBALL_DB = {
         "Real Valladolid CF",
         "SC Braga",
         "SV Werder Bremen",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -35444,7 +35702,8 @@ const FOOTBALL_DB = {
       "name": "Florian Miguel",
       "clubs": [
         "Nîmes Olympique",
-        "Oud-Heverlee Leuven"
+        "Oud-Heverlee Leuven",
+        "FC Metz"
       ]
     },
     {
@@ -35486,7 +35745,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Saint-Étienne",
         "ESTAC Troyes",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Montpellier HSC"
       ]
     },
     {
@@ -35583,7 +35843,8 @@ const FOOTBALL_DB = {
       "name": "Fodé Doucouré",
       "clubs": [
         "Le Havre AC",
-        "Stade Reims"
+        "Stade Reims",
+        "FC Nantes"
       ]
     },
     {
@@ -35706,7 +35967,8 @@ const FOOTBALL_DB = {
       "name": "Fran González",
       "clubs": [
         "Real Madrid",
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Sevilla FC"
       ]
     },
     {
@@ -36158,7 +36420,8 @@ const FOOTBALL_DB = {
       "name": "Franco Mastantuono",
       "clubs": [
         "Club Atlético River Plate",
-        "Real Madrid"
+        "Real Madrid",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -36211,7 +36474,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "HNK Rijeka",
         "SL Benfica",
-        "Union Saint-Gilloise"
+        "Union Saint-Gilloise",
+        "RC Lens"
       ]
     },
     {
@@ -36413,7 +36677,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Celtic FC",
         "Southampton FC",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "AFC Bournemouth"
       ]
     },
     {
@@ -36424,7 +36689,8 @@ const FOOTBALL_DB = {
         "KV Kortrijk",
         "KV Oostende",
         "SV Darmstadt 98",
-        "Stade Reims"
+        "Stade Reims",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -36438,7 +36704,8 @@ const FOOTBALL_DB = {
       "name": "Fraser Murray",
       "clubs": [
         "Hibernian FC",
-        "Kilmarnock FC"
+        "Kilmarnock FC",
+        "Wigan Athletic"
       ]
     },
     {
@@ -36777,7 +37044,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Empoli",
         "Fatih Karagümrük",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "US Livorno 1915"
       ]
     },
     {
@@ -36966,7 +37234,8 @@ const FOOTBALL_DB = {
         "CS Marítimo",
         "Gil Vicente FC",
         "Juventus FC",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Sevilla FC"
       ]
     },
     {
@@ -37051,7 +37320,8 @@ const FOOTBALL_DB = {
       "name": "Gabriel Jesus",
       "clubs": [
         "Arsenal FC",
-        "Manchester City"
+        "Manchester City",
+        "FC Barcelona"
       ]
     },
     {
@@ -37138,7 +37408,8 @@ const FOOTBALL_DB = {
         "Parma Calcio 1913",
         "SPAL",
         "US Cremonese",
-        "US Lecce"
+        "US Lecce",
+        "Palermo FC"
       ]
     },
     {
@@ -37174,7 +37445,8 @@ const FOOTBALL_DB = {
         "1.FSV Mainz 05",
         "Bayern Munich",
         "GNK Dinamo Zagreb",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -37248,7 +37520,8 @@ const FOOTBALL_DB = {
       "name": "Gaetano Letizia",
       "clubs": [
         "AC Carpi",
-        "Benevento Calcio"
+        "Benevento Calcio",
+        "Delfino Pescara 1936"
       ]
     },
     {
@@ -37267,7 +37540,8 @@ const FOOTBALL_DB = {
         "Cagliari Calcio",
         "FC Volendam",
         "Parma Calcio 1913",
-        "Venezia FC"
+        "Venezia FC",
+        "Torino FC"
       ]
     },
     {
@@ -37554,14 +37828,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "ESTAC Troyes",
         "FCV Dender EH",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Le Havre AC"
       ]
     },
     {
       "name": "Gauthier Hein",
       "clubs": [
         "AJ Auxerre",
-        "FC Metz"
+        "FC Metz",
+        "OGC Nice"
       ]
     },
     {
@@ -37575,7 +37851,8 @@ const FOOTBALL_DB = {
       "name": "Gautier Lloris",
       "clubs": [
         "Le Havre AC",
-        "OGC Nice"
+        "OGC Nice",
+        "Stade Brestois 29"
       ]
     },
     {
@@ -37824,7 +38101,8 @@ const FOOTBALL_DB = {
       "name": "Gennaro Borrelli",
       "clubs": [
         "Cagliari Calcio",
-        "Frosinone Calcio"
+        "Frosinone Calcio",
+        "Caykur Rizespor"
       ]
     },
     {
@@ -37939,7 +38217,8 @@ const FOOTBALL_DB = {
       "name": "George Hirst",
       "clubs": [
         "Ipswich Town",
-        "Leicester City"
+        "Leicester City",
+        "Stoke City"
       ]
     },
     {
@@ -38742,7 +39021,8 @@ const FOOTBALL_DB = {
         "Montpellier HSC",
         "Olympique Marseille",
         "Real Sociedad",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Manchester City"
       ]
     },
     {
@@ -38778,7 +39058,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Gil Vicente FC",
         "Stade Reims",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -38803,7 +39084,8 @@ const FOOTBALL_DB = {
       "name": "Giacomo Quagliata",
       "clubs": [
         "Heracles Almelo",
-        "US Cremonese"
+        "US Cremonese",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -38887,7 +39169,8 @@ const FOOTBALL_DB = {
         "Brescia Calcio",
         "Hellas Verona",
         "UC Sampdoria",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Palermo FC"
       ]
     },
     {
@@ -38906,14 +39189,16 @@ const FOOTBALL_DB = {
       "name": "Gianluca Frabotta",
       "clubs": [
         "Hellas Verona",
-        "Juventus FC"
+        "Juventus FC",
+        "Cesena FC"
       ]
     },
     {
       "name": "Gianluca Gaetano",
       "clubs": [
         "Cagliari Calcio",
-        "SSC Napoli"
+        "SSC Napoli",
+        "Atalanta BC"
       ]
     },
     {
@@ -38993,7 +39278,8 @@ const FOOTBALL_DB = {
       "name": "Gianmarco Cangiano",
       "clubs": [
         "Bologna FC",
-        "Fortuna Sittardia Combinatie"
+        "Fortuna Sittardia Combinatie",
+        "Delfino Pescara 1936"
       ]
     },
     {
@@ -39345,7 +39631,8 @@ const FOOTBALL_DB = {
         "AJ Auxerre",
         "FC Girondins Bordeaux",
         "Vitória Guimarães SC",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "1.FC Köln"
       ]
     },
     {
@@ -39508,7 +39795,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Copenhagen",
         "FC Shakhtar Donetsk",
-        "Hamburger SV"
+        "Hamburger SV",
+        "Cádiz CF"
       ]
     },
     {
@@ -39523,7 +39811,8 @@ const FOOTBALL_DB = {
       "name": "Giorgi Kvilitaia",
       "clubs": [
         "FC Metz",
-        "KAA Gent"
+        "KAA Gent",
+        "Holstein Kiel"
       ]
     },
     {
@@ -39570,21 +39859,25 @@ const FOOTBALL_DB = {
       "clubs": [
         "Dynamo Kyiv",
         "FC Metz",
-        "Vorskla Poltava"
+        "Vorskla Poltava",
+        "Rayo Vallecano"
       ]
     },
     {
       "name": "Giorgio Altare",
       "clubs": [
         "Cagliari Calcio",
-        "Venezia FC"
+        "Venezia FC",
+        "Delfino Pescara 1936"
       ]
     },
     {
       "name": "Giorgio Cittadini",
       "clubs": [
         "AC Monza",
-        "Genoa CFC"
+        "Genoa CFC",
+        "Atalanta BC",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -39624,7 +39917,8 @@ const FOOTBALL_DB = {
       "name": "Giovanni Bonfanti",
       "clubs": [
         "Atalanta BC",
-        "Pisa Sporting Club"
+        "Pisa Sporting Club",
+        "UD Las Palmas"
       ]
     },
     {
@@ -39638,7 +39932,8 @@ const FOOTBALL_DB = {
       "name": "Giovanni Fabbian",
       "clubs": [
         "ACF Fiorentina",
-        "Bologna FC"
+        "Bologna FC",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -39869,7 +40164,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Dundee FC",
         "Rangers FC",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -40026,7 +40322,8 @@ const FOOTBALL_DB = {
       "name": "Gonzalo García",
       "clubs": [
         "Heracles Almelo",
-        "Real Madrid"
+        "Real Madrid",
+        "Fulham FC"
       ]
     },
     {
@@ -40557,7 +40854,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Cagliari Calcio",
         "FC Empoli",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Juventus FC"
       ]
     },
     {
@@ -40811,7 +41109,8 @@ const FOOTBALL_DB = {
         "Club Brugge KV",
         "Silkeborg IF",
         "Union Saint-Gilloise",
-        "Vejle Boldklub"
+        "Vejle Boldklub",
+        "Hertha BSC"
       ]
     },
     {
@@ -40945,7 +41244,8 @@ const FOOTBALL_DB = {
       "name": "Gustavo Varela",
       "clubs": [
         "Gil Vicente FC",
-        "SL Benfica"
+        "SL Benfica",
+        "AC Monza"
       ]
     },
     {
@@ -41061,7 +41361,8 @@ const FOOTBALL_DB = {
       "name": "Gyan de Regt",
       "clubs": [
         "Excelsior Rotterdam",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "Holstein Kiel"
       ]
     },
     {
@@ -41086,7 +41387,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Utrecht",
         "Lokomotiv Moscow",
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -41108,7 +41410,8 @@ const FOOTBALL_DB = {
       "name": "Gökdeniz Bayrakdar",
       "clubs": [
         "Antalyaspor",
-        "Bodrum FK"
+        "Bodrum FK",
+        "Göztepe"
       ]
     },
     {
@@ -41172,7 +41475,8 @@ const FOOTBALL_DB = {
         "Basaksehir FK",
         "Beşiktaş",
         "Gaziantepspor",
-        "Sivasspor"
+        "Sivasspor",
+        "Denizlispor"
       ]
     },
     {
@@ -41205,7 +41509,8 @@ const FOOTBALL_DB = {
       "name": "Göktug Bakirbas",
       "clubs": [
         "Erzurumspor FK",
-        "Göztepe"
+        "Göztepe",
+        "Sivasspor"
       ]
     },
     {
@@ -41258,7 +41563,8 @@ const FOOTBALL_DB = {
         "Alanyaspor",
         "Beşiktaş",
         "FC Arouca",
-        "Fatih Karagümrük"
+        "Fatih Karagümrük",
+        "Kasimpasa"
       ]
     },
     {
@@ -41441,7 +41747,8 @@ const FOOTBALL_DB = {
       "name": "Hakeem Odoffin",
       "clubs": [
         "Hamilton Academical FC",
-        "Livingston FC"
+        "Livingston FC",
+        "Luton Town"
       ]
     },
     {
@@ -41476,7 +41783,8 @@ const FOOTBALL_DB = {
         "Göztepe",
         "KVC Westerlo",
         "Pendikspor",
-        "Elazigspor"
+        "Elazigspor",
+        "Bursaspor"
       ]
     },
     {
@@ -41564,7 +41872,8 @@ const FOOTBALL_DB = {
         "FC Empoli",
         "Olympique Marseille",
         "SSC Napoli",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Genoa CFC"
       ]
     },
     {
@@ -41830,7 +42139,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Queens Park Rangers",
         "Swansea City",
-        "West Ham United"
+        "West Ham United",
+        "Newcastle United",
+        "Luton Town"
       ]
     },
     {
@@ -41909,7 +42220,8 @@ const FOOTBALL_DB = {
         "AFC Bournemouth",
         "Cardiff City",
         "Fulham FC",
-        "Liverpool FC"
+        "Liverpool FC",
+        "Leeds United"
       ]
     },
     {
@@ -41917,7 +42229,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Leicester City",
         "Tottenham Hotspur",
-        "UC Sampdoria"
+        "UC Sampdoria",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -42048,7 +42361,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Ingolstadt 04",
         "FC St. Pauli",
-        "SC Paderborn 07"
+        "SC Paderborn 07",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -42172,7 +42486,8 @@ const FOOTBALL_DB = {
       "name": "Hendry Blank",
       "clubs": [
         "Borussia Dortmund",
-        "Red Bull Salzburg"
+        "Red Bull Salzburg",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -42194,7 +42509,8 @@ const FOOTBALL_DB = {
       "name": "Hennes Behrens",
       "clubs": [
         "1. FC Heidenheim",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "FC Augsburg"
       ]
     },
     {
@@ -42257,7 +42573,8 @@ const FOOTBALL_DB = {
         "Bursaspor",
         "FC Girondins Bordeaux",
         "Newcastle United",
-        "Sivasspor"
+        "Sivasspor",
+        "SM Caen"
       ]
     },
     {
@@ -42427,7 +42744,8 @@ const FOOTBALL_DB = {
         "Olympiacos",
         "Rio Ave FC",
         "SC Braga",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "Palermo FC"
       ]
     },
     {
@@ -42543,7 +42861,8 @@ const FOOTBALL_DB = {
       "name": "Hidemasa Morita",
       "clubs": [
         "CD Santa Clara",
-        "Sporting CP"
+        "Sporting CP",
+        "Hull City"
       ]
     },
     {
@@ -42628,7 +42947,8 @@ const FOOTBALL_DB = {
       "name": "Honest Ahanor",
       "clubs": [
         "Atalanta BC",
-        "Genoa CFC"
+        "Genoa CFC",
+        "Crystal Palace"
       ]
     },
     {
@@ -43302,7 +43622,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AJ Auxerre",
         "FC Nordsjaelland",
-        "Feyenoord Rotterdam"
+        "Feyenoord Rotterdam",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -43378,7 +43699,8 @@ const FOOTBALL_DB = {
         "Atalanta BC",
         "Bologna FC",
         "Cagliari Calcio",
-        "Hellas Verona"
+        "Hellas Verona",
+        "US Sassuolo"
       ]
     },
     {
@@ -43570,7 +43892,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Pisa Sporting Club",
         "Vitesse Arnhem",
-        "RB Leipzig"
+        "RB Leipzig",
+        "AC Monza"
       ]
     },
     {
@@ -43592,7 +43915,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Club Brugge KV",
         "Como 1907",
-        "Red Bull Salzburg"
+        "Red Bull Salzburg",
+        "US Sassuolo"
       ]
     },
     {
@@ -43631,7 +43955,8 @@ const FOOTBALL_DB = {
         "Getafe CF",
         "Granada CF",
         "Málaga CF",
-        "Norwich City"
+        "Norwich City",
+        "CD Leganés"
       ]
     },
     {
@@ -43735,7 +44060,8 @@ const FOOTBALL_DB = {
         "ACF Fiorentina",
         "Brighton & Hove Albion",
         "SPAL",
-        "West Ham United"
+        "West Ham United",
+        "Burnley FC"
       ]
     },
     {
@@ -44119,7 +44445,8 @@ const FOOTBALL_DB = {
       "name": "Iker Bravo",
       "clubs": [
         "Bayer 04 Leverkusen",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Watford FC"
       ]
     },
     {
@@ -44243,7 +44570,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Excelsior Rotterdam",
         "NEC Nijmegen",
-        "SC Telstar"
+        "SC Telstar",
+        "Huddersfield Town"
       ]
     },
     {
@@ -44328,7 +44656,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Everton FC",
         "Olympique Marseille",
-        "Sheffield United"
+        "Sheffield United",
+        "Manchester City"
       ]
     },
     {
@@ -44578,7 +44907,8 @@ const FOOTBALL_DB = {
       "name": "Ilyes Housni",
       "clubs": [
         "Le Havre AC",
-        "Paris Saint-Germain"
+        "Paris Saint-Germain",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -44784,7 +45114,8 @@ const FOOTBALL_DB = {
       "name": "Iron Gomis",
       "clubs": [
         "Kasimpasa",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -44956,7 +45287,8 @@ const FOOTBALL_DB = {
         "FC Utrecht",
         "Go Ahead Eagles",
         "SV Darmstadt 98",
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "Borussia Mönchengladbach"
       ]
     },
     {
@@ -44995,7 +45327,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AZ Alkmaar",
         "Sönderjyske Fodbold",
-        "Viborg FF"
+        "Viborg FF",
+        "FC Lorient"
       ]
     },
     {
@@ -45188,7 +45521,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Augsburg",
         "Paris Saint-Germain",
-        "SC Braga"
+        "SC Braga",
+        "CD Leganés"
       ]
     },
     {
@@ -45252,7 +45586,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Toulouse",
         "Fulham FC",
-        "West Ham United"
+        "West Ham United",
+        "Ipswich Town"
       ]
     },
     {
@@ -45441,7 +45776,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Hellas Verona",
         "Torino FC",
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "US Lecce"
       ]
     },
     {
@@ -45693,7 +46029,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Empoli",
         "SS Lazio",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Inter Milan"
       ]
     },
     {
@@ -45963,14 +46300,17 @@ const FOOTBALL_DB = {
       "clubs": [
         "Cádiz CF",
         "Getafe CF",
-        "SD Eibar"
+        "SD Eibar",
+        "Real Valladolid CF"
       ]
     },
     {
       "name": "Iván Azón",
       "clubs": [
         "Ipswich Town",
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Getafe CF",
+        "Como 1907"
       ]
     },
     {
@@ -46010,7 +46350,8 @@ const FOOTBALL_DB = {
         "FC Famalicão",
         "FC Porto",
         "Valencia CF",
-        "Málaga CF"
+        "Málaga CF",
+        "UD Las Palmas"
       ]
     },
     {
@@ -46181,7 +46522,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Crystal Palace",
         "Rangers FC",
-        "Stoke City"
+        "Stoke City",
+        "Hull City"
       ]
     },
     {
@@ -46507,7 +46849,8 @@ const FOOTBALL_DB = {
       "name": "Jacopo Fazzini",
       "clubs": [
         "ACF Fiorentina",
-        "FC Empoli"
+        "FC Empoli",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -46531,7 +46874,8 @@ const FOOTBALL_DB = {
       "name": "Jacopo Segre",
       "clubs": [
         "Torino FC",
-        "Venezia FC"
+        "Venezia FC",
+        "Palermo FC"
       ]
     },
     {
@@ -46611,7 +46955,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AFC Bournemouth",
         "Burnley FC",
-        "Leeds United"
+        "Leeds United",
+        "Brentford FC"
       ]
     },
     {
@@ -46737,7 +47082,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Newcastle United",
         "Rangers FC",
-        "St. Mirren FC"
+        "St. Mirren FC",
+        "Huddersfield Town"
       ]
     },
     {
@@ -46760,7 +47106,8 @@ const FOOTBALL_DB = {
       "name": "Jake Clarke-Salter",
       "clubs": [
         "Chelsea FC",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -46829,7 +47176,8 @@ const FOOTBALL_DB = {
       "name": "Jakob Breum",
       "clubs": [
         "Go Ahead Eagles",
-        "Odense Boldklub"
+        "Odense Boldklub",
+        "AS Saint-Étienne"
       ]
     },
     {
@@ -46870,7 +47218,8 @@ const FOOTBALL_DB = {
       "name": "Jakov Medic",
       "clubs": [
         "Ajax Amsterdam",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Norwich City"
       ]
     },
     {
@@ -47279,7 +47628,8 @@ const FOOTBALL_DB = {
       "name": "James Trafford",
       "clubs": [
         "Burnley FC",
-        "Manchester City"
+        "Manchester City",
+        "Leeds United"
       ]
     },
     {
@@ -47326,7 +47676,8 @@ const FOOTBALL_DB = {
       "name": "Jamie Donley",
       "clubs": [
         "Stoke City",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Luton Town"
       ]
     },
     {
@@ -47420,7 +47771,8 @@ const FOOTBALL_DB = {
       "name": "Jamie Vardy",
       "clubs": [
         "Leicester City",
-        "US Cremonese"
+        "US Cremonese",
+        "Burnley FC"
       ]
     },
     {
@@ -47522,7 +47874,8 @@ const FOOTBALL_DB = {
       "name": "Jan Paul van Hecke",
       "clubs": [
         "Brighton & Hove Albion",
-        "SC Heerenveen"
+        "SC Heerenveen",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -47694,7 +48047,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FSV Mainz 05",
         "SC Paderborn 07",
-        "Sparta Rotterdam"
+        "Sparta Rotterdam",
+        "SC Freiburg"
       ]
     },
     {
@@ -47743,7 +48097,8 @@ const FOOTBALL_DB = {
       "name": "Jaouen Hadjam",
       "clubs": [
         "BSC Young Boys",
-        "FC Nantes"
+        "FC Nantes",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -47792,7 +48147,8 @@ const FOOTBALL_DB = {
       "name": "Jarne Steuckers",
       "clubs": [
         "KRC Genk",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "VfL Bochum"
       ]
     },
     {
@@ -48077,7 +48433,8 @@ const FOOTBALL_DB = {
         "Levante UD",
         "RCD Espanyol Barcelona",
         "SD Huesca",
-        "Sevilla FC"
+        "Sevilla FC",
+        "CD Leganés"
       ]
     },
     {
@@ -48086,7 +48443,8 @@ const FOOTBALL_DB = {
         "Deportivo Alavés",
         "Getafe CF",
         "Real Madrid",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "UD Almería"
       ]
     },
     {
@@ -48102,7 +48460,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Málaga CF",
         "SD Huesca",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Cádiz CF"
       ]
     },
     {
@@ -48253,7 +48612,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Genoa CFC",
         "Real Valladolid CF",
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Eyüpspor"
       ]
     },
     {
@@ -48393,7 +48753,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Ajax Amsterdam",
         "Crystal Palace",
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "Sheffield United"
       ]
     },
     {
@@ -48532,7 +48893,8 @@ const FOOTBALL_DB = {
         "FC Toulouse",
         "OGC Nice",
         "SL Benfica",
-        "West Ham United"
+        "West Ham United",
+        "RC Lens"
       ]
     },
     {
@@ -48612,14 +48974,16 @@ const FOOTBALL_DB = {
         "KAS Eupen",
         "Sint-Truidense VV",
         "Standard Liège",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Konyaspor"
       ]
     },
     {
       "name": "Jean-Mattéo Bahoya",
       "clubs": [
         "Angers SCO",
-        "Eintracht Frankfurt"
+        "Eintracht Frankfurt",
+        "Leeds United"
       ]
     },
     {
@@ -48955,7 +49319,8 @@ const FOOTBALL_DB = {
         "FK Ufa",
         "Panetolikos Agrinio",
         "Ural Yekaterinburg",
-        "KAA Gent"
+        "KAA Gent",
+        "Kayserispor"
       ]
     },
     {
@@ -48965,7 +49330,8 @@ const FOOTBALL_DB = {
         "Ipswich Town",
         "SSC Napoli",
         "Stade Reims",
-        "Örgryte IS"
+        "Örgryte IS",
+        "Málaga CF"
       ]
     },
     {
@@ -49097,7 +49463,8 @@ const FOOTBALL_DB = {
       "name": "Jenson Seelt",
       "clubs": [
         "Sunderland AFC",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Swansea City"
       ]
     },
     {
@@ -49266,7 +49633,8 @@ const FOOTBALL_DB = {
         "Burnley FC",
         "Ipswich Town",
         "US Cremonese",
-        "West Bromwich Albion"
+        "West Bromwich Albion",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -49601,7 +49969,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Caykur Rizespor",
         "Crystal Palace",
-        "Stoke City"
+        "Stoke City",
+        "Kasimpasa"
       ]
     },
     {
@@ -49733,7 +50102,8 @@ const FOOTBALL_DB = {
       "name": "Jeyland Mitchell",
       "clubs": [
         "Feyenoord Rotterdam",
-        "Sturm Graz"
+        "Sturm Graz",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -49776,7 +50146,8 @@ const FOOTBALL_DB = {
       "name": "Jhon Lucumí",
       "clubs": [
         "Bologna FC",
-        "KRC Genk"
+        "KRC Genk",
+        "Juventus FC"
       ]
     },
     {
@@ -50259,7 +50630,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AFC Bournemouth",
         "Rangers FC",
-        "Southampton FC"
+        "Southampton FC",
+        "Sheffield United"
       ]
     },
     {
@@ -50402,7 +50774,8 @@ const FOOTBALL_DB = {
         "Lech Poznan",
         "Manchester United",
         "RKC Waalwijk",
-        "Vitória Setúbal FC"
+        "Vitória Setúbal FC",
+        "Reading FC"
       ]
     },
     {
@@ -50621,7 +50994,8 @@ const FOOTBALL_DB = {
         "Girona FC",
         "RCD Mallorca",
         "Rayo Vallecano",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Getafe CF"
       ]
     },
     {
@@ -50788,7 +51162,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Rangers FC",
         "Sheffield United",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Leicester City"
       ]
     },
     {
@@ -50832,7 +51207,8 @@ const FOOTBALL_DB = {
       "name": "John Stones",
       "clubs": [
         "Everton FC",
-        "Manchester City"
+        "Manchester City",
+        "Inter Milan"
       ]
     },
     {
@@ -50960,7 +51336,8 @@ const FOOTBALL_DB = {
       "name": "Jon McLaughlin",
       "clubs": [
         "Heart of Midlothian FC",
-        "Rangers FC"
+        "Rangers FC",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -51287,7 +51664,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Juventus FC",
         "KAA Gent",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Atlético de Madrid"
       ]
     },
     {
@@ -51453,7 +51831,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bologna FC",
         "Norwich City",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "Atalanta BC"
       ]
     },
     {
@@ -51471,7 +51850,8 @@ const FOOTBALL_DB = {
         "CD Leganés",
         "Getafe CF",
         "Sporting CP",
-        "Club Atlético Boca Juniors"
+        "Club Atlético Boca Juniors",
+        "Torino FC"
       ]
     },
     {
@@ -51689,7 +52069,8 @@ const FOOTBALL_DB = {
         "FC Sochaux-Montbéliard",
         "Leicester City",
         "Olympique Marseille",
-        "Swansea City"
+        "Swansea City",
+        "Sheffield United"
       ]
     },
     {
@@ -51738,7 +52119,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Ajax Amsterdam",
         "Brentford FC",
-        "Liverpool FC"
+        "Liverpool FC",
+        "Chelsea FC"
       ]
     },
     {
@@ -51924,7 +52306,8 @@ const FOOTBALL_DB = {
       "name": "Jordan Zemura",
       "clubs": [
         "AFC Bournemouth",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Watford FC"
       ]
     },
     {
@@ -52233,14 +52616,16 @@ const FOOTBALL_DB = {
         "Atlético de Madrid",
         "SD Huesca",
         "Sint-Truidense VV",
-        "Real Madrid"
+        "Real Madrid",
+        "UD Almería"
       ]
     },
     {
       "name": "Jorge Sáenz",
       "clubs": [
         "CD Leganés",
-        "Celta de Vigo"
+        "Celta de Vigo",
+        "Sporting Gijón"
       ]
     },
     {
@@ -52420,7 +52805,8 @@ const FOOTBALL_DB = {
         "RCD Espanyol Barcelona",
         "Real Madrid",
         "Stoke City",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "Getafe CF"
       ]
     },
     {
@@ -52497,7 +52883,8 @@ const FOOTBALL_DB = {
       "name": "Joseph Nonge",
       "clubs": [
         "Juventus FC",
-        "Kocaelispor"
+        "Kocaelispor",
+        "Stade Brestois 29"
       ]
     },
     {
@@ -52557,7 +52944,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Girondins Bordeaux",
         "Fulham FC",
-        "Sunderland AFC"
+        "Sunderland AFC",
+        "Le Havre AC"
       ]
     },
     {
@@ -52630,7 +53018,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Famalicão",
         "Hull City",
-        "Stoke City"
+        "Stoke City",
+        "Swansea City"
       ]
     },
     {
@@ -52705,7 +53094,8 @@ const FOOTBALL_DB = {
       "name": "Joshua Quarshie",
       "clubs": [
         "Fortuna Düsseldorf",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "Southampton FC"
       ]
     },
     {
@@ -52808,7 +53198,8 @@ const FOOTBALL_DB = {
       "name": "Josip Sutalo",
       "clubs": [
         "Ajax Amsterdam",
-        "GNK Dinamo Zagreb"
+        "GNK Dinamo Zagreb",
+        "SS Lazio"
       ]
     },
     {
@@ -52888,7 +53279,8 @@ const FOOTBALL_DB = {
       "name": "José Antonio Caro",
       "clubs": [
         "Real Betis Balompié",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "UD Las Palmas"
       ]
     },
     {
@@ -53008,7 +53400,8 @@ const FOOTBALL_DB = {
       "name": "José Luis Morales",
       "clubs": [
         "Levante UD",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Real Oviedo"
       ]
     },
     {
@@ -53143,7 +53536,8 @@ const FOOTBALL_DB = {
       "name": "José Salinas",
       "clubs": [
         "Elche CF",
-        "RCD Espanyol Barcelona"
+        "RCD Espanyol Barcelona",
+        "Málaga CF"
       ]
     },
     {
@@ -53423,7 +53817,8 @@ const FOOTBALL_DB = {
         "SC Braga",
         "SL Benfica",
         "Udinese Calcio",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "AS Saint-Étienne"
       ]
     },
     {
@@ -53532,7 +53927,8 @@ const FOOTBALL_DB = {
         "SL Benfica",
         "Sporting CP",
         "Vitória Setúbal FC",
-        "West Ham United"
+        "West Ham United",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -53700,7 +54096,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Everton FC",
         "SC Cambuur Leeuwarden",
-        "Sporting CP"
+        "Sporting CP",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -53731,7 +54128,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Leeds United",
         "PSV Eindhoven",
-        "Sparta Rotterdam"
+        "Sparta Rotterdam",
+        "West Ham United"
       ]
     },
     {
@@ -53752,7 +54150,8 @@ const FOOTBALL_DB = {
       "name": "Joël Veltman",
       "clubs": [
         "Ajax Amsterdam",
-        "Brighton & Hove Albion"
+        "Brighton & Hove Albion",
+        "West Ham United"
       ]
     },
     {
@@ -53794,7 +54193,8 @@ const FOOTBALL_DB = {
         "Getafe CF",
         "SK Sigma Olomouc, a.s.",
         "Sevilla FC",
-        "SD Eibar"
+        "SD Eibar",
+        "Málaga CF"
       ]
     },
     {
@@ -53851,7 +54251,8 @@ const FOOTBALL_DB = {
         "CA Osasuna",
         "CD Leganés",
         "Málaga CF",
-        "Real Betis Balompié"
+        "Real Betis Balompié",
+        "Real Oviedo"
       ]
     },
     {
@@ -53926,7 +54327,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Roma",
         "Inter Milan",
-        "SSC Napoli"
+        "SSC Napoli",
+        "Venezia FC"
       ]
     },
     {
@@ -54378,7 +54780,8 @@ const FOOTBALL_DB = {
       "name": "Julien Duranville",
       "clubs": [
         "Borussia Dortmund",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Olympique Lyon"
       ]
     },
     {
@@ -54408,7 +54811,8 @@ const FOOTBALL_DB = {
       "name": "Julien Le Cardinal",
       "clubs": [
         "RC Lens",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "AS Saint-Étienne"
       ]
     },
     {
@@ -54534,7 +54938,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "OGC Nice",
         "RC Lens",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "FC Augsburg"
       ]
     },
     {
@@ -54567,7 +54972,8 @@ const FOOTBALL_DB = {
       "name": "Junior Adamu",
       "clubs": [
         "Celtic FC",
-        "SC Freiburg"
+        "SC Freiburg",
+        "FC Schalke 04"
       ]
     },
     {
@@ -54576,7 +54982,8 @@ const FOOTBALL_DB = {
         "Dijon FCO",
         "Eintracht Frankfurt",
         "Paris Saint-Germain",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "FC Schalke 04"
       ]
     },
     {
@@ -54609,7 +55016,8 @@ const FOOTBALL_DB = {
       "name": "Junior Kadile",
       "clubs": [
         "Almere City FC",
-        "FC Famalicão"
+        "FC Famalicão",
+        "RC Lens"
       ]
     },
     {
@@ -54654,7 +55062,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Empoli",
         "Montpellier HSC",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -54869,21 +55278,24 @@ const FOOTBALL_DB = {
       "clubs": [
         "Panserraikos Serres",
         "Royal Antwerp FC",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "AS Nancy-Lorraine"
       ]
     },
     {
       "name": "Jérémy Jacquet",
       "clubs": [
         "Clermont Foot 63",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Liverpool FC"
       ]
     },
     {
       "name": "Jérémy Le Douaron",
       "clubs": [
         "Palermo FC",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -55101,7 +55513,8 @@ const FOOTBALL_DB = {
       "name": "Júnior Díaz",
       "clubs": [
         "1.FSV Mainz 05",
-        "SV Darmstadt 98"
+        "SV Darmstadt 98",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -55416,7 +55829,8 @@ const FOOTBALL_DB = {
         "Ipswich Town",
         "Leeds United",
         "Manchester City",
-        "West Ham United"
+        "West Ham United",
+        "Sheffield United"
       ]
     },
     {
@@ -55482,7 +55896,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Aarhus GF",
         "FC Copenhagen",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Juventus FC"
       ]
     },
     {
@@ -55600,7 +56015,8 @@ const FOOTBALL_DB = {
       "name": "Karamoko Dembélé",
       "clubs": [
         "Celtic FC",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -55639,7 +56055,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Nancy-Lorraine",
         "SV Werder Bremen",
-        "Willem II Tilburg"
+        "Willem II Tilburg",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -55727,7 +56144,8 @@ const FOOTBALL_DB = {
       "name": "Karl Darlow",
       "clubs": [
         "Leeds United",
-        "Newcastle United"
+        "Newcastle United",
+        "Manchester United"
       ]
     },
     {
@@ -55844,7 +56262,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC St. Pauli",
         "NAC Breda",
-        "Viking Fotballklubb"
+        "Viking Fotballklubb",
+        "VfL Bochum"
       ]
     },
     {
@@ -55876,7 +56295,8 @@ const FOOTBALL_DB = {
       "name": "Kasey Palmer",
       "clubs": [
         "Huddersfield Town",
-        "Hull City"
+        "Hull City",
+        "Luton Town"
       ]
     },
     {
@@ -56132,7 +56552,8 @@ const FOOTBALL_DB = {
       "name": "Keisuke Goto",
       "clubs": [
         "RSC Anderlecht",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "SC Freiburg"
       ]
     },
     {
@@ -56170,7 +56591,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Twente Enschede",
         "Sint-Truidense VV",
-        "Stade Reims"
+        "Stade Reims",
+        "Olympique Lyon"
       ]
     },
     {
@@ -56195,7 +56617,8 @@ const FOOTBALL_DB = {
         "Celtic FC",
         "Leicester City",
         "Manchester City",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Bursaspor"
       ]
     },
     {
@@ -56642,7 +57065,8 @@ const FOOTBALL_DB = {
       "name": "Kerem Şen",
       "clubs": [
         "Istanbulspor",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Ümraniyespor"
       ]
     },
     {
@@ -56723,7 +57147,8 @@ const FOOTBALL_DB = {
         "1.FC Union Berlin",
         "FC Augsburg",
         "SC Freiburg",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Southampton FC"
       ]
     },
     {
@@ -56746,7 +57171,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Fortuna Düsseldorf",
         "Hannover 96",
-        "TSG 1899 Hoffenheim"
+        "TSG 1899 Hoffenheim",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -56788,7 +57214,8 @@ const FOOTBALL_DB = {
       "name": "Kevin Carlos",
       "clubs": [
         "OGC Nice",
-        "SD Huesca"
+        "SD Huesca",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -56820,7 +57247,8 @@ const FOOTBALL_DB = {
         "FC Augsburg",
         "RC Lens",
         "Southampton FC",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Sunderland AFC"
       ]
     },
     {
@@ -56928,7 +57356,8 @@ const FOOTBALL_DB = {
         "FC Midtjylland",
         "Fulham FC",
         "Newcastle United",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "UC Sampdoria"
       ]
     },
     {
@@ -57338,7 +57767,8 @@ const FOOTBALL_DB = {
       "name": "Kian Fitz-Jim",
       "clubs": [
         "Ajax Amsterdam",
-        "Excelsior Rotterdam"
+        "Excelsior Rotterdam",
+        "Torino FC"
       ]
     },
     {
@@ -57395,7 +57825,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atlético de Madrid",
         "Newcastle United",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -57411,7 +57842,8 @@ const FOOTBALL_DB = {
       "name": "Kieron Bowie",
       "clubs": [
         "Hellas Verona",
-        "Hibernian FC"
+        "Hibernian FC",
+        "US Sassuolo"
       ]
     },
     {
@@ -57603,7 +58035,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Köln",
         "PEC Zwolle",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Genoa CFC"
       ]
     },
     {
@@ -57792,7 +58225,8 @@ const FOOTBALL_DB = {
         "FC Emmen",
         "KV Oostende",
         "Union Saint-Gilloise",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "Ipswich Town"
       ]
     },
     {
@@ -57886,7 +58320,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Crotone",
         "FC Nantes",
-        "Torino FC"
+        "Torino FC",
+        "US Livorno 1915"
       ]
     },
     {
@@ -57989,7 +58424,8 @@ const FOOTBALL_DB = {
         "Panetolikos Agrinio",
         "RFK Akhmat Grozny",
         "Lechia Gdansk",
-        "Wisla Plock"
+        "Wisla Plock",
+        "Eyüpspor"
       ]
     },
     {
@@ -58146,7 +58582,8 @@ const FOOTBALL_DB = {
       "name": "Konstantinos Koulierakis",
       "clubs": [
         "PAOK",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "AS Roma"
       ]
     },
     {
@@ -58638,7 +59075,8 @@ const FOOTBALL_DB = {
       "name": "Krépin Diatta",
       "clubs": [
         "AS Monaco",
-        "Club Brugge KV"
+        "Club Brugge KV",
+        "Watford FC"
       ]
     },
     {
@@ -58664,7 +59102,8 @@ const FOOTBALL_DB = {
       "name": "Kubilay Sönmez",
       "clubs": [
         "Göztepe",
-        "Kayserispor"
+        "Kayserispor",
+        "Istanbulspor"
       ]
     },
     {
@@ -59006,7 +59445,8 @@ const FOOTBALL_DB = {
         "Kasimpasa",
         "Rayo Vallecano",
         "Real Sociedad",
-        "SD Eibar"
+        "SD Eibar",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -59161,7 +59601,8 @@ const FOOTBALL_DB = {
         "Excelsior Rotterdam",
         "Fortuna Sittardia Combinatie",
         "Sparta Rotterdam",
-        "NEC Nijmegen"
+        "NEC Nijmegen",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -59196,7 +59637,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Manchester United",
         "UD Almería",
-        "Valencia CF"
+        "Valencia CF",
+        "Burnley FC",
+        "Leeds United"
       ]
     },
     {
@@ -59449,7 +59892,8 @@ const FOOTBALL_DB = {
         "FC Lorient",
         "Olympique Marseille",
         "AC Ajaccio",
-        "AS Nancy-Lorraine"
+        "AS Nancy-Lorraine",
+        "OGC Nice"
       ]
     },
     {
@@ -60166,7 +60610,8 @@ const FOOTBALL_DB = {
       "name": "Leon Goretzka",
       "clubs": [
         "Bayern Munich",
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "Aston Villa"
       ]
     },
     {
@@ -60236,7 +60681,8 @@ const FOOTBALL_DB = {
       "name": "Leonardo Balerdi",
       "clubs": [
         "Borussia Dortmund",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "AS Roma"
       ]
     },
     {
@@ -60291,7 +60737,8 @@ const FOOTBALL_DB = {
       "name": "Leonardo Lelo",
       "clubs": [
         "Casa Pia AC",
-        "SC Braga"
+        "SC Braga",
+        "UD Almería"
       ]
     },
     {
@@ -60305,7 +60752,8 @@ const FOOTBALL_DB = {
       "name": "Leonardo Morosini",
       "clubs": [
         "Brescia Calcio",
-        "Genoa CFC"
+        "Genoa CFC",
+        "AC Carpi"
       ]
     },
     {
@@ -60338,7 +60786,8 @@ const FOOTBALL_DB = {
       "name": "Leonardo Sernicola",
       "clubs": [
         "US Cremonese",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Benevento Calcio"
       ]
     },
     {
@@ -60474,7 +60923,8 @@ const FOOTBALL_DB = {
         "Burnley FC",
         "Chelsea FC",
         "Southampton FC",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "Galatasaray"
       ]
     },
     {
@@ -60719,7 +61169,8 @@ const FOOTBALL_DB = {
         "Chelsea FC",
         "Ipswich Town",
         "Manchester City",
-        "Stoke City"
+        "Stoke City",
+        "Nottingham Forest"
       ]
     },
     {
@@ -60751,7 +61202,8 @@ const FOOTBALL_DB = {
         "FC Empoli",
         "Falkirk FC",
         "Hellas Verona",
-        "Hibernian FC"
+        "Hibernian FC",
+        "UC Sampdoria"
       ]
     },
     {
@@ -60891,7 +61343,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "CD Santa Clara",
         "FC Alverca",
-        "Fenerbahce"
+        "Fenerbahce",
+        "Bursaspor"
       ]
     },
     {
@@ -60940,7 +61393,8 @@ const FOOTBALL_DB = {
         "Galatasaray",
         "Kayserispor",
         "RC Strasbourg Alsace",
-        "Sevilla FC"
+        "Sevilla FC",
+        "SM Caen"
       ]
     },
     {
@@ -61215,7 +61669,8 @@ const FOOTBALL_DB = {
       "name": "Lorenzo Montipò",
       "clubs": [
         "Benevento Calcio",
-        "Hellas Verona"
+        "Hellas Verona",
+        "Venezia FC"
       ]
     },
     {
@@ -61311,7 +61766,8 @@ const FOOTBALL_DB = {
       "name": "Louicius Deedson",
       "clubs": [
         "Hobro IK",
-        "Odense Boldklub"
+        "Odense Boldklub",
+        "FC Sochaux-Montbéliard"
       ]
     },
     {
@@ -61526,7 +61982,8 @@ const FOOTBALL_DB = {
         "Juventus FC",
         "RB Leipzig",
         "RC Lens",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "Olympique Lyon"
       ]
     },
     {
@@ -61726,7 +62183,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "Frosinone Calcio",
         "Genoa CFC",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Palermo FC"
       ]
     },
     {
@@ -61834,7 +62292,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atalanta BC",
         "Cesena FC",
-        "Frosinone Calcio"
+        "Frosinone Calcio",
+        "Delfino Pescara 1936"
       ]
     },
     {
@@ -61860,7 +62319,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Granada CF",
         "Rayo Vallecano",
-        "Real Madrid"
+        "Real Madrid",
+        "CD Leganés"
       ]
     },
     {
@@ -62031,7 +62491,8 @@ const FOOTBALL_DB = {
         "AS Roma",
         "AS Saint-Étienne",
         "Le Havre AC",
-        "Red Bull Salzburg"
+        "Red Bull Salzburg",
+        "Hull City"
       ]
     },
     {
@@ -62176,7 +62637,8 @@ const FOOTBALL_DB = {
       "name": "Lucas Perri",
       "clubs": [
         "Leeds United",
-        "Olympique Lyon"
+        "Olympique Lyon",
+        "Torino FC"
       ]
     },
     {
@@ -62185,7 +62647,8 @@ const FOOTBALL_DB = {
         "Cercle Brugge",
         "Olympique Marseille",
         "RC Strasbourg Alsace",
-        "Sporting Gijón"
+        "Sporting Gijón",
+        "FC Nantes"
       ]
     },
     {
@@ -62292,7 +62755,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Saint-Étienne",
         "KVC Westerlo",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Sevilla FC"
       ]
     },
     {
@@ -62548,7 +63012,8 @@ const FOOTBALL_DB = {
       "name": "Ludovit Reis",
       "clubs": [
         "Club Brugge KV",
-        "FC Groningen"
+        "FC Groningen",
+        "SV Werder Bremen"
       ]
     },
     {
@@ -62672,7 +63137,8 @@ const FOOTBALL_DB = {
       "name": "Luis Milla",
       "clubs": [
         "Getafe CF",
-        "Granada CF"
+        "Granada CF",
+        "Como 1907"
       ]
     },
     {
@@ -62960,7 +63426,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Nuremberg",
         "US Cremonese",
-        "Wolfsberger AC"
+        "Wolfsberger AC",
+        "1.FC Köln"
       ]
     },
     {
@@ -63008,7 +63475,8 @@ const FOOTBALL_DB = {
       "name": "Luka Vuskovic",
       "clubs": [
         "Hamburger SV",
-        "KVC Westerlo"
+        "KVC Westerlo",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -63733,7 +64201,8 @@ const FOOTBALL_DB = {
         "Pisa Sporting Club",
         "RC Lens",
         "Spezia Calcio",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -63790,7 +64259,8 @@ const FOOTBALL_DB = {
       "name": "Mabrouk Rouaï",
       "clubs": [
         "CD Nacional",
-        "GD Estoril Praia"
+        "GD Estoril Praia",
+        "Valenciennes FC"
       ]
     },
     {
@@ -63881,7 +64351,8 @@ const FOOTBALL_DB = {
         "Brentford FC",
         "FC Nordsjaelland",
         "Red Bull Salzburg",
-        "FC Copenhagen"
+        "FC Copenhagen",
+        "Olympique Lyon"
       ]
     },
     {
@@ -63961,7 +64432,8 @@ const FOOTBALL_DB = {
         "FC Augsburg",
         "FC Midtjylland",
         "FC Nordsjaelland",
-        "Lyngby Boldklub"
+        "Lyngby Boldklub",
+        "Hertha BSC"
       ]
     },
     {
@@ -64287,7 +64759,8 @@ const FOOTBALL_DB = {
         "Atromitos",
         "Göztepe",
         "Legia Warszawa",
-        "OFI Crete"
+        "OFI Crete",
+        "Kocaelispor"
       ]
     },
     {
@@ -64833,7 +65306,8 @@ const FOOTBALL_DB = {
       "name": "Malick Fofana",
       "clubs": [
         "KAA Gent",
-        "Olympique Lyon"
+        "Olympique Lyon",
+        "Sunderland AFC"
       ]
     },
     {
@@ -64858,7 +65332,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Sturm Graz",
         "Swansea City",
-        "IFK Göteborg"
+        "IFK Göteborg",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -64952,14 +65427,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "KAS Eupen",
         "Kasimpasa",
-        "Royal Charleroi Sporting Club"
+        "Royal Charleroi Sporting Club",
+        "Istanbulspor"
       ]
     },
     {
       "name": "Mamadou Fofana",
       "clubs": [
         "Alanyaspor",
-        "FC Metz"
+        "FC Metz",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -64967,7 +65444,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "CD Leganés",
         "KAS Eupen",
-        "Málaga CF"
+        "Málaga CF",
+        "FC Lorient"
       ]
     },
     {
@@ -64976,7 +65454,8 @@ const FOOTBALL_DB = {
         "Deportivo Alavés",
         "FC Arouca",
         "FC Porto",
-        "Moreirense FC"
+        "Moreirense FC",
+        "Sporting Gijón"
       ]
     },
     {
@@ -65003,7 +65482,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "RC Lens",
         "Rapid Vienna",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Brentford FC"
       ]
     },
     {
@@ -65253,7 +65733,8 @@ const FOOTBALL_DB = {
         "FC Shakhtar Donetsk",
         "Fulham FC",
         "Tottenham Hotspur",
-        "Villarreal CF"
+        "Villarreal CF",
+        "West Ham United"
       ]
     },
     {
@@ -65269,7 +65750,8 @@ const FOOTBALL_DB = {
       "name": "Manu Fernández",
       "clubs": [
         "Celta de Vigo",
-        "Deportivo de La Coruña"
+        "Deportivo de La Coruña",
+        "Cádiz CF"
       ]
     },
     {
@@ -65519,7 +66001,8 @@ const FOOTBALL_DB = {
         "Hellas Verona",
         "RCD Espanyol Barcelona",
         "RCD Mallorca",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -65570,7 +66053,8 @@ const FOOTBALL_DB = {
         "Chelsea FC",
         "FC Barcelona",
         "Getafe CF",
-        "SD Eibar"
+        "SD Eibar",
+        "Real Madrid"
       ]
     },
     {
@@ -65602,7 +66086,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Chelsea FC",
         "FC Barcelona",
-        "Sunderland AFC"
+        "Sunderland AFC",
+        "RB Leipzig"
       ]
     },
     {
@@ -65749,7 +66234,8 @@ const FOOTBALL_DB = {
       "name": "Marcel Hartel",
       "clubs": [
         "1.FC Köln",
-        "Arminia Bielefeld"
+        "Arminia Bielefeld",
+        "Hannover 96"
       ]
     },
     {
@@ -66036,7 +66522,8 @@ const FOOTBALL_DB = {
         "Cagliari Calcio",
         "Delfino Pescara 1936",
         "FC Crotone",
-        "Frosinone Calcio"
+        "Frosinone Calcio",
+        "US Salernitana 1919"
       ]
     },
     {
@@ -66151,7 +66638,8 @@ const FOOTBALL_DB = {
       "name": "Marco Palestra",
       "clubs": [
         "Atalanta BC",
-        "Cagliari Calcio"
+        "Cagliari Calcio",
+        "Chelsea FC"
       ]
     },
     {
@@ -66248,7 +66736,8 @@ const FOOTBALL_DB = {
         "Hellas Verona",
         "UC Sampdoria",
         "US Cremonese",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -66295,7 +66784,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Roma",
         "Atalanta BC",
-        "FC Crotone"
+        "FC Crotone",
+        "Benevento Calcio"
       ]
     },
     {
@@ -66412,7 +66902,8 @@ const FOOTBALL_DB = {
       "name": "Marcos Senesi",
       "clubs": [
         "AFC Bournemouth",
-        "Feyenoord Rotterdam"
+        "Feyenoord Rotterdam",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -66443,7 +66934,8 @@ const FOOTBALL_DB = {
       "name": "Marcus Bettinelli",
       "clubs": [
         "Chelsea FC",
-        "Fulham FC"
+        "Fulham FC",
+        "Manchester City"
       ]
     },
     {
@@ -66788,7 +67280,8 @@ const FOOTBALL_DB = {
       "name": "Mario Mitaj",
       "clubs": [
         "AEK Athens",
-        "Lokomotiv Moscow"
+        "Lokomotiv Moscow",
+        "Genoa CFC"
       ]
     },
     {
@@ -67485,7 +67978,8 @@ const FOOTBALL_DB = {
       "name": "Markus Schubert",
       "clubs": [
         "FC Schalke 04",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -67666,7 +68160,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atalanta BC",
         "Middlesbrough FC",
-        "SC Heerenveen"
+        "SC Heerenveen",
+        "AS Roma"
       ]
     },
     {
@@ -67756,7 +68251,8 @@ const FOOTBALL_DB = {
         "AC Sparta Prague",
         "Burnley FC",
         "Esbjerg fB",
-        "Newcastle United"
+        "Newcastle United",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -68056,7 +68552,8 @@ const FOOTBALL_DB = {
         "Middlesbrough FC",
         "US Cremonese",
         "Udinese Calcio",
-        "Club Atlético Boca Juniors"
+        "Club Atlético Boca Juniors",
+        "Watford FC"
       ]
     },
     {
@@ -68393,7 +68890,8 @@ const FOOTBALL_DB = {
         "Benevento Calcio",
         "Genoa CFC",
         "Parma Calcio 1913",
-        "US Cremonese"
+        "US Cremonese",
+        "Catania FC"
       ]
     },
     {
@@ -68631,7 +69129,8 @@ const FOOTBALL_DB = {
       "name": "Mateu Morey",
       "clubs": [
         "Borussia Dortmund",
-        "RCD Mallorca"
+        "RCD Mallorca",
+        "Girona FC"
       ]
     },
     {
@@ -68656,7 +69155,8 @@ const FOOTBALL_DB = {
         "GD Estoril Praia",
         "Southampton FC",
         "Sporting CP",
-        "West Ham United"
+        "West Ham United",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -69014,7 +69514,8 @@ const FOOTBALL_DB = {
         "FC Toulouse",
         "Paris FC",
         "Stade Reims",
-        "Standard Liège"
+        "Standard Liège",
+        "FC Nantes"
       ]
     },
     {
@@ -69117,14 +69618,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "AS Saint-Étienne",
         "Chelsea FC",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "FC Toulouse"
       ]
     },
     {
       "name": "Mathis Clairicia",
       "clubs": [
         "FC Alverca",
-        "VfL Bochum"
+        "VfL Bochum",
+        "FC Sochaux-Montbéliard"
       ]
     },
     {
@@ -69160,7 +69663,8 @@ const FOOTBALL_DB = {
       "name": "Matias Fernandez-Pardo",
       "clubs": [
         "KAA Gent",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Newcastle United"
       ]
     },
     {
@@ -69285,7 +69789,8 @@ const FOOTBALL_DB = {
       "name": "Mats Rots",
       "clubs": [
         "FC Twente Enschede",
-        "Heracles Almelo"
+        "Heracles Almelo",
+        "TSG 1899 Hoffenheim"
       ]
     },
     {
@@ -69319,7 +69824,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atlético de Madrid",
         "Tottenham Hotspur",
-        "Wolverhampton Wanderers"
+        "Wolverhampton Wanderers",
+        "Sheffield United"
       ]
     },
     {
@@ -69389,7 +69895,8 @@ const FOOTBALL_DB = {
         "Aston Villa",
         "Middlesbrough FC",
         "Newcastle United",
-        "Southampton FC"
+        "Southampton FC",
+        "Hull City"
       ]
     },
     {
@@ -69397,7 +69904,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Arsenal FC",
         "Crystal Palace",
-        "Nottingham Forest"
+        "Nottingham Forest",
+        "Olympique Lyon"
       ]
     },
     {
@@ -69447,7 +69955,8 @@ const FOOTBALL_DB = {
         "Inter Milan",
         "Manchester United",
         "Parma Calcio 1913",
-        "Torino FC"
+        "Torino FC",
+        "Bologna FC"
       ]
     },
     {
@@ -69527,7 +70036,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Atalanta BC",
         "Atlético de Madrid",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Aston Villa"
       ]
     },
     {
@@ -69735,7 +70245,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AJ Auxerre",
         "FC Nantes",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "AS Monaco"
       ]
     },
     {
@@ -69765,7 +70276,8 @@ const FOOTBALL_DB = {
       "name": "Mattia Aramu",
       "clubs": [
         "Torino FC",
-        "Venezia FC"
+        "Venezia FC",
+        "US Livorno 1915"
       ]
     },
     {
@@ -69774,7 +70286,8 @@ const FOOTBALL_DB = {
         "Bologna FC",
         "Chievo Verona",
         "Genoa CFC",
-        "Parma Calcio 1913"
+        "Parma Calcio 1913",
+        "Palermo FC"
       ]
     },
     {
@@ -69819,7 +70332,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Delfino Pescara 1936",
         "Genoa CFC",
-        "Juventus FC"
+        "Juventus FC",
+        "Palermo FC"
       ]
     },
     {
@@ -69834,7 +70348,8 @@ const FOOTBALL_DB = {
       "name": "Mattia Vitale",
       "clubs": [
         "Juventus FC",
-        "SPAL"
+        "SPAL",
+        "US Salernitana 1919"
       ]
     },
     {
@@ -69843,7 +70358,8 @@ const FOOTBALL_DB = {
         "ACF Fiorentina",
         "FC Empoli",
         "OGC Nice",
-        "US Sassuolo"
+        "US Sassuolo",
+        "UC Sampdoria"
       ]
     },
     {
@@ -70029,7 +70545,8 @@ const FOOTBALL_DB = {
       "name": "Matías Moreno",
       "clubs": [
         "ACF Fiorentina",
-        "Levante UD"
+        "Levante UD",
+        "Venezia FC"
       ]
     },
     {
@@ -70278,7 +70795,8 @@ const FOOTBALL_DB = {
       "name": "Max Alleyne",
       "clubs": [
         "Manchester City",
-        "Watford FC"
+        "Watford FC",
+        "Burnley FC"
       ]
     },
     {
@@ -70382,7 +70900,8 @@ const FOOTBALL_DB = {
       "name": "Maxence Lacroix",
       "clubs": [
         "Crystal Palace",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Chelsea FC"
       ]
     },
     {
@@ -70486,7 +71005,8 @@ const FOOTBALL_DB = {
       "name": "Maxime Estève",
       "clubs": [
         "Burnley FC",
-        "Montpellier HSC"
+        "Montpellier HSC",
+        "RB Leipzig"
       ]
     },
     {
@@ -70546,7 +71066,8 @@ const FOOTBALL_DB = {
       "name": "Maximilian Bauer",
       "clubs": [
         "FC Augsburg",
-        "SpVgg Greuther Fürth"
+        "SpVgg Greuther Fürth",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -70917,7 +71438,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Schalke 04",
         "Trabzonspor",
-        "Göztepe"
+        "Göztepe",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -71070,7 +71592,8 @@ const FOOTBALL_DB = {
       "name": "Melvin Bard",
       "clubs": [
         "OGC Nice",
-        "Olympique Lyon"
+        "Olympique Lyon",
+        "Leeds United"
       ]
     },
     {
@@ -71285,7 +71808,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Adana Demirspor",
         "Gençlerbirliği",
-        "Ümraniyespor"
+        "Ümraniyespor",
+        "Trabzonspor"
       ]
     },
     {
@@ -71456,7 +71980,8 @@ const FOOTBALL_DB = {
         "ACF Fiorentina",
         "Cagliari Calcio",
         "Hellas Verona",
-        "SSC Napoli"
+        "SSC Napoli",
+        "AC Monza"
       ]
     },
     {
@@ -71774,7 +72299,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Eintracht Frankfurt",
         "PEC Zwolle",
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "Leeds United"
       ]
     },
     {
@@ -71923,7 +72449,8 @@ const FOOTBALL_DB = {
         "Borussia Mönchengladbach",
         "Olympique Marseille",
         "UC Sampdoria",
-        "Venezia FC"
+        "Venezia FC",
+        "RC Lens"
       ]
     },
     {
@@ -71965,7 +72492,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "BSC Young Boys",
         "Bologna FC",
-        "Pisa Sporting Club"
+        "Pisa Sporting Club",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -72056,7 +72584,8 @@ const FOOTBALL_DB = {
       "name": "Michele Di Gregorio",
       "clubs": [
         "AC Monza",
-        "Juventus FC"
+        "Juventus FC",
+        "AFC Bournemouth"
       ]
     },
     {
@@ -72070,7 +72599,8 @@ const FOOTBALL_DB = {
       "name": "Michele Somma",
       "clubs": [
         "AS Roma",
-        "FC Empoli"
+        "FC Empoli",
+        "Siena FC"
       ]
     },
     {
@@ -72258,7 +72788,8 @@ const FOOTBALL_DB = {
         "Deportivo de La Coruña",
         "FK Dinamo Moskva",
         "Kayserispor",
-        "PFK Tambov"
+        "PFK Tambov",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -72379,7 +72910,8 @@ const FOOTBALL_DB = {
       "name": "Miguel Rodríguez",
       "clubs": [
         "Celta de Vigo",
-        "FC Utrecht"
+        "FC Utrecht",
+        "Deportivo Alavés"
       ]
     },
     {
@@ -72460,7 +72992,8 @@ const FOOTBALL_DB = {
         "Deportivo Alavés",
         "RCD Mallorca",
         "Real Betis Balompié",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "UD Almería"
       ]
     },
     {
@@ -72568,7 +73101,9 @@ const FOOTBALL_DB = {
       "name": "Mihajlo Ilić",
       "clubs": [
         "FK Partizan Belgrade",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Bologna FC",
+        "Cesena FC"
       ]
     },
     {
@@ -72741,7 +73276,8 @@ const FOOTBALL_DB = {
       "name": "Mike Penders",
       "clubs": [
         "KRC Genk",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "Chelsea FC"
       ]
     },
     {
@@ -72878,7 +73414,8 @@ const FOOTBALL_DB = {
       "name": "Mikey Moore",
       "clubs": [
         "Rangers FC",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "1.FC Köln"
       ]
     },
     {
@@ -73291,7 +73828,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Go Ahead Eagles",
         "SC Cambuur Leeuwarden",
-        "Stoke City"
+        "Stoke City",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -73517,7 +74055,8 @@ const FOOTBALL_DB = {
       "name": "Milutin Osmajic",
       "clubs": [
         "Cádiz CF",
-        "FC Vizela"
+        "FC Vizela",
+        "Genoa CFC"
       ]
     },
     {
@@ -73563,7 +74102,8 @@ const FOOTBALL_DB = {
       "name": "Mio Backhaus",
       "clubs": [
         "FC Volendam",
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "SC Freiburg"
       ]
     },
     {
@@ -73954,7 +74494,8 @@ const FOOTBALL_DB = {
       "name": "Mohamed Amoura",
       "clubs": [
         "Union Saint-Gilloise",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "OGC Nice"
       ]
     },
     {
@@ -73995,7 +74536,8 @@ const FOOTBALL_DB = {
         "Gaziantep FK",
         "LOSC Lille",
         "Le Havre AC",
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "Samsunspor"
       ]
     },
     {
@@ -74160,7 +74702,8 @@ const FOOTBALL_DB = {
         "AS Roma",
         "Chelsea FC",
         "FC Basel 1893",
-        "Liverpool FC"
+        "Liverpool FC",
+        "Trabzonspor"
       ]
     },
     {
@@ -74227,7 +74770,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Angers SCO",
         "OGC Nice",
-        "Real Sociedad"
+        "Real Sociedad",
+        "Hull City"
       ]
     },
     {
@@ -74392,7 +74936,8 @@ const FOOTBALL_DB = {
         "Everton FC",
         "Hellas Verona",
         "Juventus FC",
-        "Paris Saint-Germain"
+        "Paris Saint-Germain",
+        "Como 1907"
       ]
     },
     {
@@ -74463,7 +75008,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Nottingham Forest",
         "SL Benfica",
-        "São Paulo Futebol Clube"
+        "São Paulo Futebol Clube",
+        "West Ham United"
       ]
     },
     {
@@ -74525,7 +75071,8 @@ const FOOTBALL_DB = {
       "name": "Morgan Rogers",
       "clubs": [
         "Aston Villa",
-        "Middlesbrough FC"
+        "Middlesbrough FC",
+        "Chelsea FC"
       ]
     },
     {
@@ -74621,7 +75168,8 @@ const FOOTBALL_DB = {
       "name": "Morten Hjulmand",
       "clubs": [
         "Sporting CP",
-        "US Lecce"
+        "US Lecce",
+        "Atlético de Madrid"
       ]
     },
     {
@@ -74740,7 +75288,8 @@ const FOOTBALL_DB = {
       "name": "Mostafa Mohamed",
       "clubs": [
         "FC Nantes",
-        "Galatasaray"
+        "Galatasaray",
+        "Konyaspor"
       ]
     },
     {
@@ -74997,7 +75546,8 @@ const FOOTBALL_DB = {
       "name": "Moussa Sylla",
       "clubs": [
         "AS Monaco",
-        "FC Utrecht"
+        "FC Utrecht",
+        "FC Schalke 04"
       ]
     },
     {
@@ -75147,7 +75697,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Basaksehir FK",
         "Bursaspor",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -75172,7 +75723,8 @@ const FOOTBALL_DB = {
       "name": "Mujaid Sadick",
       "clubs": [
         "Deportivo de La Coruña",
-        "KRC Genk"
+        "KRC Genk",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -75348,7 +75900,8 @@ const FOOTBALL_DB = {
       "name": "Musah Mohammed",
       "clubs": [
         "Bodrum FK",
-        "Göztepe"
+        "Göztepe",
+        "Sivasspor"
       ]
     },
     {
@@ -75415,7 +75968,8 @@ const FOOTBALL_DB = {
         "Akhisarspor",
         "Denizlispor",
         "Eskisehirspor",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -75423,7 +75977,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Aarhus GF",
         "FC Copenhagen",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Hannover 96"
       ]
     },
     {
@@ -75709,7 +76264,8 @@ const FOOTBALL_DB = {
       "name": "Myles Peart-Harris",
       "clubs": [
         "Brentford FC",
-        "Swansea City"
+        "Swansea City",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -75719,7 +76275,8 @@ const FOOTBALL_DB = {
         "AZ Alkmaar",
         "FC Twente Enschede",
         "PSV Eindhoven",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Watford FC"
       ]
     },
     {
@@ -75805,7 +76362,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "Royal Excel Mouscron",
         "Standard Liège",
-        "Torino FC"
+        "Torino FC",
+        "Udinese Calcio"
       ]
     },
     {
@@ -76078,14 +76636,16 @@ const FOOTBALL_DB = {
       "name": "Nahki Wells",
       "clubs": [
         "Burnley FC",
-        "Queens Park Rangers"
+        "Queens Park Rangers",
+        "Luton Town"
       ]
     },
     {
       "name": "Nahuel Estévez",
       "clubs": [
         "Parma Calcio 1913",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "Palermo FC"
       ]
     },
     {
@@ -76099,7 +76659,8 @@ const FOOTBALL_DB = {
       "name": "Nahuel Molina",
       "clubs": [
         "Atlético de Madrid",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "AS Roma"
       ]
     },
     {
@@ -76139,7 +76700,8 @@ const FOOTBALL_DB = {
         "Leicester City",
         "OGC Nice",
         "RC Lens",
-        "Watford FC"
+        "Watford FC",
+        "FC Metz"
       ]
     },
     {
@@ -76349,7 +76911,8 @@ const FOOTBALL_DB = {
       "name": "Nathan Ngoumou",
       "clubs": [
         "Borussia Mönchengladbach",
-        "FC Toulouse"
+        "FC Toulouse",
+        "OGC Nice"
       ]
     },
     {
@@ -76363,7 +76926,8 @@ const FOOTBALL_DB = {
       "name": "Nathan Patterson",
       "clubs": [
         "Everton FC",
-        "Rangers FC"
+        "Rangers FC",
+        "Torino FC"
       ]
     },
     {
@@ -76707,7 +77271,8 @@ const FOOTBALL_DB = {
         "Ajax Amsterdam",
         "NAC Breda",
         "Sevilla FC",
-        "Sporting CP"
+        "Sporting CP",
+        "Getafe CF"
       ]
     },
     {
@@ -76927,7 +77492,8 @@ const FOOTBALL_DB = {
         "CD Tondela",
         "Clermont Foot 63",
         "KRC Genk",
-        "Club de Regatas Vasco da Gama"
+        "Club de Regatas Vasco da Gama",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -77041,7 +77607,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Amiens SC",
         "Kasimpasa",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "UD Las Palmas"
       ]
     },
     {
@@ -77155,7 +77722,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Newcastle United",
         "SV Werder Bremen",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Juventus FC"
       ]
     },
     {
@@ -77324,7 +77892,8 @@ const FOOTBALL_DB = {
         "Juventus FC",
         "Manchester City",
         "Valencia CF",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Newcastle United"
       ]
     },
     {
@@ -77404,7 +77973,8 @@ const FOOTBALL_DB = {
         "Genoa CFC",
         "Olympiacos",
         "Spezia Calcio",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "Hellas Verona"
       ]
     },
     {
@@ -77623,7 +78193,8 @@ const FOOTBALL_DB = {
         "Atalanta BC",
         "FC Empoli",
         "Palermo FC",
-        "FC Luzern"
+        "FC Luzern",
+        "US Livorno 1915"
       ]
     },
     {
@@ -77643,7 +78214,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bayern Munich",
         "Chelsea FC",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Aston Villa"
       ]
     },
     {
@@ -77660,7 +78232,8 @@ const FOOTBALL_DB = {
         "Celtic FC",
         "Como 1907",
         "Rapid Vienna",
-        "Ajax Amsterdam"
+        "Ajax Amsterdam",
+        "Borussia Mönchengladbach"
       ]
     },
     {
@@ -77741,7 +78314,8 @@ const FOOTBALL_DB = {
       "name": "Nicolas Saint-Ruf",
       "clubs": [
         "Montpellier HSC",
-        "SC Bastia"
+        "SC Bastia",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -77977,7 +78551,8 @@ const FOOTBALL_DB = {
         "Eintracht Frankfurt",
         "Everton FC",
         "Standard Liège",
-        "Torino FC"
+        "Torino FC",
+        "OGC Nice"
       ]
     },
     {
@@ -78023,7 +78598,8 @@ const FOOTBALL_DB = {
         "FK Partizan Belgrade",
         "Gaziantep FK",
         "KV Kortrijk",
-        "MKE Ankaragücü"
+        "MKE Ankaragücü",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -78463,7 +79039,8 @@ const FOOTBALL_DB = {
       "name": "Nikola Sekulov",
       "clubs": [
         "Juventus FC",
-        "US Cremonese"
+        "US Cremonese",
+        "UC Sampdoria"
       ]
     },
     {
@@ -79027,7 +79604,8 @@ const FOOTBALL_DB = {
       "name": "Nils Zätterström",
       "clubs": [
         "Genoa CFC",
-        "Malmö Fotbollförening"
+        "Malmö Fotbollförening",
+        "Sheffield United"
       ]
     },
     {
@@ -79115,7 +79693,8 @@ const FOOTBALL_DB = {
       "name": "Noah Edjouma",
       "clubs": [
         "FC Toulouse",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Stade Brestois 29"
       ]
     },
     {
@@ -79149,7 +79728,8 @@ const FOOTBALL_DB = {
         "Bayer 04 Leverkusen",
         "Club Brugge KV",
         "FCV Dender EH",
-        "Fortuna Düsseldorf"
+        "Fortuna Düsseldorf",
+        "FC Lorient"
       ]
     },
     {
@@ -79202,14 +79782,16 @@ const FOOTBALL_DB = {
       "name": "Noah Sonko Sundberg",
       "clubs": [
         "Aris Thessalonikis",
-        "Sivasspor"
+        "Sivasspor",
+        "Göztepe"
       ]
     },
     {
       "name": "Noah Weißhaupt",
       "clubs": [
         "FC St. Pauli",
-        "SC Freiburg"
+        "SC Freiburg",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -79223,7 +79805,8 @@ const FOOTBALL_DB = {
       "name": "Nobel Mendy",
       "clubs": [
         "Rayo Vallecano",
-        "Real Betis Balompié"
+        "Real Betis Balompié",
+        "Hull City"
       ]
     },
     {
@@ -79550,7 +80133,8 @@ const FOOTBALL_DB = {
         "Basaksehir FK",
         "Kasimpasa",
         "RC Strasbourg Alsace",
-        "Royal Excel Mouscron"
+        "Royal Excel Mouscron",
+        "Antalyaspor"
       ]
     },
     {
@@ -79599,7 +80183,9 @@ const FOOTBALL_DB = {
       "name": "Nélson Monte",
       "clubs": [
         "GD Chaves",
-        "Rio Ave FC"
+        "Rio Ave FC",
+        "Córdoba CF",
+        "UD Almería"
       ]
     },
     {
@@ -79746,7 +80332,8 @@ const FOOTBALL_DB = {
         "Panathinaikos",
         "SL Benfica",
         "Sevilla FC",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Newcastle United"
       ]
     },
     {
@@ -80017,7 +80604,8 @@ const FOOTBALL_DB = {
       "name": "Ole Pohlmann",
       "clubs": [
         "Borussia Dortmund",
-        "Rio Ave FC"
+        "Rio Ave FC",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -80892,7 +81480,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Sheffield United",
         "Swansea City",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "Hull City"
       ]
     },
     {
@@ -80921,7 +81510,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "FC Rubin Kazan",
         "Hellas Verona",
-        "Pisa Sporting Club"
+        "Pisa Sporting Club",
+        "UC Sampdoria"
       ]
     },
     {
@@ -80937,7 +81527,8 @@ const FOOTBALL_DB = {
       "name": "Oliver Batista Meier",
       "clubs": [
         "Bayern Munich",
-        "SC Heerenveen"
+        "SC Heerenveen",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -81019,7 +81610,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AC Horsens",
         "Randers FC",
-        "FC Midtjylland"
+        "FC Midtjylland",
+        "VfL Bochum"
       ]
     },
     {
@@ -81206,7 +81798,9 @@ const FOOTBALL_DB = {
       "name": "Oluwaseun Adewumi",
       "clubs": [
         "Cercle Brugge",
-        "Dundee FC"
+        "Dundee FC",
+        "Burnley FC",
+        "Hertha BSC"
       ]
     },
     {
@@ -81253,7 +81847,8 @@ const FOOTBALL_DB = {
       "name": "Omar Fayed",
       "clubs": [
         "Beerschot VA",
-        "FC Arouca"
+        "FC Arouca",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -81271,7 +81866,8 @@ const FOOTBALL_DB = {
         "Eintracht Frankfurt",
         "Manchester City",
         "VfB Stuttgart",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -81381,7 +81977,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bursaspor",
         "Ümraniyespor",
-        "MKE Ankaragücü"
+        "MKE Ankaragücü",
+        "Ankaraspor"
       ]
     },
     {
@@ -81426,7 +82023,8 @@ const FOOTBALL_DB = {
       "name": "Onurcan Piri",
       "clubs": [
         "Giresunspor",
-        "Kayserispor"
+        "Kayserispor",
+        "Kocaelispor"
       ]
     },
     {
@@ -81452,7 +82050,8 @@ const FOOTBALL_DB = {
         "Nottingham Forest",
         "Olympique Lyon",
         "VfB Stuttgart",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Getafe CF"
       ]
     },
     {
@@ -81623,7 +82222,8 @@ const FOOTBALL_DB = {
       "name": "Oscar",
       "clubs": [
         "Chelsea FC",
-        "SK Slavia Prague"
+        "SK Slavia Prague",
+        "Málaga CF"
       ]
     },
     {
@@ -81737,7 +82337,8 @@ const FOOTBALL_DB = {
         "Antalyaspor",
         "Erzurumspor FK",
         "Kardemir Karabükspor",
-        "Samsunspor"
+        "Samsunspor",
+        "MKE Ankaragücü"
       ]
     },
     {
@@ -81800,7 +82401,8 @@ const FOOTBALL_DB = {
         "FC Porto",
         "Paris FC",
         "Vitória Guimarães SC",
-        "Al-Qadsiah"
+        "Al-Qadsiah",
+        "Eintracht Frankfurt"
       ]
     },
     {
@@ -82170,7 +82772,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AO Xanthi",
         "PAOK",
-        "Real Betis Balompié"
+        "Real Betis Balompié",
+        "Sporting Gijón"
       ]
     },
     {
@@ -82221,7 +82824,8 @@ const FOOTBALL_DB = {
         "Manchester City",
         "RCD Mallorca",
         "SD Huesca",
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Valencia CF"
       ]
     },
     {
@@ -82232,7 +82836,8 @@ const FOOTBALL_DB = {
         "Levante UD",
         "Nîmes Olympique",
         "RC Strasbourg Alsace",
-        "Club Atlético Lanús"
+        "Club Atlético Lanús",
+        "Málaga CF"
       ]
     },
     {
@@ -82598,7 +83203,8 @@ const FOOTBALL_DB = {
         "AEK Athens",
         "NAC Breda",
         "Volos NPS",
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Alanyaspor"
       ]
     },
     {
@@ -82657,7 +83263,8 @@ const FOOTBALL_DB = {
       "name": "Pape Demba Diop",
       "clubs": [
         "FC Toulouse",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -82703,7 +83310,8 @@ const FOOTBALL_DB = {
       "name": "Pape Matar Sarr",
       "clubs": [
         "FC Metz",
-        "Tottenham Hotspur"
+        "Tottenham Hotspur",
+        "Juventus FC"
       ]
     },
     {
@@ -82828,7 +83436,8 @@ const FOOTBALL_DB = {
       "name": "Pascu",
       "clubs": [
         "ADO Den Haag",
-        "Almere City FC"
+        "Almere City FC",
+        "SD Huesca"
       ]
     },
     {
@@ -82927,7 +83536,8 @@ const FOOTBALL_DB = {
         "Crystal Palace",
         "Leeds United",
         "Middlesbrough FC",
-        "Norwich City"
+        "Norwich City",
+        "Sheffield United"
       ]
     },
     {
@@ -82969,7 +83579,8 @@ const FOOTBALL_DB = {
         "FC Empoli",
         "Parma Calcio 1913",
         "Valencia CF",
-        "Wolverhampton Wanderers"
+        "Wolverhampton Wanderers",
+        "AC Monza"
       ]
     },
     {
@@ -83272,7 +83883,8 @@ const FOOTBALL_DB = {
       "name": "Paul Delecroix",
       "clubs": [
         "FC Lorient",
-        "FC Metz"
+        "FC Metz",
+        "Dijon FCO"
       ]
     },
     {
@@ -83381,7 +83993,8 @@ const FOOTBALL_DB = {
         "AS Monaco",
         "Cercle Brugge",
         "FC Lorient",
-        "KAA Gent"
+        "KAA Gent",
+        "AJ Auxerre"
       ]
     },
     {
@@ -83437,7 +84050,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Union Berlin",
         "SpVgg Greuther Fürth",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Hertha BSC"
       ]
     },
     {
@@ -83973,7 +84587,8 @@ const FOOTBALL_DB = {
         "SL Benfica",
         "Clube Atlético Paranaense",
         "Sport Club Corinthians Paulista",
-        "Clube de Regatas do Flamengo"
+        "Clube de Regatas do Flamengo",
+        "Antalyaspor"
       ]
     },
     {
@@ -84072,7 +84687,8 @@ const FOOTBALL_DB = {
       "name": "Pedro Gonçalves",
       "clubs": [
         "FC Famalicão",
-        "Sporting CP"
+        "Sporting CP",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -84136,7 +84752,8 @@ const FOOTBALL_DB = {
         "Parma Calcio 1913",
         "Sporting CP",
         "Stade Rennais FC",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -84324,7 +84941,8 @@ const FOOTBALL_DB = {
       "name": "Pejiño",
       "clubs": [
         "Sevilla FC",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "SD Eibar"
       ]
     },
     {
@@ -84598,7 +85216,8 @@ const FOOTBALL_DB = {
       "name": "Petar Ratkov",
       "clubs": [
         "Red Bull Salzburg",
-        "SS Lazio"
+        "SS Lazio",
+        "Levante UD"
       ]
     },
     {
@@ -84750,7 +85369,8 @@ const FOOTBALL_DB = {
         "1.FC Nuremberg",
         "AC Sparta Prague",
         "AZ Alkmaar",
-        "FC Nordsjaelland"
+        "FC Nordsjaelland",
+        "UC Sampdoria"
       ]
     },
     {
@@ -84909,7 +85529,8 @@ const FOOTBALL_DB = {
       "name": "Philipp Förster",
       "clubs": [
         "VfB Stuttgart",
-        "VfL Bochum"
+        "VfL Bochum",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -85078,7 +85699,8 @@ const FOOTBALL_DB = {
       "name": "Pierre Ekwah",
       "clubs": [
         "AS Saint-Étienne",
-        "Sunderland AFC"
+        "Sunderland AFC",
+        "AJ Auxerre"
       ]
     },
     {
@@ -85148,7 +85770,8 @@ const FOOTBALL_DB = {
         "Borussia Dortmund",
         "Chelsea FC",
         "FC Barcelona",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -85224,7 +85847,8 @@ const FOOTBALL_DB = {
       "name": "Pietro Ceccaroni",
       "clubs": [
         "US Lecce",
-        "Venezia FC"
+        "Venezia FC",
+        "Palermo FC"
       ]
     },
     {
@@ -85680,7 +86304,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Utrecht",
         "Feyenoord Rotterdam",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "Crystal Palace"
       ]
     },
     {
@@ -85703,7 +86328,8 @@ const FOOTBALL_DB = {
       "name": "Rabby Nzingoula",
       "clubs": [
         "Montpellier HSC",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "West Bromwich Albion"
       ]
     },
     {
@@ -85840,7 +86466,8 @@ const FOOTBALL_DB = {
         "Juventus FC",
         "Tottenham Hotspur",
         "UC Sampdoria",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -85882,7 +86509,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "RCD Mallorca",
         "SL Benfica",
-        "Torino FC"
+        "Torino FC",
+        "US Sassuolo"
       ]
     },
     {
@@ -86028,7 +86656,8 @@ const FOOTBALL_DB = {
       "name": "Rafael Fernandes",
       "clubs": [
         "FC Arouca",
-        "Rangers FC"
+        "Rangers FC",
+        "LOSC Lille"
       ]
     },
     {
@@ -86173,7 +86802,8 @@ const FOOTBALL_DB = {
       "name": "Rafik Belghali",
       "clubs": [
         "Hellas Verona",
-        "KV Mechelen"
+        "KV Mechelen",
+        "Torino FC"
       ]
     },
     {
@@ -86214,7 +86844,8 @@ const FOOTBALL_DB = {
       "name": "Rafiki Saïd",
       "clubs": [
         "Stade Brestois 29",
-        "Standard Liège"
+        "Standard Liège",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -86299,7 +86930,8 @@ const FOOTBALL_DB = {
       "name": "Rahmetullah Berisbek",
       "clubs": [
         "Gençlerbirliği",
-        "Giresunspor"
+        "Giresunspor",
+        "Bursaspor"
       ]
     },
     {
@@ -86531,7 +87163,8 @@ const FOOTBALL_DB = {
       "name": "Ramón",
       "clubs": [
         "FC Nordsjaelland",
-        "Sönderjyske Fodbold"
+        "Sönderjyske Fodbold",
+        "Málaga CF"
       ]
     },
     {
@@ -86638,7 +87271,8 @@ const FOOTBALL_DB = {
       "name": "Raphael Onyedika",
       "clubs": [
         "Club Brugge KV",
-        "FC Midtjylland"
+        "FC Midtjylland",
+        "Eintracht Frankfurt"
       ]
     },
     {
@@ -86866,7 +87500,8 @@ const FOOTBALL_DB = {
       "name": "Rayan Philippe",
       "clubs": [
         "Dijon FCO",
-        "Hamburger SV"
+        "Hamburger SV",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -87007,7 +87642,8 @@ const FOOTBALL_DB = {
         "Athletic Bilbao",
         "Deportivo Alavés",
         "Granada CF",
-        "Levante UD"
+        "Levante UD",
+        "CD Leganés"
       ]
     },
     {
@@ -87752,7 +88388,8 @@ const FOOTBALL_DB = {
         "FC Girondins Bordeaux",
         "FK Spartak Moskva",
         "Sporting CP",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "AC Monza"
       ]
     },
     {
@@ -88499,7 +89136,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FSV Mainz 05",
         "Cardiff City",
-        "Hamburger SV"
+        "Hamburger SV",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -88623,7 +89261,8 @@ const FOOTBALL_DB = {
       "name": "Robert Sánchez",
       "clubs": [
         "Brighton & Hove Albion",
-        "Chelsea FC"
+        "Chelsea FC",
+        "Como 1907"
       ]
     },
     {
@@ -88722,7 +89361,8 @@ const FOOTBALL_DB = {
         "AC Monza",
         "Atalanta BC",
         "Hellas Verona",
-        "Inter Milan"
+        "Inter Milan",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -88743,7 +89383,8 @@ const FOOTBALL_DB = {
       "name": "Roberto Insigne",
       "clubs": [
         "Benevento Calcio",
-        "SSC Napoli"
+        "SSC Napoli",
+        "Catania FC"
       ]
     },
     {
@@ -88795,7 +89436,8 @@ const FOOTBALL_DB = {
         "Genoa CFC",
         "Hellas Verona",
         "Spezia Calcio",
-        "US Lecce"
+        "US Lecce",
+        "Bologna FC"
       ]
     },
     {
@@ -88983,7 +89625,8 @@ const FOOTBALL_DB = {
         "Eyüpspor",
         "Sivasspor",
         "VfB Stuttgart",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Fatih Karagümrük"
       ]
     },
     {
@@ -89025,7 +89668,8 @@ const FOOTBALL_DB = {
       "name": "Robinio Vaz",
       "clubs": [
         "AS Roma",
-        "Olympique Marseille"
+        "Olympique Marseille",
+        "Hull City"
       ]
     },
     {
@@ -89048,7 +89692,8 @@ const FOOTBALL_DB = {
       "name": "Rocco Reitz",
       "clubs": [
         "Borussia Mönchengladbach",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "RB Leipzig"
       ]
     },
     {
@@ -89143,7 +89788,8 @@ const FOOTBALL_DB = {
         "Manchester City",
         "Rayo Vallecano",
         "Villarreal CF",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "FC Barcelona"
       ]
     },
     {
@@ -89588,7 +90234,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Olympique Lyon",
         "Stade Brestois 29",
-        "Stade Rennais FC"
+        "Stade Rennais FC",
+        "CA Osasuna"
       ]
     },
     {
@@ -90034,7 +90681,8 @@ const FOOTBALL_DB = {
         "Cercle Brugge",
         "Cádiz CF",
         "ESTAC Troyes",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -90330,7 +90978,8 @@ const FOOTBALL_DB = {
         "Motherwell FC",
         "Ross County FC",
         "Southampton FC",
-        "St. Mirren FC"
+        "St. Mirren FC",
+        "Swansea City"
       ]
     },
     {
@@ -90526,7 +91175,8 @@ const FOOTBALL_DB = {
       "name": "Rubén Alcaraz",
       "clubs": [
         "Cádiz CF",
-        "Real Valladolid CF"
+        "Real Valladolid CF",
+        "Granada CF"
       ]
     },
     {
@@ -90562,7 +91212,8 @@ const FOOTBALL_DB = {
       "name": "Rubén Gomez",
       "clubs": [
         "Levadiakos",
-        "SK Tavriya Simferopol"
+        "SK Tavriya Simferopol",
+        "Villarreal CF"
       ]
     },
     {
@@ -90600,7 +91251,8 @@ const FOOTBALL_DB = {
         "CA Osasuna",
         "Real Valladolid CF",
         "SD Eibar",
-        "Villarreal CF"
+        "Villarreal CF",
+        "CD Leganés"
       ]
     },
     {
@@ -90646,7 +91298,8 @@ const FOOTBALL_DB = {
       "name": "Rubén Sánchez",
       "clubs": [
         "RCD Espanyol Barcelona",
-        "Sporting Gijón"
+        "Sporting Gijón",
+        "Elche CF"
       ]
     },
     {
@@ -90882,7 +91535,8 @@ const FOOTBALL_DB = {
         "Genoa CFC",
         "KRC Genk",
         "Olympique Marseille",
-        "Zorya Lugansk"
+        "Zorya Lugansk",
+        "Trabzonspor"
       ]
     },
     {
@@ -91384,7 +92038,8 @@ const FOOTBALL_DB = {
       "name": "Rémy Labeau Lascary",
       "clubs": [
         "RC Lens",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "AJ Auxerre"
       ]
     },
     {
@@ -91640,7 +92295,8 @@ const FOOTBALL_DB = {
       "name": "Saba Goglichidze",
       "clubs": [
         "FC Empoli",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "AC Monza"
       ]
     },
     {
@@ -91657,7 +92313,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FK Dinamo Moskva",
         "Torino FC",
-        "Zenit St. Petersburg"
+        "Zenit St. Petersburg",
+        "Getafe CF"
       ]
     },
     {
@@ -91877,7 +92534,8 @@ const FOOTBALL_DB = {
         "Basaksehir FK",
         "Beşiktaş",
         "FC Empoli",
-        "Fenerbahce"
+        "Fenerbahce",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -91960,7 +92618,8 @@ const FOOTBALL_DB = {
       "name": "Salva Ruiz",
       "clubs": [
         "Granada CF",
-        "Valencia CF"
+        "Valencia CF",
+        "SD Huesca"
       ]
     },
     {
@@ -92015,7 +92674,8 @@ const FOOTBALL_DB = {
       "name": "Salvatore Esposito",
       "clubs": [
         "SPAL",
-        "Spezia Calcio"
+        "Spezia Calcio",
+        "UC Sampdoria"
       ]
     },
     {
@@ -92068,7 +92728,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Leeds United",
         "Norwich City",
-        "West Ham United"
+        "West Ham United",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -92174,7 +92835,8 @@ const FOOTBALL_DB = {
       "name": "Sam Schreck",
       "clubs": [
         "Bayer 04 Leverkusen",
-        "FC Groningen"
+        "FC Groningen",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -92234,7 +92896,8 @@ const FOOTBALL_DB = {
       "name": "Sambou Soumano",
       "clubs": [
         "FC Lorient",
-        "KAS Eupen"
+        "KAS Eupen",
+        "Stade Reims"
       ]
     },
     {
@@ -92260,7 +92923,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bayer 04 Leverkusen",
         "Fatih Karagümrük",
-        "Gençlerbirliği"
+        "Gençlerbirliği",
+        "Samsunspor"
       ]
     },
     {
@@ -92269,7 +92933,8 @@ const FOOTBALL_DB = {
         "Adana Demirspor",
         "Caykur Rizespor",
         "Fenerbahce",
-        "Panathinaikos"
+        "Panathinaikos",
+        "Trabzonspor"
       ]
     },
     {
@@ -92489,7 +93154,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Crotone",
         "Hellas Verona",
-        "US Cremonese"
+        "US Cremonese",
+        "US Livorno 1915"
       ]
     },
     {
@@ -92569,7 +93235,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bologna FC",
         "Juventus FC",
-        "Pisa Sporting Club"
+        "Pisa Sporting Club",
+        "Aston Villa"
       ]
     },
     {
@@ -92618,7 +93285,8 @@ const FOOTBALL_DB = {
       "name": "Samuel Mbangula",
       "clubs": [
         "Juventus FC",
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "Bologna FC"
       ]
     },
     {
@@ -92680,7 +93348,8 @@ const FOOTBALL_DB = {
       "name": "Samuele Mulattieri",
       "clubs": [
         "Deportivo de La Coruña",
-        "US Sassuolo"
+        "US Sassuolo",
+        "Hellas Verona"
       ]
     },
     {
@@ -92688,7 +93357,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AC Milan",
         "FC Empoli",
-        "Torino FC"
+        "Torino FC",
+        "Como 1907"
       ]
     },
     {
@@ -92883,7 +93553,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AC Milan",
         "Brescia Calcio",
-        "Newcastle United"
+        "Newcastle United",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -93292,7 +93963,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Fulham FC",
         "Levante UD",
-        "Torino FC"
+        "Torino FC",
+        "Ipswich Town"
       ]
     },
     {
@@ -93503,7 +94175,8 @@ const FOOTBALL_DB = {
         "Ajax Amsterdam",
         "Bröndby IF",
         "FC Dordrecht",
-        "FC Utrecht"
+        "FC Utrecht",
+        "VfL Bochum"
       ]
     },
     {
@@ -93547,7 +94220,8 @@ const FOOTBALL_DB = {
         "1.FC Köln",
         "Leeds United",
         "RSC Anderlecht",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Hamburger SV"
       ]
     },
     {
@@ -93608,7 +94282,8 @@ const FOOTBALL_DB = {
       "name": "Sebastian Jung",
       "clubs": [
         "Eintracht Frankfurt",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -93767,7 +94442,8 @@ const FOOTBALL_DB = {
         "Cagliari Calcio",
         "FC Empoli",
         "Inter Milan",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "US Sassuolo"
       ]
     },
     {
@@ -93899,7 +94575,8 @@ const FOOTBALL_DB = {
       "name": "Seid Korac",
       "clubs": [
         "FK Vojvodina Novi Sad",
-        "Venezia FC"
+        "Venezia FC",
+        "Hellas Verona"
       ]
     },
     {
@@ -94158,7 +94835,8 @@ const FOOTBALL_DB = {
         "Alanyaspor",
         "Fatih Karagümrük",
         "Fenerbahce",
-        "Kocaelispor"
+        "Kocaelispor",
+        "Gaziantep FK"
       ]
     },
     {
@@ -94599,7 +95277,8 @@ const FOOTBALL_DB = {
         "CD Leganés",
         "Real Betis Balompié",
         "Real Madrid",
-        "UD Almería"
+        "UD Almería",
+        "Cádiz CF"
       ]
     },
     {
@@ -94665,7 +95344,8 @@ const FOOTBALL_DB = {
         "Granada CF",
         "Real Valladolid CF",
         "Sevilla FC",
-        "Club Atlético Vélez Sársfield"
+        "Club Atlético Vélez Sársfield",
+        "Real Zaragoza"
       ]
     },
     {
@@ -94716,7 +95396,8 @@ const FOOTBALL_DB = {
       "name": "Sergio Lozano",
       "clubs": [
         "Levante UD",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -95246,7 +95927,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Excelsior Rotterdam",
         "Genoa CFC",
-        "Standard Liège"
+        "Standard Liège",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -95419,7 +96101,8 @@ const FOOTBALL_DB = {
       "name": "Shea Charles",
       "clubs": [
         "Manchester City",
-        "Southampton FC"
+        "Southampton FC",
+        "Fulham FC"
       ]
     },
     {
@@ -95570,7 +96253,8 @@ const FOOTBALL_DB = {
       "name": "Shurandy Sambo",
       "clubs": [
         "PSV Eindhoven",
-        "Sparta Rotterdam"
+        "Sparta Rotterdam",
+        "Burnley FC"
       ]
     },
     {
@@ -95633,7 +96317,8 @@ const FOOTBALL_DB = {
       "name": "Sidny Lopes Cabral",
       "clubs": [
         "CF Estrela Amadora",
-        "SL Benfica"
+        "SL Benfica",
+        "Trabzonspor"
       ]
     },
     {
@@ -96096,7 +96781,8 @@ const FOOTBALL_DB = {
         "ACF Fiorentina",
         "Bologna FC",
         "Parma Calcio 1913",
-        "FC Zürich"
+        "FC Zürich",
+        "Venezia FC"
       ]
     },
     {
@@ -96258,7 +96944,8 @@ const FOOTBALL_DB = {
         "SSC Napoli",
         "Torino FC",
         "US Salernitana 1919",
-        "AC Milan"
+        "AC Milan",
+        "Benevento Calcio"
       ]
     },
     {
@@ -96349,7 +97036,8 @@ const FOOTBALL_DB = {
         "Adana Demirspor",
         "Ankaraspor",
         "Bayern Munich",
-        "Hertha BSC"
+        "Hertha BSC",
+        "Kayserispor"
       ]
     },
     {
@@ -96605,7 +97293,8 @@ const FOOTBALL_DB = {
         "Basaksehir FK",
         "Göztepe",
         "Samsunspor",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Bursaspor"
       ]
     },
     {
@@ -96646,14 +97335,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "Ajax Amsterdam",
         "Middlesbrough FC",
-        "NEC Nijmegen"
+        "NEC Nijmegen",
+        "Gaziantep FK"
       ]
     },
     {
       "name": "Sorba Thomas",
       "clubs": [
         "FC Nantes",
-        "Stoke City"
+        "Stoke City",
+        "Hull City"
       ]
     },
     {
@@ -96827,7 +97518,8 @@ const FOOTBALL_DB = {
       "name": "Souleymane Faye",
       "clubs": [
         "Granada CF",
-        "Sporting CP"
+        "Sporting CP",
+        "FC Lorient"
       ]
     },
     {
@@ -96835,7 +97527,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Borussia Dortmund",
         "Royal Antwerp FC",
-        "Stade Brestois 29"
+        "Stade Brestois 29",
+        "Watford FC",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -97122,7 +97816,8 @@ const FOOTBALL_DB = {
         "Aberdeen FC",
         "FC Midtjylland",
         "Sönderjyske Fodbold",
-        "SC Heerenveen"
+        "SC Heerenveen",
+        "UC Sampdoria"
       ]
     },
     {
@@ -97443,7 +98138,8 @@ const FOOTBALL_DB = {
       "name": "Steffen Tigges",
       "clubs": [
         "1.FC Köln",
-        "Borussia Dortmund"
+        "Borussia Dortmund",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -97543,7 +98239,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AC Milan",
         "AS Monaco",
-        "AS Roma"
+        "AS Roma",
+        "Genoa CFC"
       ]
     },
     {
@@ -97590,7 +98287,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Paços de Ferreira",
         "FC Porto",
-        "GD Chaves"
+        "GD Chaves",
+        "Swansea City"
       ]
     },
     {
@@ -97655,7 +98353,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Celtic FC",
         "KV Mechelen",
-        "Motherwell FC"
+        "Motherwell FC",
+        "Swansea City"
       ]
     },
     {
@@ -97663,7 +98362,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Dijon FCO",
         "Leicester City",
-        "Montpellier HSC"
+        "Montpellier HSC",
+        "Watford FC"
       ]
     },
     {
@@ -97781,7 +98481,8 @@ const FOOTBALL_DB = {
       "name": "Steven Benda",
       "clubs": [
         "Feyenoord Rotterdam",
-        "Fulham FC"
+        "Fulham FC",
+        "Nottingham Forest"
       ]
     },
     {
@@ -98122,7 +98823,8 @@ const FOOTBALL_DB = {
       "name": "Strahinja Erakovic",
       "clubs": [
         "Red Star Belgrade",
-        "Zenit St. Petersburg"
+        "Zenit St. Petersburg",
+        "Samsunspor"
       ]
     },
     {
@@ -98730,7 +99432,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bodrum FK",
         "Gaziantepspor",
-        "Giresunspor"
+        "Giresunspor",
+        "Sivasspor"
       ]
     },
     {
@@ -98842,7 +99545,8 @@ const FOOTBALL_DB = {
         "Ajax Amsterdam",
         "Arsenal FC",
         "Bologna FC",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "Crystal Palace"
       ]
     },
     {
@@ -98988,14 +99692,16 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bayern Munich",
         "Paris Saint-Germain",
-        "Sevilla FC"
+        "Sevilla FC",
+        "LOSC Lille"
       ]
     },
     {
       "name": "Tanguy Zoukrou",
       "clubs": [
         "BSC Young Boys",
-        "ESTAC Troyes"
+        "ESTAC Troyes",
+        "Kocaelispor"
       ]
     },
     {
@@ -99118,7 +99824,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "ACF Fiorentina",
         "Brighton & Hove Albion",
-        "Chelsea FC"
+        "Chelsea FC",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -99166,7 +99873,8 @@ const FOOTBALL_DB = {
         "Bodrum FK",
         "Vorskla Poltava",
         "BSC Young Boys",
-        "FC Winterthur"
+        "FC Winterthur",
+        "Kayserispor"
       ]
     },
     {
@@ -99183,7 +99891,8 @@ const FOOTBALL_DB = {
       "name": "Tay Abed",
       "clubs": [
         "Levante UD",
-        "PSV Eindhoven"
+        "PSV Eindhoven",
+        "Real Valladolid CF"
       ]
     },
     {
@@ -99235,7 +99944,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Manchester City",
         "Southampton FC",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Aston Villa"
       ]
     },
     {
@@ -99251,7 +99961,8 @@ const FOOTBALL_DB = {
         "Adana Demirspor",
         "Beşiktaş",
         "Gaziantep FK",
-        "Kardemir Karabükspor"
+        "Kardemir Karabükspor",
+        "Caykur Rizespor"
       ]
     },
     {
@@ -99729,7 +100440,8 @@ const FOOTBALL_DB = {
       "name": "Thierry Correia",
       "clubs": [
         "Sporting CP",
-        "Valencia CF"
+        "Valencia CF",
+        "Venezia FC"
       ]
     },
     {
@@ -99779,7 +100491,8 @@ const FOOTBALL_DB = {
         "Bologna FC",
         "FC Groningen",
         "FC Toulouse",
-        "FC Emmen"
+        "FC Emmen",
+        "1.FC Köln"
       ]
     },
     {
@@ -99960,7 +100673,8 @@ const FOOTBALL_DB = {
       "name": "Thomas Jørgensen",
       "clubs": [
         "Hvidovre IF",
-        "Viborg FF"
+        "Viborg FF",
+        "FC Toulouse"
       ]
     },
     {
@@ -99986,7 +100700,8 @@ const FOOTBALL_DB = {
         "ADO Den Haag",
         "Aarhus GF",
         "FC Copenhagen",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Atalanta BC"
       ]
     },
     {
@@ -100003,7 +100718,8 @@ const FOOTBALL_DB = {
         "AS Monaco",
         "Atlético de Madrid",
         "Girona FC",
-        "SM Caen"
+        "SM Caen",
+        "Elche CF"
       ]
     },
     {
@@ -100044,7 +100760,8 @@ const FOOTBALL_DB = {
         "Club Brugge KV",
         "LOSC Lille",
         "Paris Saint-Germain",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Sunderland AFC"
       ]
     },
     {
@@ -100209,7 +100926,8 @@ const FOOTBALL_DB = {
         "Borussia Mönchengladbach",
         "PSV Eindhoven",
         "RSC Anderlecht",
-        "Zulte Waregem"
+        "Zulte Waregem",
+        "RC Lens"
       ]
     },
     {
@@ -100359,7 +101077,8 @@ const FOOTBALL_DB = {
         "GD Estoril Praia",
         "OGC Nice",
         "SL Benfica",
-        "Sporting CP"
+        "Sporting CP",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -100594,7 +101313,8 @@ const FOOTBALL_DB = {
         "1.FC Köln",
         "1.FC Nuremberg",
         "FC Groningen",
-        "FC Utrecht"
+        "FC Utrecht",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -100609,7 +101329,8 @@ const FOOTBALL_DB = {
       "name": "Tim Iroegbunam",
       "clubs": [
         "Aston Villa",
-        "Everton FC"
+        "Everton FC",
+        "Hull City"
       ]
     },
     {
@@ -100807,7 +101528,8 @@ const FOOTBALL_DB = {
         "Feyenoord Rotterdam",
         "RSC Anderlecht",
         "Willem II Tilburg",
-        "RCD Mallorca"
+        "RCD Mallorca",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -100882,7 +101604,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Aalborg BK",
         "Stade Reims",
-        "Standard Liège"
+        "Standard Liège",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -100942,7 +101665,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Chelsea FC",
         "FC Empoli",
-        "Torino FC"
+        "Torino FC",
+        "Göztepe"
       ]
     },
     {
@@ -101064,7 +101788,8 @@ const FOOTBALL_DB = {
       "name": "Tobias Lauritsen",
       "clubs": [
         "Sparta Rotterdam",
-        "Vejle Boldklub"
+        "Vejle Boldklub",
+        "UC Sampdoria"
       ]
     },
     {
@@ -101287,7 +102012,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Everton FC",
         "Leicester City",
-        "Stoke City"
+        "Stoke City",
+        "Sheffield United"
       ]
     },
     {
@@ -101501,7 +102227,8 @@ const FOOTBALL_DB = {
         "FC Girondins Bordeaux",
         "HNK Hajduk Split",
         "SS Lazio",
-        "US Salernitana 1919"
+        "US Salernitana 1919",
+        "Venezia FC"
       ]
     },
     {
@@ -101577,7 +102304,8 @@ const FOOTBALL_DB = {
         "Chelsea FC",
         "Fulham FC",
         "Middlesbrough FC",
-        "Vitesse Arnhem"
+        "Vitesse Arnhem",
+        "FC Schalke 04"
       ]
     },
     {
@@ -101693,7 +102421,8 @@ const FOOTBALL_DB = {
       "name": "Tommaso Augello",
       "clubs": [
         "Cagliari Calcio",
-        "UC Sampdoria"
+        "UC Sampdoria",
+        "Palermo FC"
       ]
     },
     {
@@ -102094,7 +102823,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Chelsea FC",
         "Fulham FC",
-        "Manchester City"
+        "Manchester City",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -102167,7 +102897,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Chelsea FC",
         "Crystal Palace",
-        "FC Lorient"
+        "FC Lorient",
+        "Como 1907"
       ]
     },
     {
@@ -102280,7 +103011,8 @@ const FOOTBALL_DB = {
       "name": "Tunahan Taşçı",
       "clubs": [
         "Fortuna Sittardia Combinatie",
-        "Konyaspor"
+        "Konyaspor",
+        "Ümraniyespor"
       ]
     },
     {
@@ -102369,7 +103101,8 @@ const FOOTBALL_DB = {
       "name": "Tyler Bindon",
       "clubs": [
         "Reading FC",
-        "Sheffield United"
+        "Sheffield United",
+        "Nottingham Forest"
       ]
     },
     {
@@ -102496,7 +103229,8 @@ const FOOTBALL_DB = {
       "name": "Téji Savanier",
       "clubs": [
         "Montpellier HSC",
-        "Nîmes Olympique"
+        "Nîmes Olympique",
+        "FC Metz"
       ]
     },
     {
@@ -102590,7 +103324,8 @@ const FOOTBALL_DB = {
       "name": "Ugo Raghouber",
       "clubs": [
         "LOSC Lille",
-        "Levante UD"
+        "Levante UD",
+        "Burnley FC"
       ]
     },
     {
@@ -102701,7 +103436,8 @@ const FOOTBALL_DB = {
         "FC Lorient",
         "Kasimpasa",
         "Nîmes Olympique",
-        "Trabzonspor"
+        "Trabzonspor",
+        "Basaksehir FK"
       ]
     },
     {
@@ -103262,7 +103998,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Brighton & Hove Albion",
         "RC Strasbourg Alsace",
-        "Sevilla FC"
+        "Sevilla FC",
+        "Chelsea FC"
       ]
     },
     {
@@ -103449,7 +104186,8 @@ const FOOTBALL_DB = {
       "name": "Valon Ethemi",
       "clubs": [
         "Istanbulspor",
-        "Konyaspor"
+        "Konyaspor",
+        "Sivasspor"
       ]
     },
     {
@@ -104339,7 +105077,8 @@ const FOOTBALL_DB = {
         "CF Os Belenenses",
         "SC Beira-Mar",
         "SC Braga",
-        "Servette FC"
+        "Servette FC",
+        "Le Havre AC"
       ]
     },
     {
@@ -104348,7 +105087,8 @@ const FOOTBALL_DB = {
         "BSC Young Boys",
         "FC St. Gallen 1879",
         "FC Toulouse",
-        "SC Freiburg"
+        "SC Freiburg",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -104832,7 +105572,8 @@ const FOOTBALL_DB = {
       "name": "Vivaldo Semedo",
       "clubs": [
         "FC Volendam",
-        "Udinese Calcio"
+        "Udinese Calcio",
+        "Watford FC"
       ]
     },
     {
@@ -105826,7 +106567,8 @@ const FOOTBALL_DB = {
         "FC Porto",
         "Levante UD",
         "Real Valladolid CF",
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "SD Huesca"
       ]
     },
     {
@@ -105873,7 +106615,8 @@ const FOOTBALL_DB = {
       "name": "Víctor Muñoz",
       "clubs": [
         "CA Osasuna",
-        "Real Madrid"
+        "Real Madrid",
+        "Liverpool FC"
       ]
     },
     {
@@ -105896,7 +106639,8 @@ const FOOTBALL_DB = {
         "Elche CF",
         "Getafe CF",
         "Real Zaragoza",
-        "Sporting Gijón"
+        "Sporting Gijón",
+        "CD Leganés"
       ]
     },
     {
@@ -106330,7 +107074,8 @@ const FOOTBALL_DB = {
       "name": "Wes Burns",
       "clubs": [
         "Aberdeen FC",
-        "Ipswich Town"
+        "Ipswich Town",
+        "Leicester City"
       ]
     },
     {
@@ -106481,7 +107226,8 @@ const FOOTBALL_DB = {
       "name": "Wilfried Gnonto",
       "clubs": [
         "FC Zürich",
-        "Leeds United"
+        "Leeds United",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -106540,7 +107286,8 @@ const FOOTBALL_DB = {
       "name": "Will Fish",
       "clubs": [
         "Hibernian FC",
-        "Manchester United"
+        "Manchester United",
+        "Cardiff City"
       ]
     },
     {
@@ -106569,7 +107316,8 @@ const FOOTBALL_DB = {
       "name": "Will Smallbone",
       "clubs": [
         "Southampton FC",
-        "Stoke City"
+        "Stoke City",
+        "Leicester City"
       ]
     },
     {
@@ -106579,7 +107327,8 @@ const FOOTBALL_DB = {
         "FC Nantes",
         "FC St. Gallen 1879",
         "Olympique Lyon",
-        "Paris FC"
+        "Paris FC",
+        "US Lecce"
       ]
     },
     {
@@ -106659,7 +107408,8 @@ const FOOTBALL_DB = {
       "name": "William Mikelbrencis",
       "clubs": [
         "FC Metz",
-        "Hamburger SV"
+        "Hamburger SV",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -106805,7 +107555,8 @@ const FOOTBALL_DB = {
       "name": "Willy Kambwala",
       "clubs": [
         "Manchester United",
-        "Villarreal CF"
+        "Villarreal CF",
+        "Como 1907"
       ]
     },
     {
@@ -107098,7 +107849,8 @@ const FOOTBALL_DB = {
       "name": "Xaver Schlager",
       "clubs": [
         "RB Leipzig",
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "Nottingham Forest"
       ]
     },
     {
@@ -107218,7 +107970,8 @@ const FOOTBALL_DB = {
         "Levadiakos",
         "RCD Mallorca",
         "UD Almería",
-        "UD Las Palmas"
+        "UD Las Palmas",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -107317,7 +108070,8 @@ const FOOTBALL_DB = {
         "Borussia Dortmund",
         "Girona FC",
         "SC Braga",
-        "Coritiba Foot Ball Club"
+        "Coritiba Foot Ball Club",
+        "Como 1907"
       ]
     },
     {
@@ -107332,7 +108086,8 @@ const FOOTBALL_DB = {
       "name": "Yan Diomande",
       "clubs": [
         "CD Leganés",
-        "RB Leipzig"
+        "RB Leipzig",
+        "Real Madrid"
       ]
     },
     {
@@ -107471,7 +108226,8 @@ const FOOTBALL_DB = {
         "Montpellier HSC",
         "Parma Calcio 1913",
         "SM Caen",
-        "Torino FC"
+        "Torino FC",
+        "UC Sampdoria"
       ]
     },
     {
@@ -107589,7 +108345,8 @@ const FOOTBALL_DB = {
       "name": "Yannik Engelhardt",
       "clubs": [
         "Borussia Mönchengladbach",
-        "Como 1907"
+        "Como 1907",
+        "SC Freiburg"
       ]
     },
     {
@@ -107710,7 +108467,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Beşiktaş",
         "Kasimpasa",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Aston Villa"
       ]
     },
     {
@@ -108469,7 +109227,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "ESTAC Troyes",
         "Le Havre AC",
-        "RC Strasbourg Alsace"
+        "RC Strasbourg Alsace",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -108749,7 +109508,8 @@ const FOOTBALL_DB = {
       "name": "Youri Regeer",
       "clubs": [
         "Ajax Amsterdam",
-        "FC Twente Enschede"
+        "FC Twente Enschede",
+        "SV Werder Bremen"
       ]
     },
     {
@@ -108758,7 +109518,8 @@ const FOOTBALL_DB = {
         "AS Monaco",
         "Aston Villa",
         "Leicester City",
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Manchester United"
       ]
     },
     {
@@ -108795,7 +109556,8 @@ const FOOTBALL_DB = {
         "NEC Nijmegen",
         "Sparta Rotterdam",
         "SC Telstar",
-        "KVC Westerlo"
+        "KVC Westerlo",
+        "Stade Reims"
       ]
     },
     {
@@ -108957,7 +109719,8 @@ const FOOTBALL_DB = {
       "name": "Yukhym Konoplya",
       "clubs": [
         "Desna Chernigiv",
-        "FC Shakhtar Donetsk"
+        "FC Shakhtar Donetsk",
+        "Borussia Mönchengladbach"
       ]
     },
     {
@@ -108976,7 +109739,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AZ Alkmaar",
         "SV Werder Bremen",
-        "Southampton FC"
+        "Southampton FC",
+        "Cagliari Calcio"
       ]
     },
     {
@@ -109301,7 +110065,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "AZ Alkmaar",
         "Adana Demirspor",
-        "Kasimpasa"
+        "Kasimpasa",
+        "Eyüpspor"
       ]
     },
     {
@@ -109490,7 +110255,8 @@ const FOOTBALL_DB = {
         "Angers SCO",
         "Aris Thessalonikis",
         "FC Toulouse",
-        "AJ Auxerre"
+        "AJ Auxerre",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -109571,7 +110337,8 @@ const FOOTBALL_DB = {
       "name": "Zakaria El Ouahdi",
       "clubs": [
         "KRC Genk",
-        "RWD Molenbeek"
+        "RWD Molenbeek",
+        "Hamburger SV"
       ]
     },
     {
@@ -109734,7 +110501,8 @@ const FOOTBALL_DB = {
         "Kayserispor",
         "Samsunspor",
         "Trabzonspor",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Bursaspor"
       ]
     },
     {
@@ -109749,7 +110517,8 @@ const FOOTBALL_DB = {
       "name": "Zeki Çelik",
       "clubs": [
         "AS Roma",
-        "LOSC Lille"
+        "LOSC Lille",
+        "Juventus FC"
       ]
     },
     {
@@ -109813,14 +110582,16 @@ const FOOTBALL_DB = {
         "Fortuna Sittardia Combinatie",
         "NEC Nijmegen",
         "PEC Zwolle",
-        "Ajax Amsterdam"
+        "Ajax Amsterdam",
+        "Ipswich Town"
       ]
     },
     {
       "name": "Zico Buurmeester",
       "clubs": [
         "AZ Alkmaar",
-        "PEC Zwolle"
+        "PEC Zwolle",
+        "CD Leganés"
       ]
     },
     {
@@ -109903,7 +110674,8 @@ const FOOTBALL_DB = {
       "name": "Zion Suzuki",
       "clubs": [
         "Parma Calcio 1913",
-        "Sint-Truidense VV"
+        "Sint-Truidense VV",
+        "Aston Villa"
       ]
     },
     {
@@ -110233,7 +111005,8 @@ const FOOTBALL_DB = {
       "name": "Álex Blanco",
       "clubs": [
         "Deportivo Alavés",
-        "Valencia CF"
+        "Valencia CF",
+        "Ümraniyespor"
       ]
     },
     {
@@ -110271,14 +111044,16 @@ const FOOTBALL_DB = {
       "name": "Álex Jiménez",
       "clubs": [
         "AC Milan",
-        "AFC Bournemouth"
+        "AFC Bournemouth",
+        "ACF Fiorentina"
       ]
     },
     {
       "name": "Álex López",
       "clubs": [
         "Celta de Vigo",
-        "RCD Espanyol Barcelona"
+        "RCD Espanyol Barcelona",
+        "Córdoba CF"
       ]
     },
     {
@@ -110303,7 +111078,8 @@ const FOOTBALL_DB = {
         "SC Farense",
         "Union Saint-Gilloise",
         "Villarreal CF",
-        "Real Oviedo"
+        "Real Oviedo",
+        "CD Leganés"
       ]
     },
     {
@@ -110394,7 +111170,8 @@ const FOOTBALL_DB = {
         "RCD Espanyol Barcelona",
         "SD Huesca",
         "Sevilla FC",
-        "Real Madrid"
+        "Real Madrid",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -110410,7 +111187,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Asteras Tripolis",
         "Granada CF",
-        "Rayo Vallecano"
+        "Rayo Vallecano",
+        "Deportivo Alavés"
       ]
     },
     {
@@ -110467,7 +111245,8 @@ const FOOTBALL_DB = {
         "Como 1907",
         "Galatasaray",
         "Juventus FC",
-        "Real Madrid"
+        "Real Madrid",
+        "CD Leganés"
       ]
     },
     {
@@ -110516,7 +111295,9 @@ const FOOTBALL_DB = {
       "clubs": [
         "Elche CF",
         "Getafe CF",
-        "Real Madrid"
+        "Real Madrid",
+        "AFC Bournemouth",
+        "SD Eibar"
       ]
     },
     {
@@ -110526,7 +111307,8 @@ const FOOTBALL_DB = {
         "RCD Espanyol Barcelona",
         "Real Madrid",
         "Real Zaragoza",
-        "SD Eibar"
+        "SD Eibar",
+        "CD Leganés"
       ]
     },
     {
@@ -110934,7 +111716,8 @@ const FOOTBALL_DB = {
       "name": "Óscar Mingueza",
       "clubs": [
         "Celta de Vigo",
-        "FC Barcelona"
+        "FC Barcelona",
+        "Crystal Palace"
       ]
     },
     {
@@ -111022,7 +111805,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Akhisarspor",
         "Galatasaray",
-        "Kayserispor"
+        "Kayserispor",
+        "Kasimpasa"
       ]
     },
     {
@@ -111084,7 +111868,8 @@ const FOOTBALL_DB = {
       "name": "Özer Özdemir",
       "clubs": [
         "Denizlispor",
-        "Yeni Malatyaspor"
+        "Yeni Malatyaspor",
+        "Balikesirspor"
       ]
     },
     {
@@ -111128,7 +111913,8 @@ const FOOTBALL_DB = {
       "name": "Ümit Akdağ",
       "clubs": [
         "Alanyaspor",
-        "FC Toulouse"
+        "FC Toulouse",
+        "Beşiktaş"
       ]
     },
     {
@@ -111187,7 +111973,8 @@ const FOOTBALL_DB = {
         "Adanaspor",
         "Fenerbahce",
         "Göztepe",
-        "Samsunspor"
+        "Samsunspor",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -111245,7 +112032,8 @@ const FOOTBALL_DB = {
       "name": "Horațiu Moldovan",
       "clubs": [
         "Eyüpspor",
-        "Real Oviedo"
+        "Real Oviedo",
+        "Atlético de Madrid"
       ]
     },
     {
@@ -111523,7 +112311,8 @@ const FOOTBALL_DB = {
     {
       "name": "Devrim Şahin",
       "clubs": [
-        "Beşiktaş"
+        "Beşiktaş",
+        "Bodrum FK"
       ]
     },
     {
@@ -111854,7 +112643,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mahmut Tekdemir",
       "clubs": [
-        "Basaksehir FK"
+        "Basaksehir FK",
+        "MKE Ankaragücü"
       ]
     },
     {
@@ -112369,7 +113159,8 @@ const FOOTBALL_DB = {
     {
       "name": "Orhan Ovacıklı",
       "clubs": [
-        "Caykur Rizespor"
+        "Caykur Rizespor",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -113149,7 +113940,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mert Örnek",
       "clubs": [
-        "Bursaspor"
+        "Bursaspor",
+        "Elazigspor"
       ]
     },
     {
@@ -113161,7 +113953,8 @@ const FOOTBALL_DB = {
     {
       "name": "Utku Yuvakuran",
       "clubs": [
-        "Beşiktaş"
+        "Beşiktaş",
+        "Pendikspor"
       ]
     },
     {
@@ -113300,7 +114093,8 @@ const FOOTBALL_DB = {
     {
       "name": "İsmail Çokçalış",
       "clubs": [
-        "Bursaspor"
+        "Bursaspor",
+        "MKE Ankaragücü"
       ]
     },
     {
@@ -113325,7 +114119,9 @@ const FOOTBALL_DB = {
       "name": "Muhammed Demirci",
       "clubs": [
         "Beşiktaş",
-        "Istanbulspor"
+        "Istanbulspor",
+        "Balikesirspor",
+        "Elazigspor"
       ]
     },
     {
@@ -113485,7 +114281,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ozan Evrim Özenç",
       "clubs": [
-        "Antalyaspor"
+        "Antalyaspor",
+        "Altay SK"
       ]
     },
     {
@@ -113552,7 +114349,8 @@ const FOOTBALL_DB = {
     {
       "name": "Atalay Babacan",
       "clubs": [
-        "Denizlispor"
+        "Denizlispor",
+        "Ümraniyespor"
       ]
     },
     {
@@ -113655,7 +114453,8 @@ const FOOTBALL_DB = {
     {
       "name": "Metehan Altunbaş",
       "clubs": [
-        "Eskisehirspor"
+        "Eskisehirspor",
+        "Kocaelispor"
       ]
     },
     {
@@ -114250,7 +115049,8 @@ const FOOTBALL_DB = {
     {
       "name": "Oğuzhan Çapar",
       "clubs": [
-        "Balikesirspor"
+        "Balikesirspor",
+        "Ankaraspor"
       ]
     },
     {
@@ -114404,7 +115204,8 @@ const FOOTBALL_DB = {
     {
       "name": "Hüseyin Altıntaş",
       "clubs": [
-        "Denizlispor"
+        "Denizlispor",
+        "Balikesirspor"
       ]
     },
     {
@@ -114805,7 +115606,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kerem Kalafat",
       "clubs": [
-        "Beşiktaş"
+        "Beşiktaş",
+        "Pendikspor"
       ]
     },
     {
@@ -115387,7 +116189,8 @@ const FOOTBALL_DB = {
       "name": "Jakub Kałuziński",
       "clubs": [
         "Antalyaspor",
-        "Lechia Gdansk"
+        "Lechia Gdansk",
+        "Basaksehir FK"
       ]
     },
     {
@@ -115676,7 +116479,8 @@ const FOOTBALL_DB = {
     {
       "name": "Przemysław Frankowski",
       "clubs": [
-        "Galatasaray"
+        "Galatasaray",
+        "Stade Rennais FC"
       ]
     },
     {
@@ -115910,7 +116714,8 @@ const FOOTBALL_DB = {
     {
       "name": "Haydar Karataş",
       "clubs": [
-        "Fenerbahce"
+        "Fenerbahce",
+        "Kocaelispor"
       ]
     },
     {
@@ -116798,7 +117603,8 @@ const FOOTBALL_DB = {
     {
       "name": "Halil İbrahim Pehlivan",
       "clubs": [
-        "Gençlerbirliği"
+        "Gençlerbirliği",
+        "MKE Ankaragücü"
       ]
     },
     {
@@ -117464,7 +118270,8 @@ const FOOTBALL_DB = {
     {
       "name": "Serkan Göksu",
       "clubs": [
-        "Galatasaray"
+        "Galatasaray",
+        "Ümraniyespor"
       ]
     },
     {
@@ -117536,7 +118343,8 @@ const FOOTBALL_DB = {
     {
       "name": "Florian Loshaj",
       "clubs": [
-        "Istanbulspor"
+        "Istanbulspor",
+        "Bodrum FK"
       ]
     },
     {
@@ -117573,7 +118381,8 @@ const FOOTBALL_DB = {
     {
       "name": "Erdem Onur Beytaş",
       "clubs": [
-        "Kayserispor"
+        "Kayserispor",
+        "Ankaraspor"
       ]
     },
     {
@@ -118209,7 +119018,8 @@ const FOOTBALL_DB = {
     {
       "name": "Bengali-Fodé Koita",
       "clubs": [
-        "Kasimpasa"
+        "Kasimpasa",
+        "Ümraniyespor"
       ]
     },
     {
@@ -119903,7 +120713,8 @@ const FOOTBALL_DB = {
     {
       "name": "Berkay Yılmaz",
       "clubs": [
-        "Kardemir Karabükspor"
+        "Kardemir Karabükspor",
+        "SC Freiburg"
       ]
     },
     {
@@ -120842,7 +121653,8 @@ const FOOTBALL_DB = {
     {
       "name": "Emre Demir",
       "clubs": [
-        "Kayserispor"
+        "Kayserispor",
+        "Alanyaspor"
       ]
     },
     {
@@ -120968,7 +121780,8 @@ const FOOTBALL_DB = {
     {
       "name": "Artun Akçakın",
       "clubs": [
-        "Gençlerbirliği"
+        "Gençlerbirliği",
+        "Balikesirspor"
       ]
     },
     {
@@ -121348,7 +122161,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yusuf Emre Gültekin",
       "clubs": [
-        "Gençlerbirliği"
+        "Gençlerbirliği",
+        "MKE Ankaragücü"
       ]
     },
     {
@@ -121807,7 +122621,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kuryu Matsuki",
       "clubs": [
-        "Göztepe"
+        "Göztepe",
+        "Southampton FC"
       ]
     },
     {
@@ -121845,7 +122660,8 @@ const FOOTBALL_DB = {
     {
       "name": "César Palacios",
       "clubs": [
-        "Real Madrid"
+        "Real Madrid",
+        "Fulham FC"
       ]
     },
     {
@@ -122023,7 +122839,8 @@ const FOOTBALL_DB = {
     {
       "name": "Elijah Gift",
       "clubs": [
-        "SD Eibar"
+        "SD Eibar",
+        "Athletic Bilbao"
       ]
     },
     {
@@ -122071,7 +122888,8 @@ const FOOTBALL_DB = {
     {
       "name": "Francho Serrano",
       "clubs": [
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Getafe CF"
       ]
     },
     {
@@ -122742,7 +123560,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yayo",
       "clubs": [
-        "Real Oviedo"
+        "Real Oviedo",
+        "Deportivo de La Coruña"
       ]
     },
     {
@@ -122828,7 +123647,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jonathan Dubasin",
       "clubs": [
-        "Sporting Gijón"
+        "Sporting Gijón",
+        "CA Osasuna"
       ]
     },
     {
@@ -123034,7 +123854,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rahim Alhassane",
       "clubs": [
-        "Real Oviedo"
+        "Real Oviedo",
+        "Bologna FC"
       ]
     },
     {
@@ -123106,7 +123927,9 @@ const FOOTBALL_DB = {
     {
       "name": "Carlos Dotor",
       "clubs": [
-        "Real Oviedo"
+        "Real Oviedo",
+        "Celta de Vigo",
+        "Málaga CF"
       ]
     },
     {
@@ -124241,7 +125064,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lapo Nava",
       "clubs": [
-        "AC Milan"
+        "AC Milan",
+        "US Cremonese"
       ]
     },
     {
@@ -125157,7 +125981,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sergi Enrich",
       "clubs": [
-        "Real Oviedo"
+        "Real Oviedo",
+        "SD Huesca"
       ]
     },
     {
@@ -125420,7 +126245,8 @@ const FOOTBALL_DB = {
     {
       "name": "Cristian Carracedo",
       "clubs": [
-        "RCD Mallorca"
+        "RCD Mallorca",
+        "Córdoba CF"
       ]
     },
     {
@@ -126307,7 +127133,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jair Amador",
       "clubs": [
-        "SD Huesca"
+        "SD Huesca",
+        "SD Eibar"
       ]
     },
     {
@@ -126515,7 +127342,8 @@ const FOOTBALL_DB = {
       "name": "Ibrahima Baldé",
       "clubs": [
         "Real Oviedo",
-        "Club Atlético Vélez Sársfield"
+        "Club Atlético Vélez Sársfield",
+        "FC Lorient"
       ]
     },
     {
@@ -127192,7 +128020,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alessandro Mastalli",
       "clubs": [
-        "AC Milan"
+        "AC Milan",
+        "Siena FC"
       ]
     },
     {
@@ -128456,7 +129285,9 @@ const FOOTBALL_DB = {
       "name": "Víctor Fernández",
       "clubs": [
         "Real Betis Balompié",
-        "FC Botosani"
+        "FC Botosani",
+        "Valencia CF",
+        "Real Valladolid CF"
       ]
     },
     {
@@ -129165,7 +129996,8 @@ const FOOTBALL_DB = {
     {
       "name": "José Quirante",
       "clubs": [
-        "Real Betis Balompié"
+        "Real Betis Balompié",
+        "RCD Espanyol Barcelona"
       ]
     },
     {
@@ -129470,7 +130302,8 @@ const FOOTBALL_DB = {
     {
       "name": "Víctor Sánchez",
       "clubs": [
-        "Real Betis Balompié"
+        "Real Betis Balompié",
+        "Córdoba CF"
       ]
     },
     {
@@ -129720,7 +130553,8 @@ const FOOTBALL_DB = {
     {
       "name": "Emanuele Torrasi",
       "clubs": [
-        "AC Milan"
+        "AC Milan",
+        "Catania FC"
       ]
     },
     {
@@ -129886,7 +130720,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alessandro Plizzari",
       "clubs": [
-        "AC Milan"
+        "AC Milan",
+        "Venezia FC"
       ]
     },
     {
@@ -130899,7 +131734,8 @@ const FOOTBALL_DB = {
     {
       "name": "Álex Muñoz",
       "clubs": [
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "UD Almería"
       ]
     },
     {
@@ -131123,7 +131959,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alejandro Francés",
       "clubs": [
-        "Real Zaragoza"
+        "Real Zaragoza",
+        "Girona FC"
       ]
     },
     {
@@ -133247,7 +134084,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rubén Pulido",
       "clubs": [
-        "Real Madrid"
+        "Real Madrid",
+        "CD Leganés"
       ]
     },
     {
@@ -133277,7 +134115,8 @@ const FOOTBALL_DB = {
     {
       "name": "Hwang Hee-chan",
       "clubs": [
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -133676,7 +134515,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sidney Raebiger",
       "clubs": [
-        "RB Leipzig"
+        "RB Leipzig",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -133787,7 +134627,8 @@ const FOOTBALL_DB = {
     {
       "name": "Assan Ouédraogo",
       "clubs": [
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "RB Leipzig"
       ]
     },
     {
@@ -136052,7 +136893,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Bayern Munich",
         "SC Paderborn 07",
-        "SpVgg Greuther Fürth"
+        "SpVgg Greuther Fürth",
+        "RB Leipzig"
       ]
     },
     {
@@ -136199,7 +137041,8 @@ const FOOTBALL_DB = {
     {
       "name": "Felix Götze",
       "clubs": [
-        "Bayern Munich"
+        "Bayern Munich",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -136289,7 +137132,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lukas Fröde",
       "clubs": [
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -136552,7 +137396,8 @@ const FOOTBALL_DB = {
     {
       "name": "Carl Klaus",
       "clubs": [
-        "SV Darmstadt 98"
+        "SV Darmstadt 98",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -136571,7 +137416,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sebastian Schonlau",
       "clubs": [
-        "SC Paderborn 07"
+        "SC Paderborn 07",
+        "Holstein Kiel"
       ]
     },
     {
@@ -136855,7 +137701,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yannick Deichmann",
       "clubs": [
-        "FC St. Pauli"
+        "FC St. Pauli",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -137723,7 +138570,8 @@ const FOOTBALL_DB = {
     {
       "name": "Maurice Neubauer",
       "clubs": [
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "Hannover 96"
       ]
     },
     {
@@ -137819,7 +138667,8 @@ const FOOTBALL_DB = {
     {
       "name": "Philipp Müller",
       "clubs": [
-        "Hamburger SV"
+        "Hamburger SV",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -137949,7 +138798,8 @@ const FOOTBALL_DB = {
     {
       "name": "Vitaly Janelt",
       "clubs": [
-        "RB Leipzig"
+        "RB Leipzig",
+        "Brentford FC"
       ]
     },
     {
@@ -138206,7 +139056,8 @@ const FOOTBALL_DB = {
     {
       "name": "Leon Jensen",
       "clubs": [
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -138960,7 +139811,8 @@ const FOOTBALL_DB = {
     {
       "name": "Isaiah Young",
       "clubs": [
-        "SV Werder Bremen"
+        "SV Werder Bremen",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -139003,7 +139855,8 @@ const FOOTBALL_DB = {
     {
       "name": "Janik Bachmann",
       "clubs": [
-        "Hannover 96"
+        "Hannover 96",
+        "FC Schalke 04"
       ]
     },
     {
@@ -139198,7 +140051,8 @@ const FOOTBALL_DB = {
       "name": "Jeong Woo-yeong",
       "clubs": [
         "Bayern Munich",
-        "SC Freiburg"
+        "SC Freiburg",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -139264,7 +140118,8 @@ const FOOTBALL_DB = {
     {
       "name": "Marcel Engelhardt",
       "clubs": [
-        "Eintracht Braunschweig"
+        "Eintracht Braunschweig",
+        "Holstein Kiel"
       ]
     },
     {
@@ -139330,7 +140185,8 @@ const FOOTBALL_DB = {
     {
       "name": "Marcel Benger",
       "clubs": [
-        "Borussia Mönchengladbach"
+        "Borussia Mönchengladbach",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -139692,7 +140548,8 @@ const FOOTBALL_DB = {
     {
       "name": "Joel Grodowski",
       "clubs": [
-        "FC Schalke 04"
+        "FC Schalke 04",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -139710,7 +140567,8 @@ const FOOTBALL_DB = {
     {
       "name": "Andreas Müller",
       "clubs": [
-        "Borussia Dortmund"
+        "Borussia Dortmund",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -139722,7 +140580,8 @@ const FOOTBALL_DB = {
     {
       "name": "Raphael Obermair",
       "clubs": [
-        "Bayern Munich"
+        "Bayern Munich",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -139809,7 +140668,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ron-Thorben Hoffmann",
       "clubs": [
-        "Bayern Munich"
+        "Bayern Munich",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -139876,7 +140736,8 @@ const FOOTBALL_DB = {
     {
       "name": "Paul Will",
       "clubs": [
-        "Bayern Munich"
+        "Bayern Munich",
+        "SpVgg Greuther Fürth"
       ]
     },
     {
@@ -140137,7 +140998,8 @@ const FOOTBALL_DB = {
     {
       "name": "Philipp Köhn",
       "clubs": [
-        "RB Leipzig"
+        "RB Leipzig",
+        "AS Monaco"
       ]
     },
     {
@@ -140173,7 +141035,8 @@ const FOOTBALL_DB = {
     {
       "name": "Keanan Bennetts",
       "clubs": [
-        "Borussia Mönchengladbach"
+        "Borussia Mönchengladbach",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -140191,7 +141054,8 @@ const FOOTBALL_DB = {
     {
       "name": "Philipp Sander",
       "clubs": [
-        "Holstein Kiel"
+        "Holstein Kiel",
+        "Borussia Mönchengladbach"
       ]
     },
     {
@@ -140221,7 +141085,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kai Klefisch",
       "clubs": [
-        "SC Paderborn 07"
+        "SC Paderborn 07",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -140714,7 +141579,8 @@ const FOOTBALL_DB = {
     {
       "name": "Fatih Kaya",
       "clubs": [
-        "FC Ingolstadt 04"
+        "FC Ingolstadt 04",
+        "Samsunspor"
       ]
     },
     {
@@ -141714,7 +142580,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lino Tempelmann",
       "clubs": [
-        "SC Freiburg"
+        "SC Freiburg",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -142084,7 +142951,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ensar Arslan",
       "clubs": [
-        "SV Darmstadt 98"
+        "SV Darmstadt 98",
+        "Hatayspor"
       ]
     },
     {
@@ -142256,7 +143124,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Holstein Kiel",
         "IF Elfsborg",
-        "Örgryte IS"
+        "Örgryte IS",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -142329,7 +143198,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Borussia Mönchengladbach",
         "Sint-Truidense VV",
-        "Kawasaki Frontale"
+        "Kawasaki Frontale",
+        "Tottenham Hotspur"
       ]
     },
     {
@@ -142661,7 +143531,8 @@ const FOOTBALL_DB = {
       "name": "Mamadou Camara",
       "clubs": [
         "AS Nancy-Lorraine",
-        "Torpedo Moscow"
+        "Torpedo Moscow",
+        "Montpellier HSC"
       ]
     },
     {
@@ -142680,7 +143551,8 @@ const FOOTBALL_DB = {
     {
       "name": "Pablo Pagis",
       "clubs": [
-        "FC Lorient"
+        "FC Lorient",
+        "Paris FC"
       ]
     },
     {
@@ -142758,7 +143630,8 @@ const FOOTBALL_DB = {
     {
       "name": "Amadou Mbengue",
       "clubs": [
-        "FC Metz"
+        "FC Metz",
+        "Queens Park Rangers"
       ]
     },
     {
@@ -143113,7 +143986,8 @@ const FOOTBALL_DB = {
     {
       "name": "Samuele Di Benedetto",
       "clubs": [
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -144195,7 +145069,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kevin Müller",
       "clubs": [
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "FC Schalke 04"
       ]
     },
     {
@@ -144346,7 +145221,8 @@ const FOOTBALL_DB = {
     {
       "name": "Benjamin Uphoff",
       "clubs": [
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Eintracht Braunschweig"
       ]
     },
     {
@@ -144730,7 +145606,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mehdi Jeannin",
       "clubs": [
-        "Clermont Foot 63"
+        "Clermont Foot 63",
+        "FC Sochaux-Montbéliard"
       ]
     },
     {
@@ -144967,7 +145844,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jean Ruiz",
       "clubs": [
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "FC Metz"
       ]
     },
     {
@@ -145154,7 +146032,8 @@ const FOOTBALL_DB = {
     {
       "name": "Julien Laporte",
       "clubs": [
-        "FC Lorient"
+        "FC Lorient",
+        "Montpellier HSC"
       ]
     },
     {
@@ -145172,7 +146051,8 @@ const FOOTBALL_DB = {
     {
       "name": "Thomas Robinet",
       "clubs": [
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "FC Nantes"
       ]
     },
     {
@@ -145377,7 +146257,8 @@ const FOOTBALL_DB = {
     {
       "name": "Théo Guivarch",
       "clubs": [
-        "EA Guingamp"
+        "EA Guingamp",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -145730,7 +146611,8 @@ const FOOTBALL_DB = {
       "name": "Moussa Diallo",
       "clubs": [
         "AJ Auxerre",
-        "KAS Eupen"
+        "KAS Eupen",
+        "Nîmes Olympique"
       ]
     },
     {
@@ -145924,13 +146806,15 @@ const FOOTBALL_DB = {
     {
       "name": "Benedikt Kirsch",
       "clubs": [
-        "SpVgg Greuther Fürth"
+        "SpVgg Greuther Fürth",
+        "1.FC Nuremberg"
       ]
     },
     {
       "name": "Kenji-Van Boto",
       "clubs": [
-        "AJ Auxerre"
+        "AJ Auxerre",
+        "Clermont Foot 63"
       ]
     },
     {
@@ -146120,7 +147004,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yhoan Andzouana",
       "clubs": [
-        "AS Monaco"
+        "AS Monaco",
+        "Konyaspor"
       ]
     },
     {
@@ -146300,7 +147185,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gaëtan Courtet",
       "clubs": [
-        "AJ Auxerre"
+        "AJ Auxerre",
+        "Valenciennes FC"
       ]
     },
     {
@@ -146581,7 +147467,8 @@ const FOOTBALL_DB = {
     {
       "name": "Geoffrey Lembet",
       "clubs": [
-        "AJ Auxerre"
+        "AJ Auxerre",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -147420,7 +148307,8 @@ const FOOTBALL_DB = {
     {
       "name": "Bryan Lasme",
       "clubs": [
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "FC Schalke 04"
       ]
     },
     {
@@ -147451,7 +148339,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yanis Barka",
       "clubs": [
-        "AS Nancy-Lorraine"
+        "AS Nancy-Lorraine",
+        "Dijon FCO"
       ]
     },
     {
@@ -147499,7 +148388,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alpha Sissoko",
       "clubs": [
-        "Clermont Foot 63"
+        "Clermont Foot 63",
+        "Montpellier HSC"
       ]
     },
     {
@@ -147601,7 +148491,8 @@ const FOOTBALL_DB = {
     {
       "name": "Simon Lorenz",
       "clubs": [
-        "VfL Bochum"
+        "VfL Bochum",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -147951,7 +148842,8 @@ const FOOTBALL_DB = {
     {
       "name": "Barış Ekincier",
       "clubs": [
-        "VfL Bochum"
+        "VfL Bochum",
+        "Elazigspor"
       ]
     },
     {
@@ -147969,7 +148861,8 @@ const FOOTBALL_DB = {
     {
       "name": "Tom Baack",
       "clubs": [
-        "VfL Bochum"
+        "VfL Bochum",
+        "SC Paderborn 07"
       ]
     },
     {
@@ -148351,7 +149244,8 @@ const FOOTBALL_DB = {
     {
       "name": "Félix Tomi",
       "clubs": [
-        "AC Ajaccio"
+        "AC Ajaccio",
+        "SC Bastia"
       ]
     },
     {
@@ -148711,7 +149605,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alexander Meyer",
       "clubs": [
-        "VfB Stuttgart"
+        "VfB Stuttgart",
+        "Borussia Dortmund"
       ]
     },
     {
@@ -148741,13 +149636,15 @@ const FOOTBALL_DB = {
     {
       "name": "Kader Bamba",
       "clubs": [
-        "FC Nantes"
+        "FC Nantes",
+        "Granada CF"
       ]
     },
     {
       "name": "Daniel Hanslik",
       "clubs": [
-        "VfL Wolfsburg"
+        "VfL Wolfsburg",
+        "VfL Bochum"
       ]
     },
     {
@@ -148923,7 +149820,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aladji Bamba",
       "clubs": [
-        "AS Monaco"
+        "AS Monaco",
+        "Newcastle United"
       ]
     },
     {
@@ -148997,7 +149895,8 @@ const FOOTBALL_DB = {
     {
       "name": "Dan Sinaté",
       "clubs": [
-        "Amiens SC"
+        "Amiens SC",
+        "Angers SCO"
       ]
     },
     {
@@ -149021,13 +149920,15 @@ const FOOTBALL_DB = {
     {
       "name": "Aïmen Moueffek",
       "clubs": [
-        "AS Saint-Étienne"
+        "AS Saint-Étienne",
+        "Cádiz CF"
       ]
     },
     {
       "name": "Jomaine Consbruch",
       "clubs": [
-        "SpVgg Greuther Fürth"
+        "SpVgg Greuther Fürth",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -149100,7 +150001,8 @@ const FOOTBALL_DB = {
     {
       "name": "Robin Risser",
       "clubs": [
-        "Dijon FCO"
+        "Dijon FCO",
+        "RC Lens"
       ]
     },
     {
@@ -149584,7 +150486,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rassoul Ndiaye",
       "clubs": [
-        "FC Sochaux-Montbéliard"
+        "FC Sochaux-Montbéliard",
+        "Le Havre AC"
       ]
     },
     {
@@ -149662,7 +150565,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gautier Ott",
       "clubs": [
-        "AS Nancy-Lorraine"
+        "AS Nancy-Lorraine",
+        "EA Guingamp"
       ]
     },
     {
@@ -149698,7 +150602,8 @@ const FOOTBALL_DB = {
     {
       "name": "Pape Meïssa Ba",
       "clubs": [
-        "ESTAC Troyes"
+        "ESTAC Troyes",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -149861,7 +150766,8 @@ const FOOTBALL_DB = {
     {
       "name": "Niko Takahashi",
       "clubs": [
-        "Almere City FC"
+        "Almere City FC",
+        "Holstein Kiel"
       ]
     },
     {
@@ -150056,7 +150962,8 @@ const FOOTBALL_DB = {
       "name": "Joel Felix",
       "clubs": [
         "FC Twente Enschede",
-        "Silkeborg IF"
+        "Silkeborg IF",
+        "Arminia Bielefeld"
       ]
     },
     {
@@ -150155,7 +151062,8 @@ const FOOTBALL_DB = {
     {
       "name": "Zépiqueno Redmond",
       "clubs": [
-        "Feyenoord Rotterdam"
+        "Feyenoord Rotterdam",
+        "Aston Villa"
       ]
     },
     {
@@ -155953,7 +156861,8 @@ const FOOTBALL_DB = {
     {
       "name": "Martijn Kaars",
       "clubs": [
-        "FC Volendam"
+        "FC Volendam",
+        "FC St. Pauli"
       ]
     },
     {
@@ -156123,7 +157032,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alex Bangura",
       "clubs": [
-        "Feyenoord Rotterdam"
+        "Feyenoord Rotterdam",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -156400,7 +157310,8 @@ const FOOTBALL_DB = {
     {
       "name": "Radinio Balker",
       "clubs": [
-        "Almere City FC"
+        "Almere City FC",
+        "Huddersfield Town"
       ]
     },
     {
@@ -156501,7 +157412,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "FC Utrecht",
         "Rosenborg Ballklub",
-        "Kristiansund Ballklubb"
+        "Kristiansund Ballklubb",
+        "LOSC Lille"
       ]
     },
     {
@@ -156525,7 +157437,8 @@ const FOOTBALL_DB = {
     {
       "name": "Steven van der Sloot",
       "clubs": [
-        "Ajax Amsterdam"
+        "Ajax Amsterdam",
+        "Fortuna Düsseldorf"
       ]
     },
     {
@@ -156734,7 +157647,8 @@ const FOOTBALL_DB = {
     {
       "name": "Marc Olivier Doue",
       "clubs": [
-        "PEC Zwolle"
+        "PEC Zwolle",
+        "Cádiz CF"
       ]
     },
     {
@@ -162858,7 +163772,8 @@ const FOOTBALL_DB = {
       "name": "Flávio Nazinho",
       "clubs": [
         "Sporting CP",
-        "Cercle Brugge"
+        "Cercle Brugge",
+        "AS Monaco"
       ]
     },
     {
@@ -163451,7 +164366,8 @@ const FOOTBALL_DB = {
     {
       "name": "Joel Monteiro",
       "clubs": [
-        "FC Famalicão"
+        "FC Famalicão",
+        "US Lecce"
       ]
     },
     {
@@ -164154,7 +165070,8 @@ const FOOTBALL_DB = {
     {
       "name": "Florentino Luís",
       "clubs": [
-        "SL Benfica"
+        "SL Benfica",
+        "Ipswich Town"
       ]
     },
     {
@@ -164597,7 +165514,8 @@ const FOOTBALL_DB = {
     {
       "name": "Daniel Bragança",
       "clubs": [
-        "Sporting CP"
+        "Sporting CP",
+        "Torino FC"
       ]
     },
     {
@@ -164766,7 +165684,8 @@ const FOOTBALL_DB = {
     {
       "name": "Toti Gomes",
       "clubs": [
-        "GD Estoril Praia"
+        "GD Estoril Praia",
+        "Wolverhampton Wanderers"
       ]
     },
     {
@@ -165467,7 +166386,8 @@ const FOOTBALL_DB = {
     {
       "name": "Noah Saviolo",
       "clubs": [
-        "Vitória Guimarães SC"
+        "Vitória Guimarães SC",
+        "Trabzonspor"
       ]
     },
     {
@@ -165517,7 +166437,8 @@ const FOOTBALL_DB = {
     {
       "name": "Vlad",
       "clubs": [
-        "FC Paços de Ferreira"
+        "FC Paços de Ferreira",
+        "Celta de Vigo"
       ]
     },
     {
@@ -165541,7 +166462,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rafael Luís",
       "clubs": [
-        "SL Benfica"
+        "SL Benfica",
+        "Gençlerbirliği"
       ]
     },
     {
@@ -167579,7 +168501,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aleksandar Stanković",
       "clubs": [
-        "Club Brugge KV"
+        "Club Brugge KV",
+        "Inter Milan"
       ]
     },
     {
@@ -168078,7 +169001,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jonathan Mexique",
       "clubs": [
-        "Cercle Brugge"
+        "Cercle Brugge",
+        "FC Sochaux-Montbéliard"
       ]
     },
     {
@@ -168607,7 +169531,8 @@ const FOOTBALL_DB = {
     {
       "name": "Giorgi Chakvetadze",
       "clubs": [
-        "KAA Gent"
+        "KAA Gent",
+        "Udinese Calcio"
       ]
     },
     {
@@ -169177,7 +170102,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Club Brugge KV",
         "Adelaide United",
-        "Newcastle United Jets"
+        "Newcastle United Jets",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -170030,7 +170956,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ahmed Abdullahi",
       "clubs": [
-        "KAA Gent"
+        "KAA Gent",
+        "Eyüpspor"
       ]
     },
     {
@@ -170048,7 +170975,8 @@ const FOOTBALL_DB = {
     {
       "name": "Arthur Piedfort",
       "clubs": [
-        "KVC Westerlo"
+        "KVC Westerlo",
+        "AJ Auxerre"
       ]
     },
     {
@@ -170139,7 +171067,8 @@ const FOOTBALL_DB = {
     {
       "name": "Konstantinos Karetsas",
       "clubs": [
-        "KRC Genk"
+        "KRC Genk",
+        "Borussia Dortmund"
       ]
     },
     {
@@ -170331,7 +171260,8 @@ const FOOTBALL_DB = {
     {
       "name": "Théo Leoni",
       "clubs": [
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "Stade Reims"
       ]
     },
     {
@@ -170440,7 +171370,8 @@ const FOOTBALL_DB = {
     {
       "name": "Moussa N'Diaye",
       "clubs": [
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "SV Werder Bremen"
       ]
     },
     {
@@ -170536,7 +171467,8 @@ const FOOTBALL_DB = {
     {
       "name": "Logan Ndenbe",
       "clubs": [
-        "KV Oostende"
+        "KV Oostende",
+        "AS Nancy-Lorraine"
       ]
     },
     {
@@ -170572,7 +171504,8 @@ const FOOTBALL_DB = {
     {
       "name": "Hong Hyun-seok",
       "clubs": [
-        "KAA Gent"
+        "KAA Gent",
+        "1.FSV Mainz 05"
       ]
     },
     {
@@ -170610,7 +171543,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Oud-Heverlee Leuven",
         "Aarhus GF",
-        "Vendsyssel FF"
+        "Vendsyssel FF",
+        "Hertha BSC"
       ]
     },
     {
@@ -170640,7 +171574,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yari Verschaeren",
       "clubs": [
-        "RSC Anderlecht"
+        "RSC Anderlecht",
+        "UC Sampdoria"
       ]
     },
     {
@@ -171734,7 +172669,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jules Ahoka",
       "clubs": [
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "Sunderland AFC"
       ]
     },
     {
@@ -172807,7 +173743,8 @@ const FOOTBALL_DB = {
     {
       "name": "Zeno Van Den Bosch",
       "clubs": [
-        "Royal Antwerp FC"
+        "Royal Antwerp FC",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -173177,7 +174114,8 @@ const FOOTBALL_DB = {
     {
       "name": "Promise David",
       "clubs": [
-        "Union Saint-Gilloise"
+        "Union Saint-Gilloise",
+        "Brighton & Hove Albion"
       ]
     },
     {
@@ -173675,7 +174613,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aleksandar Vukotić",
       "clubs": [
-        "SK Beveren"
+        "SK Beveren",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -176403,7 +177342,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Sint-Truidense VV",
         "Urawa Red Diamonds",
-        "Albirex Niigata"
+        "Albirex Niigata",
+        "Real Valladolid CF"
       ]
     },
     {
@@ -177648,7 +178588,8 @@ const FOOTBALL_DB = {
     {
       "name": "Darly Nlandu",
       "clubs": [
-        "Royal Excel Mouscron"
+        "Royal Excel Mouscron",
+        "EA Guingamp"
       ]
     },
     {
@@ -179804,7 +180745,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aleksey Batrakov",
       "clubs": [
-        "Lokomotiv Moscow"
+        "Lokomotiv Moscow",
+        "Galatasaray"
       ]
     },
     {
@@ -187018,7 +187960,8 @@ const FOOTBALL_DB = {
     {
       "name": "Nikita Iosifov",
       "clubs": [
-        "Lokomotiv Moscow"
+        "Lokomotiv Moscow",
+        "Sporting Gijón"
       ]
     },
     {
@@ -191667,7 +192610,8 @@ const FOOTBALL_DB = {
     {
       "name": "Yehor Yarmolyuk",
       "clubs": [
-        "SC Dnipro-1"
+        "SC Dnipro-1",
+        "Brentford FC"
       ]
     },
     {
@@ -193885,7 +194829,8 @@ const FOOTBALL_DB = {
       "name": "Sebastian Grønning",
       "clubs": [
         "OFI Crete",
-        "Aarhus GF"
+        "Aarhus GF",
+        "Hertha BSC"
       ]
     },
     {
@@ -195413,7 +196358,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ármin Pécsi",
       "clubs": [
-        "TSV Hartberg"
+        "TSV Hartberg",
+        "Liverpool FC"
       ]
     },
     {
@@ -195431,7 +196377,8 @@ const FOOTBALL_DB = {
     {
       "name": "Amankwah Forson",
       "clubs": [
-        "SCR Altach"
+        "SCR Altach",
+        "Norwich City"
       ]
     },
     {
@@ -195575,7 +196522,8 @@ const FOOTBALL_DB = {
     {
       "name": "Adrian Gantenbein",
       "clubs": [
-        "FC Winterthur"
+        "FC Winterthur",
+        "FC Schalke 04"
       ]
     },
     {
@@ -197143,7 +198091,8 @@ const FOOTBALL_DB = {
     {
       "name": "Pavao Pervan",
       "clubs": [
-        "LASK"
+        "LASK",
+        "VfL Wolfsburg"
       ]
     },
     {
@@ -199210,7 +200159,8 @@ const FOOTBALL_DB = {
     {
       "name": "Marco Grüll",
       "clubs": [
-        "SV Ried"
+        "SV Ried",
+        "SV Werder Bremen"
       ]
     },
     {
@@ -199991,7 +200941,8 @@ const FOOTBALL_DB = {
     {
       "name": "Raoul Petretta",
       "clubs": [
-        "FC Basel 1893"
+        "FC Basel 1893",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -201046,7 +201997,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jared Khasa",
       "clubs": [
-        "FC Sion"
+        "FC Sion",
+        "Nîmes Olympique"
       ]
     },
     {
@@ -203580,7 +204532,8 @@ const FOOTBALL_DB = {
     {
       "name": "Luca Kjerrumgaard",
       "clubs": [
-        "Odense Boldklub"
+        "Odense Boldklub",
+        "Watford FC"
       ]
     },
     {
@@ -203956,7 +204909,8 @@ const FOOTBALL_DB = {
     {
       "name": "Frederik Roslyng",
       "clubs": [
-        "AC Horsens"
+        "AC Horsens",
+        "Holstein Kiel"
       ]
     },
     {
@@ -205114,7 +206068,8 @@ const FOOTBALL_DB = {
     {
       "name": "Maurits Kjærgaard",
       "clubs": [
-        "Lyngby Boldklub"
+        "Lyngby Boldklub",
+        "LOSC Lille"
       ]
     },
     {
@@ -205624,7 +206579,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kastriot Imeri",
       "clubs": [
-        "Servette FC"
+        "Servette FC",
+        "1.FC Union Berlin"
       ]
     },
     {
@@ -207161,7 +208117,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lasse Sørensen",
       "clubs": [
-        "Esbjerg fB"
+        "Esbjerg fB",
+        "Huddersfield Town"
       ]
     },
     {
@@ -208193,7 +209150,8 @@ const FOOTBALL_DB = {
     {
       "name": "Logi Tómasson",
       "clubs": [
-        "Sarpsborg 08 Fotballforening"
+        "Sarpsborg 08 Fotballforening",
+        "Samsunspor"
       ]
     },
     {
@@ -213174,7 +214132,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sverre Nypan",
       "clubs": [
-        "Rosenborg Ballklub"
+        "Rosenborg Ballklub",
+        "Manchester City"
       ]
     },
     {
@@ -213312,7 +214271,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jens Hjertø-Dahl",
       "clubs": [
-        "Tromsø Idrettslag"
+        "Tromsø Idrettslag",
+        "Hull City"
       ]
     },
     {
@@ -213383,7 +214343,8 @@ const FOOTBALL_DB = {
     {
       "name": "Srđan Kuzmić",
       "clubs": [
-        "Viborg FF"
+        "Viborg FF",
+        "FC Lorient"
       ]
     },
     {
@@ -213425,7 +214386,8 @@ const FOOTBALL_DB = {
     {
       "name": "Edvin Austbø",
       "clubs": [
-        "Viking Fotballklubb"
+        "Viking Fotballklubb",
+        "West Ham United"
       ]
     },
     {
@@ -213775,7 +214737,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aune Heggebø",
       "clubs": [
-        "Sportsklubben Brann"
+        "Sportsklubben Brann",
+        "West Bromwich Albion"
       ]
     },
     {
@@ -214117,7 +215080,8 @@ const FOOTBALL_DB = {
     {
       "name": "Oskar Øhlenschlæger",
       "clubs": [
-        "Fredrikstad Fotballklubb"
+        "Fredrikstad Fotballklubb",
+        "Samsunspor"
       ]
     },
     {
@@ -214448,7 +215412,8 @@ const FOOTBALL_DB = {
     {
       "name": "Fredrik Carlsen",
       "clubs": [
-        "Aalesunds Fotballklubb"
+        "Aalesunds Fotballklubb",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -214633,7 +215598,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ibrahim Diabate",
       "clubs": [
-        "GAIS"
+        "GAIS",
+        "Erzurumspor FK"
       ]
     },
     {
@@ -215735,7 +216701,8 @@ const FOOTBALL_DB = {
     {
       "name": "Benjamin Brantlind",
       "clubs": [
-        "IFK Göteborg"
+        "IFK Göteborg",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -219748,7 +220715,9 @@ const FOOTBALL_DB = {
     {
       "name": "Noel Törnqvist",
       "clubs": [
-        "Mjällby AIF"
+        "Mjällby AIF",
+        "AC Monza",
+        "Como 1907"
       ]
     },
     {
@@ -220128,7 +221097,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rockson Yeboah",
       "clubs": [
-        "IFK Göteborg"
+        "IFK Göteborg",
+        "CA Osasuna"
       ]
     },
     {
@@ -220290,7 +221260,8 @@ const FOOTBALL_DB = {
     {
       "name": "Marcus Rafferty",
       "clubs": [
-        "Degerfors IF"
+        "Degerfors IF",
+        "Kasimpasa"
       ]
     },
     {
@@ -220412,7 +221383,8 @@ const FOOTBALL_DB = {
     {
       "name": "Jonas Rouhi",
       "clubs": [
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "Juventus FC"
       ]
     },
     {
@@ -220912,7 +221884,8 @@ const FOOTBALL_DB = {
     {
       "name": "Elliot Stroud",
       "clubs": [
-        "Mjällby AIF"
+        "Mjällby AIF",
+        "Hull City"
       ]
     },
     {
@@ -220937,7 +221910,8 @@ const FOOTBALL_DB = {
       "name": "Richie Omorowa",
       "clubs": [
         "IF Brommapojkarna",
-        "Degerfors IF"
+        "Degerfors IF",
+        "Samsunspor"
       ]
     },
     {
@@ -220985,7 +221959,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lucas Bergström",
       "clubs": [
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "RCD Mallorca"
       ]
     },
     {
@@ -221055,13 +222030,16 @@ const FOOTBALL_DB = {
     {
       "name": "Jesper Ceesay",
       "clubs": [
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "Antalyaspor"
       ]
     },
     {
       "name": "Hugo Larsson",
       "clubs": [
-        "Malmö Fotbollförening"
+        "Malmö Fotbollförening",
+        "Fulham FC",
+        "Eintracht Frankfurt"
       ]
     },
     {
@@ -221162,7 +222140,8 @@ const FOOTBALL_DB = {
     {
       "name": "Laurs Skjellerup",
       "clubs": [
-        "IFK Göteborg"
+        "IFK Göteborg",
+        "US Sassuolo"
       ]
     },
     {
@@ -221279,7 +222258,8 @@ const FOOTBALL_DB = {
       "name": "Zeidane Inoussa",
       "clubs": [
         "BK Häcken",
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "Swansea City"
       ]
     },
     {
@@ -221807,7 +222787,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sion Oppong",
       "clubs": [
-        "IF Brommapojkarna"
+        "IF Brommapojkarna",
+        "FC Toulouse"
       ]
     },
     {
@@ -222272,7 +223253,8 @@ const FOOTBALL_DB = {
       "name": "Rufai Mohammed",
       "clubs": [
         "IF Elfsborg",
-        "IFK Värnamo"
+        "IFK Värnamo",
+        "Venezia FC"
       ]
     },
     {
@@ -223238,7 +224220,8 @@ const FOOTBALL_DB = {
     {
       "name": "Matěj Jurásek",
       "clubs": [
-        "AC Sparta Prague"
+        "AC Sparta Prague",
+        "Norwich City"
       ]
     },
     {
@@ -223256,7 +224239,8 @@ const FOOTBALL_DB = {
     {
       "name": "Paweł Dawidowicz",
       "clubs": [
-        "Raków Częstochowa"
+        "Raków Częstochowa",
+        "Hellas Verona"
       ]
     },
     {
@@ -223388,7 +224372,8 @@ const FOOTBALL_DB = {
     {
       "name": "Imad Rondić",
       "clubs": [
-        "Widzew Lodz"
+        "Widzew Lodz",
+        "1.FC Köln"
       ]
     },
     {
@@ -223437,7 +224422,8 @@ const FOOTBALL_DB = {
     {
       "name": "Adam Dźwigała",
       "clubs": [
-        "Lechia Gdansk"
+        "Lechia Gdansk",
+        "FC St. Pauli"
       ]
     },
     {
@@ -223780,7 +224766,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ante Crnac",
       "clubs": [
-        "Raków Częstochowa"
+        "Raków Częstochowa",
+        "Norwich City"
       ]
     },
     {
@@ -226398,7 +227385,8 @@ const FOOTBALL_DB = {
     {
       "name": "Albion Rrahmani",
       "clubs": [
-        "AC Sparta Prague"
+        "AC Sparta Prague",
+        "Venezia FC"
       ]
     },
     {
@@ -227697,7 +228685,8 @@ const FOOTBALL_DB = {
     {
       "name": "Radosław Majecki",
       "clubs": [
-        "Legia Warszawa"
+        "Legia Warszawa",
+        "AS Monaco"
       ]
     },
     {
@@ -227709,7 +228698,8 @@ const FOOTBALL_DB = {
     {
       "name": "Santeri Hostikka",
       "clubs": [
-        "Pogon Szczecin"
+        "Pogon Szczecin",
+        "Ümraniyespor"
       ]
     },
     {
@@ -230316,7 +231306,8 @@ const FOOTBALL_DB = {
     {
       "name": "Kacper Kozłowski",
       "clubs": [
-        "Pogon Szczecin"
+        "Pogon Szczecin",
+        "Gaziantep FK"
       ]
     },
     {
@@ -231182,7 +232173,8 @@ const FOOTBALL_DB = {
     {
       "name": "Daniel Mikołajewski",
       "clubs": [
-        "Lechia Gdansk"
+        "Lechia Gdansk",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -234684,7 +235676,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alessandro Micai",
       "clubs": [
-        "CFR Cluj"
+        "CFR Cluj",
+        "Spezia Calcio"
       ]
     },
     {
@@ -235252,7 +236245,8 @@ const FOOTBALL_DB = {
     {
       "name": "Daniel Bîrligea",
       "clubs": [
-        "FCSB"
+        "FCSB",
+        "Frosinone Calcio"
       ]
     },
     {
@@ -245719,7 +246713,8 @@ const FOOTBALL_DB = {
     {
       "name": "Vinko Soldo",
       "clubs": [
-        "GNK Dinamo Zagreb"
+        "GNK Dinamo Zagreb",
+        "Pendikspor"
       ]
     },
     {
@@ -245791,7 +246786,8 @@ const FOOTBALL_DB = {
     {
       "name": "Emir Sahiti",
       "clubs": [
-        "HNK Hajduk Split"
+        "HNK Hajduk Split",
+        "Hannover 96"
       ]
     },
     {
@@ -246020,7 +247016,8 @@ const FOOTBALL_DB = {
     {
       "name": "Stanko Jurić",
       "clubs": [
-        "HNK Hajduk Split"
+        "HNK Hajduk Split",
+        "Real Valladolid CF"
       ]
     },
     {
@@ -247575,7 +248572,8 @@ const FOOTBALL_DB = {
     {
       "name": "Milan Đurić",
       "clubs": [
-        "NK Istra 1961"
+        "NK Istra 1961",
+        "US Cremonese"
       ]
     },
     {
@@ -247816,7 +248814,8 @@ const FOOTBALL_DB = {
     {
       "name": "Đorđe Petrović",
       "clubs": [
-        "FK Cukaricki"
+        "FK Cukaricki",
+        "AFC Bournemouth"
       ]
     },
     {
@@ -247906,7 +248905,8 @@ const FOOTBALL_DB = {
     {
       "name": "Leon Jakirović",
       "clubs": [
-        "GNK Dinamo Zagreb"
+        "GNK Dinamo Zagreb",
+        "Inter Milan"
       ]
     },
     {
@@ -248008,7 +249008,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lucas Herrington",
       "clubs": [
-        "Colorado Rapids"
+        "Colorado Rapids",
+        "Hull City"
       ]
     },
     {
@@ -248122,7 +249123,8 @@ const FOOTBALL_DB = {
     {
       "name": "Benjamin Cremaschi",
       "clubs": [
-        "Inter Miami CF"
+        "Inter Miami CF",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -250874,7 +251876,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mason Toye",
       "clubs": [
-        "Club de Foot Montréal"
+        "Club de Foot Montréal",
+        "FC Ingolstadt 04"
       ]
     },
     {
@@ -252001,7 +253004,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gabriel Slonina",
       "clubs": [
-        "Chicago Fire Soccer Club"
+        "Chicago Fire Soccer Club",
+        "Chelsea FC"
       ]
     },
     {
@@ -252137,7 +253141,8 @@ const FOOTBALL_DB = {
     {
       "name": "Aidan Morris",
       "clubs": [
-        "Columbus Crew"
+        "Columbus Crew",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -254317,7 +255322,8 @@ const FOOTBALL_DB = {
     {
       "name": "John Tolkin",
       "clubs": [
-        "Red Bull New York"
+        "Red Bull New York",
+        "Holstein Kiel"
       ]
     },
     {
@@ -254560,7 +255566,8 @@ const FOOTBALL_DB = {
     {
       "name": "Ashley Fletcher",
       "clubs": [
-        "Red Bull New York"
+        "Red Bull New York",
+        "Huddersfield Town"
       ]
     },
     {
@@ -256212,7 +257219,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gianluca Busio",
       "clubs": [
-        "Sporting Kansas City"
+        "Sporting Kansas City",
+        "Venezia FC"
       ]
     },
     {
@@ -256400,7 +257408,8 @@ const FOOTBALL_DB = {
     {
       "name": "Cristian Cásseres Jr.",
       "clubs": [
-        "Red Bull New York"
+        "Red Bull New York",
+        "FC Toulouse"
       ]
     },
     {
@@ -256663,7 +257672,8 @@ const FOOTBALL_DB = {
     {
       "name": "Luca Bombino",
       "clubs": [
-        "Los Angeles Football Club"
+        "Los Angeles Football Club",
+        "Stoke City"
       ]
     },
     {
@@ -256730,7 +257740,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sebastian Berhalter",
       "clubs": [
-        "Vancouver Whitecaps FC"
+        "Vancouver Whitecaps FC",
+        "Middlesbrough FC"
       ]
     },
     {
@@ -256802,7 +257813,8 @@ const FOOTBALL_DB = {
     {
       "name": "Joyeux Masanka Bungi",
       "clubs": [
-        "Red Bull New York"
+        "Red Bull New York",
+        "RB Leipzig"
       ]
     },
     {
@@ -260355,7 +261367,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rayan",
       "clubs": [
-        "Club de Regatas Vasco da Gama"
+        "Club de Regatas Vasco da Gama",
+        "AFC Bournemouth"
       ]
     },
     {
@@ -260846,7 +261859,8 @@ const FOOTBALL_DB = {
     {
       "name": "Deivid Washington",
       "clubs": [
-        "Santos Futebol Clube"
+        "Santos Futebol Clube",
+        "RC Strasbourg Alsace"
       ]
     },
     {
@@ -272978,7 +273992,8 @@ const FOOTBALL_DB = {
     {
       "name": "Juan",
       "clubs": [
-        "São Paulo Futebol Clube"
+        "São Paulo Futebol Clube",
+        "Göztepe"
       ]
     },
     {
@@ -273430,7 +274445,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gabriel Sara",
       "clubs": [
-        "São Paulo Futebol Clube"
+        "São Paulo Futebol Clube",
+        "Galatasaray"
       ]
     },
     {
@@ -275002,7 +276018,8 @@ const FOOTBALL_DB = {
     {
       "name": "Robinho Júnior",
       "clubs": [
-        "Santos Futebol Clube"
+        "Santos Futebol Clube",
+        "Genoa CFC"
       ]
     },
     {
@@ -275638,7 +276655,8 @@ const FOOTBALL_DB = {
     {
       "name": "Juan Díaz",
       "clubs": [
-        "Club Atlético Rosario Central"
+        "Club Atlético Rosario Central",
+        "Cádiz CF"
       ]
     },
     {
@@ -279179,7 +280197,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lucas Robertone",
       "clubs": [
-        "Club Atlético Vélez Sársfield"
+        "Club Atlético Vélez Sársfield",
+        "UD Almería"
       ]
     },
     {
@@ -279627,7 +280646,8 @@ const FOOTBALL_DB = {
     {
       "name": "Nahuel Tenaglia",
       "clubs": [
-        "Club Atlético Boca Juniors"
+        "Club Atlético Boca Juniors",
+        "Deportivo Alavés"
       ]
     },
     {
@@ -282228,7 +283248,8 @@ const FOOTBALL_DB = {
     {
       "name": "Felipe Sánchez",
       "clubs": [
-        "Club Atlético River Plate"
+        "Club Atlético River Plate",
+        "FC Schalke 04"
       ]
     },
     {
@@ -282779,7 +283800,8 @@ const FOOTBALL_DB = {
     {
       "name": "Iván Alonso",
       "clubs": [
-        "Club Atlético River Plate"
+        "Club Atlético River Plate",
+        "Rayo Vallecano"
       ]
     },
     {
@@ -285204,7 +286226,8 @@ const FOOTBALL_DB = {
     {
       "name": "Nicolás Capaldo",
       "clubs": [
-        "Club Atlético Boca Juniors"
+        "Club Atlético Boca Juniors",
+        "Hamburger SV"
       ]
     },
     {
@@ -285794,7 +286817,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lautaro Valenti",
       "clubs": [
-        "Club Atlético Lanús"
+        "Club Atlético Lanús",
+        "Parma Calcio 1913"
       ]
     },
     {
@@ -286276,7 +287300,8 @@ const FOOTBALL_DB = {
     {
       "name": "Agustín Álvarez",
       "clubs": [
-        "CD Godoy Cruz Antonio Tomba"
+        "CD Godoy Cruz Antonio Tomba",
+        "US Sassuolo"
       ]
     },
     {
@@ -286479,7 +287504,8 @@ const FOOTBALL_DB = {
     {
       "name": "Exequiel Zeballos",
       "clubs": [
-        "Club Atlético Boca Juniors"
+        "Club Atlético Boca Juniors",
+        "AC Monza"
       ]
     },
     {
@@ -286552,7 +287578,8 @@ const FOOTBALL_DB = {
       "name": "Rodrigo Mora",
       "clubs": [
         "Club Atlético River Plate",
-        "Al-Nassr"
+        "Al-Nassr",
+        "AS Roma"
       ]
     },
     {
@@ -286685,7 +287712,8 @@ const FOOTBALL_DB = {
     {
       "name": "Gino Infantino",
       "clubs": [
-        "Asociación Atlética Argentinos Juniors"
+        "Asociación Atlética Argentinos Juniors",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -287308,7 +288336,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mateo Pellegrino",
       "clubs": [
-        "Club Estudiantes de La Plata"
+        "Club Estudiantes de La Plata",
+        "ACF Fiorentina"
       ]
     },
     {
@@ -287344,7 +288373,8 @@ const FOOTBALL_DB = {
     {
       "name": "José Córdoba",
       "clubs": [
-        "Independiente"
+        "Independiente",
+        "Norwich City"
       ]
     },
     {
@@ -287484,7 +288514,8 @@ const FOOTBALL_DB = {
     {
       "name": "Fernando Martínez",
       "clubs": [
-        "Club de Gimnasia y Esgrima La Plata"
+        "Club de Gimnasia y Esgrima La Plata",
+        "UD Almería"
       ]
     },
     {
@@ -291425,7 +292456,8 @@ const FOOTBALL_DB = {
     {
       "name": "Luis López",
       "clubs": [
-        "CF Monterrey"
+        "CF Monterrey",
+        "SD Eibar"
       ]
     },
     {
@@ -293292,7 +294324,8 @@ const FOOTBALL_DB = {
     {
       "name": "Mikel Amondarain",
       "clubs": [
-        "Club Estudiantes de La Plata"
+        "Club Estudiantes de La Plata",
+        "Bologna FC"
       ]
     },
     {
@@ -296769,7 +297802,8 @@ const FOOTBALL_DB = {
     {
       "name": "Miguel Ángel Martínez",
       "clubs": [
-        "Querétaro FC"
+        "Querétaro FC",
+        "US Livorno 1915"
       ]
     },
     {
@@ -298687,7 +299721,8 @@ const FOOTBALL_DB = {
     {
       "name": "Andrés Rodríguez",
       "clubs": [
-        "Independiente Medellín"
+        "Independiente Medellín",
+        "UD Las Palmas"
       ]
     },
     {
@@ -299338,7 +300373,8 @@ const FOOTBALL_DB = {
     {
       "name": "Diego Peralta",
       "clubs": [
-        "Atlético Nacional"
+        "Atlético Nacional",
+        "US Livorno 1915"
       ]
     },
     {
@@ -302163,7 +303199,8 @@ const FOOTBALL_DB = {
       "clubs": [
         "Deportivo Pereira",
         "Independiente Santa Fe",
-        "Rionegro Águilas"
+        "Rionegro Águilas",
+        "SD Huesca"
       ]
     },
     {
@@ -303393,7 +304430,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sergio Herrera",
       "clubs": [
-        "Al-Nassr"
+        "Al-Nassr",
+        "CA Osasuna"
       ]
     },
     {
@@ -304706,7 +305744,8 @@ const FOOTBALL_DB = {
     {
       "name": "Joaquín González",
       "clubs": [
-        "Millonarios FC"
+        "Millonarios FC",
+        "Cádiz CF"
       ]
     },
     {
@@ -308922,7 +309961,8 @@ const FOOTBALL_DB = {
     {
       "name": "Sota Nakamura",
       "clubs": [
-        "Sanfrecce Hiroshima"
+        "Sanfrecce Hiroshima",
+        "Le Havre AC"
       ]
     },
     {
@@ -314472,7 +315512,8 @@ const FOOTBALL_DB = {
     {
       "name": "Reo Hatate",
       "clubs": [
-        "Kawasaki Frontale"
+        "Kawasaki Frontale",
+        "Burnley FC"
       ]
     },
     {
@@ -314879,7 +315920,8 @@ const FOOTBALL_DB = {
     {
       "name": "Hiroki Akiyama",
       "clubs": [
-        "Albirex Niigata"
+        "Albirex Niigata",
+        "SV Darmstadt 98"
       ]
     },
     {
@@ -314911,7 +315953,8 @@ const FOOTBALL_DB = {
     {
       "name": "Rihito Yamamoto",
       "clubs": [
-        "Tokyo Verdy"
+        "Tokyo Verdy",
+        "SC Freiburg"
       ]
     },
     {
@@ -315304,7 +316347,8 @@ const FOOTBALL_DB = {
     {
       "name": "Taisei Miyashiro",
       "clubs": [
-        "Kawasaki Frontale"
+        "Kawasaki Frontale",
+        "UD Las Palmas"
       ]
     },
     {
@@ -317991,7 +319035,8 @@ const FOOTBALL_DB = {
     {
       "name": "Alex Paulsen",
       "clubs": [
-        "Auckland FC"
+        "Auckland FC",
+        "AFC Bournemouth"
       ]
     },
     {
@@ -318193,7 +319238,8 @@ const FOOTBALL_DB = {
     {
       "name": "Patrick Beach",
       "clubs": [
-        "Melbourne City FC"
+        "Melbourne City FC",
+        "ESTAC Troyes"
       ]
     },
     {
@@ -318224,7 +319270,8 @@ const FOOTBALL_DB = {
       "name": "Mark Natta",
       "clubs": [
         "Newcastle United Jets",
-        "Western Sydney Wanderers"
+        "Western Sydney Wanderers",
+        "Cesena FC"
       ]
     },
     {
@@ -319877,7 +320924,8 @@ const FOOTBALL_DB = {
     {
       "name": "Lee Jae-sung",
       "clubs": [
-        "Ulsan HD"
+        "Ulsan HD",
+        "1.FSV Mainz 05"
       ]
     },
     {
@@ -322001,6 +323049,19013 @@ const FOOTBALL_DB = {
       "name": "Park Sung-ho",
       "clubs": [
         "Ulsan HD"
+      ]
+    },
+    {
+      "name": "Koray Palaz",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "Afan Koçak",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "Samet Eğribel",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "CFR Cluj",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "Osijek",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "Genk",
+      "clubs": [
+        "Adana Demirspor"
+      ]
+    },
+    {
+      "name": "Fidan Aliti",
+      "clubs": [
+        "FC Luzern",
+        "FC Zürich",
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "İbrahim Kaya",
+      "clubs": [
+        "Istanbulspor",
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Enes Keskin",
+      "clubs": [
+        "Pendikspor",
+        "Eyüpspor",
+        "Gençlerbirliği",
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Meschak Elia",
+      "clubs": [
+        "BSC Young Boys",
+        "FC Nantes",
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Iván Cédric",
+      "clubs": [
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Baran Ali Gezek",
+      "clubs": [
+        "Kayserispor",
+        "Eyüpspor",
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Yusuf Özdemir",
+      "clubs": [
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Buluthan Bulut",
+      "clubs": [
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "Ömer Faruk Beyaz",
+      "clubs": [
+        "Fenerbahce",
+        "VfB Stuttgart",
+        "Hatayspor",
+        "Basaksehir FK",
+        "Antalyaspor"
+      ]
+    },
+    {
+      "name": "Francis Nzaba",
+      "clubs": [
+        "Antalyaspor"
+      ]
+    },
+    {
+      "name": "Arif Kocaman",
+      "clubs": [
+        "Kayserispor",
+        "Antalyaspor"
+      ]
+    },
+    {
+      "name": "Hamza Güreler",
+      "clubs": [
+        "Basaksehir FK"
+      ]
+    },
+    {
+      "name": "Michał Karbownik",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Olympiacos",
+        "Fortuna Düsseldorf",
+        "Hertha BSC",
+        "Basaksehir FK"
+      ]
+    },
+    {
+      "name": "Saba Kharebashvili",
+      "clubs": [
+        "Basaksehir FK"
+      ]
+    },
+    {
+      "name": "Deniz Dilmen",
+      "clubs": [
+        "Basaksehir FK",
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Efe Arda Koyuncu",
+      "clubs": [
+        "Basaksehir FK"
+      ]
+    },
+    {
+      "name": "Kassoum Ouattara",
+      "clubs": [
+        "Amiens SC",
+        "AS Monaco",
+        "Beşiktaş"
+      ]
+    },
+    {
+      "name": "Taylan Bulut",
+      "clubs": [
+        "FC Schalke 04",
+        "Beşiktaş"
+      ]
+    },
+    {
+      "name": "Mustafa Hekimoğlu",
+      "clubs": [
+        "Beşiktaş"
+      ]
+    },
+    {
+      "name": "İlhan Fakılı",
+      "clubs": [
+        "Beşiktaş"
+      ]
+    },
+    {
+      "name": "Fahri Kerem Ay",
+      "clubs": [
+        "Beşiktaş",
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Ali Şahin Yılmaz",
+      "clubs": [
+        "Trabzonspor",
+        "Istanbulspor",
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Tomás Moreira",
+      "clubs": [
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Mustafa Erdilman",
+      "clubs": [
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Ahmet Aslan",
+      "clubs": [
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Elvir Gashijan",
+      "clubs": [
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Celal Dumanlı",
+      "clubs": [
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Ruben Providence",
+      "clubs": [
+        "AS Roma",
+        "TSV Hartberg",
+        "Almere City FC",
+        "Bodrum FK"
+      ]
+    },
+    {
+      "name": "Husniddin Aliqulov",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Moussa Diakité",
+      "clubs": [
+        "Caykur Rizespor",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Ibrahim Olawoyin",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Siaka Bakayoko",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Taha Şahin",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Mithat Pala",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Emrecan Bulut",
+      "clubs": [
+        "Beşiktaş",
+        "Ümraniyespor",
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "Muhamed Buljubašić",
+      "clubs": [
+        "Caykur Rizespor"
+      ]
+    },
+    {
+      "name": "David Costa",
+      "clubs": [
+        "FC Paços de Ferreira",
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Simone Giordano",
+      "clubs": [
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Taşkın İlter",
+      "clubs": [
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Zak Jules",
+      "clubs": [
+        "Reading FC",
+        "Motherwell FC",
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Chandrel Massanga",
+      "clubs": [
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Prince Ampem",
+      "clubs": [
+        "HNK Sibenik",
+        "HNK Rijeka",
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Kojo Peprah Oppong",
+      "clubs": [
+        "IFK Norrköping",
+        "OGC Nice",
+        "Fenerbahce"
+      ]
+    },
+    {
+      "name": "Yasir Boz",
+      "clubs": [
+        "Fenerbahce"
+      ]
+    },
+    {
+      "name": "Çağrı Balta",
+      "clubs": [
+        "Fenerbahce"
+      ]
+    },
+    {
+      "name": "Aziz Fall",
+      "clubs": [
+        "Fenerbahce"
+      ]
+    },
+    {
+      "name": "Jankat Yılmaz",
+      "clubs": [
+        "Galatasaray",
+        "Adanaspor",
+        "Eyüpspor"
+      ]
+    },
+    {
+      "name": "Armando Güner",
+      "clubs": [
+        "Galatasaray"
+      ]
+    },
+    {
+      "name": "Ada Yüzgeç",
+      "clubs": [
+        "Galatasaray"
+      ]
+    },
+    {
+      "name": "Berat Luş",
+      "clubs": [
+        "Galatasaray"
+      ]
+    },
+    {
+      "name": "Metehan Baltacı",
+      "clubs": [
+        "Galatasaray",
+        "Gençlerbirliği"
+      ]
+    },
+    {
+      "name": "Ege Araç",
+      "clubs": [
+        "Galatasaray"
+      ]
+    },
+    {
+      "name": "Efe Sarıkaya",
+      "clubs": [
+        "Altay SK",
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Ulrich Meleke",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Trivante Stewart",
+      "clubs": [
+        "FK Radnicki Nis",
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Mirza Cihan",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Kerim Çalhanoğlu",
+      "clubs": [
+        "FC Schalke 04",
+        "SpVgg Greuther Fürth",
+        "HNK Vukovar 1991",
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Kacper Tobiasz",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Enver Kulašin",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Ataberk Dadakdeniz",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Ogün Özçiçek",
+      "clubs": [
+        "Gaziantep FK"
+      ]
+    },
+    {
+      "name": "Arda Özçimen",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Allan Godói",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "André Henrique",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Richard Akonnor",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Ogün Bayrak",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Sinclair Armstrong",
+      "clubs": [
+        "Queens Park Rangers",
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Malcom Bokele",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Ibrahim Sabra",
+      "clubs": [
+        "Göztepe",
+        "NK Lokomotiva Zagreb"
+      ]
+    },
+    {
+      "name": "Janderson",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Jeh",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Salem Bouajila",
+      "clubs": [
+        "Göztepe"
+      ]
+    },
+    {
+      "name": "Guilherme Luiz",
+      "clubs": [
+        "Göztepe",
+        "Radomiak Radom"
+      ]
+    },
+    {
+      "name": "Amin Cherni",
+      "clubs": [
+        "Göztepe",
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Engin Can Aksoy",
+      "clubs": [
+        "Hatayspor"
+      ]
+    },
+    {
+      "name": "Adem Arous",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Jakob Jessen",
+      "clubs": [
+        "FC Fredericia",
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Thiemoko Diarra",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Kévin Mouanga",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Andri Baldursson",
+      "clubs": [
+        "Bologna FC",
+        "FC Copenhagen",
+        "IF Elfsborg",
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Kamil Çörekçi",
+      "clubs": [
+        "Kayserispor",
+        "Adana Demirspor",
+        "Eskisehirspor",
+        "Trabzonspor",
+        "Hatayspor",
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Ali Emre Yanar",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Ayberk Karapo",
+      "clubs": [
+        "Caykur Rizespor",
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Elson Mendes",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Taylan Aydın",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Erdem Çetinkaya",
+      "clubs": [
+        "Kasimpasa"
+      ]
+    },
+    {
+      "name": "Murat Akpınar",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Florent Hasani",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Benhur Keser",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Daniel Moreno",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Mamadi Camará",
+      "clubs": [
+        "Reading FC",
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Marco Dulca",
+      "clubs": [
+        "FCSB",
+        "Petrolul Ploiesti",
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Talha Sarıarslan",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Yiğit Emre Çeltik",
+      "clubs": [
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "Deniz Ertaş",
+      "clubs": [
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Adil Demirbağ",
+      "clubs": [
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Bahadır Han Güngördü",
+      "clubs": [
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Emir Bars",
+      "clubs": [
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Rajmund Tóth",
+      "clubs": [
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Melih Bostan",
+      "clubs": [
+        "Konyaspor",
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Jo Jin-ho",
+      "clubs": [
+        "Fenerbahce",
+        "FK Novi Pazar",
+        "FK Radnicki Nis",
+        "Konyaspor"
+      ]
+    },
+    {
+      "name": "Jaurès Assoumou",
+      "clubs": [
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Yunus Emre Çift",
+      "clubs": [
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Bilal Bayazıt",
+      "clubs": [
+        "Kayserispor",
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Gabriele Guarino",
+      "clubs": [
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Anto Sekongo",
+      "clubs": [
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Bedirhan Çetin",
+      "clubs": [
+        "Samsunspor"
+      ]
+    },
+    {
+      "name": "Mert Çelik",
+      "clubs": [
+        "Sivasspor"
+      ]
+    },
+    {
+      "name": "Charis Charisis",
+      "clubs": [
+        "PAS Giannina",
+        "PAOK",
+        "Atromitos",
+        "Sivasspor"
+      ]
+    },
+    {
+      "name": "Clinton Duodu",
+      "clubs": [
+        "Sivasspor"
+      ]
+    },
+    {
+      "name": "Emre Gökay",
+      "clubs": [
+        "Sivasspor"
+      ]
+    },
+    {
+      "name": "Okan Erdoğan",
+      "clubs": [
+        "Istanbulspor",
+        "Sivasspor"
+      ]
+    },
+    {
+      "name": "Ahmet Doğan Yıldırım",
+      "clubs": [
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Franculino",
+      "clubs": [
+        "FC Midtjylland",
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Onuralp Çevikkan",
+      "clubs": [
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Tim Jabol-Folcarelli",
+      "clubs": [
+        "AC Ajaccio",
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Arseniy Batahov",
+      "clubs": [
+        "SC Dnipro-1",
+        "FK Polissya Zhytomyr",
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Aral Şimşir",
+      "clubs": [
+        "FC Midtjylland",
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "René Mitongo",
+      "clubs": [
+        "Trabzonspor"
+      ]
+    },
+    {
+      "name": "Lewis Cook",
+      "clubs": [
+        "Leeds United",
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Julio Soler",
+      "clubs": [
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "David Brooks",
+      "clubs": [
+        "Sheffield United",
+        "AFC Bournemouth",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Alex Scott",
+      "clubs": [
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "António Silva",
+      "clubs": [
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Adam Smith",
+      "clubs": [
+        "Tottenham Hotspur",
+        "AFC Bournemouth",
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Marcus Tavernier",
+      "clubs": [
+        "Middlesbrough FC",
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Eli Junior Kroupi",
+      "clubs": [
+        "FC Lorient",
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Juanlu Sánchez",
+      "clubs": [
+        "Sevilla FC",
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Alex Tóth",
+      "clubs": [
+        "AFC Bournemouth"
+      ]
+    },
+    {
+      "name": "Gabriel Magalhães",
+      "clubs": [
+        "GNK Dinamo Zagreb",
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Ezri Konsa",
+      "clubs": [
+        "Brentford FC",
+        "Aston Villa",
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Illan Meslier",
+      "clubs": [
+        "FC Lorient",
+        "Leeds United",
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Myles Lewis-Skelly",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Tommy Setford",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Jaden Dixon",
+      "clubs": [
+        "Stoke City",
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Andre Harriman-Annous",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Ife Ibrahim",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Ceadach O'Neill",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Jack Porter",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Max Dowman",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Brando Bailey-Joseph",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Marli Salmon",
+      "clubs": [
+        "Arsenal FC"
+      ]
+    },
+    {
+      "name": "Ismeal Kabia",
+      "clubs": [
+        "Arsenal FC",
+        "St. Mirren FC"
+      ]
+    },
+    {
+      "name": "Charles Sagoe Jr",
+      "clubs": [
+        "Arsenal FC",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Matty Cash",
+      "clubs": [
+        "Nottingham Forest",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Ibrahim Mbaye",
+      "clubs": [
+        "Paris Saint-Germain",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Lamare Bogarde",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "João Gomes",
+      "clubs": [
+        "Wolverhampton Wanderers",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Brian Madjo",
+      "clubs": [
+        "FC Metz",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "James Wright",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Johan Manzambi",
+      "clubs": [
+        "SC Freiburg",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Modou Kéba Cissé",
+      "clubs": [
+        "LASK",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "George Hemmings",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Joe Gauci",
+      "clubs": [
+        "Central Coast Mariners",
+        "Melbourne City FC",
+        "Adelaide United",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Oliwier Zych",
+      "clubs": [
+        "Aston Villa",
+        "Raków Częstochowa"
+      ]
+    },
+    {
+      "name": "Travis Patterson",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Rory Wilson",
+      "clubs": [
+        "Aston Villa",
+        "Sturm Graz"
+      ]
+    },
+    {
+      "name": "Mason Cotcher",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Fletcher Boyd",
+      "clubs": [
+        "Aberdeen FC",
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Triston Rowe",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Bradley Burrowes",
+      "clubs": [
+        "Aston Villa",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Aidan Borland",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Lino Sousa",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Tommi O'Reilly",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Josh Feeney",
+      "clubs": [
+        "Aston Villa",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Ben Broggio",
+      "clubs": [
+        "Aston Villa",
+        "Falkirk FC"
+      ]
+    },
+    {
+      "name": "Luka Lynch",
+      "clubs": [
+        "Aston Villa"
+      ]
+    },
+    {
+      "name": "Rico Henry",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Josh Dasilva",
+      "clubs": [
+        "Arsenal FC",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Hákon Valdimarsson",
+      "clubs": [
+        "IF Elfsborg",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Keane Lewis-Potter",
+      "clubs": [
+        "Hull City",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Kim Ji-soo",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Gustavo Nunes",
+      "clubs": [
+        "Brentford FC",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Jannik Schuster",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Benjamin Fredrick",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Yunus Emre Konak",
+      "clubs": [
+        "Sivasspor",
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Julian Eyestone",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Romelle Donovan",
+      "clubs": [
+        "Brentford FC",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Matthew Cox",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Josh Stephenson",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Luka Bentt",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Val Adedokun",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Theo Mawene",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Michel Boni",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Darwin Guagua",
+      "clubs": [
+        "Brentford FC"
+      ]
+    },
+    {
+      "name": "Ben Krauhaus",
+      "clubs": [
+        "Brentford FC",
+        "Falkirk FC"
+      ]
+    },
+    {
+      "name": "Michael Olakigbe",
+      "clubs": [
+        "Brentford FC",
+        "Wigan Athletic",
+        "WSG Tirol"
+      ]
+    },
+    {
+      "name": "Pascal Struijk",
+      "clubs": [
+        "Leeds United",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Lewis Dunk",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Jack Hinshelwood",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Jason Steele",
+      "clubs": [
+        "Middlesbrough FC",
+        "Sunderland AFC",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Michael Svoboda",
+      "clubs": [
+        "WSG Tirol",
+        "Venezia FC",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Zadok Yohanna",
+      "clubs": [
+        "AIK",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Tom McGill",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Femi Azeez",
+      "clubs": [
+        "Reading FC",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Eiran Cashin",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Amario Cozier-Duberry",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Rodrigo Rêgo",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Tommy Watson",
+      "clubs": [
+        "Sunderland AFC",
+        "Brighton & Hove Albion",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Freddie Simmonds",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Nehemiah Oriola",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Younes Ibrahim",
+      "clubs": [
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Steven Hall",
+      "clubs": [
+        "Adelaide United",
+        "Brighton & Hove Albion"
+      ]
+    },
+    {
+      "name": "Geovany Quenda",
+      "clubs": [
+        "Sporting CP",
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Reece James",
+      "clubs": [
+        "Chelsea FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Teddy Sharman-Lowe",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Pep Chavarría",
+      "clubs": [
+        "Rayo Vallecano",
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Reggie Watson",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Mahdi Nicoll-Jazuli",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Josh Acheampong",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Olutayo Subuloye",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Ted Curd",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Filip Jörgensen",
+      "clubs": [
+        "Villarreal CF",
+        "Chelsea FC",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Genesis Antwi",
+      "clubs": [
+        "Chelsea FC",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Harrison Murray-Campbell",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Ishe Samuels-Smith",
+      "clubs": [
+        "Chelsea FC",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Caleb Wiley",
+      "clubs": [
+        "Chelsea FC",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Kiano Dyer",
+      "clubs": [
+        "Chelsea FC",
+        "FC Volendam"
+      ]
+    },
+    {
+      "name": "Landon Emenalo",
+      "clubs": [
+        "Chelsea FC",
+        "Celtic FC"
+      ]
+    },
+    {
+      "name": "Reggie Walsh",
+      "clubs": [
+        "Chelsea FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Jesse Derry",
+      "clubs": [
+        "Chelsea FC",
+        "Sporting CP"
+      ]
+    },
+    {
+      "name": "Ryan Kavuma-McQueen",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Shim Mheuka",
+      "clubs": [
+        "Chelsea FC",
+        "Celtic FC"
+      ]
+    },
+    {
+      "name": "Mykhailo Mudryk",
+      "clubs": [
+        "FC Shakhtar Donetsk",
+        "Arsenal Kyiv",
+        "Chelsea FC",
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Dujuan Richards",
+      "clubs": [
+        "Chelsea FC",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Dastan Satpayev",
+      "clubs": [
+        "Chelsea FC",
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Shaun Wade",
+      "clubs": [
+        "Chelsea FC"
+      ]
+    },
+    {
+      "name": "Tyrick Mitchell",
+      "clubs": [
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Zavier Gozo",
+      "clubs": [
+        "Real Salt Lake",
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Adam Wharton",
+      "clubs": [
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Darío Osorio",
+      "clubs": [
+        "FC Midtjylland",
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Anan Khalaili",
+      "clubs": [
+        "Union Saint-Gilloise",
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Owen Goodman",
+      "clubs": [
+        "Crystal Palace",
+        "Huddersfield Town",
+        "Dundee FC"
+      ]
+    },
+    {
+      "name": "Rio Cardines",
+      "clubs": [
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Matheus França",
+      "clubs": [
+        "Crystal Palace",
+        "FC Alverca"
+      ]
+    },
+    {
+      "name": "Romain Esse",
+      "clubs": [
+        "Crystal Palace"
+      ]
+    },
+    {
+      "name": "Charly Alcaraz",
+      "clubs": [
+        "Racing Club",
+        "Southampton FC",
+        "Juventus FC",
+        "Everton FC"
+      ]
+    },
+    {
+      "name": "Hayden Hackney",
+      "clubs": [
+        "Middlesbrough FC",
+        "Everton FC"
+      ]
+    },
+    {
+      "name": "Tom King",
+      "clubs": [
+        "Wolverhampton Wanderers",
+        "Everton FC"
+      ]
+    },
+    {
+      "name": "Harrison Armstrong",
+      "clubs": [
+        "Everton FC"
+      ]
+    },
+    {
+      "name": "Rodrigo Muniz",
+      "clubs": [
+        "Fulham FC",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Tom Cairney",
+      "clubs": [
+        "Hull City",
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Manuel Ángel",
+      "clubs": [
+        "Real Madrid",
+        "Fulham FC",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "David Affengruber",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Sturm Graz",
+        "Elche CF",
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Josh King",
+      "clubs": [
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Antonee Robinson",
+      "clubs": [
+        "Everton FC",
+        "Wigan Athletic",
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Alfie McNally",
+      "clubs": [
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Luke Harris",
+      "clubs": [
+        "Fulham FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Aaron Loupalo-Bi",
+      "clubs": [
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "Alex Palmer",
+      "clubs": [
+        "West Bromwich Albion",
+        "Luton Town",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Jack Taylor",
+      "clubs": [
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Jacob Greaves",
+      "clubs": [
+        "Hull City",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Exequiel Palacios",
+      "clubs": [
+        "Bayer 04 Leverkusen",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Marcelino Núñez",
+      "clubs": [
+        "Norwich City",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Anis Mehmeti",
+      "clubs": [
+        "Norwich City",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Abdoul Ouattara",
+      "clubs": [
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Kayne van Oevelen",
+      "clubs": [
+        "FC Volendam",
+        "Ipswich Town",
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Cieran Slicker",
+      "clubs": [
+        "Manchester City",
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Sammie Szmodics",
+      "clubs": [
+        "Ipswich Town"
+      ]
+    },
+    {
+      "name": "Jakub Stolarczyk",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Jayden Joseph",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Ben Nelson",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Conor Chaplin",
+      "clubs": [
+        "Ipswich Town",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Admir Bristrić",
+      "clubs": [
+        "HNK Rijeka",
+        "FK Polissya Zhytomyr",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Liam Cullen",
+      "clubs": [
+        "Swansea City",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "David Cornell",
+      "clubs": [
+        "Swansea City",
+        "St. Mirren FC",
+        "Ipswich Town",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Warren O'Hora",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Hibernian FC",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Christian McFarlane",
+      "clubs": [
+        "Manchester City",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Harry Howell",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Franco Ravizzoli",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Ilari Kangasniemi",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Louis Page",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Kamari Doyle",
+      "clubs": [
+        "Southampton FC",
+        "Brighton & Hove Albion",
+        "Reading FC",
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Olabade Aluko",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Sammy Braybrooke",
+      "clubs": [
+        "Leicester City",
+        "Dundee FC"
+      ]
+    },
+    {
+      "name": "Kirsten Otchere",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Jake Evans",
+      "clubs": [
+        "Leicester City"
+      ]
+    },
+    {
+      "name": "Alisson Becker",
+      "clubs": [
+        "AS Roma",
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Joe Gomez",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Conor Bradley",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Kostas Tsimikas",
+      "clubs": [
+        "Olympiacos",
+        "Liverpool FC",
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Ronald Araújo",
+      "clubs": [
+        "FC Barcelona",
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Trey Nyoni",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Rio Ngumoha",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Jayden Danns",
+      "clubs": [
+        "Liverpool FC",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Harvey Davies",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Ifeanyi Ndukwe",
+      "clubs": [
+        "Liverpool FC",
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Kaide Gordon",
+      "clubs": [
+        "Liverpool FC",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Isaac Mabaya",
+      "clubs": [
+        "Liverpool FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Amara Nallo",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Wellity Lucky",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Calum Scanlon",
+      "clubs": [
+        "Liverpool FC",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Kieran Morrison",
+      "clubs": [
+        "Liverpool FC"
+      ]
+    },
+    {
+      "name": "Ayyoub Bouaddi",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Nico O'Reilly",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Phil Foden",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Ryan McAidoo",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Kaden Braithwaite",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Floyd Samba",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Rico Lewis",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Jeremy Monga",
+      "clubs": [
+        "Leicester City",
+        "Manchester City",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Pierce Charles",
+      "clubs": [
+        "Manchester City",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Max Hudson",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Kian Noble",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Tyrone Samba",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Charlie Gray",
+      "clubs": [
+        "Manchester City",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Spike Brits",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Jaden Heskey",
+      "clubs": [
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Stephen Mfuni",
+      "clubs": [
+        "Manchester City",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Mathys Detourbet",
+      "clubs": [
+        "Manchester City",
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Marc-Vivien Foé",
+      "clubs": [
+        "RC Lens",
+        "West Ham United",
+        "Manchester City"
+      ]
+    },
+    {
+      "name": "Ayden Heaven",
+      "clubs": [
+        "Arsenal FC",
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Shea Lacey",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Kobbie Mainoo",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Jack Fletcher",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Tyler Fletcher",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Harry Amass",
+      "clubs": [
+        "Manchester United",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Dermot Mee",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Bendito Mantato",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Chido Obi",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Ethan Wheatley",
+      "clubs": [
+        "Manchester United"
+      ]
+    },
+    {
+      "name": "Dan Gore",
+      "clubs": [
+        "Manchester United",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Sean Steur",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Bazoumana Touré",
+      "clubs": [
+        "Hammarby IF",
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Lukáš Horníček",
+      "clubs": [
+        "SC Braga",
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Ewen Jaouen",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Mark Gillespie",
+      "clubs": [
+        "Motherwell FC",
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Lewis Miley",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Sean Neave",
+      "clubs": [
+        "Newcastle United",
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Alex Murphy",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Antonio Cordero",
+      "clubs": [
+        "Málaga CF",
+        "Newcastle United",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Park Seung-soo",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Miodrag Pivaš",
+      "clubs": [
+        "FK Jedinstvo Ub",
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Vakhtang Salia",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Trevan Sanusi",
+      "clubs": [
+        "Newcastle United",
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Leo Shahar",
+      "clubs": [
+        "Newcastle United",
+        "FC Arouca"
+      ]
+    },
+    {
+      "name": "Sam Alabi",
+      "clubs": [
+        "Newcastle United"
+      ]
+    },
+    {
+      "name": "Ousmane Diomande",
+      "clubs": [
+        "FC Midtjylland",
+        "Sporting CP",
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Murillo",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Ryan Yates",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Zach Abbott",
+      "clubs": [
+        "Nottingham Forest",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Cuiabano",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Matthew Orr",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Jimmy Sinclair",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Grady McDonnell",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Josh Powell",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Donnell McNeilly",
+      "clubs": [
+        "Nottingham Forest"
+      ]
+    },
+    {
+      "name": "Ryan Manning",
+      "clubs": [
+        "Queens Park Rangers",
+        "Swansea City",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Caspar Jander",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Finn Azaz",
+      "clubs": [
+        "West Bromwich Albion",
+        "Aston Villa",
+        "Middlesbrough FC",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Lewis Dobbin",
+      "clubs": [
+        "Everton FC",
+        "Aston Villa",
+        "West Bromwich Albion",
+        "Norwich City",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Nathan Wood",
+      "clubs": [
+        "Middlesbrough FC",
+        "Hibernian FC",
+        "Swansea City",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Tom Fellows",
+      "clubs": [
+        "West Bromwich Albion",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "George Long",
+      "clubs": [
+        "Sheffield United",
+        "Motherwell FC",
+        "Hull City",
+        "Norwich City",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Cam Bragg",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Romeo Akachukwu",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Jamie Jones",
+      "clubs": [
+        "Wigan Athletic",
+        "Middlesbrough FC",
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Welington",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Moses Sesay",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Nicholas Oyekunle",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Ollie Wright",
+      "clubs": [
+        "Southampton FC"
+      ]
+    },
+    {
+      "name": "Jay Robinson",
+      "clubs": [
+        "Southampton FC",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Daouda Traoré",
+      "clubs": [
+        "OGC Nice",
+        "Southampton FC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Andy Robertson",
+      "clubs": [
+        "Dundee United FC",
+        "Hull City",
+        "Liverpool FC",
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Archie Gray",
+      "clubs": [
+        "Leeds United",
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Lucas Bergvall",
+      "clubs": [
+        "IF Brommapojkarna",
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Sávio",
+      "clubs": [
+        "PSV Eindhoven",
+        "Girona FC",
+        "Manchester City",
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Brandon Austin",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Viborg FF"
+      ]
+    },
+    {
+      "name": "Luca Williams-Barnett",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Yang Min-hyeok",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Callum Olusesi",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "James Rowswell",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Jun'ai Byfield",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "George Abbott",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Damola Ajayi",
+      "clubs": [
+        "Tottenham Hotspur"
+      ]
+    },
+    {
+      "name": "Mohamadou Kanté",
+      "clubs": [
+        "West Ham United",
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Adama Boiro",
+      "clubs": [
+        "West Ham United",
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Keiber Lamadrid",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Oliver Scarles",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Finlay Herrick",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Airidas Golambeckis",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Lewis Orford",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Ezra Mayers",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Joshua Ajala",
+      "clubs": [
+        "West Ham United"
+      ]
+    },
+    {
+      "name": "Kaelan Casey",
+      "clubs": [
+        "West Ham United",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "André",
+      "clubs": [
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Jordan James",
+      "clubs": [
+        "Leicester City",
+        "Wolverhampton Wanderers",
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Tawanda Chirewa",
+      "clubs": [
+        "Ipswich Town",
+        "Wolverhampton Wanderers",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Jean‐Ricner Bellegarde",
+      "clubs": [
+        "RC Lens",
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Enso González",
+      "clubs": [
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Mateus Mané",
+      "clubs": [
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Tom Edozie",
+      "clubs": [
+        "Wolverhampton Wanderers"
+      ]
+    },
+    {
+      "name": "Unai Simón",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Dani Vivian",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Aitor Paredes",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Yeray Álvarez",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Beñat Prados",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Oihan Sancet",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Iñaki Williams",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Nico Williams",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Álex Padilla",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Hugo Rincón",
+      "clubs": [
+        "Athletic Bilbao",
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Mikel Jauregizar",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Alejandro Rego",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Maroan Sannadi",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Beñat Gerenabarrena",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Unai Egiluz",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Peio Canales",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Iker Monreal",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Johaneko Louis-Jean",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Christian Imga",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Txus Vizcay",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Aritz Conde",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Selton Sánchez",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Mikel Santos",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Asier Hierro",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Eder García",
+      "clubs": [
+        "Athletic Bilbao",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Aingeru Olabarrieta",
+      "clubs": [
+        "Athletic Bilbao"
+      ]
+    },
+    {
+      "name": "Ibai Sanz",
+      "clubs": [
+        "Athletic Bilbao",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Koke",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Lee Kang-in",
+      "clubs": [
+        "Valencia CF",
+        "RCD Mallorca",
+        "Paris Saint-Germain",
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Pablo Barrios",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Arnau Ortiz",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Salvi Esquivel",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Dani Martínez",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Jorge Domínguez",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Miguel Cubo",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Javi Gil",
+      "clubs": [
+        "Juventus FC",
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "Jorge Castillo",
+      "clubs": [
+        "Atlético de Madrid"
+      ]
+    },
+    {
+      "name": "José María Giménez",
+      "clubs": [
+        "Atlético de Madrid",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Jorge Herrando",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Jon Moncayola",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Iker Muñoz",
+      "clubs": [
+        "CA Osasuna",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Aimar Oroz",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Kike Barja",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Abel Bretones",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Mauro Echegoyen",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Iñigo Arguibide",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Asier Osambela",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Asier Bonel",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Rafa Fernández",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Mikel Bermejo",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Unai Santos",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Dimitrios Stamatakis",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Anai Morales",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Miguel Auría",
+      "clubs": [
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "Alejandro Balde",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Brian Fariñas",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Pau Cubarsí",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Gavi",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Fermín López",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Pedri",
+      "clubs": [
+        "UD Las Palmas",
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Lamine Yamal",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Xavi Espart",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Karim Adeyemi",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Borussia Dortmund",
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Gerard Martín",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Marc Bernal",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Jesse Bisiwu",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Hamza Abdelkarim",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Ebrima Tunkara",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Eder Aller",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Orian Goren",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Jordi Pesquer",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Iker Rodríguez",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Shane Kluivert",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Pedro Villar",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Landry Farré",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Guillem Víctor",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Álex Campos",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Òscar Gistau",
+      "clubs": [
+        "FC Barcelona"
+      ]
+    },
+    {
+      "name": "Marc Casadó",
+      "clubs": [
+        "FC Barcelona",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Toni Fernández",
+      "clubs": [
+        "FC Barcelona",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Jiří Letáček",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Davinchi",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Dani Carvajal",
+      "clubs": [
+        "Bayer 04 Leverkusen",
+        "Real Madrid",
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Sebastián Boselli",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Jean Ives Valou",
+      "clubs": [
+        "Villarreal CF",
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Ebrahima Drammeh",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Alberto Risco",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Curro Burgos",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Óscar López",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Moha Hamdoune",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Moha Achraf",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Jesús Martínez",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Diego Ferrer",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Ibrahima Danfakha",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Sebas Salazar",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Vladyslav Kysil",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Gorka Rivera",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Álex Sancris",
+      "clubs": [
+        "Getafe CF",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Yassin Tallal",
+      "clubs": [
+        "Getafe CF"
+      ]
+    },
+    {
+      "name": "Sergi Puig",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Javier Boñar",
+      "clubs": [
+        "Atlético de Madrid",
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Iván Morante",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Oleksandr Pyshchur",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Jastin García",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Izan González",
+      "clubs": [
+        "Granada CF",
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Vladyslav Krapyvtsov",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Unai Hernández",
+      "clubs": [
+        "Al-Ittihad",
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Mauro Furtado",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Holmes Junior",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Gibi Jordana",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Lass Kourouma",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Mohamed Hamony",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Javi Sarasa",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Guillem Badia",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Jordi Danso",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Antal Yaakobishvili",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Carles Garrido",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Papa Dame Ba",
+      "clubs": [
+        "Girona FC"
+      ]
+    },
+    {
+      "name": "Guille Fernández",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Antonio Sánchez",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Álex Sala",
+      "clubs": [
+        "Girona FC",
+        "Córdoba CF",
+        "RCD Mallorca",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Abdón Prats",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "John Chetauya",
+      "clubs": [
+        "Elche CF",
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Arnau Puigmal",
+      "clubs": [
+        "Manchester United",
+        "UD Almería",
+        "Elche CF",
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Adrián Fuentes",
+      "clubs": [
+        "NK Istra 1961",
+        "Córdoba CF",
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Josep Cerdà",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Aboubaka Soumahoro",
+      "clubs": [
+        "Paris FC",
+        "Hamburger SV",
+        "AS Saint-Étienne",
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Antoniu Roca",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Adrián Liso",
+      "clubs": [
+        "Getafe CF",
+        "RCD Mallorca",
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Abdourahamane Diallo",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Miguel Calatayud",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Aimar Peña",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Toni Dols",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Jandro García",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Alejandro Yerga",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Iago Mendes",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Oriol Tejada",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Javier Olaizola",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Marc Domènech",
+      "clubs": [
+        "RCD Mallorca"
+      ]
+    },
+    {
+      "name": "Pedro Díaz",
+      "clubs": [
+        "Sporting Gijón",
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Pathé Ciss",
+      "clubs": [
+        "CF União Madeira",
+        "FC Famalicão",
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Isi Palazón",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Óscar Valentín",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Jozhua Vertrouwd",
+      "clubs": [
+        "FC Volendam",
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Gnangoro Bouare",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Marco de las Sías",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Samu Becerra",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Adrián Molina",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Marco Román",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Etienne Eto'o",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Facundo Bernal",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Ángel Ortiz",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Valentín Gómez",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Nelson Deossa",
+      "clubs": [
+        "Junior FC",
+        "Atlético Nacional",
+        "CF Pachuca",
+        "CF Monterrey",
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Giovanni Lo Celso",
+      "clubs": [
+        "Paris Saint-Germain",
+        "Tottenham Hotspur",
+        "Villarreal CF",
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "José Antonio Morante",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Rodrigo Marina",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Yan Zhuravskyi",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Manu González",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Rica Fúnez",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Borja Alonso",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Álvaro de Pablo",
+      "clubs": [
+        "Real Betis Balompié",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Iván Corralejo",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Alejandro Postigo",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Gonzalo Petit",
+      "clubs": [
+        "CD Nacional",
+        "Granada CF",
+        "Cádiz CF",
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "Carlos Espí",
+      "clubs": [
+        "Levante UD",
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Sergio Mestre",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Jesús Fortea",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Jorge Cestero",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Joan Martínez",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Javi Navarro",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Diego Lacosta",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Mario Rivas",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Daniel Yáñez",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Alexis Ciria",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Gabri Valero",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Sergio Martínez",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Illia Voloshyn",
+      "clubs": [
+        "Real Madrid"
+      ]
+    },
+    {
+      "name": "Álex Remiro",
+      "clubs": [
+        "Real Sociedad"
+      ]
+    },
+    {
+      "name": "Job Ochieng",
+      "clubs": [
+        "Real Sociedad"
+      ]
+    },
+    {
+      "name": "Alex Lebarbier",
+      "clubs": [
+        "Real Sociedad"
+      ]
+    },
+    {
+      "name": "Luken Beitia",
+      "clubs": [
+        "Real Sociedad"
+      ]
+    },
+    {
+      "name": "Theo Folgado",
+      "clubs": [
+        "Real Sociedad"
+      ]
+    },
+    {
+      "name": "Juan Iglesias",
+      "clubs": [
+        "Getafe CF",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Julio Díaz",
+      "clubs": [
+        "Atlético de Madrid",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Kike Salas",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Andrés Castrín",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Robbie Ure",
+      "clubs": [
+        "Rangers FC",
+        "IK Sirius",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Peque Fernández",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Arouna Sangante",
+      "clubs": [
+        "Le Havre AC",
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Manu Bueno",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Isaac Romero",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Miguel Sierra",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Rafa Romero",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Nico Guillén",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Jesús Cruz",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Ibra Sow",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "Edu Altozano",
+      "clubs": [
+        "Sevilla FC"
+      ]
+    },
+    {
+      "name": "César Tárrega",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Justin de Haas",
+      "clubs": [
+        "NK Lokomotiva Zagreb",
+        "FC Famalicão",
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Cristian Rivero",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "José Gayà",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Aliou Dieng",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Arnau Martínez",
+      "clubs": [
+        "Girona FC",
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "David Otorbi",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Alejandro Panach",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Rodrigo Gamón",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Amos Wanjala",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Aaron Mayol",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Iker Córdoba",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Aimar Blázquez",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Jaume Durà",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Marcos Navarro",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Vicent Abril",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Lucas Núñez",
+      "clubs": [
+        "Valencia CF",
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Mario Domínguez",
+      "clubs": [
+        "Valencia CF"
+      ]
+    },
+    {
+      "name": "Alassane Diatta",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Pau Navarro",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Carlos Maciá",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Nizar El Jmili",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Joselillo Gaitán",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Cheikh Thiam",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "César Bonafé",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Mauro Roca",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Sergio Barrera",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Dani Budesca",
+      "clubs": [
+        "Villarreal CF",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Dani Requena",
+      "clubs": [
+        "Villarreal CF",
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Thiago Fernández",
+      "clubs": [
+        "Villarreal CF",
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Hugo López",
+      "clubs": [
+        "Villarreal CF"
+      ]
+    },
+    {
+      "name": "Sankhoun Diawara",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Christian Comotto",
+      "clubs": [
+        "AC Milan",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Davide Bartesaghi",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Valeri Vladimirov",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Alphadjo Cisse",
+      "clubs": [
+        "Hellas Verona",
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Matteo Pittarella",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Lorenzo Ossola",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Léo Paul Bouyer",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Nirash Perera",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "El Hadji Malick Cissé",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Luca Menon",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Silvano Vos",
+      "clubs": [
+        "AC Milan"
+      ]
+    },
+    {
+      "name": "Zachary Athekame",
+      "clubs": [
+        "BSC Young Boys",
+        "AC Milan",
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Jacopo Sardo",
+      "clubs": [
+        "AC Monza",
+        "AC Milan",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Andrej Kostić",
+      "clubs": [
+        "AC Milan",
+        "Sparta Rotterdam"
+      ]
+    },
+    {
+      "name": "Santiago Castro",
+      "clubs": [
+        "Bologna FC",
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Niccolò Pisilli",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Antonio Arena",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Giorgio De Marzi",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Emanuele Lulli",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Levente Kilvinger",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Alessandro Di Nunzio",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Valerio Maccaroni",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Lorenzo Paratici",
+      "clubs": [
+        "AS Roma",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Mandjou Camara",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Radosław Żelezny",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Marco Litti",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Mattia Mannini",
+      "clubs": [
+        "AS Roma",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Federico Nardin",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Filippo Reale",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Mohamed Seck",
+      "clubs": [
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Jan Ziółkowski",
+      "clubs": [
+        "AS Roma",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Alessandro Romano",
+      "clubs": [
+        "AS Roma",
+        "Spezia Calcio",
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Luigi Cherubini",
+      "clubs": [
+        "AS Roma",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Łukasz Skorupski",
+      "clubs": [
+        "Górnik Zabrze",
+        "AS Roma",
+        "FC Empoli",
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Torbjørn Heggem",
+      "clubs": [
+        "IF Brommapojkarna",
+        "West Bromwich Albion",
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Marco Libra",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Jay Enem",
+      "clubs": [
+        "Venezia FC",
+        "OFK Beograd",
+        "Red Star Belgrade",
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Massimo Pessina",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Ukko Happonen",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Nicola Bagnolini",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Thomas Gillier",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Francesco Raffaelli",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Wisdom Amey",
+      "clubs": [
+        "Bologna FC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Tommaso Corazza",
+      "clubs": [
+        "Bologna FC",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Dimitar Papazov",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Joaquín Sosa",
+      "clubs": [
+        "CD Nacional",
+        "Bologna FC",
+        "GNK Dinamo Zagreb"
+      ]
+    },
+    {
+      "name": "Riccardo Stivanello",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Bodin Tomašević",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Federico Cassa",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Antoine N'Diaye",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Lorenzo Menegazzo",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Niklas Pyyhtiä",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Gennaro Anatriello",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Luigi Caccavo",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Benja Domínguez",
+      "clubs": [
+        "Bologna FC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Flavio Ferrari",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Tommaso Ebone",
+      "clubs": [
+        "Bologna FC"
+      ]
+    },
+    {
+      "name": "Alex Amorim",
+      "clubs": [
+        "FC Alverca",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Ethan Meichtry",
+      "clubs": [
+        "FC Thun",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Cody Drameh",
+      "clubs": [
+        "Leeds United",
+        "Cardiff City",
+        "Luton Town",
+        "Hull City",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Elias Havel",
+      "clubs": [
+        "LASK",
+        "TSV Hartberg",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Joi Nuredini",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "David Puczka",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Daniele Sommariva",
+      "clubs": [
+        "Genoa CFC",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Samuel Wiafe",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Franz Stolz",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Lukas Klišys",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Mamedi Doucouré",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Marcelo Vaz",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Rendijs Mihelsons",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Simone Calvani",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Ernestas Lysionok",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Gabriele Calvani",
+      "clubs": [
+        "Genoa CFC",
+        "Brescia Calcio",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Lorenzo Gagliardi",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Edoardo Meconi",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Latif Ouedraogo",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Tommaso Pittino",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Gianluca Rossi",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Chec Bebel Doumbia",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Patrizio Masini",
+      "clubs": [
+        "Genoa CFC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Hugo Cuenca",
+      "clubs": [
+        "AC Milan",
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Alessandro Debenedetti",
+      "clubs": [
+        "Genoa CFC",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Gabriele Pessolani",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Adam Žulevič",
+      "clubs": [
+        "Genoa CFC"
+      ]
+    },
+    {
+      "name": "Lautaro Martínez",
+      "clubs": [
+        "Racing Club",
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Raffaele Di Gennaro",
+      "clubs": [
+        "Inter Milan",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Alain Taho",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Francesco Stante",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Leonardo Bovio",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Mattia Mosconi",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Jamal Iddrissou",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Matteo Lavelli",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Mattia Marello",
+      "clubs": [
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Yvan Maye",
+      "clubs": [
+        "AC Monza",
+        "Inter Milan"
+      ]
+    },
+    {
+      "name": "Yanis Massolin",
+      "clubs": [
+        "Inter Milan",
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Federico Gatti",
+      "clubs": [
+        "Frosinone Calcio",
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Kenan Yıldız",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Kerim Alajbegović",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Jeff Ekhator",
+      "clubs": [
+        "Genoa CFC",
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Carlo Pinsoglio",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Riccardo Radu",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Augusto Owusu",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Filippo Pagnucco",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Justin Oboavwoduo",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Destiny Elimoghale",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Antonio Stefano Merola",
+      "clubs": [
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Vasilije Adžić",
+      "clubs": [
+        "Juventus FC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Giacomo Faticanti",
+      "clubs": [
+        "AS Roma",
+        "Juventus FC"
+      ]
+    },
+    {
+      "name": "Adin Ličina",
+      "clubs": [
+        "Juventus FC",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Bruno Galassi",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Romano Floriani Mussolini",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Adrian Przyborek",
+      "clubs": [
+        "Pogon Szczecin",
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Edoardo Motta",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Alessio Furlanetto",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Davide Renzetti",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Federico Serra",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Valerio Farcomeni",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Filipe Bordon",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Albert Guðmundsson",
+      "clubs": [
+        "PSV Eindhoven",
+        "Genoa CFC",
+        "SS Lazio",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Ricardo Bordon",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Leonardo Di Tommaso",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Pietro Pinelli",
+      "clubs": [
+        "SS Lazio"
+      ]
+    },
+    {
+      "name": "Saná Fernandes",
+      "clubs": [
+        "SS Lazio",
+        "NAC Breda"
+      ]
+    },
+    {
+      "name": "Pietro Comuzzo",
+      "clubs": [
+        "Torino FC",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Diego Mascardi",
+      "clubs": [
+        "Spezia Calcio",
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Niccolò Fortini",
+      "clubs": [
+        "Torino FC",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Gvidas Gineitis",
+      "clubs": [
+        "SPAL",
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Lapo Siviero",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Alessio Cacciamani",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Andrea Luongo",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Manuel Carrascosa",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Zalán Kugyela",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Matteo Brezzo",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Côme Bianay Balcot",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Alessandro Dellavalle",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Ali Dembélé",
+      "clubs": [
+        "Torino FC",
+        "Venezia FC",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Senan Mullen",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Mattia Pellini",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Wisdom Acquah",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Aaron Ciammaglichella",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Marco Dalla Vecchia",
+      "clubs": [
+        "Torino FC",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Tommaso Di Marco",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Sergiu Perciun",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Tommaso Gabellini",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Alieu Njie",
+      "clubs": [
+        "Torino FC",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Cristian Padula",
+      "clubs": [
+        "Torino FC"
+      ]
+    },
+    {
+      "name": "Jesper Karlström",
+      "clubs": [
+        "IF Brommapojkarna",
+        "Lech Poznan",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Matteo Palma",
+      "clubs": [
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Juan David Arizala",
+      "clubs": [
+        "Independiente Medellín",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Bartosz Mrozek",
+      "clubs": [
+        "Lech Poznan",
+        "GKS Katowice",
+        "Stal Mielec",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Giulio Vinciati",
+      "clubs": [
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Unai Gómez",
+      "clubs": [
+        "Athletic Bilbao",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Lazar Jovanović",
+      "clubs": [
+        "Red Star Belgrade",
+        "OFK Beograd",
+        "VfB Stuttgart",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Alessandro Nunziante",
+      "clubs": [
+        "Benevento Calcio",
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Simone Pafundi",
+      "clubs": [
+        "Udinese Calcio",
+        "Lausanne-Sport"
+      ]
+    },
+    {
+      "name": "David Pejičić",
+      "clubs": [
+        "Udinese Calcio"
+      ]
+    },
+    {
+      "name": "Equi Fernández",
+      "clubs": [
+        "Al-Qadsiah",
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Christian Kofane",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Niklas Lomb",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Montrell Culbreath",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Luca Erlein",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Issa Traoré",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Jeremiah Mensah",
+      "clubs": [
+        "Bayer 04 Leverkusen"
+      ]
+    },
+    {
+      "name": "Francis Onyeka",
+      "clubs": [
+        "Bayer 04 Leverkusen",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Farid Alfa-Ruprecht",
+      "clubs": [
+        "Manchester City",
+        "Bayer 04 Leverkusen",
+        "VfL Bochum",
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Nathaniel Brown",
+      "clubs": [
+        "Eintracht Frankfurt",
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Bara Sapoko Ndiaye",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "David Santos Daiber",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Cassiano Kiala",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Jannis Bärtl",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "David Podar-Știube",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Filip Pavić",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Tim Binder",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Bastian Assomo",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Maycon Cardozo",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Leon Klanac",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Leonard Prescott",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Tarek Buchmann",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Vincent Manuba",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Guido Della Rovere",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Erblin Osmani",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Deniz Ofli",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Javier Fernández",
+      "clubs": [
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Joane Gadou",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Justin Lerma",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Kauã Prates",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Filippo Mane",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Samuele Inácio",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Mathis Albert",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Enzo dos Santos",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Mussa Kaba",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Luca Reggiani",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Almugera Kabar",
+      "clubs": [
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Elias Benkara",
+      "clubs": [
+        "Borussia Dortmund",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Jan Leszczyński",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Enzo Leopold",
+      "clubs": [
+        "Hannover 96",
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Jens Castrop",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "David Herold",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Fritz Fleck",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Daniel Batz",
+      "clubs": [
+        "SC Freiburg",
+        "1.FSV Mainz 05",
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Mathieu Nguefack",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Josiah Uwakhonye",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Wael Mohya",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Iaia Manco Danfa",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Zento Uno",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Lion Schweers",
+      "clubs": [
+        "Borussia Mönchengladbach"
+      ]
+    },
+    {
+      "name": "Pape Cabral",
+      "clubs": [
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Samuel Nibombé",
+      "clubs": [
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Anis Soubeir",
+      "clubs": [
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Ilane Touré",
+      "clubs": [
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Sadibou Sané",
+      "clubs": [
+        "FC Metz",
+        "AS Monaco"
+      ]
+    },
+    {
+      "name": "Yann Lienard",
+      "clubs": [
+        "AS Monaco",
+        "Cercle Brugge"
+      ]
+    },
+    {
+      "name": "Valy Konaté",
+      "clubs": [
+        "AS Monaco",
+        "Cercle Brugge"
+      ]
+    },
+    {
+      "name": "Ali Abdi",
+      "clubs": [
+        "Paris FC",
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Mohamed Abdelmonem",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Hicham Boudaoui",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Isak Jansson",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Issiaga Camara",
+      "clubs": [
+        "OGC Nice",
+        "IF Brommapojkarna"
+      ]
+    },
+    {
+      "name": "Antoine Mendy",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Xavier Mandza",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Djibril Coulibaly",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Zoumana Diallo",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Moïse Bombito",
+      "clubs": [
+        "Colorado Rapids",
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Teddy Boulhendi",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Hamza Koutoune",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Everton Pereira",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Brad Mantsounga",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Victor Orakpo",
+      "clubs": [
+        "OGC Nice",
+        "Gençlerbirliği"
+      ]
+    },
+    {
+      "name": "Kévin Anin",
+      "clubs": [
+        "OGC Nice"
+      ]
+    },
+    {
+      "name": "Régis Gurtner",
+      "clubs": [
+        "Le Havre AC",
+        "Amiens SC",
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Maik Nawrocki",
+      "clubs": [
+        "Celtic FC",
+        "Hannover 96",
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Nidal Čelik",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Andrija Bulatović",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Samson Baidoo",
+      "clubs": [
+        "Red Bull Salzburg",
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Yacine Titraoui",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Jhoanner Chávez",
+      "clubs": [
+        "RC Lens",
+        "AC Sparta Prague"
+      ]
+    },
+    {
+      "name": "Michał Skóraś",
+      "clubs": [
+        "Lech Poznan",
+        "Bruk-Bet Termalica",
+        "Raków Częstochowa",
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Ismaëlo Ganiou",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Souleymane Sagnan",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Kyllian Antonio",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Mezian Mesloub",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Mattia Fortin",
+      "clubs": [
+        "RC Lens",
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Anthony Bermont",
+      "clubs": [
+        "RC Lens",
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Gabin Capuano",
+      "clubs": [
+        "RC Lens"
+      ]
+    },
+    {
+      "name": "Rayan Fofana",
+      "clubs": [
+        "RC Lens",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Alaaddin Okumuş",
+      "clubs": [
+        "Ankaraspor"
+      ]
+    },
+    {
+      "name": "Batuhan Kırdaroğlu",
+      "clubs": [
+        "Pendikspor",
+        "Göztepe",
+        "Ankaraspor"
+      ]
+    },
+    {
+      "name": "Ahmet Gülay",
+      "clubs": [
+        "Balikesirspor"
+      ]
+    },
+    {
+      "name": "Celal Emir Dede",
+      "clubs": [
+        "Balikesirspor"
+      ]
+    },
+    {
+      "name": "Ali Karakaya",
+      "clubs": [
+        "Balikesirspor"
+      ]
+    },
+    {
+      "name": "Juergen Elitim",
+      "clubs": [
+        "Watford FC",
+        "Bursaspor"
+      ]
+    },
+    {
+      "name": "Emir Kaan Gültekin",
+      "clubs": [
+        "Bursaspor"
+      ]
+    },
+    {
+      "name": "Tayfun Aydoğan",
+      "clubs": [
+        "Bursaspor"
+      ]
+    },
+    {
+      "name": "Amine Boutrah",
+      "clubs": [
+        "SC Bastia",
+        "Bursaspor"
+      ]
+    },
+    {
+      "name": "Ivan Šaranić",
+      "clubs": [
+        "Bursaspor"
+      ]
+    },
+    {
+      "name": "Emre Yıldırım",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Emirhan Kaşcıoğlu",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Mehmet Ali Ulaman",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Eren Kıryolcu",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Abdülkadir Sünger",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Alaattin Öner",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Doğan Seyfi Atlı",
+      "clubs": [
+        "Denizlispor"
+      ]
+    },
+    {
+      "name": "Kemal Rüzgar",
+      "clubs": [
+        "Fortuna Düsseldorf",
+        "Caykur Rizespor",
+        "Elazigspor"
+      ]
+    },
+    {
+      "name": "Efe Tatlı",
+      "clubs": [
+        "Elazigspor"
+      ]
+    },
+    {
+      "name": "Yakup Kırtay",
+      "clubs": [
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Amar Gërxhaliu",
+      "clubs": [
+        "Antalyaspor",
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Sefa Akgün",
+      "clubs": [
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Guram Giorbelidze",
+      "clubs": [
+        "Wolfsberger AC",
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Martín Rodríguez",
+      "clubs": [
+        "CD Cruz Azul",
+        "Mazatlán FC",
+        "Altay SK",
+        "D.C. United",
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Lawrence Agyekum",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Cercle Brugge",
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Nariman Akhundzade",
+      "clubs": [
+        "Columbus Crew",
+        "Erzurumspor FK"
+      ]
+    },
+    {
+      "name": "Barış Kalaycı",
+      "clubs": [
+        "Fatih Karagümrük"
+      ]
+    },
+    {
+      "name": "Tiago Çukur",
+      "clubs": [
+        "Watford FC",
+        "Fenerbahce",
+        "SK Beveren",
+        "Ümraniyespor",
+        "Fatih Karagümrük"
+      ]
+    },
+    {
+      "name": "Marius Trésor Doh",
+      "clubs": [
+        "Fenerbahce",
+        "Fatih Karagümrük"
+      ]
+    },
+    {
+      "name": "Prince Martor Jr.",
+      "clubs": [
+        "Gençlerbirliği"
+      ]
+    },
+    {
+      "name": "Fatih Yılmaz",
+      "clubs": [
+        "Giresunspor"
+      ]
+    },
+    {
+      "name": "Faustin Senghor",
+      "clubs": [
+        "Giresunspor"
+      ]
+    },
+    {
+      "name": "Mert Kurt",
+      "clubs": [
+        "Giresunspor"
+      ]
+    },
+    {
+      "name": "Erol Can Akdağ",
+      "clubs": [
+        "Giresunspor"
+      ]
+    },
+    {
+      "name": "Kadir Seven",
+      "clubs": [
+        "Giresunspor"
+      ]
+    },
+    {
+      "name": "Demeaco Duhaney",
+      "clubs": [
+        "Huddersfield Town",
+        "Stoke City",
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Michael Ologo",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Phellipe",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Vefa Temel",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Ilian Iliev Jr.",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Fatih Tultak",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Abdullah Dıjlan Aydın",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Mario Krstovski",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Yusuf Tunç",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "Anfernee Dijksteel",
+      "clubs": [
+        "Middlesbrough FC",
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Matej Maglica",
+      "clubs": [
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Tobias Gulliksen",
+      "clubs": [
+        "Strømsgodset IF",
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Gonçalo Sousa",
+      "clubs": [
+        "FC Porto",
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Uğur Kaan Yıldız",
+      "clubs": [
+        "Fenerbahce",
+        "Bursaspor",
+        "Göztepe",
+        "Ümraniyespor",
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Serhat Öztaşdelen",
+      "clubs": [
+        "Kocaelispor"
+      ]
+    },
+    {
+      "name": "Özgür Aktaş",
+      "clubs": [
+        "FC Dordrecht",
+        "SC Telstar",
+        "MKE Ankaragücü"
+      ]
+    },
+    {
+      "name": "Diogo Coelho",
+      "clubs": [
+        "MKE Ankaragücü"
+      ]
+    },
+    {
+      "name": "Enes Tepecik",
+      "clubs": [
+        "MKE Ankaragücü"
+      ]
+    },
+    {
+      "name": "Jonson Clarke-Harris",
+      "clubs": [
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Hakan Yeşil",
+      "clubs": [
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Baran Demiroğlu",
+      "clubs": [
+        "Galatasaray",
+        "Fatih Karagümrük",
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Muhammed Kiprit",
+      "clubs": [
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Ozan Demirbağ",
+      "clubs": [
+        "Adana Demirspor",
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Ahmet Karademir",
+      "clubs": [
+        "Pendikspor"
+      ]
+    },
+    {
+      "name": "Burak Efe Yaz",
+      "clubs": [
+        "Yeni Malatyaspor"
+      ]
+    },
+    {
+      "name": "Mustafa Eser",
+      "clubs": [
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Andrej Đokanović",
+      "clubs": [
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Cebio Soukou",
+      "clubs": [
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Oğuzhan Aydoğan",
+      "clubs": [
+        "Beşiktaş",
+        "Ankaraspor",
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Cihan Topaloğlu",
+      "clubs": [
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Burak Öksüz",
+      "clubs": [
+        "Hatayspor",
+        "Kocaelispor",
+        "Ümraniyespor"
+      ]
+    },
+    {
+      "name": "Max Weiß",
+      "clubs": [
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Hannibal Mejbri",
+      "clubs": [
+        "Manchester United",
+        "Sevilla FC",
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Josh Laurent",
+      "clubs": [
+        "Queens Park Rangers",
+        "Brentford FC",
+        "Wigan Athletic",
+        "Reading FC",
+        "Stoke City",
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Lluc Castell",
+      "clubs": [
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Grégoire Coudert",
+      "clubs": [
+        "Amiens SC",
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Enock Agyei",
+      "clubs": [
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Ben Amos",
+      "clubs": [
+        "Manchester United",
+        "Hull City",
+        "Cardiff City",
+        "Wigan Athletic",
+        "Burnley FC"
+      ]
+    },
+    {
+      "name": "Ashley Barnes",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Burnley FC",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Joel Bagan",
+      "clubs": [
+        "Cardiff City",
+        "Zulte Waregem"
+      ]
+    },
+    {
+      "name": "Krystian Bielik",
+      "clubs": [
+        "Arsenal FC",
+        "West Bromwich Albion",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Jack Moylan",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Yousef Salech",
+      "clubs": [
+        "SK Beveren",
+        "IK Sirius",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Rubin Colwill",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Ollie Tanner",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Chris Willock",
+      "clubs": [
+        "Arsenal FC",
+        "West Bromwich Albion",
+        "Huddersfield Town",
+        "Queens Park Rangers",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Alex Robertson",
+      "clubs": [
+        "Manchester City",
+        "Ross County FC",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Joel Colwill",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Harry Tyrer",
+      "clubs": [
+        "Everton FC",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Rob Tankiewicz",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Perry Ng",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Noah Anyadike",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Matthew Turner",
+      "clubs": [
+        "Leeds United",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Ronan Kpakio",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Cian Ashford",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Dylan Lawlor",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Roko Simic",
+      "clubs": [
+        "NK Lokomotiva Zagreb",
+        "Red Bull Salzburg",
+        "FC Zürich",
+        "Cardiff City",
+        "KV Kortrijk"
+      ]
+    },
+    {
+      "name": "Tanatswa Nyakuhwa",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Kion Etete",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Cardiff City",
+        "St. Mirren FC"
+      ]
+    },
+    {
+      "name": "Luey Giles",
+      "clubs": [
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Peter Whittingham",
+      "clubs": [
+        "Aston Villa",
+        "Burnley FC",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Matty Young",
+      "clubs": [
+        "Sunderland AFC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Murray Wallace",
+      "clubs": [
+        "Falkirk FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Ryan Ledson",
+      "clubs": [
+        "Everton FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Joe Low",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Jack Whatmough",
+      "clubs": [
+        "Wigan Athletic",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Lynden Gooch",
+      "clubs": [
+        "Sunderland AFC",
+        "Stoke City",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Archie Collins",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Joe Taylor",
+      "clubs": [
+        "Luton Town",
+        "Huddersfield Town",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Marcus Harness",
+      "clubs": [
+        "Ipswich Town",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Ethan Brierley",
+      "clubs": [
+        "Brentford FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Ibane Bowat",
+      "clubs": [
+        "Fulham FC",
+        "TSV Hartberg",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Herbie Kane",
+      "clubs": [
+        "Liverpool FC",
+        "Hull City",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Marcus McGuane",
+      "clubs": [
+        "Arsenal FC",
+        "SC Telstar",
+        "Nottingham Forest",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "David Kasumu",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Bali Mumba",
+      "clubs": [
+        "Sunderland AFC",
+        "Norwich City",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Sean Roughan",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Cameron Ashia",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Nik Tzanev",
+      "clubs": [
+        "Brentford FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Samson Tovide",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Antony Evans",
+      "clubs": [
+        "Everton FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Dion Charles",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Alfie May",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Daniel Vost",
+      "clubs": [
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Jonathan Hogg",
+      "clubs": [
+        "Aston Villa",
+        "Watford FC",
+        "Huddersfield Town"
+      ]
+    },
+    {
+      "name": "Lewie Coyle",
+      "clubs": [
+        "Leeds United",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Ryan Giles",
+      "clubs": [
+        "Wolverhampton Wanderers",
+        "Cardiff City",
+        "Middlesbrough FC",
+        "Luton Town",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Charlie Hughes",
+      "clubs": [
+        "Wigan Athletic",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Semi Ajayi",
+      "clubs": [
+        "Arsenal FC",
+        "Cardiff City",
+        "West Bromwich Albion",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Mohamed Belloumi",
+      "clubs": [
+        "SC Farense",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Joe Gelhardt",
+      "clubs": [
+        "Wigan Athletic",
+        "Leeds United",
+        "Sunderland AFC",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Dillon Phillips",
+      "clubs": [
+        "Cardiff City",
+        "KV Oostende",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Brooke Norton-Cuffy",
+      "clubs": [
+        "Arsenal FC",
+        "Genoa CFC",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Konstantinos Tzolakis",
+      "clubs": [
+        "Olympiacos",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Óscar Zambrano",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Darko Gyabi",
+      "clubs": [
+        "Leeds United",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Matt Crooks",
+      "clubs": [
+        "Huddersfield Town",
+        "Rangers FC",
+        "Middlesbrough FC",
+        "Real Salt Lake",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Regan Slater",
+      "clubs": [
+        "Sheffield United",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Ilyas Ansah",
+      "clubs": [
+        "1.FC Union Berlin",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Christos Mouzakitis",
+      "clubs": [
+        "Olympiacos",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Harvey Cartwright",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Thimothée Lo-Tutala",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Matty Jacob",
+      "clubs": [
+        "Hull City",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Mason Burstow",
+      "clubs": [
+        "Chelsea FC",
+        "Sunderland AFC",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Stan Ashbee",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Kieran Wilson",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Tyrell Sellars-Fleming",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Hugh Parker",
+      "clubs": [
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Cathal McCarthy",
+      "clubs": [
+        "Hull City",
+        "Kilmarnock FC"
+      ]
+    },
+    {
+      "name": "James Debayo",
+      "clubs": [
+        "Leeds United",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Tarik Muharemović",
+      "clubs": [
+        "Wolfsberger AC",
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Alex Cairns",
+      "clubs": [
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Ao Tanaka",
+      "clubs": [
+        "Kawasaki Frontale",
+        "Fortuna Düsseldorf",
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Nico Elvedi",
+      "clubs": [
+        "FC Zürich",
+        "Borussia Mönchengladbach",
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Jayden Lienou",
+      "clubs": [
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "Sam Chambers",
+      "clubs": [
+        "Leeds United"
+      ]
+    },
+    {
+      "name": "James Shea",
+      "clubs": [
+        "Arsenal FC",
+        "Southampton FC",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Kal Naismith",
+      "clubs": [
+        "Rangers FC",
+        "Partick Thistle FC",
+        "Wigan Athletic",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Sverre Sandal",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "George Johnston",
+      "clubs": [
+        "Feyenoord Rotterdam",
+        "Wigan Athletic",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Jake Richards",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Liam Walsh",
+      "clubs": [
+        "Everton FC",
+        "Swansea City",
+        "Hull City",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Callum Marshall",
+      "clubs": [
+        "West Ham United",
+        "West Bromwich Albion",
+        "Huddersfield Town",
+        "VfL Bochum",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Emilio Lawrence",
+      "clubs": [
+        "Manchester City",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Joe Johnson",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Tudor Mendel",
+      "clubs": [
+        "Ipswich Town",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Jordan Clark",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Jayden Luker",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Josh Keeley",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Isaiah Jones",
+      "clubs": [
+        "Middlesbrough FC",
+        "St. Johnstone FC",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Shandon Baptiste",
+      "clubs": [
+        "Brentford FC",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Gideon Kodua",
+      "clubs": [
+        "West Ham United",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Devante Cole",
+      "clubs": [
+        "Manchester City",
+        "Wigan Athletic",
+        "Motherwell FC",
+        "West Bromwich Albion",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Reuell Walters",
+      "clubs": [
+        "Arsenal FC",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Ethon Archer",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Joe Gbodé",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Oli Lynch",
+      "clubs": [
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Jerry Yates",
+      "clubs": [
+        "Swansea City",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Taylan Harris",
+      "clubs": [
+        "Reading FC",
+        "Luton Town"
+      ]
+    },
+    {
+      "name": "Radek Vítek",
+      "clubs": [
+        "Manchester United",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Callum Brittain",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Ashley Phillips",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Stoke City",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Will Lankshear",
+      "clubs": [
+        "Tottenham Hotspur",
+        "West Bromwich Albion",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Tommy Conway",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Luke Ayling",
+      "clubs": [
+        "Arsenal FC",
+        "Leeds United",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "David Strelec",
+      "clubs": [
+        "Spezia Calcio",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Max Arfsten",
+      "clubs": [
+        "Columbus Crew",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Leo Castledine",
+      "clubs": [
+        "Chelsea FC",
+        "Huddersfield Town",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Rokas Pukštas",
+      "clubs": [
+        "HNK Hajduk Split",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Kyle Joseph",
+      "clubs": [
+        "Wigan Athletic",
+        "Swansea City",
+        "Hull City",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Law McCabe",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Adilson Malanda",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Sol Brynn",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Cruz Ibeh",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Finley Munroe",
+      "clubs": [
+        "Aston Villa",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Fin Cartwright",
+      "clubs": [
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Micah Hamilton",
+      "clubs": [
+        "Manchester City",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Vladan Kovačević",
+      "clubs": [
+        "Raków Częstochowa",
+        "Sporting CP",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Jack Stacey",
+      "clubs": [
+        "Reading FC",
+        "Luton Town",
+        "AFC Bournemouth",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Harry Darling",
+      "clubs": [
+        "Swansea City",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Andre Brooks",
+      "clubs": [
+        "Sheffield United",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Lucien Mahovo",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Darlin Yongwa",
+      "clubs": [
+        "FC Lorient",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Jacob Wright",
+      "clubs": [
+        "Manchester City",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Papa Amadou Diallo",
+      "clubs": [
+        "FC Metz",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Jovon Makama",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Paris Maghoma",
+      "clubs": [
+        "Brentford FC",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Sam Field",
+      "clubs": [
+        "West Bromwich Albion",
+        "Queens Park Rangers",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Daniel Grimshaw",
+      "clubs": [
+        "Manchester City",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Vicente Reyes",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Kellen Fisher",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Ali Ahmed",
+      "clubs": [
+        "Vancouver Whitecaps FC",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Gabriel Forsyth",
+      "clubs": [
+        "Hamilton Academical FC",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Elliot Myles",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Errol Mundle-Smith",
+      "clubs": [
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Liam Gibbs",
+      "clubs": [
+        "Ipswich Town",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Louie Moulden",
+      "clubs": [
+        "Manchester City",
+        "Wolverhampton Wanderers",
+        "Crystal Palace",
+        "Norwich City"
+      ]
+    },
+    {
+      "name": "Kealey Adamson",
+      "clubs": [
+        "Sydney FC",
+        "Macarthur FC",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Liam Morrison",
+      "clubs": [
+        "Wigan Athletic",
+        "Queens Park Rangers",
+        "Aberdeen FC"
+      ]
+    },
+    {
+      "name": "Ilias Chair",
+      "clubs": [
+        "Lierse SK",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Paul Smyth",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Calum Ward",
+      "clubs": [
+        "AFC Bournemouth",
+        "Motherwell FC",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Alfie Lloyd",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Rumarn Burrell",
+      "clubs": [
+        "Middlesbrough FC",
+        "Kilmarnock FC",
+        "Falkirk FC",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Kwame Poku",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Dennis Cirkin",
+      "clubs": [
+        "Sunderland AFC",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Harvey Vale",
+      "clubs": [
+        "Chelsea FC",
+        "Hull City",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Richard Kone",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Justin Obikwu",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Rayan Kolli",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Jonathan Varane",
+      "clubs": [
+        "RC Lens",
+        "Sporting Gijón",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Kieran Morgan",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Tylon Smith",
+      "clubs": [
+        "Queens Park Rangers",
+        "New England Revolution"
+      ]
+    },
+    {
+      "name": "Ziyad Larkeche",
+      "clubs": [
+        "Fulham FC",
+        "Queens Park Rangers",
+        "Dundee FC"
+      ]
+    },
+    {
+      "name": "Joe Walsh",
+      "clubs": [
+        "Queens Park Rangers",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Jaiden Putman",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Jaylan Pearman",
+      "clubs": [
+        "Perth Glory",
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Daniel Bennie",
+      "clubs": [
+        "Perth Glory",
+        "Queens Park Rangers",
+        "Dundee United FC"
+      ]
+    },
+    {
+      "name": "Emmerson Sutton",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Isak Alemayehu",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Teddy Tarbotton",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Leon Scarlett",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Kalen Brunson",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Ashley Trujillo",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Ray Jones",
+      "clubs": [
+        "Queens Park Rangers"
+      ]
+    },
+    {
+      "name": "Udoka Godwin-Malife",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Jeriel Dorsett",
+      "clubs": [
+        "Reading FC",
+        "Kilmarnock FC"
+      ]
+    },
+    {
+      "name": "Andy Rinomhota",
+      "clubs": [
+        "Reading FC",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "Haydon Roberts",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Liam Fraser",
+      "clubs": [
+        "Toronto FC",
+        "Columbus Crew",
+        "FC Dallas",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Jack Marriott",
+      "clubs": [
+        "Ipswich Town",
+        "Luton Town",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Charlie Savage",
+      "clubs": [
+        "Manchester United",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Jamie Reid",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Lewis Wing",
+      "clubs": [
+        "Middlesbrough FC",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Daniel Kyerewaa",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Randell Williams",
+      "clubs": [
+        "Crystal Palace",
+        "Watford FC",
+        "Hull City",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Paudie O'Connor",
+      "clubs": [
+        "Leeds United",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Benn Ward",
+      "clubs": [
+        "Burnley FC",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "George Earthy",
+      "clubs": [
+        "West Ham United",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Jacob Brown",
+      "clubs": [
+        "Stoke City",
+        "Luton Town",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Kyreece Lisbie",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Josh Knight",
+      "clubs": [
+        "Leicester City",
+        "Hannover 96",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Sean Patton",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Conor Masterson",
+      "clubs": [
+        "Liverpool FC",
+        "Queens Park Rangers",
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Jack Stevens",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Josh Stokes",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Tom Norcott",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Paddy Lane",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Ashqar Ahmed",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Kelvin Abrefa",
+      "clubs": [
+        "Reading FC"
+      ]
+    },
+    {
+      "name": "Michael Cooper",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Sam McCallum",
+      "clubs": [
+        "Norwich City",
+        "Queens Park Rangers",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Ollie Arblaster",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Japhet Tanganga",
+      "clubs": [
+        "Tottenham Hotspur",
+        "FC Augsburg",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Hamza Choudhury",
+      "clubs": [
+        "Leicester City",
+        "Watford FC",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Harrison Burrows",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Liam Kitching",
+      "clubs": [
+        "Leeds United",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Jamie Shackleton",
+      "clubs": [
+        "Leeds United",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Adam Davies",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Tyrese Campbell",
+      "clubs": [
+        "Stoke City",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Mark McGuinness",
+      "clubs": [
+        "Arsenal FC",
+        "Ipswich Town",
+        "Cardiff City",
+        "Luton Town",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Ryan Oné",
+      "clubs": [
+        "Hamilton Academical FC",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Jamal Baptiste",
+      "clubs": [
+        "West Ham United",
+        "Manchester City",
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Femi Seriki",
+      "clubs": [
+        "Sheffield United",
+        "Beerschot AC"
+      ]
+    },
+    {
+      "name": "Sydie Peck",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Billy Blacker",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Dovydas Sasnauskas",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Mihail Polendakov",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Sai Sachdev",
+      "clubs": [
+        "Sheffield United"
+      ]
+    },
+    {
+      "name": "Viktor Johansson",
+      "clubs": [
+        "Aston Villa",
+        "Leicester City",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Aaron Cresswell",
+      "clubs": [
+        "Ipswich Town",
+        "West Ham United",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Ben Pearson",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Luke Graham",
+      "clubs": [
+        "Dundee FC",
+        "Falkirk FC",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Svante Ingelsson",
+      "clubs": [
+        "Udinese Calcio",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Jack McGlynn",
+      "clubs": [
+        "Philadelphia Union",
+        "Houston Dynamo",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Bae Jun-ho",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Lamine Cissé",
+      "clubs": [
+        "SC Bastia",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Justin Devenny",
+      "clubs": [
+        "Kilmarnock FC",
+        "Crystal Palace",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Ato Ampah",
+      "clubs": [
+        "Chelsea FC",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Eric Bocat",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Sam Gallagher",
+      "clubs": [
+        "Southampton FC",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Junior Tchamadeu",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Josh Griffiths",
+      "clubs": [
+        "West Bromwich Albion",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Frank Fielding",
+      "clubs": [
+        "Leeds United",
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Maksym Talovierov",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Million Manhoef",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Tommy Simkin",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Nathan Lowe",
+      "clubs": [
+        "Stoke City",
+        "Hibernian FC"
+      ]
+    },
+    {
+      "name": "Emre Tezgel",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Sydney Agina",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Favour Fawunmi",
+      "clubs": [
+        "Stoke City"
+      ]
+    },
+    {
+      "name": "Dan Ballard",
+      "clubs": [
+        "Arsenal FC",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Dayann Methalie",
+      "clubs": [
+        "FC Toulouse",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Alan Browne",
+      "clubs": [
+        "Sunderland AFC",
+        "Middlesbrough FC"
+      ]
+    },
+    {
+      "name": "Chris Rigg",
+      "clubs": [
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Luke O'Nien",
+      "clubs": [
+        "Watford FC",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Simon Moore",
+      "clubs": [
+        "Brentford FC",
+        "Cardiff City",
+        "Sheffield United",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Trai Hume",
+      "clubs": [
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Jocelin Ta Bi",
+      "clubs": [
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Abdoullah Ba",
+      "clubs": [
+        "Le Havre AC",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Juan Riquelme Angulo",
+      "clubs": [
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Timur Tutyerov",
+      "clubs": [
+        "Kolos Kovalivka",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Aji Alese",
+      "clubs": [
+        "West Ham United",
+        "Sunderland AFC"
+      ]
+    },
+    {
+      "name": "Andy Fisher",
+      "clubs": [
+        "Swansea City",
+        "St. Johnstone FC"
+      ]
+    },
+    {
+      "name": "Joshua Key",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Ben Cabango",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Žan Vipotnik",
+      "clubs": [
+        "HNK Gorica",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Eom Ji-sung",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Tom Iorpenda",
+      "clubs": [
+        "Huddersfield Town",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Gonçalo Franco",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Tiago Parente",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Lawrence Vigouroux",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Liverpool FC",
+        "Burnley FC",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Filip Lissah",
+      "clubs": [
+        "Swansea City",
+        "Falkirk FC"
+      ]
+    },
+    {
+      "name": "Paul Farman",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Joseph Opoku",
+      "clubs": [
+        "Zulte Waregem",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Ronald",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Moussa Yeo",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Sam Parker",
+      "clubs": [
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Ollie Cooper",
+      "clubs": [
+        "Swansea City",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Leo Walta",
+      "clubs": [
+        "IK Sirius",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Florian Bianchini",
+      "clubs": [
+        "Amiens SC",
+        "SC Bastia",
+        "Swansea City",
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Bobby Wales",
+      "clubs": [
+        "Kilmarnock FC",
+        "Swansea City",
+        "Huddersfield Town",
+        "Dundee FC"
+      ]
+    },
+    {
+      "name": "Besian Idrizaj",
+      "clubs": [
+        "Liverpool FC",
+        "Luton Town",
+        "Crystal Palace",
+        "Swansea City"
+      ]
+    },
+    {
+      "name": "Federico Ravaglia",
+      "clubs": [
+        "Bologna FC",
+        "Frosinone Calcio",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Kévin Keben",
+      "clubs": [
+        "FC Toulouse",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Hector Kyprianou",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Othmane Maamma",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Rocco Vata",
+      "clubs": [
+        "Celtic FC",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Kwadwo Baah",
+      "clubs": [
+        "Watford FC",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Marc Bola",
+      "clubs": [
+        "Arsenal FC",
+        "Middlesbrough FC",
+        "Samsunspor",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Michail Antonio",
+      "clubs": [
+        "Reading FC",
+        "Southampton FC",
+        "Nottingham Forest",
+        "West Ham United",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Nikoloz Chikovani",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Mamadou Doumbia",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Amin Nabizada",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Omar Traoré",
+      "clubs": [
+        "1. FC Heidenheim",
+        "Udinese Calcio",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Sam Walker",
+      "clubs": [
+        "Chelsea FC",
+        "Reading FC",
+        "Kilmarnock FC",
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Jack Grieves",
+      "clubs": [
+        "Watford FC",
+        "Ross County FC"
+      ]
+    },
+    {
+      "name": "Egil Selvik",
+      "clubs": [
+        "FK Haugesund",
+        "Udinese Calcio",
+        "Watford FC",
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Michael Adu-Poku",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Jorge Cabezas Hurtado",
+      "clubs": [
+        "Watford FC",
+        "Independiente Medellín",
+        "Millonarios FC",
+        "Deportes Tolima"
+      ]
+    },
+    {
+      "name": "Travis Akomeah",
+      "clubs": [
+        "Watford FC"
+      ]
+    },
+    {
+      "name": "Max O'Leary",
+      "clubs": [
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Nat Phillips",
+      "clubs": [
+        "Liverpool FC",
+        "VfB Stuttgart",
+        "AFC Bournemouth",
+        "Celtic FC",
+        "Cardiff City",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Callum Styles",
+      "clubs": [
+        "Sunderland AFC",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "George Campbell",
+      "clubs": [
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Felix Horn Myhre",
+      "clubs": [
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Barney Stewart",
+      "clubs": [
+        "Falkirk FC",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Jimmy-Jay Morgan",
+      "clubs": [
+        "Chelsea FC",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Matt Ingram",
+      "clubs": [
+        "Queens Park Rangers",
+        "Hull City",
+        "Luton Town",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Toby Collyer",
+      "clubs": [
+        "Manchester United",
+        "West Bromwich Albion",
+        "Hull City"
+      ]
+    },
+    {
+      "name": "Ousmane Diakité",
+      "clubs": [
+        "Red Bull Salzburg",
+        "TSV Hartberg",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Tammer Bany",
+      "clubs": [
+        "Randers FC",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Nolan Galves",
+      "clubs": [
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Kareem Tunde",
+      "clubs": [
+        "Levante UD",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Harry Whitwell",
+      "clubs": [
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Alfie Gilchrist",
+      "clubs": [
+        "Chelsea FC",
+        "Sheffield United",
+        "West Bromwich Albion"
+      ]
+    },
+    {
+      "name": "Alex Williams",
+      "clubs": [
+        "West Bromwich Albion",
+        "Hibernian FC"
+      ]
+    },
+    {
+      "name": "Connor Barrett",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Morgan Fox",
+      "clubs": [
+        "Stoke City",
+        "Queens Park Rangers",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Jeremiah Chilokoa-Mullen",
+      "clubs": [
+        "Leeds United",
+        "Inverness Caledonian Thistle FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Finley Burns",
+      "clubs": [
+        "Manchester City",
+        "Swansea City",
+        "Hull City",
+        "Reading FC",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Max Power",
+      "clubs": [
+        "Wigan Athletic",
+        "Sunderland AFC",
+        "Al-Qadsiah"
+      ]
+    },
+    {
+      "name": "Sonny Perkins",
+      "clubs": [
+        "West Ham United",
+        "Leeds United",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Llyton Chapman",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Archie Harris",
+      "clubs": [
+        "AFC Bournemouth",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Akeel Higgins",
+      "clubs": [
+        "West Bromwich Albion",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Chris Sze",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "K'Marni Miller",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Jon Mellish",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "James Carragher",
+      "clubs": [
+        "Wigan Athletic",
+        "Inverness Caledonian Thistle FC"
+      ]
+    },
+    {
+      "name": "Adam Moseley",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Scott Hogan",
+      "clubs": [
+        "Brentford FC",
+        "Aston Villa",
+        "Sheffield United",
+        "Stoke City",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Joe Adams",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Christian Saydee",
+      "clubs": [
+        "AFC Bournemouth",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Joe Whitworth",
+      "clubs": [
+        "Crystal Palace",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Kai Payne",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Maleace Asamoah",
+      "clubs": [
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Joseph Hungbo",
+      "clubs": [
+        "Crystal Palace",
+        "Watford FC",
+        "Ross County FC",
+        "Huddersfield Town",
+        "Wigan Athletic"
+      ]
+    },
+    {
+      "name": "Marvel",
+      "clubs": [
+        "Córdoba CF",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Lalo Aguilar",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Yassine Kechta",
+      "clubs": [
+        "Le Havre AC",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Naim García",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Unax del Cura",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Andrés Campos",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Patrick Soko",
+      "clubs": [
+        "SD Huesca",
+        "UD Almería",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Miguel Atienza",
+      "clubs": [
+        "SD Eibar",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Álex Fita",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Nico Lozano",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Suleiman El Haddadi",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Jorge Herrero",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Sulaiman Mulumba",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Ale Gorrín",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Jorge Martínez",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Diego Pérez",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Javi Garrido",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Djibril Gueye",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Lucas Macazaga",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Marco Leiton",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Sebastián Figueredo",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Carlos Guirao",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Alfred Gøthler",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "David Hamansenya",
+      "clubs": [
+        "FC Slovan Liberec",
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Sergio Carreira",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Miguel Román",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Pablo Durán",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Javi Rueda",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Yoel Lago",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Williot Swedberg",
+      "clubs": [
+        "Hammarby IF",
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Javi Rodríguez",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Sebastián Cáceres",
+      "clubs": [
+        "CF América",
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Hugo Álvarez",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Iván Villar",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Jones El-Abdellaoui",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Coke Carrillo",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Quique Ribes",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Andrés Antañón",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Hugo Burcio",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Ángel Arcos",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Germain Milla",
+      "clubs": [
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Carlos Domínguez",
+      "clubs": [
+        "Celta de Vigo",
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Damián Rodríguez",
+      "clubs": [
+        "Cádiz CF",
+        "Celta de Vigo"
+      ]
+    },
+    {
+      "name": "Hugo Sotelo",
+      "clubs": [
+        "Celta de Vigo",
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "David Gil",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Beñat de Jesús",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Javi Castro",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Iuri Tabatadze",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Efe Aghama",
+      "clubs": [
+        "Cádiz CF",
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Álvaro García Pascual",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "José Antonio de la Rosa",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Jokin Ezkieta",
+      "clubs": [
+        "Athletic Bilbao",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Bojan Kovačević",
+      "clubs": [
+        "FK Cukaricki",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Kenan Toibibou",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Jandro Orellana",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Urko Izeta",
+      "clubs": [
+        "Athletic Bilbao",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Borja Vázquez",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Vladys Kopotun",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Cristian Gutiérrez",
+      "clubs": [
+        "Málaga CF",
+        "SD Eibar",
+        "UD Las Palmas",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Ibon Sánchez",
+      "clubs": [
+        "Athletic Bilbao",
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Rubén Domínguez",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Dilan Zárate",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "César Díaz",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Noah Ukwuije",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Robe Rosado",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Manu Rivera",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "José Andújar",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Yussi Diarra",
+      "clubs": [
+        "Cádiz CF",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Ismael Álvarez",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Jerónimo Dómina",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Iker Álvarez",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Dani Tasende",
+      "clubs": [
+        "Villarreal CF",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Álex Martín",
+      "clubs": [
+        "CD Leganés",
+        "Cádiz CF",
+        "Elche CF",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Juan Gutiérrez",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Damián Cáceres",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Théo Zidane",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Isma Ruiz",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Diego Percan",
+      "clubs": [
+        "Arka Gdynia",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Kevin Medina",
+      "clubs": [
+        "Málaga CF",
+        "Gil Vicente FC",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Diego Bri",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Franck Fomeyem",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Guilherme Fernandes",
+      "clubs": [
+        "CF Estrela Amadora",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Adnane Ghailan",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Rubén Alves",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Enol Rodríguez",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Carlos Albarrán",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Salim El Jebari",
+      "clubs": [
+        "Atlético de Madrid",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Egoitz Muñoz",
+      "clubs": [
+        "Córdoba CF",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Jacobo Martí",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Alejandro Arévalo",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Ramon Vila",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Dalisson de Almeida",
+      "clubs": [
+        "Córdoba CF",
+        "HNK Hajduk Split"
+      ]
+    },
+    {
+      "name": "Dani Lidueña",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Mariano Carmona",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Unai Sabroso",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Antonio Sivera",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Nicolás Valentini",
+      "clubs": [
+        "Hellas Verona",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Youssef Enríquez",
+      "clubs": [
+        "Real Madrid",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Facundo Garcés",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Adrián Rodríguez",
+      "clubs": [
+        "Deportivo Alavés",
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Ville Koski",
+      "clubs": [
+        "NK Istra 1961",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Mikel Rodríguez",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Aitor Mañas",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Abde Rebbach",
+      "clubs": [
+        "Granada CF",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Carlos Protesoni",
+      "clubs": [
+        "Independiente",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Selu Diallo",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Xanet Olaiz",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Izei Hernández",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Grégoire Świderski",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Adrián Pica",
+      "clubs": [
+        "FC Penafiel",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Gustavo Albarracín",
+      "clubs": [
+        "SD Huesca",
+        "NK Istra 1961",
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Unai Ropero",
+      "clubs": [
+        "Deportivo Alavés"
+      ]
+    },
+    {
+      "name": "Germán Parreño",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Arnau Comas",
+      "clubs": [
+        "FC Basel 1893",
+        "SD Eibar",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Lucas Noubi",
+      "clubs": [
+        "Standard Liège",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Dani Barcia",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Diego Villares",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Zakaria Eddahchouri",
+      "clubs": [
+        "Go Ahead Eagles",
+        "SC Telstar",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Yeremay Hernández",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "David Mella",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Leo Román",
+      "clubs": [
+        "RCD Mallorca",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Miguel Loureiro",
+      "clubs": [
+        "Córdoba CF",
+        "SD Huesca",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Lorenzo Amatucci",
+      "clubs": [
+        "UD Las Palmas",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Jonathan Asp Jensen",
+      "clubs": [
+        "Bayern Munich",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Luismi Cruz",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Mario Soriano",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Bright Ede",
+      "clubs": [
+        "Motor Lublin",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Bil Nsongo",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Kevin Sánchez",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Rubén López",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Noé Carrillo",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Eric Puerto",
+      "clubs": [
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Teun Gijselhart",
+      "clubs": [
+        "PEC Zwolle",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Charlie Patino",
+      "clubs": [
+        "Arsenal FC",
+        "Swansea City",
+        "VfL Bochum",
+        "Deportivo de La Coruña"
+      ]
+    },
+    {
+      "name": "Buba Sangaré",
+      "clubs": [
+        "Levante UD",
+        "AS Roma",
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Roy Revivo",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Yago Santiago",
+      "clubs": [
+        "Tottenham Hotspur",
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Marc Aguado",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Alejandro Iturbe",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Kevin Lomónaco",
+      "clubs": [
+        "Red Bull Bragantino",
+        "Independiente",
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Josan",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Lucas Cepeda",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Abiel Osorio",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Matía Barzić",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Ali Houary",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Adam Boayar",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Javi Morcillo",
+      "clubs": [
+        "Atlético de Madrid",
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Álvaro Padilla",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Pablo Felipe",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Nordin Al Lal",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Tiziano Perrotta",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Umaru Konare",
+      "clubs": [
+        "Elche CF"
+      ]
+    },
+    {
+      "name": "Alberto Flores",
+      "clubs": [
+        "Sevilla FC",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Pau Casadesús",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Diego Hormigo",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Manu Lama",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Sergio Rodelas",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Pedro Alemañ",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Alejandro Marqués",
+      "clubs": [
+        "Juventus FC",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Jorge Pascual",
+      "clubs": [
+        "Villarreal CF",
+        "SD Eibar",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "José Arnáiz",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Raúl Lizoain",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Diego Pampín",
+      "clubs": [
+        "Levante UD",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Sergio López",
+      "clubs": [
+        "FC Basel 1893",
+        "SV Darmstadt 98",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Chinaza Okonyia",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Baïla Diallo",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Benedikt Gimber",
+      "clubs": [
+        "FC Ingolstadt 04",
+        "1. FC Heidenheim",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Mario Gambín",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Juanjo Flores",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Dylan Rodríguez",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Angelo García",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Bourama Dembelé",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Owen Emeka",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Manu Maza",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Íker García",
+      "clubs": [
+        "Granada CF",
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Fran Árbol",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Rayan Zinebi",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Samu Cortés",
+      "clubs": [
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Pablo Campos",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Roger Brugué",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Yanis Musuayi",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Jorge Cabello",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Enzo Bardeli",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Paco Cortés",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Nacho Pérez",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Álex Primo",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Marc Santos",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Luismi Pérez",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Manel Usedo",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Huseini Nakoha",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Igor Galdin",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Alberto Calatrava",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Alejandro Moya",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Dani Martín",
+      "clubs": [
+        "Levante UD",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Martín Krug",
+      "clubs": [
+        "Levante UD"
+      ]
+    },
+    {
+      "name": "Alfonso Herrero",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Carlos Puga",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Álex Pastor",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Haitam",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Chupete",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "David Larrubia",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Carlos López",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Rafa",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Ángel Recio",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Diego Murillo",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Adrián Niño",
+      "clubs": [
+        "Atlético de Madrid",
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Dani Lorenzo",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Izan Merino",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Rafita",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Aarón Ochoa",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Otu",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Andrés Céspedes",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Juani",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Pablo Arriaza",
+      "clubs": [
+        "Málaga CF"
+      ]
+    },
+    {
+      "name": "Miguel Narváez",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Aisar Ahmed",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Youness Lachhab",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Dani Villahermosa",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Alberto Reina",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Jacobo González",
+      "clubs": [
+        "Córdoba CF",
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Samu Rodríguez",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Víctor Mingo",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Pablo Sáenz",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "David Jiménez",
+      "clubs": [
+        "Real Madrid",
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Dieguito",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Marco Esteban",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Samu Franganillo",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Óscar de la Hera",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Enzo Cazorla",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Xavi Vicente",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Álex Cardero",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Pablo Agudín",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Álvaro Aceves",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Trilli",
+      "clubs": [
+        "Córdoba CF",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Ramón Martínez",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Mathis Lachuer",
+      "clubs": [
+        "Amiens SC",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Luis Chacón",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Thiago Ojeda",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Yeray Cabanzón",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Pablo Tomeo",
+      "clubs": [
+        "SD Huesca",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Víctor Barberá",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Robin van Duiven",
+      "clubs": [
+        "PSV Eindhoven",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Kaj de Rooij",
+      "clubs": [
+        "NAC Breda",
+        "PEC Zwolle",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Lucas Lavagnino",
+      "clubs": [
+        "Independiente",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Iván Garriel",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Dani Pérez",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Guille Bueno",
+      "clubs": [
+        "Borussia Dortmund",
+        "SV Darmstadt 98",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Hugo Wauthier",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Marcos Parriego",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Tomy Fernández",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Brain Chinedu",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Alejandro Galdeano",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Hugo Calvo",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "José Luis Aranda",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Lucas Sanseviero",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Riki de Morais",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Raúl Pereira",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Hugo Barrachina",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Tachi",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Peter Ademo",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Marcos Cuenca",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Hugo Pinilla",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Jaume Jardí",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Rubén Iranzo",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Yussif Saidu",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Lucas Terrer",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Iker Vadillo",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Rubén Díez",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Joaquín Delgado",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Edu Espiau",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Óscar Ureña",
+      "clubs": [
+        "Girona FC",
+        "CD Leganés",
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Diego Monzón",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Sergio Beltrán",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Lalo Arantegui",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Laken Torres",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Jaime Tobajas",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Ignacio Vázquez",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Marcos Manolache",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Sebastian Kóša",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Hugo Carrillo",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Jonmi Magunagoitia",
+      "clubs": [
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Lander Olaetxea",
+      "clubs": [
+        "Sporting Gijón",
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Iván Gil",
+      "clubs": [
+        "UD Las Palmas",
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Iker Zubiría",
+      "clubs": [
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Carlos Lumbreras",
+      "clubs": [
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Haritz Ortuzar",
+      "clubs": [
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Endika Mateos",
+      "clubs": [
+        "SD Eibar"
+      ]
+    },
+    {
+      "name": "Gianfranco Gazzaniga",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Mohammed Djetei",
+      "clubs": [
+        "Córdoba CF",
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Iván Rodríguez",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Yann Kembo",
+      "clubs": [
+        "SD Huesca",
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Quique Fornos",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Jimmy Suárez",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Rafa Tresaco",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Douglas Aurélio",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Luismi Redondo",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Álvaro Killane",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Mario García",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Guillem Molina",
+      "clubs": [
+        "Valencia CF",
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Agustín Juárez",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Marc Aznar",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Óscar Sielva",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Diego Aznar",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Álex Calvo",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Miguel Perales",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Nico Azagra",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Pablo Osán",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Javier Abbad",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Jaime Escario",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Sergi Armero",
+      "clubs": [
+        "SD Huesca"
+      ]
+    },
+    {
+      "name": "Emanuel Gularte",
+      "clubs": [
+        "Puebla FC",
+        "Querétaro FC",
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Diego Sánchez",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Nacho Martín",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Manu Rodríguez",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Andrés Ferrari",
+      "clubs": [
+        "Villarreal CF",
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Pablo Vázquez",
+      "clubs": [
+        "Córdoba CF",
+        "Granada CF",
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Antonio Casas",
+      "clubs": [
+        "Sporting Gijón",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Iker Martínez",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Andrés Cuenca",
+      "clubs": [
+        "FC Barcelona",
+        "Sporting Gijón",
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Enol Prendes",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Miguel Conde",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Alex Diego",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Diego Matabuena",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Chris Ferreres",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Bruno Rubio",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Amadou Coundoul",
+      "clubs": [
+        "Sporting Gijón"
+      ]
+    },
+    {
+      "name": "Thalys",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Nico Melamed",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Marcos Luna",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Brian Cipenga",
+      "clubs": [
+        "Boavista FC",
+        "FC Famalicão",
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Federico Bonini",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Chumi",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Daijiro Chirino",
+      "clubs": [
+        "PEC Zwolle",
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Stefan Džodić",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Áron Yaakobishvili",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Quim Junyent",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Kassoum Kone",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Ayouba Koné",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Jesús López",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Andrej Popović",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Selvi Clua",
+      "clubs": [
+        "UD Almería"
+      ]
+    },
+    {
+      "name": "Álex Suárez",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Enrique Clemente",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Iñaki González",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Sergio Ruiz",
+      "clubs": [
+        "UD Las Palmas",
+        "Granada CF"
+      ]
+    },
+    {
+      "name": "Jeremía Recoba",
+      "clubs": [
+        "CD Nacional",
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Manu Fuster",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Mateo Aćimović",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Viti Rozada",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Edward Cedeño",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Kirian Rodríguez",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Ale García",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Valentín Pezzolesi",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Aboubacar Bassinga",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Elías Romero",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Iván Medina",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Adam Arvelo",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Rafa Cruz",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Adri Suárez",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Aimar Domínguez",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Jorge Cruz",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Sergio Viera",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Aidan Pérez",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Jorge Valverde",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Rachid Saiah",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Eduard Mohedano",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Carlos Navarro",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Víctor Villote",
+      "clubs": [
+        "UD Las Palmas"
+      ]
+    },
+    {
+      "name": "Matteo Figoli",
+      "clubs": [
+        "Spezia Calcio",
+        "AC Carpi"
+      ]
+    },
+    {
+      "name": "Federico Casarini",
+      "clubs": [
+        "Bologna FC",
+        "Cagliari Calcio",
+        "AC Carpi"
+      ]
+    },
+    {
+      "name": "Leonardo Zarpellon",
+      "clubs": [
+        "AC Carpi"
+      ]
+    },
+    {
+      "name": "Riccardo Gatti",
+      "clubs": [
+        "AC Carpi"
+      ]
+    },
+    {
+      "name": "Abdoulaye Sall",
+      "clubs": [
+        "AC Carpi"
+      ]
+    },
+    {
+      "name": "Lorenzo Lucchesi",
+      "clubs": [
+        "Venezia FC",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Manga Foe Ondoa",
+      "clubs": [
+        "Valenciennes FC",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Samuele Birindelli",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Demba Thiam",
+      "clubs": [
+        "SPAL",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Leonardo Colombo",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Adam Bakoune",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Patrick Ciurria",
+      "clubs": [
+        "Spezia Calcio",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Aljaž Strajnar",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Eddy Kouadio",
+      "clubs": [
+        "AC Monza",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Kevin Martins",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Mathis Mout",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Aleksandr Ballabio",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Semuel Pizzignacco",
+      "clubs": [
+        "Udinese Calcio",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Andrea Vailati",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Samuele Capolupo",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Filippo Delli Carri",
+      "clubs": [
+        "Juventus FC",
+        "Como 1907",
+        "AC Monza",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Alessandro Berretta",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Nicolas Galazzi",
+      "clubs": [
+        "Inter Milan",
+        "Venezia FC",
+        "Brescia Calcio",
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Solomon Loubao",
+      "clubs": [
+        "AC Monza"
+      ]
+    },
+    {
+      "name": "Víctor Valdepeñas",
+      "clubs": [
+        "Real Madrid",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Viery",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Christ Inao Oulaï",
+      "clubs": [
+        "SC Bastia",
+        "Trabzonspor",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Federico Croci",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Sulayman Jallow",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Brando Mazzeo",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Antonio Pirrò",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Pietro Leonardelli",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Tommaso Martinelli",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Tommaso Vannucchi",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Mirko Elia",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Eman Košpo",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Lorenzo Romani",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Edoardo Sadotti",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Giulio Scuderi",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Niccolò Trapani",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Lapo Deli",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Luca Montenegro",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Maat Daniel Caprini",
+      "clubs": [
+        "Cesena FC",
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Carlo Evangelista",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Tommaso Rubino",
+      "clubs": [
+        "ACF Fiorentina"
+      ]
+    },
+    {
+      "name": "Thomas Pompei",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Relja Obrić",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Giorgio Scalvini",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Lorenzo Bernasconi",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Javison Idele",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Jacopo Mirra",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Federico Steffanoni",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Digne Kaelas Pounga",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Sergej Levak",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Mattia Sonzogni",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Alberto Manzoni",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Matteo Plaia",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Isaac Isoa",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Albert Navarro",
+      "clubs": [
+        "Atalanta BC"
+      ]
+    },
+    {
+      "name": "Antonio Prisco",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Antonis Siatounis",
+      "clubs": [
+        "AC Monza",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Mattia Maita",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Francesco Salvemini",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Davide Lamesta",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Raffaele Celia",
+      "clubs": [
+        "SPAL",
+        "Cesena FC",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Stefano Scognamillo",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Christian Dalle Mura",
+      "clubs": [
+        "SPAL",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Pier Luigi Simonetti",
+      "clubs": [
+        "Catania FC",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Vincenzo Battista",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Pietro Beruatto",
+      "clubs": [
+        "Juventus FC",
+        "Spezia Calcio",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Emanuele Schimmenti",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Manuel Esposito",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Pietro Saio",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Raffaele Romano",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Gianmarco Vannucchi",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Christian Kouan",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Logan",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Giacomo Ricci",
+      "clubs": [
+        "Venezia FC",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Guglielmo Mignani",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Angelo Talia",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Edoardo Pierozzi",
+      "clubs": [
+        "Palermo FC",
+        "Como 1907",
+        "Cesena FC",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Matteo Donatiello",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Matteo Del Gaudio",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Alioune Sylla",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Giovanni Castaldi",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Angelo Viscardi",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Dino Mehić",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Lorenzo Carfora",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Mario Perlingieri",
+      "clubs": [
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "Roberto Baggio",
+      "clubs": [
+        "Juventus FC",
+        "AC Milan",
+        "Bologna FC",
+        "Inter Milan",
+        "Brescia Calcio"
+      ]
+    },
+    {
+      "name": "Vittorio Mero",
+      "clubs": [
+        "Brescia Calcio"
+      ]
+    },
+    {
+      "name": "Riyad Idrissi",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Mattia Felici",
+      "clubs": [
+        "Palermo FC",
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Yael Trepy",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Riccardo Ciervo",
+      "clubs": [
+        "AS Roma",
+        "Frosinone Calcio",
+        "Venezia FC",
+        "Cesena FC",
+        "Cagliari Calcio",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Raphael Kofler",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Giuseppe Aurelio",
+      "clubs": [
+        "Cesena FC",
+        "Palermo FC",
+        "Spezia Calcio",
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Joseph Liteta",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Demi Akarakiri",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Paul Mendy",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Ivan Sulev",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Adam Obert",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Alessandro Sugamele",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Nicola Grandu",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Velizar-Iliya Iliev",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Francesco Gallea",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Nicola Pintus",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Davide Veroli",
+      "clubs": [
+        "Cagliari Calcio",
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Gabriele Zappa",
+      "clubs": [
+        "Inter Milan",
+        "Cagliari Calcio",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Nicolò Cavuoti",
+      "clubs": [
+        "Cagliari Calcio",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Roberto Malfitano",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Agustin Albarracin",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Sebastiano Di Paolo",
+      "clubs": [
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "Kingstone Mutandwa",
+      "clubs": [
+        "Cagliari Calcio",
+        "SV Ried",
+        "Servette FC"
+      ]
+    },
+    {
+      "name": "Filippo Rinaldi",
+      "clubs": [
+        "Catania FC",
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Salvatore Aloi",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Marco Perrotta",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Giovanni Bruzzaniti",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Salvatore Caturano",
+      "clubs": [
+        "FC Empoli",
+        "Cesena FC",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Emanuele Cicerelli",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Matteo Di Gennaro",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Alessandro Quaini",
+      "clubs": [
+        "Genoa CFC",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Alessandro Raimo",
+      "clubs": [
+        "Siena FC",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Daniele Donnarumma",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Gabriel Lunetta",
+      "clubs": [
+        "HNK Rijeka",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Andrea Corbari",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Edoardo Masciangelo",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Andrea Dini",
+      "clubs": [
+        "FC Crotone",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Mario Ierardi",
+      "clubs": [
+        "Genoa CFC",
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Fabio Ponsi",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Francesco Di Tacchio",
+      "clubs": [
+        "Catania FC"
+      ]
+    },
+    {
+      "name": "Alessandro Siano",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Antonio David",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Jacopo Gelli",
+      "clubs": [
+        "Frosinone Calcio",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Luca Schirone",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Matteo Francesconi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Cristian Shpendi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Riccardo Pagano",
+      "clubs": [
+        "AS Roma",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Luca Ferretti",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Xavello Druiventak",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Andrea Ciofi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Luca D'Andrea",
+      "clubs": [
+        "Brescia Calcio",
+        "Cesena FC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Matteo Guidi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Matteo Casadei",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Vittorio Magni",
+      "clubs": [
+        "AC Milan",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Massimiliano Mangraviti",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Dimitri Bisoli",
+      "clubs": [
+        "Brescia Calcio",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Matteo Piacentini",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Niccolò Fontana",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Filippo Bertaccini",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Antonio Fiori",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Tommaso Mazzi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Riccardo Biguzzi",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Mamadou Kebbeh",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Giulio Manetti",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Simone Pieraccini",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Tommaso Arrigoni",
+      "clubs": [
+        "Cesena FC",
+        "SPAL",
+        "Siena FC",
+        "Como 1907",
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Gianmarco Castorri",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Roberto Ogunseye",
+      "clubs": [
+        "Inter Milan",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Marco Olivieri",
+      "clubs": [
+        "FC Empoli",
+        "Juventus FC",
+        "Venezia FC",
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Giovanni Perini",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Frederik Tosku",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Ibrahima Papa Wade",
+      "clubs": [
+        "Cesena FC"
+      ]
+    },
+    {
+      "name": "Edoardo Sbampato",
+      "clubs": [
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Matteo Salvi",
+      "clubs": [
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Gabriele Carannante",
+      "clubs": [
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Dardan Vuthaj",
+      "clubs": [
+        "Genoa CFC",
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Nicola Ciccone",
+      "clubs": [
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Manuel Martic",
+      "clubs": [
+        "Catania FC",
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Maximiliano Uggè",
+      "clubs": [
+        "AC Monza",
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "Adrian Lahdo",
+      "clubs": [
+        "Hammarby IF",
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Kaiki Bruno",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Mauro Vigorito",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Mattia Liberali",
+      "clubs": [
+        "AC Milan",
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Lorenzo Luigi Ginelli",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Riccardo Cassano",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Federico Grilli",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Matteo Papaccioli",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Cristiano De Paoli",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Cristian Mazzara",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Zebedee Kennedy",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Andréa Le Borgne",
+      "clubs": [
+        "Como 1907",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Fabio Rispoli",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Jacopo Simonetta",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Federico Chinetti",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Alessandro Gabrielloni",
+      "clubs": [
+        "Como 1907",
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Kristiāns Mežsargs",
+      "clubs": [
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Riccardo Capellini",
+      "clubs": [
+        "Juventus FC",
+        "Benevento Calcio",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Erdis Kraja",
+      "clubs": [
+        "Palermo FC",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Victor Eletu",
+      "clubs": [
+        "AC Milan",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Lorenzo Meazzi",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Davide Merola",
+      "clubs": [
+        "FC Empoli",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Michele D'Ausilio",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Francesco Donati",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Andrea Ferraris",
+      "clubs": [
+        "AC Monza",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Filippo Pellacani",
+      "clubs": [
+        "Hellas Verona",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Filippo Guccione",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Bilal Erradi",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Giacomo Parigi",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "Davide Merelli",
+      "clubs": [
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Nicolò Armini",
+      "clubs": [
+        "SS Lazio",
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Mattia Tordini",
+      "clubs": [
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Gregorio Tanco",
+      "clubs": [
+        "Spezia Calcio",
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Filippo Grosso",
+      "clubs": [
+        "Frosinone Calcio",
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Zak Ruggiero",
+      "clubs": [
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Marco Zunno",
+      "clubs": [
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Ben Lhassine Kone",
+      "clubs": [
+        "Torino FC",
+        "FC Crotone",
+        "Frosinone Calcio",
+        "Como 1907"
+      ]
+    },
+    {
+      "name": "Farès Ghedjemis",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Romano Schmid",
+      "clubs": [
+        "Sturm Graz",
+        "Red Bull Salzburg",
+        "SV Werder Bremen",
+        "Wolfsberger AC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Matteo Pisseri",
+      "clubs": [
+        "Catania FC",
+        "Cesena FC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Giacomo Calò",
+      "clubs": [
+        "Genoa CFC",
+        "Benevento Calcio",
+        "Cesena FC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Matteo Cichella",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Giorgi Kvernadze",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Anthony Oyono",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Lorenzo Palmisani",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Anouar El Azzouzi",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Luis Hasa",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Gabriele Bracaglia",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Tomáš Bobček",
+      "clubs": [
+        "Lechia Gdansk",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Enzo Tchato",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Sebastiano Desplanches",
+      "clubs": [
+        "Palermo FC",
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Francesco Gelli",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Eldin Lolić",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Niccolò Corrado",
+      "clubs": [
+        "Inter Milan",
+        "Palermo FC",
+        "Brescia Calcio",
+        "Frosinone Calcio",
+        "FC Empoli"
+      ]
+    },
+    {
+      "name": "Jérémy Oyono",
+      "clubs": [
+        "Frosinone Calcio",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Kevin Barcella",
+      "clubs": [
+        "Frosinone Calcio",
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Lorenzo Befani",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Alejandro Cichero",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Muhammed Colley",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Damar Dixon",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Lorenzo Gori",
+      "clubs": [
+        "Frosinone Calcio"
+      ]
+    },
+    {
+      "name": "Andrias Edmundsson",
+      "clubs": [
+        "Sunderland AFC",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Mattia Compagnon",
+      "clubs": [
+        "Udinese Calcio",
+        "Juventus FC",
+        "Venezia FC",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Leorat Bega",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Giacomo Toniolo",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Nunzio Lella",
+      "clubs": [
+        "Cagliari Calcio",
+        "Venezia FC",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Daniel Mosquera",
+      "clubs": [
+        "CD América de Cali",
+        "Atlético Bucaramanga",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Noé Maël Tagne",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Simone Perilli",
+      "clubs": [
+        "Brescia Calcio",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Salvatore Cerbone",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Nicolò Calabrese",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Ruben Akalé",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Edoardo Iannoni",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Fallou Cham",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Davide De Battisti",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Kacper Sezonienko",
+      "clubs": [
+        "Lechia Gdansk",
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Mirko Castagnini",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Federico Magro",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Christian Corradi",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "William Feola",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Adi Kurti",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Samuel John Nwachukwu",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Karlson Nwanege",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Charlys",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Alessandro Pavanati",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Ioan Vermeșan",
+      "clubs": [
+        "Hellas Verona"
+      ]
+    },
+    {
+      "name": "Dominic Vavassori",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Emanuel Gyasi",
+      "clubs": [
+        "Torino FC",
+        "Spezia Calcio",
+        "FC Empoli",
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Manfredi Nespola",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Niccolò Pierozzi",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Patryk Peda",
+      "clubs": [
+        "SPAL",
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Andrea Bozzolan",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Tommaso Cassandro",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Francesco Cutrona",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Francesco Di Bartolo",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Salim Diakité",
+      "clubs": [
+        "Palermo FC",
+        "Zulte Waregem"
+      ]
+    },
+    {
+      "name": "Aljoša Vasić",
+      "clubs": [
+        "Palermo FC"
+      ]
+    },
+    {
+      "name": "Stredair Appuah",
+      "clubs": [
+        "FC Nantes",
+        "Palermo FC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Giacomo Corona",
+      "clubs": [
+        "Palermo FC",
+        "FC Empoli"
+      ]
+    },
+    {
+      "name": "Ousmane Diallo",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "David Romero",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Adrián Bernabé",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Enrico Delprato",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Simone Ghidotti",
+      "clubs": [
+        "Como 1907",
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Nesta Elphege",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Thomás de Martis",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Sascha Britschgi",
+      "clubs": [
+        "FC Luzern",
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Giovanni Daffara",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Christian Ordóñez",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Mariano Troilo",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Edoardo Corvi",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Abdou-Salam Konate",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Dominik Drobnič",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Simone Lontani",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Alessandro Mazzocchi",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Marlon Mena",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Nicolas Trabucchi",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Alessandro Cardinali",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Rachid Kouda",
+      "clubs": [
+        "Spezia Calcio",
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Elia Plicco",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Edoardo Tigani",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Mateusz Kowalski",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Dario Šits",
+      "clubs": [
+        "SPAL",
+        "FC Dordrecht",
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Aymen Zouin",
+      "clubs": [
+        "Parma Calcio 1913"
+      ]
+    },
+    {
+      "name": "Samuele Angori",
+      "clubs": [
+        "FC Empoli",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Simone Canestrelli",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Filippo Pittarello",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Ichem Ferrah",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Andrea Primasso",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Felipe Loyola",
+      "clubs": [
+        "Independiente",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Louis Buffon",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Emanuele Rao",
+      "clubs": [
+        "SPAL",
+        "Pisa Sporting Club",
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "İsak Vural",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Leonardo Loria",
+      "clubs": [
+        "Frosinone Calcio",
+        "Spezia Calcio",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Tommaso Marras",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Francesco Coppola",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Omar Correia",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Stefano Moreo",
+      "clubs": [
+        "Venezia FC",
+        "Palermo FC",
+        "FC Empoli",
+        "Brescia Calcio",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Gabriele Piccinini",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Daniel Denoon",
+      "clubs": [
+        "FC Zürich",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Giuseppe Leone",
+      "clubs": [
+        "Siena FC",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Simone Zanon",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Elia Giani",
+      "clubs": [
+        "Athens Kallithea",
+        "AC Carpi",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Alessandro Confente",
+      "clubs": [
+        "Catania FC",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Matteo Luppichini",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Ante Vuković",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Jeremy Mbambi",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Lorenzo Pucci",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Motiejus Šapola",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Riccardo Bassanini",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Nicholas Bonfanti",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Mert Durmush",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Jan Mlakar",
+      "clubs": [
+        "Venezia FC",
+        "Brighton & Hove Albion",
+        "Queens Park Rangers",
+        "Wigan Athletic",
+        "HNK Hajduk Split",
+        "Amiens SC",
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Adrian Raychev",
+      "clubs": [
+        "Pisa Sporting Club"
+      ]
+    },
+    {
+      "name": "Oscar Massei",
+      "clubs": [
+        "Inter Milan",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Sergio Cervato",
+      "clubs": [
+        "Juventus FC",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Carlo Dell'Omodarme",
+      "clubs": [
+        "Juventus FC",
+        "Como 1907",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Ottavio Bianchi",
+      "clubs": [
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Elio Gustinetti",
+      "clubs": [
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Massimo Pellegrini",
+      "clubs": [
+        "Inter Milan",
+        "AC Monza",
+        "Cagliari Calcio",
+        "SPAL",
+        "FC Empoli"
+      ]
+    },
+    {
+      "name": "Fausto Pari",
+      "clubs": [
+        "Inter Milan",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Massimo Gadda",
+      "clubs": [
+        "AC Milan",
+        "Cesena FC",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Cristian Servidei",
+      "clubs": [
+        "SPAL",
+        "Venezia FC",
+        "AS Roma"
+      ]
+    },
+    {
+      "name": "Francesco Zanoncelli",
+      "clubs": [
+        "FC Empoli",
+        "AC Monza",
+        "Brescia Calcio",
+        "Cagliari Calcio",
+        "Genoa CFC",
+        "FC Crotone",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "David Sesa",
+      "clubs": [
+        "FC Zürich",
+        "Servette FC",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Luis Fernando Centi",
+      "clubs": [
+        "AC Carpi",
+        "Como 1907",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Marco Zamboni",
+      "clubs": [
+        "Juventus FC",
+        "Udinese Calcio",
+        "Spezia Calcio",
+        "FC Crotone",
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Davide Marchini",
+      "clubs": [
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Massimiliano Varricchio",
+      "clubs": [
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Nicolas Giani",
+      "clubs": [
+        "Inter Milan",
+        "SPAL",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Francesco Vicari",
+      "clubs": [
+        "SPAL"
+      ]
+    },
+    {
+      "name": "Lorenzo Dickmann",
+      "clubs": [
+        "SPAL",
+        "Brescia Calcio"
+      ]
+    },
+    {
+      "name": "Costantino Favasuli",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Claudio Pugliese",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Antonio Vergara",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Francisco Baridó",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Milton Pereyra",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Andrea Chiummariello",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Mykyta Melnyk",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Claudio Lieto",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "David Spinelli",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Mathias Ferrante",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Claudio Turi",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Luigi D'Avino",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Christian Garofalo",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Nosa Edward Obaretin",
+      "clubs": [
+        "FC Empoli",
+        "FC Lorient",
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Lorenzo Russo",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Giuseppe Ambrosino",
+      "clubs": [
+        "Como 1907",
+        "Frosinone Calcio",
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Mattia Esposito",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Dinis Rodrigues",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Lorenzo Sgarbi",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Gianluca Vigliotti",
+      "clubs": [
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Diego Maradona",
+      "clubs": [
+        "FC Barcelona",
+        "Sevilla FC",
+        "SSC Napoli"
+      ]
+    },
+    {
+      "name": "Mirco Lipari",
+      "clubs": [
+        "Juventus FC",
+        "Siena FC"
+      ]
+    },
+    {
+      "name": "Simone Rossetti",
+      "clubs": [
+        "Bologna FC",
+        "Siena FC"
+      ]
+    },
+    {
+      "name": "Marcus Danielson",
+      "clubs": [
+        "Siena FC"
+      ]
+    },
+    {
+      "name": "Enrico Zanoni",
+      "clubs": [
+        "Siena FC"
+      ]
+    },
+    {
+      "name": "Moses Odjer",
+      "clubs": [
+        "Siena FC"
+      ]
+    },
+    {
+      "name": "Joselito",
+      "clubs": [
+        "Hellas Verona",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Giuseppe Di Serio",
+      "clubs": [
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Aldo Florenzi",
+      "clubs": [
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Simone Mazzocchi",
+      "clubs": [
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Giuseppe Ciocci",
+      "clubs": [
+        "Cagliari Calcio",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Sergio Kalaj",
+      "clubs": [
+        "SS Lazio",
+        "Frosinone Calcio",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Massimo Zilli",
+      "clubs": [
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "Kevin Cannavò",
+      "clubs": [
+        "Spezia Calcio",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Petko Hristov",
+      "clubs": [
+        "Spezia Calcio",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Manuel Cicconi",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Lorenzo Insigne",
+      "clubs": [
+        "Toronto FC",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Tjaš Begić",
+      "clubs": [
+        "HNK Gorica",
+        "Frosinone Calcio",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Andrey Krastev",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Luca Ravanelli",
+      "clubs": [
+        "Frosinone Calcio",
+        "AC Monza",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Karim Diop",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Lorenzo Mezzotero",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Samuele Massolo",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Gennaro Tutino",
+      "clubs": [
+        "AC Carpi",
+        "Hellas Verona",
+        "FC Empoli",
+        "Palermo FC",
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Tommaso Casalino",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Lorenzo Malanca",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Alessio Papasergio",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Giuseppe Forte",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Víctor Narro",
+      "clubs": [
+        "UC Sampdoria"
+      ]
+    },
+    {
+      "name": "Andrea Fulignati",
+      "clubs": [
+        "Palermo FC",
+        "Cesena FC",
+        "FC Empoli",
+        "SPAL",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "David Stückler",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Simone Lottici Tessadri",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Marco Festa",
+      "clubs": [
+        "FC Crotone",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Tommaso Berti",
+      "clubs": [
+        "Cesena FC",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Fabio Gerli",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Adrian Lickūnas",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Michele Collocolo",
+      "clubs": [
+        "Cesena FC",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Marco Nasti",
+      "clubs": [
+        "AC Milan",
+        "FC Empoli",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Simone Pontisso",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Yuri Rocchetti",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Federico Agazzi",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Dachi Lordkipanidze",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Salvatore Elia",
+      "clubs": [
+        "Benevento Calcio",
+        "Palermo FC",
+        "Spezia Calcio",
+        "FC Empoli",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Emanuele Bassi",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Eddy Cabianca",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Francesco Folino",
+      "clubs": [
+        "FC Empoli",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Michele Paganotti",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Davide Pavesi",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Mattia Scaringi",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Filippo Tosi",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Daniele Triacca",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Giulio Patrignani",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Giacomo Gabbiani",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Federico Ragnoli Galli",
+      "clubs": [
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "Marco Bleve",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Kialonda Gaspar",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Medon Berisha",
+      "clubs": [
+        "BSC Young Boys",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Gaby Jean",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Paco Esteban",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Antonino Gallo",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Olaf Gorter",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Elijah Scott",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Alexandru Borbei",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Plamen Penev",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Hjalte Lærke",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Marlon Ubani",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Santiago Pierotti",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Niko Kovač",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Vernon Addo",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Sebastian Esposito",
+      "clubs": [
+        "Melbourne City FC",
+        "Melbourne Victory",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Christian Lupo",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Jasper Samooja",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Owen Kouassi",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Filip Marchwiński",
+      "clubs": [
+        "Lech Poznan",
+        "Cracovia",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Ed McJannet",
+      "clubs": [
+        "Luton Town",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Rareș Burnete",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Marco Delle Monache",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Miloš Jović",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "Matteo Bachini",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Lorenzo Malagrida",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Tommaso Mancini",
+      "clubs": [
+        "Juventus FC",
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Gregorio Morachioli",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Manuele Malotti",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Nicola Falasco",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "Emmanuel Gyabuaa",
+      "clubs": [
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Daniele Celiento",
+      "clubs": [
+        "Cesena FC",
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Kees de Boer",
+      "clubs": [
+        "Swansea City",
+        "ADO Den Haag",
+        "VVV-Venlo",
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Eugenio D'Ursi",
+      "clubs": [
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Luca Villa",
+      "clubs": [
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Manuel Llano",
+      "clubs": [
+        "CA San Martín (San Juan)",
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Malik Djibril",
+      "clubs": [
+        "FC Barcelona",
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Armando Anastasio",
+      "clubs": [
+        "AC Carpi",
+        "AC Monza",
+        "HNK Rijeka",
+        "Catania FC",
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Pietro Perina",
+      "clubs": [
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "Andrea Ghion",
+      "clubs": [
+        "AC Carpi",
+        "FC Empoli",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Domenico Berardi",
+      "clubs": [
+        "Juventus FC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Daniel Boloca",
+      "clubs": [
+        "Frosinone Calcio",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Giacomo Satalino",
+      "clubs": [
+        "Cesena FC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Fedde Leysen",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Lorenzo Nyarko",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Yeferson Paz",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Luca Lipani",
+      "clubs": [
+        "Genoa CFC",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Giorgio Vezzosi",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Simone Cinquegrano",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Gabriel Kulla",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Edoardo Pieragnolo",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Gioele Zacchi",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Francesco Corradini",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Alessandro Di Bitonto",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Tommaso Macchioni",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Kevin Miranda",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Kevin Bruno",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Justin Kumi",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Kevin Leone",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Patrick Nuamah",
+      "clubs": [
+        "Brescia Calcio",
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Amoako Minta",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Flavio Russo",
+      "clubs": [
+        "US Sassuolo"
+      ]
+    },
+    {
+      "name": "Lamine Fanne",
+      "clubs": [
+        "AIK",
+        "Luton Town",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Andrea Adorante",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Antoine Hainaut",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Þórir Jóhann Helgason",
+      "clubs": [
+        "Eintracht Braunschweig",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Matteo Grandi",
+      "clubs": [
+        "Cesena FC",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Redouane Halhal",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Alessio Pozzi",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Lion Lauberbach",
+      "clubs": [
+        "Holstein Kiel",
+        "Eintracht Braunschweig",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Matteo Dagasso",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Lorenzo Berardi",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Simone Panada",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Kornel Lisman",
+      "clubs": [
+        "Lech Poznan",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Ale Gomes",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Filippo Neri",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Calixte Ligue",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Ahmed Sidibé",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Michael Venturi",
+      "clubs": [
+        "AC Carpi",
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Nicolò Berengo",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Edoardo Mariani",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Federico Tavernaro",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Saad El Haddad",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Marco Ladisa",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Alvin Okoro",
+      "clubs": [
+        "Venezia FC"
+      ]
+    },
+    {
+      "name": "Frank Feller",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Jan Schöppner",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Patrick Mainka",
+      "clubs": [
+        "Arminia Bielefeld",
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Julian Niehues",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Alessandro Vogt",
+      "clubs": [
+        "1. FC Heidenheim",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Luca Kerber",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Oualid Mhamdi",
+      "clubs": [
+        "SpVgg Greuther Fürth",
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Marcel Costly",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Michael Heule",
+      "clubs": [
+        "FC Thun",
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Adam Kölle",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Sirlord Conteh",
+      "clubs": [
+        "FC St. Pauli",
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Thomas Dähne",
+      "clubs": [
+        "Red Bull Salzburg",
+        "RB Leipzig",
+        "Holstein Kiel",
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Paul Tschernuth",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Yannik Wagner",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Felix Mark",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Marko Zrilić",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Luka Janeš",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Nick Rothweiler",
+      "clubs": [
+        "1. FC Heidenheim"
+      ]
+    },
+    {
+      "name": "Joël Schmied",
+      "clubs": [
+        "FC Sion",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Said El Mala",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Reigan Heskey",
+      "clubs": [
+        "Manchester City",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Malek El Mala",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Martin James",
+      "clubs": [
+        "Paris Saint-Germain",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Paul Okon-Engstler",
+      "clubs": [
+        "Sydney FC",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Jan Thielmann",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Gil Neves",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Fayssal Harchaoui",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Matthias Köbbing",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "David Fürst",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Elias Bakatukanda",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Jusuf Gazibegović",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Sturm Graz",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Julian Pauli",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Patrik Kristal",
+      "clubs": [
+        "FC Thun",
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Jaka Čuber Potočnik",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Youssoupha Niang",
+      "clubs": [
+        "1.FC Köln",
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Fynn Schenten",
+      "clubs": [
+        "1.FC Köln"
+      ]
+    },
+    {
+      "name": "Frederik Rønnow",
+      "clubs": [
+        "AC Horsens",
+        "Esbjerg fB",
+        "Eintracht Frankfurt",
+        "FC Schalke 04",
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Andrik Markgraf",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Livan Burcu",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "András Schäfer",
+      "clubs": [
+        "Genoa CFC",
+        "Chievo Verona",
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Leopold Querfeld",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Christopher Trimmel",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Emmanuel Latte Lath",
+      "clubs": [
+        "SPAL",
+        "Middlesbrough FC",
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Matheo Raab",
+      "clubs": [
+        "Hamburger SV",
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Mekhi Gray",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Julien Friedrich",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Linus Güther",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Oluwaseun Ogbemudia",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Leon Prosche",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Tim Blaszczak",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Dmytro Bohdanov",
+      "clubs": [
+        "1.FC Union Berlin"
+      ]
+    },
+    {
+      "name": "Fabio Gruber",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Kaishū Sano",
+      "clubs": [
+        "Kashima Antlers FC",
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Paul Nebel",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Ransford-Yeboah Königsdörffer",
+      "clubs": [
+        "Hamburger SV",
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Stefan Bell",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Otto Ruoppi",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Sōta Kawasaki",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Robin Zentner",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Alynho Haïdara",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Maximilian Kinzig",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Kacper Potulski",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Lasse Rieß",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Kasey Bos",
+      "clubs": [
+        "Melbourne Victory",
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Konstantin Schopp",
+      "clubs": [
+        "Sturm Graz",
+        "1.FSV Mainz 05",
+        "TSV Hartberg"
+      ]
+    },
+    {
+      "name": "Daniel Gleiber",
+      "clubs": [
+        "1.FSV Mainz 05"
+      ]
+    },
+    {
+      "name": "Nelson Weiper",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "Sturm Graz"
+      ]
+    },
+    {
+      "name": "Jonas Kersken",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Felix Hagmann",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Marvin Mehlem",
+      "clubs": [
+        "SV Darmstadt 98",
+        "Hull City",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Henri Koudossou",
+      "clubs": [
+        "FC Augsburg",
+        "ADO Den Haag",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Jannik Rochelt",
+      "clubs": [
+        "Hannover 96",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Lukas Kunze",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Thaddäus-Monju Momuluh",
+      "clubs": [
+        "Hannover 96",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Arne Sicker",
+      "clubs": [
+        "Holstein Kiel",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Leo Oppermann",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Maximilian Großer",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Stefano Russo",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Leon Schneider",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Benjamin Boakye",
+      "clubs": [
+        "VfB Stuttgart",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Marius Wörl",
+      "clubs": [
+        "Hannover 96",
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Till Wegener",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Daniel Richter",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Eyyüb Yasar",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Philip Hildesheim",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Mino Jäger",
+      "clubs": [
+        "Arminia Bielefeld"
+      ]
+    },
+    {
+      "name": "Noah Katterbach",
+      "clubs": [
+        "1.FC Köln",
+        "FC Basel 1893",
+        "Hamburger SV",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Andi Hoti",
+      "clubs": [
+        "Inter Milan",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Frederik Jäkel",
+      "clubs": [
+        "RB Leipzig",
+        "Arminia Bielefeld",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Yann Sturm",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Maximilian Entrup",
+      "clubs": [
+        "LASK",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Jovan Mijatović",
+      "clubs": [
+        "Red Star Belgrade",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Max Marie",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Arlet Junior Zé",
+      "clubs": [
+        "FC Basel 1893",
+        "FC Midtjylland",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Kevin Ehlers",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Fabio Di Michele Sanchez",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Isidoros Koutsidis",
+      "clubs": [
+        "Olympiacos",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Sidi Sané",
+      "clubs": [
+        "FC Schalke 04",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Sanoussy Ba",
+      "clubs": [
+        "RB Leipzig",
+        "LASK",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Tristan Wagner",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Jan Urbich",
+      "clubs": [
+        "Borussia Mönchengladbach",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Lukas Frenkert",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Robin Heußer",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Nick Bodon",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Damjan Kovacevic",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Louis Breunig",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Jona Borsum",
+      "clubs": [
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Noah Atubolu",
+      "clubs": [
+        "SC Freiburg",
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Elias Baum",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Younes Ebnoutalib",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Noël Aséko",
+      "clubs": [
+        "Bayern Munich",
+        "Hannover 96",
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Niko Iličević",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Keita Kosugi",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Ayoube Amaimouni",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Nnamdi Collins",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Malik Pimpong",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Jeremiaha Maluze",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Amil Šiljević",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Kauã Santos",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Fousseny Doumbia",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Ouassim Karada",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Krisztián Lisztes",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Noel Futkeu",
+      "clubs": [
+        "Eintracht Frankfurt",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Alexander Staff",
+      "clubs": [
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "Calvin Brackelmann",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Sima Suso",
+      "clubs": [
+        "Fortuna Düsseldorf",
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Tim Breithaupt",
+      "clubs": [
+        "FC Augsburg",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Robin Fellhauer",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Nediljko Labrović",
+      "clubs": [
+        "HNK Sibenik",
+        "HNK Rijeka",
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Faik Sakar",
+      "clubs": [
+        "RB Leipzig",
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Tim Schnitzer",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Noahkai Banks",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Mahmut Küçükşahin",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Tom Wisbereit",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Marcel Łubik",
+      "clubs": [
+        "Górnik Zabrze",
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Kyliane Dong",
+      "clubs": [
+        "FC Augsburg"
+      ]
+    },
+    {
+      "name": "Georgios Antzoulas",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Seo Jong-min",
+      "clubs": [
+        "FK Haugesund",
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Lars Lokotsch",
+      "clubs": [
+        "Livingston FC",
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Jonas Scholz",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Joseph Ganda",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Linus Rosenlöcher",
+      "clubs": [
+        "Esbjerg fB",
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Jasper Maljojoki",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Nishan Velupillay",
+      "clubs": [
+        "Melbourne Victory",
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Benjamin Kanurić",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Vinko Šapina",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "Hasan Kuruçay",
+      "clubs": [
+        "Konyaspor",
+        "Eintracht Braunschweig",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Ron Schallenberg",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Satoshi Tanaka",
+      "clubs": [
+        "Shonan Bellmare",
+        "Sanfrecce Hiroshima",
+        "Fortuna Düsseldorf",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Emil Højlund",
+      "clubs": [
+        "FC Copenhagen",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Soufiane El-Faouzi",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Vitalie Becker",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Johannes Siebeking",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Luca Vozar",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Mertcan Ayhan",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Dylan Leonard",
+      "clubs": [
+        "Western United FC",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Mika Wallentowitz",
+      "clubs": [
+        "FC Schalke 04",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Christian Gomis",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Peter Remmert",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Jakob Sachse",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Anton Donkor",
+      "clubs": [
+        "Eintracht Braunschweig",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Max Grüger",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Zaid Tchibara",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Steve Noode",
+      "clubs": [
+        "FC Schalke 04",
+        "SCR Altach"
+      ]
+    },
+    {
+      "name": "Ayman Gülaşı",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Norbert Nigbur",
+      "clubs": [
+        "FC Schalke 04",
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Klaus Fichtel",
+      "clubs": [
+        "FC Schalke 04",
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Olaf Thon",
+      "clubs": [
+        "FC Schalke 04",
+        "Bayern Munich"
+      ]
+    },
+    {
+      "name": "Rolf Rüssmann",
+      "clubs": [
+        "FC Schalke 04",
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Fritz Szepan",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Ingo Anderbrügge",
+      "clubs": [
+        "Borussia Dortmund",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Marc Wilmots",
+      "clubs": [
+        "Standard Liège",
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Ernst Kuzorra",
+      "clubs": [
+        "FC Schalke 04"
+      ]
+    },
+    {
+      "name": "Klaus Fischer",
+      "clubs": [
+        "FC Schalke 04",
+        "1.FC Köln",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Reinhard Libuda",
+      "clubs": [
+        "FC Schalke 04",
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Rüdiger Abramczik",
+      "clubs": [
+        "FC Schalke 04",
+        "Borussia Dortmund"
+      ]
+    },
+    {
+      "name": "Ben Voll",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Rony Jansson",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Gísli Þórðarson",
+      "clubs": [
+        "Lech Poznan",
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Marcus Mathisen",
+      "clubs": [
+        "FC Copenhagen",
+        "Halmstads BK",
+        "IK Sirius",
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Lars Ritzka",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Sam Klein",
+      "clubs": [
+        "Brisbane Roar",
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Louis Oppie",
+      "clubs": [
+        "Arminia Bielefeld",
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Ricky-Jade Jones",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Simon Spari",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Marwin Schmitz",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Nick Schmidt",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Jannik Robatsch",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Mamadou Djalo",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Rawley St. John",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Nikky Goguadze",
+      "clubs": [
+        "FC St. Pauli"
+      ]
+    },
+    {
+      "name": "Erik Wekesser",
+      "clubs": [
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Eric Hottmann",
+      "clubs": [
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Tim Oberdorf",
+      "clubs": [
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Filimon Gerezgiher",
+      "clubs": [
+        "FC Emmen",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Fabian Schleusener",
+      "clubs": [
+        "SC Freiburg",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Jordi Paulina",
+      "clubs": [
+        "Borussia Dortmund",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Sascha Risch",
+      "clubs": [
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Hamza Anhari",
+      "clubs": [
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "Bilal Nadir",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Martin Adeline",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Otto Stange",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Kofi Amoako",
+      "clubs": [
+        "VfL Wolfsburg",
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Patson Daka",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Leicester City",
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Louis Lemke",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Joel Agyekum",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Elias Lahti",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Fernando Dickes",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Shafiq Nandja",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Hannes Hermann",
+      "clubs": [
+        "Hamburger SV"
+      ]
+    },
+    {
+      "name": "Daniel Elfadli",
+      "clubs": [
+        "Hamburger SV",
+        "LASK"
+      ]
+    },
+    {
+      "name": "Pascal Loretz",
+      "clubs": [
+        "FC Luzern",
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Boris Tomiak",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Jean Hugonet",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Waniss Taïbi",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Benedikt Pichler",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Franz Roggow",
+      "clubs": [
+        "FC St. Pauli",
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Husseyn Chakroun",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Karl Steinmann",
+      "clubs": [
+        "Hannover 96",
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Bastian Allgeier",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Ime Okon",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Mwisho Mhango",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Noah Engelbreth",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Stefán Teitur Þórðarson",
+      "clubs": [
+        "Silkeborg IF",
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Yunus Ünal",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Lars Gindorf",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Tom Hobrecht",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Hayate Matsuda",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Taycan Etçibaşı",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Kolja Oudenne",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Joschua Siewert",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Alexander Vogel",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Taycan Kurt",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Jonas Schwanke",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "Merlin Sinanović",
+      "clubs": [
+        "Hannover 96"
+      ]
+    },
+    {
+      "name": "William Kokolo",
+      "clubs": [
+        "Sunderland AFC",
+        "Middlesbrough FC",
+        "Hannover 96",
+        "CD Nacional"
+      ]
+    },
+    {
+      "name": "Julian Eitschberger",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Kevin Sessa",
+      "clubs": [
+        "1. FC Heidenheim",
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Konstantin Heide",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Luca Schuler",
+      "clubs": [
+        "FC Schalke 04",
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Boris Mamuzah Lum",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Niklas Hildebrandt",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Niklas Kolbe",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Jelani Ndi",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Jerome Diallo",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Márton Dárdai",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Soufian Gouram",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Mayson Grothe",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Kian Todorović",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Pascal Klemens",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Tim Goller",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Linus Gechter",
+      "clubs": [
+        "Hertha BSC",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "Selim Telib",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Janne Berner",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Lukas Michelbrink",
+      "clubs": [
+        "Hertha BSC"
+      ]
+    },
+    {
+      "name": "Timon Weiner",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Noah Madsen",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Guillermo Balzi",
+      "clubs": [
+        "Levadiakos",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Jonas Therkelsen",
+      "clubs": [
+        "Strømsgodset IF",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Kasper Davidsen",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Andu Kelati",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Phil Harres",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Moritz Reimers",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Lasse Rosenboom",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Taisei Abe",
+      "clubs": [
+        "V-Varen Nagasaki",
+        "FC Luzern",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Tayar Tasdelen",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Hiroki Sekine",
+      "clubs": [
+        "Holstein Kiel",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Lio Rothenhagen",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Caspar Medlin",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Hamza Muqaj",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Ben Schmit",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Jonas Krumrey",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Mladen Cvjetinović",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Eryk Grzywacz",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Luca Prasse",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Toralf Hense",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Aldin Jakupović",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Marcus Müller",
+      "clubs": [
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Lenny Borges",
+      "clubs": [
+        "AC Milan",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Laurynas Kulikas",
+      "clubs": [
+        "FC St. Pauli",
+        "VfL Bochum",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "Abdoul Koné",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Tidiam Gomis",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Benno Kaltefleiter",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Samba Konaté",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Viggo Gebel",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Ota Yamamoto",
+      "clubs": [
+        "RB Leipzig"
+      ]
+    },
+    {
+      "name": "Lucas Höler",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Cyriaque Irié",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Max Rosenfelder",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Rouven Tarnutzer",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Bruno Ogbus",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Louey Ben Farhat",
+      "clubs": [
+        "SC Freiburg"
+      ]
+    },
+    {
+      "name": "Ruben Müller",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Jonah Sticker",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Nyamekye Awortwie-Grant",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Santiago Castañeda",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Luka Đurić",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Nahuel Noll",
+      "clubs": [
+        "SpVgg Greuther Fürth",
+        "Hannover 96",
+        "SC Paderborn 07",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Laurin Curda",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Marvin Pieringer",
+      "clubs": [
+        "FC Schalke 04",
+        "1. FC Heidenheim",
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Albert Millgramm",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Jano ter Horst",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Mattes Hansen",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Niklas Mohr",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Tjark Scheller",
+      "clubs": [
+        "FC St. Pauli",
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Sebastian Klaas",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Laurin Ulrich",
+      "clubs": [
+        "VfB Stuttgart",
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Clemens Lippmann",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Stefano Marino",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Florian Pruhs",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Lasse Eickel",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Marcel Hoffmeier",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Deniz Zeitler",
+      "clubs": [
+        "FC Ingolstadt 04",
+        "SC Paderborn 07",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Timur Gayret",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Tristan Zobel",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Kevin Krumme",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Martin Ens",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Bennit Bröger",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Georg Ermolaev",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Kennedy Okpala",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Marco Wörner",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Maximilian Hippe",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Neo Lima Stacziwa",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Alan Takoudjou Somolinos",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Pedro Restrepo Naranjo",
+      "clubs": [
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Florian Kleinhansl",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Grayson Dettoni",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Luca Marseiler",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Lee Ho-jae",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Nicolas Verkooijen",
+      "clubs": [
+        "PSV Eindhoven",
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Ibrahim El Kadiri",
+      "clubs": [
+        "FC Volendam",
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Meldin Drešković",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Fabian Nürnberger",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Fynn Lakenmacher",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Merveille Papela",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Lars Kehl",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Benedikt Börner",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Christopher Lannert",
+      "clubs": [
+        "Arminia Bielefeld",
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Yosuke Furukawa",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Max Pfister",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Milian Herbst",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Manolo Merx",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Yannik Lührs",
+      "clubs": [
+        "Hannover 96",
+        "Borussia Dortmund",
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Tim Arnold",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Fabio Torsiello",
+      "clubs": [
+        "SV Darmstadt 98"
+      ]
+    },
+    {
+      "name": "Oskar Wójcik",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Kenny Quetant",
+      "clubs": [
+        "Le Havre AC",
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Chuki",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Dariusz Stalmach",
+      "clubs": [
+        "Górnik Zabrze",
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Markus Kolke",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Salim Musah",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Mick Schmetgens",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Darwin Soylu",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Luca Höcker",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Mats Heitmann",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Stefan Smarkalev",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Julián Malatini",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Wesley Adeh",
+      "clubs": [
+        "SV Werder Bremen"
+      ]
+    },
+    {
+      "name": "Florian Hellstern",
+      "clubs": [
+        "SpVgg Greuther Fürth",
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Lukas Reich",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Maxim Dal",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Shinta Appelkamp",
+      "clubs": [
+        "Fortuna Düsseldorf",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Jordan Pefok",
+      "clubs": [
+        "BSC Young Boys",
+        "1.FC Union Berlin",
+        "Borussia Mönchengladbach",
+        "CD Tondela",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Aaron Keller",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Omar Megeed",
+      "clubs": [
+        "Hamburger SV",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Benjamin Zank",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Loris Giandomenico",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Jannis Heuer",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Jannik Dehm",
+      "clubs": [
+        "Holstein Kiel",
+        "Hannover 96",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Doni Arifi",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Krisztián Keresztes",
+      "clubs": [
+        "Dundee United FC",
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Faton Ademi",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Christian Ortag",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Omar Sillah",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Silas Prüfrock",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Mehmet Avlayici",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "David Abrangao",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Noah König",
+      "clubs": [
+        "SpVgg Greuther Fürth"
+      ]
+    },
+    {
+      "name": "Leon Avdullahu",
+      "clubs": [
+        "FC Basel 1893",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Max Moerstedt",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Fisnik Asllani",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Luis Engelns",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Nathan De Cat",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Bambasé Conté",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Alexander Prass",
+      "clubs": [
+        "Sturm Graz",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Natnael Abraha",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Cajetan Lenz",
+      "clubs": [
+        "VfL Bochum",
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Lúkas Petersson",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Luca Philipp",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Emmanuel Chukwu",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Kelven Frees",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Precious Benjamin",
+      "clubs": [
+        "TSG 1899 Hoffenheim"
+      ]
+    },
+    {
+      "name": "Luca Jaquez",
+      "clubs": [
+        "FC Luzern",
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Dženan Pejčinović",
+      "clubs": [
+        "VfL Wolfsburg",
+        "Fortuna Düsseldorf",
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Marius Funk",
+      "clubs": [
+        "SpVgg Greuther Fürth",
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Ertuğrul Yiğit",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Dennis Seimen",
+      "clubs": [
+        "VfB Stuttgart",
+        "SC Paderborn 07"
+      ]
+    },
+    {
+      "name": "Jarzinho Malanga",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Stefan Drljača",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Yanik Spalt",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Mirza Catovic",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Jeremy Arévalo",
+      "clubs": [
+        "VfB Stuttgart"
+      ]
+    },
+    {
+      "name": "Philipp Strompf",
+      "clubs": [
+        "Eintracht Braunschweig",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Yiğit Karademir",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Berkan Taz",
+      "clubs": [
+        "1.FC Union Berlin",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Michael Steinwender",
+      "clubs": [
+        "TSV Hartberg",
+        "IFK Värnamo",
+        "Heart of Midlothian FC",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Tino Casali",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Mats Pannewig",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Babis Drakas",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Mansour Ouro-Tagba",
+      "clubs": [
+        "1.FC Köln",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Leon Sawas",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Tom Meyer",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Luis Pick",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Alessandro Crimaldi",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Hugo Rölleke",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Darnell Keumo",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Kacper Kościerski",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Colin Kleine-Bekel",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Mikkel Rakneberg",
+      "clubs": [
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "Kilian Fischer",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Bence Dárdai",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Pharell Hensel",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Muhammed Damar",
+      "clubs": [
+        "Hannover 96",
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Mathys Angély",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Alessio Besio",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Jakub Zieliński",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Cleiton",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Bruno Katz",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Trevor Benedict",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Till Neininger",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Elia Dittrich",
+      "clubs": [
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "Kévin Danois",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Eros Maddy",
+      "clubs": [
+        "FC Utrecht",
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Telli Siwe",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Christ Makosso",
+      "clubs": [
+        "Luton Town",
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Mamadou Diop",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Lamine Sy",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Ryan Rodin",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Tidiane Devernois",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Wei Xiangxin",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Aristide Zossou",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Clément Akpa",
+      "clubs": [
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Sékou Fofana",
+      "clubs": [
+        "Lausanne-Sport",
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Théo De Percin",
+      "clubs": [
+        "SC Bastia",
+        "AJ Auxerre"
+      ]
+    },
+    {
+      "name": "Enzo Basilio",
+      "clubs": [
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Nehemiah Fernandez",
+      "clubs": [
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Adrian Dabasse",
+      "clubs": [
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Sidi Cissé",
+      "clubs": [
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "El Hadary Raheriniaina",
+      "clubs": [
+        "Paris FC",
+        "Valenciennes FC",
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Thierno Baldé",
+      "clubs": [
+        "Paris Saint-Germain",
+        "Le Havre AC",
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Elydjah Mendy",
+      "clubs": [
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Noam Obougou",
+      "clubs": [
+        "Le Havre AC",
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Nordine Kandil",
+      "clubs": [
+        "Amiens SC",
+        "AS Nancy-Lorraine"
+      ]
+    },
+    {
+      "name": "Mamour Ndiaye",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Strahinja Stojković",
+      "clubs": [
+        "Red Star Belgrade",
+        "AS Saint-Étienne",
+        "OFK Beograd"
+      ]
+    },
+    {
+      "name": "Mahmoud Jaber",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Thierno Ballo",
+      "clubs": [
+        "Chelsea FC",
+        "Wolfsberger AC",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Áron Csongvai",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Tamar Svetlin",
+      "clubs": [
+        "Korona Kielce",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Joshua Duffus",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Sohaib Naïr",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Augustine Boakye",
+      "clubs": [
+        "Wolfsberger AC",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Kévin Pedro",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Nadir El Jamali",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Marten Paalberg",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Lassana Traoré",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Lucas Lavallée",
+      "clubs": [
+        "Paris Saint-Germain",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Luan Gadegbeku",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Igor Miladinović",
+      "clubs": [
+        "FK Cukaricki",
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Djylian N'Guessan",
+      "clubs": [
+        "AS Saint-Étienne",
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Loïc Perrin",
+      "clubs": [
+        "AS Saint-Étienne"
+      ]
+    },
+    {
+      "name": "Enzo Genton",
+      "clubs": [
+        "FC Lorient",
+        "Amiens SC"
+      ]
+    },
+    {
+      "name": "Amine Chabane",
+      "clubs": [
+        "Amiens SC"
+      ]
+    },
+    {
+      "name": "Usman Simbakoli",
+      "clubs": [
+        "Servette FC",
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Prosper Peter",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Harouna Djibirin",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Yassin Belkhdim",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Melvin Zinga",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Joseph Kalulu",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Marius Louër",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Emmanuel Biumla",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Lilian Raolisoa",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Oumar Pona",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Marius Courcoul",
+      "clubs": [
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Lanroy Machine",
+      "clubs": [
+        "SC Heerenveen",
+        "Angers SCO"
+      ]
+    },
+    {
+      "name": "Abdellah Baallal",
+      "clubs": [
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Yuliwes Bellache",
+      "clubs": [
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Luís Semedo",
+      "clubs": [
+        "Sunderland AFC",
+        "Moreirense FC",
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Maïdine Douane",
+      "clubs": [
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Massamba Ndiaye",
+      "clubs": [
+        "Clermont Foot 63"
+      ]
+    },
+    {
+      "name": "Mickaël Barreto",
+      "clubs": [
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Júlio Tavares",
+      "clubs": [
+        "Al-Raed SFC",
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Adel Lembezat",
+      "clubs": [
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Samy Chouchane",
+      "clubs": [
+        "Brighton & Hove Albion",
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Lenny Lacroix",
+      "clubs": [
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Abdelmajid Djae",
+      "clubs": [
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Ange Lago",
+      "clubs": [
+        "Dijon FCO"
+      ]
+    },
+    {
+      "name": "Teddy Bartouche",
+      "clubs": [
+        "FC Lorient",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Erwin Koffi",
+      "clubs": [
+        "FC Lorient",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Dylan Louiserre",
+      "clubs": [
+        "Le Havre AC",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Tuomas Ollila",
+      "clubs": [
+        "Paris FC",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Donatien Gomis",
+      "clubs": [
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Florent Sanchez Da Silva",
+      "clubs": [
+        "FC Volendam",
+        "RWD Molenbeek",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Amine Hemia",
+      "clubs": [
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Teddy Averlant",
+      "clubs": [
+        "Amiens SC",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Amadou Samoura",
+      "clubs": [
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Tom Ducrocq",
+      "clubs": [
+        "SC Bastia",
+        "EA Guingamp"
+      ]
+    },
+    {
+      "name": "Lucas Maronnier",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Anis Ouzenadji",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Paolo Gozzi",
+      "clubs": [
+        "Juventus FC",
+        "Genoa CFC",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Adrien Monfray",
+      "clubs": [
+        "SC Bastia",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Kandet Diawara",
+      "clubs": [
+        "Le Havre AC",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Mouhamed Diop",
+      "clubs": [
+        "Kocaelispor",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Merwan Ifnaoui",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Ismaël Boura",
+      "clubs": [
+        "RC Lens",
+        "Le Havre AC",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Antoine Mille",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Hugo Picard",
+      "clubs": [
+        "Columbus Crew",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Alexandre Phliponeau",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Hillel Konaté",
+      "clubs": [
+        "Valenciennes FC",
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Yvann Titi",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Elijah Odede",
+      "clubs": [
+        "ESTAC Troyes"
+      ]
+    },
+    {
+      "name": "Alec Georgen",
+      "clubs": [
+        "Paris Saint-Germain",
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Noah Cadiou",
+      "clubs": [
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Aiyegun Tosin",
+      "clubs": [
+        "FC Zürich",
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Gabin Bernardeau",
+      "clubs": [
+        "OGC Nice",
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Arsène Kouassi",
+      "clubs": [
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Arthur Avom",
+      "clubs": [
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Panos Katseris",
+      "clubs": [
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "Jonathan Fischer",
+      "clubs": [
+        "Hobro IK",
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Urie-Michel Mboula",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Ibou Sané",
+      "clubs": [
+        "FC Metz",
+        "Amiens SC"
+      ]
+    },
+    {
+      "name": "Giorgi Abuashvili",
+      "clubs": [
+        "Petrolul Ploiesti",
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Pape Moussa Fall",
+      "clubs": [
+        "RFC Seraing",
+        "FC Metz",
+        "RAAL La Louvière"
+      ]
+    },
+    {
+      "name": "Alpha Touré",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Joseph Mangondo",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Believe Munongo",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Morgan Bokele",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Jahyann Pandore",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Nathan Mbala",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Diego Duarte",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Abdourahmane Mbodj",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Ousmane Ba",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Pape Sy",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Idris Mohamed",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Yannis Lawson",
+      "clubs": [
+        "FC Metz"
+      ]
+    },
+    {
+      "name": "Cléo Mélières",
+      "clubs": [
+        "FC Metz",
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Killian Corredor",
+      "clubs": [
+        "SV Darmstadt 98",
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Dehmaine Tabibou",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Louis Leroux",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Wilitty Younoussa",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Ryad Hachem",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Balthazar Pierret",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Sékou Doucouré",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Tylel Tati",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Bahmed Deuff",
+      "clubs": [
+        "FC Nantes"
+      ]
+    },
+    {
+      "name": "Arthur Vitelli",
+      "clubs": [
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Samy Baghdadi",
+      "clubs": [
+        "Valenciennes FC",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Benjamin Gomel",
+      "clubs": [
+        "RC Lens",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Kapit Djoco",
+      "clubs": [
+        "SC Bastia",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Benjaloud Youssouf",
+      "clubs": [
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Victor Lobry",
+      "clubs": [
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Julien Masson",
+      "clubs": [
+        "Valenciennes FC",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Yohan Demoncy",
+      "clubs": [
+        "Paris FC",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Alexandre Pierre",
+      "clubs": [
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Dylan Tavares",
+      "clubs": [
+        "SC Bastia",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Julien Vetro",
+      "clubs": [
+        "Burnley FC",
+        "Dundee FC",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Saad Agouzoul",
+      "clubs": [
+        "Radomiak Radom",
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "Seny Koumbassa",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Alexis Vossah",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Julián Vignolo",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Santiago Hidalgo",
+      "clubs": [
+        "Independiente",
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Christ Tapé",
+      "clubs": [
+        "AC Horsens",
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Jacen Russell-Rowe",
+      "clubs": [
+        "Columbus Crew",
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Niko Sigur",
+      "clubs": [
+        "HNK Hajduk Split",
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Guillaume Restes",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Rafik Messali",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Naïme Saïd Mchindra",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Ilyas Azizi",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Mathys Niflore",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Ismaïl Diallo",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Mathis Saka",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Mário Sauer",
+      "clubs": [
+        "FC Toulouse"
+      ]
+    },
+    {
+      "name": "Yonis Kireh",
+      "clubs": [
+        "GFC Ajaccio"
+      ]
+    },
+    {
+      "name": "Loun Srdanović",
+      "clubs": [
+        "Servette FC",
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Alexsandro",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Hákon Haraldsson",
+      "clubs": [
+        "FC Copenhagen",
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Orlando Gill",
+      "clubs": [
+        "San Lorenzo",
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Başar Önal",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Isaac Cossier",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Soriba Diaoune",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Maxima Goffi",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Ousmane Touré",
+      "clubs": [
+        "Valenciennes FC",
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Ignacio Miramón",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Younes Lachaab",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Angel Yondjo",
+      "clubs": [
+        "LOSC Lille"
+      ]
+    },
+    {
+      "name": "Ayumu Seko",
+      "clubs": [
+        "Cerezo Osaka",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Kaito Mizuta",
+      "clubs": [
+        "1.FSV Mainz 05",
+        "Arminia Bielefeld",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Joan Tincres",
+      "clubs": [
+        "AS Monaco",
+        "Amiens SC",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Djibril Ouziad",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Mbwana Samatta",
+      "clubs": [
+        "Aston Villa",
+        "Fenerbahce",
+        "PAOK",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Simon Ebonog",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Enzo Koffi",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Stephan Zagadou",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Ismaïl Bouneb",
+      "clubs": [
+        "Valenciennes FC",
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Paul Argney",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Lionel Mpasi",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Daren Mosengo",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Élysée Logbo",
+      "clubs": [
+        "Le Havre AC"
+      ]
+    },
+    {
+      "name": "Mathieu Michel",
+      "clubs": [
+        "AC Ajaccio",
+        "Valenciennes FC",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Naoufel El Hannach",
+      "clubs": [
+        "Paris Saint-Germain",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Yaël Mouanga",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Laciné Megnan-Pavé",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Yassine Benhattab",
+      "clubs": [
+        "FC Nantes",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Nicolas Pays",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Nordan Mukiele",
+      "clubs": [
+        "Montpellier HSC",
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Axel Gueguin",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Wilfried Ndollo Bille",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Daylam Meddah",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Yanis Zouaoui",
+      "clubs": [
+        "Le Havre AC",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Simon Ngapandouetnbu",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Théo Chennahi",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Viktor Džodić",
+      "clubs": [
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Everson Junior",
+      "clubs": [
+        "AC Ajaccio",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Junior Ndiaye",
+      "clubs": [
+        "Valenciennes FC",
+        "Montpellier HSC"
+      ]
+    },
+    {
+      "name": "Vincent Pirès",
+      "clubs": [
+        "Paris FC",
+        "Nîmes Olympique"
+      ]
+    },
+    {
+      "name": "Alpha Kubota",
+      "clubs": [
+        "Nîmes Olympique"
+      ]
+    },
+    {
+      "name": "Clément Depres",
+      "clubs": [
+        "Nîmes Olympique"
+      ]
+    },
+    {
+      "name": "Lucas Dias",
+      "clubs": [
+        "Nîmes Olympique"
+      ]
+    },
+    {
+      "name": "Khalis Merah",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Felix Bacher",
+      "clubs": [
+        "WSG Tirol",
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Justin Bengui",
+      "clubs": [
+        "FK Jedinstvo Ub",
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Kaïl Boudache",
+      "clubs": [
+        "OGC Nice",
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Rémi Himbert",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Lassine Diarra",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Mohamed Ouédraogo",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Alejandro Gomes Rodríguez",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Steeve Kango",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Adil Hamdani",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Tiago Gonçalves",
+      "clubs": [
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Enzo Molebe",
+      "clubs": [
+        "Lausanne-Sport",
+        "Olympique Lyon"
+      ]
+    },
+    {
+      "name": "Emerson Palmieri",
+      "clubs": [
+        "Palermo FC",
+        "AS Roma",
+        "Chelsea FC",
+        "West Ham United",
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Jelle Van Neck",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Tadjidine Mmadi",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Keyliane Abdallah",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Nouhoum Kamissoko",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Kelyann Bezahaf",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Théo Vermot",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Alexi Koum",
+      "clubs": [
+        "Valenciennes FC",
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Ugo Kadmiri",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Hilan Hamzaoui",
+      "clubs": [
+        "Olympique Marseille"
+      ]
+    },
+    {
+      "name": "Patrick Zabi",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Lassine Sinayoko",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Obed Nkambadio",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Adama Camara",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Omar Sissoko",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Yoan Koré",
+      "clubs": [
+        "Paris FC",
+        "Amiens SC"
+      ]
+    },
+    {
+      "name": "Samir Chergui",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Mohamed Dao",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Kilian Prouchet",
+      "clubs": [
+        "Paris FC"
+      ]
+    },
+    {
+      "name": "Ismaël Doukouré",
+      "clubs": [
+        "Valenciennes FC",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Sam Amo-Ameyaw",
+      "clubs": [
+        "Southampton FC",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Maxi Oyedele",
+      "clubs": [
+        "Manchester United",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Gio Reyna",
+      "clubs": [
+        "Borussia Dortmund",
+        "Nottingham Forest",
+        "Borussia Mönchengladbach",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Miłosz Piekutowski",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Mateo Del Blanco",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Fábio Baldé",
+      "clubs": [
+        "Hamburger SV",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Omari Kellyman",
+      "clubs": [
+        "Aston Villa",
+        "Chelsea FC",
+        "Cardiff City",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Tyrese Noubissie",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Samir El Mourabet",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Jacobo Ortega",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Oso",
+      "clubs": [
+        "Sevilla FC",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Gessime Yassine",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Hermann Malonga",
+      "clubs": [
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Yoni Gomis",
+      "clubs": [
+        "SK Beveren",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Rayane Messi",
+      "clubs": [
+        "Al-Ettifaq",
+        "RC Strasbourg Alsace"
+      ]
+    },
+    {
+      "name": "Hamidou Makalou",
+      "clubs": [
+        "SC Bastia",
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Anthony Roncaglia",
+      "clubs": [
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Clément Rodrigues",
+      "clubs": [
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Joachim Eickmayer",
+      "clubs": [
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Gustave Akueson",
+      "clubs": [
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Erawan Garnier",
+      "clubs": [
+        "RC Lens",
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Jérémy Sebas",
+      "clubs": [
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "Anthony Mandrea",
+      "clubs": [
+        "OGC Nice",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Diabé Bolumbu",
+      "clubs": [
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Sacha M'Baka",
+      "clubs": [
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Samuel Noireau-Dauriat",
+      "clubs": [
+        "SPAL",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Fahd El Khoumisti",
+      "clubs": [
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Ivann Botella",
+      "clubs": [
+        "RWD Molenbeek",
+        "RAAL La Louvière",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Armand Gnanduillet",
+      "clubs": [
+        "Altay SK",
+        "Heart of Midlothian FC",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Yannis Clementia",
+      "clubs": [
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Mohamed Hafid",
+      "clubs": [
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Parfait Mandanda",
+      "clubs": [
+        "Altay SK",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "Brendan Chardonnet",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Mamady Diambou",
+      "clubs": [
+        "Red Bull Salzburg",
+        "FC Luzern",
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Hugo Magnetti",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Giovani Versini",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Luck Zogbé",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Justin Bourgault",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Mathieu Patouillet",
+      "clubs": [
+        "Al-Hilal",
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Raphaël Le Guen",
+      "clubs": [
+        "Stade Brestois 29"
+      ]
+    },
+    {
+      "name": "Tom Ritzy Hülsmann",
+      "clubs": [
+        "Bayern Munich",
+        "TSV Hartberg",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Yaya Fofana",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Edin Omeragić",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Alexis Sauvage",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Jean-Tryfose Mambuku",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Samuel Kotto",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Daouda Guindo",
+      "clubs": [
+        "Red Bull Salzburg",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Elie N'Tamon",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Armel Zohouri",
+      "clubs": [
+        "OGC Nice",
+        "Lausanne-Sport",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Ike Orazi",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Hafiz Umar Ibrahim",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Ange Martial Tia",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Soumaïla Sylla",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Aleksandr Guboglo",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Adama Bojang",
+      "clubs": [
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Niama Pape Sissoko",
+      "clubs": [
+        "SV Ried",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "Gonçalo Oliveira",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Djaoui Cissé",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Musa Al-Taamari",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Nicolas Lemaître",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Aboubakar Nagida",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Elías Legendre",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Abdelhamid Aït Boudlal",
+      "clubs": [
+        "Amiens SC",
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Henrick Do Marcolino",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Issa Soumaré",
+      "clubs": [
+        "Beerschot AC",
+        "Le Havre AC",
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Mathys Silistrie",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Rayan Bamba",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Lucas Rosier",
+      "clubs": [
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "Killian Le Roy",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Melvin Adrien",
+      "clubs": [
+        "Amiens SC",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Mody Ba",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Amary Coproh",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Kévin Afougou",
+      "clubs": [
+        "Paris FC",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Cyriaque Louvion",
+      "clubs": [
+        "Le Havre AC",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Amadou Aidara",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Achille Truchot",
+      "clubs": [
+        "Yverdon Sport FC",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Jafar Demdoum",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Olivier Lesueur",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Emmanuel Kasong Yav",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Diaguely Dabo",
+      "clubs": [
+        "Kilmarnock FC",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Alexandre Obambot",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Mohamed Maouche",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Yoann Martelat",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Johan Branger",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Yanis Ammour",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Franck Betra",
+      "clubs": [
+        "PAS Giannina",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Wilfried Misiak",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Maguette Samb",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Mody Doucouré",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Mandiaye Sene",
+      "clubs": [
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "Jean Louchet",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Derrick Abu",
+      "clubs": [
+        "Southampton FC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Bryan Passi",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Vincent Marcel",
+      "clubs": [
+        "OGC Nice",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Salif Lebouath",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Samir Belloumou",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Luka Boiteau",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Zaïd Amir",
+      "clubs": [
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Abdelwahed Wahib",
+      "clubs": [
+        "Le Havre AC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "Joan Solà",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Lluís Renyé",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Lisard Peris",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Francisco Bru",
+      "clubs": [
+        "FC Barcelona",
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Manuel Amechazurra",
+      "clubs": [
+        "FC Barcelona",
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Áureo Comamala",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Enric Peris",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Joan Grau",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Arsenio Comamala",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Joan Janer",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Miquel Mensa",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Pere Ponsà",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Romà Forns",
+      "clubs": [
+        "FC Barcelona",
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Charles Wallace",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Percival Wallace",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Carles Comamala",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "George Pattullo",
+      "clubs": [
+        "FC Barcelona",
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Domingo Espelta",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Antonio Llonch",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Pepe Rodríguez",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Domingo Arrillaga",
+      "clubs": [
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Khalid Abu El Haija",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Fabian Menig",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Tobias Heß",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Robin Lisewski",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Can Moustfa",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Marc Kornwachs Barjuan",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "Marko Soldić",
+      "clubs": [
+        "1.FC Nuremberg"
       ]
     }
   ]

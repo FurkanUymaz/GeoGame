@@ -3,172 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoGame - Global Football Tic-Tac-Toe</title>
+  <title>GeoGame - Web GIS Football Tic-Tac-Toe</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top-bar">
-    <div class="brand">GEO<span>GAME</span> XOX</div>
-    <div id="turn-indicator" class="turn-banner">Enter Player Names</div>
-    <div class="controls">
-      <button id="btn-back-names" class="btn secondary hidden">Players</button>
-      <button id="btn-back-map" class="btn secondary hidden">World Map</button>
-      <button id="btn-new-grid" class="btn primary hidden">New Grid</button>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-badge">WEB GIS</span>
+      <h1>GeoGame</h1>
+    </div>
+    <div id="turn-indicator" class="turn-banner">Player Setup</div>
+    <div class="topbar-actions">
+      <button type="button" id="btn-back-names" class="nav-btn hidden">Edit Players</button>
+      <button type="button" id="btn-back-map" class="nav-btn hidden">World Map</button>
+      <button type="button" id="btn-new-grid" class="nav-btn nav-btn-primary hidden">New Grid</button>
     </div>
   </header>
 
-  <main class="stage-container">
+  <main class="app-shell">
     <section id="stage-players" class="stage active">
-      <div class="setup-card">
-        <h1>Player Registration</h1>
-        <p class="setup-sub">Enter player names to open the world map.</p>
-        <div class="input-group">
-          <label for="input-player-x">Player 1 (X)</label>
-          <input type="text" id="input-player-x" placeholder="Player 1 name" maxlength="24" autocomplete="off" />
-        </div>
-        <div class="input-group">
-          <label for="input-player-o">Player 2 (O)</label>
-          <input type="text" id="input-player-o" placeholder="Player 2 name" maxlength="24" autocomplete="off" />
-        </div>
-        <button id="btn-start-map" class="btn primary full-btn">Open World Map</button>
-      </div>
+      <input type="text" id="input-player-x" maxlength="24">
+      <input type="text" id="input-player-o" maxlength="24">
+      <button type="button" id="btn-start-map">Continue to World Map</button>
     </section>
 
     <section id="stage-map" class="stage">
-      <div class="map-stage-card">
-        <div class="map-stage-header">
-          <div>
-            <h2>World Map League Selector</h2>
-            <p id="map-instruction" class="map-sub">Select one country for Horizontal axis and one country for Vertical axis.</p>
-          </div>
-          <div class="selection-pills">
-            <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
-            <span id="pill-vertical" class="pill empty">Vertical: None</span>
-            <button id="btn-clear-countries" class="btn secondary">Reset</button>
-          </div>
+      <div class="map-top-bar">
+        <div class="selection-pills">
+          <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
+          <span id="pill-vertical" class="pill empty">Vertical: None</span>
+          <span id="map-instruction" class="map-instruction">Select one country for Horizontal axis.</span>
         </div>
+        <div class="map-actions">
+          <button type="button" id="btn-clear-countries" class="btn-secondary">Clear</button>
+          <button type="button" id="btn-enter-game" class="btn-primary" disabled>Start Game</button>
+        </div>
+      </div>
 
-        <div class="map-workspace">
+      <div class="map-workspace">
+        <div class="map-canvas-card">
+          <div class="map-controls-bar">
+            <div class="region-presets">
+              <button type="button" class="region-btn active" data-region="world">World</button>
+              <button type="button" class="region-btn" data-region="europe">Europe</button>
+              <button type="button" class="region-btn" data-region="americas">Americas</button>
+              <button type="button" class="region-btn" data-region="asia">Asia &amp; Pacific</button>
+            </div>
+            <div class="zoom-controls">
+              <button type="button" id="btn-zoom-out" class="zoom-btn" title="Zoom Out">-</button>
+              <span id="zoom-level-badge" class="zoom-badge">1.0x</span>
+              <button type="button" id="btn-zoom-in" class="zoom-btn" title="Zoom In">+</button>
+              <button type="button" id="btn-zoom-reset" class="zoom-btn zoom-reset">Reset</button>
+            </div>
+          </div>
+
           <div class="canvas-wrapper">
-            <canvas id="world-canvas" width="1140" height="560"></canvas>
-
-            <div class="map-top-overlays">
-              <div class="region-presets">
-                <button class="region-btn active" data-region="world">World</button>
-                <button class="region-btn" data-region="europe">Europe</button>
-                <button class="region-btn" data-region="americas">Americas</button>
-                <button class="region-btn" data-region="asia">Asia &amp; Oceania</button>
-              </div>
-              <div class="zoom-badge" id="zoom-level-badge">1.0x</div>
-            </div>
-
-            <div class="map-zoom-controls">
-              <button id="btn-zoom-in" class="map-ctrl-btn" title="Zoom In">+</button>
-              <button id="btn-zoom-out" class="map-ctrl-btn" title="Zoom Out">&minus;</button>
-              <button id="btn-zoom-reset" class="map-ctrl-btn reset-view" title="Reset View">&#8634;</button>
-            </div>
-
-            <div class="map-hint-bar">
-              Scroll to zoom &bull; Drag to pan &bull; Click pin or sidebar country to assign axis
-            </div>
-
-            <div id="map-tooltip" class="map-tooltip hidden"></div>
+            <canvas id="world-canvas"></canvas>
+            <div id="map-tooltip" class="hidden"></div>
           </div>
-
-          <aside class="country-drawer">
-            <div class="drawer-header">
-              <span class="drawer-title">Active Leagues</span>
-              <span id="drawer-count" class="drawer-count">0</span>
-            </div>
-            <div class="drawer-search">
-              <input type="text" id="country-search-input" placeholder="Filter country or league..." autocomplete="off" />
-            </div>
-            <ul id="country-list" class="country-list"></ul>
-          </aside>
         </div>
 
-        <div class="map-footer">
-          <div class="legend">
-            <span><i class="dot available"></i>League Country</span>
-            <span><i class="dot horizontal"></i>Horizontal Axis</span>
-            <span><i class="dot vertical"></i>Vertical Axis</span>
+        <aside class="country-drawer">
+          <div class="drawer-header">
+            <h2>Leagues &amp; Nations</h2>
+            <span id="drawer-count" class="drawer-count">0</span>
           </div>
-          <button id="btn-enter-game" class="btn primary" disabled>Start Game</button>
-        </div>
+          <input type="text" id="country-search-input" placeholder="Search country, league, confederation..." autocomplete="off">
+          <ul id="country-list" class="country-list"></ul>
+        </aside>
       </div>
     </section>
 
     <section id="stage-game" class="stage">
       <div class="game-layout">
-        <div class="game-top-meta">
-          <span id="meta-horizontal" class="meta-badge h-badge">Horizontal: -</span>
-          <span id="meta-vertical" class="meta-badge v-badge">Vertical: -</span>
-        </div>
-
-        <div class="scoreboard">
-          <div id="card-x" class="player-card active-x">
-            <div class="player-info">
-              <span class="mark">X</span>
-              <span id="label-player-x" class="label">Player 1</span>
-            </div>
-            <span id="score-x" class="score">0</span>
+        <div class="scoreboard-bar">
+          <div id="card-x" class="player-score-card card-x">
+            <span class="mark-tag mark-x">X</span>
+            <span id="label-player-x" class="player-name">Player 1</span>
+            <span id="score-x" class="player-score">0</span>
           </div>
-          <div class="vs-badge">VS</div>
-          <div id="card-o" class="player-card">
-            <div class="player-info">
-              <span class="mark">O</span>
-              <span id="label-player-o" class="label">Player 2</span>
-            </div>
-            <span id="score-o" class="score">0</span>
+
+          <div class="match-meta-card">
+            <div id="meta-horizontal" class="meta-line">Horizontal: -</div>
+            <div id="meta-vertical" class="meta-line">Vertical: -</div>
+          </div>
+
+          <div id="card-o" class="player-score-card card-o">
+            <span class="mark-tag mark-o">O</span>
+            <span id="label-player-o" class="player-name">Player 2</span>
+            <span id="score-o" class="player-score">0</span>
           </div>
         </div>
 
-        <div id="grid-wrapper" class="grid-wrapper">
-          <div class="corner-cell">
-            <button id="btn-skip" class="btn-small">Pass Turn</button>
+        <div class="board-container">
+          <div class="tic-grid">
+            <div class="grid-corner">GEO<br>GRID</div>
+            <div id="col-0" class="grid-header col-header"></div>
+            <div id="col-1" class="grid-header col-header"></div>
+            <div id="col-2" class="grid-header col-header"></div>
+
+            <div id="row-0" class="grid-header row-header"></div>
+            <button type="button" id="cell-0-0" class="grid-cell" data-r="0" data-c="0"></button>
+            <button type="button" id="cell-0-1" class="grid-cell" data-r="0" data-c="1"></button>
+            <button type="button" id="cell-0-2" class="grid-cell" data-r="0" data-c="2"></button>
+
+            <div id="row-1" class="grid-header row-header"></div>
+            <button type="button" id="cell-1-0" class="grid-cell" data-r="1" data-c="0"></button>
+            <button type="button" id="cell-1-1" class="grid-cell" data-r="1" data-c="1"></button>
+            <button type="button" id="cell-1-2" class="grid-cell" data-r="1" data-c="2"></button>
+
+            <div id="row-2" class="grid-header row-header"></div>
+            <button type="button" id="cell-2-0" class="grid-cell" data-r="2" data-c="0"></button>
+            <button type="button" id="cell-2-1" class="grid-cell" data-r="2" data-c="1"></button>
+            <button type="button" id="cell-2-2" class="grid-cell" data-r="2" data-c="2"></button>
           </div>
-          <div id="col-0" class="header-cell col-header">-</div>
-          <div id="col-1" class="header-cell col-header">-</div>
-          <div id="col-2" class="header-cell col-header">-</div>
-
-          <div id="row-0" class="header-cell row-header">-</div>
-          <div id="cell-0-0" class="grid-cell" data-r="0" data-c="0"></div>
-          <div id="cell-0-1" class="grid-cell" data-r="0" data-c="1"></div>
-          <div id="cell-0-2" class="grid-cell" data-r="0" data-c="2"></div>
-
-          <div id="row-1" class="header-cell row-header">-</div>
-          <div id="cell-1-0" class="grid-cell" data-r="1" data-c="0"></div>
-          <div id="cell-1-1" class="grid-cell" data-r="1" data-c="1"></div>
-          <div id="cell-1-2" class="grid-cell" data-r="1" data-c="2"></div>
-
-          <div id="row-2" class="header-cell row-header">-</div>
-          <div id="cell-2-0" class="grid-cell" data-r="2" data-c="0"></div>
-          <div id="cell-2-1" class="grid-cell" data-r="2" data-c="1"></div>
-          <div id="cell-2-2" class="grid-cell" data-r="2" data-c="2"></div>
         </div>
 
-        <div id="status-message" class="status-message">
-          Click any cell to enter a player who played for both clubs.
+        <div class="game-footer-bar">
+          <div id="status-message" class="status-message">Pick a cell to start.</div>
+          <button type="button" id="btn-skip" class="btn-secondary">Pass Turn</button>
         </div>
       </div>
     </section>
   </main>
 
-  <div id="guess-modal" class="modal hidden">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h3 id="modal-matchup">Club A &times; Club B</h3>
-        <button id="btn-close-modal" class="close-btn">&times;</button>
+  <div id="guess-modal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div>
+          <span class="modal-eyebrow">Club Intersection</span>
+          <h3 id="modal-matchup">Club A &times; Club B</h3>
+        </div>
+        <button type="button" id="btn-close-modal" class="modal-close-btn" aria-label="Close">&times;</button>
       </div>
-      <p class="modal-sub">Enter a player who played for both clubs:</p>
-      <div class="search-box">
-        <input type="text" id="player-input" placeholder="Type player name..." autocomplete="off" />
-        <ul id="autocomplete-list" class="autocomplete-list"></ul>
+      <div class="modal-input-row">
+        <input type="text" id="player-input" placeholder="Type footballer name..." autocomplete="off">
+        <button type="button" id="btn-submit-guess" class="btn-primary">Guess</button>
       </div>
+      <ul id="autocomplete-list" class="autocomplete-list"></ul>
       <div id="modal-feedback" class="modal-feedback"></div>
-      <div class="modal-actions">
-        <button id="btn-submit-guess" class="btn primary">Confirm</button>
-      </div>
     </div>
   </div>
 

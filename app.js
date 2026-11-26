@@ -86,6 +86,176 @@ const TIER2_CLUB_KEYWORDS = [
   "rapid", "sturm", "midtjylland", "brondby"
 ];
 
+const CLUB_ALIASES = {
+  "inter milan": "inter",
+  "internazionale": "inter",
+  "internazionale milano": "inter",
+  "paris saint germain": "psg",
+  "paris sg": "psg",
+  "manchester utd": "manchester united",
+  "man utd": "manchester united",
+  "man city": "manchester city",
+  "tottenham hotspur": "tottenham",
+  "spurs": "tottenham",
+  "wolverhampton wanderers": "wolverhampton",
+  "wolves": "wolverhampton",
+  "athletic bilbao": "athletic club",
+  "atletico de madrid": "atletico madrid",
+  "real betis balompie": "real betis",
+  "bayern munchen": "bayern munich",
+  "borussia monchengladbach": "monchengladbach",
+  "bayer 04 leverkusen": "bayer leverkusen",
+  "dortmund": "borussia dortmund",
+  "bvb": "borussia dortmund",
+  "schalke 04": "schalke",
+  "mainz 05": "mainz",
+  "hannover 96": "hannover",
+  "sporting cp": "sporting",
+  "sporting lisbon": "sporting",
+  "feyenoord rotterdam": "feyenoord",
+  "psv eindhoven": "psv",
+  "istanbul basaksehir": "basaksehir",
+  "brighton hove albion": "brighton",
+  "west bromwich albion": "west brom",
+  "west ham united": "west ham",
+  "newcastle united": "newcastle",
+  "leicester city": "leicester",
+  "leeds united": "leeds"
+};
+
+const SUPPLEMENTAL_PLAYERS = [
+  { name: "Salih Özcan", clubs: ["1. FC Koln", "Holstein Kiel", "Borussia Dortmund", "VfL Wolfsburg", "Besiktas"] },
+  { name: "Aral Şimşir", clubs: ["FC Midtjylland", "Jerv", "Lillestrom"] },
+  { name: "Orkun Kökçü", clubs: ["Feyenoord", "Benfica", "Besiktas"] },
+  { name: "Tammy Abraham", clubs: ["Chelsea", "Bristol City", "Swansea City", "Aston Villa", "Roma", "AC Milan", "Besiktas"] },
+  { name: "Wilfred Ndidi", clubs: ["Genk", "Leicester City", "Besiktas"] },
+  { name: "İlkay Gündoğan", clubs: ["VfL Bochum", "1. FC Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Galatasaray"] },
+  { name: "Leroy Sané", clubs: ["Schalke 04", "Manchester City", "Bayern Munich", "Galatasaray"] },
+  { name: "Uğurcan Çakır", clubs: ["Trabzonspor", "Galatasaray"] },
+  { name: "Kerem Aktürkoğlu", clubs: ["Galatasaray", "Benfica", "Fenerbahce"] },
+  { name: "Jhon Durán", clubs: ["Envigado", "Chicago Fire", "Aston Villa", "Al-Nassr", "Fenerbahce"] },
+  { name: "Nélson Semedo", clubs: ["Benfica", "Barcelona", "Wolverhampton Wanderers", "Fenerbahce"] },
+  { name: "Marco Asensio", clubs: ["Mallorca", "Real Madrid", "Espanyol", "Paris Saint-Germain", "Aston Villa", "Fenerbahce"] },
+  { name: "Ederson", clubs: ["Rio Ave", "Benfica", "Manchester City", "Fenerbahce"] },
+  { name: "Nuri Şahin", clubs: ["Borussia Dortmund", "Feyenoord", "Real Madrid", "Liverpool", "Werder Bremen", "Antalyaspor"] },
+  { name: "Shinji Kagawa", clubs: ["Cerezo Osaka", "Borussia Dortmund", "Manchester United", "Besiktas", "Real Zaragoza", "PAOK", "Sint-Truiden"] },
+  { name: "Emre Can", clubs: ["Bayern Munich", "Bayer Leverkusen", "Liverpool", "Juventus", "Borussia Dortmund"] },
+  { name: "Andreas Beck", clubs: ["VfB Stuttgart", "Hoffenheim", "Besiktas", "Eupen"] },
+  { name: "Fabian Ernst", clubs: ["Hannover 96", "Hamburger SV", "Werder Bremen", "Schalke 04", "Besiktas", "Kasimpasa"] },
+  { name: "Roberto Hilbert", clubs: ["Greuther Furth", "VfB Stuttgart", "Besiktas", "Bayer Leverkusen"] },
+  { name: "Loris Karius", clubs: ["Mainz 05", "Liverpool", "Besiktas", "Union Berlin", "Newcastle United", "Schalke 04"] },
+  { name: "Can Uzun", clubs: ["1. FC Nurnberg", "Eintracht Frankfurt"] },
+  { name: "Kenan Yıldız", clubs: ["Juventus"] },
+  { name: "Deniz Undav", clubs: ["Union Saint-Gilloise", "Brighton & Hove Albion", "VfB Stuttgart"] },
+  { name: "Atakan Karazor", clubs: ["Holstein Kiel", "VfB Stuttgart"] },
+  { name: "Eren Dinkçi", clubs: ["Werder Bremen", "1. FC Heidenheim", "SC Freiburg"] },
+  { name: "Ozan Kabak", clubs: ["Galatasaray", "VfB Stuttgart", "Schalke 04", "Liverpool", "Norwich City", "Hoffenheim"] },
+  { name: "Kaan Ayhan", clubs: ["Schalke 04", "Eintracht Frankfurt", "Fortuna Dusseldorf", "Sassuolo", "Galatasaray"] },
+  { name: "Kerem Demirbay", clubs: ["Hamburger SV", "1. FC Kaiserslautern", "Fortuna Dusseldorf", "Hoffenheim", "Bayer Leverkusen", "Galatasaray"] },
+  { name: "Mert Müldür", clubs: ["Rapid Wien", "Sassuolo", "Fenerbahce"] },
+  { name: "Zeki Çelik", clubs: ["Istanbulspor", "Lille", "Roma"] },
+  { name: "Merih Demiral", clubs: ["Sporting CP", "Alanyaspor", "Sassuolo", "Juventus", "Atalanta", "Al-Ahli"] },
+  { name: "Enes Ünal", clubs: ["Bursaspor", "Manchester City", "Genk", "NAC Breda", "Twente", "Villarreal", "Levante", "Real Valladolid", "Getafe", "Bournemouth"] },
+  { name: "Yusuf Yazıcı", clubs: ["Trabzonspor", "Lille", "CSKA Moscow", "Olympiacos"] },
+  { name: "Okay Yokuşlu", clubs: ["Altay", "Kayserispor", "Trabzonspor", "Celta Vigo", "West Bromwich Albion", "Getafe"] },
+  { name: "Salih Uçan", clubs: ["Bucaspor", "Fenerbahce", "Roma", "Sion", "Empoli", "Alanyaspor", "Besiktas"] },
+  { name: "Semih Kılıçsoy", clubs: ["Besiktas"] },
+  { name: "Barış Alper Yılmaz", clubs: ["Galatasaray"] },
+  { name: "Yunus Akgün", clubs: ["Galatasaray", "Adana Demirspor", "Leicester City"] },
+  { name: "Abdülkerim Bardakcı", clubs: ["Konyaspor", "Galatasaray"] },
+  { name: "İsmail Yüksek", clubs: ["Fenerbahce"] },
+  { name: "Mert Günok", clubs: ["Fenerbahce", "Bursaspor", "Istanbul Basaksehir", "Besiktas"] },
+  { name: "Cenk Tosun", clubs: ["Eintracht Frankfurt", "Gaziantepspor", "Besiktas", "Everton", "Crystal Palace", "Fenerbahce"] },
+  { name: "Rıdvan Yılmaz", clubs: ["Besiktas", "Rangers"] },
+  { name: "Emirhan İlkhan", clubs: ["Besiktas", "Torino", "Sampdoria", "Istanbul Basaksehir"] },
+  { name: "Altay Bayındır", clubs: ["Ankaragucu", "Fenerbahce", "Manchester United"] },
+  { name: "Robin van Persie", clubs: ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahce"] },
+  { name: "Mesut Özil", clubs: ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahce", "Istanbul Basaksehir"] },
+  { name: "Nicolas Anelka", clubs: ["Paris Saint-Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahce", "Bolton Wanderers", "Chelsea", "Juventus", "West Bromwich Albion"] },
+  { name: "Didier Drogba", clubs: ["Marseille", "Chelsea", "Galatasaray"] },
+  { name: "Wesley Sneijder", clubs: ["Ajax", "Real Madrid", "Inter", "Galatasaray", "Nice"] },
+  { name: "Lukas Podolski", clubs: ["1. FC Koln", "Bayern Munich", "Arsenal", "Inter", "Galatasaray", "Antalyaspor"] },
+  { name: "Lucas Torreira", clubs: ["Sampdoria", "Arsenal", "Atletico Madrid", "Fiorentina", "Galatasaray"] },
+  { name: "Mohamed Elneny", clubs: ["Basel", "Arsenal", "Besiktas"] },
+  { name: "Alex Oxlade-Chamberlain", clubs: ["Southampton", "Arsenal", "Liverpool", "Besiktas"] },
+  { name: "Michy Batshuayi", clubs: ["Standard Liege", "Marseille", "Chelsea", "Borussia Dortmund", "Valencia", "Crystal Palace", "Besiktas", "Fenerbahce", "Galatasaray", "Eintracht Frankfurt"] },
+  { name: "Fred", clubs: ["Internacional", "Shakhtar Donetsk", "Manchester United", "Fenerbahce"] },
+  { name: "Edin Džeko", clubs: ["VfL Wolfsburg", "Manchester City", "Roma", "Inter", "Fenerbahce"] },
+  { name: "Dušan Tadić", clubs: ["Groningen", "Twente", "Southampton", "Ajax", "Fenerbahce"] },
+  { name: "Mauro Icardi", clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Galatasaray"] },
+  { name: "Dries Mertens", clubs: ["Utrecht", "PSV", "Napoli", "Galatasaray"] },
+  { name: "Hakim Ziyech", clubs: ["Heerenveen", "Twente", "Ajax", "Chelsea", "Galatasaray"] },
+  { name: "Wilfried Zaha", clubs: ["Crystal Palace", "Manchester United", "Cardiff City", "Galatasaray", "Lyon"] },
+  { name: "Davinson Sánchez", clubs: ["Atletico Nacional", "Ajax", "Tottenham Hotspur", "Galatasaray"] },
+  { name: "Tanguy Ndombele", clubs: ["Amiens", "Lyon", "Tottenham Hotspur", "Napoli", "Galatasaray", "Nice"] },
+  { name: "Serge Aurier", clubs: ["Lens", "Toulouse", "Paris Saint-Germain", "Tottenham Hotspur", "Villarreal", "Nottingham Forest", "Galatasaray"] },
+  { name: "Cédric Bakambu", clubs: ["Sochaux", "Bursaspor", "Villarreal", "Marseille", "Olympiacos", "Galatasaray", "Real Betis"] },
+  { name: "Juan Mata", clubs: ["Valencia", "Chelsea", "Manchester United", "Galatasaray"] },
+  { name: "Victor Osimhen", clubs: ["VfL Wolfsburg", "Charleroi", "Lille", "Napoli", "Galatasaray"] },
+  { name: "Álvaro Morata", clubs: ["Real Madrid", "Juventus", "Chelsea", "Atletico Madrid", "AC Milan", "Galatasaray"] },
+  { name: "Milan Škriniar", clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Fenerbahce"] },
+  { name: "Allan Saint-Maximin", clubs: ["Saint-Etienne", "Monaco", "Nice", "Newcastle United", "Al-Ahli", "Fenerbahce"] },
+  { name: "Sofyan Amrabat", clubs: ["Utrecht", "Feyenoord", "Club Brugge", "Hellas Verona", "Fiorentina", "Manchester United", "Fenerbahce"] },
+  { name: "Çağlar Söyüncü", clubs: ["SC Freiburg", "Leicester City", "Atletico Madrid", "Fenerbahce"] },
+  { name: "Cengiz Ünder", clubs: ["Istanbul Basaksehir", "Roma", "Leicester City", "Marseille", "Fenerbahce"] },
+  { name: "İrfan Can Kahveci", clubs: ["Genclerbirligi", "Istanbul Basaksehir", "Fenerbahce"] },
+  { name: "Ferdi Kadıoğlu", clubs: ["NEC Nijmegen", "Fenerbahce", "Brighton & Hove Albion"] },
+  { name: "Arda Güler", clubs: ["Fenerbahce", "Real Madrid"] },
+  { name: "Kim Min-jae", clubs: ["Fenerbahce", "Napoli", "Bayern Munich"] },
+  { name: "Sacha Boey", clubs: ["Rennes", "Galatasaray", "Bayern Munich"] },
+  { name: "Dirk Kuyt", clubs: ["Utrecht", "Feyenoord", "Liverpool", "Fenerbahce"] },
+  { name: "Roberto Carlos", clubs: ["Palmeiras", "Inter", "Real Madrid", "Fenerbahce", "Corinthians"] },
+  { name: "Raul Meireles", clubs: ["Boavista", "Porto", "Liverpool", "Chelsea", "Fenerbahce"] },
+  { name: "Nani", clubs: ["Sporting CP", "Manchester United", "Fenerbahce", "Valencia", "Lazio"] },
+  { name: "Simon Kjær", clubs: ["Palermo", "VfL Wolfsburg", "Roma", "Lille", "Fenerbahce", "Sevilla", "Atalanta", "AC Milan"] },
+  { name: "Moussa Sow", clubs: ["Rennes", "Lille", "Fenerbahce"] },
+  { name: "Ricardo Quaresma", clubs: ["Sporting CP", "Barcelona", "Porto", "Inter", "Chelsea", "Besiktas"] },
+  { name: "Pepe", clubs: ["Maritimo", "Porto", "Real Madrid", "Besiktas"] },
+  { name: "Guti", clubs: ["Real Madrid", "Besiktas"] },
+  { name: "Anderson Talisca", clubs: ["Bahia", "Benfica", "Besiktas", "Al-Nassr", "Fenerbahce"] },
+  { name: "Vincent Aboubakar", clubs: ["Valenciennes", "Lorient", "Porto", "Besiktas", "Al-Nassr"] },
+  { name: "Gedson Fernandes", clubs: ["Benfica", "Tottenham Hotspur", "Galatasaray", "Rizespor", "Besiktas"] },
+  { name: "Dele Alli", clubs: ["Milton Keynes Dons", "Tottenham Hotspur", "Everton", "Besiktas"] },
+  { name: "Eric Bailly", clubs: ["Espanyol", "Villarreal", "Manchester United", "Marseille", "Besiktas"] },
+  { name: "Rachid Ghezzal", clubs: ["Lyon", "Monaco", "Leicester City", "Fiorentina", "Besiktas", "Rizespor"] },
+  { name: "Ciro Immobile", clubs: ["Juventus", "Torino", "Borussia Dortmund", "Sevilla", "Lazio", "Besiktas"] },
+  { name: "Rafa Silva", clubs: ["Braga", "Benfica", "Besiktas"] },
+  { name: "Mario Gómez", clubs: ["VfB Stuttgart", "Bayern Munich", "Fiorentina", "Besiktas", "VfL Wolfsburg"] },
+  { name: "Demba Ba", clubs: ["Hoffenheim", "West Ham United", "Newcastle United", "Chelsea", "Besiktas", "Istanbul Basaksehir"] },
+  { name: "Atiba Hutchinson", clubs: ["FC Copenhagen", "PSV", "Besiktas"] },
+  { name: "Ryan Babel", clubs: ["Ajax", "Liverpool", "Hoffenheim", "Kasimpasa", "Besiktas", "Fulham", "Galatasaray"] },
+  { name: "Fernando Muslera", clubs: ["Lazio", "Galatasaray"] },
+  { name: "Felipe Melo", clubs: ["Flamengo", "Cruzeiro", "Gremio", "Mallorca", "Racing Santander", "Almeria", "Fiorentina", "Juventus", "Galatasaray", "Inter", "Palmeiras"] },
+  { name: "Radamel Falcao", clubs: ["River Plate", "Porto", "Atletico Madrid", "Monaco", "Manchester United", "Chelsea", "Galatasaray", "Rayo Vallecano"] },
+  { name: "Bafétimbi Gomis", clubs: ["Saint-Etienne", "Lyon", "Swansea City", "Marseille", "Galatasaray", "Al-Hilal"] },
+  { name: "Steven Nzonzi", clubs: ["Blackburn Rovers", "Stoke City", "Sevilla", "Roma", "Galatasaray", "Rennes", "Konyaspor"] },
+  { name: "Mariano", clubs: ["Fluminense", "Bordeaux", "Sevilla", "Galatasaray", "Atletico Mineiro"] },
+  { name: "Fernando Reges", clubs: ["Porto", "Manchester City", "Galatasaray", "Sevilla"] },
+  { name: "Badou Ndiaye", clubs: ["Osmanlispor", "Galatasaray", "Stoke City", "Trabzonspor", "Adana Demirspor"] },
+  { name: "Henry Onyekuru", clubs: ["Eupen", "Anderlecht", "Everton", "Galatasaray", "Monaco", "Olympiacos", "Adana Demirspor"] },
+  { name: "Mario Lemina", clubs: ["Lorient", "Marseille", "Juventus", "Southampton", "Galatasaray", "Fulham", "Nice", "Wolverhampton Wanderers"] },
+  { name: "Gabriel Sara", clubs: ["Sao Paulo", "Norwich City", "Galatasaray"] },
+  { name: "Marek Hamšík", clubs: ["Brescia", "Napoli", "Trabzonspor"] },
+  { name: "Anthony Nwakaeme", clubs: ["Hapoel Beer Sheva", "Trabzonspor"] },
+  { name: "Alexander Sørloth", clubs: ["Rosenborg", "Groningen", "Midtjylland", "Crystal Palace", "Gent", "Trabzonspor", "RB Leipzig", "Real Sociedad", "Villarreal", "Atletico Madrid"] },
+  { name: "Andreas Cornelius", clubs: ["FC Copenhagen", "Cardiff City", "Atalanta", "Bordeaux", "Parma", "Trabzonspor"] },
+  { name: "José Sosa", clubs: ["Estudiantes", "Bayern Munich", "Napoli", "Metalist Kharkiv", "Atletico Madrid", "Besiktas", "AC Milan", "Trabzonspor", "Fenerbahce"] },
+  { name: "Burak Yılmaz", clubs: ["Besiktas", "Fenerbahce", "Trabzonspor", "Galatasaray", "Lille", "Fortuna Sittard"] },
+  { name: "Arda Turan", clubs: ["Galatasaray", "Atletico Madrid", "Barcelona", "Istanbul Basaksehir"] },
+  { name: "Emre Belözoğlu", clubs: ["Galatasaray", "Inter", "Newcastle United", "Fenerbahce", "Atletico Madrid", "Istanbul Basaksehir"] },
+  { name: "Okan Buruk", clubs: ["Galatasaray", "Inter", "Besiktas", "Istanbul Basaksehir"] },
+  { name: "Tugay Kerimoğlu", clubs: ["Galatasaray", "Rangers", "Blackburn Rovers"] },
+  { name: "Hakan Şükür", clubs: ["Galatasaray", "Torino", "Inter", "Parma", "Blackburn Rovers"] },
+  { name: "Nihat Kahveci", clubs: ["Besiktas", "Real Sociedad", "Villarreal"] },
+  { name: "Tuncay Şanlı", clubs: ["Fenerbahce", "Middlesbrough", "Stoke City", "VfL Wolfsburg", "Bolton Wanderers", "Bursaspor"] },
+  { name: "Mehmet Topal", clubs: ["Galatasaray", "Valencia", "Fenerbahce", "Istanbul Basaksehir", "Besiktas"] },
+  { name: "Caner Erkin", clubs: ["CSKA Moscow", "Galatasaray", "Fenerbahce", "Inter", "Besiktas"] },
+  { name: "Gökhan Gönül", clubs: ["Fenerbahce", "Besiktas"] },
+  { name: "Selçuk İnan", clubs: ["Trabzonspor", "Galatasaray"] },
+  { name: "Volkan Demirel", clubs: ["Fenerbahce"] },
+  { name: "Alex de Souza", clubs: ["Coritiba", "Palmeiras", "Cruzeiro", "Parma", "Fenerbahce"] }
+];
+
 const ISO3_TO_GAME_CODES = {
   TUR: ["TUR"],
   GBR: ["ENG", "SCO"],
@@ -829,6 +999,18 @@ const normalizeText = (str) => {
     .trim();
 };
 
+function normalizeClubKey(clubName) {
+  let cleaned = normalizeText(clubName)
+    .replace(/[.'’\-_/()&]/g, " ")
+    .replace(/\b(fc|sk|jk|cf|ac|as|sc|ss|fk|afc|cfc|sfc|bk|ik|if|nk|gnk|hnk|ogc|rc|rcd|cd|ud|sd|ca|se|cr|ec|vfb|vfl|tsg|sv|fsv|bsc|hsv|ksc|msv|rb|spvgg|1)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (CLUB_ALIASES[cleaned]) {
+    cleaned = CLUB_ALIASES[cleaned];
+  }
+  return cleaned;
+}
+
 function hasActiveLeague(code) {
   const info = FOOTBALL_DB.countries[code];
   return Boolean(info && Array.isArray(info.clubs) && info.clubs.length >= 3);
@@ -941,45 +1123,77 @@ async function loadWorldGeoJson() {
   }
 }
 
-const playerIndex = FOOTBALL_DB.players.map((p) => ({
-  name: p.name,
-  normalized: normalizeText(p.name),
-  clubs: new Set(p.clubs)
-}));
-
 const clubToCountryCode = new Map();
+const officialClubByKey = new Map();
 for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
   for (const club of info.clubs) {
-    clubToCountryCode.set(club, code);
+    const key = normalizeClubKey(club);
+    clubToCountryCode.set(key, code);
+    if (!officialClubByKey.has(key)) {
+      officialClubByKey.set(key, club);
+    }
   }
 }
+
+function upsertPlayerEntry(map, displayName, clubs) {
+  const normName = normalizeText(displayName).replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
+  if (!normName) return;
+  if (!map.has(normName)) {
+    map.set(normName, {
+      name: displayName,
+      normalized: normName,
+      clubKeys: new Set(),
+      rawClubs: new Set()
+    });
+  }
+  const entry = map.get(normName);
+  for (const c of clubs || []) {
+    const key = normalizeClubKey(c);
+    if (key) {
+      entry.clubKeys.add(key);
+      entry.rawClubs.add(officialClubByKey.get(key) || c);
+    }
+  }
+}
+
+const mergedPlayersMap = new Map();
+for (const p of FOOTBALL_DB.players) {
+  upsertPlayerEntry(mergedPlayersMap, p.name, p.clubs);
+}
+
+for (const item of SUPPLEMENTAL_PLAYERS) {
+  upsertPlayerEntry(mergedPlayersMap, item.name, item.clubs);
+}
+
+const playerIndex = Array.from(mergedPlayersMap.values());
 
 const clubCrossReach = new Map();
 const clubRosterCount = new Map();
 for (const p of playerIndex) {
-  const playerClubs = Array.from(p.clubs);
+  const playerClubKeys = Array.from(p.clubKeys);
   const distinctCountries = new Set(
-    playerClubs.map((c) => clubToCountryCode.get(c)).filter(Boolean)
+    playerClubKeys.map((k) => clubToCountryCode.get(k)).filter(Boolean)
   ).size;
-  const careerSpan = playerClubs.length;
-  for (const club of playerClubs) {
-    clubRosterCount.set(club, (clubRosterCount.get(club) || 0) + 1);
+  const careerSpan = playerClubKeys.length;
+  for (const key of playerClubKeys) {
+    clubRosterCount.set(key, (clubRosterCount.get(key) || 0) + 1);
     if (distinctCountries > 1) {
-      clubCrossReach.set(club, (clubCrossReach.get(club) || 0) + distinctCountries * 3 + careerSpan);
+      clubCrossReach.set(key, (clubCrossReach.get(key) || 0) + distinctCountries * 3 + careerSpan);
     }
   }
 }
 
 function getClubPrestigeScore(clubName) {
   const norm = normalizeText(clubName);
+  const key = normalizeClubKey(clubName);
   let tierBonus = 0;
   if (TIER1_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
     tierBonus = 2000;
   } else if (TIER2_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
     tierBonus = 900;
   }
-  const reach = clubCrossReach.get(clubName) || 0;
-  const roster = Math.max(1, clubRosterCount.get(clubName) || 1);
+  const reach = clubCrossReach.get(key) || 0;
+  const roster = Math.max(1, clubRosterCount.get(key) || 1);
   const normalizedReach = reach / Math.sqrt(roster);
   return tierBonus + normalizedReach;
 }
@@ -1002,14 +1216,45 @@ for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
 const pairCache = new Map();
 
 function getCommonPlayers(clubA, clubB) {
-  if (clubA === clubB) return [];
-  const key = clubA < clubB ? `${clubA}|||${clubB}` : `${clubB}|||${clubA}`;
-  if (pairCache.has(key)) {
-    return pairCache.get(key);
+  const keyA = normalizeClubKey(clubA);
+  const keyB = normalizeClubKey(clubB);
+  if (!keyA || !keyB || keyA === keyB) return [];
+  const cacheKey = keyA < keyB ? `${keyA}|||${keyB}` : `${keyB}|||${keyA}`;
+  if (pairCache.has(cacheKey)) {
+    return pairCache.get(cacheKey);
   }
-  const matches = playerIndex.filter((p) => p.clubs.has(clubA) && p.clubs.has(clubB));
-  pairCache.set(key, matches);
+  const matches = playerIndex.filter((p) => p.clubKeys.has(keyA) && p.clubKeys.has(keyB));
+  pairCache.set(cacheKey, matches);
   return matches;
+}
+
+function canAssignNineDistinctPlayers(cols, rows, minCommonRequired) {
+  const cells = [];
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const players = getCommonPlayers(rows[r], cols[c]);
+      if (!players || players.length < minCommonRequired) {
+        return false;
+      }
+      cells.push(players.map((p) => p.normalized));
+    }
+  }
+
+  cells.sort((a, b) => a.length - b.length);
+  const used = new Set();
+
+  function matchCell(idx) {
+    if (idx === cells.length) return true;
+    for (const playerKey of cells[idx]) {
+      if (used.has(playerKey)) continue;
+      used.add(playerKey);
+      if (matchCell(idx + 1)) return true;
+      used.delete(playerKey);
+    }
+    return false;
+  }
+
+  return matchCell(0);
 }
 
 function shuffle(arr) {
@@ -1110,11 +1355,13 @@ function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficult
       if (viableRows.length >= 3) {
         const chosenRows = shuffle(viableRows).slice(0, 3);
         const chosenCols = [...pickedCols];
-        candidates.push({
-          cols: chosenCols,
-          rows: chosenRows,
-          score: scoreCandidateGrid(chosenCols, chosenRows, difficulty)
-        });
+        if (canAssignNineDistinctPlayers(chosenCols, chosenRows, minCommonRequired)) {
+          candidates.push({
+            cols: chosenCols,
+            rows: chosenRows,
+            score: scoreCandidateGrid(chosenCols, chosenRows, difficulty)
+          });
+        }
       }
       return;
     }
@@ -2124,7 +2371,7 @@ function renderAutocompleteItems() {
 function handleAutocomplete() {
   const input = document.getElementById("player-input");
   const list = document.getElementById("autocomplete-list");
-  const query = normalizeText(input.value);
+  const query = normalizeText(input.value).replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
   state.autocompleteMatches = [];
   state.highlightedIndex = -1;
   list.innerHTML = "";
@@ -2132,7 +2379,7 @@ function handleAutocomplete() {
   if (query.length < 2) return;
 
   state.autocompleteMatches = playerIndex
-    .filter((p) => p.normalized.includes(query))
+    .filter((p) => !state.usedPlayers.has(p.normalized) && p.normalized.includes(query))
     .slice(0, 8);
 
   if (state.autocompleteMatches.length === 1) {
@@ -2155,7 +2402,7 @@ function submitGuess() {
     document.getElementById("autocomplete-list").innerHTML = "";
   }
 
-  const normalizedGuess = normalizeText(input.value);
+  const normalizedGuess = normalizeText(input.value).replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
   if (!normalizedGuess) return;
 
   const matchedPlayer = playerIndex.find((p) => p.normalized === normalizedGuess);
@@ -2166,7 +2413,7 @@ function submitGuess() {
     return;
   }
 
-  if (state.usedPlayers.has(matchedPlayer.name)) {
+  if (state.usedPlayers.has(matchedPlayer.normalized) || state.usedPlayers.has(matchedPlayer.name)) {
     feedback.textContent = `${matchedPlayer.name} already used in this round.`;
     feedback.className = "modal-feedback error";
     return;
@@ -2174,9 +2421,12 @@ function submitGuess() {
 
   const rowClub = state.rowClubs[r];
   const colClub = state.colClubs[c];
+  const rowClubKey = normalizeClubKey(rowClub);
+  const colClubKey = normalizeClubKey(colClub);
 
-  if (matchedPlayer.clubs.has(rowClub) && matchedPlayer.clubs.has(colClub)) {
+  if (matchedPlayer.clubKeys.has(rowClubKey) && matchedPlayer.clubKeys.has(colClubKey)) {
     state.board[r][c] = { mark: state.turn, player: matchedPlayer.name };
+    state.usedPlayers.add(matchedPlayer.normalized);
     state.usedPlayers.add(matchedPlayer.name);
 
     const cellEl = document.getElementById(`cell-${r}-${c}`);
@@ -2204,12 +2454,15 @@ function submitGuess() {
       switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
     }
   } else {
-    feedback.textContent = `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
+    const knownClubs = Array.from(matchedPlayer.rawClubs).slice(0, 6).join(", ");
+    feedback.textContent = knownClubs
+      ? `${matchedPlayer.name} did not play for both clubs (Listed: ${knownClubs}). Turn lost!`
+      : `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
     feedback.className = "modal-feedback error";
     setTimeout(() => {
       closeGuessModal();
       switchTurn(`Invalid guess (${matchedPlayer.name}). Turn passed.`);
-    }, 950);
+    }, 1150);
   }
 }
 

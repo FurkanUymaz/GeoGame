@@ -1,4 +1,9 @@
+const GITHUB_REPO_URL = "https://github.com/FurkanUymaz/geogame";
+const AI_ACCURACY_RATE = 0.65;
+const AI_PLAYER_NAME = "Atlas AI";
+
 const state = {
+  gameMode: "friend",
   players: {
     X: "Player 1",
     O: "Player 2"
@@ -13,6 +18,8 @@ const state = {
   turn: "X",
   scores: { X: 0, O: 0 },
   gameOver: false,
+  isAiThinking: false,
+  aiTimer: null,
   activeCell: null,
   hoveredCountry: null,
   countryScreenCoords: {},
@@ -536,6 +543,34 @@ const NAME_TO_GAME_CODES = {
   "algeria": ["ALG"]
 };
 
+function ensureGithubTopButton() {
+  const topbar = document.querySelector(".topbar") || document.querySelector("header");
+  if (!topbar) return;
+
+  if (!document.getElementById("btn-github-repo")) {
+    const firstChild = topbar.firstElementChild;
+    const link = document.createElement("a");
+    link.id = "btn-github-repo";
+    link.className = "github-nav-btn";
+    link.href = GITHUB_REPO_URL;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", "Open GitHub Repository");
+    link.innerHTML = `
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+        <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+      <span>GitHub</span>
+    `;
+    if (firstChild && firstChild.id !== "turn-indicator") {
+      firstChild.innerHTML = "";
+      firstChild.appendChild(link);
+    } else {
+      topbar.insertBefore(link, topbar.firstChild);
+    }
+  }
+}
+
 function injectMapLayoutFixes() {
   if (document.getElementById("geogame-layout-fix")) return;
   const style = document.createElement("style");
@@ -574,6 +609,29 @@ function injectMapLayoutFixes() {
       display: block;
       width: 100%;
       max-width: 100%;
+    }
+    .github-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      color: #f1f5f9;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: all 0.18s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+    .github-nav-btn:hover {
+      background: rgba(30, 41, 59, 0.96);
+      border-color: rgba(56, 189, 248, 0.55);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.18);
     }
     #map-tooltip {
       position: fixed;
@@ -707,10 +765,10 @@ function injectMapLayoutFixes() {
     #stage-players.premium-lobby-stage {
       display: none;
       width: 100%;
-      min-height: calc(100vh - 96px);
+      min-height: calc(100vh - 76px);
       align-items: center;
       justify-content: center;
-      padding: 28px 16px;
+      padding: 24px 16px;
     }
     #stage-players.premium-lobby-stage.active {
       display: flex;
@@ -724,13 +782,13 @@ function injectMapLayoutFixes() {
                   linear-gradient(180deg, rgba(13, 22, 39, 0.96), rgba(8, 14, 27, 0.98));
       border: 1px solid rgba(148, 163, 184, 0.18);
       border-radius: 22px;
-      padding: 36px 34px 32px;
+      padding: 32px 34px 30px;
       box-shadow: 0 28px 70px rgba(2, 6, 23, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.06);
       overflow: hidden;
     }
     .premium-lobby-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
     .premium-lobby-eyebrow {
       display: inline-flex;
@@ -745,7 +803,7 @@ function injectMapLayoutFixes() {
       font-weight: 700;
       letter-spacing: 0.11em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .premium-lobby-eyebrow::before {
       content: "";
@@ -756,9 +814,9 @@ function injectMapLayoutFixes() {
       box-shadow: 0 0 8px #34d399;
     }
     .premium-lobby-title {
-      margin: 0 0 8px;
-      font-size: 28px;
-      font-weight: 800;
+      margin: 0 0 6px;
+      font-size: 30px;
+      font-weight: 900;
       letter-spacing: -0.02em;
       color: #f8fafc;
     }
@@ -768,12 +826,77 @@ function injectMapLayoutFixes() {
       color: #94a3b8;
       line-height: 1.5;
     }
+    .mode-selector-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 560px) {
+      .mode-selector-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mode-option-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 15px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      color: #cbd5e1;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .mode-option-card:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(20, 31, 54, 0.85);
+    }
+    .mode-option-card.active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(14, 165, 233, 0.16));
+      border-color: #34d399;
+      box-shadow: 0 10px 24px rgba(16, 185, 129, 0.15);
+      color: #f8fafc;
+    }
+    .mode-option-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: #38bdf8;
+    }
+    .mode-option-card.active .mode-option-icon {
+      background: rgba(16, 185, 129, 0.22);
+      border-color: rgba(52, 211, 153, 0.5);
+      color: #34d399;
+    }
+    .mode-option-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .mode-option-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+    .mode-option-desc {
+      font-size: 12px;
+      color: #94a3b8;
+    }
     .premium-duel-grid {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     @media (max-width: 680px) {
       .premium-duel-grid {
@@ -784,13 +907,13 @@ function injectMapLayoutFixes() {
         justify-content: center;
       }
       .premium-lobby-shell {
-        padding: 26px 20px 24px;
+        padding: 24px 18px 22px;
       }
     }
     .premium-player-card {
       position: relative;
       border-radius: 16px;
-      padding: 20px 18px 18px;
+      padding: 18px 18px 16px;
       background: rgba(15, 23, 42, 0.72);
       border: 1px solid rgba(148, 163, 184, 0.16);
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
@@ -815,7 +938,7 @@ function injectMapLayoutFixes() {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .premium-crest {
       width: 36px;
@@ -842,7 +965,7 @@ function injectMapLayoutFixes() {
     .premium-side-tag {
       font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 4px 9px;
       border-radius: 6px;
@@ -874,6 +997,12 @@ function injectMapLayoutFixes() {
       font-weight: 600 !important;
       outline: none !important;
       transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+    }
+    .premium-player-card input:disabled {
+      opacity: 0.82 !important;
+      color: #fcd34d !important;
+      border-color: rgba(245, 158, 11, 0.35) !important;
+      cursor: not-allowed !important;
     }
     .side-x input:focus {
       border-color: #38bdf8 !important;
@@ -1021,6 +1150,52 @@ function injectMapLayoutFixes() {
   document.head.appendChild(style);
 }
 
+let cachedFriendNameO = "";
+
+function setLobbyGameMode(mode) {
+  state.gameMode = mode === "ai" ? "ai" : "friend";
+  const isAi = state.gameMode === "ai";
+
+  document.querySelectorAll(".mode-option-card").forEach((card) => {
+    card.classList.toggle("active", card.dataset.mode === state.gameMode);
+  });
+
+  const inputO = document.getElementById("input-player-o");
+  const tagO = document.getElementById("lobby-tag-o");
+  const labelO = document.getElementById("lobby-label-o");
+  const swapBtn = document.getElementById("btn-swap-players");
+  const subtitle = document.getElementById("lobby-subtitle-text");
+
+  if (inputO) {
+    if (isAi) {
+      if (inputO.value && inputO.value !== AI_PLAYER_NAME) {
+        cachedFriendNameO = inputO.value;
+      }
+      inputO.value = AI_PLAYER_NAME;
+      inputO.disabled = true;
+    } else {
+      inputO.disabled = false;
+      inputO.value = cachedFriendNameO;
+      inputO.placeholder = "Enter Player O name";
+    }
+  }
+
+  if (tagO) {
+    tagO.textContent = isAi ? "AI Opponent · 65% Hit" : "Second Turn · Away";
+  }
+  if (labelO) {
+    labelO.textContent = isAi ? "AI Opponent" : "Player O Name";
+  }
+  if (swapBtn) {
+    swapBtn.classList.toggle("hidden", isAi);
+  }
+  if (subtitle) {
+    subtitle.textContent = isAi
+      ? "Challenge Atlas AI across any two football leagues on the world map."
+      : "Enter both player names before selecting leagues on the world map.";
+  }
+}
+
 function enhancePlayerLobbyUI() {
   const stagePlayers = document.getElementById("stage-players");
   const inputX = document.getElementById("input-player-x");
@@ -1048,9 +1223,49 @@ function enhancePlayerLobbyUI() {
   header.className = "premium-lobby-header";
   header.innerHTML = `
     <div class="premium-lobby-eyebrow">Matchday Setup</div>
-    <h2 class="premium-lobby-title">Player Lineup</h2>
-    <p class="premium-lobby-subtitle">Enter both player names before selecting leagues on the world map.</p>
+    <h1 class="premium-lobby-title">Atlas XI</h1>
+    <p id="lobby-subtitle-text" class="premium-lobby-subtitle">Enter both player names before selecting leagues on the world map.</p>
   `;
+
+  const modeGrid = document.createElement("div");
+  modeGrid.className = "mode-selector-grid";
+  modeGrid.innerHTML = `
+    <button type="button" class="mode-option-card active" data-mode="friend">
+      <span class="mode-option-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </span>
+      <span class="mode-option-text">
+        <span class="mode-option-title">Play vs Friend</span>
+        <span class="mode-option-desc">Local 1v1 pass-and-play duel</span>
+      </span>
+    </button>
+    <button type="button" class="mode-option-card" data-mode="ai">
+      <span class="mode-option-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="14" rx="3"/>
+          <path d="M8 21h8"/>
+          <path d="M12 18v3"/>
+          <circle cx="9" cy="11" r="1.3" fill="currentColor"/>
+          <circle cx="15" cy="11" r="1.3" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="mode-option-text">
+        <span class="mode-option-title">Play vs AI</span>
+        <span class="mode-option-desc">Solo match against Atlas AI</span>
+      </span>
+    </button>
+  `;
+
+  modeGrid.querySelectorAll(".mode-option-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      setLobbyGameMode(card.dataset.mode);
+    });
+  });
 
   const duelGrid = document.createElement("div");
   duelGrid.className = "premium-duel-grid";
@@ -1073,11 +1288,13 @@ function enhancePlayerLobbyUI() {
   vsBadge.textContent = "VS";
 
   const swapBtn = document.createElement("button");
+  swapBtn.id = "btn-swap-players";
   swapBtn.type = "button";
   swapBtn.className = "premium-swap-btn";
   swapBtn.title = "Swap Player Names";
   swapBtn.textContent = "Swap";
   swapBtn.addEventListener("click", () => {
+    if (state.gameMode === "ai") return;
     const temp = inputX.value;
     inputX.value = inputO.value;
     inputO.value = temp;
@@ -1091,9 +1308,9 @@ function enhancePlayerLobbyUI() {
   cardO.innerHTML = `
     <div class="premium-card-top">
       <span class="premium-crest">O</span>
-      <span class="premium-side-tag">Second Turn · Away</span>
+      <span id="lobby-tag-o" class="premium-side-tag">Second Turn · Away</span>
     </div>
-    <label class="premium-field-label" for="input-player-o">Player O Name</label>
+    <label id="lobby-label-o" class="premium-field-label" for="input-player-o">Player O Name</label>
   `;
   cardO.appendChild(inputO);
 
@@ -1111,6 +1328,7 @@ function enhancePlayerLobbyUI() {
   footer.appendChild(hint);
 
   shell.appendChild(header);
+  shell.appendChild(modeGrid);
   shell.appendChild(duelGrid);
   shell.appendChild(footer);
 
@@ -1120,8 +1338,12 @@ function enhancePlayerLobbyUI() {
   inputX.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      inputO.focus();
-      inputO.select();
+      if (state.gameMode === "ai") {
+        btnStartMap.click();
+      } else {
+        inputO.focus();
+        inputO.select();
+      }
     }
   });
 
@@ -1131,6 +1353,18 @@ function enhancePlayerLobbyUI() {
       btnStartMap.click();
     }
   });
+}
+
+function clearPendingAiTurn() {
+  if (state.aiTimer !== null) {
+    clearTimeout(state.aiTimer);
+    state.aiTimer = null;
+  }
+  state.isAiThinking = false;
+  const btnSkip = document.getElementById("btn-skip");
+  if (btnSkip) {
+    btnSkip.disabled = false;
+  }
 }
 
 function setupEndMatchControls() {
@@ -1193,6 +1427,7 @@ function handleEndMatchRequest() {
 }
 
 function executeEndMatch() {
+  clearPendingAiTurn();
   closeGuessModal();
   state.scores = { X: 0, O: 0 };
   state.gameOver = false;
@@ -1699,6 +1934,10 @@ function mountDifficultyControls() {
 }
 
 function showStage(stageName) {
+  if (stageName !== "game") {
+    clearPendingAiTurn();
+  }
+
   document.querySelectorAll(".stage").forEach((el) => el.classList.remove("active"));
   document.getElementById(`stage-${stageName}`).classList.add("active");
 
@@ -2447,12 +2686,15 @@ function updateCountrySelectionUI() {
 function startNewRound() {
   if (!state.horizontalCountry || !state.verticalCountry) return;
 
+  clearPendingAiTurn();
+
   const hCountry = FOOTBALL_DB.countries[state.horizontalCountry];
   const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
   const diffMeta = DIFFICULTY_META[state.difficulty] || DIFFICULTY_META.medium;
+  const modeTag = state.gameMode === "ai" ? " · vs Atlas AI" : "";
 
   document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
-  document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}`;
+  document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}${modeTag}`;
 
   const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry, state.difficulty);
   if (!grid) {
@@ -2497,7 +2739,7 @@ function updateTurnBanner() {
 
   const activeStage = document.querySelector(".stage.active");
   if (!activeStage || activeStage.id === "stage-players") {
-    banner.textContent = "Player Setup";
+    banner.textContent = "Atlas XI";
     banner.className = "turn-banner";
     return;
   }
@@ -2518,7 +2760,7 @@ function updateTurnBanner() {
     banner.className = "turn-banner turn-x";
     cardX.classList.add("active-x");
   } else {
-    banner.textContent = `${state.players.O} (O) Turn`;
+    banner.textContent = state.gameMode === "ai" ? `${AI_PLAYER_NAME} (O) Thinking...` : `${state.players.O} (O) Turn`;
     banner.className = "turn-banner turn-o";
     cardO.classList.add("active-o");
   }
@@ -2542,6 +2784,9 @@ function inspectCellSolutions(r, c) {
 function openGuessModal(r, c) {
   if (state.gameOver) {
     inspectCellSolutions(r, c);
+    return;
+  }
+  if (state.isAiThinking || (state.gameMode === "ai" && state.turn === "O")) {
     return;
   }
   if (state.board[r][c] !== null) return;
@@ -2638,6 +2883,8 @@ function handleAutocomplete() {
 
 function submitGuess() {
   if (!state.activeCell) return;
+  if (state.isAiThinking || (state.gameMode === "ai" && state.turn === "O")) return;
+
   const { r, c } = state.activeCell;
   const input = document.getElementById("player-input");
   const feedback = document.getElementById("modal-feedback");
@@ -2713,9 +2960,128 @@ function submitGuess() {
   }
 }
 
+function pickWrongPlayerForAi(rowClubKey, colClubKey) {
+  const partialMatches = [];
+  for (const p of playerIndex) {
+    if (state.usedPlayers.has(p.normalized) || state.usedPlayers.has(p.name)) continue;
+    const inRow = p.clubKeys.has(rowClubKey);
+    const inCol = p.clubKeys.has(colClubKey);
+    if (inRow !== inCol) {
+      partialMatches.push(p);
+    }
+  }
+  if (partialMatches.length > 0) {
+    return partialMatches[Math.floor(Math.random() * partialMatches.length)];
+  }
+  for (let i = 0; i < 40; i++) {
+    const candidate = playerIndex[Math.floor(Math.random() * playerIndex.length)];
+    if (!candidate.clubKeys.has(rowClubKey) || !candidate.clubKeys.has(colClubKey)) {
+      return candidate;
+    }
+  }
+  return playerIndex[0];
+}
+
+function scheduleAiTurn(prefixMsg) {
+  clearPendingAiTurn();
+  state.isAiThinking = true;
+
+  const btnSkip = document.getElementById("btn-skip");
+  if (btnSkip) {
+    btnSkip.disabled = true;
+  }
+
+  setStatus(`${prefixMsg} ${AI_PLAYER_NAME} (O) is selecting a block...`);
+
+  const thinkDelay = 950 + Math.floor(Math.random() * 650);
+  state.aiTimer = setTimeout(() => {
+    state.aiTimer = null;
+    state.isAiThinking = false;
+    if (btnSkip) {
+      btnSkip.disabled = false;
+    }
+    executeAiTurn();
+  }, thinkDelay);
+}
+
+function executeAiTurn() {
+  if (state.gameOver || state.gameMode !== "ai" || state.turn !== "O") return;
+
+  const emptyCells = [];
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      if (state.board[r][c] === null) {
+        emptyCells.push({ r, c });
+      }
+    }
+  }
+  if (emptyCells.length === 0) return;
+
+  const chosen = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+  const { r, c } = chosen;
+  const rowClub = state.rowClubs[r];
+  const colClub = state.colClubs[c];
+  const rowClubKey = normalizeClubKey(rowClub);
+  const colClubKey = normalizeClubKey(colClub);
+
+  const validCandidates = getCommonPlayers(rowClub, colClub).filter(
+    (p) => !state.usedPlayers.has(p.normalized) && !state.usedPlayers.has(p.name)
+  );
+
+  const isHit = Math.random() < AI_ACCURACY_RATE && validCandidates.length > 0;
+
+  if (isHit) {
+    const picked = validCandidates[Math.floor(Math.random() * validCandidates.length)];
+    state.board[r][c] = { mark: "O", player: picked.name };
+    state.usedPlayers.add(picked.normalized);
+    state.usedPlayers.add(picked.name);
+
+    const cellEl = document.getElementById(`cell-${r}-${c}`);
+    if (cellEl) {
+      cellEl.classList.add("claimed", "claimed-o");
+      cellEl.innerHTML = `
+        <span class="cell-mark">O</span>
+        <span class="cell-player">${picked.name}</span>
+      `;
+    }
+
+    const winLine = checkWinner("O");
+    if (winLine) {
+      handleWin("O", winLine);
+    } else if (isBoardFull()) {
+      state.gameOver = true;
+      document.getElementById("turn-indicator").textContent = "Draw";
+      const btnNewGrid = document.getElementById("btn-new-grid");
+      if (btnNewGrid) {
+        btnNewGrid.classList.remove("hidden");
+        btnNewGrid.style.display = "";
+      }
+      setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
+    } else {
+      switchTurn(`${AI_PLAYER_NAME} matched ${picked.name} (${rowClub} × ${colClub}).`);
+    }
+  } else {
+    const wrongPlayer = pickWrongPlayerForAi(rowClubKey, colClubKey);
+    const cellEl = document.getElementById(`cell-${r}-${c}`);
+    if (cellEl) {
+      cellEl.classList.add("ai-miss-flash");
+      setTimeout(() => {
+        cellEl.classList.remove("ai-miss-flash");
+      }, 900);
+    }
+    switchTurn(`${AI_PLAYER_NAME} guessed ${wrongPlayer.name} for ${rowClub} × ${colClub} — Missed!`);
+  }
+}
+
 function switchTurn(prefixMsg) {
   state.turn = state.turn === "X" ? "O" : "X";
   updateTurnBanner();
+
+  if (state.gameMode === "ai" && state.turn === "O" && !state.gameOver) {
+    scheduleAiTurn(prefixMsg);
+    return;
+  }
+
   const nextName = state.turn === "X" ? state.players.X : state.players.O;
   setStatus(`${prefixMsg} ${nextName} (${state.turn}) turn.`);
 }
@@ -2746,6 +3112,7 @@ function isBoardFull() {
 }
 
 function handleWin(mark, winLine) {
+  clearPendingAiTurn();
   state.gameOver = true;
   state.scores[mark]++;
   document.getElementById(`score-${mark.toLowerCase()}`).textContent = state.scores[mark];
@@ -2768,6 +3135,7 @@ function handleWin(mark, winLine) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  ensureGithubTopButton();
   injectMapLayoutFixes();
   enhancePlayerLobbyUI();
   setupEndMatchControls();
@@ -2788,7 +3156,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("btn-start-map").addEventListener("click", () => {
     const px = document.getElementById("input-player-x").value.trim() || "Player 1";
-    const po = document.getElementById("input-player-o").value.trim() || "Player 2";
+    const po = state.gameMode === "ai"
+      ? AI_PLAYER_NAME
+      : (document.getElementById("input-player-o").value.trim() || "Player 2");
     state.players.X = px;
     state.players.O = po;
     document.getElementById("label-player-x").textContent = px;
@@ -3025,9 +3395,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-skip").addEventListener("click", () => {
-    if (!state.gameOver) {
-      switchTurn("Turn passed.");
-    }
+    if (state.gameOver || state.isAiThinking) return;
+    if (state.gameMode === "ai" && state.turn === "O") return;
+    switchTurn("Turn passed.");
   });
 
   document.getElementById("btn-close-modal").addEventListener("click", closeGuessModal);

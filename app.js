@@ -5,8 +5,8 @@ const AI_PLAYER_NAME = "Atlas AI";
 const state = {
   gameMode: "friend",
   players: {
-    X: "Player 1",
-    O: "Player 2"
+    X: "",
+    O: ""
   },
   difficulty: "medium",
   horizontalCountry: null,
@@ -543,108 +543,32 @@ const NAME_TO_GAME_CODES = {
   "algeria": ["ALG"]
 };
 
-function ensureGithubTopButton() {
-  const topbar = document.querySelector(".topbar") || document.querySelector("header");
-  if (!topbar) return;
-
-  if (!document.getElementById("btn-github-repo")) {
-    const firstChild = topbar.firstElementChild;
-    const link = document.createElement("a");
-    link.id = "btn-github-repo";
-    link.className = "github-nav-btn";
-    link.href = GITHUB_REPO_URL;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", "Open GitHub Repository");
-    link.innerHTML = `
-      <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
-        <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-      </svg>
-      <span>GitHub</span>
-    `;
-    if (firstChild && firstChild.id !== "turn-indicator") {
-      firstChild.innerHTML = "";
-      firstChild.appendChild(link);
-    } else {
-      topbar.insertBefore(link, topbar.firstChild);
-    }
-  }
-}
-
 function injectMapLayoutFixes() {
   if (document.getElementById("geogame-layout-fix")) return;
   const style = document.createElement("style");
   style.id = "geogame-layout-fix";
   style.textContent = `
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { max-width: 100%; overflow-x: hidden; }
-    #stage-map { width: 100%; max-width: 100%; overflow-x: hidden; }
-    #stage-map > div:first-child,
-    .map-header,
-    .map-top-bar,
-    .selection-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      max-width: 100%;
-    }
-    .map-pills,
-    .selection-pills,
-    .map-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      max-width: 100%;
-    }
-    .pill {
-      white-space: nowrap;
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    #world-canvas {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-    }
-    .github-nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      color: #f1f5f9;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: all 0.18s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    }
-    .github-nav-btn:hover {
-      background: rgba(30, 41, 59, 0.96);
-      border-color: rgba(56, 189, 248, 0.55);
-      color: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(56, 189, 248, 0.18);
-    }
     #map-tooltip {
       position: fixed;
       z-index: 9999;
       pointer-events: none;
-      background: rgba(9, 15, 29, 0.94);
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      border-radius: 8px;
-      padding: 7px 11px;
+      background: rgba(9, 15, 29, 0.95);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      border-radius: 9px;
+      padding: 8px 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
-      color: #f1f5f9;
-      font-size: 12px;
-      line-height: 1.35;
+      color: #f8fafc;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    #map-tooltip .tt-title {
+      font-weight: 800;
+      font-size: 14px;
+      color: #ffffff;
+    }
+    #map-tooltip .tt-league {
+      color: #7dd3fc;
+      font-weight: 600;
     }
     #map-tooltip .tt-clubs {
       border: none !important;
@@ -697,55 +621,16 @@ function injectMapLayoutFixes() {
       white-space: nowrap;
       font-weight: 600;
     }
-    .difficulty-group {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: 8px;
-      padding: 3px;
-      gap: 3px;
-    }
-    .difficulty-btn {
-      border: none;
-      background: transparent;
-      color: #94a3b8;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 5px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .difficulty-btn:hover {
-      color: #f8fafc;
-      background: rgba(148, 163, 184, 0.12);
-    }
-    .difficulty-btn.active[data-diff="easy"] {
-      background: rgba(16, 185, 129, 0.22);
-      color: #34d399;
-      box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.45);
-    }
-    .difficulty-btn.active[data-diff="medium"] {
-      background: rgba(56, 189, 248, 0.22);
-      color: #38bdf8;
-      box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.45);
-    }
-    .difficulty-btn.active[data-diff="hard"] {
-      background: rgba(245, 158, 11, 0.22);
-      color: #fbbf24;
-      box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.45);
-    }
     .btn-end-match {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 14px;
-      border-radius: 8px;
-      border: 1px solid rgba(244, 63, 94, 0.45);
-      background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(159, 18, 57, 0.34));
+      padding: 8px 15px;
+      border-radius: 9px;
+      border: 1px solid rgba(244, 63, 94, 0.48);
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.24), rgba(159, 18, 57, 0.36));
       color: #fda4af;
-      font-size: 12.5px;
+      font-size: 13.5px;
       font-weight: 700;
       letter-spacing: 0.02em;
       cursor: pointer;
@@ -753,7 +638,7 @@ function injectMapLayoutFixes() {
       box-shadow: 0 4px 14px rgba(225, 29, 72, 0.16);
     }
     .btn-end-match:hover {
-      background: linear-gradient(135deg, rgba(225, 29, 72, 0.36), rgba(159, 18, 57, 0.48));
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.38), rgba(159, 18, 57, 0.5));
       border-color: #fb7185;
       color: #ffffff;
       transform: translateY(-1px);
@@ -765,7 +650,7 @@ function injectMapLayoutFixes() {
     #stage-players.premium-lobby-stage {
       display: none;
       width: 100%;
-      min-height: calc(100vh - 76px);
+      min-height: calc(100vh - 64px);
       align-items: center;
       justify-content: center;
       padding: 24px 16px;
@@ -780,7 +665,7 @@ function injectMapLayoutFixes() {
       background: radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.11), transparent 46%),
                   radial-gradient(circle at 82% 100%, rgba(245, 158, 11, 0.11), transparent 46%),
                   linear-gradient(180deg, rgba(13, 22, 39, 0.96), rgba(8, 14, 27, 0.98));
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(148, 163, 184, 0.2);
       border-radius: 22px;
       padding: 32px 34px 30px;
       box-shadow: 0 28px 70px rgba(2, 6, 23, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -799,7 +684,7 @@ function injectMapLayoutFixes() {
       background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(52, 211, 153, 0.28);
       color: #34d399;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 700;
       letter-spacing: 0.11em;
       text-transform: uppercase;
@@ -815,15 +700,15 @@ function injectMapLayoutFixes() {
     }
     .premium-lobby-title {
       margin: 0 0 6px;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 900;
       letter-spacing: -0.02em;
       color: #f8fafc;
     }
     .premium-lobby-subtitle {
       margin: 0;
-      font-size: 14px;
-      color: #94a3b8;
+      font-size: 14.5px;
+      color: #cbd5e1;
       line-height: 1.5;
     }
     .mode-selector-grid {
@@ -844,15 +729,15 @@ function injectMapLayoutFixes() {
       padding: 13px 15px;
       border-radius: 14px;
       background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.2);
+      border: 1px solid rgba(148, 163, 184, 0.22);
       color: #cbd5e1;
       text-align: left;
       cursor: pointer;
       transition: all 0.18s ease;
     }
     .mode-option-card:hover {
-      border-color: rgba(56, 189, 248, 0.45);
-      background: rgba(20, 31, 54, 0.85);
+      border-color: rgba(56, 189, 248, 0.48);
+      background: rgba(20, 31, 54, 0.88);
     }
     .mode-option-card.active {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(14, 165, 233, 0.16));
@@ -869,7 +754,7 @@ function injectMapLayoutFixes() {
       justify-content: center;
       flex-shrink: 0;
       background: rgba(30, 41, 59, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.22);
+      border: 1px solid rgba(148, 163, 184, 0.24);
       color: #38bdf8;
     }
     .mode-option-card.active .mode-option-icon {
@@ -883,12 +768,12 @@ function injectMapLayoutFixes() {
       gap: 2px;
     }
     .mode-option-title {
-      font-size: 14px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #f8fafc;
     }
     .mode-option-desc {
-      font-size: 12px;
+      font-size: 12.5px;
       color: #94a3b8;
     }
     .premium-duel-grid {
@@ -896,7 +781,7 @@ function injectMapLayoutFixes() {
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
     @media (max-width: 680px) {
       .premium-duel-grid {
@@ -915,7 +800,7 @@ function injectMapLayoutFixes() {
       border-radius: 16px;
       padding: 18px 18px 16px;
       background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.16);
+      border: 1px solid rgba(148, 163, 184, 0.18);
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .premium-player-card.side-x {
@@ -963,7 +848,7 @@ function injectMapLayoutFixes() {
       box-shadow: 0 0 18px rgba(245, 158, 11, 0.2);
     }
     .premium-side-tag {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -971,18 +856,18 @@ function injectMapLayoutFixes() {
       border-radius: 6px;
     }
     .side-x .premium-side-tag {
-      background: rgba(56, 189, 248, 0.1);
+      background: rgba(56, 189, 248, 0.12);
       color: #7dd3fc;
     }
     .side-o .premium-side-tag {
-      background: rgba(245, 158, 11, 0.1);
+      background: rgba(245, 158, 11, 0.12);
       color: #fcd34d;
     }
     .premium-field-label {
       display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #94a3b8;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #cbd5e1;
       margin-bottom: 7px;
     }
     .premium-player-card input {
@@ -990,25 +875,29 @@ function injectMapLayoutFixes() {
       height: 44px !important;
       padding: 0 14px !important;
       border-radius: 10px !important;
-      border: 1px solid rgba(148, 163, 184, 0.24) !important;
-      background: rgba(6, 11, 22, 0.85) !important;
+      border: 1px solid rgba(148, 163, 184, 0.26) !important;
+      background: rgba(6, 11, 22, 0.88) !important;
       color: #f8fafc !important;
       font-size: 15px !important;
       font-weight: 600 !important;
       outline: none !important;
       transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
     }
+    .premium-player-card input.input-invalid {
+      border-color: #fb7185 !important;
+      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.22) !important;
+    }
     .premium-player-card input:disabled {
-      opacity: 0.82 !important;
+      opacity: 0.85 !important;
       color: #fcd34d !important;
       border-color: rgba(245, 158, 11, 0.35) !important;
       cursor: not-allowed !important;
     }
-    .side-x input:focus {
+    .side-x input:focus:not(.input-invalid) {
       border-color: #38bdf8 !important;
       box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18) !important;
     }
-    .side-o input:focus {
+    .side-o input:focus:not(.input-invalid) {
       border-color: #f59e0b !important;
       box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18) !important;
     }
@@ -1023,9 +912,9 @@ function injectMapLayoutFixes() {
       height: 40px;
       border-radius: 50%;
       background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.26);
-      color: #cbd5e1;
-      font-size: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      color: #e2e8f0;
+      font-size: 11.5px;
       font-weight: 800;
       letter-spacing: 0.08em;
       display: flex;
@@ -1034,12 +923,12 @@ function injectMapLayoutFixes() {
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
     }
     .premium-swap-btn {
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      background: rgba(30, 41, 59, 0.7);
-      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      background: rgba(30, 41, 59, 0.75);
+      color: #cbd5e1;
       border-radius: 8px;
-      padding: 4px 9px;
-      font-size: 11px;
+      padding: 4px 10px;
+      font-size: 11.5px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.15s ease;
@@ -1048,6 +937,14 @@ function injectMapLayoutFixes() {
       color: #f8fafc;
       border-color: rgba(56, 189, 248, 0.45);
       background: rgba(56, 189, 248, 0.14);
+    }
+    .lobby-validation-msg {
+      min-height: 22px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #fda4af;
     }
     .premium-lobby-footer {
       display: flex;
@@ -1063,7 +960,7 @@ function injectMapLayoutFixes() {
       border-radius: 12px !important;
       background: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%) !important;
       color: #04101d !important;
-      font-size: 15px !important;
+      font-size: 15.5px !important;
       font-weight: 800 !important;
       letter-spacing: 0.02em !important;
       cursor: pointer !important;
@@ -1076,8 +973,8 @@ function injectMapLayoutFixes() {
       box-shadow: 0 16px 34px rgba(14, 165, 233, 0.34) !important;
     }
     .premium-lobby-hint {
-      font-size: 12px;
-      color: #64748b;
+      font-size: 12.5px;
+      color: #94a3b8;
     }
     .end-match-overlay {
       position: fixed;
@@ -1124,7 +1021,7 @@ function injectMapLayoutFixes() {
       flex: 1;
       height: 40px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.15s ease;
@@ -1152,9 +1049,80 @@ function injectMapLayoutFixes() {
 
 let cachedFriendNameO = "";
 
+function clearLobbyValidationState() {
+  const inputX = document.getElementById("input-player-x");
+  const inputO = document.getElementById("input-player-o");
+  const msgEl = document.getElementById("lobby-validation-msg");
+  if (inputX) inputX.classList.remove("input-invalid");
+  if (inputO) inputO.classList.remove("input-invalid");
+  if (msgEl) msgEl.textContent = "";
+}
+
+function validatePlayerLineup() {
+  const inputX = document.getElementById("input-player-x");
+  const inputO = document.getElementById("input-player-o");
+  const msgEl = document.getElementById("lobby-validation-msg");
+
+  clearLobbyValidationState();
+
+  const rawX = inputX ? inputX.value.trim() : "";
+  const rawO = inputO ? inputO.value.trim() : "";
+
+  if (!rawX) {
+    if (inputX) {
+      inputX.classList.add("input-invalid");
+      inputX.focus();
+    }
+    if (msgEl) {
+      msgEl.textContent = "Please enter a username for Player X.";
+    }
+    return false;
+  }
+
+  if (state.gameMode === "friend") {
+    if (!rawO) {
+      if (inputO) {
+        inputO.classList.add("input-invalid");
+        inputO.focus();
+      }
+      if (msgEl) {
+        msgEl.textContent = "Please enter a username for Player O.";
+      }
+      return false;
+    }
+
+    if (normalizeText(rawX) === normalizeText(rawO)) {
+      if (inputX) inputX.classList.add("input-invalid");
+      if (inputO) {
+        inputO.classList.add("input-invalid");
+        inputO.focus();
+      }
+      if (msgEl) {
+        msgEl.textContent = "Player X and Player O must have different usernames.";
+      }
+      return false;
+    }
+  } else {
+    if (normalizeText(rawX) === normalizeText(AI_PLAYER_NAME)) {
+      if (inputX) {
+        inputX.classList.add("input-invalid");
+        inputX.focus();
+      }
+      if (msgEl) {
+        msgEl.textContent = "Player X username cannot match Atlas AI.";
+      }
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function setLobbyGameMode(mode) {
   state.gameMode = mode === "ai" ? "ai" : "friend";
   const isAi = state.gameMode === "ai";
+
+  clearLobbyValidationState();
 
   document.querySelectorAll(".mode-option-card").forEach((card) => {
     card.classList.toggle("active", card.dataset.mode === state.gameMode);
@@ -1191,8 +1159,8 @@ function setLobbyGameMode(mode) {
   }
   if (subtitle) {
     subtitle.textContent = isAi
-      ? "Challenge Atlas AI across any two football leagues on the world map."
-      : "Enter both player names before selecting leagues on the world map.";
+      ? "Enter your unique username before choosing leagues on the world map."
+      : "Enter two distinct usernames before selecting leagues on the world map.";
   }
 }
 
@@ -1224,7 +1192,7 @@ function enhancePlayerLobbyUI() {
   header.innerHTML = `
     <div class="premium-lobby-eyebrow">Matchday Setup</div>
     <h1 class="premium-lobby-title">Atlas XI</h1>
-    <p id="lobby-subtitle-text" class="premium-lobby-subtitle">Enter both player names before selecting leagues on the world map.</p>
+    <p id="lobby-subtitle-text" class="premium-lobby-subtitle">Enter two distinct usernames before selecting leagues on the world map.</p>
   `;
 
   const modeGrid = document.createElement("div");
@@ -1295,6 +1263,7 @@ function enhancePlayerLobbyUI() {
   swapBtn.textContent = "Swap";
   swapBtn.addEventListener("click", () => {
     if (state.gameMode === "ai") return;
+    clearLobbyValidationState();
     const temp = inputX.value;
     inputX.value = inputO.value;
     inputO.value = temp;
@@ -1318,31 +1287,41 @@ function enhancePlayerLobbyUI() {
   duelGrid.appendChild(vsCol);
   duelGrid.appendChild(cardO);
 
+  const validationMsg = document.createElement("div");
+  validationMsg.id = "lobby-validation-msg";
+  validationMsg.className = "lobby-validation-msg";
+  validationMsg.setAttribute("role", "alert");
+
   const footer = document.createElement("div");
   footer.className = "premium-lobby-footer";
   footer.appendChild(btnStartMap);
 
   const hint = document.createElement("div");
   hint.className = "premium-lobby-hint";
-  hint.textContent = "Press Enter to advance";
+  hint.textContent = "Unique usernames required · Press Enter to advance";
   footer.appendChild(hint);
 
   shell.appendChild(header);
   shell.appendChild(modeGrid);
   shell.appendChild(duelGrid);
+  shell.appendChild(validationMsg);
   shell.appendChild(footer);
 
   stagePlayers.innerHTML = "";
   stagePlayers.appendChild(shell);
+
+  inputX.addEventListener("input", clearLobbyValidationState);
+  inputO.addEventListener("input", clearLobbyValidationState);
 
   inputX.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       if (state.gameMode === "ai") {
         btnStartMap.click();
-      } else {
+      } else if (!inputO.value.trim()) {
         inputO.focus();
-        inputO.select();
+      } else {
+        btnStartMap.click();
       }
     }
   });
@@ -1898,39 +1877,10 @@ function setDifficulty(newDiff) {
   }
 }
 
-function createDifficultySelectorElement() {
-  const wrapper = document.createElement("div");
-  wrapper.className = "difficulty-group";
-  wrapper.setAttribute("role", "group");
-  wrapper.setAttribute("aria-label", "Club Difficulty");
-
-  Object.entries(DIFFICULTY_META).forEach(([key, meta]) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "difficulty-btn";
-    btn.dataset.diff = key;
-    btn.textContent = meta.label;
-    btn.title = meta.desc;
-    if (key === state.difficulty) {
-      btn.classList.add("active");
-    }
-    btn.addEventListener("click", () => setDifficulty(key));
-    wrapper.appendChild(btn);
+function bindDifficultyControls() {
+  document.querySelectorAll("#difficulty-selector .difficulty-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setDifficulty(btn.dataset.diff));
   });
-
-  return wrapper;
-}
-
-function mountDifficultyControls() {
-  const btnEnterGame = document.getElementById("btn-enter-game");
-  if (btnEnterGame && btnEnterGame.parentElement && !btnEnterGame.parentElement.querySelector(".difficulty-group")) {
-    btnEnterGame.parentElement.insertBefore(createDifficultySelectorElement(), btnEnterGame);
-  }
-
-  const btnNewGrid = document.getElementById("btn-new-grid");
-  if (btnNewGrid && btnNewGrid.parentElement && !btnNewGrid.parentElement.querySelector(".difficulty-group")) {
-    btnNewGrid.parentElement.insertBefore(createDifficultySelectorElement(), btnNewGrid);
-  }
 }
 
 function showStage(stageName) {
@@ -1961,9 +1911,11 @@ function showStage(stageName) {
     btnBackNames.classList.remove("hidden");
     btnBackNames.style.display = "";
     renderCountrySidebar();
-    syncCanvasResolution();
-    state.mapView.needsRender = true;
-    drawWorldMap();
+    requestAnimationFrame(() => {
+      syncCanvasResolution();
+      state.mapView.needsRender = true;
+      drawWorldMap();
+    });
   } else if (stageName === "game") {
     window.history.pushState({ inGame: true }, "");
     if (btnEndMatch) {
@@ -2175,7 +2127,7 @@ function paintCountryPolygon(ctx, rings, gameCodes, w, h) {
   ctx.stroke();
 }
 
-function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor, fontSize = 10.5) {
+function drawRoundedLabel(ctx, text, x, y, bgColor, borderColor, textColor, fontSize = 11) {
   ctx.font = `700 ${fontSize}px -apple-system, BlinkMacSystemFont, sans-serif`;
   const metrics = ctx.measureText(text);
   const padX = 6;
@@ -2217,6 +2169,7 @@ function drawWorldMap() {
   const ctx = canvas.getContext("2d");
   const dpr = canvas._dpr || 1;
   const { w, h } = getLogicalCanvasSize(canvas);
+  if (w === 0 || h === 0) return;
   const z = state.mapView.zoom;
 
   ctx.save();
@@ -2394,8 +2347,8 @@ function drawWorldMap() {
     const { info, pt, baseRadius, isH, isV, isHover } = node;
     const isPriority = isH || isV || isHover;
     const labelText = isH ? `H · ${info.name}` : isV ? `V · ${info.name}` : info.name;
-    const fontSize = isPriority ? 11 : 10;
-    const estWidth = labelText.length * 6.1 + 12;
+    const fontSize = isPriority ? 11.5 : 10.5;
+    const estWidth = labelText.length * 6.3 + 12;
     const estHeight = fontSize + 7;
 
     const candidates = [
@@ -2739,7 +2692,7 @@ function updateTurnBanner() {
 
   const activeStage = document.querySelector(".stage.active");
   if (!activeStage || activeStage.id === "stage-players") {
-    banner.textContent = "Atlas XI";
+    banner.textContent = "Player Setup";
     banner.className = "turn-banner";
     return;
   }
@@ -3135,16 +3088,27 @@ function handleWin(mark, winLine) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  ensureGithubTopButton();
   injectMapLayoutFixes();
   enhancePlayerLobbyUI();
   setupEndMatchControls();
-  mountDifficultyControls();
+  bindDifficultyControls();
   loadWorldGeoJson();
   renderCountrySidebar();
   syncCanvasResolution();
   drawWorldMap();
   requestAnimationFrame(animateMapLoop);
+
+  const canvasPanel = document.querySelector(".map-canvas-panel");
+  if (canvasPanel && typeof ResizeObserver !== "undefined") {
+    const observer = new ResizeObserver(() => {
+      syncCanvasResolution();
+      const activeStage = document.querySelector(".stage.active");
+      if (activeStage && activeStage.id === "stage-map") {
+        drawWorldMap();
+      }
+    });
+    observer.observe(canvasPanel);
+  }
 
   window.addEventListener("resize", () => {
     syncCanvasResolution();
@@ -3155,10 +3119,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("btn-start-map").addEventListener("click", () => {
-    const px = document.getElementById("input-player-x").value.trim() || "Player 1";
+    if (!validatePlayerLineup()) return;
+
+    const px = document.getElementById("input-player-x").value.trim();
     const po = state.gameMode === "ai"
       ? AI_PLAYER_NAME
-      : (document.getElementById("input-player-o").value.trim() || "Player 2");
+      : document.getElementById("input-player-o").value.trim();
     state.players.X = px;
     state.players.O = po;
     document.getElementById("label-player-x").textContent = px;
@@ -3340,9 +3306,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     canvas.classList.toggle("hovering-pin", Boolean(code));
 
-    const ttWidth = 210;
+    const ttWidth = 220;
     const posX = e.clientX + ttWidth > window.innerWidth ? e.clientX - ttWidth : e.clientX + 14;
-    const posY = e.clientY + 68 > window.innerHeight ? e.clientY - 56 : e.clientY + 14;
+    const posY = e.clientY + 72 > window.innerHeight ? e.clientY - 60 : e.clientY + 14;
 
     if (code) {
       const info = FOOTBALL_DB.countries[code];

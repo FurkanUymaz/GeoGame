@@ -43,6 +43,188 @@ const state = {
   }
 };
 
+const AVATAR_STORAGE_KEY = "geogame_player_avatars_v1";
+const AVATAR_CACHE_LIMIT = 1500;
+const playerAvatarCache = new Map();
+let avatarDebounceTimer = null;
+
+function loadAvatarCache() {
+  try {
+    const raw = localStorage.getItem(AVATAR_STORAGE_KEY);
+    if (!raw) return;
+    const entries = JSON.parse(raw);
+    if (Array.isArray(entries)) {
+      entries.forEach(([key, val]) => {
+        if (typeof key === "string") {
+          playerAvatarCache.set(key, val);
+        }
+      });
+    }
+  } catch (err) {
+  }
+}
+
+function persistAvatarCache() {
+  try {
+    while (playerAvatarCache.size > AVATAR_CACHE_LIMIT) {
+      const oldestKey = playerAvatarCache.keys().next().value;
+      playerAvatarCache.delete(oldestKey);
+    }
+    localStorage.setItem(AVATAR_STORAGE_KEY, JSON.stringify(Array.from(playerAvatarCache.entries())));
+  } catch (err) {
+  }
+}
+
+function getPlayerInitials(playerName) {
+  const parts = String(playerName || "").trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "?";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
+function applyAvatarImage(wrapElement, imageUrl, playerName) {
+  if (!wrapElement || !imageUrl) return;
+  const img = document.createElement("img");
+  img.className = "player-avatar-img";
+  img.src = imageUrl;
+  img.alt = playerName;
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.onerror = () => {
+    playerAvatarCache.set(playerName, null);
+    persistAvatarCache();
+    wrapElement.textContent = getPlayerInitials(playerName);
+  };
+  wrapElement.textContent = "";
+  wrapElement.appendChild(img);
+}
+
+function createPlayerAvatarElement(playerName) {
+  const wrap = document.createElement("span");
+  wrap.className = "player-avatar-wrap";
+  wrap.dataset.avatarPlayer = playerName;
+  const cachedUrl = playerAvatarCache.get(playerName);
+  if (cachedUrl) {
+    applyAvatarImage(wrap, cachedUrl, playerName);
+  } else {
+    wrap.textContent = getPlayerInitials(playerName);
+  }
+  return wrap;
+}
+
+async function fetchSearchAvatarFromWiki(lang, queryText) {
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    origin: "*",
+    generator: "search",
+    gsrsearch: queryText,
+    gsrlimit: "1",
+    prop: "pageimages",
+    piprop: "thumbnail",
+    pithumbsize: "96"
+  });
+  try {
+    const response = await fetch(`https://${lang}.wikipedia.org/w/api.php?${params.toString()}`);
+    if (!response.ok) return null;
+    const data = await response.json();
+    const pages = Object.values(data?.query?.pages || {});
+    return pages[0]?.thumbnail?.source || null;
+  } catch (err) {
+    return null;
+  }
+}
+
+async function fetchFallbackFootballerAvatar(playerName) {
+  const enUrl = await fetchSearchAvatarFromWiki("en", `${playerName} footballer`);
+  if (enUrl) return enUrl;
+  return fetchSearchAvatarFromWiki("tr", `${playerName} futbolcu`);
+}
+
+async function fetchBatchPlayerAvatars(playerNames) {
+  const uniqueNames = Array.from(new Set(playerNames)).filter((name) => !playerAvatarCache.has(name));
+  if (uniqueNames.length === 0) return;
+
+  const batch = uniqueNames.slice(0, 20);
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    origin: "*",
+    redirects: "1",
+    prop: "pageimages",
+    piprop: "thumbnail",
+    pithumbsize: "96",
+    titles: batch.join("|")
+  });
+
+  const unresolved = [];
+
+  try {
+    const response = await fetch(`https://en.wikipedia.org/w/api.php?${params.toString()}`);
+    if (response.ok) {
+      const data = await response.json();
+      const query = data?.query || {};
+      const normMap = new Map((query.normalized || []).map((item) => [item.from, item.to]));
+      const redirMap = new Map((query.redirects || []).map((item) => [item.from, item.to]));
+      const thumbByTitle = new Map();
+
+      Object.values(query.pages || {}).forEach((page) => {
+        if (page?.title && page?.thumbnail?.source) {
+          thumbByTitle.set(page.title, page.thumbnail.source);
+        }
+      });
+
+      batch.forEach((origName) => {
+        let resolved = normMap.get(origName) || origName;
+        for (let step = 0; step < 5; step += 1) {
+          if (redirMap.has(resolved)) {
+            resolved = redirMap.get(resolved);
+          } else {
+            break;
+          }
+        }
+        const thumbUrl = thumbByTitle.get(resolved) || null;
+        if (thumbUrl) {
+          playerAvatarCache.set(origName, thumbUrl);
+        } else {
+          unresolved.push(origName);
+        }
+      });
+    }
+  } catch (err) {
+  }
+
+  for (const name of unresolved.slice(0, 5)) {
+    const fallbackUrl = await fetchFallbackFootballerAvatar(name);
+    playerAvatarCache.set(name, fallbackUrl);
+  }
+
+  unresolved.slice(5).forEach((name) => {
+    if (!playerAvatarCache.has(name)) {
+      playerAvatarCache.set(name, null);
+    }
+  });
+
+  persistAvatarCache();
+
+  document.querySelectorAll("[data-avatar-player]").forEach((el) => {
+    const targetName = el.dataset.avatarPlayer;
+    const url = playerAvatarCache.get(targetName);
+    if (url && !el.querySelector("img")) {
+      applyAvatarImage(el, url, targetName);
+    }
+  });
+}
+
+function hydrateDropdownAvatars(playerNames) {
+  clearTimeout(avatarDebounceTimer);
+  avatarDebounceTimer = setTimeout(() => {
+    fetchBatchPlayerAvatars(playerNames);
+  }, 120);
+}
+
+loadAvatarCache();
+
 const REGION_PRESETS = {
   world: { lat: 18, lng: 12, zoom: 1.0 },
   europe: { lat: 48.5, lng: 12.5, zoom: 3.5 },
@@ -413,6 +595,49 @@ function injectMapLayoutFixes() {
       background: transparent !important;
       color: #cbd5e1;
       font-variant-numeric: tabular-nums;
+    }
+    .player-option-item {
+      display: flex !important;
+      align-items: center;
+      gap: 11px;
+      padding: 8px 12px !important;
+      cursor: pointer;
+    }
+    .player-option-item.highlighted {
+      background: rgba(56, 189, 248, 0.22) !important;
+      color: #f8fafc !important;
+    }
+    .player-avatar-wrap {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(30, 41, 59, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.32);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #e2e8f0;
+      user-select: none;
+    }
+    .player-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .player-option-name {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 600;
     }
     .difficulty-group {
       display: inline-flex;
@@ -2352,11 +2577,19 @@ function renderAutocompleteItems() {
 
   state.autocompleteMatches.forEach((p, idx) => {
     const li = document.createElement("li");
-    li.textContent = p.name;
+    li.className = "player-option-item";
     if (idx === state.highlightedIndex) {
-      li.style.background = "rgba(56, 189, 248, 0.22)";
-      li.style.color = "#f8fafc";
+      li.classList.add("highlighted");
     }
+
+    const avatarEl = createPlayerAvatarElement(p.name);
+    const nameSpan = document.createElement("span");
+    nameSpan.className = "player-option-name";
+    nameSpan.textContent = p.name;
+
+    li.appendChild(avatarEl);
+    li.appendChild(nameSpan);
+
     li.addEventListener("click", () => {
       input.value = p.name;
       state.autocompleteMatches = [];
@@ -2366,6 +2599,10 @@ function renderAutocompleteItems() {
     });
     list.appendChild(li);
   });
+
+  if (state.autocompleteMatches.length > 0) {
+    hydrateDropdownAvatars(state.autocompleteMatches.map((p) => p.name));
+  }
 }
 
 function handleAutocomplete() {
@@ -2378,9 +2615,19 @@ function handleAutocomplete() {
 
   if (query.length < 2) return;
 
-  state.autocompleteMatches = playerIndex
-    .filter((p) => !state.usedPlayers.has(p.normalized) && p.normalized.includes(query))
-    .slice(0, 8);
+  const prefixMatches = [];
+  const substringMatches = [];
+
+  for (const p of playerIndex) {
+    if (state.usedPlayers.has(p.normalized)) continue;
+    if (p.normalized.startsWith(query)) {
+      prefixMatches.push(p);
+    } else if (p.normalized.includes(query)) {
+      substringMatches.push(p);
+    }
+  }
+
+  state.autocompleteMatches = [...prefixMatches, ...substringMatches].slice(0, 8);
 
   if (state.autocompleteMatches.length === 1) {
     state.highlightedIndex = 0;

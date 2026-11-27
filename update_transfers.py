@@ -1,3 +1,4 @@
+from html.parser import HTMLParser
 import json
 import re
 import time
@@ -140,7 +141,19 @@ STOP_WORDS = {
     "associazione", "sportiva", "calcio", "1893", "1903", "1905", "1907"
 }
 
-USER_AGENT = "GeoGameSquadSync/4.0 (https://github.com/FurkanUymaz/GeoGame)"
+NON_PLAYER_TITLES = {
+    "goalkeeper (association football)",
+    "defender (association football)",
+    "midfielder",
+    "forward (association football)",
+    "captain (association football)",
+    "vice-captain",
+    "loan (sports)"
+}
+
+POSITION_ABBRS = {"gk", "df", "mf", "fw", "rb", "lb", "cb", "dm", "cm", "am", "rw", "lw", "st", "cf"}
+
+USER_AGENT = "GeoGameSquadSync/5.0 (https://github.com/FurkanUymaz/GeoGame)"
 
 
 def normalize_text(value):
@@ -171,6 +184,122 @@ def normalize_player_key(player_name):
 def clean_display_name(raw_name):
     cleaned = re.sub(r"\s*\([^)]*\)\s*$", "", str(raw_name or "")).strip()
     return re.sub(r"\s+", " ", cleaned)
+
+
+class SquadHtmlParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_tr = False
+        self.skip_depth = 0
+        self.fn_depth = 0
+        self.in_a = False
+        self.current_href = ""
+        self.current_title = ""
+        self.current_text_parts = []
+        self.row_links = []
+        self.players = []
+        self.seen_titles = set()
+
+    def handle_starttag(self, tag, attrs):
+        attr_map = dict(attrs)
+        classes = set((attr_map.get("class") or "").split())
+
+        if self.skip_depth > 0:
+            self.skip_depth += 1
+            return
+
+        if "flagicon" in classes or "reference" in classes or "navbox" in classes or "ambox" in classes:
+            self.skip_depth = 1
+            return
+
+        if tag == "tr":
+            self.in_tr = True
+            self.row_links = []
+            self.fn_depth = 0
+            return
+
+        if not self.in_tr:
+            return
+
+        if self.fn_depth > 0:
+            self.fn_depth += 1
+        elif "fn" in classes:
+            self.fn_depth = 1
+
+        if tag == "a":
+            href = attr_map.get("href") or ""
+            if href.startswith("/wiki/") and ":" not in href:
+                self.in_a = True
+                self.current_href = href
+                self.current_title = attr_map.get("title") or ""
+                self.current_text_parts = []
+
+    def handle_endtag(self, tag):
+        if self.skip_depth > 0:
+            self.skip_depth -= 1
+            return
+
+        if not self.in_tr:
+            return
+
+        if tag == "a" and self.in_a:
+            link_text = "".join(self.current_text_parts).strip()
+            wiki_title = urllib.parse.unquote(self.current_href[len("/wiki/"):]).replace("_", " ").strip()
+            if not wiki_title and self.current_title:
+                wiki_title = self.current_title.strip()
+            self.row_links.append({
+                "wiki_title": wiki_title,
+                "text": link_text,
+                "is_fn": self.fn_depth > 0
+            })
+            self.in_a = False
+            self.current_href = ""
+            self.current_title = ""
+            self.current_text_parts = []
+
+        if self.fn_depth > 0:
+            self.fn_depth -= 1
+
+        if tag == "tr":
+            self._commit_row()
+            self.in_tr = False
+            self.row_links = []
+            self.fn_depth = 0
+
+    def handle_data(self, data):
+        if self.skip_depth == 0 and self.in_a:
+            self.current_text_parts.append(data)
+
+    def _is_valid_player_link(self, item):
+        title = item["wiki_title"]
+        text = item["text"]
+        if not title or not text:
+            return False
+        norm_title = title.lower().strip()
+        norm_text = text.lower().strip()
+        if norm_title in NON_PLAYER_TITLES:
+            return False
+        if norm_text in POSITION_ABBRS:
+            return False
+        if norm_title.startswith("list of ") or norm_title.startswith("20"):
+            return False
+        if len(norm_text) < 2:
+            return False
+        return True
+
+    def _commit_row(self):
+        fn_candidates = [lnk for lnk in self.row_links if lnk["is_fn"] and self._is_valid_player_link(lnk)]
+        chosen = fn_candidates[0] if fn_candidates else None
+        if not chosen:
+            general_candidates = [lnk for lnk in self.row_links if self._is_valid_player_link(lnk)]
+            if general_candidates:
+                chosen = general_candidates[0]
+        if chosen:
+            wiki_title = chosen["wiki_title"]
+            display = clean_display_name(chosen["text"] or wiki_title)
+            if wiki_title not in self.seen_titles and display:
+                self.seen_titles.add(wiki_title)
+                self.players.append((wiki_title, display))
 
 
 def load_data_js(file_path):
@@ -293,49 +422,6 @@ def resolve_club_wiki_pages(target_clubs):
     return club_to_title
 
 
-def extract_players_from_wikitext(wikitext):
-    found = []
-    seen = set()
-
-    squad_tpl_pattern = re.compile(
-        r"\{\{\s*(?:football squad player|fs player|nat fs player|football squad2 player|fs2 player)[^{}]*?\bname\s*=\s*(?:'{2,3})?\s*\[\[([^|\]]+)(?:\|([^\]]+))?\]\]",
-        re.IGNORECASE | re.DOTALL
-    )
-    for match in squad_tpl_pattern.finditer(wikitext):
-        wiki_title = match.group(1).strip()
-        display = clean_display_name(match.group(2) or wiki_title)
-        if wiki_title and display and wiki_title not in seen:
-            seen.add(wiki_title)
-            found.append((wiki_title, display))
-
-    sortname_pattern = re.compile(
-        r"\{\{\s*(?:football squad player|fs player|nat fs player|football squad2 player|fs2 player)[^{}]*?\bname\s*=\s*\{\{\s*sortname\s*\|\s*([^|{}]+)\|\s*([^|{}]+)(?:\|\s*([^|{}]+))?\}\}",
-        re.IGNORECASE | re.DOTALL
-    )
-    for match in sortname_pattern.finditer(wikitext):
-        first = match.group(1).strip()
-        last = match.group(2).strip()
-        target = (match.group(3) or f"{first} {last}").strip()
-        display = clean_display_name(f"{first} {last}")
-        if target and display and target not in seen:
-            seen.add(target)
-            found.append((target, display))
-
-    if not found:
-        flag_row_pattern = re.compile(
-            r"\{\{\s*flagicon\s*\|[^}]+\}\}\s*(?:'{2,3})?\s*\[\[([^|\]]+)(?:\|([^\]]+))?\]\]",
-            re.IGNORECASE
-        )
-        for match in flag_row_pattern.finditer(wikitext):
-            wiki_title = match.group(1).strip()
-            display = clean_display_name(match.group(2) or wiki_title)
-            if wiki_title and display and ":" not in wiki_title and wiki_title not in seen:
-                seen.add(wiki_title)
-                found.append((wiki_title, display))
-
-    return found
-
-
 def fetch_club_current_squad(page_title):
     sec_data = wiki_api_get({
         "action": "parse",
@@ -343,47 +429,37 @@ def fetch_club_current_squad(page_title):
         "prop": "sections"
     })
     sections = sec_data.get("parse", {}).get("sections", [])
-    target_indices = []
+    primary_indices = []
+    secondary_indices = []
 
     for sec in sections:
         heading = normalize_text(re.sub(r"<[^>]+>", "", sec.get("line", "")))
-        if heading in {
-            "current squad",
-            "first team squad",
-            "first-team squad",
-            "first team",
-            "first-team",
-            "senior squad",
-            "squad",
-            "players"
-        }:
-            target_indices.append(sec["index"])
+        if heading in {"current squad", "first-team squad", "first team squad", "senior squad"}:
+            primary_indices.append(sec["index"])
+        elif heading in {"players", "first team", "first-team", "squad"}:
+            secondary_indices.append(sec["index"])
+        elif "squad" in heading and "reserve" not in heading and "women" not in heading and "youth" not in heading and "loan" not in heading:
+            secondary_indices.append(sec["index"])
 
-    if not target_indices:
-        for sec in sections:
-            heading = normalize_text(re.sub(r"<[^>]+>", "", sec.get("line", "")))
-            if "squad" in heading and "reserve" not in heading and "women" not in heading and "youth" not in heading:
-                target_indices.append(sec["index"])
+    ordered_indices = primary_indices + secondary_indices
 
-    players = []
-    seen_titles = set()
-
-    for sec_idx in target_indices[:2]:
-        wt_data = wiki_api_get({
+    for sec_idx in ordered_indices:
+        html_data = wiki_api_get({
             "action": "parse",
             "page": page_title,
             "section": sec_idx,
-            "prop": "wikitext"
+            "prop": "text",
+            "disableeditsection": "1"
         })
-        wikitext = wt_data.get("parse", {}).get("wikitext", {}).get("*", "")
-        for wiki_title, display in extract_players_from_wikitext(wikitext):
-            if wiki_title not in seen_titles:
-                seen_titles.add(wiki_title)
-                players.append((wiki_title, display))
-        if players:
-            break
+        html_text = html_data.get("parse", {}).get("text", {}).get("*", "")
+        if not html_text:
+            continue
+        parser = SquadHtmlParser()
+        parser.feed(html_text)
+        if parser.players:
+            return parser.players
 
-    return players
+    return []
 
 
 def fetch_infobox_clubs_for_new_players(wiki_titles, all_club_lookup):
@@ -452,7 +528,7 @@ def sync_transfers():
 
     print(f"Resolving Wikipedia pages for {len(target_clubs)} clubs (Big 5 + Turkey)...")
     club_to_title = resolve_club_wiki_pages(target_clubs)
-    print(f"Resolved {len(club_to_title)} club pages. Fetching current squads...")
+    print(f"Resolved {len(club_to_title)} club pages. Fetching rendered 2026/27 squads...")
 
     players_by_norm = {}
     for entry in db.get("players", []):
@@ -495,7 +571,7 @@ def sync_transfers():
                 target_entry["clubs"].append(official_club)
                 added_links += 1
                 updated_existing.add(target_entry["name"])
-                if len(sample_updates) < 15:
+                if len(sample_updates) < 20:
                     sample_updates.append(f"{target_entry['name']} -> {official_club}")
         else:
             career = list(new_careers.get(wiki_title, []))
@@ -507,7 +583,7 @@ def sync_transfers():
             players_by_norm[norm_disp] = new_entry
             added_links += len(career)
             new_players_added += 1
-            if len(sample_updates) < 15:
+            if len(sample_updates) < 20:
                 sample_updates.append(f"{display_name} -> {official_club}")
 
     save_data_js(data_path, prefix, db)

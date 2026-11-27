@@ -342057,6 +342057,668 @@ const FOOTBALL_DB = {
       "clubs": [
         "1.FC Nuremberg"
       ]
+    },
+    {
+      "name": "TUR",
+      "clubs": [
+        "Adana Demirspor",
+        "Alanyaspor",
+        "Antalyaspor",
+        "Basaksehir FK",
+        "Beşiktaş",
+        "Bodrum FK",
+        "Caykur Rizespor",
+        "Eyüpspor",
+        "Galatasaray",
+        "Gaziantep FK",
+        "Göztepe",
+        "Hatayspor",
+        "Kasimpasa",
+        "Kayserispor",
+        "Konyaspor",
+        "Samsunspor",
+        "Sivasspor",
+        "Trabzonspor",
+        "Adanaspor",
+        "Akhisarspor",
+        "Altay SK",
+        "Ankaraspor",
+        "Balikesirspor",
+        "Bursaspor",
+        "Denizlispor",
+        "Elazigspor",
+        "Erzurumspor FK",
+        "Eskisehirspor",
+        "Fatih Karagümrük",
+        "Gençlerbirliği",
+        "Giresunspor",
+        "Istanbulspor",
+        "Kocaelispor",
+        "MKE Ankaragücü",
+        "Pendikspor",
+        "Yeni Malatyaspor",
+        "Ümraniyespor",
+        "Arminia Bielefeld",
+        "FC Ingolstadt 04",
+        "Hannover 96",
+        "Hertha BSC",
+        "SV Werder Bremen",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "TUN",
+      "clubs": [
+        "Alanyaspor"
+      ]
+    },
+    {
+      "name": "CIV",
+      "clubs": [
+        "Alanyaspor",
+        "Eyüpspor",
+        "AS Monaco",
+        "Fatih Karagümrük",
+        "Clermont Foot 63",
+        "ESTAC Troyes",
+        "FC Sochaux-Montbéliard",
+        "Le Havre AC",
+        "SC Bastia"
+      ]
+    },
+    {
+      "name": "SEN",
+      "clubs": [
+        "Antalyaspor",
+        "Eyüpspor",
+        "Pendikspor",
+        "Benevento Calcio",
+        "Cesena FC",
+        "Clermont Foot 63",
+        "Dijon FCO",
+        "FC Metz",
+        "FC Sochaux-Montbéliard",
+        "Nîmes Olympique",
+        "SC Bastia",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "ALG",
+      "clubs": [
+        "Antalyaspor",
+        "AS Nancy-Lorraine",
+        "Montpellier HSC",
+        "SM Caen",
+        "Stade Rennais FC"
+      ]
+    },
+    {
+      "name": "GRE",
+      "clubs": [
+        "Antalyaspor",
+        "CA Osasuna"
+      ]
+    },
+    {
+      "name": "MAR",
+      "clubs": [
+        "Caykur Rizespor",
+        "AS Monaco",
+        "Elche CF",
+        "UD Las Palmas",
+        "US Salernitana 1919",
+        "Fortuna Düsseldorf",
+        "AS Nancy-Lorraine",
+        "AS Saint-Étienne",
+        "Dijon FCO",
+        "GFC Ajaccio",
+        "Nîmes Olympique",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "FRA",
+      "clubs": [
+        "Eyüpspor",
+        "AS Monaco",
+        "OGC Nice",
+        "RC Lens",
+        "UD Almería",
+        "Cesena FC",
+        "Hellas Verona",
+        "Pisa Sporting Club",
+        "AJ Auxerre",
+        "AS Nancy-Lorraine",
+        "AS Saint-Étienne",
+        "Amiens SC",
+        "Angers SCO",
+        "Clermont Foot 63",
+        "Dijon FCO",
+        "EA Guingamp",
+        "ESTAC Troyes",
+        "FC Metz",
+        "FC Nantes",
+        "FC Sochaux-Montbéliard",
+        "FC Toulouse",
+        "GFC Ajaccio",
+        "Montpellier HSC",
+        "Nîmes Olympique",
+        "Olympique Marseille",
+        "Paris FC",
+        "RC Strasbourg Alsace",
+        "SC Bastia",
+        "SM Caen",
+        "Stade Brestois 29",
+        "Stade Reims",
+        "Thonon Évian Grand Genève FC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "NED",
+      "clubs": [
+        "Hatayspor",
+        "Kayserispor"
+      ]
+    },
+    {
+      "name": "AUT",
+      "clubs": [
+        "Konyaspor",
+        "Balikesirspor",
+        "Eskisehirspor",
+        "Istanbulspor",
+        "1. FC Heidenheim",
+        "Eintracht Braunschweig"
+      ]
+    },
+    {
+      "name": "BRA",
+      "clubs": [
+        "Konyaspor",
+        "Real Valladolid CF",
+        "Benevento Calcio"
+      ]
+    },
+    {
+      "name": "POL",
+      "clubs": [
+        "Samsunspor",
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "GAM",
+      "clubs": [
+        "Samsunspor",
+        "Sivasspor",
+        "Istanbulspor",
+        "Chievo Verona"
+      ]
+    },
+    {
+      "name": "USA",
+      "clubs": [
+        "Fulham FC"
+      ]
+    },
+    {
+      "name": "ENG",
+      "clubs": [
+        "Leicester City",
+        "Newcastle United",
+        "Huddersfield Town",
+        "Luton Town",
+        "Norwich City",
+        "Queens Park Rangers",
+        "Reading FC",
+        "Sheffield United",
+        "Wigan Athletic",
+        "Cagliari Calcio"
+      ]
+    },
+    {
+      "name": "ESP",
+      "clubs": [
+        "Athletic Bilbao",
+        "CA Osasuna",
+        "Rayo Vallecano",
+        "Real Betis Balompié",
+        "Sevilla FC",
+        "Luton Town",
+        "CD Leganés",
+        "Cádiz CF",
+        "Córdoba CF",
+        "Deportivo Alavés",
+        "Elche CF",
+        "Málaga CF",
+        "Real Oviedo",
+        "Real Valladolid CF",
+        "Real Zaragoza",
+        "SD Eibar",
+        "SD Huesca",
+        "UD Almería",
+        "UD Las Palmas",
+        "FC Crotone",
+        "Spezia Calcio",
+        "FC Sochaux-Montbéliard",
+        "RCD Espanyol Barcelona"
+      ]
+    },
+    {
+      "name": "Beñat San José",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "Iban Fagoaga",
+      "clubs": [
+        "Rayo Vallecano"
+      ]
+    },
+    {
+      "name": "UKR",
+      "clubs": [
+        "Real Betis Balompié"
+      ]
+    },
+    {
+      "name": "ITA",
+      "clubs": [
+        "SS Lazio",
+        "Torino FC",
+        "Udinese Calcio",
+        "AC Carpi",
+        "Atalanta BC",
+        "Benevento Calcio",
+        "Cagliari Calcio",
+        "Catania FC",
+        "Cesena FC",
+        "Chievo Verona",
+        "Delfino Pescara 1936",
+        "FC Crotone",
+        "Hellas Verona",
+        "Palermo FC",
+        "Pisa Sporting Club",
+        "SSC Napoli",
+        "Siena FC",
+        "Spezia Calcio",
+        "UC Sampdoria",
+        "US Cremonese",
+        "US Livorno 1915",
+        "US Salernitana 1919",
+        "US Sassuolo",
+        "Venezia FC",
+        "VfL Bochum"
+      ]
+    },
+    {
+      "name": "GER",
+      "clubs": [
+        "Borussia Mönchengladbach",
+        "MKE Ankaragücü",
+        "Pendikspor",
+        "US Lecce",
+        "1. FC Heidenheim",
+        "1.FC Köln",
+        "1.FC Union Berlin",
+        "1.FSV Mainz 05",
+        "Arminia Bielefeld",
+        "Eintracht Braunschweig",
+        "FC Augsburg",
+        "FC Ingolstadt 04",
+        "FC Schalke 04",
+        "FC St. Pauli",
+        "Fortuna Düsseldorf",
+        "Hamburger SV",
+        "Hannover 96",
+        "Hertha BSC",
+        "Holstein Kiel",
+        "RB Leipzig",
+        "SC Paderborn 07",
+        "SV Darmstadt 98",
+        "SV Werder Bremen",
+        "SpVgg Greuther Fürth",
+        "TSG 1899 Hoffenheim",
+        "VfB Stuttgart",
+        "VfL Bochum",
+        "VfL Wolfsburg",
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "CRO",
+      "clubs": [
+        "Erzurumspor FK",
+        "Pendikspor",
+        "Pisa Sporting Club",
+        "1. FC Heidenheim",
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "BEL",
+      "clubs": [
+        "Eskisehirspor",
+        "Pisa Sporting Club",
+        "EA Guingamp",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "WAL",
+      "clubs": [
+        "Fatih Karagümrük",
+        "Cardiff City"
+      ]
+    },
+    {
+      "name": "GHA",
+      "clubs": [
+        "Istanbulspor"
+      ]
+    },
+    {
+      "name": "CMR",
+      "clubs": [
+        "Pendikspor",
+        "AJ Auxerre",
+        "Amiens SC",
+        "FC Metz",
+        "LOSC Lille",
+        "Montpellier HSC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "BIH",
+      "clubs": [
+        "Pendikspor",
+        "US Lecce",
+        "Eintracht Frankfurt"
+      ]
+    },
+    {
+      "name": "NGR",
+      "clubs": [
+        "Ümraniyespor",
+        "Málaga CF",
+        "FC Ingolstadt 04",
+        "Stade Reims"
+      ]
+    },
+    {
+      "name": "UGA",
+      "clubs": [
+        "CD Leganés"
+      ]
+    },
+    {
+      "name": "Albert Celades",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "José Manuel Santisteban",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Servando Sánchez",
+      "clubs": [
+        "Cádiz CF"
+      ]
+    },
+    {
+      "name": "Iván Ania",
+      "clubs": [
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "César Negredo",
+      "clubs": [
+        "Getafe CF",
+        "SD Huesca",
+        "Real Oviedo",
+        "Córdoba CF"
+      ]
+    },
+    {
+      "name": "Raúl González",
+      "clubs": [
+        "Real Madrid",
+        "FC Schalke 04",
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Jesús Unanua",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Diego Cervero",
+      "clubs": [
+        "Real Oviedo"
+      ]
+    },
+    {
+      "name": "Fran Escribá",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "David Generelo",
+      "clubs": [
+        "Elche CF",
+        "RCD Mallorca",
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "Sisi",
+      "clubs": [
+        "Real Valladolid CF"
+      ]
+    },
+    {
+      "name": "ECU",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "ROU",
+      "clubs": [
+        "Real Zaragoza",
+        "Chievo Verona",
+        "FC Crotone"
+      ]
+    },
+    {
+      "name": "Rubén Sellés",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Joaquín Moso",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "Alberto Belsué",
+      "clubs": [
+        "Real Zaragoza"
+      ]
+    },
+    {
+      "name": "ARG",
+      "clubs": [
+        "SD Huesca",
+        "FC Crotone",
+        "Siena FC",
+        "Spezia Calcio"
+      ]
+    },
+    {
+      "name": "MLI",
+      "clubs": [
+        "UD Almería",
+        "SC Bastia",
+        "Thonon Évian Grand Genève FC",
+        "Valenciennes FC"
+      ]
+    },
+    {
+      "name": "SRB",
+      "clubs": [
+        "UD Almería",
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "ALB",
+      "clubs": [
+        "Cesena FC",
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "CAN",
+      "clubs": [
+        "Delfino Pescara 1936"
+      ]
+    },
+    {
+      "name": "COD",
+      "clubs": [
+        "FC Crotone",
+        "Amiens SC",
+        "Clermont Foot 63",
+        "Dijon FCO",
+        "EA Guingamp",
+        "FC Sochaux-Montbéliard",
+        "SM Caen",
+        "Thonon Évian Grand Genève FC"
+      ]
+    },
+    {
+      "name": "SUI",
+      "clubs": [
+        "Hellas Verona",
+        "SC Freiburg",
+        "SpVgg Greuther Fürth",
+        "SM Caen"
+      ]
+    },
+    {
+      "name": "LTU",
+      "clubs": [
+        "Pisa Sporting Club",
+        "Spezia Calcio",
+        "US Cremonese"
+      ]
+    },
+    {
+      "name": "BUL",
+      "clubs": [
+        "Pisa Sporting Club",
+        "Spezia Calcio",
+        "UC Sampdoria",
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "DEN",
+      "clubs": [
+        "US Lecce"
+      ]
+    },
+    {
+      "name": "MDA",
+      "clubs": [
+        "US Livorno 1915"
+      ]
+    },
+    {
+      "name": "LAT",
+      "clubs": [
+        "US Salernitana 1919"
+      ]
+    },
+    {
+      "name": "POR",
+      "clubs": [
+        "US Salernitana 1919",
+        "FC Lorient"
+      ]
+    },
+    {
+      "name": "HUN",
+      "clubs": [
+        "FC Ingolstadt 04",
+        "Fortuna Düsseldorf"
+      ]
+    },
+    {
+      "name": "MKD",
+      "clubs": [
+        "FC Ingolstadt 04"
+      ]
+    },
+    {
+      "name": "LUX",
+      "clubs": [
+        "Fortuna Düsseldorf",
+        "Holstein Kiel"
+      ]
+    },
+    {
+      "name": "FIN",
+      "clubs": [
+        "Hamburger SV",
+        "VfL Wolfsburg"
+      ]
+    },
+    {
+      "name": "KOS",
+      "clubs": [
+        "Holstein Kiel",
+        "1.FC Nuremberg"
+      ]
+    },
+    {
+      "name": "GEO",
+      "clubs": [
+        "Amiens SC"
+      ]
+    },
+    {
+      "name": "GUI",
+      "clubs": [
+        "FC Sochaux-Montbéliard"
+      ]
+    },
+    {
+      "name": "GLP",
+      "clubs": [
+        "GFC Ajaccio"
+      ]
+    },
+    {
+      "name": "SYR",
+      "clubs": [
+        "1.FC Nuremberg"
+      ]
     }
   ]
 };

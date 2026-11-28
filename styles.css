@@ -139,7 +139,8 @@ html, body {
   font-weight: 800;
 }
 
-.difficulty-group {
+.difficulty-group,
+.grid-mode-group {
   display: inline-flex;
   align-items: center;
   background: rgba(15, 23, 42, 0.92);
@@ -149,7 +150,8 @@ html, body {
   gap: 3px;
 }
 
-.difficulty-btn {
+.difficulty-btn,
+.grid-mode-btn {
   border: none;
   background: transparent;
   color: #94a3b8;
@@ -159,11 +161,19 @@ html, body {
   border-radius: 7px;
   cursor: pointer;
   transition: all 0.15s ease;
+  white-space: nowrap;
 }
 
-.difficulty-btn:hover {
+.difficulty-btn:hover,
+.grid-mode-btn:hover {
   color: #f8fafc;
   background: rgba(148, 163, 184, 0.14);
+}
+
+.grid-mode-btn.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.24), rgba(14, 165, 233, 0.24));
+  color: #34d399;
+  box-shadow: inset 0 0 0 1px rgba(52, 211, 153, 0.5);
 }
 
 .difficulty-btn.active[data-diff="easy"] {
@@ -495,10 +505,23 @@ html, body {
 }
 
 .country-item-tag {
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: rgba(30, 41, 59, 0.85);
   color: #94a3b8;
   white-space: nowrap;
+}
+
+.country-item.selected-h .country-item-tag {
+  background: rgba(56, 189, 248, 0.22);
+  color: #7dd3fc;
+}
+
+.country-item.selected-v .country-item-tag {
+  background: rgba(245, 158, 11, 0.22);
+  color: #fcd34d;
 }
 
 #stage-game {
@@ -662,6 +685,11 @@ html, body {
   min-height: 82px;
 }
 
+.club-header.nation-header {
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.14), rgba(13, 22, 39, 0.95));
+  border-color: rgba(52, 211, 153, 0.36);
+}
+
 .grid-corner {
   color: #34d399;
   letter-spacing: 0.08em;
@@ -673,6 +701,10 @@ html, body {
   font-size: 11px;
   font-weight: 600;
   color: var(--text-secondary);
+}
+
+.nation-header .club-badge {
+  color: #6ee7b7;
 }
 
 .grid-cell {

@@ -4,14 +4,17 @@ const AI_PLAYER_NAME = "Atlas AI";
 
 const state = {
   gameMode: "friend",
+  gridMode: "club_vs_club",
   players: {
     X: "",
     O: ""
   },
   difficulty: "medium",
   horizontalCountry: null,
+  horizontalNations: [],
   verticalCountry: null,
   colClubs: [],
+  colNations: [],
   rowClubs: [],
   board: Array(3).fill(null).map(() => Array(3).fill(null)),
   usedPlayers: new Set(),
@@ -240,9 +243,114 @@ const REGION_PRESETS = {
 };
 
 const DIFFICULTY_META = {
-  easy: { label: "Easy", desc: "Top Clubs & Many Shared Players" },
+  easy: { label: "Easy", desc: "Top Clubs & Major Nations" },
   medium: { label: "Medium", desc: "Balanced Mix" },
-  hard: { label: "Hard", desc: "Lesser-Known Clubs" }
+  hard: { label: "Hard", desc: "Lesser-Known Clubs & Nations" }
+};
+
+const MAJOR_FOOTBALL_NATIONS = new Set([
+  "TUR", "BRA", "ARG", "FRA", "ESP", "GER", "ITA", "ENG", "POR", "NED",
+  "BEL", "CRO", "URU", "COL", "SEN", "MAR", "NGA", "SRB", "SUI", "DEN",
+  "SWE", "NOR", "POL", "AUT", "USA", "MEX", "JPN", "KOR", "CIV", "GHA",
+  "CMR", "ALG", "EGY", "UKR", "CZE", "SCO", "GRE", "CHI", "PER", "ECU"
+]);
+
+const EXTRA_NATION_CATALOG = {
+  TUR: { name: "Turkey", lat: 39.0, lng: 35.2 },
+  ENG: { name: "England", lat: 52.5, lng: -1.5 },
+  SCO: { name: "Scotland", lat: 56.5, lng: -4.2 },
+  WAL: { name: "Wales", lat: 52.1, lng: -3.8 },
+  NIR: { name: "Northern Ireland", lat: 54.6, lng: -6.7 },
+  IRL: { name: "Republic of Ireland", lat: 53.4, lng: -8.0 },
+  ESP: { name: "Spain", lat: 40.4, lng: -3.7 },
+  ITA: { name: "Italy", lat: 42.8, lng: 12.5 },
+  GER: { name: "Germany", lat: 51.1, lng: 10.4 },
+  FRA: { name: "France", lat: 46.6, lng: 2.2 },
+  NED: { name: "Netherlands", lat: 52.1, lng: 5.3 },
+  POR: { name: "Portugal", lat: 39.5, lng: -8.0 },
+  BEL: { name: "Belgium", lat: 50.8, lng: 4.5 },
+  RUS: { name: "Russia", lat: 55.7, lng: 37.6 },
+  UKR: { name: "Ukraine", lat: 49.0, lng: 31.4 },
+  GRE: { name: "Greece", lat: 39.0, lng: 22.0 },
+  AUT: { name: "Austria", lat: 47.5, lng: 14.5 },
+  SUI: { name: "Switzerland", lat: 46.8, lng: 8.2 },
+  DEN: { name: "Denmark", lat: 56.0, lng: 9.5 },
+  NOR: { name: "Norway", lat: 60.5, lng: 8.5 },
+  SWE: { name: "Sweden", lat: 60.1, lng: 18.6 },
+  FIN: { name: "Finland", lat: 62.0, lng: 25.7 },
+  ISL: { name: "Iceland", lat: 64.9, lng: -19.0 },
+  POL: { name: "Poland", lat: 52.0, lng: 19.1 },
+  CZE: { name: "Czech Republic", lat: 49.8, lng: 15.5 },
+  SVK: { name: "Slovakia", lat: 48.7, lng: 19.7 },
+  SVN: { name: "Slovenia", lat: 46.1, lng: 14.8 },
+  HUN: { name: "Hungary", lat: 47.2, lng: 19.5 },
+  ROU: { name: "Romania", lat: 45.9, lng: 24.9 },
+  BUL: { name: "Bulgaria", lat: 42.7, lng: 25.5 },
+  CRO: { name: "Croatia", lat: 45.1, lng: 15.2 },
+  SRB: { name: "Serbia", lat: 44.0, lng: 21.0 },
+  BIH: { name: "Bosnia and Herzegovina", lat: 43.9, lng: 17.7 },
+  MNE: { name: "Montenegro", lat: 42.7, lng: 19.3 },
+  MKD: { name: "North Macedonia", lat: 41.6, lng: 21.7 },
+  ALB: { name: "Albania", lat: 41.1, lng: 20.1 },
+  KVX: { name: "Kosovo", lat: 42.6, lng: 20.9 },
+  CYP: { name: "Cyprus", lat: 35.1, lng: 33.4 },
+  GEO: { name: "Georgia", lat: 42.3, lng: 43.3 },
+  ARM: { name: "Armenia", lat: 40.1, lng: 45.0 },
+  AZE: { name: "Azerbaijan", lat: 40.4, lng: 47.6 },
+  KAZ: { name: "Kazakhstan", lat: 48.0, lng: 66.9 },
+  UZB: { name: "Uzbekistan", lat: 41.3, lng: 64.5 },
+  EST: { name: "Estonia", lat: 58.6, lng: 25.0 },
+  LVA: { name: "Latvia", lat: 56.9, lng: 24.6 },
+  LTU: { name: "Lithuania", lat: 55.2, lng: 23.9 },
+  BLR: { name: "Belarus", lat: 53.7, lng: 27.9 },
+  MDA: { name: "Moldova", lat: 47.0, lng: 28.8 },
+  ISR: { name: "Israel", lat: 31.5, lng: 34.8 },
+  USA: { name: "United States", lat: 38.9, lng: -97.0 },
+  CAN: { name: "Canada", lat: 56.1, lng: -106.3 },
+  MEX: { name: "Mexico", lat: 23.6, lng: -102.5 },
+  CRC: { name: "Costa Rica", lat: 9.7, lng: -83.8 },
+  PAN: { name: "Panama", lat: 8.5, lng: -80.8 },
+  HON: { name: "Honduras", lat: 15.2, lng: -86.2 },
+  JAM: { name: "Jamaica", lat: 18.1, lng: -77.3 },
+  BRA: { name: "Brazil", lat: -14.2, lng: -51.9 },
+  ARG: { name: "Argentina", lat: -34.6, lng: -63.6 },
+  COL: { name: "Colombia", lat: 4.6, lng: -74.3 },
+  CHI: { name: "Chile", lat: -35.6, lng: -71.5 },
+  PER: { name: "Peru", lat: -9.2, lng: -75.0 },
+  ECU: { name: "Ecuador", lat: -1.8, lng: -78.2 },
+  URU: { name: "Uruguay", lat: -32.5, lng: -55.8 },
+  PAR: { name: "Paraguay", lat: -23.4, lng: -58.4 },
+  VEN: { name: "Venezuela", lat: 6.4, lng: -66.6 },
+  BOL: { name: "Bolivia", lat: -16.3, lng: -63.6 },
+  MAR: { name: "Morocco", lat: 31.8, lng: -7.1 },
+  ALG: { name: "Algeria", lat: 28.0, lng: 1.7 },
+  TUN: { name: "Tunisia", lat: 33.9, lng: 9.5 },
+  EGY: { name: "Egypt", lat: 26.8, lng: 30.8 },
+  SEN: { name: "Senegal", lat: 14.5, lng: -14.5 },
+  NGA: { name: "Nigeria", lat: 9.1, lng: 8.7 },
+  CMR: { name: "Cameroon", lat: 7.4, lng: 12.4 },
+  GHA: { name: "Ghana", lat: 7.9, lng: -1.0 },
+  CIV: { name: "Ivory Coast", lat: 7.5, lng: -5.5 },
+  MLI: { name: "Mali", lat: 17.6, lng: -4.0 },
+  BFA: { name: "Burkina Faso", lat: 12.2, lng: -1.6 },
+  GUI: { name: "Guinea", lat: 9.9, lng: -9.7 },
+  COD: { name: "DR Congo", lat: -4.0, lng: 21.8 },
+  GAB: { name: "Gabon", lat: -0.8, lng: 11.6 },
+  ANG: { name: "Angola", lat: -11.2, lng: 17.9 },
+  ZAM: { name: "Zambia", lat: -13.1, lng: 27.8 },
+  RSA: { name: "South Africa", lat: -30.6, lng: 22.9 },
+  CPV: { name: "Cape Verde", lat: 16.0, lng: -24.0 },
+  GAM: { name: "The Gambia", lat: 13.4, lng: -15.3 },
+  JPN: { name: "Japan", lat: 36.2, lng: 138.3 },
+  KOR: { name: "South Korea", lat: 35.9, lng: 127.8 },
+  CHN: { name: "China", lat: 35.9, lng: 104.2 },
+  IRN: { name: "Iran", lat: 32.4, lng: 53.7 },
+  IRQ: { name: "Iraq", lat: 33.2, lng: 43.7 },
+  KSA: { name: "Saudi Arabia", lat: 23.9, lng: 45.1 },
+  UAE: { name: "United Arab Emirates", lat: 23.4, lng: 53.8 },
+  QAT: { name: "Qatar", lat: 25.3, lng: 51.2 },
+  AUS: { name: "Australia", lat: -25.3, lng: 133.8 },
+  NZL: { name: "New Zealand", lat: -40.9, lng: 174.9 }
 };
 
 const TIER1_CLUB_KEYWORDS = [
@@ -313,141 +421,142 @@ const CLUB_ALIASES = {
 };
 
 const SUPPLEMENTAL_PLAYERS = [
-  { name: "Salih Özcan", clubs: ["1. FC Koln", "Holstein Kiel", "Borussia Dortmund", "VfL Wolfsburg", "Besiktas"] },
-  { name: "Aral Şimşir", clubs: ["FC Midtjylland", "Jerv", "Lillestrom"] },
-  { name: "Orkun Kökçü", clubs: ["Feyenoord", "Benfica", "Besiktas"] },
-  { name: "Tammy Abraham", clubs: ["Chelsea", "Bristol City", "Swansea City", "Aston Villa", "Roma", "AC Milan", "Besiktas"] },
-  { name: "Wilfred Ndidi", clubs: ["Genk", "Leicester City", "Besiktas"] },
-  { name: "İlkay Gündoğan", clubs: ["VfL Bochum", "1. FC Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Galatasaray"] },
-  { name: "Leroy Sané", clubs: ["Schalke 04", "Manchester City", "Bayern Munich", "Galatasaray"] },
-  { name: "Uğurcan Çakır", clubs: ["Trabzonspor", "Galatasaray"] },
-  { name: "Kerem Aktürkoğlu", clubs: ["Galatasaray", "Benfica", "Fenerbahce"] },
-  { name: "Jhon Durán", clubs: ["Envigado", "Chicago Fire", "Aston Villa", "Al-Nassr", "Fenerbahce"] },
-  { name: "Nélson Semedo", clubs: ["Benfica", "Barcelona", "Wolverhampton Wanderers", "Fenerbahce"] },
-  { name: "Marco Asensio", clubs: ["Mallorca", "Real Madrid", "Espanyol", "Paris Saint-Germain", "Aston Villa", "Fenerbahce"] },
-  { name: "Ederson", clubs: ["Rio Ave", "Benfica", "Manchester City", "Fenerbahce"] },
-  { name: "Nuri Şahin", clubs: ["Borussia Dortmund", "Feyenoord", "Real Madrid", "Liverpool", "Werder Bremen", "Antalyaspor"] },
-  { name: "Shinji Kagawa", clubs: ["Cerezo Osaka", "Borussia Dortmund", "Manchester United", "Besiktas", "Real Zaragoza", "PAOK", "Sint-Truiden"] },
-  { name: "Emre Can", clubs: ["Bayern Munich", "Bayer Leverkusen", "Liverpool", "Juventus", "Borussia Dortmund"] },
-  { name: "Andreas Beck", clubs: ["VfB Stuttgart", "Hoffenheim", "Besiktas", "Eupen"] },
-  { name: "Fabian Ernst", clubs: ["Hannover 96", "Hamburger SV", "Werder Bremen", "Schalke 04", "Besiktas", "Kasimpasa"] },
-  { name: "Roberto Hilbert", clubs: ["Greuther Furth", "VfB Stuttgart", "Besiktas", "Bayer Leverkusen"] },
-  { name: "Loris Karius", clubs: ["Mainz 05", "Liverpool", "Besiktas", "Union Berlin", "Newcastle United", "Schalke 04"] },
-  { name: "Can Uzun", clubs: ["1. FC Nurnberg", "Eintracht Frankfurt"] },
-  { name: "Kenan Yıldız", clubs: ["Juventus"] },
-  { name: "Deniz Undav", clubs: ["Union Saint-Gilloise", "Brighton & Hove Albion", "VfB Stuttgart"] },
-  { name: "Atakan Karazor", clubs: ["Holstein Kiel", "VfB Stuttgart"] },
-  { name: "Eren Dinkçi", clubs: ["Werder Bremen", "1. FC Heidenheim", "SC Freiburg"] },
-  { name: "Ozan Kabak", clubs: ["Galatasaray", "VfB Stuttgart", "Schalke 04", "Liverpool", "Norwich City", "Hoffenheim"] },
-  { name: "Kaan Ayhan", clubs: ["Schalke 04", "Eintracht Frankfurt", "Fortuna Dusseldorf", "Sassuolo", "Galatasaray"] },
-  { name: "Kerem Demirbay", clubs: ["Hamburger SV", "1. FC Kaiserslautern", "Fortuna Dusseldorf", "Hoffenheim", "Bayer Leverkusen", "Galatasaray"] },
-  { name: "Mert Müldür", clubs: ["Rapid Wien", "Sassuolo", "Fenerbahce"] },
-  { name: "Zeki Çelik", clubs: ["Istanbulspor", "Lille", "Roma"] },
-  { name: "Merih Demiral", clubs: ["Sporting CP", "Alanyaspor", "Sassuolo", "Juventus", "Atalanta", "Al-Ahli"] },
-  { name: "Enes Ünal", clubs: ["Bursaspor", "Manchester City", "Genk", "NAC Breda", "Twente", "Villarreal", "Levante", "Real Valladolid", "Getafe", "Bournemouth"] },
-  { name: "Yusuf Yazıcı", clubs: ["Trabzonspor", "Lille", "CSKA Moscow", "Olympiacos"] },
-  { name: "Okay Yokuşlu", clubs: ["Altay", "Kayserispor", "Trabzonspor", "Celta Vigo", "West Bromwich Albion", "Getafe"] },
-  { name: "Salih Uçan", clubs: ["Bucaspor", "Fenerbahce", "Roma", "Sion", "Empoli", "Alanyaspor", "Besiktas"] },
-  { name: "Semih Kılıçsoy", clubs: ["Besiktas"] },
-  { name: "Barış Alper Yılmaz", clubs: ["Galatasaray"] },
-  { name: "Yunus Akgün", clubs: ["Galatasaray", "Adana Demirspor", "Leicester City"] },
-  { name: "Abdülkerim Bardakcı", clubs: ["Konyaspor", "Galatasaray"] },
-  { name: "İsmail Yüksek", clubs: ["Fenerbahce"] },
-  { name: "Mert Günok", clubs: ["Fenerbahce", "Bursaspor", "Istanbul Basaksehir", "Besiktas"] },
-  { name: "Cenk Tosun", clubs: ["Eintracht Frankfurt", "Gaziantepspor", "Besiktas", "Everton", "Crystal Palace", "Fenerbahce"] },
-  { name: "Rıdvan Yılmaz", clubs: ["Besiktas", "Rangers"] },
-  { name: "Emirhan İlkhan", clubs: ["Besiktas", "Torino", "Sampdoria", "Istanbul Basaksehir"] },
-  { name: "Altay Bayındır", clubs: ["Ankaragucu", "Fenerbahce", "Manchester United"] },
-  { name: "Robin van Persie", clubs: ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahce"] },
-  { name: "Mesut Özil", clubs: ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahce", "Istanbul Basaksehir"] },
-  { name: "Nicolas Anelka", clubs: ["Paris Saint-Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahce", "Bolton Wanderers", "Chelsea", "Juventus", "West Bromwich Albion"] },
-  { name: "Didier Drogba", clubs: ["Marseille", "Chelsea", "Galatasaray"] },
-  { name: "Wesley Sneijder", clubs: ["Ajax", "Real Madrid", "Inter", "Galatasaray", "Nice"] },
-  { name: "Lukas Podolski", clubs: ["1. FC Koln", "Bayern Munich", "Arsenal", "Inter", "Galatasaray", "Antalyaspor"] },
-  { name: "Lucas Torreira", clubs: ["Sampdoria", "Arsenal", "Atletico Madrid", "Fiorentina", "Galatasaray"] },
-  { name: "Mohamed Elneny", clubs: ["Basel", "Arsenal", "Besiktas"] },
-  { name: "Alex Oxlade-Chamberlain", clubs: ["Southampton", "Arsenal", "Liverpool", "Besiktas"] },
-  { name: "Michy Batshuayi", clubs: ["Standard Liege", "Marseille", "Chelsea", "Borussia Dortmund", "Valencia", "Crystal Palace", "Besiktas", "Fenerbahce", "Galatasaray", "Eintracht Frankfurt"] },
-  { name: "Fred", clubs: ["Internacional", "Shakhtar Donetsk", "Manchester United", "Fenerbahce"] },
-  { name: "Edin Džeko", clubs: ["VfL Wolfsburg", "Manchester City", "Roma", "Inter", "Fenerbahce"] },
-  { name: "Dušan Tadić", clubs: ["Groningen", "Twente", "Southampton", "Ajax", "Fenerbahce"] },
-  { name: "Mauro Icardi", clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Galatasaray"] },
-  { name: "Dries Mertens", clubs: ["Utrecht", "PSV", "Napoli", "Galatasaray"] },
-  { name: "Hakim Ziyech", clubs: ["Heerenveen", "Twente", "Ajax", "Chelsea", "Galatasaray"] },
-  { name: "Wilfried Zaha", clubs: ["Crystal Palace", "Manchester United", "Cardiff City", "Galatasaray", "Lyon"] },
-  { name: "Davinson Sánchez", clubs: ["Atletico Nacional", "Ajax", "Tottenham Hotspur", "Galatasaray"] },
-  { name: "Tanguy Ndombele", clubs: ["Amiens", "Lyon", "Tottenham Hotspur", "Napoli", "Galatasaray", "Nice"] },
-  { name: "Serge Aurier", clubs: ["Lens", "Toulouse", "Paris Saint-Germain", "Tottenham Hotspur", "Villarreal", "Nottingham Forest", "Galatasaray"] },
-  { name: "Cédric Bakambu", clubs: ["Sochaux", "Bursaspor", "Villarreal", "Marseille", "Olympiacos", "Galatasaray", "Real Betis"] },
-  { name: "Juan Mata", clubs: ["Valencia", "Chelsea", "Manchester United", "Galatasaray"] },
-  { name: "Victor Osimhen", clubs: ["VfL Wolfsburg", "Charleroi", "Lille", "Napoli", "Galatasaray"] },
-  { name: "Álvaro Morata", clubs: ["Real Madrid", "Juventus", "Chelsea", "Atletico Madrid", "AC Milan", "Galatasaray"] },
-  { name: "Milan Škriniar", clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Fenerbahce"] },
-  { name: "Allan Saint-Maximin", clubs: ["Saint-Etienne", "Monaco", "Nice", "Newcastle United", "Al-Ahli", "Fenerbahce"] },
-  { name: "Sofyan Amrabat", clubs: ["Utrecht", "Feyenoord", "Club Brugge", "Hellas Verona", "Fiorentina", "Manchester United", "Fenerbahce"] },
-  { name: "Çağlar Söyüncü", clubs: ["SC Freiburg", "Leicester City", "Atletico Madrid", "Fenerbahce"] },
-  { name: "Cengiz Ünder", clubs: ["Istanbul Basaksehir", "Roma", "Leicester City", "Marseille", "Fenerbahce"] },
-  { name: "İrfan Can Kahveci", clubs: ["Genclerbirligi", "Istanbul Basaksehir", "Fenerbahce"] },
-  { name: "Ferdi Kadıoğlu", clubs: ["NEC Nijmegen", "Fenerbahce", "Brighton & Hove Albion"] },
-  { name: "Arda Güler", clubs: ["Fenerbahce", "Real Madrid"] },
-  { name: "Kim Min-jae", clubs: ["Fenerbahce", "Napoli", "Bayern Munich"] },
-  { name: "Sacha Boey", clubs: ["Rennes", "Galatasaray", "Bayern Munich"] },
-  { name: "Dirk Kuyt", clubs: ["Utrecht", "Feyenoord", "Liverpool", "Fenerbahce"] },
-  { name: "Roberto Carlos", clubs: ["Palmeiras", "Inter", "Real Madrid", "Fenerbahce", "Corinthians"] },
-  { name: "Raul Meireles", clubs: ["Boavista", "Porto", "Liverpool", "Chelsea", "Fenerbahce"] },
-  { name: "Nani", clubs: ["Sporting CP", "Manchester United", "Fenerbahce", "Valencia", "Lazio"] },
-  { name: "Simon Kjær", clubs: ["Palermo", "VfL Wolfsburg", "Roma", "Lille", "Fenerbahce", "Sevilla", "Atalanta", "AC Milan"] },
-  { name: "Moussa Sow", clubs: ["Rennes", "Lille", "Fenerbahce"] },
-  { name: "Ricardo Quaresma", clubs: ["Sporting CP", "Barcelona", "Porto", "Inter", "Chelsea", "Besiktas"] },
-  { name: "Pepe", clubs: ["Maritimo", "Porto", "Real Madrid", "Besiktas"] },
-  { name: "Guti", clubs: ["Real Madrid", "Besiktas"] },
-  { name: "Anderson Talisca", clubs: ["Bahia", "Benfica", "Besiktas", "Al-Nassr", "Fenerbahce"] },
-  { name: "Vincent Aboubakar", clubs: ["Valenciennes", "Lorient", "Porto", "Besiktas", "Al-Nassr"] },
-  { name: "Gedson Fernandes", clubs: ["Benfica", "Tottenham Hotspur", "Galatasaray", "Rizespor", "Besiktas"] },
-  { name: "Dele Alli", clubs: ["Milton Keynes Dons", "Tottenham Hotspur", "Everton", "Besiktas"] },
-  { name: "Eric Bailly", clubs: ["Espanyol", "Villarreal", "Manchester United", "Marseille", "Besiktas"] },
-  { name: "Rachid Ghezzal", clubs: ["Lyon", "Monaco", "Leicester City", "Fiorentina", "Besiktas", "Rizespor"] },
-  { name: "Ciro Immobile", clubs: ["Juventus", "Torino", "Borussia Dortmund", "Sevilla", "Lazio", "Besiktas"] },
-  { name: "Rafa Silva", clubs: ["Braga", "Benfica", "Besiktas"] },
-  { name: "Mario Gómez", clubs: ["VfB Stuttgart", "Bayern Munich", "Fiorentina", "Besiktas", "VfL Wolfsburg"] },
-  { name: "Demba Ba", clubs: ["Hoffenheim", "West Ham United", "Newcastle United", "Chelsea", "Besiktas", "Istanbul Basaksehir"] },
-  { name: "Atiba Hutchinson", clubs: ["FC Copenhagen", "PSV", "Besiktas"] },
-  { name: "Ryan Babel", clubs: ["Ajax", "Liverpool", "Hoffenheim", "Kasimpasa", "Besiktas", "Fulham", "Galatasaray"] },
-  { name: "Fernando Muslera", clubs: ["Lazio", "Galatasaray"] },
-  { name: "Felipe Melo", clubs: ["Flamengo", "Cruzeiro", "Gremio", "Mallorca", "Racing Santander", "Almeria", "Fiorentina", "Juventus", "Galatasaray", "Inter", "Palmeiras"] },
-  { name: "Radamel Falcao", clubs: ["River Plate", "Porto", "Atletico Madrid", "Monaco", "Manchester United", "Chelsea", "Galatasaray", "Rayo Vallecano"] },
-  { name: "Bafétimbi Gomis", clubs: ["Saint-Etienne", "Lyon", "Swansea City", "Marseille", "Galatasaray", "Al-Hilal"] },
-  { name: "Steven Nzonzi", clubs: ["Blackburn Rovers", "Stoke City", "Sevilla", "Roma", "Galatasaray", "Rennes", "Konyaspor"] },
-  { name: "Mariano", clubs: ["Fluminense", "Bordeaux", "Sevilla", "Galatasaray", "Atletico Mineiro"] },
-  { name: "Fernando Reges", clubs: ["Porto", "Manchester City", "Galatasaray", "Sevilla"] },
-  { name: "Badou Ndiaye", clubs: ["Osmanlispor", "Galatasaray", "Stoke City", "Trabzonspor", "Adana Demirspor"] },
-  { name: "Henry Onyekuru", clubs: ["Eupen", "Anderlecht", "Everton", "Galatasaray", "Monaco", "Olympiacos", "Adana Demirspor"] },
-  { name: "Mario Lemina", clubs: ["Lorient", "Marseille", "Juventus", "Southampton", "Galatasaray", "Fulham", "Nice", "Wolverhampton Wanderers"] },
-  { name: "Gabriel Sara", clubs: ["Sao Paulo", "Norwich City", "Galatasaray"] },
-  { name: "Marek Hamšík", clubs: ["Brescia", "Napoli", "Trabzonspor"] },
-  { name: "Anthony Nwakaeme", clubs: ["Hapoel Beer Sheva", "Trabzonspor"] },
-  { name: "Alexander Sørloth", clubs: ["Rosenborg", "Groningen", "Midtjylland", "Crystal Palace", "Gent", "Trabzonspor", "RB Leipzig", "Real Sociedad", "Villarreal", "Atletico Madrid"] },
-  { name: "Andreas Cornelius", clubs: ["FC Copenhagen", "Cardiff City", "Atalanta", "Bordeaux", "Parma", "Trabzonspor"] },
-  { name: "José Sosa", clubs: ["Estudiantes", "Bayern Munich", "Napoli", "Metalist Kharkiv", "Atletico Madrid", "Besiktas", "AC Milan", "Trabzonspor", "Fenerbahce"] },
-  { name: "Burak Yılmaz", clubs: ["Besiktas", "Fenerbahce", "Trabzonspor", "Galatasaray", "Lille", "Fortuna Sittard"] },
-  { name: "Arda Turan", clubs: ["Galatasaray", "Atletico Madrid", "Barcelona", "Istanbul Basaksehir"] },
-  { name: "Emre Belözoğlu", clubs: ["Galatasaray", "Inter", "Newcastle United", "Fenerbahce", "Atletico Madrid", "Istanbul Basaksehir"] },
-  { name: "Okan Buruk", clubs: ["Galatasaray", "Inter", "Besiktas", "Istanbul Basaksehir"] },
-  { name: "Tugay Kerimoğlu", clubs: ["Galatasaray", "Rangers", "Blackburn Rovers"] },
-  { name: "Hakan Şükür", clubs: ["Galatasaray", "Torino", "Inter", "Parma", "Blackburn Rovers"] },
-  { name: "Nihat Kahveci", clubs: ["Besiktas", "Real Sociedad", "Villarreal"] },
-  { name: "Tuncay Şanlı", clubs: ["Fenerbahce", "Middlesbrough", "Stoke City", "VfL Wolfsburg", "Bolton Wanderers", "Bursaspor"] },
-  { name: "Mehmet Topal", clubs: ["Galatasaray", "Valencia", "Fenerbahce", "Istanbul Basaksehir", "Besiktas"] },
-  { name: "Caner Erkin", clubs: ["CSKA Moscow", "Galatasaray", "Fenerbahce", "Inter", "Besiktas"] },
-  { name: "Gökhan Gönül", clubs: ["Fenerbahce", "Besiktas"] },
-  { name: "Selçuk İnan", clubs: ["Trabzonspor", "Galatasaray"] },
-  { name: "Volkan Demirel", clubs: ["Fenerbahce"] },
-  { name: "Alex de Souza", clubs: ["Coritiba", "Palmeiras", "Cruzeiro", "Parma", "Fenerbahce"] }
+  { name: "Salih Özcan", nationalities: ["TUR", "GER"], clubs: ["1. FC Koln", "Holstein Kiel", "Borussia Dortmund", "VfL Wolfsburg", "Besiktas"] },
+  { name: "Aral Şimşir", nationalities: ["TUR", "DEN"], clubs: ["FC Midtjylland", "Jerv", "Lillestrom"] },
+  { name: "Orkun Kökçü", nationalities: ["TUR", "NED"], clubs: ["Feyenoord", "Benfica", "Besiktas"] },
+  { name: "Tammy Abraham", nationalities: ["ENG"], clubs: ["Chelsea", "Bristol City", "Swansea City", "Aston Villa", "Roma", "AC Milan", "Besiktas"] },
+  { name: "Wilfred Ndidi", nationalities: ["NGA"], clubs: ["Genk", "Leicester City", "Besiktas"] },
+  { name: "İlkay Gündoğan", nationalities: ["GER"], clubs: ["VfL Bochum", "1. FC Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Galatasaray"] },
+  { name: "Leroy Sané", nationalities: ["GER", "FRA"], clubs: ["Schalke 04", "Manchester City", "Bayern Munich", "Galatasaray"] },
+  { name: "Uğurcan Çakır", nationalities: ["TUR"], clubs: ["Trabzonspor", "Galatasaray"] },
+  { name: "Kerem Aktürkoğlu", nationalities: ["TUR"], clubs: ["Galatasaray", "Benfica", "Fenerbahce"] },
+  { name: "Jhon Durán", nationalities: ["COL"], clubs: ["Envigado", "Chicago Fire", "Aston Villa", "Al-Nassr", "Fenerbahce"] },
+  { name: "Nélson Semedo", nationalities: ["POR"], clubs: ["Benfica", "Barcelona", "Wolverhampton Wanderers", "Fenerbahce"] },
+  { name: "Marco Asensio", nationalities: ["ESP", "NED"], clubs: ["Mallorca", "Real Madrid", "Espanyol", "Paris Saint-Germain", "Aston Villa", "Fenerbahce"] },
+  { name: "Ederson", nationalities: ["BRA", "POR"], clubs: ["Rio Ave", "Benfica", "Manchester City", "Fenerbahce"] },
+  { name: "Nuri Şahin", nationalities: ["TUR", "GER"], clubs: ["Borussia Dortmund", "Feyenoord", "Real Madrid", "Liverpool", "Werder Bremen", "Antalyaspor"] },
+  { name: "Shinji Kagawa", nationalities: ["JPN"], clubs: ["Cerezo Osaka", "Borussia Dortmund", "Manchester United", "Besiktas", "Real Zaragoza", "PAOK", "Sint-Truiden"] },
+  { name: "Emre Can", nationalities: ["GER"], clubs: ["Bayern Munich", "Bayer Leverkusen", "Liverpool", "Juventus", "Borussia Dortmund"] },
+  { name: "Andreas Beck", nationalities: ["GER"], clubs: ["VfB Stuttgart", "Hoffenheim", "Besiktas", "Eupen"] },
+  { name: "Fabian Ernst", nationalities: ["GER"], clubs: ["Hannover 96", "Hamburger SV", "Werder Bremen", "Schalke 04", "Besiktas", "Kasimpasa"] },
+  { name: "Roberto Hilbert", nationalities: ["GER"], clubs: ["Greuther Furth", "VfB Stuttgart", "Besiktas", "Bayer Leverkusen"] },
+  { name: "Loris Karius", nationalities: ["GER"], clubs: ["Mainz 05", "Liverpool", "Besiktas", "Union Berlin", "Newcastle United", "Schalke 04"] },
+  { name: "Can Uzun", nationalities: ["TUR", "GER"], clubs: ["1. FC Nurnberg", "Eintracht Frankfurt"] },
+  { name: "Kenan Yıldız", nationalities: ["TUR", "GER"], clubs: ["Juventus"] },
+  { name: "Deniz Undav", nationalities: ["GER"], clubs: ["Union Saint-Gilloise", "Brighton & Hove Albion", "VfB Stuttgart"] },
+  { name: "Atakan Karazor", nationalities: ["TUR", "GER"], clubs: ["Holstein Kiel", "VfB Stuttgart"] },
+  { name: "Eren Dinkçi", nationalities: ["TUR", "GER"], clubs: ["Werder Bremen", "1. FC Heidenheim", "SC Freiburg"] },
+  { name: "Ozan Kabak", nationalities: ["TUR"], clubs: ["Galatasaray", "VfB Stuttgart", "Schalke 04", "Liverpool", "Norwich City", "Hoffenheim"] },
+  { name: "Kaan Ayhan", nationalities: ["TUR", "GER"], clubs: ["Schalke 04", "Eintracht Frankfurt", "Fortuna Dusseldorf", "Sassuolo", "Galatasaray"] },
+  { name: "Kerem Demirbay", nationalities: ["GER", "TUR"], clubs: ["Hamburger SV", "1. FC Kaiserslautern", "Fortuna Dusseldorf", "Hoffenheim", "Bayer Leverkusen", "Galatasaray"] },
+  { name: "Mert Müldür", nationalities: ["TUR", "AUT"], clubs: ["Rapid Wien", "Sassuolo", "Fenerbahce"] },
+  { name: "Zeki Çelik", nationalities: ["TUR"], clubs: ["Istanbulspor", "Lille", "Roma"] },
+  { name: "Merih Demiral", nationalities: ["TUR"], clubs: ["Sporting CP", "Alanyaspor", "Sassuolo", "Juventus", "Atalanta", "Al-Ahli"] },
+  { name: "Enes Ünal", nationalities: ["TUR"], clubs: ["Bursaspor", "Manchester City", "Genk", "NAC Breda", "Twente", "Villarreal", "Levante", "Real Valladolid", "Getafe", "Bournemouth"] },
+  { name: "Yusuf Yazıcı", nationalities: ["TUR"], clubs: ["Trabzonspor", "Lille", "CSKA Moscow", "Olympiacos"] },
+  { name: "Okay Yokuşlu", nationalities: ["TUR"], clubs: ["Altay", "Kayserispor", "Trabzonspor", "Celta Vigo", "West Bromwich Albion", "Getafe"] },
+  { name: "Salih Uçan", nationalities: ["TUR"], clubs: ["Bucaspor", "Fenerbahce", "Roma", "Sion", "Empoli", "Alanyaspor", "Besiktas"] },
+  { name: "Semih Kılıçsoy", nationalities: ["TUR"], clubs: ["Besiktas"] },
+  { name: "Barış Alper Yılmaz", nationalities: ["TUR"], clubs: ["Galatasaray"] },
+  { name: "Yunus Akgün", nationalities: ["TUR"], clubs: ["Galatasaray", "Adana Demirspor", "Leicester City"] },
+  { name: "Abdülkerim Bardakcı", nationalities: ["TUR"], clubs: ["Konyaspor", "Galatasaray"] },
+  { name: "İsmail Yüksek", nationalities: ["TUR"], clubs: ["Fenerbahce"] },
+  { name: "Mert Günok", nationalities: ["TUR"], clubs: ["Fenerbahce", "Bursaspor", "Istanbul Basaksehir", "Besiktas"] },
+  { name: "Cenk Tosun", nationalities: ["TUR", "GER"], clubs: ["Eintracht Frankfurt", "Gaziantepspor", "Besiktas", "Everton", "Crystal Palace", "Fenerbahce"] },
+  { name: "Rıdvan Yılmaz", nationalities: ["TUR"], clubs: ["Besiktas", "Rangers"] },
+  { name: "Emirhan İlkhan", nationalities: ["TUR"], clubs: ["Besiktas", "Torino", "Sampdoria", "Istanbul Basaksehir"] },
+  { name: "Altay Bayındır", nationalities: ["TUR"], clubs: ["Ankaragucu", "Fenerbahce", "Manchester United"] },
+  { name: "Robin van Persie", nationalities: ["NED"], clubs: ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahce"] },
+  { name: "Mesut Özil", nationalities: ["GER"], clubs: ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahce", "Istanbul Basaksehir"] },
+  { name: "Nicolas Anelka", nationalities: ["FRA"], clubs: ["Paris Saint-Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahce", "Bolton Wanderers", "Chelsea", "Juventus", "West Bromwich Albion"] },
+  { name: "Didier Drogba", nationalities: ["CIV"], clubs: ["Marseille", "Chelsea", "Galatasaray"] },
+  { name: "Wesley Sneijder", nationalities: ["NED"], clubs: ["Ajax", "Real Madrid", "Inter", "Galatasaray", "Nice"] },
+  { name: "Lukas Podolski", nationalities: ["GER", "POL"], clubs: ["1. FC Koln", "Bayern Munich", "Arsenal", "Inter", "Galatasaray", "Antalyaspor"] },
+  { name: "Lucas Torreira", nationalities: ["URU", "ESP"], clubs: ["Sampdoria", "Arsenal", "Atletico Madrid", "Fiorentina", "Galatasaray"] },
+  { name: "Mohamed Elneny", nationalities: ["EGY"], clubs: ["Basel", "Arsenal", "Besiktas"] },
+  { name: "Alex Oxlade-Chamberlain", nationalities: ["ENG"], clubs: ["Southampton", "Arsenal", "Liverpool", "Besiktas"] },
+  { name: "Michy Batshuayi", nationalities: ["BEL"], clubs: ["Standard Liege", "Marseille", "Chelsea", "Borussia Dortmund", "Valencia", "Crystal Palace", "Besiktas", "Fenerbahce", "Galatasaray", "Eintracht Frankfurt"] },
+  { name: "Fred", nationalities: ["BRA"], clubs: ["Internacional", "Shakhtar Donetsk", "Manchester United", "Fenerbahce"] },
+  { name: "Edin Džeko", nationalities: ["BIH"], clubs: ["VfL Wolfsburg", "Manchester City", "Roma", "Inter", "Fenerbahce"] },
+  { name: "Dušan Tadić", nationalities: ["SRB"], clubs: ["Groningen", "Twente", "Southampton", "Ajax", "Fenerbahce"] },
+  { name: "Mauro Icardi", nationalities: ["ARG", "ITA"], clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Galatasaray"] },
+  { name: "Dries Mertens", nationalities: ["BEL"], clubs: ["Utrecht", "PSV", "Napoli", "Galatasaray"] },
+  { name: "Hakim Ziyech", nationalities: ["MAR", "NED"], clubs: ["Heerenveen", "Twente", "Ajax", "Chelsea", "Galatasaray"] },
+  { name: "Wilfried Zaha", nationalities: ["CIV", "ENG"], clubs: ["Crystal Palace", "Manchester United", "Cardiff City", "Galatasaray", "Lyon"] },
+  { name: "Davinson Sánchez", nationalities: ["COL"], clubs: ["Atletico Nacional", "Ajax", "Tottenham Hotspur", "Galatasaray"] },
+  { name: "Tanguy Ndombele", nationalities: ["FRA"], clubs: ["Amiens", "Lyon", "Tottenham Hotspur", "Napoli", "Galatasaray", "Nice"] },
+  { name: "Serge Aurier", nationalities: ["CIV", "FRA"], clubs: ["Lens", "Toulouse", "Paris Saint-Germain", "Tottenham Hotspur", "Villarreal", "Nottingham Forest", "Galatasaray"] },
+  { name: "Cédric Bakambu", nationalities: ["COD", "FRA"], clubs: ["Sochaux", "Bursaspor", "Villarreal", "Marseille", "Olympiacos", "Galatasaray", "Real Betis"] },
+  { name: "Juan Mata", nationalities: ["ESP"], clubs: ["Valencia", "Chelsea", "Manchester United", "Galatasaray"] },
+  { name: "Victor Osimhen", nationalities: ["NGA"], clubs: ["VfL Wolfsburg", "Charleroi", "Lille", "Napoli", "Galatasaray"] },
+  { name: "Álvaro Morata", nationalities: ["ESP"], clubs: ["Real Madrid", "Juventus", "Chelsea", "Atletico Madrid", "AC Milan", "Galatasaray"] },
+  { name: "Milan Škriniar", nationalities: ["SVK"], clubs: ["Sampdoria", "Inter", "Paris Saint-Germain", "Fenerbahce"] },
+  { name: "Allan Saint-Maximin", nationalities: ["FRA"], clubs: ["Saint-Etienne", "Monaco", "Nice", "Newcastle United", "Al-Ahli", "Fenerbahce"] },
+  { name: "Sofyan Amrabat", nationalities: ["MAR", "NED"], clubs: ["Utrecht", "Feyenoord", "Club Brugge", "Hellas Verona", "Fiorentina", "Manchester United", "Fenerbahce"] },
+  { name: "Çağlar Söyüncü", nationalities: ["TUR"], clubs: ["SC Freiburg", "Leicester City", "Atletico Madrid", "Fenerbahce"] },
+  { name: "Cengiz Ünder", nationalities: ["TUR"], clubs: ["Istanbul Basaksehir", "Roma", "Leicester City", "Marseille", "Fenerbahce"] },
+  { name: "İrfan Can Kahveci", nationalities: ["TUR"], clubs: ["Genclerbirligi", "Istanbul Basaksehir", "Fenerbahce"] },
+  { name: "Ferdi Kadıoğlu", nationalities: ["TUR", "NED"], clubs: ["NEC Nijmegen", "Fenerbahce", "Brighton & Hove Albion"] },
+  { name: "Arda Güler", nationalities: ["TUR"], clubs: ["Fenerbahce", "Real Madrid"] },
+  { name: "Kim Min-jae", nationalities: ["KOR"], clubs: ["Fenerbahce", "Napoli", "Bayern Munich"] },
+  { name: "Sacha Boey", nationalities: ["FRA", "CMR"], clubs: ["Rennes", "Galatasaray", "Bayern Munich"] },
+  { name: "Dirk Kuyt", nationalities: ["NED"], clubs: ["Utrecht", "Feyenoord", "Liverpool", "Fenerbahce"] },
+  { name: "Roberto Carlos", nationalities: ["BRA", "ESP"], clubs: ["Palmeiras", "Inter", "Real Madrid", "Fenerbahce", "Corinthians"] },
+  { name: "Raul Meireles", nationalities: ["POR"], clubs: ["Boavista", "Porto", "Liverpool", "Chelsea", "Fenerbahce"] },
+  { name: "Nani", nationalities: ["POR"], clubs: ["Sporting CP", "Manchester United", "Fenerbahce", "Valencia", "Lazio"] },
+  { name: "Simon Kjær", nationalities: ["DEN"], clubs: ["Palermo", "VfL Wolfsburg", "Roma", "Lille", "Fenerbahce", "Sevilla", "Atalanta", "AC Milan"] },
+  { name: "Moussa Sow", nationalities: ["SEN", "FRA"], clubs: ["Rennes", "Lille", "Fenerbahce"] },
+  { name: "Ricardo Quaresma", nationalities: ["POR"], clubs: ["Sporting CP", "Barcelona", "Porto", "Inter", "Chelsea", "Besiktas"] },
+  { name: "Pepe", nationalities: ["POR", "BRA"], clubs: ["Maritimo", "Porto", "Real Madrid", "Besiktas"] },
+  { name: "Guti", nationalities: ["ESP"], clubs: ["Real Madrid", "Besiktas"] },
+  { name: "Anderson Talisca", nationalities: ["BRA"], clubs: ["Bahia", "Benfica", "Besiktas", "Al-Nassr", "Fenerbahce"] },
+  { name: "Vincent Aboubakar", nationalities: ["CMR"], clubs: ["Valenciennes", "Lorient", "Porto", "Besiktas", "Al-Nassr"] },
+  { name: "Gedson Fernandes", nationalities: ["POR"], clubs: ["Benfica", "Tottenham Hotspur", "Galatasaray", "Rizespor", "Besiktas"] },
+  { name: "Dele Alli", nationalities: ["ENG"], clubs: ["Milton Keynes Dons", "Tottenham Hotspur", "Everton", "Besiktas"] },
+  { name: "Eric Bailly", nationalities: ["CIV"], clubs: ["Espanyol", "Villarreal", "Manchester United", "Marseille", "Besiktas"] },
+  { name: "Rachid Ghezzal", nationalities: ["ALG", "FRA"], clubs: ["Lyon", "Monaco", "Leicester City", "Fiorentina", "Besiktas", "Rizespor"] },
+  { name: "Ciro Immobile", nationalities: ["ITA"], clubs: ["Juventus", "Torino", "Borussia Dortmund", "Sevilla", "Lazio", "Besiktas"] },
+  { name: "Rafa Silva", nationalities: ["POR"], clubs: ["Braga", "Benfica", "Besiktas"] },
+  { name: "Mario Gómez", nationalities: ["GER", "ESP"], clubs: ["VfB Stuttgart", "Bayern Munich", "Fiorentina", "Besiktas", "VfL Wolfsburg"] },
+  { name: "Demba Ba", nationalities: ["SEN", "FRA"], clubs: ["Hoffenheim", "West Ham United", "Newcastle United", "Chelsea", "Besiktas", "Istanbul Basaksehir"] },
+  { name: "Atiba Hutchinson", nationalities: ["CAN"], clubs: ["FC Copenhagen", "PSV", "Besiktas"] },
+  { name: "Ryan Babel", nationalities: ["NED"], clubs: ["Ajax", "Liverpool", "Hoffenheim", "Kasimpasa", "Besiktas", "Fulham", "Galatasaray"] },
+  { name: "Fernando Muslera", nationalities: ["URU", "ARG"], clubs: ["Lazio", "Galatasaray"] },
+  { name: "Felipe Melo", nationalities: ["BRA", "ESP"], clubs: ["Flamengo", "Cruzeiro", "Gremio", "Mallorca", "Racing Santander", "Almeria", "Fiorentina", "Juventus", "Galatasaray", "Inter", "Palmeiras"] },
+  { name: "Radamel Falcao", nationalities: ["COL"], clubs: ["River Plate", "Porto", "Atletico Madrid", "Monaco", "Manchester United", "Chelsea", "Galatasaray", "Rayo Vallecano"] },
+  { name: "Bafétimbi Gomis", nationalities: ["FRA", "SEN"], clubs: ["Saint-Etienne", "Lyon", "Swansea City", "Marseille", "Galatasaray", "Al-Hilal"] },
+  { name: "Steven Nzonzi", nationalities: ["FRA"], clubs: ["Blackburn Rovers", "Stoke City", "Sevilla", "Roma", "Galatasaray", "Rennes", "Konyaspor"] },
+  { name: "Mariano", nationalities: ["BRA"], clubs: ["Fluminense", "Bordeaux", "Sevilla", "Galatasaray", "Atletico Mineiro"] },
+  { name: "Fernando Reges", nationalities: ["BRA", "POR"], clubs: ["Porto", "Manchester City", "Galatasaray", "Sevilla"] },
+  { name: "Badou Ndiaye", nationalities: ["SEN"], clubs: ["Osmanlispor", "Galatasaray", "Stoke City", "Trabzonspor", "Adana Demirspor"] },
+  { name: "Henry Onyekuru", nationalities: ["NGA"], clubs: ["Eupen", "Anderlecht", "Everton", "Galatasaray", "Monaco", "Olympiacos", "Adana Demirspor"] },
+  { name: "Mario Lemina", nationalities: ["GAB", "FRA"], clubs: ["Lorient", "Marseille", "Juventus", "Southampton", "Galatasaray", "Fulham", "Nice", "Wolverhampton Wanderers"] },
+  { name: "Gabriel Sara", nationalities: ["BRA"], clubs: ["Sao Paulo", "Norwich City", "Galatasaray"] },
+  { name: "Marek Hamšík", nationalities: ["SVK"], clubs: ["Brescia", "Napoli", "Trabzonspor"] },
+  { name: "Anthony Nwakaeme", nationalities: ["NGA"], clubs: ["Hapoel Beer Sheva", "Trabzonspor"] },
+  { name: "Alexander Sørloth", nationalities: ["NOR"], clubs: ["Rosenborg", "Groningen", "Midtjylland", "Crystal Palace", "Gent", "Trabzonspor", "RB Leipzig", "Real Sociedad", "Villarreal", "Atletico Madrid"] },
+  { name: "Andreas Cornelius", nationalities: ["DEN"], clubs: ["FC Copenhagen", "Cardiff City", "Atalanta", "Bordeaux", "Parma", "Trabzonspor"] },
+  { name: "José Sosa", nationalities: ["ARG", "ITA"], clubs: ["Estudiantes", "Bayern Munich", "Napoli", "Metalist Kharkiv", "Atletico Madrid", "Besiktas", "AC Milan", "Trabzonspor", "Fenerbahce"] },
+  { name: "Burak Yılmaz", nationalities: ["TUR"], clubs: ["Besiktas", "Fenerbahce", "Trabzonspor", "Galatasaray", "Lille", "Fortuna Sittard"] },
+  { name: "Arda Turan", nationalities: ["TUR"], clubs: ["Galatasaray", "Atletico Madrid", "Barcelona", "Istanbul Basaksehir"] },
+  { name: "Emre Belözoğlu", nationalities: ["TUR"], clubs: ["Galatasaray", "Inter", "Newcastle United", "Fenerbahce", "Atletico Madrid", "Istanbul Basaksehir"] },
+  { name: "Okan Buruk", nationalities: ["TUR"], clubs: ["Galatasaray", "Inter", "Besiktas", "Istanbul Basaksehir"] },
+  { name: "Tugay Kerimoğlu", nationalities: ["TUR"], clubs: ["Galatasaray", "Rangers", "Blackburn Rovers"] },
+  { name: "Hakan Şükür", nationalities: ["TUR"], clubs: ["Galatasaray", "Torino", "Inter", "Parma", "Blackburn Rovers"] },
+  { name: "Nihat Kahveci", nationalities: ["TUR"], clubs: ["Besiktas", "Real Sociedad", "Villarreal"] },
+  { name: "Tuncay Şanlı", nationalities: ["TUR"], clubs: ["Fenerbahce", "Middlesbrough", "Stoke City", "VfL Wolfsburg", "Bolton Wanderers", "Bursaspor"] },
+  { name: "Mehmet Topal", nationalities: ["TUR"], clubs: ["Galatasaray", "Valencia", "Fenerbahce", "Istanbul Basaksehir", "Besiktas"] },
+  { name: "Caner Erkin", nationalities: ["TUR"], clubs: ["CSKA Moscow", "Galatasaray", "Fenerbahce", "Inter", "Besiktas"] },
+  { name: "Gökhan Gönül", nationalities: ["TUR"], clubs: ["Fenerbahce", "Besiktas"] },
+  { name: "Selçuk İnan", nationalities: ["TUR"], clubs: ["Trabzonspor", "Galatasaray"] },
+  { name: "Volkan Demirel", nationalities: ["TUR"], clubs: ["Fenerbahce"] },
+  { name: "Alex de Souza", nationalities: ["BRA"], clubs: ["Coritiba", "Palmeiras", "Cruzeiro", "Parma", "Fenerbahce"] }
 ];
 
 const ISO3_TO_GAME_CODES = {
   TUR: ["TUR"],
-  GBR: ["ENG", "SCO"],
+  GBR: ["ENG", "SCO", "WAL", "NIR"],
+  IRL: ["IRL"],
   ESP: ["ESP"],
   ITA: ["ITA"],
   DEU: ["GER"],
@@ -463,39 +572,88 @@ const ISO3_TO_GAME_CODES = {
   DNK: ["DEN"],
   NOR: ["NOR"],
   SWE: ["SWE"],
+  FIN: ["FIN"],
+  ISL: ["ISL"],
   POL: ["POL"],
   CZE: ["CZE"],
+  SVK: ["SVK"],
+  SVN: ["SVN"],
+  HUN: ["HUN"],
   ROU: ["ROU"],
+  BGR: ["BUL"],
   HRV: ["CRO"],
   SRB: ["SRB"],
+  BIH: ["BIH"],
+  MNE: ["MNE"],
+  MKD: ["MKD"],
+  ALB: ["ALB"],
+  KOS: ["KVX"],
   CYP: ["CYP"],
+  GEO: ["GEO"],
+  ARM: ["ARM"],
+  AZE: ["AZE"],
+  KAZ: ["KAZ"],
+  UZB: ["UZB"],
+  EST: ["EST"],
+  LVA: ["LVA"],
+  LTU: ["LTU"],
+  BLR: ["BLR"],
+  MDA: ["MDA"],
+  ISR: ["ISR"],
   USA: ["USA"],
+  CAN: ["CAN"],
+  MEX: ["MEX"],
+  CRI: ["CRC"],
+  PAN: ["PAN"],
+  HND: ["HON"],
+  JAM: ["JAM"],
   BRA: ["BRA"],
   ARG: ["ARG"],
-  MEX: ["MEX"],
   COL: ["COL"],
   CHL: ["CHI"],
   PER: ["PER"],
   ECU: ["ECU"],
   URY: ["URU"],
-  SAU: ["KSA"],
-  ARE: ["UAE"],
-  QAT: ["QAT"],
+  PRY: ["PAR"],
+  VEN: ["VEN"],
+  BOL: ["BOL"],
+  MAR: ["MAR"],
+  DZA: ["ALG"],
+  TUN: ["TUN"],
+  EGY: ["EGY"],
+  SEN: ["SEN"],
+  NGA: ["NGA"],
+  CMR: ["CMR"],
+  GHA: ["GHA"],
+  CIV: ["CIV"],
+  MLI: ["MLI"],
+  BFA: ["BFA"],
+  GIN: ["GUI"],
+  COD: ["COD"],
+  GAB: ["GAB"],
+  AGO: ["ANG"],
+  ZMB: ["ZAM"],
+  ZAF: ["RSA"],
+  CPV: ["CPV"],
+  GMB: ["GAM"],
   JPN: ["JPN"],
   KOR: ["KOR"],
   CHN: ["CHN"],
+  IRN: ["IRN"],
+  IRQ: ["IRQ"],
+  SAU: ["KSA"],
+  ARE: ["UAE"],
+  QAT: ["QAT"],
   AUS: ["AUS"],
-  ZAF: ["RSA"],
-  EGY: ["EGY"],
-  MAR: ["MAR"],
-  TUN: ["TUN"],
-  DZA: ["ALG"]
+  NZL: ["NZL"]
 };
 
 const NAME_TO_GAME_CODES = {
   "turkey": ["TUR"],
   "turkiye": ["TUR"],
-  "united kingdom": ["ENG", "SCO"],
+  "united kingdom": ["ENG", "SCO", "WAL", "NIR"],
+  "ireland": ["IRL"],
+  "republic of ireland": ["IRL"],
   "spain": ["ESP"],
   "italy": ["ITA"],
   "germany": ["GER"],
@@ -511,37 +669,842 @@ const NAME_TO_GAME_CODES = {
   "denmark": ["DEN"],
   "norway": ["NOR"],
   "sweden": ["SWE"],
+  "finland": ["FIN"],
+  "iceland": ["ISL"],
   "poland": ["POL"],
   "czech republic": ["CZE"],
   "czechia": ["CZE"],
+  "slovakia": ["SVK"],
+  "slovenia": ["SVN"],
+  "hungary": ["HUN"],
   "romania": ["ROU"],
+  "bulgaria": ["BUL"],
   "croatia": ["CRO"],
   "serbia": ["SRB"],
+  "bosnia and herzegovina": ["BIH"],
+  "bosnia-herzegovina": ["BIH"],
+  "montenegro": ["MNE"],
+  "north macedonia": ["MKD"],
+  "macedonia": ["MKD"],
+  "albania": ["ALB"],
+  "kosovo": ["KVX"],
   "cyprus": ["CYP"],
+  "georgia": ["GEO"],
+  "armenia": ["ARM"],
+  "azerbaijan": ["AZE"],
+  "kazakhstan": ["KAZ"],
+  "uzbekistan": ["UZB"],
+  "estonia": ["EST"],
+  "latvia": ["LVA"],
+  "lithuania": ["LTU"],
+  "belarus": ["BLR"],
+  "moldova": ["MDA"],
+  "israel": ["ISR"],
   "united states of america": ["USA"],
   "united states": ["USA"],
+  "canada": ["CAN"],
+  "mexico": ["MEX"],
+  "costa rica": ["CRC"],
+  "panama": ["PAN"],
+  "honduras": ["HON"],
+  "jamaica": ["JAM"],
   "brazil": ["BRA"],
   "argentina": ["ARG"],
-  "mexico": ["MEX"],
   "colombia": ["COL"],
   "chile": ["CHI"],
   "peru": ["PER"],
   "ecuador": ["ECU"],
   "uruguay": ["URU"],
-  "saudi arabia": ["KSA"],
-  "united arab emirates": ["UAE"],
-  "qatar": ["QAT"],
+  "paraguay": ["PAR"],
+  "venezuela": ["VEN"],
+  "bolivia": ["BOL"],
+  "morocco": ["MAR"],
+  "algeria": ["ALG"],
+  "tunisia": ["TUN"],
+  "egypt": ["EGY"],
+  "senegal": ["SEN"],
+  "nigeria": ["NGA"],
+  "cameroon": ["CMR"],
+  "ghana": ["GHA"],
+  "ivory coast": ["CIV"],
+  "cote d'ivoire": ["CIV"],
+  "mali": ["MLI"],
+  "burkina faso": ["BFA"],
+  "guinea": ["GUI"],
+  "democratic republic of the congo": ["COD"],
+  "dr congo": ["COD"],
+  "gabon": ["GAB"],
+  "angola": ["ANG"],
+  "zambia": ["ZAM"],
+  "south africa": ["RSA"],
+  "cape verde": ["CPV"],
+  "gambia": ["GAM"],
+  "the gambia": ["GAM"],
   "japan": ["JPN"],
   "south korea": ["KOR"],
   "korea, republic of": ["KOR"],
   "china": ["CHN"],
+  "iran": ["IRN"],
+  "iraq": ["IRQ"],
+  "saudi arabia": ["KSA"],
+  "united arab emirates": ["UAE"],
+  "qatar": ["QAT"],
   "australia": ["AUS"],
-  "south africa": ["RSA"],
-  "egypt": ["EGY"],
-  "morocco": ["MAR"],
-  "tunisia": ["TUN"],
-  "algeria": ["ALG"]
+  "new zealand": ["NZL"]
 };
+
+const normalizeText = (str) => {
+  return String(str || "")
+    .replace(/[\u200b-\u200f\ufeff]/g, "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ı/g, "i")
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/\s+/g, " ")
+    .trim();
+};
+
+function normalizeClubKey(clubName) {
+  let cleaned = normalizeText(clubName)
+    .replace(/[.'’\-_/()&]/g, " ")
+    .replace(/\b(fc|sk|jk|cf|ac|as|sc|ss|fk|afc|cfc|sfc|bk|ik|if|nk|gnk|hnk|ogc|rc|rcd|cd|ud|sd|ca|se|cr|ec|vfb|vfl|tsg|sv|fsv|bsc|hsv|ksc|msv|rb|spvgg|1)\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (CLUB_ALIASES[cleaned]) {
+    cleaned = CLUB_ALIASES[cleaned];
+  }
+  return cleaned;
+}
+
+const clubToCountryCode = new Map();
+const officialClubByKey = new Map();
+for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
+  for (const club of info.clubs) {
+    const key = normalizeClubKey(club);
+    clubToCountryCode.set(key, code);
+    if (!officialClubByKey.has(key)) {
+      officialClubByKey.set(key, club);
+    }
+  }
+}
+
+function upsertPlayerEntry(map, displayName, clubs, nationalities) {
+  const normName = normalizeText(displayName).replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
+  if (!normName) return;
+  if (!map.has(normName)) {
+    map.set(normName, {
+      name: displayName,
+      normalized: normName,
+      clubKeys: new Set(),
+      rawClubs: new Set(),
+      nationCodes: new Set()
+    });
+  }
+  const entry = map.get(normName);
+  for (const c of clubs || []) {
+    const key = normalizeClubKey(c);
+    if (key) {
+      entry.clubKeys.add(key);
+      entry.rawClubs.add(officialClubByKey.get(key) || c);
+    }
+  }
+  const rawNations = Array.isArray(nationalities)
+    ? nationalities
+    : nationalities
+      ? [nationalities]
+      : [];
+  for (const nat of rawNations) {
+    const code = String(nat || "").trim().toUpperCase();
+    if (code) {
+      entry.nationCodes.add(code);
+    }
+  }
+}
+
+const mergedPlayersMap = new Map();
+for (const p of FOOTBALL_DB.players) {
+  upsertPlayerEntry(mergedPlayersMap, p.name, p.clubs, p.nationalities || p.nationality);
+}
+
+for (const item of SUPPLEMENTAL_PLAYERS) {
+  upsertPlayerEntry(mergedPlayersMap, item.name, item.clubs, item.nationalities);
+}
+
+const playerIndex = Array.from(mergedPlayersMap.values());
+
+const nationPlayerCounts = new Map();
+for (const p of playerIndex) {
+  for (const nat of p.nationCodes) {
+    nationPlayerCounts.set(nat, (nationPlayerCounts.get(nat) || 0) + 1);
+  }
+}
+
+const NATIONS_DB = {};
+for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
+  NATIONS_DB[code] = {
+    name: info.name,
+    lat: info.lat,
+    lng: info.lng,
+    league: info.league || "",
+    playerCount: nationPlayerCounts.get(code) || 0
+  };
+}
+for (const [code, info] of Object.entries(EXTRA_NATION_CATALOG)) {
+  const count = nationPlayerCounts.get(code) || 0;
+  if (!NATIONS_DB[code] && count > 0) {
+    NATIONS_DB[code] = {
+      name: info.name,
+      lat: info.lat,
+      lng: info.lng,
+      league: "",
+      playerCount: count
+    };
+  }
+}
+
+function getNationName(code) {
+  return (NATIONS_DB[code] && NATIONS_DB[code].name) || (FOOTBALL_DB.countries[code] && FOOTBALL_DB.countries[code].name) || code;
+}
+
+function hasActiveLeague(code) {
+  const info = FOOTBALL_DB.countries[code];
+  return Boolean(info && Array.isArray(info.clubs) && info.clubs.length >= 3);
+}
+
+function hasActiveNation(code) {
+  const info = NATIONS_DB[code];
+  return Boolean(info && info.playerCount >= 3);
+}
+
+function isNationSelectionPhase() {
+  return state.gridMode === "nation_vs_league" && state.horizontalNations.length < 3;
+}
+
+function getActiveMapCatalog() {
+  if (isNationSelectionPhase()) {
+    return NATIONS_DB;
+  }
+  return FOOTBALL_DB.countries;
+}
+
+function isCodeSelectableOnMap(code) {
+  if (isNationSelectionPhase()) {
+    return hasActiveNation(code);
+  }
+  return hasActiveLeague(code);
+}
+
+function resolveFeatureGameCodes(feature) {
+  const props = feature.properties || {};
+  const candidates = [
+    props.ISO_A3,
+    props.ADM0_A3,
+    props.iso_a3,
+    props.adm0_a3,
+    feature.id
+  ];
+  for (const rawIso of candidates) {
+    if (!rawIso) continue;
+    const iso = String(rawIso).toUpperCase().trim();
+    if (ISO3_TO_GAME_CODES[iso]) {
+      return ISO3_TO_GAME_CODES[iso];
+    }
+  }
+  const nameCandidates = [props.ADMIN, props.NAME, props.NAME_LONG, props.name];
+  for (const rawName of nameCandidates) {
+    if (!rawName) continue;
+    const norm = normalizeText(rawName);
+    if (NAME_TO_GAME_CODES[norm]) {
+      return NAME_TO_GAME_CODES[norm];
+    }
+  }
+  return [];
+}
+
+function getActiveCodesForFeature(rawCodes) {
+  if (!Array.isArray(rawCodes) || rawCodes.length === 0) return [];
+  return rawCodes.filter((code) => isCodeSelectableOnMap(code));
+}
+
+function getPolygonRingCentroid(ring) {
+  if (!Array.isArray(ring) || ring.length === 0) return { lng: 0, lat: 0 };
+  let sumLng = 0;
+  let sumLat = 0;
+  for (const [lng, lat] of ring) {
+    sumLng += lng;
+    sumLat += lat;
+  }
+  return { lng: sumLng / ring.length, lat: sumLat / ring.length };
+}
+
+function isPolygonNearCountry(polyRings, gameCodes) {
+  if (!gameCodes || gameCodes.length === 0) return false;
+  const catalog = getActiveMapCatalog();
+  const centroid = getPolygonRingCentroid(polyRings[0]);
+  return gameCodes.some((code) => {
+    const info = catalog[code] || NATIONS_DB[code] || FOOTBALL_DB.countries[code];
+    if (!info) return false;
+    return Math.hypot(centroid.lng - info.lng, centroid.lat - info.lat) < 42;
+  });
+}
+
+function isPointInRing(lng, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0];
+    const yi = ring[i][1];
+    const xj = ring[j][0];
+    const yj = ring[j][1];
+    const intersect =
+      (yi > lat) !== (yj > lat) &&
+      lng < ((xj - xi) * (lat - yi)) / (yj - yi || 1e-12) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+function isPointInPolygonRings(lng, lat, rings) {
+  if (!Array.isArray(rings) || rings.length === 0) return false;
+  if (!isPointInRing(lng, lat, rings[0])) return false;
+  for (let i = 1; i < rings.length; i++) {
+    if (isPointInRing(lng, lat, rings[i])) return false;
+  }
+  return true;
+}
+
+async function loadWorldGeoJson() {
+  if (state.geoLoadAttempted) return;
+  state.geoLoadAttempted = true;
+
+  const sources = [
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+    "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
+  ];
+
+  for (const url of sources) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) continue;
+      const geojson = await response.json();
+      if (geojson && Array.isArray(geojson.features) && geojson.features.length > 0) {
+        state.worldGeoFeatures = geojson.features
+          .filter((f) => {
+            const name = normalizeText((f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || "");
+            return name !== "antarctica";
+          })
+          .map((f) => ({
+            geometry: f.geometry,
+            rawCodes: resolveFeatureGameCodes(f)
+          }));
+        state.mapView.needsRender = true;
+        drawWorldMap();
+        return;
+      }
+    } catch (err) {
+    }
+  }
+}
+
+const clubCrossReach = new Map();
+const clubRosterCount = new Map();
+for (const p of playerIndex) {
+  const playerClubKeys = Array.from(p.clubKeys);
+  const distinctCountries = new Set(
+    playerClubKeys.map((k) => clubToCountryCode.get(k)).filter(Boolean)
+  ).size;
+  const careerSpan = playerClubKeys.length;
+  for (const key of playerClubKeys) {
+    clubRosterCount.set(key, (clubRosterCount.get(key) || 0) + 1);
+    if (distinctCountries > 1) {
+      clubCrossReach.set(key, (clubCrossReach.get(key) || 0) + distinctCountries * 3 + careerSpan);
+    }
+  }
+}
+
+function getClubPrestigeScore(clubName) {
+  const norm = normalizeText(clubName);
+  const key = normalizeClubKey(clubName);
+  let tierBonus = 0;
+  if (TIER1_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
+    tierBonus = 2000;
+  } else if (TIER2_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
+    tierBonus = 900;
+  }
+  const reach = clubCrossReach.get(key) || 0;
+  const roster = Math.max(1, clubRosterCount.get(key) || 1);
+  const normalizedReach = reach / Math.sqrt(roster);
+  return tierBonus + normalizedReach;
+}
+
+const countryRankedClubs = new Map();
+const countryClubRankIndex = new Map();
+
+for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
+  const ranked = [...info.clubs].sort((a, b) => {
+    const scoreA = getClubPrestigeScore(a);
+    const scoreB = getClubPrestigeScore(b);
+    return scoreB !== scoreA ? scoreB - scoreA : a.localeCompare(b);
+  });
+  countryRankedClubs.set(code, ranked);
+  ranked.forEach((club, idx) => {
+    countryClubRankIndex.set(club, idx);
+  });
+}
+
+const pairCache = new Map();
+const clubNationCache = new Map();
+
+function getCommonPlayers(clubA, clubB) {
+  const keyA = normalizeClubKey(clubA);
+  const keyB = normalizeClubKey(clubB);
+  if (!keyA || !keyB || keyA === keyB) return [];
+  const cacheKey = keyA < keyB ? `${keyA}|||${keyB}` : `${keyB}|||${keyA}`;
+  if (pairCache.has(cacheKey)) {
+    return pairCache.get(cacheKey);
+  }
+  const matches = playerIndex.filter((p) => p.clubKeys.has(keyA) && p.clubKeys.has(keyB));
+  pairCache.set(cacheKey, matches);
+  return matches;
+}
+
+function getClubNationPlayers(clubName, nationCode) {
+  const clubKey = normalizeClubKey(clubName);
+  const natKey = String(nationCode || "").trim().toUpperCase();
+  if (!clubKey || !natKey) return [];
+  const cacheKey = `${clubKey}@@@${natKey}`;
+  if (clubNationCache.has(cacheKey)) {
+    return clubNationCache.get(cacheKey);
+  }
+  const matches = playerIndex.filter((p) => p.clubKeys.has(clubKey) && p.nationCodes.has(natKey));
+  clubNationCache.set(cacheKey, matches);
+  return matches;
+}
+
+function getCellValidPlayers(r, c) {
+  if (state.gridMode === "nation_vs_league") {
+    return getClubNationPlayers(state.rowClubs[r], state.colNations[c]);
+  }
+  return getCommonPlayers(state.rowClubs[r], state.colClubs[c]);
+}
+
+function canAssignNineDistinctPlayersForCells(cellLists) {
+  if (!Array.isArray(cellLists) || cellLists.length !== 9) return false;
+  const sorted = [...cellLists].sort((a, b) => a.length - b.length);
+  const used = new Set();
+
+  function matchCell(idx) {
+    if (idx === sorted.length) return true;
+    for (const playerKey of sorted[idx]) {
+      if (used.has(playerKey)) continue;
+      used.add(playerKey);
+      if (matchCell(idx + 1)) return true;
+      used.delete(playerKey);
+    }
+    return false;
+  }
+
+  return matchCell(0);
+}
+
+function canAssignNineDistinctPlayers(cols, rows, minCommonRequired) {
+  const cells = [];
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const players = getCommonPlayers(rows[r], cols[c]);
+      if (!players || players.length < minCommonRequired) {
+        return false;
+      }
+      cells.push(players.map((p) => p.normalized));
+    }
+  }
+  return canAssignNineDistinctPlayersForCells(cells);
+}
+
+function canAssignNineDistinctNationPlayers(colNations, rowClubs, minRequired) {
+  const cells = [];
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const players = getClubNationPlayers(rowClubs[r], colNations[c]);
+      if (!players || players.length < minRequired) {
+        return false;
+      }
+      cells.push(players.map((p) => p.normalized));
+    }
+  }
+  return canAssignNineDistinctPlayersForCells(cells);
+}
+
+function shuffle(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function getTierClubPools(code, difficulty) {
+  const ranked = countryRankedClubs.get(code) || FOOTBALL_DB.countries[code].clubs;
+  const n = ranked.length;
+
+  if (difficulty === "easy") {
+    const topCount = Math.min(n, Math.max(6, Math.ceil(n * 0.35)));
+    const midCount = Math.min(n, Math.max(topCount, Math.ceil(n * 0.65)));
+    return {
+      primary: ranked.slice(0, topCount),
+      secondary: ranked.slice(0, midCount),
+      all: ranked
+    };
+  }
+
+  if (difficulty === "hard") {
+    const bottomCount = Math.min(n, Math.max(6, Math.ceil(n * 0.55)));
+    const widerCount = Math.min(n, Math.max(bottomCount, Math.ceil(n * 0.80)));
+    return {
+      primary: ranked.slice(n - bottomCount),
+      secondary: ranked.slice(n - widerCount),
+      all: [...ranked].reverse()
+    };
+  }
+
+  const start = Math.min(2, Math.floor(n * 0.12));
+  const end = Math.min(n, Math.max(start + 8, Math.ceil(n * 0.80)));
+  return {
+    primary: ranked.slice(start, end),
+    secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.90))),
+    all: ranked
+  };
+}
+
+function scoreCandidateGrid(cols, rows, difficulty) {
+  let minCellCommon = Infinity;
+  let totalCommon = 0;
+
+  for (const r of rows) {
+    for (const c of cols) {
+      const cnt = getCommonPlayers(r, c).length;
+      if (cnt < minCellCommon) minCellCommon = cnt;
+      totalCommon += Math.min(cnt, 14);
+    }
+  }
+
+  const totalRank = [...cols, ...rows].reduce(
+    (acc, club) => acc + (countryClubRankIndex.get(club) ?? 10),
+    0
+  );
+
+  if (difficulty === "easy") {
+    return minCellCommon * 20 + totalCommon * 8 - totalRank * 45;
+  }
+  if (difficulty === "hard") {
+    return totalRank * 22 - minCellCommon * 18 - totalCommon * 3;
+  }
+  return minCellCommon * 14 + totalCommon * 3 - Math.abs(totalRank - 34) * 5;
+}
+
+function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficulty) {
+  const horizClubs = shuffle(horizPool);
+  const vertClubs = shuffle(vertPool);
+
+  const validRowsForCol = new Map();
+  for (const hClub of horizClubs) {
+    const validRows = vertClubs.filter(
+      (vClub) => getCommonPlayers(hClub, vClub).length >= minCommonRequired
+    );
+    if (validRows.length >= 3) {
+      validRowsForCol.set(hClub, validRows);
+    }
+  }
+
+  const candidateCols = horizClubs.filter((c) => validRowsForCol.has(c));
+  if (candidateCols.length < 3) return null;
+
+  const pickedCols = [];
+  const rowCounts = new Map();
+  const candidates = [];
+  const maxCandidates = 150;
+
+  function backtrack(startIdx) {
+    if (candidates.length >= maxCandidates) return;
+
+    if (pickedCols.length === 3) {
+      const viableRows = vertClubs.filter((r) => (rowCounts.get(r) || 0) === 3);
+      if (viableRows.length >= 3) {
+        const chosenRows = shuffle(viableRows).slice(0, 3);
+        const chosenCols = [...pickedCols];
+        if (canAssignNineDistinctPlayers(chosenCols, chosenRows, minCommonRequired)) {
+          candidates.push({
+            cols: chosenCols,
+            rows: chosenRows,
+            score: scoreCandidateGrid(chosenCols, chosenRows, difficulty)
+          });
+        }
+      }
+      return;
+    }
+
+    for (let i = startIdx; i <= candidateCols.length - (3 - pickedCols.length); i++) {
+      if (candidates.length >= maxCandidates) return;
+      const colClub = candidateCols[i];
+      const rows = validRowsForCol.get(colClub);
+      pickedCols.push(colClub);
+      for (const r of rows) {
+        rowCounts.set(r, (rowCounts.get(r) || 0) + 1);
+      }
+
+      backtrack(i + 1);
+
+      pickedCols.pop();
+      for (const r of rows) {
+        rowCounts.set(r, rowCounts.get(r) - 1);
+      }
+    }
+  }
+
+  backtrack(0);
+
+  if (candidates.length === 0) return null;
+  candidates.sort((a, b) => b.score - a.score);
+  const topSlice = candidates.slice(0, Math.min(3, candidates.length));
+  return topSlice[Math.floor(Math.random() * topSlice.length)];
+}
+
+function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty) {
+  const hPools = getTierClubPools(horizCode, difficulty);
+  const vPools = getTierClubPools(vertCode, difficulty);
+
+  const attempts =
+    difficulty === "easy"
+      ? [
+          [hPools.primary, vPools.primary, 1],
+          [hPools.secondary, vPools.secondary, 1],
+          [hPools.all, vPools.all, 1]
+        ]
+      : difficulty === "hard"
+        ? [
+            [hPools.primary, vPools.primary, 1],
+            [hPools.secondary, vPools.secondary, 1],
+            [hPools.all, vPools.all, 1]
+          ]
+        : [
+            [hPools.primary, vPools.primary, 2],
+            [hPools.primary, vPools.primary, 1],
+            [hPools.secondary, vPools.secondary, 1],
+            [hPools.all, vPools.all, 1]
+          ];
+
+  for (const [hPool, vPool, minCommon] of attempts) {
+    const found = searchBestGridInPools(hPool, vPool, minCommon, difficulty);
+    if (found) return found;
+  }
+
+  return null;
+}
+
+function scoreNationLeagueCandidate(nations, clubs, difficulty) {
+  let minCellCount = Infinity;
+  let totalMatches = 0;
+
+  for (const club of clubs) {
+    for (const nat of nations) {
+      const cnt = getClubNationPlayers(club, nat).length;
+      if (cnt < minCellCount) minCellCount = cnt;
+      totalMatches += Math.min(cnt, 15);
+    }
+  }
+
+  const totalRank = clubs.reduce(
+    (acc, club) => acc + (countryClubRankIndex.get(club) ?? 10),
+    0
+  );
+
+  if (difficulty === "easy") {
+    return minCellCount * 22 + totalMatches * 8 - totalRank * 40;
+  }
+  if (difficulty === "hard") {
+    return totalRank * 22 - minCellCount * 16 - totalMatches * 3;
+  }
+  return minCellCount * 15 + totalMatches * 4 - Math.abs(totalRank - 28) * 5;
+}
+
+function generateNationVsLeagueGrid(nations, leagueCountryCode, difficulty = state.difficulty) {
+  if (!Array.isArray(nations) || nations.length !== 3 || !hasActiveLeague(leagueCountryCode)) {
+    return null;
+  }
+
+  const vPools = getTierClubPools(leagueCountryCode, difficulty);
+  const attempts =
+    difficulty === "easy"
+      ? [
+          [vPools.primary, 1],
+          [vPools.secondary, 1],
+          [vPools.all, 1]
+        ]
+      : difficulty === "hard"
+        ? [
+            [vPools.primary, 1],
+            [vPools.secondary, 1],
+            [vPools.all, 1]
+          ]
+        : [
+            [vPools.primary, 2],
+            [vPools.primary, 1],
+            [vPools.secondary, 1],
+            [vPools.all, 1]
+          ];
+
+  for (const [clubPool, minCount] of attempts) {
+    const eligibleClubs = shuffle(clubPool).filter((club) =>
+      nations.every((nat) => getClubNationPlayers(club, nat).length >= minCount)
+    );
+    if (eligibleClubs.length < 3) continue;
+
+    const candidates = [];
+    const maxTries = 80;
+    for (let t = 0; t < maxTries; t++) {
+      const picked = shuffle(eligibleClubs).slice(0, 3);
+      if (canAssignNineDistinctNationPlayers(nations, picked, minCount)) {
+        candidates.push({
+          nations: [...nations],
+          rows: picked,
+          score: scoreNationLeagueCandidate(nations, picked, difficulty)
+        });
+      }
+    }
+
+    if (candidates.length > 0) {
+      candidates.sort((a, b) => b.score - a.score);
+      const top = candidates.slice(0, Math.min(3, candidates.length));
+      return top[Math.floor(Math.random() * top.length)];
+    }
+  }
+
+  return null;
+}
+
+function autoFillRemainingAxes() {
+  if (state.gridMode === "club_vs_club") {
+    const activeCodes = shuffle(Object.keys(FOOTBALL_DB.countries).filter((c) => hasActiveLeague(c)));
+    if (activeCodes.length < 2) return;
+
+    if (!state.horizontalCountry && state.verticalCountry) {
+      for (const cand of activeCodes) {
+        if (cand === state.verticalCountry) continue;
+        if (generateSolvableGrid(cand, state.verticalCountry, state.difficulty)) {
+          state.horizontalCountry = cand;
+          break;
+        }
+      }
+    } else if (state.horizontalCountry && !state.verticalCountry) {
+      for (const cand of activeCodes) {
+        if (cand === state.horizontalCountry) continue;
+        if (generateSolvableGrid(state.horizontalCountry, cand, state.difficulty)) {
+          state.verticalCountry = cand;
+          break;
+        }
+      }
+    } else if (!state.horizontalCountry && !state.verticalCountry) {
+      for (const hCand of activeCodes) {
+        for (const vCand of activeCodes) {
+          if (hCand === vCand) continue;
+          if (generateSolvableGrid(hCand, vCand, state.difficulty)) {
+            state.horizontalCountry = hCand;
+            state.verticalCountry = vCand;
+            break;
+          }
+        }
+        if (state.horizontalCountry && state.verticalCountry) break;
+      }
+    }
+
+    state.mapView.needsRender = true;
+    updateCountrySelectionUI();
+    return;
+  }
+
+  const allNations = Object.keys(NATIONS_DB).filter((c) => hasActiveNation(c));
+  const majorNations = allNations.filter((c) => MAJOR_FOOTBALL_NATIONS.has(c));
+  const minorNations = allNations.filter((c) => !MAJOR_FOOTBALL_NATIONS.has(c));
+
+  let orderedNations;
+  if (state.difficulty === "easy") {
+    orderedNations = [...shuffle(majorNations), ...shuffle(minorNations)];
+  } else if (state.difficulty === "hard") {
+    orderedNations = [...shuffle(minorNations), ...shuffle(majorNations)];
+  } else {
+    orderedNations = shuffle(allNations);
+  }
+
+  const leagueCodes = shuffle(Object.keys(FOOTBALL_DB.countries).filter((c) => hasActiveLeague(c)));
+  const targetLeagues = state.verticalCountry && hasActiveLeague(state.verticalCountry)
+    ? [state.verticalCountry]
+    : leagueCodes;
+
+  const baseNations = [...state.horizontalNations];
+  const neededCount = Math.max(0, 3 - baseNations.length);
+
+  for (const leagueCode of targetLeagues) {
+    if (neededCount === 0) {
+      if (generateNationVsLeagueGrid(baseNations, leagueCode, state.difficulty)) {
+        state.verticalCountry = leagueCode;
+        break;
+      }
+      continue;
+    }
+
+    const viableForLeague = orderedNations.filter(
+      (nat) => !baseNations.includes(nat) && (NATIONS_DB[nat]?.playerCount || 0) >= 8
+    );
+
+    let foundCombo = null;
+    for (let attempt = 0; attempt < 90; attempt++) {
+      const sample = shuffle(viableForLeague).slice(0, neededCount);
+      if (sample.length < neededCount) break;
+      const candidateNations = [...baseNations, ...sample];
+      if (generateNationVsLeagueGrid(candidateNations, leagueCode, state.difficulty)) {
+        foundCombo = candidateNations;
+        break;
+      }
+    }
+
+    if (foundCombo) {
+      state.horizontalNations = foundCombo;
+      state.verticalCountry = leagueCode;
+      break;
+    }
+  }
+
+  state.mapView.needsRender = true;
+  updateCountrySelectionUI();
+}
+
+function setGridMode(mode) {
+  const nextMode = mode === "nation_vs_league" ? "nation_vs_league" : "club_vs_club";
+  if (state.gridMode === nextMode) return;
+
+  state.gridMode = nextMode;
+  state.horizontalCountry = null;
+  state.horizontalNations = [];
+  state.verticalCountry = null;
+  state.hoveredCountry = null;
+  state.mapView.needsRender = true;
+
+  document.querySelectorAll(".grid-mode-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.gridMode === nextMode);
+  });
+
+  const searchInput = document.getElementById("country-search-input");
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  updateCountrySelectionUI();
+}
 
 function injectMapLayoutFixes() {
   if (document.getElementById("geogame-layout-fix")) return;
@@ -1159,8 +2122,8 @@ function setLobbyGameMode(mode) {
   }
   if (subtitle) {
     subtitle.textContent = isAi
-      ? "Enter your unique username before choosing leagues on the world map."
-      : "Enter two distinct usernames before selecting leagues on the world map.";
+      ? "Enter your unique username before choosing modes and leagues on the world map."
+      : "Enter two distinct usernames before selecting modes and leagues on the world map.";
   }
 }
 
@@ -1192,7 +2155,7 @@ function enhancePlayerLobbyUI() {
   header.innerHTML = `
     <div class="premium-lobby-eyebrow">Matchday Setup</div>
     <h1 class="premium-lobby-title">Atlas XI</h1>
-    <p id="lobby-subtitle-text" class="premium-lobby-subtitle">Enter two distinct usernames before selecting leagues on the world map.</p>
+    <p id="lobby-subtitle-text" class="premium-lobby-subtitle">Enter two distinct usernames before selecting modes and leagues on the world map.</p>
   `;
 
   const modeGrid = document.createElement("div");
@@ -1422,447 +2385,6 @@ function executeEndMatch() {
   updateCountrySelectionUI();
 }
 
-const normalizeText = (str) => {
-  return String(str || "")
-    .replace(/[\u200b-\u200f\ufeff]/g, "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ı/g, "i")
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .replace(/\s+/g, " ")
-    .trim();
-};
-
-function normalizeClubKey(clubName) {
-  let cleaned = normalizeText(clubName)
-    .replace(/[.'’\-_/()&]/g, " ")
-    .replace(/\b(fc|sk|jk|cf|ac|as|sc|ss|fk|afc|cfc|sfc|bk|ik|if|nk|gnk|hnk|ogc|rc|rcd|cd|ud|sd|ca|se|cr|ec|vfb|vfl|tsg|sv|fsv|bsc|hsv|ksc|msv|rb|spvgg|1)\b/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  if (CLUB_ALIASES[cleaned]) {
-    cleaned = CLUB_ALIASES[cleaned];
-  }
-  return cleaned;
-}
-
-function hasActiveLeague(code) {
-  const info = FOOTBALL_DB.countries[code];
-  return Boolean(info && Array.isArray(info.clubs) && info.clubs.length >= 3);
-}
-
-function resolveFeatureGameCodes(feature) {
-  const props = feature.properties || {};
-  const candidates = [
-    props.ISO_A3,
-    props.ADM0_A3,
-    props.iso_a3,
-    props.adm0_a3,
-    feature.id
-  ];
-  for (const rawIso of candidates) {
-    if (!rawIso) continue;
-    const iso = String(rawIso).toUpperCase().trim();
-    if (ISO3_TO_GAME_CODES[iso]) {
-      const active = ISO3_TO_GAME_CODES[iso].filter((code) => hasActiveLeague(code));
-      if (active.length > 0) return active;
-    }
-  }
-  const nameCandidates = [props.ADMIN, props.NAME, props.NAME_LONG, props.name];
-  for (const rawName of nameCandidates) {
-    if (!rawName) continue;
-    const norm = normalizeText(rawName);
-    if (NAME_TO_GAME_CODES[norm]) {
-      const active = NAME_TO_GAME_CODES[norm].filter((code) => hasActiveLeague(code));
-      if (active.length > 0) return active;
-    }
-  }
-  return [];
-}
-
-function getPolygonRingCentroid(ring) {
-  if (!Array.isArray(ring) || ring.length === 0) return { lng: 0, lat: 0 };
-  let sumLng = 0;
-  let sumLat = 0;
-  for (const [lng, lat] of ring) {
-    sumLng += lng;
-    sumLat += lat;
-  }
-  return { lng: sumLng / ring.length, lat: sumLat / ring.length };
-}
-
-function isPolygonNearCountry(polyRings, gameCodes) {
-  if (!gameCodes || gameCodes.length === 0) return false;
-  const centroid = getPolygonRingCentroid(polyRings[0]);
-  return gameCodes.some((code) => {
-    const info = FOOTBALL_DB.countries[code];
-    if (!info) return false;
-    return Math.hypot(centroid.lng - info.lng, centroid.lat - info.lat) < 42;
-  });
-}
-
-function isPointInRing(lng, lat, ring) {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const xi = ring[i][0];
-    const yi = ring[i][1];
-    const xj = ring[j][0];
-    const yj = ring[j][1];
-    const intersect =
-      (yi > lat) !== (yj > lat) &&
-      lng < ((xj - xi) * (lat - yi)) / (yj - yi || 1e-12) + xi;
-    if (intersect) inside = !inside;
-  }
-  return inside;
-}
-
-function isPointInPolygonRings(lng, lat, rings) {
-  if (!Array.isArray(rings) || rings.length === 0) return false;
-  if (!isPointInRing(lng, lat, rings[0])) return false;
-  for (let i = 1; i < rings.length; i++) {
-    if (isPointInRing(lng, lat, rings[i])) return false;
-  }
-  return true;
-}
-
-async function loadWorldGeoJson() {
-  if (state.geoLoadAttempted) return;
-  state.geoLoadAttempted = true;
-
-  const sources = [
-    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
-    "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
-  ];
-
-  for (const url of sources) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) continue;
-      const geojson = await response.json();
-      if (geojson && Array.isArray(geojson.features) && geojson.features.length > 0) {
-        state.worldGeoFeatures = geojson.features
-          .filter((f) => {
-            const name = normalizeText((f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || "");
-            return name !== "antarctica";
-          })
-          .map((f) => ({
-            geometry: f.geometry,
-            gameCodes: resolveFeatureGameCodes(f)
-          }));
-        state.mapView.needsRender = true;
-        drawWorldMap();
-        return;
-      }
-    } catch (err) {
-    }
-  }
-}
-
-const clubToCountryCode = new Map();
-const officialClubByKey = new Map();
-for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
-  for (const club of info.clubs) {
-    const key = normalizeClubKey(club);
-    clubToCountryCode.set(key, code);
-    if (!officialClubByKey.has(key)) {
-      officialClubByKey.set(key, club);
-    }
-  }
-}
-
-function upsertPlayerEntry(map, displayName, clubs) {
-  const normName = normalizeText(displayName).replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
-  if (!normName) return;
-  if (!map.has(normName)) {
-    map.set(normName, {
-      name: displayName,
-      normalized: normName,
-      clubKeys: new Set(),
-      rawClubs: new Set()
-    });
-  }
-  const entry = map.get(normName);
-  for (const c of clubs || []) {
-    const key = normalizeClubKey(c);
-    if (key) {
-      entry.clubKeys.add(key);
-      entry.rawClubs.add(officialClubByKey.get(key) || c);
-    }
-  }
-}
-
-const mergedPlayersMap = new Map();
-for (const p of FOOTBALL_DB.players) {
-  upsertPlayerEntry(mergedPlayersMap, p.name, p.clubs);
-}
-
-for (const item of SUPPLEMENTAL_PLAYERS) {
-  upsertPlayerEntry(mergedPlayersMap, item.name, item.clubs);
-}
-
-const playerIndex = Array.from(mergedPlayersMap.values());
-
-const clubCrossReach = new Map();
-const clubRosterCount = new Map();
-for (const p of playerIndex) {
-  const playerClubKeys = Array.from(p.clubKeys);
-  const distinctCountries = new Set(
-    playerClubKeys.map((k) => clubToCountryCode.get(k)).filter(Boolean)
-  ).size;
-  const careerSpan = playerClubKeys.length;
-  for (const key of playerClubKeys) {
-    clubRosterCount.set(key, (clubRosterCount.get(key) || 0) + 1);
-    if (distinctCountries > 1) {
-      clubCrossReach.set(key, (clubCrossReach.get(key) || 0) + distinctCountries * 3 + careerSpan);
-    }
-  }
-}
-
-function getClubPrestigeScore(clubName) {
-  const norm = normalizeText(clubName);
-  const key = normalizeClubKey(clubName);
-  let tierBonus = 0;
-  if (TIER1_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
-    tierBonus = 2000;
-  } else if (TIER2_CLUB_KEYWORDS.some((kw) => norm.includes(kw))) {
-    tierBonus = 900;
-  }
-  const reach = clubCrossReach.get(key) || 0;
-  const roster = Math.max(1, clubRosterCount.get(key) || 1);
-  const normalizedReach = reach / Math.sqrt(roster);
-  return tierBonus + normalizedReach;
-}
-
-const countryRankedClubs = new Map();
-const countryClubRankIndex = new Map();
-
-for (const [code, info] of Object.entries(FOOTBALL_DB.countries)) {
-  const ranked = [...info.clubs].sort((a, b) => {
-    const scoreA = getClubPrestigeScore(a);
-    const scoreB = getClubPrestigeScore(b);
-    return scoreB !== scoreA ? scoreB - scoreA : a.localeCompare(b);
-  });
-  countryRankedClubs.set(code, ranked);
-  ranked.forEach((club, idx) => {
-    countryClubRankIndex.set(club, idx);
-  });
-}
-
-const pairCache = new Map();
-
-function getCommonPlayers(clubA, clubB) {
-  const keyA = normalizeClubKey(clubA);
-  const keyB = normalizeClubKey(clubB);
-  if (!keyA || !keyB || keyA === keyB) return [];
-  const cacheKey = keyA < keyB ? `${keyA}|||${keyB}` : `${keyB}|||${keyA}`;
-  if (pairCache.has(cacheKey)) {
-    return pairCache.get(cacheKey);
-  }
-  const matches = playerIndex.filter((p) => p.clubKeys.has(keyA) && p.clubKeys.has(keyB));
-  pairCache.set(cacheKey, matches);
-  return matches;
-}
-
-function canAssignNineDistinctPlayers(cols, rows, minCommonRequired) {
-  const cells = [];
-  for (let r = 0; r < 3; r++) {
-    for (let c = 0; c < 3; c++) {
-      const players = getCommonPlayers(rows[r], cols[c]);
-      if (!players || players.length < minCommonRequired) {
-        return false;
-      }
-      cells.push(players.map((p) => p.normalized));
-    }
-  }
-
-  cells.sort((a, b) => a.length - b.length);
-  const used = new Set();
-
-  function matchCell(idx) {
-    if (idx === cells.length) return true;
-    for (const playerKey of cells[idx]) {
-      if (used.has(playerKey)) continue;
-      used.add(playerKey);
-      if (matchCell(idx + 1)) return true;
-      used.delete(playerKey);
-    }
-    return false;
-  }
-
-  return matchCell(0);
-}
-
-function shuffle(arr) {
-  const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
-function getTierClubPools(code, difficulty) {
-  const ranked = countryRankedClubs.get(code) || FOOTBALL_DB.countries[code].clubs;
-  const n = ranked.length;
-
-  if (difficulty === "easy") {
-    const topCount = Math.min(n, Math.max(6, Math.ceil(n * 0.35)));
-    const midCount = Math.min(n, Math.max(topCount, Math.ceil(n * 0.65)));
-    return {
-      primary: ranked.slice(0, topCount),
-      secondary: ranked.slice(0, midCount),
-      all: ranked
-    };
-  }
-
-  if (difficulty === "hard") {
-    const bottomCount = Math.min(n, Math.max(6, Math.ceil(n * 0.55)));
-    const widerCount = Math.min(n, Math.max(bottomCount, Math.ceil(n * 0.80)));
-    return {
-      primary: ranked.slice(n - bottomCount),
-      secondary: ranked.slice(n - widerCount),
-      all: [...ranked].reverse()
-    };
-  }
-
-  const start = Math.min(2, Math.floor(n * 0.12));
-  const end = Math.min(n, Math.max(start + 8, Math.ceil(n * 0.80)));
-  return {
-    primary: ranked.slice(start, end),
-    secondary: ranked.slice(0, Math.min(n, Math.ceil(n * 0.90))),
-    all: ranked
-  };
-}
-
-function scoreCandidateGrid(cols, rows, difficulty) {
-  let minCellCommon = Infinity;
-  let totalCommon = 0;
-
-  for (const r of rows) {
-    for (const c of cols) {
-      const cnt = getCommonPlayers(r, c).length;
-      if (cnt < minCellCommon) minCellCommon = cnt;
-      totalCommon += Math.min(cnt, 14);
-    }
-  }
-
-  const totalRank = [...cols, ...rows].reduce(
-    (acc, club) => acc + (countryClubRankIndex.get(club) ?? 10),
-    0
-  );
-
-  if (difficulty === "easy") {
-    return minCellCommon * 20 + totalCommon * 8 - totalRank * 45;
-  }
-  if (difficulty === "hard") {
-    return totalRank * 22 - minCellCommon * 18 - totalCommon * 3;
-  }
-  return minCellCommon * 14 + totalCommon * 3 - Math.abs(totalRank - 34) * 5;
-}
-
-function searchBestGridInPools(horizPool, vertPool, minCommonRequired, difficulty) {
-  const horizClubs = shuffle(horizPool);
-  const vertClubs = shuffle(vertPool);
-
-  const validRowsForCol = new Map();
-  for (const hClub of horizClubs) {
-    const validRows = vertClubs.filter(
-      (vClub) => getCommonPlayers(hClub, vClub).length >= minCommonRequired
-    );
-    if (validRows.length >= 3) {
-      validRowsForCol.set(hClub, validRows);
-    }
-  }
-
-  const candidateCols = horizClubs.filter((c) => validRowsForCol.has(c));
-  if (candidateCols.length < 3) return null;
-
-  const pickedCols = [];
-  const rowCounts = new Map();
-  const candidates = [];
-  const maxCandidates = 150;
-
-  function backtrack(startIdx) {
-    if (candidates.length >= maxCandidates) return;
-
-    if (pickedCols.length === 3) {
-      const viableRows = vertClubs.filter((r) => (rowCounts.get(r) || 0) === 3);
-      if (viableRows.length >= 3) {
-        const chosenRows = shuffle(viableRows).slice(0, 3);
-        const chosenCols = [...pickedCols];
-        if (canAssignNineDistinctPlayers(chosenCols, chosenRows, minCommonRequired)) {
-          candidates.push({
-            cols: chosenCols,
-            rows: chosenRows,
-            score: scoreCandidateGrid(chosenCols, chosenRows, difficulty)
-          });
-        }
-      }
-      return;
-    }
-
-    for (let i = startIdx; i <= candidateCols.length - (3 - pickedCols.length); i++) {
-      if (candidates.length >= maxCandidates) return;
-      const colClub = candidateCols[i];
-      const rows = validRowsForCol.get(colClub);
-      pickedCols.push(colClub);
-      for (const r of rows) {
-        rowCounts.set(r, (rowCounts.get(r) || 0) + 1);
-      }
-
-      backtrack(i + 1);
-
-      pickedCols.pop();
-      for (const r of rows) {
-        rowCounts.set(r, rowCounts.get(r) - 1);
-      }
-    }
-  }
-
-  backtrack(0);
-
-  if (candidates.length === 0) return null;
-  candidates.sort((a, b) => b.score - a.score);
-  const topSlice = candidates.slice(0, Math.min(3, candidates.length));
-  return topSlice[Math.floor(Math.random() * topSlice.length)];
-}
-
-function generateSolvableGrid(horizCode, vertCode, difficulty = state.difficulty) {
-  const hPools = getTierClubPools(horizCode, difficulty);
-  const vPools = getTierClubPools(vertCode, difficulty);
-
-  const attempts =
-    difficulty === "easy"
-      ? [
-          [hPools.primary, vPools.primary, 1],
-          [hPools.secondary, vPools.secondary, 1],
-          [hPools.all, vPools.all, 1]
-        ]
-      : difficulty === "hard"
-        ? [
-            [hPools.primary, vPools.primary, 1],
-            [hPools.secondary, vPools.secondary, 1],
-            [hPools.all, vPools.all, 1]
-          ]
-        : [
-            [hPools.primary, vPools.primary, 2],
-            [hPools.primary, vPools.primary, 1],
-            [hPools.secondary, vPools.secondary, 1],
-            [hPools.all, vPools.all, 1]
-          ];
-
-  for (const [hPool, vPool, minCommon] of attempts) {
-    const found = searchBestGridInPools(hPool, vPool, minCommon, difficulty);
-    if (found) return found;
-  }
-
-  return null;
-}
-
 function setDifficulty(newDiff) {
   if (!DIFFICULTY_META[newDiff]) return;
   state.difficulty = newDiff;
@@ -2089,14 +2611,22 @@ function traceGeoPolygon(ctx, rings, w, h) {
   });
 }
 
-function paintCountryPolygon(ctx, rings, gameCodes, w, h) {
-  const nearLeague = isPolygonNearCountry(rings, gameCodes);
-  const activeCodes = nearLeague ? gameCodes : [];
+function isCodeSelectedHorizontal(code) {
+  if (state.gridMode === "nation_vs_league") {
+    return state.horizontalNations.includes(code);
+  }
+  return state.horizontalCountry === code;
+}
 
-  const isH = Boolean(state.horizontalCountry && activeCodes.includes(state.horizontalCountry));
-  const isV = Boolean(state.verticalCountry && activeCodes.includes(state.verticalCountry));
-  const isHover = Boolean(state.hoveredCountry && activeCodes.includes(state.hoveredCountry));
-  const hasLeague = activeCodes.length > 0;
+function paintCountryPolygon(ctx, rings, rawCodes, w, h) {
+  const activeCodes = getActiveCodesForFeature(rawCodes);
+  const nearSelectable = isPolygonNearCountry(rings, activeCodes);
+  const scopedCodes = nearSelectable ? activeCodes : [];
+
+  const isH = scopedCodes.some((c) => isCodeSelectedHorizontal(c));
+  const isV = Boolean(state.verticalCountry && scopedCodes.includes(state.verticalCountry));
+  const isHover = Boolean(state.hoveredCountry && scopedCodes.includes(state.hoveredCountry));
+  const hasOption = scopedCodes.length > 0;
 
   ctx.beginPath();
   traceGeoPolygon(ctx, rings, w, h);
@@ -2113,7 +2643,7 @@ function paintCountryPolygon(ctx, rings, gameCodes, w, h) {
     ctx.fillStyle = "rgba(16, 185, 129, 0.34)";
     ctx.strokeStyle = "#34d399";
     ctx.lineWidth = 1.6;
-  } else if (hasLeague) {
+  } else if (hasOption) {
     ctx.fillStyle = "#16243d";
     ctx.strokeStyle = "#2d466e";
     ctx.lineWidth = 1.05;
@@ -2210,10 +2740,10 @@ function drawWorldMap() {
       if (!geom) return;
 
       if (geom.type === "Polygon") {
-        paintCountryPolygon(ctx, geom.coordinates, feat.gameCodes, w, h);
+        paintCountryPolygon(ctx, geom.coordinates, feat.rawCodes, w, h);
       } else if (geom.type === "MultiPolygon") {
         geom.coordinates.forEach((poly) => {
-          paintCountryPolygon(ctx, poly, feat.gameCodes, w, h);
+          paintCountryPolygon(ctx, poly, feat.rawCodes, w, h);
         });
       }
     });
@@ -2234,37 +2764,64 @@ function drawWorldMap() {
     });
   }
 
-  if (state.horizontalCountry && state.verticalCountry) {
-    const hInfo = FOOTBALL_DB.countries[state.horizontalCountry];
+  const hCodes = state.gridMode === "nation_vs_league"
+    ? state.horizontalNations
+    : state.horizontalCountry
+      ? [state.horizontalCountry]
+      : [];
+
+  if (hCodes.length > 0 && state.verticalCountry) {
     const vInfo = FOOTBALL_DB.countries[state.verticalCountry];
-    const pH = projectPoint(hInfo.lat, hInfo.lng, w, h);
-    const pV = projectPoint(vInfo.lat, vInfo.lng, w, h);
+    if (vInfo) {
+      const pV = projectPoint(vInfo.lat, vInfo.lng, w, h);
+      hCodes.forEach((hCode) => {
+        const hInfo = NATIONS_DB[hCode] || FOOTBALL_DB.countries[hCode];
+        if (!hInfo || hCode === state.verticalCountry) return;
+        const pH = projectPoint(hInfo.lat, hInfo.lng, w, h);
+        const midX = (pH.x + pV.x) * 0.5;
+        const midY = (pH.y + pV.y) * 0.5 - Math.min(85, Math.hypot(pV.x - pH.x, pV.y - pH.y) * 0.24);
 
-    const midX = (pH.x + pV.x) * 0.5;
-    const midY = (pH.y + pV.y) * 0.5 - Math.min(85, Math.hypot(pV.x - pH.x, pV.y - pH.y) * 0.24);
+        const arcGrad = ctx.createLinearGradient(pH.x, pH.y, pV.x, pV.y);
+        arcGrad.addColorStop(0, "#38bdf8");
+        arcGrad.addColorStop(0.5, "#10b981");
+        arcGrad.addColorStop(1, "#f59e0b");
 
-    const arcGrad = ctx.createLinearGradient(pH.x, pH.y, pV.x, pV.y);
-    arcGrad.addColorStop(0, "#38bdf8");
-    arcGrad.addColorStop(0.5, "#10b981");
-    arcGrad.addColorStop(1, "#f59e0b");
-
-    ctx.save();
-    ctx.setLineDash([7, 6]);
-    ctx.lineDashOffset = -state.mapView.pulsePhase * 18;
-    ctx.strokeStyle = arcGrad;
-    ctx.lineWidth = 2.4;
-    ctx.beginPath();
-    ctx.moveTo(pH.x, pH.y);
-    ctx.quadraticCurveTo(midX, midY, pV.x, pV.y);
-    ctx.stroke();
-    ctx.restore();
+        ctx.save();
+        ctx.setLineDash([7, 6]);
+        ctx.lineDashOffset = -state.mapView.pulsePhase * 18;
+        ctx.strokeStyle = arcGrad;
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        ctx.moveTo(pH.x, pH.y);
+        ctx.quadraticCurveTo(midX, midY, pV.x, pV.y);
+        ctx.stroke();
+        ctx.restore();
+      });
+    }
   }
 
-  const entries = Object.entries(FOOTBALL_DB.countries).filter(([code]) => hasActiveLeague(code));
+  const combinedCatalog = {};
+  const baseCatalog = getActiveMapCatalog();
+  for (const [code, info] of Object.entries(baseCatalog)) {
+    if (isCodeSelectableOnMap(code)) {
+      combinedCatalog[code] = info;
+    }
+  }
+  for (const hCode of hCodes) {
+    if (!combinedCatalog[hCode] && (NATIONS_DB[hCode] || FOOTBALL_DB.countries[hCode])) {
+      combinedCatalog[hCode] = NATIONS_DB[hCode] || FOOTBALL_DB.countries[hCode];
+    }
+  }
+  if (state.verticalCountry && !combinedCatalog[state.verticalCountry] && FOOTBALL_DB.countries[state.verticalCountry]) {
+    combinedCatalog[state.verticalCountry] = FOOTBALL_DB.countries[state.verticalCountry];
+  }
+
+  state.countryScreenCoords = {};
+  const entries = Object.entries(combinedCatalog);
   entries.sort(([codeA], [codeB]) => {
     const score = (c) => {
       if (c === state.hoveredCountry) return 4;
-      if (c === state.horizontalCountry || c === state.verticalCountry) return 3;
+      if (isCodeSelectedHorizontal(c) || c === state.verticalCountry) return 3;
       return 1;
     };
     return score(codeA) - score(codeB);
@@ -2276,7 +2833,7 @@ function drawWorldMap() {
     const pt = projectPoint(info.lat, info.lng, w, h);
     state.countryScreenCoords[code] = pt;
 
-    const isH = code === state.horizontalCountry;
+    const isH = isCodeSelectedHorizontal(code);
     const isV = code === state.verticalCountry;
     const isHover = code === state.hoveredCountry;
 
@@ -2415,7 +2972,12 @@ function animateMapLoop(timestamp) {
     const dy = mv.targetOffsetY - mv.offsetY;
 
     const isInterpolating = Math.abs(dz) > 0.0005 || Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05;
-    const hasPulse = Boolean(state.horizontalCountry || state.verticalCountry || state.hoveredCountry);
+    const hasPulse = Boolean(
+      state.horizontalCountry ||
+      state.horizontalNations.length > 0 ||
+      state.verticalCountry ||
+      state.hoveredCountry
+    );
 
     if (isInterpolating) {
       mv.zoom += dz * lerp;
@@ -2448,7 +3010,6 @@ function getHoveredCountryCode(clientX, clientY) {
   let closestPinDist = 11;
 
   for (const [code, pt] of Object.entries(state.countryScreenCoords)) {
-    if (!hasActiveLeague(code)) continue;
     const dist = Math.hypot(x - pt.x, y - pt.y);
     if (dist <= closestPinDist) {
       closestPinDist = dist;
@@ -2462,13 +3023,14 @@ function getHoveredCountryCode(clientX, clientY) {
     const { lat, lng } = screenToLatLng(x, y, w, h);
 
     for (const feat of state.worldGeoFeatures) {
-      if (!feat.gameCodes || feat.gameCodes.length === 0 || !feat.geometry) continue;
+      const activeCodes = getActiveCodesForFeature(feat.rawCodes);
+      if (activeCodes.length === 0 || !feat.geometry) continue;
       const geom = feat.geometry;
       let hit = false;
 
       if (geom.type === "Polygon") {
         if (
-          isPolygonNearCountry(geom.coordinates, feat.gameCodes) &&
+          isPolygonNearCountry(geom.coordinates, activeCodes) &&
           isPointInPolygonRings(lng, lat, geom.coordinates)
         ) {
           hit = true;
@@ -2476,7 +3038,7 @@ function getHoveredCountryCode(clientX, clientY) {
       } else if (geom.type === "MultiPolygon") {
         for (const poly of geom.coordinates) {
           if (
-            isPolygonNearCountry(poly, feat.gameCodes) &&
+            isPolygonNearCountry(poly, activeCodes) &&
             isPointInPolygonRings(lng, lat, poly)
           ) {
             hit = true;
@@ -2486,12 +3048,12 @@ function getHoveredCountryCode(clientX, clientY) {
       }
 
       if (hit) {
-        if (feat.gameCodes.length === 1) {
-          return feat.gameCodes[0];
+        if (activeCodes.length === 1) {
+          return activeCodes[0];
         }
-        let bestCode = feat.gameCodes[0];
+        let bestCode = activeCodes[0];
         let bestDist = Infinity;
-        for (const code of feat.gameCodes) {
+        for (const code of activeCodes) {
           const pt = state.countryScreenCoords[code];
           if (!pt) continue;
           const d = Math.hypot(x - pt.x, y - pt.y);
@@ -2509,7 +3071,38 @@ function getHoveredCountryCode(clientX, clientY) {
 }
 
 function toggleCountrySelection(code) {
-  if (!code || !hasActiveLeague(code)) return;
+  if (!code) return;
+
+  if (state.gridMode === "nation_vs_league") {
+    const existingIdx = state.horizontalNations.indexOf(code);
+    if (existingIdx !== -1) {
+      state.horizontalNations.splice(existingIdx, 1);
+      state.mapView.needsRender = true;
+      updateCountrySelectionUI();
+      return;
+    }
+
+    if (state.verticalCountry === code && state.horizontalNations.length === 3) {
+      state.verticalCountry = null;
+      state.mapView.needsRender = true;
+      updateCountrySelectionUI();
+      return;
+    }
+
+    if (state.horizontalNations.length < 3) {
+      if (hasActiveNation(code)) {
+        state.horizontalNations.push(code);
+      }
+    } else if (hasActiveLeague(code)) {
+      state.verticalCountry = code;
+    }
+
+    state.mapView.needsRender = true;
+    updateCountrySelectionUI();
+    return;
+  }
+
+  if (!hasActiveLeague(code)) return;
 
   if (!state.horizontalCountry) {
     state.horizontalCountry = code;
@@ -2531,19 +3124,35 @@ function toggleCountrySelection(code) {
 function renderCountrySidebar() {
   const listEl = document.getElementById("country-list");
   const countEl = document.getElementById("drawer-count");
+  const titleEl = document.getElementById("drawer-title");
   const searchInput = document.getElementById("country-search-input");
   if (!listEl) return;
 
+  const isNationStep = isNationSelectionPhase();
+  if (titleEl) {
+    if (state.gridMode === "nation_vs_league") {
+      titleEl.textContent = isNationStep ? "Nationalities (Step 1 of 2)" : "Leagues (Step 2 of 2)";
+    } else {
+      titleEl.textContent = "Leagues & Countries";
+    }
+  }
+  if (searchInput) {
+    searchInput.placeholder = isNationStep
+      ? "Search nationality or country..."
+      : "Search country or league...";
+  }
+
   const query = normalizeText(searchInput ? searchInput.value : "");
-  const sortedEntries = Object.entries(FOOTBALL_DB.countries)
-    .filter(([code]) => hasActiveLeague(code))
+  const catalog = getActiveMapCatalog();
+  const sortedEntries = Object.entries(catalog)
+    .filter(([code]) => isCodeSelectableOnMap(code))
     .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
   const filtered = sortedEntries.filter(([code, info]) => {
     if (!query) return true;
     return (
       normalizeText(info.name).includes(query) ||
-      normalizeText(info.league).includes(query) ||
+      normalizeText(info.league || "").includes(query) ||
       normalizeText(info.confederation || "").includes(query) ||
       code.toLowerCase().includes(query)
     );
@@ -2557,20 +3166,30 @@ function renderCountrySidebar() {
   filtered.forEach(([code, info]) => {
     const li = document.createElement("li");
     li.className = "country-item";
-    let tagText = `${info.clubs.length} clubs`;
+    let tagText = isNationStep
+      ? `${info.playerCount} players`
+      : `${info.clubs.length} clubs`;
+    const subLabel = isNationStep
+      ? `FIFA / ISO: ${code}`
+      : info.league;
 
-    if (code === state.horizontalCountry) {
+    if (isCodeSelectedHorizontal(code)) {
       li.classList.add("selected-h");
-      tagText = "HORIZONTAL";
+      if (state.gridMode === "nation_vs_league") {
+        const slot = state.horizontalNations.indexOf(code) + 1;
+        tagText = `NATION #${slot}`;
+      } else {
+        tagText = "HORIZONTAL";
+      }
     } else if (code === state.verticalCountry) {
       li.classList.add("selected-v");
-      tagText = "VERTICAL";
+      tagText = state.gridMode === "nation_vs_league" ? "LEAGUE" : "VERTICAL";
     }
 
     li.innerHTML = `
       <div class="country-item-info">
         <span class="country-item-name">${info.name}</span>
-        <span class="country-item-league">${info.league}</span>
+        <span class="country-item-league">${subLabel}</span>
       </div>
       <span class="country-item-tag">${tagText}</span>
     `;
@@ -2602,34 +3221,78 @@ function updateCountrySelectionUI() {
   const pillV = document.getElementById("pill-vertical");
   const inst = document.getElementById("map-instruction");
   const btnEnter = document.getElementById("btn-enter-game");
+  const btnAutoFill = document.getElementById("btn-autofill-axes");
 
-  if (state.horizontalCountry) {
-    const h = FOOTBALL_DB.countries[state.horizontalCountry];
-    pillH.textContent = `Horizontal: ${h.name}`;
-    pillH.className = "pill horizontal";
-  } else {
-    pillH.textContent = "Horizontal: None";
-    pillH.className = "pill empty";
-  }
+  if (state.gridMode === "nation_vs_league") {
+    const pickedCount = state.horizontalNations.length;
+    if (pickedCount > 0) {
+      const names = state.horizontalNations.map((c) => getNationName(c)).join(", ");
+      pillH.textContent = `Nations (${pickedCount}/3): ${names}`;
+      pillH.className = "pill horizontal";
+    } else {
+      pillH.textContent = "Nations (0/3): None";
+      pillH.className = "pill empty";
+    }
 
-  if (state.verticalCountry) {
-    const v = FOOTBALL_DB.countries[state.verticalCountry];
-    pillV.textContent = `Vertical: ${v.name}`;
-    pillV.className = "pill vertical";
-  } else {
-    pillV.textContent = "Vertical: None";
-    pillV.className = "pill empty";
-  }
+    if (state.verticalCountry && FOOTBALL_DB.countries[state.verticalCountry]) {
+      const v = FOOTBALL_DB.countries[state.verticalCountry];
+      pillV.textContent = `League: ${v.name} (${v.league})`;
+      pillV.className = "pill vertical";
+    } else {
+      pillV.textContent = "League: None";
+      pillV.className = "pill empty";
+    }
 
-  if (!state.horizontalCountry) {
-    inst.textContent = "Select one country for Horizontal axis.";
-    btnEnter.disabled = true;
-  } else if (!state.verticalCountry) {
-    inst.textContent = "Select a second country for Vertical axis.";
-    btnEnter.disabled = true;
+    if (pickedCount < 3) {
+      const rem = 3 - pickedCount;
+      inst.textContent = `Select ${rem} more ${rem === 1 ? "nationality" : "nationalities"} for Columns (or Auto-Fill).`;
+      btnEnter.disabled = true;
+    } else if (!state.verticalCountry) {
+      inst.textContent = "Select 1 league country for Rows (or Auto-Fill).";
+      btnEnter.disabled = true;
+    } else {
+      inst.textContent = "Ready. Click Start Game.";
+      btnEnter.disabled = false;
+    }
+
+    if (btnAutoFill) {
+      btnAutoFill.classList.remove("hidden");
+      btnAutoFill.disabled = pickedCount === 3 && Boolean(state.verticalCountry);
+    }
   } else {
-    inst.textContent = "Ready. Click Start Game.";
-    btnEnter.disabled = false;
+    if (state.horizontalCountry && FOOTBALL_DB.countries[state.horizontalCountry]) {
+      const h = FOOTBALL_DB.countries[state.horizontalCountry];
+      pillH.textContent = `Horizontal: ${h.name}`;
+      pillH.className = "pill horizontal";
+    } else {
+      pillH.textContent = "Horizontal: None";
+      pillH.className = "pill empty";
+    }
+
+    if (state.verticalCountry && FOOTBALL_DB.countries[state.verticalCountry]) {
+      const v = FOOTBALL_DB.countries[state.verticalCountry];
+      pillV.textContent = `Vertical: ${v.name}`;
+      pillV.className = "pill vertical";
+    } else {
+      pillV.textContent = "Vertical: None";
+      pillV.className = "pill empty";
+    }
+
+    if (!state.horizontalCountry) {
+      inst.textContent = "Select one country for Horizontal axis.";
+      btnEnter.disabled = true;
+    } else if (!state.verticalCountry) {
+      inst.textContent = "Select a second country for Vertical axis.";
+      btnEnter.disabled = true;
+    } else {
+      inst.textContent = "Ready. Click Start Game.";
+      btnEnter.disabled = false;
+    }
+
+    if (btnAutoFill) {
+      btnAutoFill.classList.remove("hidden");
+      btnAutoFill.disabled = Boolean(state.horizontalCountry && state.verticalCountry);
+    }
   }
 
   renderCountrySidebar();
@@ -2637,26 +3300,67 @@ function updateCountrySelectionUI() {
 }
 
 function startNewRound() {
-  if (!state.horizontalCountry || !state.verticalCountry) return;
-
   clearPendingAiTurn();
 
-  const hCountry = FOOTBALL_DB.countries[state.horizontalCountry];
-  const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
   const diffMeta = DIFFICULTY_META[state.difficulty] || DIFFICULTY_META.medium;
   const modeTag = state.gameMode === "ai" ? " · vs Atlas AI" : "";
 
-  document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
-  document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}${modeTag}`;
+  if (state.gridMode === "nation_vs_league") {
+    if (state.horizontalNations.length !== 3 || !state.verticalCountry) return;
+    const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
+    const nationNames = state.horizontalNations.map((c) => getNationName(c)).join(" · ");
 
-  const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry, state.difficulty);
-  if (!grid) {
-    setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
-    return;
+    document.getElementById("meta-horizontal").textContent = `Nationalities: ${nationNames}`;
+    document.getElementById("meta-vertical").textContent = `League: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}${modeTag}`;
+
+    const grid = generateNationVsLeagueGrid(state.horizontalNations, state.verticalCountry, state.difficulty);
+    if (!grid) {
+      setStatus("No full 3x3 solvable intersection found for these nationalities and league. Try Auto-Fill or another league.");
+      return;
+    }
+
+    state.colNations = grid.nations;
+    state.colClubs = [];
+    state.rowClubs = grid.rows;
+
+    for (let i = 0; i < 3; i++) {
+      const colEl = document.getElementById(`col-${i}`);
+      colEl.classList.add("nation-header");
+      colEl.innerHTML = `${getNationName(state.colNations[i])}<span class="club-badge">${state.colNations[i]} · Nationality</span>`;
+
+      const rowEl = document.getElementById(`row-${i}`);
+      rowEl.classList.remove("nation-header");
+      rowEl.innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
+    }
+  } else {
+    if (!state.horizontalCountry || !state.verticalCountry) return;
+    const hCountry = FOOTBALL_DB.countries[state.horizontalCountry];
+    const vCountry = FOOTBALL_DB.countries[state.verticalCountry];
+
+    document.getElementById("meta-horizontal").textContent = `Horizontal: ${hCountry.name} (${hCountry.league})`;
+    document.getElementById("meta-vertical").textContent = `Vertical: ${vCountry.name} (${vCountry.league}) · ${diffMeta.label}${modeTag}`;
+
+    const grid = generateSolvableGrid(state.horizontalCountry, state.verticalCountry, state.difficulty);
+    if (!grid) {
+      setStatus("No full 3x3 solvable intersection found for this pair. Try another country pair.");
+      return;
+    }
+
+    state.colClubs = grid.cols;
+    state.colNations = [];
+    state.rowClubs = grid.rows;
+
+    for (let i = 0; i < 3; i++) {
+      const colEl = document.getElementById(`col-${i}`);
+      colEl.classList.remove("nation-header");
+      colEl.innerHTML = `${state.colClubs[i]}<span class="club-badge">${hCountry.league}</span>`;
+
+      const rowEl = document.getElementById(`row-${i}`);
+      rowEl.classList.remove("nation-header");
+      rowEl.innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
+    }
   }
 
-  state.colClubs = grid.cols;
-  state.rowClubs = grid.rows;
   state.board = Array(3).fill(null).map(() => Array(3).fill(null));
   state.usedPlayers.clear();
   state.turn = "X";
@@ -2666,11 +3370,6 @@ function startNewRound() {
   if (btnNewGrid) {
     btnNewGrid.classList.add("hidden");
     btnNewGrid.style.display = "none";
-  }
-
-  for (let i = 0; i < 3; i++) {
-    document.getElementById(`col-${i}`).innerHTML = `${state.colClubs[i]}<span class="club-badge">${hCountry.league}</span>`;
-    document.getElementById(`row-${i}`).innerHTML = `${state.rowClubs[i]}<span class="club-badge">${vCountry.league}</span>`;
   }
 
   document.querySelectorAll(".grid-cell").forEach((cell) => {
@@ -2698,7 +3397,7 @@ function updateTurnBanner() {
   }
 
   if (activeStage.id === "stage-map") {
-    banner.textContent = "World Map";
+    banner.textContent = state.gridMode === "nation_vs_league" ? "Nationality × League" : "Club × Club";
     banner.className = "turn-banner";
     return;
   }
@@ -2723,15 +3422,21 @@ function setStatus(msg) {
   document.getElementById("status-message").textContent = msg;
 }
 
-function inspectCellSolutions(r, c) {
+function getCellMatchupLabel(r, c) {
   const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-  if (!rowClub || !colClub) return;
+  if (state.gridMode === "nation_vs_league") {
+    const colNat = getNationName(state.colNations[c]);
+    return `${rowClub} × ${colNat}`;
+  }
+  return `${rowClub} × ${state.colClubs[c]}`;
+}
 
-  const valid = getCommonPlayers(rowClub, colClub);
+function inspectCellSolutions(r, c) {
+  const valid = getCellValidPlayers(r, c);
+  const label = getCellMatchupLabel(r, c);
   const sample = valid.slice(0, 6).map((p) => p.name).join(", ");
   const extra = valid.length > 6 ? ` (+${valid.length - 6} more)` : "";
-  setStatus(`${rowClub} × ${colClub} (${valid.length}): ${sample}${extra}`);
+  setStatus(`${label} (${valid.length}): ${sample}${extra}`);
 }
 
 function openGuessModal(r, c) {
@@ -2747,10 +3452,7 @@ function openGuessModal(r, c) {
   state.autocompleteMatches = [];
   state.highlightedIndex = -1;
 
-  const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-
-  document.getElementById("modal-matchup").textContent = `${rowClub} × ${colClub}`;
+  document.getElementById("modal-matchup").textContent = getCellMatchupLabel(r, c);
   const input = document.getElementById("player-input");
   input.value = "";
   document.getElementById("autocomplete-list").innerHTML = "";
@@ -2867,11 +3569,31 @@ function submitGuess() {
   }
 
   const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
   const rowClubKey = normalizeClubKey(rowClub);
-  const colClubKey = normalizeClubKey(colClub);
+  let isMatch = false;
+  let successStatus = "";
+  let failFeedback = "";
 
-  if (matchedPlayer.clubKeys.has(rowClubKey) && matchedPlayer.clubKeys.has(colClubKey)) {
+  if (state.gridMode === "nation_vs_league") {
+    const colNatCode = state.colNations[c];
+    const colNatName = getNationName(colNatCode);
+    isMatch = matchedPlayer.clubKeys.has(rowClubKey) && matchedPlayer.nationCodes.has(colNatCode);
+    successStatus = `Valid! ${matchedPlayer.name} (${colNatName}) played for ${rowClub}.`;
+    const listedNats = Array.from(matchedPlayer.nationCodes).join(", ") || "None";
+    const listedClubs = Array.from(matchedPlayer.rawClubs).slice(0, 4).join(", ");
+    failFeedback = `${matchedPlayer.name} does not match ${rowClub} × ${colNatName} (Nationality: ${listedNats}; Clubs: ${listedClubs}). Turn lost!`;
+  } else {
+    const colClub = state.colClubs[c];
+    const colClubKey = normalizeClubKey(colClub);
+    isMatch = matchedPlayer.clubKeys.has(rowClubKey) && matchedPlayer.clubKeys.has(colClubKey);
+    successStatus = `Valid! ${matchedPlayer.name} played for both clubs.`;
+    const knownClubs = Array.from(matchedPlayer.rawClubs).slice(0, 6).join(", ");
+    failFeedback = knownClubs
+      ? `${matchedPlayer.name} did not play for both clubs (Listed: ${knownClubs}). Turn lost!`
+      : `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
+  }
+
+  if (isMatch) {
     state.board[r][c] = { mark: state.turn, player: matchedPlayer.name };
     state.usedPlayers.add(matchedPlayer.normalized);
     state.usedPlayers.add(matchedPlayer.name);
@@ -2898,13 +3620,10 @@ function submitGuess() {
       }
       setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
     } else {
-      switchTurn(`Valid! ${matchedPlayer.name} played for both clubs.`);
+      switchTurn(successStatus);
     }
   } else {
-    const knownClubs = Array.from(matchedPlayer.rawClubs).slice(0, 6).join(", ");
-    feedback.textContent = knownClubs
-      ? `${matchedPlayer.name} did not play for both clubs (Listed: ${knownClubs}). Turn lost!`
-      : `${matchedPlayer.name} did not play for both clubs. Turn lost!`;
+    feedback.textContent = failFeedback;
     feedback.className = "modal-feedback error";
     setTimeout(() => {
       closeGuessModal();
@@ -2913,8 +3632,33 @@ function submitGuess() {
   }
 }
 
-function pickWrongPlayerForAi(rowClubKey, colClubKey) {
+function pickWrongPlayerForAi(r, c) {
+  const rowClubKey = normalizeClubKey(state.rowClubs[r]);
   const partialMatches = [];
+
+  if (state.gridMode === "nation_vs_league") {
+    const colNatCode = state.colNations[c];
+    for (const p of playerIndex) {
+      if (state.usedPlayers.has(p.normalized) || state.usedPlayers.has(p.name)) continue;
+      const inClub = p.clubKeys.has(rowClubKey);
+      const inNat = p.nationCodes.has(colNatCode);
+      if (inClub !== inNat) {
+        partialMatches.push(p);
+      }
+    }
+    if (partialMatches.length > 0) {
+      return partialMatches[Math.floor(Math.random() * partialMatches.length)];
+    }
+    for (let i = 0; i < 40; i++) {
+      const candidate = playerIndex[Math.floor(Math.random() * playerIndex.length)];
+      if (!candidate.clubKeys.has(rowClubKey) || !candidate.nationCodes.has(colNatCode)) {
+        return candidate;
+      }
+    }
+    return playerIndex[0];
+  }
+
+  const colClubKey = normalizeClubKey(state.colClubs[c]);
   for (const p of playerIndex) {
     if (state.usedPlayers.has(p.normalized) || state.usedPlayers.has(p.name)) continue;
     const inRow = p.clubKeys.has(rowClubKey);
@@ -2972,12 +3716,9 @@ function executeAiTurn() {
 
   const chosen = emptyCells[Math.floor(Math.random() * emptyCells.length)];
   const { r, c } = chosen;
-  const rowClub = state.rowClubs[r];
-  const colClub = state.colClubs[c];
-  const rowClubKey = normalizeClubKey(rowClub);
-  const colClubKey = normalizeClubKey(colClub);
+  const matchupLabel = getCellMatchupLabel(r, c);
 
-  const validCandidates = getCommonPlayers(rowClub, colClub).filter(
+  const validCandidates = getCellValidPlayers(r, c).filter(
     (p) => !state.usedPlayers.has(p.normalized) && !state.usedPlayers.has(p.name)
   );
 
@@ -3011,10 +3752,10 @@ function executeAiTurn() {
       }
       setStatus("Board full. Match drawn! Click any cell to inspect valid players.");
     } else {
-      switchTurn(`${AI_PLAYER_NAME} matched ${picked.name} (${rowClub} × ${colClub}).`);
+      switchTurn(`${AI_PLAYER_NAME} matched ${picked.name} (${matchupLabel}).`);
     }
   } else {
-    const wrongPlayer = pickWrongPlayerForAi(rowClubKey, colClubKey);
+    const wrongPlayer = pickWrongPlayerForAi(r, c);
     const cellEl = document.getElementById(`cell-${r}-${c}`);
     if (cellEl) {
       cellEl.classList.add("ai-miss-flash");
@@ -3022,7 +3763,7 @@ function executeAiTurn() {
         cellEl.classList.remove("ai-miss-flash");
       }, 900);
     }
-    switchTurn(`${AI_PLAYER_NAME} guessed ${wrongPlayer.name} for ${rowClub} × ${colClub} — Missed!`);
+    switchTurn(`${AI_PLAYER_NAME} guessed ${wrongPlayer.name} for ${matchupLabel} — Missed!`);
   }
 }
 
@@ -3133,6 +3874,14 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCountrySelectionUI();
   });
 
+  document.querySelectorAll("#grid-mode-selector .grid-mode-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setGridMode(btn.dataset.gridMode);
+    });
+  });
+
+  document.getElementById("btn-autofill-axes").addEventListener("click", autoFillRemainingAxes);
+
   document.getElementById("btn-back-names").addEventListener("click", () => {
     showStage("players");
   });
@@ -3146,13 +3895,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("btn-clear-countries").addEventListener("click", () => {
     state.horizontalCountry = null;
+    state.horizontalNations = [];
     state.verticalCountry = null;
     state.mapView.needsRender = true;
     updateCountrySelectionUI();
   });
 
   document.getElementById("btn-enter-game").addEventListener("click", () => {
-    if (!state.horizontalCountry || !state.verticalCountry) return;
+    if (state.gridMode === "nation_vs_league") {
+      if (state.horizontalNations.length !== 3 || !state.verticalCountry) return;
+    } else {
+      if (!state.horizontalCountry || !state.verticalCountry) return;
+    }
     startNewRound();
     showStage("game");
   });
@@ -3306,21 +4060,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     canvas.classList.toggle("hovering-pin", Boolean(code));
 
-    const ttWidth = 220;
+    const ttWidth = 230;
     const posX = e.clientX + ttWidth > window.innerWidth ? e.clientX - ttWidth : e.clientX + 14;
     const posY = e.clientY + 72 > window.innerHeight ? e.clientY - 60 : e.clientY + 14;
 
     if (code) {
-      const info = FOOTBALL_DB.countries[code];
-      let roleLabel = "Click to assign axis";
-      if (code === state.horizontalCountry) roleLabel = "Assigned: Horizontal Axis";
-      if (code === state.verticalCountry) roleLabel = "Assigned: Vertical Axis";
+      const isNationStep = isNationSelectionPhase();
+      const nationInfo = NATIONS_DB[code];
+      const leagueInfo = FOOTBALL_DB.countries[code];
 
-      tooltip.innerHTML = `
-        <div class="tt-title">${info.name}</div>
-        <div class="tt-league">${info.league}</div>
-        <div class="tt-clubs">${info.clubs.length} clubs &bull; ${roleLabel}</div>
-      `;
+      if (state.gridMode === "nation_vs_league") {
+        const displayName = (nationInfo && nationInfo.name) || (leagueInfo && leagueInfo.name) || code;
+        let roleLabel = isNationStep ? "Click to add Nationality" : "Click to assign League";
+        if (isCodeSelectedHorizontal(code)) roleLabel = "Assigned: Nationality Column";
+        if (code === state.verticalCountry) roleLabel = "Assigned: League Row";
+
+        const subLine = isNationStep
+          ? `Nationality (${code})`
+          : leagueInfo
+            ? leagueInfo.league
+            : `Nationality (${code})`;
+        const countLine = isNationStep
+          ? `${nationInfo ? nationInfo.playerCount : 0} players`
+          : leagueInfo
+            ? `${leagueInfo.clubs.length} clubs`
+            : "";
+
+        tooltip.innerHTML = `
+          <div class="tt-title">${displayName}</div>
+          <div class="tt-league">${subLine}</div>
+          <div class="tt-clubs">${countLine}${countLine ? " &bull; " : ""}${roleLabel}</div>
+        `;
+      } else if (leagueInfo) {
+        let roleLabel = "Click to assign axis";
+        if (code === state.horizontalCountry) roleLabel = "Assigned: Horizontal Axis";
+        if (code === state.verticalCountry) roleLabel = "Assigned: Vertical Axis";
+
+        tooltip.innerHTML = `
+          <div class="tt-title">${leagueInfo.name}</div>
+          <div class="tt-league">${leagueInfo.league}</div>
+          <div class="tt-clubs">${leagueInfo.clubs.length} clubs &bull; ${roleLabel}</div>
+        `;
+      }
+
       tooltip.style.left = `${posX}px`;
       tooltip.style.top = `${posY}px`;
       tooltip.classList.remove("hidden");

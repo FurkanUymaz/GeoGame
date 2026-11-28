@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atlas XI — Football Club Grid</title>
+  <title>Atlas XI — Football Grid</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -31,13 +31,13 @@
     </div>
 
     <div class="topbar-right nav-actions">
-      <div id="difficulty-selector" class="difficulty-group" role="group" aria-label="Club Difficulty">
-        <button type="button" class="difficulty-btn" data-diff="easy" title="Top Clubs & Many Shared Players">Easy</button>
+      <div id="difficulty-selector" class="difficulty-group" role="group" aria-label="Grid Difficulty">
+        <button type="button" class="difficulty-btn" data-diff="easy" title="Top Clubs & Common Nationalities">Easy</button>
         <button type="button" class="difficulty-btn active" data-diff="medium" title="Balanced Mix">Medium</button>
-        <button type="button" class="difficulty-btn" data-diff="hard" title="Lesser-Known Clubs">Hard</button>
+        <button type="button" class="difficulty-btn" data-diff="hard" title="Lesser-Known Clubs & Nationalities">Hard</button>
       </div>
       <button type="button" id="btn-back-names" class="btn-nav hidden">Change Mode / Names</button>
-      <button type="button" id="btn-back-map" class="btn-nav hidden">Change Countries</button>
+      <button type="button" id="btn-back-map" class="btn-nav hidden">Change Selection</button>
       <button type="button" id="btn-new-grid" class="btn-nav primary hidden">New Grid</button>
     </div>
   </header>
@@ -52,11 +52,16 @@
     <section id="stage-map" class="stage">
       <div class="map-top-bar">
         <div class="selection-pills">
+          <div id="grid-mode-selector" class="grid-mode-group" role="group" aria-label="Grid Mode">
+            <button type="button" class="grid-mode-btn active" data-grid-mode="club_vs_club">Club × Club</button>
+            <button type="button" class="grid-mode-btn" data-grid-mode="nation_vs_league">Nationality × League</button>
+          </div>
           <span id="pill-horizontal" class="pill empty">Horizontal: None</span>
           <span id="pill-vertical" class="pill empty">Vertical: None</span>
           <span id="map-instruction" class="map-instruction">Select one country for Horizontal axis.</span>
         </div>
         <div class="map-actions">
+          <button type="button" id="btn-autofill-axes" class="btn-secondary hidden">Auto-Fill Remaining</button>
           <button type="button" id="btn-clear-countries" class="btn-secondary">Clear</button>
           <button type="button" id="btn-enter-game" class="btn-primary" disabled>Start Game</button>
         </div>
@@ -83,7 +88,7 @@
 
         <aside class="country-drawer">
           <div class="drawer-header">
-            <span class="drawer-title">Leagues & Countries</span>
+            <span id="drawer-title" class="drawer-title">Leagues & Countries</span>
             <span id="drawer-count" class="drawer-count">0</span>
           </div>
           <input

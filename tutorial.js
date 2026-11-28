@@ -66,14 +66,13 @@
         font-weight: 700;
         letter-spacing: 0.02em;
         cursor: pointer;
-        transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+        transition: transform 0.16s ease, background 0.16s ease;
       }
   
       .btn-tutorial-trigger:hover {
         background: rgba(250, 204, 21, 0.22);
         border-color: #fde047;
         transform: translateY(-1px) rotate(-1deg);
-        box-shadow: 0 6px 18px rgba(250, 204, 21, 0.22);
       }
   
       .tutorial-q-mark {
@@ -110,13 +109,25 @@
         pointer-events: auto;
       }
   
+      .sketch-backdrop-cutout {
+        fill: rgba(3, 7, 18, 0.78);
+        fill-rule: evenodd;
+      }
+  
+      .sketch-stroke-glow {
+        fill: none;
+        stroke: rgba(250, 204, 21, 0.28);
+        stroke-width: 7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+  
       .sketch-stroke-primary {
         fill: none;
         stroke: #fde047;
         stroke-width: 2.8;
         stroke-linecap: round;
         stroke-linejoin: round;
-        filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.55));
       }
   
       .sketch-stroke-secondary {
@@ -133,7 +144,6 @@
         stroke-width: 2.6;
         stroke-linecap: round;
         stroke-linejoin: round;
-        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
       }
   
       .sketch-note-card {
@@ -153,11 +163,11 @@
         border: 2px solid rgba(248, 250, 252, 0.85);
         border-radius: 18px 6px 20px 8px / 8px 18px 6px 20px;
         box-shadow:
-          0 24px 60px rgba(0, 0, 0, 0.85),
+          0 20px 48px rgba(0, 0, 0, 0.82),
           5px 6px 0 rgba(250, 204, 21, 0.42);
         color: #f8fafc;
         transform: rotate(-1.1deg);
-        transition: top 0.22s ease, left 0.22s ease;
+        transition: top 0.2s ease, left 0.2s ease;
       }
   
       .sketch-note-card.welcome-mode {
@@ -218,7 +228,6 @@
         font-weight: 700;
         line-height: 1.08;
         color: #fde047;
-        text-shadow: 0 2px 10px rgba(250, 204, 21, 0.25);
       }
   
       .sketch-note-body {
@@ -311,12 +320,15 @@
       stepIndex: 0,
       startedFromStage: "players",
       injectedDemoNames: false,
-      injectedDemoAxes: false
+      injectedDemoAxes: false,
+      renderToken: 0,
+      resizeQueued: false
     };
   
     let rootEl = null;
     let svgEl = null;
-    let maskHoleEl = null;
+    let backdropCutoutEl = null;
+    let glowFrameEl = null;
     let primaryFrameEl = null;
     let secondaryFrameEl = null;
     let arrowLineEl = null;
@@ -338,6 +350,34 @@
         styleTag.textContent = TUTORIAL_CSS;
         document.head.appendChild(styleTag);
       }
+    }
+  
+    function buildCutoutBackdropPath(hx, hy, hw, hh) {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const outer = `M 0 0 H ${vw} V ${vh} H 0 Z`;
+      if (hw <= 0 || hh <= 0) return outer;
+  
+      const r = Math.min(14, hw * 0.5, hh * 0.5);
+      const x1 = hx;
+      const y1 = hy;
+      const x2 = hx + hw;
+      const y2 = hy + hh;
+  
+      const inner = [
+        `M ${(x1 + r).toFixed(1)} ${y1.toFixed(1)}`,
+        `H ${(x2 - r).toFixed(1)}`,
+        `Q ${x2.toFixed(1)} ${y1.toFixed(1)} ${x2.toFixed(1)} ${(y1 + r).toFixed(1)}`,
+        `V ${(y2 - r).toFixed(1)}`,
+        `Q ${x2.toFixed(1)} ${y2.toFixed(1)} ${(x2 - r).toFixed(1)} ${y2.toFixed(1)}`,
+        `H ${(x1 + r).toFixed(1)}`,
+        `Q ${x1.toFixed(1)} ${y2.toFixed(1)} ${x1.toFixed(1)} ${(y2 - r).toFixed(1)}`,
+        `V ${(y1 + r).toFixed(1)}`,
+        `Q ${x1.toFixed(1)} ${y1.toFixed(1)} ${(x1 + r).toFixed(1)} ${y1.toFixed(1)}`,
+        "Z"
+      ].join(" ");
+  
+      return `${outer} ${inner}`;
     }
   
     function buildSketchRectPath(x, y, w, h, seedOffset) {
@@ -394,33 +434,11 @@
       svgEl = document.createElementNS(ns, "svg");
       svgEl.setAttribute("class", "sketch-tutorial-svg");
   
-      const defs = document.createElementNS(ns, "defs");
-      const mask = document.createElementNS(ns, "mask");
-      mask.setAttribute("id", "atlas-sketch-spotlight-mask");
+      backdropCutoutEl = document.createElementNS(ns, "path");
+      backdropCutoutEl.setAttribute("class", "sketch-backdrop-cutout");
   
-      const maskBg = document.createElementNS(ns, "rect");
-      maskBg.setAttribute("x", "0");
-      maskBg.setAttribute("y", "0");
-      maskBg.setAttribute("width", "100%");
-      maskBg.setAttribute("height", "100%");
-      maskBg.setAttribute("fill", "white");
-  
-      maskHoleEl = document.createElementNS(ns, "rect");
-      maskHoleEl.setAttribute("rx", "14");
-      maskHoleEl.setAttribute("ry", "14");
-      maskHoleEl.setAttribute("fill", "black");
-  
-      mask.appendChild(maskBg);
-      mask.appendChild(maskHoleEl);
-      defs.appendChild(mask);
-  
-      const backdropRect = document.createElementNS(ns, "rect");
-      backdropRect.setAttribute("x", "0");
-      backdropRect.setAttribute("y", "0");
-      backdropRect.setAttribute("width", "100%");
-      backdropRect.setAttribute("height", "100%");
-      backdropRect.setAttribute("fill", "rgba(3, 7, 18, 0.78)");
-      backdropRect.setAttribute("mask", "url(#atlas-sketch-spotlight-mask)");
+      glowFrameEl = document.createElementNS(ns, "path");
+      glowFrameEl.setAttribute("class", "sketch-stroke-glow");
   
       secondaryFrameEl = document.createElementNS(ns, "path");
       secondaryFrameEl.setAttribute("class", "sketch-stroke-secondary");
@@ -434,8 +452,8 @@
       arrowHeadEl = document.createElementNS(ns, "path");
       arrowHeadEl.setAttribute("class", "sketch-arrow-line");
   
-      svgEl.appendChild(defs);
-      svgEl.appendChild(backdropRect);
+      svgEl.appendChild(backdropCutoutEl);
+      svgEl.appendChild(glowFrameEl);
       svgEl.appendChild(secondaryFrameEl);
       svgEl.appendChild(primaryFrameEl);
       svgEl.appendChild(arrowLineEl);
@@ -453,6 +471,7 @@
   
     function renderWelcomePrompt() {
       ensureOverlayDOM();
+      const token = ++tutorialState.renderToken;
       tutorialState.active = true;
       tutorialState.mode = "welcome";
       rootEl.classList.remove("hidden");
@@ -474,6 +493,7 @@
       `;
   
       requestAnimationFrame(() => {
+        if (token !== tutorialState.renderToken || !tutorialState.active) return;
         const cardRect = cardEl.getBoundingClientRect();
         const vw = window.innerWidth;
         const vh = window.innerHeight;
@@ -492,12 +512,10 @@
             const hw = tr.width + 16;
             const hh = tr.height + 12;
   
-            maskHoleEl.setAttribute("x", hx.toFixed(1));
-            maskHoleEl.setAttribute("y", hy.toFixed(1));
-            maskHoleEl.setAttribute("width", hw.toFixed(1));
-            maskHoleEl.setAttribute("height", hh.toFixed(1));
-  
-            primaryFrameEl.setAttribute("d", buildSketchRectPath(hx, hy, hw, hh, 0.9));
+            backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(hx, hy, hw, hh));
+            const framePath = buildSketchRectPath(hx, hy, hw, hh, 0.9);
+            glowFrameEl.setAttribute("d", framePath);
+            primaryFrameEl.setAttribute("d", framePath);
             secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2, hy + 2, hw + 4, hh - 3, 2.1));
   
             const fromPt = {
@@ -512,8 +530,8 @@
             arrowLineEl.setAttribute("d", arrows.linePath);
             arrowHeadEl.setAttribute("d", arrows.headPath);
           } else {
-            maskHoleEl.setAttribute("width", "0");
-            maskHoleEl.setAttribute("height", "0");
+            backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(0, 0, 0, 0));
+            glowFrameEl.setAttribute("d", "");
             primaryFrameEl.setAttribute("d", "");
             secondaryFrameEl.setAttribute("d", "");
             arrowLineEl.setAttribute("d", "");
@@ -539,7 +557,7 @@
         if (typeof showStage === "function") {
           showStage("players");
         }
-        return;
+        return true;
       }
   
       if (step.stage === "map" && currentId !== "stage-map") {
@@ -567,7 +585,7 @@
         if (typeof updateCountrySelectionUI === "function") {
           updateCountrySelectionUI();
         }
-        return;
+        return true;
       }
   
       if (step.stage === "game" && currentId !== "stage-game") {
@@ -587,7 +605,10 @@
         if (typeof showStage === "function") {
           showStage("game");
         }
+        return true;
       }
+  
+      return false;
     }
   
     function findTargetElement(step) {
@@ -694,6 +715,85 @@
       return { left: chosen.left, top: chosen.top, fromPt, toPt };
     }
   
+    function paintStepOverlay(step, token) {
+      if (token !== tutorialState.renderToken || !tutorialState.active || tutorialState.mode !== "steps") {
+        return;
+      }
+  
+      const targetEl = findTargetElement(step);
+      const rawRect = targetEl.getBoundingClientRect();
+      const pad = 10;
+      const hx = Math.max(6, rawRect.left - pad);
+      const hy = Math.max(6, rawRect.top - pad);
+      const hw = Math.max(16, Math.min(window.innerWidth - hx - 6, rawRect.width + pad * 2));
+      const hh = Math.max(16, Math.min(window.innerHeight - hy - 6, rawRect.height + pad * 2));
+  
+      backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(hx, hy, hw, hh));
+      const primaryPath = buildSketchRectPath(hx, hy, hw, hh, tutorialState.stepIndex * 1.7);
+      glowFrameEl.setAttribute("d", primaryPath);
+      primaryFrameEl.setAttribute("d", primaryPath);
+      secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2.5, hy + 2.5, hw + 5, hh - 4, tutorialState.stepIndex * 2.9 + 0.8));
+  
+      const isFirst = tutorialState.stepIndex === 0;
+      const isLast = tutorialState.stepIndex === TUTORIAL_STEPS.length - 1;
+      const dotsHtml = TUTORIAL_STEPS.map((_, idx) =>
+        `<span class="sketch-dot${idx === tutorialState.stepIndex ? " active" : ""}"></span>`
+      ).join("");
+  
+      cardEl.innerHTML = `
+        <div class="sketch-note-top">
+          <span class="sketch-step-badge">Note ${tutorialState.stepIndex + 1} / ${TUTORIAL_STEPS.length}</span>
+          <button type="button" class="sketch-skip-btn" id="sketch-btn-skip">Skip Guide</button>
+        </div>
+        <h3 class="sketch-note-title">${step.title}</h3>
+        <p class="sketch-note-body">${step.body}</p>
+        <div class="sketch-note-actions">
+          <div class="sketch-dots">${dotsHtml}</div>
+          <div class="sketch-btn-group">
+            ${!isFirst ? '<button type="button" class="sketch-btn sketch-btn-prev" id="sketch-btn-prev">← Back</button>' : ""}
+            <button type="button" class="sketch-btn sketch-btn-next" id="sketch-btn-next">${isLast ? "Let's Play!" : "Next →"}</button>
+          </div>
+        </div>
+      `;
+  
+      const cardRect = cardEl.getBoundingClientRect();
+      const holeRect = { left: hx, top: hy, right: hx + hw, bottom: hy + hh, width: hw, height: hh };
+      const layout = computeCardAndArrowLayout(holeRect, cardRect);
+  
+      cardEl.style.left = `${layout.left}px`;
+      cardEl.style.top = `${layout.top}px`;
+  
+      const arrows = buildSketchArrowPaths(layout.fromPt, layout.toPt);
+      arrowLineEl.setAttribute("d", arrows.linePath);
+      arrowHeadEl.setAttribute("d", arrows.headPath);
+  
+      const skipBtn = document.getElementById("sketch-btn-skip");
+      const prevBtn = document.getElementById("sketch-btn-prev");
+      const nextBtn = document.getElementById("sketch-btn-next");
+  
+      if (skipBtn) {
+        skipBtn.addEventListener("click", closeTutorial);
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          if (tutorialState.stepIndex > 0) {
+            tutorialState.stepIndex -= 1;
+            renderCurrentStep();
+          }
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          if (tutorialState.stepIndex < TUTORIAL_STEPS.length - 1) {
+            tutorialState.stepIndex += 1;
+            renderCurrentStep();
+          } else {
+            closeTutorial();
+          }
+        });
+      }
+    }
+  
     function renderCurrentStep() {
       if (!tutorialState.active || tutorialState.mode !== "steps") return;
       ensureOverlayDOM();
@@ -705,84 +805,20 @@
         return;
       }
   
-      ensureStageForStep(step);
+      const token = ++tutorialState.renderToken;
+      const switchedStage = ensureStageForStep(step);
   
-      requestAnimationFrame(() => {
-        const targetEl = findTargetElement(step);
-        const rawRect = targetEl.getBoundingClientRect();
-        const pad = 10;
-        const hx = Math.max(6, rawRect.left - pad);
-        const hy = Math.max(6, rawRect.top - pad);
-        const hw = Math.min(window.innerWidth - hx - 6, rawRect.width + pad * 2);
-        const hh = Math.min(window.innerHeight - hy - 6, rawRect.height + pad * 2);
-  
-        maskHoleEl.setAttribute("x", hx.toFixed(1));
-        maskHoleEl.setAttribute("y", hy.toFixed(1));
-        maskHoleEl.setAttribute("width", Math.max(16, hw).toFixed(1));
-        maskHoleEl.setAttribute("height", Math.max(16, hh).toFixed(1));
-  
-        primaryFrameEl.setAttribute("d", buildSketchRectPath(hx, hy, hw, hh, tutorialState.stepIndex * 1.7));
-        secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2.5, hy + 2.5, hw + 5, hh - 4, tutorialState.stepIndex * 2.9 + 0.8));
-  
-        const isFirst = tutorialState.stepIndex === 0;
-        const isLast = tutorialState.stepIndex === TUTORIAL_STEPS.length - 1;
-        const dotsHtml = TUTORIAL_STEPS.map((_, idx) =>
-          `<span class="sketch-dot${idx === tutorialState.stepIndex ? " active" : ""}"></span>`
-        ).join("");
-  
-        cardEl.innerHTML = `
-          <div class="sketch-note-top">
-            <span class="sketch-step-badge">Note ${tutorialState.stepIndex + 1} / ${TUTORIAL_STEPS.length}</span>
-            <button type="button" class="sketch-skip-btn" id="sketch-btn-skip">Skip Guide</button>
-          </div>
-          <h3 class="sketch-note-title">${step.title}</h3>
-          <p class="sketch-note-body">${step.body}</p>
-          <div class="sketch-note-actions">
-            <div class="sketch-dots">${dotsHtml}</div>
-            <div class="sketch-btn-group">
-              ${!isFirst ? '<button type="button" class="sketch-btn sketch-btn-prev" id="sketch-btn-prev">← Back</button>' : ""}
-              <button type="button" class="sketch-btn sketch-btn-next" id="sketch-btn-next">${isLast ? "Let's Play!" : "Next →"}</button>
-            </div>
-          </div>
-        `;
-  
-        const cardRect = cardEl.getBoundingClientRect();
-        const holeRect = { left: hx, top: hy, right: hx + hw, bottom: hy + hh, width: hw, height: hh };
-        const layout = computeCardAndArrowLayout(holeRect, cardRect);
-  
-        cardEl.style.left = `${layout.left}px`;
-        cardEl.style.top = `${layout.top}px`;
-  
-        const arrows = buildSketchArrowPaths(layout.fromPt, layout.toPt);
-        arrowLineEl.setAttribute("d", arrows.linePath);
-        arrowHeadEl.setAttribute("d", arrows.headPath);
-  
-        const skipBtn = document.getElementById("sketch-btn-skip");
-        const prevBtn = document.getElementById("sketch-btn-prev");
-        const nextBtn = document.getElementById("sketch-btn-next");
-  
-        if (skipBtn) {
-          skipBtn.addEventListener("click", closeTutorial);
-        }
-        if (prevBtn) {
-          prevBtn.addEventListener("click", () => {
-            if (tutorialState.stepIndex > 0) {
-              tutorialState.stepIndex -= 1;
-              renderCurrentStep();
-            }
+      if (switchedStage) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            paintStepOverlay(step, token);
           });
-        }
-        if (nextBtn) {
-          nextBtn.addEventListener("click", () => {
-            if (tutorialState.stepIndex < TUTORIAL_STEPS.length - 1) {
-              tutorialState.stepIndex += 1;
-              renderCurrentStep();
-            } else {
-              closeTutorial();
-            }
-          });
-        }
-      });
+        });
+      } else {
+        requestAnimationFrame(() => {
+          paintStepOverlay(step, token);
+        });
+      }
     }
   
     function startGuidedTutorial(forcedIndex) {
@@ -813,6 +849,7 @@
     function closeTutorial() {
       if (!tutorialState.active) return;
       const prevMode = tutorialState.mode;
+      tutorialState.renderToken += 1;
       tutorialState.active = false;
       tutorialState.mode = "closed";
   
@@ -861,12 +898,17 @@
       }
   
       window.addEventListener("resize", () => {
-        if (!tutorialState.active) return;
-        if (tutorialState.mode === "welcome") {
-          renderWelcomePrompt();
-        } else if (tutorialState.mode === "steps") {
-          renderCurrentStep();
-        }
+        if (!tutorialState.active || tutorialState.resizeQueued) return;
+        tutorialState.resizeQueued = true;
+        requestAnimationFrame(() => {
+          tutorialState.resizeQueued = false;
+          if (!tutorialState.active) return;
+          if (tutorialState.mode === "welcome") {
+            renderWelcomePrompt();
+          } else if (tutorialState.mode === "steps") {
+            renderCurrentStep();
+          }
+        });
       });
   
       document.addEventListener("keydown", (e) => {

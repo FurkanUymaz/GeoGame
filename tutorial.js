@@ -1,50 +1,297 @@
 (function () {
-    const TUTORIAL_SEEN_KEY = "atlas_xi_tutorial_seen_v1";
+    const TUTORIAL_SEEN_KEY = "atlas_xi_tutorial_seen_v3";
   
     const TUTORIAL_STEPS = [
       {
         stage: "players",
         selector: ".mode-selector-grid",
+        fallbackSelector: "#stage-players",
         title: "1. Choose Your Match Format",
         body: "Pick <strong>Play vs Friend</strong> for a local 1v1 pass-and-play duel, or challenge <strong>Atlas AI</strong> solo."
       },
       {
         stage: "players",
         selector: ".premium-duel-grid",
+        fallbackSelector: "#stage-players",
         title: "2. Enter Manager Names",
         body: "Type two distinct usernames for <strong>Player X</strong> (starts first) and <strong>Player O</strong>. Use Swap to flip sides."
       },
       {
         stage: "players",
         selector: "#difficulty-selector",
+        fallbackSelector: ".topbar-right",
         title: "3. Set Squad Difficulty",
         body: "<strong>Easy</strong> picks world-famous giants with many shared stars. <strong>Hard</strong> tests deeper club & nation trivia."
       },
       {
         stage: "map",
         selector: "#grid-mode-selector",
+        fallbackSelector: ".map-top-bar",
         title: "4. Club × Club or Nationality × League",
         body: "Switch grid rules here! Play classic <strong>Club × Club</strong> matchups or pit <strong>3 Nationalities</strong> against <strong>1 League</strong>."
       },
       {
         stage: "map",
         selector: ".map-workspace",
+        fallbackSelector: "#stage-map",
         title: "5. Scout the World Map",
         body: "Click countries on the map—or search the list on the right—to set your axes. Need a quick board? Hit <strong>Auto-Fill Remaining</strong>!"
       },
       {
         stage: "game",
         selector: ".tic-tac-grid",
+        fallbackSelector: "#stage-game",
         title: "6. Fill Cells with Shared Stars",
         body: "Click any cell and name a footballer who fits <strong>both</strong> the row and column. Connect <strong>3 in a row</strong> to win the round!"
       },
       {
         stage: "game",
         selector: ".scoreboard",
+        fallbackSelector: "#stage-game",
         title: "7. Watch Turns & Wrong Guesses",
         body: "Each footballer can only be used <strong>once</strong> per round. A wrong guess or pass hands the turn straight to your rival."
       }
     ];
+  
+    const TUTORIAL_CSS = `
+      .btn-tutorial-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 13px;
+        border-radius: 9px;
+        border: 1.5px dashed rgba(250, 204, 21, 0.65);
+        background: rgba(250, 204, 21, 0.12);
+        color: #fde047;
+        font-family: "Patrick Hand", "Caveat", cursive, sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+      }
+  
+      .btn-tutorial-trigger:hover {
+        background: rgba(250, 204, 21, 0.22);
+        border-color: #fde047;
+        transform: translateY(-1px) rotate(-1deg);
+        box-shadow: 0 6px 18px rgba(250, 204, 21, 0.22);
+      }
+  
+      .tutorial-q-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        border: 1.5px solid #fde047;
+        font-size: 13px;
+        line-height: 1;
+      }
+  
+      #sketch-tutorial-root {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2147483000;
+        pointer-events: auto;
+      }
+  
+      #sketch-tutorial-root.hidden {
+        display: none !important;
+      }
+  
+      .sketch-tutorial-svg {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        pointer-events: auto;
+      }
+  
+      .sketch-stroke-primary {
+        fill: none;
+        stroke: #fde047;
+        stroke-width: 2.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.55));
+      }
+  
+      .sketch-stroke-secondary {
+        fill: none;
+        stroke: rgba(248, 250, 252, 0.78);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+  
+      .sketch-arrow-line {
+        fill: none;
+        stroke: #fde047;
+        stroke-width: 2.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
+      }
+  
+      .sketch-note-card {
+        position: fixed;
+        z-index: 2147483005;
+        width: min(375px, calc(100vw - 28px));
+        padding: 18px 22px 16px;
+        background:
+          repeating-linear-gradient(
+            0deg,
+            rgba(148, 163, 184, 0.05) 0px,
+            rgba(148, 163, 184, 0.05) 1px,
+            transparent 1px,
+            transparent 26px
+          ),
+          linear-gradient(165deg, #111d35 0%, #081020 100%);
+        border: 2px solid rgba(248, 250, 252, 0.85);
+        border-radius: 18px 6px 20px 8px / 8px 18px 6px 20px;
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.85),
+          5px 6px 0 rgba(250, 204, 21, 0.42);
+        color: #f8fafc;
+        transform: rotate(-1.1deg);
+        transition: top 0.22s ease, left 0.22s ease;
+      }
+  
+      .sketch-note-card::before {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        border: 1.3px dashed rgba(250, 204, 21, 0.48);
+        border-radius: 14px 4px 16px 6px / 6px 14px 4px 16px;
+        pointer-events: none;
+      }
+  
+      .sketch-note-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 6px;
+      }
+  
+      .sketch-step-badge {
+        display: inline-block;
+        padding: 1px 11px;
+        border: 1.5px solid #38bdf8;
+        border-radius: 12px 4px 10px 4px;
+        background: rgba(56, 189, 248, 0.16);
+        color: #7dd3fc;
+        font-family: "Caveat", cursive, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+  
+      .sketch-skip-btn {
+        border: none;
+        background: transparent;
+        color: #94a3b8;
+        font-family: "Patrick Hand", cursive, sans-serif;
+        font-size: 16px;
+        text-decoration: underline wavy rgba(148, 163, 184, 0.55);
+        cursor: pointer;
+        padding: 2px 4px;
+      }
+  
+      .sketch-skip-btn:hover {
+        color: #fda4af;
+      }
+  
+      .sketch-note-title {
+        margin: 0 0 6px;
+        font-family: "Caveat", cursive, sans-serif;
+        font-size: 31px;
+        font-weight: 700;
+        line-height: 1.08;
+        color: #fde047;
+        text-shadow: 0 2px 10px rgba(250, 204, 21, 0.25);
+      }
+  
+      .sketch-note-body {
+        margin: 0 0 15px;
+        font-family: "Patrick Hand", cursive, sans-serif;
+        font-size: 19.5px;
+        line-height: 1.36;
+        color: #f1f5f9;
+      }
+  
+      .sketch-note-body strong {
+        color: #7dd3fc;
+        font-weight: 400;
+        border-bottom: 1.5px dashed rgba(125, 211, 252, 0.7);
+      }
+  
+      .sketch-note-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+  
+      .sketch-dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+  
+      .sketch-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50% 40% 60% 45%;
+        border: 1.5px solid rgba(248, 250, 252, 0.6);
+        background: transparent;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+  
+      .sketch-dot.active {
+        background: #fde047;
+        border-color: #fde047;
+        transform: scale(1.25);
+      }
+  
+      .sketch-btn-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+  
+      .sketch-btn {
+        padding: 5px 15px;
+        font-family: "Caveat", cursive, sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        border-radius: 12px 4px 12px 4px;
+        cursor: pointer;
+        transition: transform 0.14s ease, background 0.14s ease;
+      }
+  
+      .sketch-btn:hover {
+        transform: translateY(-1px) rotate(0.8deg);
+      }
+  
+      .sketch-btn-prev {
+        background: rgba(30, 41, 59, 0.9);
+        border: 1.5px solid rgba(248, 250, 252, 0.5);
+        color: #e2e8f0;
+      }
+  
+      .sketch-btn-next {
+        background: #fde047;
+        border: 2px solid #fef08a;
+        color: #091120;
+        box-shadow: 2px 3px 0 rgba(250, 204, 21, 0.4);
+      }
+    `;
   
     const tutorialState = {
       active: false,
@@ -63,17 +310,34 @@
     let arrowHeadEl = null;
     let cardEl = null;
   
-    function buildSketchRectPath(x, y, w, h, seedOffset) {
-      const o = 6;
-      const w1 = Math.sin(seedOffset + 1.1) * 2.2;
-      const w2 = Math.cos(seedOffset + 2.3) * 2.2;
-      const w3 = Math.sin(seedOffset + 3.7) * 2.2;
-      const w4 = Math.cos(seedOffset + 4.9) * 2.2;
+    function injectTutorialAssets() {
+      if (!document.getElementById("atlas-sketch-fonts")) {
+        const fontLink = document.createElement("link");
+        fontLink.id = "atlas-sketch-fonts";
+        fontLink.rel = "stylesheet";
+        fontLink.href = "https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap";
+        document.head.appendChild(fontLink);
+      }
   
-      const top = `M ${x - o} ${y + w1} Q ${x + w * 0.5} ${y - w2} ${x + w + o} ${y - w1}`;
-      const right = `M ${x + w - w2} ${y - o} Q ${x + w + w3} ${y + h * 0.5} ${x + w + w1} ${y + h + o}`;
-      const bottom = `M ${x + w + o} ${y + h - w3} Q ${x + w * 0.5} ${y + h + w4} ${x - o} ${y + h + w2}`;
-      const left = `M ${x + w4} ${y + h + o} Q ${x - w1} ${y + h * 0.5} ${x - w3} ${y - o}`;
+      if (!document.getElementById("atlas-tutorial-inline-styles")) {
+        const styleTag = document.createElement("style");
+        styleTag.id = "atlas-tutorial-inline-styles";
+        styleTag.textContent = TUTORIAL_CSS;
+        document.head.appendChild(styleTag);
+      }
+    }
+  
+    function buildSketchRectPath(x, y, w, h, seedOffset) {
+      const o = 7;
+      const w1 = Math.sin(seedOffset + 1.1) * 2.5;
+      const w2 = Math.cos(seedOffset + 2.3) * 2.5;
+      const w3 = Math.sin(seedOffset + 3.7) * 2.5;
+      const w4 = Math.cos(seedOffset + 4.9) * 2.5;
+  
+      const top = `M ${(x - o).toFixed(1)} ${(y + w1).toFixed(1)} Q ${(x + w * 0.5).toFixed(1)} ${(y - w2).toFixed(1)} ${(x + w + o).toFixed(1)} ${(y - w1).toFixed(1)}`;
+      const right = `M ${(x + w - w2).toFixed(1)} ${(y - o).toFixed(1)} Q ${(x + w + w3).toFixed(1)} ${(y + h * 0.5).toFixed(1)} ${(x + w + w1).toFixed(1)} ${(y + h + o).toFixed(1)}`;
+      const bottom = `M ${(x + w + o).toFixed(1)} ${(y + h - w3).toFixed(1)} Q ${(x + w * 0.5).toFixed(1)} ${(y + h + w4).toFixed(1)} ${(x - o).toFixed(1)} ${(y + h + w2).toFixed(1)}`;
+      const left = `M ${(x + w4).toFixed(1)} ${(y + h + o).toFixed(1)} Q ${(x - w1).toFixed(1)} ${(y + h * 0.5).toFixed(1)} ${(x - w3).toFixed(1)} ${(y - o).toFixed(1)}`;
   
       return `${top} ${right} ${bottom} ${left}`;
     }
@@ -106,11 +370,12 @@
     }
   
     function ensureOverlayDOM() {
+      injectTutorialAssets();
       if (rootEl) return;
   
       rootEl = document.createElement("div");
       rootEl.id = "sketch-tutorial-root";
-      rootEl.className = "sketch-tutorial-root hidden";
+      rootEl.className = "hidden";
   
       const ns = "http://www.w3.org/2000/svg";
       svgEl = document.createElementNS(ns, "svg");
@@ -141,7 +406,7 @@
       backdropRect.setAttribute("y", "0");
       backdropRect.setAttribute("width", "100%");
       backdropRect.setAttribute("height", "100%");
-      backdropRect.setAttribute("fill", "rgba(3, 7, 18, 0.72)");
+      backdropRect.setAttribute("fill", "rgba(3, 7, 18, 0.76)");
       backdropRect.setAttribute("mask", "url(#atlas-sketch-spotlight-mask)");
   
       secondaryFrameEl = document.createElementNS(ns, "path");
@@ -232,30 +497,39 @@
       }
     }
   
+    function findTargetElement(step) {
+      const primary = document.querySelector(step.selector);
+      if (primary) {
+        const r = primary.getBoundingClientRect();
+        if (r.width > 12 && r.height > 12) return primary;
+      }
+      if (step.fallbackSelector) {
+        const fallback = document.querySelector(step.fallbackSelector);
+        if (fallback) return fallback;
+      }
+      return document.querySelector(".stage.active") || document.body;
+    }
+  
     function computeCardAndArrowLayout(holeRect, cardRect) {
       const vw = window.innerWidth;
       const vh = window.innerHeight;
       const margin = 16;
-      const gap = 28;
+      const gap = 30;
   
       const placements = [
         {
-          name: "bottom",
           left: holeRect.left + holeRect.width * 0.5 - cardRect.width * 0.5,
           top: holeRect.bottom + gap
         },
         {
-          name: "top",
           left: holeRect.left + holeRect.width * 0.5 - cardRect.width * 0.5,
           top: holeRect.top - cardRect.height - gap
         },
         {
-          name: "right",
           left: holeRect.right + gap,
           top: holeRect.top + holeRect.height * 0.5 - cardRect.height * 0.5
         },
         {
-          name: "left",
           left: holeRect.left - cardRect.width - gap,
           top: holeRect.top + holeRect.height * 0.5 - cardRect.height * 0.5
         }
@@ -266,8 +540,8 @@
         const clampedLeft = Math.max(margin, Math.min(vw - cardRect.width - margin, p.left));
         const clampedTop = Math.max(margin, Math.min(vh - cardRect.height - margin, p.top));
   
-        const overlapsX = clampedLeft < holeRect.right + 10 && clampedLeft + cardRect.width > holeRect.left - 10;
-        const overlapsY = clampedTop < holeRect.bottom + 10 && clampedTop + cardRect.height > holeRect.top - 10;
+        const overlapsX = clampedLeft < holeRect.right + 12 && clampedLeft + cardRect.width > holeRect.left - 12;
+        const overlapsY = clampedTop < holeRect.bottom + 12 && clampedTop + cardRect.height > holeRect.top - 12;
   
         if (!overlapsX || !overlapsY) {
           chosen = { left: clampedLeft, top: clampedTop };
@@ -298,24 +572,24 @@
         fromPt = { x: cardCenter.x, y: chosen.top - 4 };
         toPt = {
           x: Math.max(holeRect.left + 16, Math.min(holeRect.right - 16, cardCenter.x)),
-          y: holeRect.bottom + 6
+          y: holeRect.bottom + 8
         };
       } else if (chosen.top + cardRect.height <= holeRect.top) {
         fromPt = { x: cardCenter.x, y: chosen.top + cardRect.height + 4 };
         toPt = {
           x: Math.max(holeRect.left + 16, Math.min(holeRect.right - 16, cardCenter.x)),
-          y: holeRect.top - 6
+          y: holeRect.top - 8
         };
       } else if (chosen.left >= holeRect.right) {
         fromPt = { x: chosen.left - 4, y: cardCenter.y };
         toPt = {
-          x: holeRect.right + 6,
+          x: holeRect.right + 8,
           y: Math.max(holeRect.top + 16, Math.min(holeRect.bottom - 16, cardCenter.y))
         };
       } else {
         fromPt = { x: chosen.left + cardRect.width + 4, y: cardCenter.y };
         toPt = {
-          x: holeRect.left - 6,
+          x: holeRect.left - 8,
           y: Math.max(holeRect.top + 16, Math.min(holeRect.bottom - 16, cardCenter.y))
         };
       }
@@ -340,23 +614,21 @@
       ensureStageForStep(step);
   
       requestAnimationFrame(() => {
-        const targetEl = document.querySelector(step.selector);
-        if (!targetEl) return;
-  
+        const targetEl = findTargetElement(step);
         const rawRect = targetEl.getBoundingClientRect();
         const pad = 10;
-        const hx = Math.max(4, rawRect.left - pad);
-        const hy = Math.max(4, rawRect.top - pad);
-        const hw = Math.min(window.innerWidth - hx - 4, rawRect.width + pad * 2);
-        const hh = Math.min(window.innerHeight - hy - 4, rawRect.height + pad * 2);
+        const hx = Math.max(6, rawRect.left - pad);
+        const hy = Math.max(6, rawRect.top - pad);
+        const hw = Math.min(window.innerWidth - hx - 6, rawRect.width + pad * 2);
+        const hh = Math.min(window.innerHeight - hy - 6, rawRect.height + pad * 2);
   
         maskHoleEl.setAttribute("x", hx.toFixed(1));
         maskHoleEl.setAttribute("y", hy.toFixed(1));
-        maskHoleEl.setAttribute("width", Math.max(10, hw).toFixed(1));
-        maskHoleEl.setAttribute("height", Math.max(10, hh).toFixed(1));
+        maskHoleEl.setAttribute("width", Math.max(16, hw).toFixed(1));
+        maskHoleEl.setAttribute("height", Math.max(16, hh).toFixed(1));
   
         primaryFrameEl.setAttribute("d", buildSketchRectPath(hx, hy, hw, hh, tutorialState.stepIndex * 1.7));
-        secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2, hy + 2, hw + 4, hh - 3, tutorialState.stepIndex * 2.9 + 0.8));
+        secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2.5, hy + 2.5, hw + 5, hh - 4, tutorialState.stepIndex * 2.9 + 0.8));
   
         const isFirst = tutorialState.stepIndex === 0;
         const isLast = tutorialState.stepIndex === TUTORIAL_STEPS.length - 1;
@@ -486,7 +758,9 @@
       }
     }
   
-    document.addEventListener("DOMContentLoaded", () => {
+    function initTutorial() {
+      injectTutorialAssets();
+  
       const triggerBtn = document.getElementById("btn-open-tutorial");
       if (triggerBtn) {
         triggerBtn.addEventListener("click", openTutorial);
@@ -529,5 +803,11 @@
       if (!alreadySeen) {
         setTimeout(openTutorial, 450);
       }
-    });
+    }
+  
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTutorial);
+    } else {
+      initTutorial();
+    }
   })();

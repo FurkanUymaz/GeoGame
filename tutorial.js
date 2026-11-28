@@ -1,6 +1,4 @@
 (function () {
-    const TUTORIAL_SEEN_KEY = "atlas_xi_tutorial_seen_v3";
-  
     const TUTORIAL_STEPS = [
       {
         stage: "players",
@@ -141,7 +139,7 @@
       .sketch-note-card {
         position: fixed;
         z-index: 2147483005;
-        width: min(375px, calc(100vw - 28px));
+        width: min(380px, calc(100vw - 28px));
         padding: 18px 22px 16px;
         background:
           repeating-linear-gradient(
@@ -160,6 +158,12 @@
         color: #f8fafc;
         transform: rotate(-1.1deg);
         transition: top 0.22s ease, left 0.22s ease;
+      }
+  
+      .sketch-note-card.welcome-mode {
+        width: min(435px, calc(100vw - 28px));
+        padding: 22px 26px 20px;
+        transform: rotate(-0.8deg);
       }
   
       .sketch-note-card::before {
@@ -210,7 +214,7 @@
       .sketch-note-title {
         margin: 0 0 6px;
         font-family: "Caveat", cursive, sans-serif;
-        font-size: 31px;
+        font-size: 32px;
         font-weight: 700;
         line-height: 1.08;
         color: #fde047;
@@ -218,10 +222,10 @@
       }
   
       .sketch-note-body {
-        margin: 0 0 15px;
+        margin: 0 0 16px;
         font-family: "Patrick Hand", cursive, sans-serif;
-        font-size: 19.5px;
-        line-height: 1.36;
+        font-size: 20px;
+        line-height: 1.38;
         color: #f1f5f9;
       }
   
@@ -236,6 +240,14 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+      }
+  
+      .sketch-welcome-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 6px;
       }
   
       .sketch-dots {
@@ -266,9 +278,9 @@
       }
   
       .sketch-btn {
-        padding: 5px 15px;
+        padding: 6px 16px;
         font-family: "Caveat", cursive, sans-serif;
-        font-size: 21px;
+        font-size: 22px;
         font-weight: 700;
         border-radius: 12px 4px 12px 4px;
         cursor: pointer;
@@ -295,6 +307,7 @@
   
     const tutorialState = {
       active: false,
+      mode: "closed",
       stepIndex: 0,
       startedFromStage: "players",
       injectedDemoNames: false,
@@ -406,7 +419,7 @@
       backdropRect.setAttribute("y", "0");
       backdropRect.setAttribute("width", "100%");
       backdropRect.setAttribute("height", "100%");
-      backdropRect.setAttribute("fill", "rgba(3, 7, 18, 0.76)");
+      backdropRect.setAttribute("fill", "rgba(3, 7, 18, 0.78)");
       backdropRect.setAttribute("mask", "url(#atlas-sketch-spotlight-mask)");
   
       secondaryFrameEl = document.createElementNS(ns, "path");
@@ -436,6 +449,86 @@
       rootEl.appendChild(svgEl);
       rootEl.appendChild(cardEl);
       document.body.appendChild(rootEl);
+    }
+  
+    function renderWelcomePrompt() {
+      ensureOverlayDOM();
+      tutorialState.active = true;
+      tutorialState.mode = "welcome";
+      rootEl.classList.remove("hidden");
+      cardEl.classList.add("welcome-mode");
+  
+      cardEl.innerHTML = `
+        <div class="sketch-note-top">
+          <span class="sketch-step-badge">Tactical Briefing</span>
+          <button type="button" class="sketch-skip-btn" id="sketch-welcome-skip-top">Skip</button>
+        </div>
+        <h3 class="sketch-note-title">Want to Learn How to Play?</h3>
+        <p class="sketch-note-body">
+          New to <strong>Atlas XI</strong>? Take a quick 30-second sketched walkthrough of the rules, or skip straight to kickoff! You can always reopen the guide via <strong>? How to Play</strong>.
+        </p>
+        <div class="sketch-welcome-actions">
+          <button type="button" class="sketch-btn sketch-btn-prev" id="sketch-welcome-skip">Skip & Play</button>
+          <button type="button" class="sketch-btn sketch-btn-next" id="sketch-welcome-start">Yes, Show Me! →</button>
+        </div>
+      `;
+  
+      requestAnimationFrame(() => {
+        const cardRect = cardEl.getBoundingClientRect();
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const cardLeft = Math.max(16, (vw - cardRect.width) * 0.5);
+        const cardTop = Math.max(118, (vh - cardRect.height) * 0.46);
+  
+        cardEl.style.left = `${cardLeft}px`;
+        cardEl.style.top = `${cardTop}px`;
+  
+        const triggerBtn = document.getElementById("btn-open-tutorial");
+        if (triggerBtn) {
+          const tr = triggerBtn.getBoundingClientRect();
+          if (tr.width > 10 && tr.height > 10) {
+            const hx = Math.max(6, tr.left - 8);
+            const hy = Math.max(6, tr.top - 6);
+            const hw = tr.width + 16;
+            const hh = tr.height + 12;
+  
+            maskHoleEl.setAttribute("x", hx.toFixed(1));
+            maskHoleEl.setAttribute("y", hy.toFixed(1));
+            maskHoleEl.setAttribute("width", hw.toFixed(1));
+            maskHoleEl.setAttribute("height", hh.toFixed(1));
+  
+            primaryFrameEl.setAttribute("d", buildSketchRectPath(hx, hy, hw, hh, 0.9));
+            secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2, hy + 2, hw + 4, hh - 3, 2.1));
+  
+            const fromPt = {
+              x: Math.min(cardLeft + cardRect.width - 28, hx + hw * 0.5),
+              y: cardTop - 6
+            };
+            const toPt = {
+              x: hx + hw * 0.5,
+              y: hy + hh + 8
+            };
+            const arrows = buildSketchArrowPaths(fromPt, toPt);
+            arrowLineEl.setAttribute("d", arrows.linePath);
+            arrowHeadEl.setAttribute("d", arrows.headPath);
+          } else {
+            maskHoleEl.setAttribute("width", "0");
+            maskHoleEl.setAttribute("height", "0");
+            primaryFrameEl.setAttribute("d", "");
+            secondaryFrameEl.setAttribute("d", "");
+            arrowLineEl.setAttribute("d", "");
+            arrowHeadEl.setAttribute("d", "");
+          }
+        }
+  
+        const skipTop = document.getElementById("sketch-welcome-skip-top");
+        const skipBtn = document.getElementById("sketch-welcome-skip");
+        const startBtn = document.getElementById("sketch-welcome-start");
+  
+        if (skipTop) skipTop.addEventListener("click", closeTutorial);
+        if (skipBtn) skipBtn.addEventListener("click", closeTutorial);
+        if (startBtn) startBtn.addEventListener("click", () => startGuidedTutorial(0));
+      });
     }
   
     function ensureStageForStep(step) {
@@ -602,12 +695,13 @@
     }
   
     function renderCurrentStep() {
-      if (!tutorialState.active) return;
+      if (!tutorialState.active || tutorialState.mode !== "steps") return;
       ensureOverlayDOM();
+      cardEl.classList.remove("welcome-mode");
   
       const step = TUTORIAL_STEPS[tutorialState.stepIndex];
       if (!step) {
-        closeTutorial(true);
+        closeTutorial();
         return;
       }
   
@@ -668,7 +762,7 @@
         const nextBtn = document.getElementById("sketch-btn-next");
   
         if (skipBtn) {
-          skipBtn.addEventListener("click", () => closeTutorial(true));
+          skipBtn.addEventListener("click", closeTutorial);
         }
         if (prevBtn) {
           prevBtn.addEventListener("click", () => {
@@ -684,14 +778,14 @@
               tutorialState.stepIndex += 1;
               renderCurrentStep();
             } else {
-              closeTutorial(true);
+              closeTutorial();
             }
           });
         }
       });
     }
   
-    function openTutorial() {
+    function startGuidedTutorial(forcedIndex) {
       ensureOverlayDOM();
   
       const activeStage = document.querySelector(".stage.active");
@@ -700,7 +794,9 @@
       tutorialState.injectedDemoNames = false;
       tutorialState.injectedDemoAxes = false;
   
-      if (activeId === "stage-game") {
+      if (typeof forcedIndex === "number") {
+        tutorialState.stepIndex = forcedIndex;
+      } else if (activeId === "stage-game") {
         tutorialState.stepIndex = 5;
       } else if (activeId === "stage-map") {
         tutorialState.stepIndex = 3;
@@ -709,51 +805,49 @@
       }
   
       tutorialState.active = true;
+      tutorialState.mode = "steps";
       rootEl.classList.remove("hidden");
       renderCurrentStep();
     }
   
-    function closeTutorial(markSeen) {
+    function closeTutorial() {
       if (!tutorialState.active) return;
+      const prevMode = tutorialState.mode;
       tutorialState.active = false;
+      tutorialState.mode = "closed";
   
       if (rootEl) {
         rootEl.classList.add("hidden");
       }
   
-      if (markSeen) {
-        try {
-          localStorage.setItem(TUTORIAL_SEEN_KEY, "true");
-        } catch (err) {
-        }
-      }
-  
-      if (tutorialState.startedFromStage === "stage-players") {
-        if (tutorialState.injectedDemoAxes && typeof state !== "undefined") {
-          state.horizontalCountry = null;
-          state.horizontalNations = [];
-          state.verticalCountry = null;
-        }
-        if (tutorialState.injectedDemoNames) {
-          const inputX = document.getElementById("input-player-x");
-          const inputO = document.getElementById("input-player-o");
-          if (inputX && inputX.value === "Manager X") inputX.value = "";
-          if (inputO && inputO.value === "Manager O") inputO.value = "";
-        }
-        if (typeof showStage === "function") {
-          showStage("players");
-        }
-      } else if (tutorialState.startedFromStage === "stage-map") {
-        if (tutorialState.injectedDemoAxes && typeof state !== "undefined") {
-          state.horizontalCountry = null;
-          state.horizontalNations = [];
-          state.verticalCountry = null;
-        }
-        if (typeof showStage === "function") {
-          showStage("map");
-        }
-        if (typeof updateCountrySelectionUI === "function") {
-          updateCountrySelectionUI();
+      if (prevMode === "steps") {
+        if (tutorialState.startedFromStage === "stage-players") {
+          if (tutorialState.injectedDemoAxes && typeof state !== "undefined") {
+            state.horizontalCountry = null;
+            state.horizontalNations = [];
+            state.verticalCountry = null;
+          }
+          if (tutorialState.injectedDemoNames) {
+            const inputX = document.getElementById("input-player-x");
+            const inputO = document.getElementById("input-player-o");
+            if (inputX && inputX.value === "Manager X") inputX.value = "";
+            if (inputO && inputO.value === "Manager O") inputO.value = "";
+          }
+          if (typeof showStage === "function") {
+            showStage("players");
+          }
+        } else if (tutorialState.startedFromStage === "stage-map") {
+          if (tutorialState.injectedDemoAxes && typeof state !== "undefined") {
+            state.horizontalCountry = null;
+            state.horizontalNations = [];
+            state.verticalCountry = null;
+          }
+          if (typeof showStage === "function") {
+            showStage("map");
+          }
+          if (typeof updateCountrySelectionUI === "function") {
+            updateCountrySelectionUI();
+          }
         }
       }
     }
@@ -763,27 +857,42 @@
   
       const triggerBtn = document.getElementById("btn-open-tutorial");
       if (triggerBtn) {
-        triggerBtn.addEventListener("click", openTutorial);
+        triggerBtn.addEventListener("click", () => startGuidedTutorial());
       }
   
       window.addEventListener("resize", () => {
-        if (tutorialState.active) {
+        if (!tutorialState.active) return;
+        if (tutorialState.mode === "welcome") {
+          renderWelcomePrompt();
+        } else if (tutorialState.mode === "steps") {
           renderCurrentStep();
         }
       });
   
       document.addEventListener("keydown", (e) => {
         if (!tutorialState.active) return;
+  
+        if (tutorialState.mode === "welcome") {
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeTutorial();
+          } else if (e.key === "Enter" || e.key === "ArrowRight") {
+            e.preventDefault();
+            startGuidedTutorial(0);
+          }
+          return;
+        }
+  
         if (e.key === "Escape") {
           e.preventDefault();
-          closeTutorial(true);
+          closeTutorial();
         } else if (e.key === "ArrowRight" || e.key === "Enter") {
           e.preventDefault();
           if (tutorialState.stepIndex < TUTORIAL_STEPS.length - 1) {
             tutorialState.stepIndex += 1;
             renderCurrentStep();
           } else {
-            closeTutorial(true);
+            closeTutorial();
           }
         } else if (e.key === "ArrowLeft") {
           e.preventDefault();
@@ -794,15 +903,7 @@
         }
       });
   
-      let alreadySeen = false;
-      try {
-        alreadySeen = localStorage.getItem(TUTORIAL_SEEN_KEY) === "true";
-      } catch (err) {
-      }
-  
-      if (!alreadySeen) {
-        setTimeout(openTutorial, 450);
-      }
+      setTimeout(renderWelcomePrompt, 350);
     }
   
     if (document.readyState === "loading") {

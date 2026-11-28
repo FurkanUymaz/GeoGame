@@ -2,7 +2,7 @@ Atlas XI
 
 A web-based football tic-tac-toe game with an interactive world map for picking leagues and nations.
 
-Live Demo: https://furkanuymaz.github.io/geogame/
+Live Demo: https://furkanuymaz.github.io/GeoGame/
 
 About the Game
 

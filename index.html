@@ -6,8 +6,93 @@
   <title>Atlas XI — Football Grid</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=7" />
+  <style>
+    .topbar {
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+
+    .topbar-left {
+      justify-self: start !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .topbar-center {
+      justify-self: center !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .topbar-right {
+      justify-self: end !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    #turn-indicator {
+      display: none !important;
+    }
+
+    .brand-centerpiece {
+      position: relative;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 9px;
+      padding: 4px 14px;
+      font-family: "Cinzel", Georgia, serif;
+      font-size: clamp(22px, 2.2vw, 29px);
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      line-height: 1;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    .brand-centerpiece::after {
+      content: "";
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      bottom: -3px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.8), rgba(250, 204, 21, 0.9), transparent);
+    }
+
+    .brand-centerpiece .brand-word {
+      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(248, 250, 252, 0.16));
+    }
+
+    .brand-centerpiece .brand-roman {
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #fde047 0%, #f59e0b 55%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 12px rgba(250, 204, 21, 0.35));
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        grid-template-columns: auto 1fr !important;
+      }
+
+      .topbar-center {
+        grid-column: 1 / -1;
+        order: -1;
+        padding-bottom: 4px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -25,12 +110,14 @@
         </svg>
         <span>GitHub</span>
       </a>
-      <span class="topbar-divider" aria-hidden="true"></span>
-      <span class="brand-title">Atlas XI</span>
     </div>
 
     <div class="topbar-center">
-      <div id="turn-indicator" class="turn-banner">Player Setup</div>
+      <span class="brand-centerpiece" aria-label="Atlas XI">
+        <span class="brand-word">ATLAS</span>
+        <span class="brand-roman">XI</span>
+      </span>
+      <div id="turn-indicator" class="turn-banner hidden" aria-hidden="true">Player Setup</div>
     </div>
 
     <div class="topbar-right nav-actions">
@@ -184,9 +271,9 @@
 
   <div id="map-tooltip" class="hidden"></div>
 
-  <script src="data.js?v=6"></script>
-  <script src="app.js?v=6"></script>
-  <script src="tutorial.js?v=6"></script>
-  <script src="victory.js?v=6"></script>
+  <script src="data.js?v=7"></script>
+  <script src="app.js?v=7"></script>
+  <script src="tutorial.js?v=7"></script>
+  <script src="victory.js?v=7"></script>
 </body>
 </html>

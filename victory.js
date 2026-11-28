@@ -928,6 +928,7 @@
       const rematchBtn = document.getElementById("btn-banner-rematch");
       if (rematchBtn) {
         rematchBtn.addEventListener("click", () => {
+          resetVictoryState();
           const navNewGrid = document.getElementById("btn-new-grid");
           if (navNewGrid) {
             navNewGrid.click();
@@ -958,6 +959,9 @@
           const cell = document.getElementById(`cell-${r}-${c}`);
           if (cell) {
             cell.classList.remove("winner-pop", "dimmed-loser", "showing-answers");
+            if (cell.querySelector(".cell-answers-panel")) {
+              cell.innerHTML = "";
+            }
           }
         }
       }
@@ -1033,7 +1037,7 @@
     function evaluateGridState() {
       const outcome = detectBoardOutcome();
       if (!outcome.ended) {
-        if (victoryState.roundEnded) {
+        if (victoryState.roundEnded || victoryState.showingAnswers) {
           resetVictoryState();
         }
         return;
@@ -1049,18 +1053,41 @@
       }
     }
   
+    function bindRoundResetTriggers() {
+      const resetSelectors = [
+        "#btn-new-grid",
+        "#btn-enter-game",
+        "#btn-back-map",
+        "#btn-back-names",
+        ".difficulty-btn",
+        ".grid-mode-btn"
+      ];
+  
+      document.addEventListener("click", (e) => {
+        const target = e.target;
+        if (!target || typeof target.closest !== "function") return;
+        for (const sel of resetSelectors) {
+          if (target.closest(sel)) {
+            resetVictoryState();
+            break;
+          }
+        }
+      }, true);
+    }
+  
     function initVictoryEffects() {
       injectVictoryStyles();
       ensureBannerDOM();
+      bindRoundResetTriggers();
   
       const gridEl = document.querySelector(".tic-tac-grid");
       if (gridEl) {
         const observer = new MutationObserver(() => {
-          if (victoryState.showingAnswers) return;
           evaluateGridState();
         });
         observer.observe(gridEl, {
           subtree: true,
+          childList: true,
           attributes: true,
           attributeFilter: ["class"]
         });

@@ -94,29 +94,38 @@
         height: 100vh;
         z-index: 2147483000;
         pointer-events: auto;
+        overflow: hidden;
       }
   
       #sketch-tutorial-root.hidden {
         display: none !important;
       }
   
-      .sketch-tutorial-svg {
+      .sketch-spotlight-hole {
+        position: fixed;
+        border-radius: 14px;
+        box-shadow: 0 0 0 9999px rgba(3, 7, 18, 0.78);
+        pointer-events: none;
+        will-change: transform, width, height;
+      }
+  
+      .sketch-frame-svg {
+        position: fixed;
+        pointer-events: none;
+        overflow: visible;
+      }
+  
+      .sketch-arrow-svg {
         position: fixed;
         inset: 0;
         width: 100vw;
         height: 100vh;
-        display: block;
-        pointer-events: auto;
-      }
-  
-      .sketch-backdrop-cutout {
-        fill: rgba(3, 7, 18, 0.78);
-        fill-rule: evenodd;
+        pointer-events: none;
       }
   
       .sketch-stroke-glow {
         fill: none;
-        stroke: rgba(250, 204, 21, 0.28);
+        stroke: rgba(250, 204, 21, 0.26);
         stroke-width: 7;
         stroke-linecap: round;
         stroke-linejoin: round;
@@ -167,7 +176,6 @@
           5px 6px 0 rgba(250, 204, 21, 0.42);
         color: #f8fafc;
         transform: rotate(-1.1deg);
-        transition: top 0.2s ease, left 0.2s ease;
       }
   
       .sketch-note-card.welcome-mode {
@@ -322,15 +330,17 @@
       injectedDemoNames: false,
       injectedDemoAxes: false,
       renderToken: 0,
+      lastStepSwitchAt: 0,
       resizeQueued: false
     };
   
     let rootEl = null;
-    let svgEl = null;
-    let backdropCutoutEl = null;
+    let spotlightEl = null;
+    let frameSvgEl = null;
     let glowFrameEl = null;
     let primaryFrameEl = null;
     let secondaryFrameEl = null;
+    let arrowSvgEl = null;
     let arrowLineEl = null;
     let arrowHeadEl = null;
     let cardEl = null;
@@ -352,45 +362,17 @@
       }
     }
   
-    function buildCutoutBackdropPath(hx, hy, hw, hh) {
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      const outer = `M 0 0 H ${vw} V ${vh} H 0 Z`;
-      if (hw <= 0 || hh <= 0) return outer;
+    function buildLocalSketchRectPath(w, h, seedOffset) {
+      const o = 6;
+      const w1 = Math.sin(seedOffset + 1.1) * 2.2;
+      const w2 = Math.cos(seedOffset + 2.3) * 2.2;
+      const w3 = Math.sin(seedOffset + 3.7) * 2.2;
+      const w4 = Math.cos(seedOffset + 4.9) * 2.2;
   
-      const r = Math.min(14, hw * 0.5, hh * 0.5);
-      const x1 = hx;
-      const y1 = hy;
-      const x2 = hx + hw;
-      const y2 = hy + hh;
-  
-      const inner = [
-        `M ${(x1 + r).toFixed(1)} ${y1.toFixed(1)}`,
-        `H ${(x2 - r).toFixed(1)}`,
-        `Q ${x2.toFixed(1)} ${y1.toFixed(1)} ${x2.toFixed(1)} ${(y1 + r).toFixed(1)}`,
-        `V ${(y2 - r).toFixed(1)}`,
-        `Q ${x2.toFixed(1)} ${y2.toFixed(1)} ${(x2 - r).toFixed(1)} ${y2.toFixed(1)}`,
-        `H ${(x1 + r).toFixed(1)}`,
-        `Q ${x1.toFixed(1)} ${y2.toFixed(1)} ${x1.toFixed(1)} ${(y2 - r).toFixed(1)}`,
-        `V ${(y1 + r).toFixed(1)}`,
-        `Q ${x1.toFixed(1)} ${y1.toFixed(1)} ${(x1 + r).toFixed(1)} ${y1.toFixed(1)}`,
-        "Z"
-      ].join(" ");
-  
-      return `${outer} ${inner}`;
-    }
-  
-    function buildSketchRectPath(x, y, w, h, seedOffset) {
-      const o = 7;
-      const w1 = Math.sin(seedOffset + 1.1) * 2.5;
-      const w2 = Math.cos(seedOffset + 2.3) * 2.5;
-      const w3 = Math.sin(seedOffset + 3.7) * 2.5;
-      const w4 = Math.cos(seedOffset + 4.9) * 2.5;
-  
-      const top = `M ${(x - o).toFixed(1)} ${(y + w1).toFixed(1)} Q ${(x + w * 0.5).toFixed(1)} ${(y - w2).toFixed(1)} ${(x + w + o).toFixed(1)} ${(y - w1).toFixed(1)}`;
-      const right = `M ${(x + w - w2).toFixed(1)} ${(y - o).toFixed(1)} Q ${(x + w + w3).toFixed(1)} ${(y + h * 0.5).toFixed(1)} ${(x + w + w1).toFixed(1)} ${(y + h + o).toFixed(1)}`;
-      const bottom = `M ${(x + w + o).toFixed(1)} ${(y + h - w3).toFixed(1)} Q ${(x + w * 0.5).toFixed(1)} ${(y + h + w4).toFixed(1)} ${(x - o).toFixed(1)} ${(y + h + w2).toFixed(1)}`;
-      const left = `M ${(x + w4).toFixed(1)} ${(y + h + o).toFixed(1)} Q ${(x - w1).toFixed(1)} ${(y + h * 0.5).toFixed(1)} ${(x - w3).toFixed(1)} ${(y - o).toFixed(1)}`;
+      const top = `M ${(-o).toFixed(1)} ${w1.toFixed(1)} Q ${(w * 0.5).toFixed(1)} ${(-w2).toFixed(1)} ${(w + o).toFixed(1)} ${(-w1).toFixed(1)}`;
+      const right = `M ${(w - w2).toFixed(1)} ${(-o).toFixed(1)} Q ${(w + w3).toFixed(1)} ${(h * 0.5).toFixed(1)} ${(w + w1).toFixed(1)} ${(h + o).toFixed(1)}`;
+      const bottom = `M ${(w + o).toFixed(1)} ${(h - w3).toFixed(1)} Q ${(w * 0.5).toFixed(1)} ${(h + w4).toFixed(1)} ${(-o).toFixed(1)} ${(h + w2).toFixed(1)}`;
+      const left = `M ${w4.toFixed(1)} ${(h + o).toFixed(1)} Q ${(-w1).toFixed(1)} ${(h * 0.5).toFixed(1)} ${(-w3).toFixed(1)} ${(-o).toFixed(1)}`;
   
       return `${top} ${right} ${bottom} ${left}`;
     }
@@ -422,6 +404,24 @@
       return { linePath, headPath };
     }
   
+    function positionSpotlightAndFrame(hx, hy, hw, hh, seedOffset) {
+      spotlightEl.style.left = `${hx.toFixed(1)}px`;
+      spotlightEl.style.top = `${hy.toFixed(1)}px`;
+      spotlightEl.style.width = `${hw.toFixed(1)}px`;
+      spotlightEl.style.height = `${hh.toFixed(1)}px`;
+  
+      frameSvgEl.style.left = `${hx.toFixed(1)}px`;
+      frameSvgEl.style.top = `${hy.toFixed(1)}px`;
+      frameSvgEl.style.width = `${hw.toFixed(1)}px`;
+      frameSvgEl.style.height = `${hh.toFixed(1)}px`;
+  
+      const mainPath = buildLocalSketchRectPath(hw, hh, seedOffset);
+      const secPath = buildLocalSketchRectPath(hw + 3, hh - 2, seedOffset + 1.15);
+      glowFrameEl.setAttribute("d", mainPath);
+      primaryFrameEl.setAttribute("d", mainPath);
+      secondaryFrameEl.setAttribute("d", secPath);
+    }
+  
     function ensureOverlayDOM() {
       injectTutorialAssets();
       if (rootEl) return;
@@ -430,12 +430,12 @@
       rootEl.id = "sketch-tutorial-root";
       rootEl.className = "hidden";
   
-      const ns = "http://www.w3.org/2000/svg";
-      svgEl = document.createElementNS(ns, "svg");
-      svgEl.setAttribute("class", "sketch-tutorial-svg");
+      spotlightEl = document.createElement("div");
+      spotlightEl.className = "sketch-spotlight-hole";
   
-      backdropCutoutEl = document.createElementNS(ns, "path");
-      backdropCutoutEl.setAttribute("class", "sketch-backdrop-cutout");
+      const ns = "http://www.w3.org/2000/svg";
+      frameSvgEl = document.createElementNS(ns, "svg");
+      frameSvgEl.setAttribute("class", "sketch-frame-svg");
   
       glowFrameEl = document.createElementNS(ns, "path");
       glowFrameEl.setAttribute("class", "sketch-stroke-glow");
@@ -446,25 +446,30 @@
       primaryFrameEl = document.createElementNS(ns, "path");
       primaryFrameEl.setAttribute("class", "sketch-stroke-primary");
   
+      frameSvgEl.appendChild(glowFrameEl);
+      frameSvgEl.appendChild(secondaryFrameEl);
+      frameSvgEl.appendChild(primaryFrameEl);
+  
+      arrowSvgEl = document.createElementNS(ns, "svg");
+      arrowSvgEl.setAttribute("class", "sketch-arrow-svg");
+  
       arrowLineEl = document.createElementNS(ns, "path");
       arrowLineEl.setAttribute("class", "sketch-arrow-line");
   
       arrowHeadEl = document.createElementNS(ns, "path");
       arrowHeadEl.setAttribute("class", "sketch-arrow-line");
   
-      svgEl.appendChild(backdropCutoutEl);
-      svgEl.appendChild(glowFrameEl);
-      svgEl.appendChild(secondaryFrameEl);
-      svgEl.appendChild(primaryFrameEl);
-      svgEl.appendChild(arrowLineEl);
-      svgEl.appendChild(arrowHeadEl);
+      arrowSvgEl.appendChild(arrowLineEl);
+      arrowSvgEl.appendChild(arrowHeadEl);
   
       cardEl = document.createElement("aside");
       cardEl.className = "sketch-note-card";
       cardEl.setAttribute("role", "dialog");
       cardEl.setAttribute("aria-live", "polite");
   
-      rootEl.appendChild(svgEl);
+      rootEl.appendChild(spotlightEl);
+      rootEl.appendChild(frameSvgEl);
+      rootEl.appendChild(arrowSvgEl);
       rootEl.appendChild(cardEl);
       document.body.appendChild(rootEl);
     }
@@ -512,11 +517,7 @@
             const hw = tr.width + 16;
             const hh = tr.height + 12;
   
-            backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(hx, hy, hw, hh));
-            const framePath = buildSketchRectPath(hx, hy, hw, hh, 0.9);
-            glowFrameEl.setAttribute("d", framePath);
-            primaryFrameEl.setAttribute("d", framePath);
-            secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2, hy + 2, hw + 4, hh - 3, 2.1));
+            positionSpotlightAndFrame(hx, hy, hw, hh, 0.9);
   
             const fromPt = {
               x: Math.min(cardLeft + cardRect.width - 28, hx + hw * 0.5),
@@ -529,13 +530,6 @@
             const arrows = buildSketchArrowPaths(fromPt, toPt);
             arrowLineEl.setAttribute("d", arrows.linePath);
             arrowHeadEl.setAttribute("d", arrows.headPath);
-          } else {
-            backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(0, 0, 0, 0));
-            glowFrameEl.setAttribute("d", "");
-            primaryFrameEl.setAttribute("d", "");
-            secondaryFrameEl.setAttribute("d", "");
-            arrowLineEl.setAttribute("d", "");
-            arrowHeadEl.setAttribute("d", "");
           }
         }
   
@@ -582,7 +576,8 @@
         if (typeof showStage === "function") {
           showStage("map");
         }
-        if (typeof updateCountrySelectionUI === "function") {
+        const listEl = document.getElementById("country-list");
+        if ((!listEl || listEl.children.length === 0) && typeof updateCountrySelectionUI === "function") {
           updateCountrySelectionUI();
         }
         return true;
@@ -715,6 +710,21 @@
       return { left: chosen.left, top: chosen.top, fromPt, toPt };
     }
   
+    function advanceStep(delta) {
+      const now = performance.now();
+      if (now - tutorialState.lastStepSwitchAt < 160) return;
+      tutorialState.lastStepSwitchAt = now;
+  
+      const targetIndex = tutorialState.stepIndex + delta;
+      if (targetIndex < 0) return;
+      if (targetIndex >= TUTORIAL_STEPS.length) {
+        closeTutorial();
+        return;
+      }
+      tutorialState.stepIndex = targetIndex;
+      renderCurrentStep();
+    }
+  
     function paintStepOverlay(step, token) {
       if (token !== tutorialState.renderToken || !tutorialState.active || tutorialState.mode !== "steps") {
         return;
@@ -728,11 +738,7 @@
       const hw = Math.max(16, Math.min(window.innerWidth - hx - 6, rawRect.width + pad * 2));
       const hh = Math.max(16, Math.min(window.innerHeight - hy - 6, rawRect.height + pad * 2));
   
-      backdropCutoutEl.setAttribute("d", buildCutoutBackdropPath(hx, hy, hw, hh));
-      const primaryPath = buildSketchRectPath(hx, hy, hw, hh, tutorialState.stepIndex * 1.7);
-      glowFrameEl.setAttribute("d", primaryPath);
-      primaryFrameEl.setAttribute("d", primaryPath);
-      secondaryFrameEl.setAttribute("d", buildSketchRectPath(hx - 2.5, hy + 2.5, hw + 5, hh - 4, tutorialState.stepIndex * 2.9 + 0.8));
+      positionSpotlightAndFrame(hx, hy, hw, hh, tutorialState.stepIndex * 1.7);
   
       const isFirst = tutorialState.stepIndex === 0;
       const isLast = tutorialState.stepIndex === TUTORIAL_STEPS.length - 1;
@@ -775,22 +781,10 @@
         skipBtn.addEventListener("click", closeTutorial);
       }
       if (prevBtn) {
-        prevBtn.addEventListener("click", () => {
-          if (tutorialState.stepIndex > 0) {
-            tutorialState.stepIndex -= 1;
-            renderCurrentStep();
-          }
-        });
+        prevBtn.addEventListener("click", () => advanceStep(-1));
       }
       if (nextBtn) {
-        nextBtn.addEventListener("click", () => {
-          if (tutorialState.stepIndex < TUTORIAL_STEPS.length - 1) {
-            tutorialState.stepIndex += 1;
-            renderCurrentStep();
-          } else {
-            closeTutorial();
-          }
-        });
+        nextBtn.addEventListener("click", () => advanceStep(1));
       }
     }
   
@@ -809,15 +803,12 @@
       const switchedStage = ensureStageForStep(step);
   
       if (switchedStage) {
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            paintStepOverlay(step, token);
-          });
-        });
+        setTimeout(() => {
+          if (token !== tutorialState.renderToken || !tutorialState.active) return;
+          requestAnimationFrame(() => paintStepOverlay(step, token));
+        }, 65);
       } else {
-        requestAnimationFrame(() => {
-          paintStepOverlay(step, token);
-        });
+        requestAnimationFrame(() => paintStepOverlay(step, token));
       }
     }
   
@@ -829,6 +820,7 @@
       tutorialState.startedFromStage = activeId;
       tutorialState.injectedDemoNames = false;
       tutorialState.injectedDemoAxes = false;
+      tutorialState.lastStepSwitchAt = performance.now();
   
       if (typeof forcedIndex === "number") {
         tutorialState.stepIndex = forcedIndex;
@@ -912,7 +904,7 @@
       });
   
       document.addEventListener("keydown", (e) => {
-        if (!tutorialState.active) return;
+        if (!tutorialState.active || e.repeat) return;
   
         if (tutorialState.mode === "welcome") {
           if (e.key === "Escape") {
@@ -930,18 +922,10 @@
           closeTutorial();
         } else if (e.key === "ArrowRight" || e.key === "Enter") {
           e.preventDefault();
-          if (tutorialState.stepIndex < TUTORIAL_STEPS.length - 1) {
-            tutorialState.stepIndex += 1;
-            renderCurrentStep();
-          } else {
-            closeTutorial();
-          }
+          advanceStep(1);
         } else if (e.key === "ArrowLeft") {
           e.preventDefault();
-          if (tutorialState.stepIndex > 0) {
-            tutorialState.stepIndex -= 1;
-            renderCurrentStep();
-          }
+          advanceStep(-1);
         }
       });
   

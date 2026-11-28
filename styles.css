@@ -115,6 +115,42 @@ html, body {
   color: #fcd34d;
 }
 
+.btn-tutorial-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border-radius: 9px;
+  border: 1px dashed rgba(250, 204, 21, 0.55);
+  background: rgba(250, 204, 21, 0.1);
+  color: #fde047;
+  font-family: "Patrick Hand", "Caveat", cursive, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.btn-tutorial-trigger:hover {
+  background: rgba(250, 204, 21, 0.2);
+  border-color: #fde047;
+  transform: translateY(-1px) rotate(-1deg);
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.18);
+}
+
+.tutorial-q-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #fde047;
+  font-size: 14px;
+  line-height: 1;
+}
+
 .btn-nav {
   padding: 8px 15px;
   border-radius: 9px;
@@ -863,4 +899,204 @@ html, body {
   font-size: 14px;
   font-weight: 800;
   cursor: pointer;
+}
+
+.sketch-tutorial-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10060;
+  pointer-events: auto;
+}
+
+.sketch-tutorial-root.hidden {
+  display: none !important;
+}
+
+.sketch-tutorial-svg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  pointer-events: auto;
+}
+
+.sketch-stroke-primary {
+  fill: none;
+  stroke: #fde047;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.45));
+}
+
+.sketch-stroke-secondary {
+  fill: none;
+  stroke: rgba(248, 250, 252, 0.72);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sketch-arrow-line {
+  fill: none;
+  stroke: #fde047;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+.sketch-note-card {
+  position: fixed;
+  z-index: 10065;
+  width: min(370px, calc(100vw - 28px));
+  padding: 20px 22px 18px;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(148, 163, 184, 0.04) 0px,
+      rgba(148, 163, 184, 0.04) 1px,
+      transparent 1px,
+      transparent 26px
+    ),
+    linear-gradient(165deg, #101b30 0%, #091120 100%);
+  border: 2px solid rgba(248, 250, 252, 0.78);
+  border-radius: 18px 6px 20px 8px / 8px 18px 6px 20px;
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.78),
+    4px 5px 0 rgba(250, 204, 21, 0.35);
+  color: #f8fafc;
+  transform: rotate(-1.1deg);
+  transition: top 0.25s ease, left 0.25s ease, opacity 0.2s ease;
+}
+
+.sketch-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1.2px dashed rgba(250, 204, 21, 0.42);
+  border-radius: 14px 4px 16px 6px / 6px 14px 4px 16px;
+  pointer-events: none;
+}
+
+.sketch-note-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.sketch-step-badge {
+  display: inline-block;
+  padding: 2px 11px;
+  border: 1.5px solid #38bdf8;
+  border-radius: 12px 4px 10px 4px;
+  background: rgba(56, 189, 248, 0.14);
+  color: #7dd3fc;
+  font-family: "Caveat", cursive, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.sketch-skip-btn {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-family: "Patrick Hand", cursive, sans-serif;
+  font-size: 16px;
+  text-decoration: underline wavy rgba(148, 163, 184, 0.5);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.sketch-skip-btn:hover {
+  color: #fda4af;
+}
+
+.sketch-note-title {
+  margin: 0 0 6px;
+  font-family: "Caveat", cursive, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fde047;
+  text-shadow: 0 2px 10px rgba(250, 204, 21, 0.2);
+}
+
+.sketch-note-body {
+  margin: 0 0 16px;
+  font-family: "Patrick Hand", cursive, sans-serif;
+  font-size: 19.5px;
+  line-height: 1.38;
+  color: #f1f5f9;
+}
+
+.sketch-note-body strong {
+  color: #7dd3fc;
+  font-weight: 400;
+  border-bottom: 1.5px dashed rgba(125, 211, 252, 0.65);
+}
+
+.sketch-note-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sketch-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sketch-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50% 40% 60% 45%;
+  border: 1.5px solid rgba(248, 250, 252, 0.55);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.sketch-dot.active {
+  background: #fde047;
+  border-color: #fde047;
+  transform: scale(1.2);
+}
+
+.sketch-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sketch-btn {
+  padding: 6px 15px;
+  font-family: "Caveat", cursive, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  border-radius: 12px 4px 12px 4px;
+  cursor: pointer;
+  transition: transform 0.14s ease, background 0.14s ease;
+}
+
+.sketch-btn:hover {
+  transform: translateY(-1px) rotate(0.8deg);
+}
+
+.sketch-btn-prev {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1.5px solid rgba(248, 250, 252, 0.45);
+  color: #e2e8f0;
+}
+
+.sketch-btn-next {
+  background: #fde047;
+  border: 2px solid #fef08a;
+  color: #091120;
+  box-shadow: 2px 3px 0 rgba(250, 204, 21, 0.35);
 }
